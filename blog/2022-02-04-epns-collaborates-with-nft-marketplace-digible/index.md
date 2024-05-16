@@ -11,6 +11,7 @@ tags: [ Ethereum
 ,Newsletter
 ,Nft ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Collaborates With NFT Marketplace Digible to Enable Push Notifications for Users](./cover-image.webp)
@@ -29,22 +30,20 @@ Moreover, Digible also offers a set of unique services like DigiDuel, DigiSafe, 
 
 On this note, the platform needs a reliable medium for exchanging information with its users and updating them about the status of their NFTs. EPNS aims to create this channel for Digible.
 
-What Does the Collaboration Entail
-==================================
+# What Does the Collaboration Entail
 
 Through our collaboration with Digible, we aim to create a means for the platform to be able to communicate with its users to pass on updates and increase user participation. Users of Digible can subscribe to its official channel on EPNS to receive decentralized push notifications whenever
 
-*   They receive an offer on their NFTs
-*   Their offer for NFTs has been canceled or accepted
-*   They’ve won or lost an auction bid for NFTs
-*   Sellers receive a new bid on the NFTs
-*   A sealed NFT box has been opened
-*   A new sale is made on the platform
+- They receive an offer on their NFTs
+- Their offer for NFTs has been canceled or accepted
+- They’ve won or lost an auction bid for NFTs
+- Sellers receive a new bid on the NFTs
+- A sealed NFT box has been opened
+- A new sale is made on the platform
 
 Digible’s unique approach to combining the physical and virtual worlds through NFTs is poised to create a unique appeal in the world of NFTs and we’re pleased to collaborate with this platform on their ambitious journey.
 
-**About Digible**
-=================
+# **About Digible**
 
 Digible™ is powering the collector’s metaverse for physically-backed collectibles by using blockchain technology to eliminate the friction of trading physical collectibles. Allowing for collectible investors such as hobby fanatics and private equity firms to acquire physical collectibles without having to worry about where to store them.
 

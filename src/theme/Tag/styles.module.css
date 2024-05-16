@@ -10,7 +10,7 @@
 }
 
 .tagRegular {
-  border: 1px solid #BAC4D6;
+  border: 1px solid #bac4d6;
   transition: border var(--ifm-transition-fast);
   border-radius: 62px;
   padding: 16px 32px;
@@ -25,16 +25,15 @@
   letter-spacing: -0.48px;
 }
 
-.tagRegular:hover{
+.tagRegular:hover {
   text-decoration: none;
-  color: #D53A94;
-  border: 1px solid #D53A94;
+  color: #d53a94;
+  border: 1px solid #d53a94;
 }
 
 .tagWithCount {
   border-radius: 62px;
   color: var(--ifm-color-blog-tag);
-
 
   font-family: Strawford;
   font-size: 16px;
@@ -46,5 +45,5 @@
 
 .tagWithCount:hover {
   text-decoration: underline;
-  color: #D53A94;
+  color: #d53a94;
 }

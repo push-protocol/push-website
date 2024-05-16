@@ -5,7 +5,7 @@ hide_title: true
 slug: ./channel-delegates
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 6
-image: "/assets/docs/previews/docs_notifications_develop--channel_delegates.png"
+image: '/assets/docs/previews/docs_notifications_develop--channel_delegates.png'
 ---
 
 # Channel delegates overview
@@ -13,18 +13,20 @@ image: "/assets/docs/previews/docs_notifications_develop--channel_delegates.png"
 This section covers all APIs related to managing channel delegate including add / remove and get list of all delegates.
 
 <head>
-  <title>Manage Channel Delegate | Push Notifications | Push Documentation</title>
+  <title>
+    {`Manage Channel Delegate | Push Notifications | Push Documentation`}
+  </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import Details from "@theme/Details";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AFocus,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 ## What is Channel Delegate
 
@@ -58,8 +60,8 @@ const delegates = await userAlice.channel.delegate.get();
 
 ```typescript
 [
-  "eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4",
-  "eip155:80001:0xD8634C39BBFd4033c0d3289C4515275102423681",
+  'eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4',
+  'eip155:80001:0xD8634C39BBFd4033c0d3289C4515275102423681',
 ];
 ```
 
@@ -74,7 +76,7 @@ To add a delegate to a channel, on ethereum or alias chain of the channel.
 
 ```typescript
 const addedDelegate = await userAlice.channel.delegate.add(
-  `eip155:11155111:${walletAddress}`,
+  `eip155:11155111:${walletAddress}`
 );
 ```
 
@@ -95,7 +97,7 @@ const addedDelegate = await userAlice.channel.delegate.add(
 
 ```typescript
 {
-  transactionHash: "0xd4a65a474ea7bd12bae887df43ebe8531ab211e498925cfad6599c5758880c33";
+  transactionHash: '0xd4a65a474ea7bd12bae887df43ebe8531ab211e498925cfad6599c5758880c33';
 }
 ```
 
@@ -110,7 +112,7 @@ To remove a delegate to a channel, on ethereum or alias chain of the channel.
 
 ```typescript
 const removeDelegate = await userAlice.channel.delegate.remove(
-  `eip155:11155111:${walletAddress}`,
+  `eip155:11155111:${walletAddress}`
 );
 ```
 
@@ -131,7 +133,7 @@ const removeDelegate = await userAlice.channel.delegate.remove(
 
 ```typescript
 {
-  transactionHash: "0x85327b3d24772f4b424eb959fe01bf5ca5e6148bfde93cc1fa7cb7f4ebcf7c41";
+  transactionHash: '0x85327b3d24772f4b424eb959fe01bf5ca5e6148bfde93cc1fa7cb7f4ebcf7c41';
 }
 ```
 

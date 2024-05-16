@@ -5,24 +5,25 @@ hide_title: true
 slug: ./chatpreviewlist-component
 displayed_sidebar: pushChatSidebar
 sidebar_position: 10
-image: "/assets/docs/previews/docs_chat_ui_components_advanced--chatpreviewlist_component.png"
+image: '/assets/docs/previews/docs_chat_ui_components_advanced--chatpreviewlist_component.png'
 ---
 
 # ChatPreviewList
-
 
 Seamless integration made simple: Add a comprehensive list of your chats with just one line of code, effortlessly enhancing your Dapp's functionality.
 
 ChatPreviewList is a unified chat list showcasing your recent conversations with ease, simplifying your messaging experience by consolidating all interactions into a single, user-friendly interface.
 
 <head>
-  <title>ChatPreviewList | UI Components (@pushprotocol/uiweb) | Push Chat | Push
-    Documentation</title>
+  <title>
+    {`ChatPreviewList | UI Components (@pushprotocol/uiweb) | Push Chat | Push
+    Documentation`}
+  </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import { ModalContainer } from "@site/src/css/SharedStyling";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { ModalContainer } from '@site/src/css/SharedStyling';
 
 ## Usage
 
@@ -50,7 +51,7 @@ export default ChatPreviewListTest;
 <ModalContainer>
   <img
     src={
-      require("/static/assets/docs/chat/ui-components/advanced/integrate-advanced-chatpreviewlist-component/chat-preview-list.png")
+      require('/static/assets/docs/chat/ui-components/advanced/integrate-advanced-chatpreviewlist-component/chat-preview-list.png')
         .default
     }
   />
@@ -63,18 +64,18 @@ export default ChatPreviewListTest;
 
 ### Customization Parameters
 
-| Param                       | Type              | Default | Remarks                                  |
-| --------------------------- | ----------------- | ------- | ---------------------------------------- |
-| `overrideAccount` | `string`   | -       | override the connected user account |
-| `listType` | `"CHATS"` &#124 `"REQUESTS"` &#124 `"SEARCH"`   | -       | type of chat list that needs to be fetched and displayed  |
-| `prefillChatPreviewList` | `Array<IChatPreviewProps>`   | -       | shows a fixed set of chat objects |
-| `searchParamter` | `string`   | -       | chatId or ens or address of users whos chat needs to be searched. The listType for searching should be `"SEARCH"` |
-| `onChatSelected` | `(chatId: string,chatParticipant: string) => void`   | -       | custom function which triggered when any chat is selected |
-| `onUnreadCountChange` | `(count: number) => void;`   | -       | custom function which triggered when new messages are received in any chat |
-| `onPreload` | `(chats: Array<IChatPreviewPayload>) => void`   | -       | custom function which is triggered when chats are loaded for the first time |
-| `onPreload` | `(chats: Array<IChatPreviewPayload>) => void`   | -       | custom function which is triggered when chats are loaded for the first time |
-| `onPaging` | `(chats: Array<IChatPreviewPayload>) => void`   | -       | custom function which is triggered when more chats are loaded on scrolling down |
-| `onLoading` | `(chats: Array<IChatPreviewPayload>) => void`   | -       | custom function which is triggered when chats are loading |
+| Param                    | Type                                               | Default | Remarks                                                                                                           |
+| ------------------------ | -------------------------------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------- |
+| `overrideAccount`        | `string`                                           | -       | override the connected user account                                                                               |
+| `listType`               | `"CHATS"` &#124 `"REQUESTS"` &#124 `"SEARCH"`      | -       | type of chat list that needs to be fetched and displayed                                                          |
+| `prefillChatPreviewList` | `Array<IChatPreviewProps>`                         | -       | shows a fixed set of chat objects                                                                                 |
+| `searchParamter`         | `string`                                           | -       | chatId or ens or address of users whos chat needs to be searched. The listType for searching should be `"SEARCH"` |
+| `onChatSelected`         | `(chatId: string,chatParticipant: string) => void` | -       | custom function which triggered when any chat is selected                                                         |
+| `onUnreadCountChange`    | `(count: number) => void;`                         | -       | custom function which triggered when new messages are received in any chat                                        |
+| `onPreload`              | `(chats: Array<IChatPreviewPayload>) => void`      | -       | custom function which is triggered when chats are loaded for the first time                                       |
+| `onPreload`              | `(chats: Array<IChatPreviewPayload>) => void`      | -       | custom function which is triggered when chats are loaded for the first time                                       |
+| `onPaging`               | `(chats: Array<IChatPreviewPayload>) => void`      | -       | custom function which is triggered when more chats are loaded on scrolling down                                   |
+| `onLoading`              | `(chats: Array<IChatPreviewPayload>) => void`      | -       | custom function which is triggered when chats are loading                                                         |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -83,7 +84,7 @@ export default ChatPreviewListTest;
 ### Live playground
 
 ```jsx live
-customPropMinimized="true"
+customPropMinimized = 'true';
 
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
@@ -95,7 +96,7 @@ function App(props) {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
     // Get provider
-    await provider.send("eth_requestAccounts", []);
+    await provider.send('eth_requestAccounts', []);
 
     // Grabbing signer from provider
     const signer = provider.getSigner();
@@ -108,19 +109,17 @@ function App(props) {
     setSigner(null);
   };
   const buttonStyle = {
-    padding: "10px 20px",
-    backgroundColor: "#dd44b9",
-    color: "#FFF",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    marginTop: "20px",
+    padding: '10px 20px',
+    backgroundColor: '#dd44b9',
+    color: '#FFF',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+    marginTop: '20px',
   };
   return (
     <>
-   
-
-     <ChatUIProvider signer={signer}>
+      <ChatUIProvider signer={signer}>
         <label>
           For this demo, You will need Metamask (or equivalent browser injected
           wallet), you will also need to sign a transaction to see the
@@ -133,19 +132,20 @@ function App(props) {
           style={buttonStyle}
           onClick={signer ? disconnectWallet : connectWallet}
         >
-          {signer ? "Disconnect wallet" : "Connect Wallet"}
+          {signer ? 'Disconnect wallet' : 'Connect Wallet'}
         </button>
 
         <div
           style={{
-            height: "75vh",
-            margin: "20px auto",
-            overflow: "hidden scroll",
+            height: '75vh',
+            margin: '20px auto',
+            overflow: 'hidden scroll',
           }}
         >
-      <ChatPreviewList listType='CHATS'/>
+          <ChatPreviewList listType='CHATS' />
         </div>
       </ChatUIProvider>
     </>
   );
 }
+```

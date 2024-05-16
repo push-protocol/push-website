@@ -1,19 +1,17 @@
 ---
-
 slug: birth-of-a-new-pantheon-thena-and-push-protocol-unite
 title: 'Birth of a New Pantheon: THENA and Push Protocol Unite💜'
 authors: [push]
 image: './cover-image.webp'
-text: "We are thrilled to announce that Push Protocol is partnering with THENA, a leading liquidity layer and DEX AMM on the BNB Chain!"
-tags: [ Web3, Defi, Push Protocol, UX ]
-
+text: 'We are thrilled to announce that Push Protocol is partnering with THENA, a leading liquidity layer and DEX AMM on the BNB Chain!'
+tags: [Web3, Defi, Push Protocol, UX]
 ---
 
 ![Cover image of Birth of a New Pantheon: THENA and Push Protocol Unite💜](./cover-image.webp)
+
 <!--truncate-->
 
 We are thrilled to announce that Push Protocol is partnering with [THENA](https://thena.fi/), a leading liquidity layer and DEX AMM on the BNB Chain!
-
 
 As a liquidity layer for protocols and web3 users, THENA is a next-gen AMM (Automated Market Maker) with over $124m in TV on BNB Chain. THENA’s aim is to become the dominant automated market maker (AMM) and provide a collaborative strategy for establishing new liquidity management products.
 
@@ -44,4 +42,3 @@ For notifications from THENA you can already opt-in to their channel that’s li
 Thena.fi is the native liquidity layer on BNB that emphasizes community-driven development, transparency, and security in its platform. THENA was designed to onboard the next generation of protocols to the BNB chain by opening up a free market for THE emissions. Its native token is also used for governance and incentivizing liquidity providers.
 
 Find out more about THENA: [Website](https://thena.fi/), [Twitter](https://twitter.com/ThenaFi_), [Telegram](https://t.me/+Lr-8OJpzxBo4Yjg0), [Discord](https://discord.com/invite/thena), [Medium](https://medium.com/@ThenaFi), [Docs](https://thena.gitbook.io/thena/)
-

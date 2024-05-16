@@ -5,7 +5,7 @@ hide_title: true
 slug: ./conditional-rules-for-group
 displayed_sidebar: pushChatSidebar
 sidebar_position: 10
-image: "/assets/docs/previews/docs_chat_develop--conditional_rules_for_group.png"
+image: '/assets/docs/previews/docs_chat_develop--conditional_rules_for_group.png'
 ---
 
 # Conditional gating overview
@@ -21,18 +21,18 @@ Conditional gating allows you to define rules for the members of the group for d
 
 <head>
   <title>
-    {"Conditional Gating of Group | Push Chat | Push Documentation"}
+    {`Conditional Gating of Group | Push Chat | Push Documentation`}
   </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AImp,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 ## Understanding the rules object
 
@@ -234,10 +234,10 @@ Let's break down the problem statement into individual requirements
 ```typescript
 // Creating your token gated community
 const createTokenGatedGroup = await userAlice.chat.group.create(
-  "Push Community",
+  'Push Community',
   {
-    description: "Token gated web3 native chat example", // provide short description of group
-    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    description: 'Token gated web3 native chat example', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
     members: [], // not needed, rules define this, can omit
     admins: [], // not needed as per problem statement, can omit
     private: true,
@@ -253,11 +253,11 @@ const createTokenGatedGroup = await userAlice.chat.group.create(
               any: [
                 {
                   // criteria 1
-                  type: "PUSH",
-                  category: "INVITE",
-                  subcategory: "DEFAULT",
+                  type: 'PUSH',
+                  category: 'INVITE',
+                  subcategory: 'DEFAULT',
                   data: {
-                    inviterRoles: ["ADMIN", "OWNER"],
+                    inviterRoles: ['ADMIN', 'OWNER'],
                   },
                 },
               ],
@@ -267,26 +267,26 @@ const createTokenGatedGroup = await userAlice.chat.group.create(
                 // decider 2 - If user has $PUSH on Ethereum or on Polygon
                 {
                   // criteria object
-                  type: "PUSH", // define type that rules engine should go for
-                  category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                  subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                  type: 'PUSH', // define type that rules engine should go for
+                  category: 'ERC20', // define it's ERC20 token that you want to check, supports ERC721 as well
+                  subcategory: 'holder', // define if you are checking 'holder' or 'owner'
                   data: {
                     contract:
-                      "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-                    comparison: ">=", // what comparison needs to pass
+                      'eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1', // $PUSH address on ETH
+                    comparison: '>=', // what comparison needs to pass
                     amount: 1, // amount that needs to passed
                     decimals: 18, // the decimals for the token
                   },
                 },
                 {
                   // criteria object
-                  type: "PUSH", // define type that rules engine should go for
-                  category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                  subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                  type: 'PUSH', // define type that rules engine should go for
+                  category: 'ERC20', // define it's ERC20 token that you want to check, supports ERC721 as well
+                  subcategory: 'holder', // define if you are checking 'holder' or 'owner'
                   data: {
                     contract:
-                      "eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1", // $PUSH address on ETH
-                    comparison: ">=", // what comparison needs to pass
+                      'eip155:137:0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1', // $PUSH address on ETH
+                    comparison: '>=', // what comparison needs to pass
                     amount: 1, // amount that needs to passed
                     decimals: 18, // the decimals for the token
                   },
@@ -298,7 +298,7 @@ const createTokenGatedGroup = await userAlice.chat.group.create(
       },
       // since we are not defining chat permissions, it means that any user who is part of the group can chat
     },
-  },
+  }
 );
 ```
 
@@ -312,12 +312,12 @@ Below is an advance version of gated controls that are applied to both `entry` t
 // Gated entry by either of two rules
 // Gated entry - Rule 1 - It takes 10 $XYZ token on Ethereum or on Polygon to join the group
 // Gated chat by rule of having $1000 XYZ on Ethereum token to allow sending chat in the group
-const myTokenGatedGroup = await userAlice.chat.group.create("BRB Chat", {
-  description: "This is your DAO community native web3 chat", // provide short description of group
-  image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
-  members: ["0x123...", "0xABC...", "eip155:0x754..."], // see types of recipient to learn more
+const myTokenGatedGroup = await userAlice.chat.group.create('BRB Chat', {
+  description: 'This is your DAO community native web3 chat', // provide short description of group
+  image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
+  members: ['0x123...', '0xABC...', 'eip155:0x754...'], // see types of recipient to learn more
   admins: [
-    "nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528",
+    'nft:eip155:11155111:0x42af3147f17239341477113484752D5D3dda997B:2:1683058528',
   ], // NFT addresses are supported as well
   private: true, // ensures chat within group is encrypted and is only visible to members of the group
   rules: {
@@ -332,37 +332,37 @@ const myTokenGatedGroup = await userAlice.chat.group.create("BRB Chat", {
               // set decider to 'any', if 'and' then all rules need to be fulfilled
               {
                 // define criteria 1
-                type: "PUSH",
-                category: "INVITE",
-                subcategory: "DEFAULT",
+                type: 'PUSH',
+                category: 'INVITE',
+                subcategory: 'DEFAULT',
                 data: {
-                  inviterRoles: ["ADMIN", "OWNER"],
+                  inviterRoles: ['ADMIN', 'OWNER'],
                 },
               },
               {
                 // define criteria 2
-                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                type: 'PUSH', // define type that rules engine should go for, currently supports PUSH or GUILD
+                category: 'ERC20', // define it's ERC20 token that you want to check, supports ERC721 as well
+                subcategory: 'holder', // define if you are checking 'holder' or 'owner'
                 data: {
                   // define the data check
                   contract:
-                    "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
-                  comparison: ">=", // what comparison needs to pass
+                    'eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9', // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                  comparison: '>=', // what comparison needs to pass
                   amount: 10, // amount that needs to passed
                   decimals: 18, // the decimals for the contract
                 },
               },
               {
                 // define criteria 3
-                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                type: 'PUSH', // define type that rules engine should go for, currently supports PUSH or GUILD
+                category: 'ERC20', // define it's ERC20 token that you want to check, supports ERC721 as well
+                subcategory: 'holder', // define if you are checking 'holder' or 'owner'
                 data: {
                   // define the data check
                   contract:
-                    "eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
-                  comparison: ">=", // what comparison needs to pass
+                    'eip155:137:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9', // assuming $XYZ contract address is 0xBE18197d1c071b72fb2460B1652C96C22d40F1D9
+                  comparison: '>=', // what comparison needs to pass
                   amount: 10, // amount that needs to passed
                   decimals: 18, // the decimals for the contract
                 },
@@ -381,14 +381,14 @@ const myTokenGatedGroup = await userAlice.chat.group.create("BRB Chat", {
               // set decider to 'any', if 'and' then all rules need to be fulfilled
               {
                 // define criteria 1
-                type: "PUSH", // define type that rules engine should go for, currently supports PUSH or GUILD
-                category: "ERC20", // define it's ERC20 token that you want to check, supports ERC721 as well
-                subcategory: "holder", // define if you are checking 'holder' or 'owner'
+                type: 'PUSH', // define type that rules engine should go for, currently supports PUSH or GUILD
+                category: 'ERC20', // define it's ERC20 token that you want to check, supports ERC721 as well
+                subcategory: 'holder', // define if you are checking 'holder' or 'owner'
                 data: {
                   // define the data check
                   contract:
-                    "eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9", // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
-                  comparison: ">=", // what comparison needs to pass
+                    'eip155:1:0xBE18197d1c071b72fb2460B1652C96C22d40F1D9', // pass {blockchain_standard}:{chain_id}:{address} as a shorthand
+                  comparison: '>=', // what comparison needs to pass
                   amount: 1000, // amount that needs to passed
                   decimals: 18, // the decimals for the contract
                 },
@@ -407,14 +407,14 @@ const myTokenGatedGroup = await userAlice.chat.group.create("BRB Chat", {
 Below is an example of how to NFT gate `entry` to the group.
 
 ```js
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
-import { ethers } from "ethers";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
 console.log(
-  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`
 );
 
 // Initialize wallet user
@@ -425,10 +425,10 @@ const userAlice = await PushAPI.initialize(signer, {
 
 // Creating your token gated community
 const createTokenGatedGroup = await userAlice.chat.group.create(
-  "Push Community",
+  'Push Community',
   {
-    description: "Token gated web3 native chat example", // provide short description of group
-    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    description: 'Token gated web3 native chat example', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
     members: [], // not needed, rules define this, can omit
     admins: [], // not needed as per problem statement, can omit
     private: true,
@@ -443,11 +443,11 @@ const createTokenGatedGroup = await userAlice.chat.group.create(
               any: [
                 {
                   // criteria 1
-                  type: "PUSH",
-                  category: "INVITE",
-                  subcategory: "DEFAULT",
+                  type: 'PUSH',
+                  category: 'INVITE',
+                  subcategory: 'DEFAULT',
                   data: {
-                    inviterRoles: ["ADMIN", "OWNER"],
+                    inviterRoles: ['ADMIN', 'OWNER'],
                   },
                 },
               ],
@@ -457,13 +457,13 @@ const createTokenGatedGroup = await userAlice.chat.group.create(
               any: [
                 {
                   // criteria 1
-                  type: "PUSH", // define type that rules engine should go for
-                  category: "ERC721", // define it's ERC20 token that you want to check, supports ERC721 as well
-                  subcategory: "holder", // define if you are checking 'holder'
+                  type: 'PUSH', // define type that rules engine should go for
+                  category: 'ERC721', // define it's ERC20 token that you want to check, supports ERC721 as well
+                  subcategory: 'holder', // define if you are checking 'holder'
                   data: {
                     contract:
-                      "eip155:80001:0x9105D95577575116948F5afcF479254f49F27939",
-                    comparison: ">=", // what comparison needs to pass
+                      'eip155:80001:0x9105D95577575116948F5afcF479254f49F27939',
+                    comparison: '>=', // what comparison needs to pass
                     amount: 1, // amount that needs to passed
                     decimals: 18,
                   },
@@ -474,15 +474,15 @@ const createTokenGatedGroup = await userAlice.chat.group.create(
         },
       },
     },
-  },
+  }
 );
 
-console.log("Chat created successfully!", createTokenGatedGroup);
+console.log('Chat created successfully!', createTokenGatedGroup);
 ```
 
 ### NFT gated group github example repo
 
-[Follow this token gated example github](https://github.com/push-protocol/push-sdk/tree/main/packages/examples/token-gated-chat "Token gated example using Push Chat") repo to see and play with the API.
+[Follow this token gated example github](https://github.com/push-protocol/push-sdk/tree/main/packages/examples/token-gated-chat 'Token gated example using Push Chat') repo to see and play with the API.
 
 ## Guild gated group example
 
@@ -495,14 +495,14 @@ Below are the examples of how you can create gated group chats for guilds at `gu
 Allow a user to join the group if they have atleast one role in the guild. Say there are 3 different roles in your guild, and you want to allow a user to be able to join your gated group if they have any one of the guild roles (atleast one role).
 
 ```js
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
-import { ethers } from "ethers";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
 console.log(
-  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`
 );
 
 // Initialize wallet user
@@ -513,10 +513,10 @@ const userAlice = await PushAPI.initialize(signer, {
 
 // Creating your guild gated community
 const createGuildGatedGroup = await userAlice.chat.group.create(
-  "Guild Community",
+  'Guild Community',
   {
-    description: "This is a community chat gated by guild roles", // provide short description of group
-    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    description: 'This is a community chat gated by guild roles', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
     members: [], // not needed, rules define this, can omit
     admins: [], // can  adds admins if needed
     private: false, // in our case, we are making a public group
@@ -528,11 +528,11 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
               all: [
                 //  this criteria lets admins or owners invite anyone
                 {
-                  type: "PUSH",
-                  category: "INVITE",
-                  subcategory: "DEFAULT",
+                  type: 'PUSH',
+                  category: 'INVITE',
+                  subcategory: 'DEFAULT',
                   data: {
-                    inviterRoles: ["ADMIN", "OWNER"],
+                    inviterRoles: ['ADMIN', 'OWNER'],
                   },
                 },
               ],
@@ -540,13 +540,13 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
             {
               all: [
                 {
-                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  category: "ROLES", // define it's ROLES for GUILD groups
-                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  type: 'GUILD', // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: 'ROLES', // define it's ROLES for GUILD groups
+                  subcategory: 'DEFAULT', // its DEFAULT for GUILD groups
                   data: {
-                    id: "sniper-fam", // your guild id or guild URL name
-                    comparison: "any", // in our case, we are allowing if user has atleast one role in the guild mentioned above
-                    role: "*", // useful when you want to target a specific role but in our case, its any role so we are using *
+                    id: 'sniper-fam', // your guild id or guild URL name
+                    comparison: 'any', // in our case, we are allowing if user has atleast one role in the guild mentioned above
+                    role: '*', // useful when you want to target a specific role but in our case, its any role so we are using *
                   },
                 },
               ],
@@ -555,10 +555,10 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
         },
       },
     },
-  },
+  }
 );
 
-console.log("Chat created successfully!", createGuildGatedGroup);
+console.log('Chat created successfully!', createGuildGatedGroup);
 ```
 
 #### Example 2
@@ -566,14 +566,14 @@ console.log("Chat created successfully!", createGuildGatedGroup);
 Allow a user to join the group only if they have all the roles in the guild. Say there are 3 different roles in your guild, and you want to allow a user to be able to join your gated group only if they have all the 3 of the guild roles.
 
 ```js
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
-import { ethers } from "ethers";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
 console.log(
-  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`
 );
 
 // Initialize wallet user
@@ -584,10 +584,10 @@ const userAlice = await PushAPI.initialize(signer, {
 
 // Creating your guild gated community
 const createGuildGatedGroup = await userAlice.chat.group.create(
-  "Guild Community",
+  'Guild Community',
   {
-    description: "This is a community chat gated by guild roles", // provide short description of group
-    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    description: 'This is a community chat gated by guild roles', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
     members: [], // not needed, rules define this, can omit
     admins: [], // can  adds admins if needed
     private: false, // in our case, we are making a public group
@@ -599,11 +599,11 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
               all: [
                 // this criteria lets admins or owners invite anyone
                 {
-                  type: "PUSH",
-                  category: "INVITE",
-                  subcategory: "DEFAULT",
+                  type: 'PUSH',
+                  category: 'INVITE',
+                  subcategory: 'DEFAULT',
                   data: {
-                    inviterRoles: ["ADMIN", "OWNER"],
+                    inviterRoles: ['ADMIN', 'OWNER'],
                   },
                 },
               ],
@@ -611,13 +611,13 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
             {
               all: [
                 {
-                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  category: "ROLES", // define it's ROLES for GUILD groups
-                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  type: 'GUILD', // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: 'ROLES', // define it's ROLES for GUILD groups
+                  subcategory: 'DEFAULT', // its DEFAULT for GUILD groups
                   data: {
-                    id: "sniper-fam", // your guild id or guild URL name
-                    comparison: "all", // in our case, we are allowing only if user has all the roles in the guild mentioned above
-                    role: "*", // useful when you want to target a specific role but in our case, its any role so we are using *
+                    id: 'sniper-fam', // your guild id or guild URL name
+                    comparison: 'all', // in our case, we are allowing only if user has all the roles in the guild mentioned above
+                    role: '*', // useful when you want to target a specific role but in our case, its any role so we are using *
                   },
                 },
               ],
@@ -626,10 +626,10 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
         },
       },
     },
-  },
+  }
 );
 
-console.log("Chat created successfully!", createGuildGatedGroup);
+console.log('Chat created successfully!', createGuildGatedGroup);
 ```
 
 #### Example 3
@@ -637,14 +637,14 @@ console.log("Chat created successfully!", createGuildGatedGroup);
 Say you want to allow entry only for users that have specific roles in the guild, you can do that by passing the role name in the `role` key of the `data` object.
 
 ```js
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
-import { ethers } from "ethers";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
 console.log(
-  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`
 );
 
 // Initialize wallet user
@@ -655,10 +655,10 @@ const userAlice = await PushAPI.initialize(signer, {
 
 // Creating your guild gated community
 const createGuildGatedGroup = await userAlice.chat.group.create(
-  "Guild Community",
+  'Guild Community',
   {
-    description: "This is a community chat gated by guild roles", // provide short description of group
-    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    description: 'This is a community chat gated by guild roles', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
     members: [], // not needed, rules define this, can omit
     admins: [], // can  adds admins if needed
     private: false, // in our case, we are making a public group
@@ -669,11 +669,11 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
             {
               all: [
                 {
-                  type: "PUSH",
-                  category: "INVITE",
-                  subcategory: "DEFAULT",
+                  type: 'PUSH',
+                  category: 'INVITE',
+                  subcategory: 'DEFAULT',
                   data: {
-                    inviterRoles: ["ADMIN", "OWNER"],
+                    inviterRoles: ['ADMIN', 'OWNER'],
                   },
                 },
               ],
@@ -681,13 +681,13 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
             {
               all: [
                 {
-                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  category: "ROLES", // define it's ROLES for GUILD groups
-                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  type: 'GUILD', // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: 'ROLES', // define it's ROLES for GUILD groups
+                  subcategory: 'DEFAULT', // its DEFAULT for GUILD groups
                   data: {
-                    id: "sniper-fam", // your guild id or guild URL name
-                    comparison: "", // in our case, its targetting a specific role so we are leaving it empty
-                    role: "discord fellow", // role name or role id that you want to target
+                    id: 'sniper-fam', // your guild id or guild URL name
+                    comparison: '', // in our case, its targetting a specific role so we are leaving it empty
+                    role: 'discord fellow', // role name or role id that you want to target
                   },
                 },
               ],
@@ -696,10 +696,10 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
         },
       },
     },
-  },
+  }
 );
 
-console.log("Chat created successfully!", createGuildGatedGroup);
+console.log('Chat created successfully!', createGuildGatedGroup);
 ```
 
 ### Examples for gating entry and chat permissions to the group
@@ -709,14 +709,14 @@ console.log("Chat created successfully!", createGuildGatedGroup);
 Allow a user to join and send messages in the group if they have atleast one role in the guild. Say there are 3 different roles in your guild, and you want to allow a user to be able to join your gated group if they have any one of the guild roles (atleast one role).
 
 ```js
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
-import { ethers } from "ethers";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
 console.log(
-  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`
 );
 
 // Initialize wallet user
@@ -727,10 +727,10 @@ const userAlice = await PushAPI.initialize(signer, {
 
 // Creating your guild gated community
 const createGuildGatedGroup = await userAlice.chat.group.create(
-  "Guild Community",
+  'Guild Community',
   {
-    description: "This is a community chat gated by guild roles", // provide short description of group
-    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    description: 'This is a community chat gated by guild roles', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
     members: [], // not needed, rules define this, can omit
     admins: [], // can  adds admins if needed
     private: false, // in our case, we are making a public group
@@ -742,11 +742,11 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
               all: [
                 // this criteria lets admins or owners invite anyone
                 {
-                  type: "PUSH",
-                  category: "INVITE",
-                  subcategory: "DEFAULT",
+                  type: 'PUSH',
+                  category: 'INVITE',
+                  subcategory: 'DEFAULT',
                   data: {
-                    inviterRoles: ["ADMIN", "OWNER"],
+                    inviterRoles: ['ADMIN', 'OWNER'],
                   },
                 },
               ],
@@ -754,13 +754,13 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
             {
               all: [
                 {
-                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  category: "ROLES", // define it's ROLES for GUILD groups
-                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  type: 'GUILD', // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: 'ROLES', // define it's ROLES for GUILD groups
+                  subcategory: 'DEFAULT', // its DEFAULT for GUILD groups
                   data: {
-                    id: "sniper-fam", // your guild id or guild URL name
-                    comparison: "any", // in our case, we are allowing if user has atleast one role in the guild mentioned above
-                    role: "*", // useful when you want to target a specific role but in our case, its all roles so we are using *
+                    id: 'sniper-fam', // your guild id or guild URL name
+                    comparison: 'any', // in our case, we are allowing if user has atleast one role in the guild mentioned above
+                    role: '*', // useful when you want to target a specific role but in our case, its all roles so we are using *
                   },
                 },
               ],
@@ -774,13 +774,13 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
             {
               all: [
                 {
-                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  category: "ROLES", // define it's ROLES for GUILD groups
-                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  type: 'GUILD', // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: 'ROLES', // define it's ROLES for GUILD groups
+                  subcategory: 'DEFAULT', // its DEFAULT for GUILD groups
                   data: {
-                    id: "sniper-fam", // your guild id or guild URL name
-                    comparison: "any", // in our case, we are allowing if user has atleast one role in the guild mentioned above
-                    role: "*", // useful when you want to target a specific role but in our case, its all roles so we are using *
+                    id: 'sniper-fam', // your guild id or guild URL name
+                    comparison: 'any', // in our case, we are allowing if user has atleast one role in the guild mentioned above
+                    role: '*', // useful when you want to target a specific role but in our case, its all roles so we are using *
                   },
                 },
               ],
@@ -789,10 +789,10 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
         },
       },
     },
-  },
+  }
 );
 
-console.log("Chat created successfully!", createGuildGatedGroup);
+console.log('Chat created successfully!', createGuildGatedGroup);
 ```
 
 #### Example 2
@@ -800,14 +800,14 @@ console.log("Chat created successfully!", createGuildGatedGroup);
 Allow a user to join and send messages in the group only if they have all the roles in the guild. Say there are 3 different roles in your guild, and you want to allow a user to be able to join your gated group only if they have all the 3 of the guild roles.
 
 ```js
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
-import { ethers } from "ethers";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
 console.log(
-  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`
 );
 
 // Initialize wallet user
@@ -818,10 +818,10 @@ const userAlice = await PushAPI.initialize(signer, {
 
 // Creating your guild gated community
 const createGuildGatedGroup = await userAlice.chat.group.create(
-  "Guild Community",
+  'Guild Community',
   {
-    description: "This is a community chat gated by guild roles", // provide short description of group
-    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    description: 'This is a community chat gated by guild roles', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
     members: [], // not needed, rules define this, can omit
     admins: [], // can  adds admins if needed
     private: false, // in our case, we are making a public group
@@ -833,11 +833,11 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
               all: [
                 // this criteria lets admins or owners invite anyone
                 {
-                  type: "PUSH",
-                  category: "INVITE",
-                  subcategory: "DEFAULT",
+                  type: 'PUSH',
+                  category: 'INVITE',
+                  subcategory: 'DEFAULT',
                   data: {
-                    inviterRoles: ["ADMIN", "OWNER"],
+                    inviterRoles: ['ADMIN', 'OWNER'],
                   },
                 },
               ],
@@ -845,13 +845,13 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
             {
               all: [
                 {
-                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  category: "ROLES", // define it's ROLES for GUILD groups
-                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  type: 'GUILD', // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: 'ROLES', // define it's ROLES for GUILD groups
+                  subcategory: 'DEFAULT', // its DEFAULT for GUILD groups
                   data: {
-                    id: "sniper-fam", // your guild id or guild URL name
-                    comparison: "all", // in our case, we are allowing only if user has all the roles in the guild mentioned above
-                    role: "*", // useful when you want to target a specific role but in our case, its all roles so we are using *
+                    id: 'sniper-fam', // your guild id or guild URL name
+                    comparison: 'all', // in our case, we are allowing only if user has all the roles in the guild mentioned above
+                    role: '*', // useful when you want to target a specific role but in our case, its all roles so we are using *
                   },
                 },
               ],
@@ -865,13 +865,13 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
             {
               all: [
                 {
-                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  category: "ROLES", // define it's ROLES for GUILD groups
-                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  type: 'GUILD', // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: 'ROLES', // define it's ROLES for GUILD groups
+                  subcategory: 'DEFAULT', // its DEFAULT for GUILD groups
                   data: {
-                    id: "sniper-fam", // your guild id or guild URL name
-                    comparison: "all", // in our case, we are allowing only if user has all the roles in the guild mentioned above
-                    role: "*", // useful when you want to target a specific role but in our case, its all roles so we are using *
+                    id: 'sniper-fam', // your guild id or guild URL name
+                    comparison: 'all', // in our case, we are allowing only if user has all the roles in the guild mentioned above
+                    role: '*', // useful when you want to target a specific role but in our case, its all roles so we are using *
                   },
                 },
               ],
@@ -880,10 +880,10 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
         },
       },
     },
-  },
+  }
 );
 
-console.log("Chat created successfully!", createGuildGatedGroup);
+console.log('Chat created successfully!', createGuildGatedGroup);
 ```
 
 #### Example 3
@@ -891,14 +891,14 @@ console.log("Chat created successfully!", createGuildGatedGroup);
 Say you want to allow entry and messaging capability only for users that have specific roles in the guild, you can do that by passing the role name in the `role` key of the `data` object.
 
 ```js
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
-import { ethers } from "ethers";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
 
 console.log(
-  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`,
+  `Signer address: ${signer.address} | Signer private key: ${signer.privateKey}`
 );
 
 // Initialize wallet user
@@ -909,10 +909,10 @@ const userAlice = await PushAPI.initialize(signer, {
 
 // Creating your guild gated community
 const createGuildGatedGroup = await userAlice.chat.group.create(
-  "Guild Community",
+  'Guild Community',
   {
-    description: "This is a community chat gated by guild roles", // provide short description of group
-    image: "data:image/png;base64,iVBORw0K...", // provide base64 encoded image
+    description: 'This is a community chat gated by guild roles', // provide short description of group
+    image: 'data:image/png;base64,iVBORw0K...', // provide base64 encoded image
     members: [], // not needed, rules define this, can omit
     admins: [], // can  adds admins if needed
     private: false, // in our case, we are making a public group
@@ -924,11 +924,11 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
               all: [
                 // this criteria lets admins or owners invite anyone
                 {
-                  type: "PUSH",
-                  category: "INVITE",
-                  subcategory: "DEFAULT",
+                  type: 'PUSH',
+                  category: 'INVITE',
+                  subcategory: 'DEFAULT',
                   data: {
-                    inviterRoles: ["ADMIN", "OWNER"],
+                    inviterRoles: ['ADMIN', 'OWNER'],
                   },
                 },
               ],
@@ -936,13 +936,13 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
             {
               all: [
                 {
-                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  category: "ROLES", // define it's ROLES for GUILD groups
-                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  type: 'GUILD', // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: 'ROLES', // define it's ROLES for GUILD groups
+                  subcategory: 'DEFAULT', // its DEFAULT for GUILD groups
                   data: {
-                    id: "sniper-fam", // your guild id or guild URL name
-                    comparison: "", // in our case, its targetting a specific role so we are leaving it empty
-                    role: "discord fellow", // role name or role id that you want to target, not case sensitive
+                    id: 'sniper-fam', // your guild id or guild URL name
+                    comparison: '', // in our case, its targetting a specific role so we are leaving it empty
+                    role: 'discord fellow', // role name or role id that you want to target, not case sensitive
                   },
                 },
               ],
@@ -956,13 +956,13 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
             {
               all: [
                 {
-                  type: "GUILD", // define type that rules engine should go for, currently supports PUSH or GUILD
-                  category: "ROLES", // define it's ROLES for GUILD groups
-                  subcategory: "DEFAULT", // its DEFAULT for GUILD groups
+                  type: 'GUILD', // define type that rules engine should go for, currently supports PUSH or GUILD
+                  category: 'ROLES', // define it's ROLES for GUILD groups
+                  subcategory: 'DEFAULT', // its DEFAULT for GUILD groups
                   data: {
-                    id: "sniper-fam", // your guild id or guild URL name
-                    comparison: "", // in our case, its targetting a specific role so we are leaving it empty
-                    role: "discord fellow", // role name or role id that you want to target, not case sensitive
+                    id: 'sniper-fam', // your guild id or guild URL name
+                    comparison: '', // in our case, its targetting a specific role so we are leaving it empty
+                    role: 'discord fellow', // role name or role id that you want to target, not case sensitive
                   },
                 },
               ],
@@ -971,8 +971,8 @@ const createGuildGatedGroup = await userAlice.chat.group.create(
         },
       },
     },
-  },
+  }
 );
 
-console.log("Chat created successfully!", createGuildGatedGroup);
+console.log('Chat created successfully!', createGuildGatedGroup);
 ```

@@ -11,6 +11,7 @@ tags: [ Interview
 ,Ethereum
 ,YouTube ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Dmitry Buterin — Rockstars of Ethereum Vol 2 #1 Recap](./cover-image.webp)

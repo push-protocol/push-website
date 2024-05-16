@@ -1,6 +1,6 @@
 name: Documentation Issue
 description: Report an issue or suggest improvements to project documentation.
-title: "[Documentation]: Brief description of the documentation issue"
+title: '[Documentation]: Brief description of the documentation issue'
 labels: [documentation]
 
 body:
@@ -24,7 +24,7 @@ body:
       description: |
         Briefly describe the issue with the documentation or suggest improvements. 
         Include specific details such as the page or section affected and what needs to be clarified or corrected.
-      placeholder: "Example: The getting started in push chat lacks instructions for setting up the wallet."
+      placeholder: 'Example: The getting started in push chat lacks instructions for setting up the wallet.'
       required: true
 
   - type: textarea
@@ -34,4 +34,4 @@ body:
       description: |
         If applicable, provide any suggestions or proposed changes to improve the documentation. 
         Be specific and include any additional information that could help in addressing the issue.
-      placeholder: "Example: Add a wallet setup section to address common errors."
+      placeholder: 'Example: Add a wallet setup section to address common errors.'

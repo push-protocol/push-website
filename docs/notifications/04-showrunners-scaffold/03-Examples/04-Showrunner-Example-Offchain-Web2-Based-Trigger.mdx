@@ -5,7 +5,7 @@ hide_title: true
 slug: ./offchain-based-trigger
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 4
-image: "/assets/docs/previews/docs_notifications_showrunners_examples_offchain_based_trigger--offchain_(web2)_based_trigger.png"
+image: '/assets/docs/previews/docs_notifications_showrunners_examples_offchain_based_trigger--offchain_(web2)_based_trigger.png'
 ---
 
 # Offchain (Web2) based trigger via showrunner scaffold
@@ -243,7 +243,7 @@ schedule.scheduleJob({ start: startTime, rule: dailyRule }, async function () {
     channel.logInfo(`🐣 Cron Task Completed -- ${taskName}`);
   } catch (err) {
     logger.error(
-      `[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`,
+      `[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`
     );
     logger.error(`[${new Date(Date.now())}] Error Object: %o`, err);
   }

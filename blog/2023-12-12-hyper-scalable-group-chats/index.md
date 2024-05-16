@@ -8,20 +8,20 @@ text: "Push Chat has been a game-changer for  web3 messaging, offering a hassle-
 "
 tags: [Push Protocol, Web3, Blockchain Technology, EthGlobal]
 ---
+
 ![Cover Image of Hyper Scalable Group Chats 💬 ⚡](./cover-image.webp)
 
 <!--truncate-->
 
-Push Chat has been a game-changer for  web3 messaging, offering a hassle-free experience for user to user, user to dApp, and group conversations. In essence, Push Chat makes messaging in web3 as seamless as it is in web2. One feature we’ve been working on extensively within Push Chat is Push Group Chat, the ability to host conversations with multiple members. 
+Push Chat has been a game-changer for web3 messaging, offering a hassle-free experience for user to user, user to dApp, and group conversations. In essence, Push Chat makes messaging in web3 as seamless as it is in web2. One feature we’ve been working on extensively within Push Chat is Push Group Chat, the ability to host conversations with multiple members.
 
 Whether you're chatting in public groups, enjoying more private discussions, or joining token-gated communities, Push Group Chat makes connecting with others simple and secure. But now, Push is levelling up its scalability and increasing group limits into the thousands. Let's dive into the enhanced possibilities and expanded horizons that await this enhanced Push Group Chat!
 
-
 ### From 1.5k to 25k Members in a Single Group Chat! 🔥
 
-Group Chat platforms have always struggled with the number of participants a single group could accommodate. This limitation has hindered the potential for large-scale user interactions and hence restricted how Group Chats can be used to connect with a broader audience. Introducing our newly enhanced Push Group Chat. We’re calling it "hyper scalable" in reference to Push Group Chat’s newfound ability to handle significantly larger group sizes, transcending its prior  limitations. This enhancement signifies a major development for web3-native user interactions , empowering users to engage in more extensive and inclusive group conversations like never before.
+Group Chat platforms have always struggled with the number of participants a single group could accommodate. This limitation has hindered the potential for large-scale user interactions and hence restricted how Group Chats can be used to connect with a broader audience. Introducing our newly enhanced Push Group Chat. We’re calling it "hyper scalable" in reference to Push Group Chat’s newfound ability to handle significantly larger group sizes, transcending its prior limitations. This enhancement signifies a major development for web3-native user interactions , empowering users to engage in more extensive and inclusive group conversations like never before.
 
-With hyper scalability, Push Group Chat has transformed the landscape of group conversations. Public group limits have skyrocketed from 1500 to an impressive 25,000 members. Similarly, private groups once capped at 50 members, now support up to 5,000 participants. These substantial increases are redefining the potential for group interactions in web3 and  reflect Push Group Chat's commitment to delivering a more dynamic and accommodating messaging experience.
+With hyper scalability, Push Group Chat has transformed the landscape of group conversations. Public group limits have skyrocketed from 1500 to an impressive 25,000 members. Similarly, private groups once capped at 50 members, now support up to 5,000 participants. These substantial increases are redefining the potential for group interactions in web3 and reflect Push Group Chat's commitment to delivering a more dynamic and accommodating messaging experience.
 
 ### Push Chat Challenging Web2 Incumbents
 
@@ -61,7 +61,6 @@ Moreover, the introduction of hyper scalability in Push Chat takes the competiti
    <td>103</td>
 </tr>
 
-
 <tr>
    <td>500</td>
    <td>104</td>
@@ -96,7 +95,6 @@ Moreover, the introduction of hyper scalability in Push Chat takes the competiti
 </tr>
 </table>
 
-
 <table>
 <tr>
     <th>
@@ -126,7 +124,6 @@ Moreover, the introduction of hyper scalability in Push Chat takes the competiti
    <td>250</td>
    <td>125</td>
 </tr>
-
 
 <tr>
    <td>500</td>
@@ -162,7 +159,6 @@ Moreover, the introduction of hyper scalability in Push Chat takes the competiti
 </tr>
 </table>
 
-
 <table>
 <tr>
     <th>
@@ -192,7 +188,6 @@ Moreover, the introduction of hyper scalability in Push Chat takes the competiti
    <td>250</td>
    <td>193</td>
 </tr>
-
 
 <tr>
    <td>500</td>
@@ -245,7 +240,6 @@ Moreover, the introduction of hyper scalability in Push Chat takes the competiti
    <td>481</td>
 </tr>
 
-
 <tr>
    <td>500</td>
    <td>711</td>
@@ -267,36 +261,34 @@ Moreover, the introduction of hyper scalability in Push Chat takes the competiti
 </tr>
 </table>
 
-
 ### What’s Made Hyper Scalability Possible?
 
-In the relentless pursuit of hyper scalability, Push Chat has had to undergo transformational advancements at both the architectural and encryption levels. 
+In the relentless pursuit of hyper scalability, Push Chat has had to undergo transformational advancements at both the architectural and encryption levels.
 
-Previously, each message within private groups underwent encryption using the private keys of all group members, resulting in encryption complexity directly proportional to the number of participants. 
+Previously, each message within private groups underwent encryption using the private keys of all group members, resulting in encryption complexity directly proportional to the number of participants.
 
-Contrastingly, the platform has been upgraded to now dynamically generate session keys and encrypted secrets during every pivotal group state change, such as adding, removing, or joining members. Push Chat ensures that the time-consuming aspect of the encryption process is reserved for moments when the group dynamic undergoes significant transformations. This innovative approach ensures that the encryption process for private group messages remains constant, irrespective of the group's size. By dissociating encryption complexity from the number of participants, Push Chat has effectively eliminated the scalability concerns associated with larger private groups. 
+Contrastingly, the platform has been upgraded to now dynamically generate session keys and encrypted secrets during every pivotal group state change, such as adding, removing, or joining members. Push Chat ensures that the time-consuming aspect of the encryption process is reserved for moments when the group dynamic undergoes significant transformations. This innovative approach ensures that the encryption process for private group messages remains constant, irrespective of the group's size. By dissociating encryption complexity from the number of participants, Push Chat has effectively eliminated the scalability concerns associated with larger private groups.
 
 ### But Wait…More Enhancements Are On The Way!
-We are not stopping at 5k members. We have already made the breakthrough to take this to <b>100,000</b> benchmarked members 😱 for both private and public group chats. The only caveat is that it breaks backward compatibility when messages using the newer architecture are read by older SDKs. 
+
+We are not stopping at 5k members. We have already made the breakthrough to take this to <b>100,000</b> benchmarked members 😱 for both private and public group chats. The only caveat is that it breaks backward compatibility when messages using the newer architecture are read by older SDKs.
 
 To address this, we have decided to implement these changes in two phases:
 Incorporate all functionalities that understand the new architecture in Push SDK from 1.4.45 upwards. Devs just need to update to start supporting the reading of those formats.
-The use of the feature flags in the SDK (See below or ask on Discord as to how to enable that: https://discord.gg/pushprotocol) enables the new standard as the default allowing devs to tap into it and use that in case they want. 
+The use of the feature flags in the SDK (See below or ask on Discord as to how to enable that: https://discord.gg/pushprotocol) enables the new standard as the default allowing devs to tap into it and use that in case they want.
 
-So, what do you have to do to update this functionality? 
+So, what do you have to do to update this functionality?
 
 Only one thing: Update the SDK to the latest version (1.4.45 or upwards), that’s it! This will ensure that messages sent using the new message standards are understood and displayed correctly in your dApp / mobile app / etc.
 
 #### How to enable Push SDK Feature Flag
+
 In-depth details for how to enable this can be found in the [Push Chat documentation](https://push.org/docs/chat/) and [GitHub repository](https://github.com/push-protocol/push-sdk/tree/main/packages/restapi).
 
 ### Push SDK V2 is Coming
-We are also thrilled to announce that we are working on the V2 version of the SDK which will ensure a standardized Push user class that enables unified access to notifications, chat, video, spaces, and more! 
+
+We are also thrilled to announce that we are working on the V2 version of the SDK which will ensure a standardized Push user class that enables unified access to notifications, chat, video, spaces, and more!
 
 Apart from this, the V2 version will have more streamlined response objects and faster calls though it will break backward compatibility which is why we will transition slowly to the new SDK.
 
 We recommend joining our Discord server (https://discord.gg/pushprotocol) -> #dev-announcements channel for information on how to upgrade / best practices / changelog.
-
-
-
-

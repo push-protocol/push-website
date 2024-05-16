@@ -11,12 +11,12 @@ tags: [ Ethdenver
 ,Ethereum Blockchain
 ,Conference]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS at ETHDenver 2022: A Throwback](./cover-image.webp)
 
 <!--truncate-->
-
 
 A rewind to #ETHDenver2022!
 

@@ -12,6 +12,7 @@ tags: [ Ethereum
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Update : Gitcoin Kernel Week-1](./cover-image.webp)
@@ -37,11 +38,10 @@ The designer garden week is all about understanding users and making sure that t
 Put it another way, no matter how much love you have for your product, it’s the users who decide they need it or not. Thanks to this week’s mentors Zach, Katie and Andrej who drilled this into our head. Research, prototyping and user journeys are incredibly powerful tools which everyone should us.
 
 > For our earlier successful products, this would have saved us weeks of development for features which we thought user will dig (but they didn’t). And for products that didn’t work, this would have definitely saved us months.
-> 
+>
 > Someone invent a time machine already! and contact us at [timemachine@epns.io](mailto://timemachine@epns.io), not kidding, we just made that mail to see how this works out.
 
-Users Synthesis Results
-=======================
+# Users Synthesis Results
 
 Ethereum Push Notification Service first major pivot occurred as a result of user validation and feedback sessions.
 
@@ -59,13 +59,11 @@ This led to another user validation session of sorts where we were lucky to have
 
 Hey you, yes you!!
 
-Prototype for the curios
-========================
+# Prototype for the curios
 
 Curios to see what we are #BUIDLing and to give feedback? Awesome! Let’s get started!
 
-1\. Users receives notifications from EPNS protocol to mobile app and prefer that over dApp or desktop notifications or other form of communication
----------------------------------------------------------------------------------------------------------------------------------------------------
+## 1\. Users receives notifications from EPNS protocol to mobile app and prefer that over dApp or desktop notifications or other form of communication
 
 ![Cover Image of EPNS Update : Gitcoin Kernel Week-1](./image-2.webp)
 
@@ -79,12 +77,11 @@ The notification can be about your trade on a dEx is completed, or ENS sending y
 
 **Questions:**
 
-*   How do you feel about this new form of communication?
-*   What is the preferred way for you to receive communication to dApps or other web3 services? Why? What do you love about them?
-*   Can you arrange the following form of communication for us (from the above screenshot) in form of your preference?
+- How do you feel about this new form of communication?
+- What is the preferred way for you to receive communication to dApps or other web3 services? Why? What do you love about them?
+- Can you arrange the following form of communication for us (from the above screenshot) in form of your preference?
 
-2\. User signs in with private key(creds never leaves device, open repo) on mobile app to authenticate and decrypt encrypted notifications coming from protocol
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+## 2\. User signs in with private key(creds never leaves device, open repo) on mobile app to authenticate and decrypt encrypted notifications coming from protocol
 
 ![Cover Image of EPNS Update : Gitcoin Kernel Week-1](./image-4.webp)
 
@@ -92,35 +89,32 @@ This is **already invalidated**, but instead, imagine the sign in to now just as
 
 **Questions**:
 
-*   What is your experience like when you first signed in to Metamask or MEW?
-*   How do you feel about signing in to the our mobile app?
-*   How comfortable do you feel about using our Mobile App, dApp?
-*   What can be done to improve the experience?
+- What is your experience like when you first signed in to Metamask or MEW?
+- How do you feel about signing in to the our mobile app?
+- How comfortable do you feel about using our Mobile App, dApp?
+- What can be done to improve the experience?
 
-Protocol Updates : What we built this week
-==========================================
+# Protocol Updates : What we built this week
 
-*   Upgradability in the protocol
-*   Design specs for spam and spoof mechanism
-*   Rework of the authentication flow
+- Upgradability in the protocol
+- Design specs for spam and spoof mechanism
+- Rework of the authentication flow
 
-Project Updates : What we learned this week
-===========================================
+# Project Updates : What we learned this week
 
-*   Users feedback is critical for success, it might not be the success you want but it’s the thing you need.
-*   Collaboration with brilliant minds generates better ideas than your team or you can do alone.
-*   It’s okay to ask for help, awesome people are always willing to go the extra mile but you need to return the favor as well!
+- Users feedback is critical for success, it might not be the success you want but it’s the thing you need.
+- Collaboration with brilliant minds generates better ideas than your team or you can do alone.
+- It’s okay to ask for help, awesome people are always willing to go the extra mile but you need to return the favor as well!
 
-Project News : What we accomplished this week
-=============================================
+# Project News : What we accomplished this week
 
-*   Making friends and bonds for life at Kernel
-*   Learning from the best mentors and Kernel fellows
-*   Growing and maturing our thought process
-*   EPNS honored to be included the [DeFi Pulse list](https://t.co/j87Zje9t3V?amp=1)
-*   Some nice news coverage by our friends at [Moj Kripto](https://mojkripto.com/ethereum-push-notification-service-epns-interview/?lang=en) and [Finstreet](https://www.finstreet.in/crypto-news-tata-consultancy-yuan-project-gitcoin-accelerator-program/)
-*   Recorded the most fun podcast about EPNS, our journey and all things DeFi…. shhhhhhh… Keep you posted :)
-*   Learnt Gitcoin Sachin lives 1.6 miles away , it’s a small world!!
+- Making friends and bonds for life at Kernel
+- Learning from the best mentors and Kernel fellows
+- Growing and maturing our thought process
+- EPNS honored to be included the [DeFi Pulse list](https://t.co/j87Zje9t3V?amp=1)
+- Some nice news coverage by our friends at [Moj Kripto](https://mojkripto.com/ethereum-push-notification-service-epns-interview/?lang=en) and [Finstreet](https://www.finstreet.in/crypto-news-tata-consultancy-yuan-project-gitcoin-accelerator-program/)
+- Recorded the most fun podcast about EPNS, our journey and all things DeFi…. shhhhhhh… Keep you posted :)
+- Learnt Gitcoin Sachin lives 1.6 miles away , it’s a small world!!
 
 This is all for now. If you have been able to reach the end… then You are Awesome!!!! and thanks for taking the time to go through our updates.
 

@@ -18,7 +18,7 @@ import Arrow from '@site/static/assets/website/brb/schedules/arrow.svg';
 import { brbOnlineList } from '@site/src/config/BRBOnlineList';
 import { device } from '@site/src/config/globals';
 
-const BRBOnline = ({sectionRef}) => {
+const BRBOnline = ({ sectionRef }) => {
   const isMobile = useMediaQuery(device.tablet);
 
   const openLink = (link: string) => {
@@ -30,50 +30,54 @@ const BRBOnline = ({sectionRef}) => {
   };
   return (
     <PartnerBountiesContainer ref={sectionRef}>
-    
-    <ItemH gap={!isMobile ? "24px" : "5px"} flexDirection={!isMobile ? 'row' : 'column'} margin="0px 0px 5px" >
-      <Header>BRB Online</Header>
-     
-    </ItemH>
-    <ItemH>
-        <Span fontSize={isMobile ? "18px" : "23px"} fontWeight="200" color="#fff" margin="0px 0px 40px">
-        Join Virtually, Build and Win $50k+
-        </Span>
-    </ItemH>
-    <GridItem>
-    {brbOnlineList?.map((item, i) => (
-      <PartnerLine
-        key={i}
-        onClick={() => openLink(item.link)}
-        disabled={item?.link ? false : true}
+      <ItemH
+        gap={!isMobile ? '24px' : '5px'}
+        flexDirection={!isMobile ? 'row' : 'column'}
+        margin='0px 0px 5px'
       >
-        <PartnersLogo
-          src={require(`@site/static/assets/website/brb/partners/${item.srcref}.webp`).default}
-          srcSet={`${require(`@site/static/assets/website/brb/partners/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/partners/${item.srcref}@3x.webp`).default} 3x`}
-          alt={item.alt}
-          style={{ scale: `${item?.srcref === 'chainsafe' ? '1.2' : '1'}` }}
-        />
+        <Header>BRB Online</Header>
+      </ItemH>
+      <ItemH>
+        <Span
+          fontSize={isMobile ? '18px' : '23px'}
+          fontWeight='200'
+          color='#fff'
+          margin='0px 0px 40px'
+        >
+          Join Virtually, Build and Win $50k+
+        </Span>
+      </ItemH>
+      <GridItem>
+        {brbOnlineList?.map((item, i) => (
+          <PartnerLine
+            key={i}
+            onClick={() => openLink(item.link)}
+            disabled={item?.link ? false : true}
+          >
+            <PartnersLogo
+              src={
+                require(
+                  `@site/static/assets/website/brb/partners/${item.srcref}.webp`
+                ).default
+              }
+              srcSet={`${require(`@site/static/assets/website/brb/partners/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/partners/${item.srcref}@3x.webp`).default} 3x`}
+              alt={item.alt}
+              style={{ scale: `${item?.srcref === 'chainsafe' ? '1.2' : '1'}` }}
+            />
 
-        <BountyDescription>
-          {item.text}
-        </BountyDescription>
+            <BountyDescription>{item.text}</BountyDescription>
 
-        <BountyItem>
-          <DateSpan>
-            {item.date}
-          </DateSpan>
+            <BountyItem>
+              <DateSpan>{item.date}</DateSpan>
+            </BountyItem>
+          </PartnerLine>
+        ))}
+      </GridItem>
+    </PartnerBountiesContainer>
+  );
+};
 
-         
-
-        </BountyItem>
-      </PartnerLine>
-    ))}
-  </GridItem>
-  </PartnerBountiesContainer>
-  )
-}
-
-export default BRBOnline
+export default BRBOnline;
 
 const PartnerBountiesContainer = styled.div`
   width: 100%;
@@ -93,13 +97,13 @@ const PartnerBountiesContainer = styled.div`
 const Header = styled.h3`
   font-size: 46px;
   font-weight: 400;
-  font-family: "Glancyr", sans-serif;
+  font-family: 'Glancyr', sans-serif;
   color: #fff;
   margin: 0px;
 
   @media ${device.mobileL} {
     font-size: 36px;
-}
+  }
 `;
 
 const GridItem = styled.div`
@@ -111,12 +115,12 @@ const GridItem = styled.div`
   @media ${device.tablet} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
-}
+  }
 
   @media ${device.mobileL} {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
-      width: 100%;
-      gap: 16px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    width: 100%;
+    gap: 16px;
   }
 `;
 
@@ -134,26 +138,23 @@ const PartnerLine = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-
   &:hover {
-    border: ${(props) => (props.disabled ? '1px solid transparent' : '1px solid #E64DE9')};
+    border: ${(props) =>
+      props.disabled ? '1px solid transparent' : '1px solid #E64DE9'};
     cursor: ${(props) => (props.disabled ? 'not-allowed' : 'pointer')};
 
     & .buttonId {
-      background: ${(props) => (!props.disabled ? '#E64DE9 !important' : 'transparent')};
+      background: ${(props) =>
+        !props.disabled ? '#E64DE9 !important' : 'transparent'};
     }
   }
 
- 
-
   @media (min-width: 1024px) {
     &:last-child {
-        justify-self: center;
-        grid-column-start: 2;
-      }
+      justify-self: center;
+      grid-column-start: 2;
+    }
   }
-
-
 `;
 
 const PartnersLogo = styled(Image)`
@@ -197,16 +198,16 @@ const ArrowSmall = styled(Arrow)`
 const BountyDescription = styled(Span)`
   font-weight: 200;
   font-size: 15px;
-  color: #D0D3E7;
+  color: #d0d3e7;
 
-    margin: 16px 0px;
-    position: relative;
-    width: 100%;
-    left: 0px;
+  margin: 16px 0px;
+  position: relative;
+  width: 100%;
+  left: 0px;
 `;
 
 const DateSpan = styled(Span)`
-  color: #959CAA;
+  color: #959caa;
   font-size: 21px;
   font-style: normal;
   font-weight: 200;
@@ -215,13 +216,13 @@ const DateSpan = styled(Span)`
 `;
 
 const TimeSpan = styled(Span)`
-    color: #959CAA;
+  color: #959caa;
 
-    font-family: Glancyr;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 200;
-    line-height: normal;
+  font-family: Glancyr;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
 `;
 
 const BountyItem = styled.div`

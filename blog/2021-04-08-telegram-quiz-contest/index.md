@@ -11,6 +11,7 @@ tags: [ Announcements
 ,Decentralization
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Telegram Quiz Contest ( 8 April — 12 April )](./cover-image.webp)
@@ -29,9 +30,9 @@ Start learning how to use the EPNS push notification service today and get the m
 
 Win rewards while learning how to use the EPNS push notification service in our 5-day Telegram Quiz contest.
 
-*   $1000 worth of $PUSH tokens up for grabs
-*   **8 winners daily will win $25 worth of $PUSH tokens each** (at the public sale price of $0.12)
-*   Each day, we will ask 4 quiz questions and for each question there will be 2 winners.
+- $1000 worth of $PUSH tokens up for grabs
+- **8 winners daily will win $25 worth of $PUSH tokens each** (at the public sale price of $0.12)
+- Each day, we will ask 4 quiz questions and for each question there will be 2 winners.
 
 **To participate, join the EPNS Telegram Community:** [t.me/epnsproject](https://t.me/epnsproject)
 
@@ -45,11 +46,9 @@ Get a head start by reading the [EPNS Whitepaper](https://whitepaper.epns.io) an
 
 ALL THE BEST!!
 
-Disclaimer
-==========
+# Disclaimer
 
-🚨 WARNING 🚨
--------------
+## 🚨 WARNING 🚨
 
 ❗**Beware of scammers and fake addresses**❗
 
@@ -69,5 +68,4 @@ Disclaimer
 
 **Telegram** **Announcement** **Channel** [https://t.me/epnsprojectnews](https://t.me/epnsprojectnews)
 
-🚨 WARNING 🚨
--------------
+## 🚨 WARNING 🚨

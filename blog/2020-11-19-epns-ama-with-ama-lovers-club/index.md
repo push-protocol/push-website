@@ -12,6 +12,7 @@ tags: [Community
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS AMA with 🎙 AMA LOVERS CLUB](./cover-image.webp)
@@ -27,8 +28,7 @@ _**_Time_**_: 10:00 UTC_
 
 _Find the AMA transcript below:_
 
-Part 1: Introduction
-====================
+# Part 1: Introduction
 
 > _Q1 : Can you please introduce yourselves and your backgrounds. Also share details about the Team working on EPNS_
 
@@ -66,8 +66,7 @@ Milestones
 
 Achivements
 
-**Part 2: Twitter Questions**
-=============================
+# **Part 2: Twitter Questions**
 
 > _Q1: EPNS is building the worlds first decentralized finance notification protocol on Ethereum. What mechanism have you put in place to help ensure that you don’t just deliver plain notifications to your users? How exactly will you be adding value to the DEFI space with your solution?_
 
@@ -93,8 +92,7 @@ Currently, we have ETH/BTC price alerts, GasPrice, ENS Domain Expiry, Bankless F
 
 It will also provide dashboard for users to see their rewards, enable browser notifications and provide services with frontend to send manual notifications (AMA, bug report) as well in the future
 
-Part 3: Live TG Community Questions
-===================================
+# Part 3: Live TG Community Questions
 
 > _Q1 : I understand that EPNS mainly focus on notifications, so I want to know if your notification could be integrated into platforms like telegram, Twitter, etc. Or on which platform could your notification function?_
 
@@ -109,13 +107,13 @@ Setting the bar high, no centralized signup, your wallet acts as your username a
 Great Q! One of the main issues in current on-chain governance voting model is low user turnout and voter apathy. EPNS can help provide a decentralized mode of communication between services and users and help bridge the gap when it comes to governance. Giving power back to people! We also wrote an article about it -: [https://medium.com/ethereum-push-notification-service/how-decentralised-notifications-can-revolutionize-on-chain-governance-part-i-ff09e7465279](https://medium.com/ethereum-push-notification-service/how-decentralised-notifications-can-revolutionize-on-chain-governance-part-i-ff09e7465279)
 
 > _Q4 : EPNS notification protocol implements game theory, DeFi. And now EPNS has products such as:_
-> 
+>
 > _• Mobile App  
 > • dApp  
 > • EPNS Infra (Push Service)  
 > • Showrunners  
 > • JS Library_
-> 
+>
 > _Of all these products. I still haven’t found any products related to DeFi. In the future, does EPNS have plans to add products or services such as loans, borrowers and etc ..?_
 
 The DeFi aspect is in the protocol. Notifications are incentivized as we require services to activate themselves by staking DAI which is lend out to AAVE to start generating interest, users who opt in to receive notifications from the service automatically get a share from the generated interest
@@ -136,7 +134,7 @@ We have also won a grant from AAVESOME AAVE team -: [https://twitter.com/epnspro
 
 > _Q7 : 🔔Q1  
 > There is a difference between receiving notifications that we consider important and receiving spam, so what is the method that ENPS applies to avoid spam?_
-> 
+>
 > _🔔Q2  
 > What would be the characteristics of the public that ENPS is targeting? Or are they aimed at a general public?_
 
@@ -206,8 +204,7 @@ Sure, the notifications payloads segment in the whitepaper talks in great depth 
 
 We have a open repo from get go and normal users are encouraged to sign in with just public wallet address as most notifications are going to be non encrypted for now.
 
-Closing Remarks
-===============
+# Closing Remarks
 
 Thanks for having us guys. Loved the questions and it was great fun! You can follow us on twitter for micro updates: [https://twitter.com/epnsproject](https://twitter.com/epnsproject) and we love to brainstorm on ideas on telegram so feel free to come join us there: [https://t.me/epnsproject.](https://t.me/epnsproject.) If you prefer the old school approach then you can reach us at founders@epns.io
 

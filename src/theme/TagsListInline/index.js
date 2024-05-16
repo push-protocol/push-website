@@ -4,14 +4,14 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import clsx from "clsx";
-import Translate from "@docusaurus/Translate";
-import Tag from "@theme/Tag";
-import styled from "styled-components";
+import React from 'react';
+import clsx from 'clsx';
+import Translate from '@docusaurus/Translate';
+import Tag from '@theme/Tag';
+import styled from 'styled-components';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import { device } from '@site/src/config/globals';
 
 // import styles from "./styles.module.css";
 export default function TagsListInline({ tags }) {

@@ -11,6 +11,7 @@ tags: [ Nft
 ,Blockchain
 ,Digital Art ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS x 0VIX: Enabling Communication for the Next-Generation of Money Markets](./cover-image.webp)
@@ -19,8 +20,7 @@ import { ImageText } from '@site/src/css/SharedStyling';
 
 0VIX, the DeFi 2.0 money market protocol joins forces with EPNS to bring decentralized push notifications for users. As such, users of 0VIX are poised to receive updates about the various happenings and opportunities, directly from the platform.
 
-Redefining DeFi’s Money Market
-==============================
+# Redefining DeFi’s Money Market
 
 DeFi’s monumental success over the past few years is no secret now. While there are several contributing factors, it was DeFi’s money market protocols that solidified the success of the industry, culminating into the mammoth of today.
 
@@ -30,23 +30,21 @@ In this regard, as a DeFi 2.0 money market protocol, 0VIX aims to provide a viab
 
 Now, as a DeFi protocol poised to receive an influx of new users, 0VIX can benefit from a communication channel that facilitates better communication with its users. This is exactly what we at EPNS aim to achieve with this collaboration.
 
-What Does the Collaboration Entail?
-===================================
+# What Does the Collaboration Entail?
 
 The collaboration between EPNS and 0VIX aims to create a direct communication channel between the users and the protocol for seamless interaction. This channel is housed on the EPNS platform where users of 0VIX can easily subscribe to it. Subscribers will receive decentralized push notifications from the platform whenever
 
-*   Collateral approaches liquidation
-*   The Collateral has been liquidated
-*   Protocol parameters change
-*   New asset support is added to the platform
-*   Voting for governance begins or ends
+- Collateral approaches liquidation
+- The Collateral has been liquidated
+- Protocol parameters change
+- New asset support is added to the platform
+- Voting for governance begins or ends
 
 EPNS has a chrome extension, a dApp, and a mobile application to ensure users never miss out on these notifications. These notifications will build on the existing user experience on the platform and complement it by providing a sense of convenience to users.
 
 We’re pleased to have allied with 0VIX on this project and hope to contribute to the growth of the platform.
 
-**About 0VIX**
-==============
+# **About 0VIX**
 
 0VIX is an open-source lending and borrowing protocol enhanced with veTokenomics. Our focus is on providing stable and sustainable yields for Polygon users, through our native token $VIX. We aim to bring billions of dollars of liquidity to Polygon by providing the 3000+ app ecosystem with its first native money market.
 

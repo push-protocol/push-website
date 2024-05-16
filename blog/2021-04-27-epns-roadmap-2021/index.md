@@ -4,9 +4,10 @@ title: 'EPNS Roadmap 2021'
 authors: [push]
 image: './cover-image.webp'
 description: 'EPNS Roadmap 2021'
-text: "This past year has been an unbelievable adventure of learning and growth for us at EPNS since we originally came up with our PoC during ETHGlobal’s Hack Money 2020 Hackathon. We have received so much support and appreciation from the entire Ethereum community, and we can’t thank you enough."
-tags: [Announcements ,Ethereum ,Blockchain ,Newsletter ,Roadmaps]
+text: 'This past year has been an unbelievable adventure of learning and growth for us at EPNS since we originally came up with our PoC during ETHGlobal’s Hack Money 2020 Hackathon. We have received so much support and appreciation from the entire Ethereum community, and we can’t thank you enough.'
+tags: [Announcements, Ethereum, Blockchain, Newsletter, Roadmaps]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Roadmap 2021](./cover-image.webp)
@@ -100,7 +101,7 @@ Moving forward, we plan to further introduce three governance capabilities to co
 
 - Upgradeability through online voting
 - Incentives towards developing 3rd party channels via the protocol
--Incentives for active participation in the protocol
+  -Incentives for active participation in the protocol
 
 The $PUSH Token plays an essential role as it carries on-chain governance as well as enabling fees to split right from the token genesis. Token holders that own the tokens for the longest time will have higher fees based on their share — whenever a majority of users decides to activate the fee and the fee split.
 
@@ -122,6 +123,7 @@ We are targeting the release of four SDKs:
 <b>EPNS Subgraph</b>: Together with these three important components of our Developers Toolkit, we will continue developing further our Subgraph.
 
 #### Technical Documentation
+
 We will develop extensive Technical documentation about the EPNS products, Integration guides, and tutorials in addition to what already exists. From the basic HelloWorld to more complex integrations with real-world protocols.
 
 Our focus will be on three main areas, for which we will provide both simple and advanced examples of all types of integration:
@@ -143,6 +145,7 @@ Some additional guides for developers we will be working on are:
 - How to deliver automated notifications?
 
 #### How To Guides for End users
+
 Our How-To Guides section will be mostly focused on end-users. Providing them with a One-stop-shop to help them get set up and maximize the power of EPNS and all its products.
 
 - How to set up to receive decentralized notifications?
@@ -152,7 +155,6 @@ Our How-To Guides section will be mostly focused on end-users. Providing them wi
 
 ![Fifth Image of EPNS Roadmap 2021](./image-5.webp)
 
-
 EPNS will offer three major front-end components providing participants of the protocol different alternatives to interface with their favorite products and services. These components are:
 
 - dApp (decentralized App)
@@ -160,6 +162,7 @@ EPNS will offer three major front-end components providing participants of the p
 - Browser extension.
 
 #### Decentralized App (dApp)
+
 Up until today, we have been working on a set of foundational features on our dApp that will allow us to grow more functionalities. Some of them being:
 
 - Creation of channels and viewing basic channel statistics (Stake of channel, number of users, Owner indicator)
@@ -186,6 +189,7 @@ For Subscribers:
 Additionally, for the end-user, we will develop dashboards that will give much more aside from receiving notifications or browsing channels. It will allow the user to perform actions regarding governance, rewards incentives, creating profiles, and more.
 
 #### Mobile App (iOS & Android)
+
 Same as with the dApp, we have been building a solid foundation and now its time to scale it. Some of the features we have been working on being:
 
 - Signing in with just the public wallet address
@@ -201,6 +205,7 @@ Now, these are some of the features we have in the pipeline to expand the set of
 - Profile information including passive earnings, and the ability to claim passive earnings from the Dashboard.
 
 #### Browser Extension
+
 This component seeks to be a very lightweight yet powerful tool that provides a reduced but still rich feature set of all the capabilities available in the dApp and the Mobile App.
 
 #### Showrunners (Notification Logic Nodes)
@@ -233,9 +238,3 @@ TLDR;
 We are proud and committed to our mission to fill an existing gap in communication in Web3 today and we take this endeavor with the greatest urgency and responsibility. Let’s build the ultimate notifications layer suite together!
 
 If you have any comments or questions please feel free to reach out to us on telegram or check out our website for more details: https://epns.io/
-
-
-
-
-
-

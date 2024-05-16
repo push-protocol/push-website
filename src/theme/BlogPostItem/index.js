@@ -4,29 +4,29 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, { useContext } from "react";
-import clsx from "clsx";
-import { useBlogPost } from "@docusaurus/theme-common/internal";
-import BlogPostItemContainer from "@theme/BlogPostItem/Container";
-import BlogPostItemHeader from "@theme/BlogPostItem/Header";
-import BlogPostItemContent from "@theme/BlogPostItem/Content";
-import BlogPostItemFooter from "@theme/BlogPostItem/Footer";
-import styled from "styled-components";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
-import BlogPostItems from "@theme/BlogPostItems";
-import FooterItem from "@theme/BlogPostPage/FooterItem";
+import React, { useContext } from 'react';
+import clsx from 'clsx';
+import { useBlogPost } from '@docusaurus/theme-common/internal';
+import BlogPostItemContainer from '@theme/BlogPostItem/Container';
+import BlogPostItemHeader from '@theme/BlogPostItem/Header';
+import BlogPostItemContent from '@theme/BlogPostItem/Content';
+import BlogPostItemFooter from '@theme/BlogPostItem/Footer';
+import styled from 'styled-components';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import BlogPostItems from '@theme/BlogPostItems';
+import FooterItem from '@theme/BlogPostPage/FooterItem';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import { device } from '@site/src/config/globals';
 
 // apply a bottom margin in list view
 function useContainerClassName() {
   const { isBlogPostPage } = useBlogPost();
   const isMobile = useMediaQuery(device.tablet);
   return !isBlogPostPage && !isMobile
-    ? "margin-bottom--xl"
+    ? 'margin-bottom--xl'
     : !isBlogPostPage && isMobile
-      ? "margin-bottom--md"
+      ? 'margin-bottom--md'
       : undefined;
 }
 export default function BlogPostItem({ children, className, list }) {

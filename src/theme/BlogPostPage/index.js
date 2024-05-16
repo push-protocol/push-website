@@ -7,22 +7,22 @@
 import {
   HtmlClassNameProvider,
   ThemeClassNames,
-} from "@docusaurus/theme-common";
+} from '@docusaurus/theme-common';
 import {
   BlogPostProvider,
   useBlogPost,
-} from "@docusaurus/theme-common/internal";
-import GLOBALS, { device } from "@site/src/config/globals";
-import BlogLayout from "@theme/BlogLayout";
-import BlogPostItem from "@theme/BlogPostItem";
-import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
-import BlogPostPaginator from "@theme/BlogPostPaginator";
-import TOC from "@theme/TOC";
-import clsx from "clsx";
-import React from "react";
-import styled from "styled-components";
-import FooterItem from "./FooterItem";
-import MorePosts from "./MorePosts";
+} from '@docusaurus/theme-common/internal';
+import GLOBALS, { device } from '@site/src/config/globals';
+import BlogLayout from '@theme/BlogLayout';
+import BlogPostItem from '@theme/BlogPostItem';
+import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
+import BlogPostPaginator from '@theme/BlogPostPaginator';
+import TOC from '@theme/TOC';
+import clsx from 'clsx';
+import React from 'react';
+import styled from 'styled-components';
+import FooterItem from './FooterItem';
+import MorePosts from './MorePosts';
 
 function BlogPostPageContent({ allPosts, post, children }) {
   const { metadata, toc } = useBlogPost();
@@ -62,11 +62,11 @@ function BlogPostPageContent({ allPosts, post, children }) {
 export default function BlogPostPage(props) {
   const blogPath = props.location.pathname.substring(
     0,
-    props.location.pathname.length - 1,
+    props.location.pathname.length - 1
   );
   const allPosts = props.allPosts;
   const contentName = allPosts?.filter((x) =>
-    x?.Preview?.metadata?.permalink.includes(blogPath),
+    x?.Preview?.metadata?.permalink.includes(blogPath)
   )[0];
   const BlogPostContent = contentName?.Preview;
 
@@ -76,7 +76,7 @@ export default function BlogPostPage(props) {
       <HtmlClassNameProvider
         className={clsx(
           ThemeClassNames.wrapper.blogPages,
-          ThemeClassNames.page.blogPostPage,
+          ThemeClassNames.page.blogPostPage
         )}
       >
         <BlogPostPageMetadata />

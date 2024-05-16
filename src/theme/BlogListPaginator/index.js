@@ -4,13 +4,13 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import Translate, { translate } from "@docusaurus/Translate";
-import PaginatorNavLink from "@theme/PaginatorNavLink";
-import React from "react";
-import styled from "styled-components";
+import Translate, { translate } from '@docusaurus/Translate';
+import PaginatorNavLink from '@theme/PaginatorNavLink';
+import React from 'react';
+import styled from 'styled-components';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import { device } from '@site/src/config/globals';
 
 export default function BlogListPaginator(props) {
   const { metadata } = props;
@@ -19,9 +19,9 @@ export default function BlogListPaginator(props) {
     <NavItem
       // className="pagination-nav"
       aria-label={translate({
-        id: "theme.blog.paginator.navAriaLabel",
-        message: "Blog list page navigation",
-        description: "The ARIA label for the blog pagination",
+        id: 'theme.blog.paginator.navAriaLabel',
+        message: 'Blog list page navigation',
+        description: 'The ARIA label for the blog pagination',
       })}
     >
       {previousPage && (
@@ -29,8 +29,8 @@ export default function BlogListPaginator(props) {
           permalink={previousPage}
           title={
             <Translate
-              id="theme.blog.paginator.newerEntries"
-              description="The label used to navigate to the newer blog posts page (previous page)"
+              id='theme.blog.paginator.newerEntries'
+              description='The label used to navigate to the newer blog posts page (previous page)'
             >
               Newer Entries
             </Translate>
@@ -42,8 +42,8 @@ export default function BlogListPaginator(props) {
           permalink={nextPage}
           title={
             <Translate
-              id="theme.blog.paginator.olderEntries"
-              description="The label used to navigate to the older blog posts page (next page)"
+              id='theme.blog.paginator.olderEntries'
+              description='The label used to navigate to the older blog posts page (next page)'
             >
               Older Entries
             </Translate>

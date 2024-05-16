@@ -12,6 +12,7 @@ tags: [ Ama
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of AMA with Decentralized Club 👩‍🚀 👨‍🚀](./cover-image.webp)
@@ -23,8 +24,7 @@ import { ImageText } from '@site/src/css/SharedStyling';
 **_Date_**_: Friday, 5th February, 2021  
 _**_Time_**_: 12PM UTC_
 
-✔️Introduction with EPNS : 👉
-=============================
+# ✔️Introduction with EPNS : 👉
 
 | DK | 🌿 | Never PM/DM First 🐞 Decentralized Club:  
 First question of Introduction :
@@ -109,8 +109,7 @@ We have loads of awesome features planned for 2021 and beyond ⚡️. The main o
 | DK | 🌿 | Never PM/DM First 🐞 Decentralized Club:  
 Thank you [@harshr](http://twitter.com/harshr) [@RJlwl](http://twitter.com/RJlwl), super insightful and very easy to understand.
 
-🐧 Community ask Questions by Twitter ✔️
-========================================
+# 🐧 Community ask Questions by Twitter ✔️
 
 | DK | 🌿 | Never PM/DM First 🐞 Decentralized Club:  
 Twitter question no 1.  
@@ -168,8 +167,7 @@ And to add -: EPNS forms a critical piece of web3 infrastructure. Imagine new li
 
 DONE
 
-🌍 Community ask question by Website 👨‍💻
-==========================================
+# 🌍 Community ask question by Website 👨‍💻
 
 | DK | 🌿 | Never PM/DM First 🐞 Decentralized Club:  
 Website question no 1.  
@@ -180,9 +178,9 @@ How can a user control what notifications he needs in EPNS ?
 Richa | EPNS 📨 | won’t DM first:  
 Yes! we understand the problem users face when it comes to unsolicited and spam notifications 😅. We actually thought a ton about it and there are a couple of ways by which we mitigate the issue (everything happens on protocol 😊):
 
-1) Users have to opt in to receive notifications from the service first before they can start communicating. This ensures that users are always in control, if they unsubscribe, there is no way for a service to add to them.
+1. Users have to opt in to receive notifications from the service first before they can start communicating. This ensures that users are always in control, if they unsubscribe, there is no way for a service to add to them.
 
-2) To ensure that a service doesn’t turn malicious later on, we attach a Spam Score to them as well which is adjusted by both positive (higher number of subscribers, the passage of time, etc) and negative (unusual number of notifications, a higher number of unsubscribes, etc) actions. This score when it crosses a certain threshold activates the protocol throttle mechanism which is a way to penalize services a bit at first and if they don’t stop then making the throttling go high thereby ensuring that it’s always in the best interest of services to not spam their users.
+2. To ensure that a service doesn’t turn malicious later on, we attach a Spam Score to them as well which is adjusted by both positive (higher number of subscribers, the passage of time, etc) and negative (unusual number of notifications, a higher number of unsubscribes, etc) actions. This score when it crosses a certain threshold activates the protocol throttle mechanism which is a way to penalize services a bit at first and if they don’t stop then making the throttling go high thereby ensuring that it’s always in the best interest of services to not spam their users.
 
 We are also planning verified badges in the future to ensure that while everyone can create a channel and everyone can opt-in, there is a distinction between spammy channels and verified ones.
 
@@ -212,8 +210,7 @@ Contrast this experience with any dApps, smart contracts or services you interac
 
 This was the moment that we realized that this stone age era of communication in blockchain needs to go…you are not foreclosed by your bank without proper notices that reach you, but DeFi while enabling awesome use cases does that to you ohh so often and we wanted to fix that. With this new found observable knowledge, and the destiny which led us here from being a mobile app entrepreneur in 2010 and seeing the transformation notifications had, we kind of understood that this is what we are meant to create and thus Ethereum Push Notifications Service (EPNS) was born.
 
-✍️ Telegram live Questions answered by EPNS ✔
-=============================================
+# ✍️ Telegram live Questions answered by EPNS ✔
 
 Kop:  
 🚩Q.Many projects rug pulled and exit scam recently. Why should investors trust your project not to do the same?
@@ -264,8 +261,7 @@ The DeFi characteristic of the EPNS protocol incentivizes users to earn rewards.
 
 As we are a decentralized protocol, the markets are global and decentralized as well 🙂
 
-Edited by : 🌿DK✍️
-==================
+# Edited by : 🌿DK✍️
 
 You can stay update to date and learn about EPNS through the following channels, please join us at.
 

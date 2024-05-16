@@ -15,15 +15,16 @@ export default function HomeBreadcrumbItem() {
   // Override home url to docs root
   const homeHref = useBaseUrl('/docs');
   return (
-    <li className="breadcrumbs__item">
+    <li className='breadcrumbs__item'>
       <Link
         aria-label={translate({
           id: 'theme.docs.breadcrumbs.home',
           message: 'Home page',
           description: 'The ARIA label for the home page in the breadcrumbs',
         })}
-        className="breadcrumbs__link"
-        href={homeHref}>
+        className='breadcrumbs__link'
+        href={homeHref}
+      >
         <IconHome className={styles.breadcrumbHomeIcon} />
       </Link>
     </li>

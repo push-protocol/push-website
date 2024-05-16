@@ -11,12 +11,12 @@ tags: [ Frensofpush, Web3, Push Protocol, Superfluid Protocol]
 ---
 
 ![Cover image of Superfluid Enhancing Web3 Asset-Streaming With Push💜💚](./cover-image.webp)
+
 <!--truncate-->
 
 This week, we’re thrilled to feature our #FrensOfPush, Superfluid!🎉
 
 The leading asset-streaming protocol revolutionizing the way web3-native organizations handle payments and subscriptions.
-
 
 Superfluid is a decentralized payment protocol that enables DAOs and crypto-native organizations to stream assets in a non-custodial and permissionless manner. This is particularly useful for projects that demand frequent and recurring transactions. By enabling real-time payments, Superfluid allows for fast and frictionless value transfer without gas fees. The protocol’s commitment to trustlessness and decentralization makes it a popular choice among organizations that value security and transparency in their payment processing.
 
@@ -79,4 +79,3 @@ We encourage all builders interested in Superfluid to check out our [Wave Pool](
 Superfluid is the leading asset streaming protocol that enables Web3 native subscriptions, salaries, and rewards for DAOs and crypto-native businesses. Superfluid streams transfer value in a constant flow over time between wallets in a non-custodial and permissionless manner. Superfluid Protocol can be used to describe cash flows and execute them automatically on-chain, over time, and in a non-interactive way. Money streams are programmable, composable, and modular, allowing developers to build custom applications on top of the protocol. No capital is locked up, and all inflows and outflows are netted in real-time at every block without consuming any gas. Ongoing streams can be forwarded as they are received to both wallets and applications, eliminating delays and drastically increasing capital efficiency.
 
 [Website](https://www.superfluid.finance/home) | [App](https://app.superfluid.finance/) | [Docs](http://docs.superfluid.finance/) | [Twitter](https://twitter.com/intent/follow?screen_name=Superfluid_HQ) | [Discord](http://discord.superfluid.finance/)
-

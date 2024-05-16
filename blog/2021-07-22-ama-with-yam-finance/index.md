@@ -11,6 +11,7 @@ tags: [ Ama
 ,Blockchain
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of AMA With Yam Finance 🍠](./cover-image.webp)
@@ -62,7 +63,7 @@ Please when you’re done answering any question, you can say **“DONE.”**
 
 **JIM:** Done.
 
-**JAI:** Let’s move to the next segment of our AMA Session.  💥
+**JAI:** Let’s move to the next segment of our AMA Session. 💥
 
 I hope you’re ready for the next segment? I will be asking some questions! 👀
 
@@ -261,7 +262,7 @@ So yes, all our current projects and the token contract are audited. 😊
 **ROSS**: By design, any malicious action would require YAM token holders to vote for it, so it is pretty much impossible for us to rug pull or exit scam!
 
 > LFC BOY: How does YAM Treasury decide the kind of products to invest in, that would give valuable returns? Are there criteria to be met?
-> 
+>
 > What kind of decisions can members of YAM DAO vote for, in the governance of the project? How can anyone be a member?
 
 @zetaleak
@@ -282,7 +283,7 @@ Anyone can vote in the DAO if they hold YAM tokens. There is no other requiremen
 
 We are creating a Strategic Vision to drive Yam into the future. The vision will dovetail with our current projects but also officially define a parallel track of new innovations. The vision describes how these two parallel tracks will compliment and enhance each other, and eventually merge.
 
-> CR\_7: In your view how has the trajectory of yield farming and yield aggregating platforms changed in the past year?
+> CR_7: In your view how has the trajectory of yield farming and yield aggregating platforms changed in the past year?
 
 **ROSS**: Great question! Yield farming has really evolved as the participants became more savvy and projects saw the limitations of some of the more standard yield farming models. While fair launches like the YAM and YFI launches were very successful and egalitarian, they don’t always incentivize the community and contributors for long-term success and have required additional raises and rethinking of reward distributions.
 

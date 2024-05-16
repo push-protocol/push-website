@@ -12,6 +12,7 @@ tags: [ Ethereum
 ,Defi
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Announcing EPNS 🔔 x YAM 🍠 Meme Contest winners! 🙊](./cover-image.webp)
@@ -26,11 +27,9 @@ Its now time to share the winners!
 
 ### 1st Place: @MarcoGarcia0827
 
-2nd Place: Ramit Agarwal
-========================
+# 2nd Place: Ramit Agarwal
 
-3rd place: Johan R.
-===================
+# 3rd place: Johan R.
 
 Both teams had a fun time going through all the submissions and it helped drive awareness about what **EPNS** and **YAM** are building together. 🙏🏽
 

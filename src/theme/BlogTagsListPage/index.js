@@ -4,22 +4,22 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import clsx from "clsx";
+import React from 'react';
+import clsx from 'clsx';
 import {
   PageMetadata,
   HtmlClassNameProvider,
   ThemeClassNames,
   translateTagsPageTitle,
-} from "@docusaurus/theme-common";
-import BlogLayout from "@theme/BlogLayout";
-import TagsListByLetter from "@theme/TagsListByLetter";
-import SearchMetadata from "@theme/SearchMetadata";
+} from '@docusaurus/theme-common';
+import BlogLayout from '@theme/BlogLayout';
+import TagsListByLetter from '@theme/TagsListByLetter';
+import SearchMetadata from '@theme/SearchMetadata';
 // import styles from "./styles.module.css";
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import { device } from '@site/src/config/globals';
 
 export default function BlogTagsListPage({ tags, sidebar }) {
   const title = translateTagsPageTitle();
@@ -27,11 +27,11 @@ export default function BlogTagsListPage({ tags, sidebar }) {
     <HtmlClassNameProvider
       className={clsx(
         ThemeClassNames.wrapper.blogPages,
-        ThemeClassNames.page.blogTagsListPage,
+        ThemeClassNames.page.blogTagsListPage
       )}
     >
       <PageMetadata title={title} />
-      <SearchMetadata tag="blog_tags_list" />
+      <SearchMetadata tag='blog_tags_list' />
       <BlogLayout />
       <TagSection>
         <h1>{title}</h1>

@@ -1,15 +1,17 @@
 ---
 slug: push-channel-of-the-week
-title: "Announcing Push Channel of the Week 🏆"
+title: 'Announcing Push Channel of the Week 🏆'
 authors: [push]
-image: "./cover-image.webp"
-description: "Announcing Push Channel of the Week 🏆"
+image: './cover-image.webp'
+description: 'Announcing Push Channel of the Week 🏆'
 text: "Push Fam, It's time to recognize some of the most impactful channels trusted by our subscribers globally. With that, we're thrilled to announce - Push Channel of the Week!"
 tags: [Push Protocol, Web3, Blockchain Technology]
 ---
+
 ![Cover Image of Push Channel of the Week!🏆](./cover-image.webp)
 
 <!--truncate-->
+
 Push Fam, It's time to recognize some of the most impactful channels trusted by our subscribers globally. With that, we're thrilled to announce - **Push Channel of the Week!🏆**.
 
 With more than **175,000** active subscribers and **70 Million** notifications delivered, the Push Channel of the Week initiative is designed to acknowledge the trust users place in our diverse range of channels by spotlighting the most active, engaging, impactful, and consistent channel.
@@ -40,6 +42,7 @@ The channel powers periodic ETH price update notifications which include :
 
 You can even customize your notification preferences by adjusting the ranges 🎚 for:
 
+
 - ETH price range Threshold in **%**
 - Price alert notification frequency⚡
 
@@ -59,6 +62,7 @@ You are all set!
 ### What is Rekt?
 
 [Rekt](https://rekt.news/) is a Dark DeFi journalism platform that digs down into every dark web3 news and provides non biased-to the point-investigative articles and content pieces to make web3 users aware of the other half!
+
 
 ### What notifications does the Rekt channel power?
 
@@ -80,14 +84,12 @@ Simply navigate to the [Rekt Channel Profile Page](https://app.push.org/channels
 
 
 
-
 **Its time to push forward into April!**
-
 
 ## Winners For Month - April 🏆
 
-
 ## Week 1: Aave
+
 ### Push x Aave: Get timely updates related to your loan health ⏰ and more, delivered straight to your wallet!
 
 ![Banner celebrating Aave as April - week 1 channel of week](./image4.webp)
@@ -101,6 +103,7 @@ Simply navigate to the [Rekt Channel Profile Page](https://app.push.org/channels
 The Push Aave channel helps you receive crucial updates on your active loans as well as on the supply, and borrowing APYs for various tokens.
 
 The channel provides a special feature ✨that enables you to customize your notification preferences by setting ranges 🎚 for:
+
 - **Loan Health Factor** ⚖: Choose your desired health factor range to stay informed against liquidation risks.
 - **Token Supply Rate Alerts** 🌊: Choose your minimum supply APY threshold in **%** and receive instant notifications when a token lies within the set range.
 - **Token Borrow Rate Alerts**⏰: Choose your minimum borrow APY threshold in **%** and receive instant notifications when a token lies within the set range.
@@ -133,9 +136,8 @@ You can even customize your notification preferences by adjusting the ranges �
 ### How to opt-in to the BTC Tracker Channel?
 
 To opt-in to the BTC Tracker channel, simply visit the [BTC Tracker Profile Page](https://app.push.org/channels/0x03EAAAa48ea78d1E66eA3458364d553AD981871E?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), click on “**Opt-In**”,
-Sign the transaction ( Gasless 🚫⛽) and that’s it. 
+Sign the transaction ( Gasless 🚫⛽) and that’s it.
 You are all set!
-
 
 ## Week 3: ENS
 ### Push x ENS: Domain expiry alerts delivered straight to your wallet address with Push!
@@ -280,11 +282,6 @@ You can opt-in to the ETH Gas Price Tracker at no cost (with no gas fees!) from 
 
 
 This winds up the winner’s list for March.
-
-
-
-
-
 
 
 Stay tuned for the next winner! 👀

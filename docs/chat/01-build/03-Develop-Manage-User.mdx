@@ -5,7 +5,7 @@ hide_title: true
 slug: ./manage-user
 displayed_sidebar: pushChatSidebar
 sidebar_position: 3
-image: "/assets/docs/previews/docs_chat_develop--manage_user.png"
+image: '/assets/docs/previews/docs_chat_develop--manage_user.png'
 ---
 
 # Manage user overview
@@ -13,14 +13,15 @@ image: "/assets/docs/previews/docs_chat_develop--manage_user.png"
 These APIs are useful when you want to manage the **Push User** profile. This includes changing profile name, avatar, preferences or encrytion algorithms.
 
 <head>
-  <title>Manage User | Push Chat | Push Documentation</title>
+  <title>{`Manage User | Push Chat | Push Documentation`}</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import Details from "@theme/Details";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
 
 ## User info API
+
 Returns info of the initialized user containing user's DID, public key, wallets, etc.
 
 <Tabs className="codetabs" groupId="code-examples">
@@ -38,10 +39,10 @@ const response = await userAlice.info();
 
 ### User info parameters
 
-| Param      | Type                     | Sub-Type                               | Default       | Remarks                                                                                                                                                                              |
-| ---------- | ------------------------ | -------------------------------------- | ------------- | ---------------------- |
-| `options`  | `InfoOptions`            | -                                      | -             | Optional configuration properties             |
-| -          | `options.overrideAccount`            | -                                  | -     | The [account](/docs/chat/supported-wallet-standards "Push Chat support wallet standards") for which info is retrieved, can override to get info of other accounts not owned by the user. If not provided, it is derived from signer. |
+| Param     | Type                      | Sub-Type | Default | Remarks                                                                                                                                                                                                                              |
+| --------- | ------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `options` | `InfoOptions`             | -        | -       | Optional configuration properties                                                                                                                                                                                                    |
+| -         | `options.overrideAccount` | -        | -       | The [account](/docs/chat/supported-wallet-standards 'Push Chat support wallet standards') for which info is retrieved, can override to get info of other accounts not owned by the user. If not provided, it is derived from signer. |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -112,6 +113,7 @@ const response = await userAlice.info();
 </Details>
 
 ## User profile info API
+
 Returns profile info of the user like name, avatar, etc.
 
 <Tabs className="codetabs" groupId="code-examples">
@@ -129,10 +131,10 @@ const response = await userAlice.profile.info();
 
 ### User profile info parameters
 
-| Param      | Type                     | Sub-Type                               | Default       | Remarks                                                                                                                                                                              |
-| ---------- | ------------------------ | -------------------------------------- | ------------- | ---------------------- |
-| `options`  | `InfoOptions`            | -                                      | -             | Optional configuration properties             |
-| -          | `options.overrideAccount`            | -                                  | -     | The [account](/docs/chat/supported-wallet-standards "Push Chat support wallet standards") for which info is retrieved, can override to get info of other accounts not owned by the user. If not provided, it is derived from signer. |
+| Param     | Type                      | Sub-Type | Default | Remarks                                                                                                                                                                                                                              |
+| --------- | ------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `options` | `InfoOptions`             | -        | -       | Optional configuration properties                                                                                                                                                                                                    |
+| -         | `options.overrideAccount` | -        | -       | The [account](/docs/chat/supported-wallet-standards 'Push Chat support wallet standards') for which info is retrieved, can override to get info of other accounts not owned by the user. If not provided, it is derived from signer. |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -152,6 +154,7 @@ const response = await userAlice.profile.info();
 </Details>
 
 ## User profile update API
+
 Used for updating profile of a user like name, avatar, description, etc.
 
 <Tabs className="codetabs" groupId="code-examples">
@@ -162,7 +165,8 @@ Used for updating profile of a user like name, avatar, description, etc.
 const response = await userAlice.profile.update({
   name: 'Alice',
   description: 'Alice is a software developer',
-  picture: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzUlEQVR4AcXBsWlDMRiF0c8XTeAJPIAgoFbgQew1PIbXyKsyhUGtCqM6ZAJX6Z32fykM4hnuObv71++TYJRKlHtji1EqUe6NSJgJM2G2W74/nkzIvfHKKJUZwkyYCbOUe+Odcm/MEGbCTJil2/VMdLx8Eo1S2SL3RnS7nomEmTATZmm//BANKlHujS1GqUT7hRVhJsyEWWLSKJVXcm/MEGbCTJgl/sm9EY1SmTFKJcq9EY1SiYSZMBNm6XE6sHJhJffGOz1OByJhJsyE2R/3lDA4e9QQhAAAAABJRU5ErkJggg==' // base64 encoded image
+  picture:
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzUlEQVR4AcXBsWlDMRiF0c8XTeAJPIAgoFbgQew1PIbXyKsyhUGtCqM6ZAJX6Z32fykM4hnuObv71++TYJRKlHtji1EqUe6NSJgJM2G2W74/nkzIvfHKKJUZwkyYCbOUe+Odcm/MEGbCTJil2/VMdLx8Eo1S2SL3RnS7nomEmTATZmm//BANKlHujS1GqUT7hRVhJsyEWWLSKJVXcm/MEGbCTJgl/sm9EY1SmTFKJcq9EY1SiYSZMBNm6XE6sHJhJffGOz1OByJhJsyE2R/3lDA4e9QQhAAAAABJRU5ErkJggg==', // base64 encoded image
 });
 ```
 
@@ -173,12 +177,12 @@ const response = await userAlice.profile.update({
 
 ### User profile update parameters
 
-| Param      | Type                     | Sub-Type                               | Default       | Remarks                                                                                                                                                                              |
-| ---------- | ------------------------ | -------------------------------------- | ------------- | ---------------------- |
-| `options`  | `object`            | -                                      | -             | Optional configuration properties             |
-| -          | `options.name`            | -                                  | -     | Name of the Push User |
-| -          | `options.description`            | -                                  | -     | Description of the Push User |
-| -          | `options.picture`            | -                                  | -     | Avatar of the Push User, should be base64 encoded image and not an url |
+| Param     | Type                  | Sub-Type | Default | Remarks                                                                |
+| --------- | --------------------- | -------- | ------- | ---------------------------------------------------------------------- |
+| `options` | `object`              | -        | -       | Optional configuration properties                                      |
+| -         | `options.name`        | -        | -       | Name of the Push User                                                  |
+| -         | `options.description` | -        | -       | Description of the Push User                                           |
+| -         | `options.picture`     | -        | -       | Avatar of the Push User, should be base64 encoded image and not an url |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -208,6 +212,7 @@ const response = await userAlice.profile.update({
 </Details>
 
 ## User encryption info API
+
 Returns encryption info of the user like public key, private key, etc.
 
 <Tabs className="codetabs" groupId="code-examples">
@@ -326,6 +331,7 @@ const response = await userAlice.encryption.info();
 </Details>
 
 ## User encryption update API
+
 Used for updating encryption version, algo or NFT user password. In case of NFT transfer, it's recommended to update password after transfer.
 
 <Tabs className="codetabs" groupId="code-examples">
@@ -333,20 +339,25 @@ Used for updating encryption version, algo or NFT user password. In case of NFT 
 
 ```typescript
 // userAlice.encryption.update(ENCRYPTION_TYPE, {options?})
-// Wallet User Update, 
+// Wallet User Update,
 // Usually not required as it's handled internally by the SDK to automatically update to recommended encryption type
-const walletAlice = await userAlice.encryption.update(CONSTANTS.USER.ENCRYPTION_TYPE.PGP_V3);
+const walletAlice = await userAlice.encryption.update(
+  CONSTANTS.USER.ENCRYPTION_TYPE.PGP_V3
+);
 
 // NFT User Update
 // Should be done when the NFT is transferred to a different user
 // so messages and connections can be migrated to the new user
-const nftAlice = await userAlice.encryption.update(CONSTANTS.USER.ENCRYPTION_TYPE.NFTPGP_V1, {
-  versionMeta: {
-    NFTPGP_V1: {
-      password: "new_password"
-    }
+const nftAlice = await userAlice.encryption.update(
+  CONSTANTS.USER.ENCRYPTION_TYPE.NFTPGP_V1,
+  {
+    versionMeta: {
+      NFTPGP_V1: {
+        password: 'new_password',
+      },
+    },
   }
-});
+);
 ```
 
   </TabItem>
@@ -360,10 +371,10 @@ Attaching progress hook functionality in [Initialize user API](/docs/chat/build/
 
 ### User encryption update parameters
 
-| Param      | Type                     | Sub-Type                               | Default       | Remarks                                                                              |
-| ---------- | ------------------------ | -------------------------------------- | ------------- | ------------------------------------------------------------------------------------ |
-| `options`  | `object`                 | -                                      | -             | Optional configuration properties                                                    |
-| -          | `options.versionMeta`    | `{ NFTPGP_V1 ?: password: string }`    | -             | Metadata related to the encryption version, including a password if needed.          |
+| Param     | Type                  | Sub-Type                            | Default | Remarks                                                                     |
+| --------- | --------------------- | ----------------------------------- | ------- | --------------------------------------------------------------------------- |
+| `options` | `object`              | -                                   | -       | Optional configuration properties                                           |
+| -         | `options.versionMeta` | `{ NFTPGP_V1 ?: password: string }` | -       | Metadata related to the encryption version, including a password if needed. |
 
 > Note: Parameters _`in this style`_ are mandatory.
 

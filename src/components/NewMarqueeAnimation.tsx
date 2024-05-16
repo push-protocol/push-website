@@ -3,7 +3,7 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React,{ useRef } from 'react';
+import React, { useRef } from 'react';
 
 // External Components
 // import Marquee, { MarqueeDirection } from 'react-marquee-slider';
@@ -12,8 +12,7 @@ import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/core';
-import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
-
+import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 
 type Props = {
   direction: MarqueeDirection;
@@ -24,7 +23,6 @@ type Props = {
   pause?: boolean;
 };
 
-
 function NewMarqueeAnimation(props: Props) {
   const {
     speed,
@@ -34,18 +32,17 @@ function NewMarqueeAnimation(props: Props) {
     direction,
     fixedWidth,
     pause = false,
-    bg
+    bg,
   } = props;
-  
+
   const isMobile = useMediaQuery('(max-width: 480px)');
   const isTablet = useMediaQuery('(max-width: 1130px)');
   const splideRef = useRef(null);
   const scrollRef = useRef(null);
 
-
   return (
-    <div style={{maxHeight: '85px', background: bg}}>
-    <Splide 
+    <div style={{ maxHeight: '85px', background: bg }}>
+      <Splide
         ref={splideRef}
         options={{
           width: isMobile ? '90vw' : isTablet ? '95vw' : '1213px',
@@ -61,12 +58,12 @@ function NewMarqueeAnimation(props: Props) {
             pauseOnFocus: false,
             rewind: false,
             speed: speed,
-          }
+          },
         }}
-        extensions={ { AutoScroll } }
+        extensions={{ AutoScroll }}
       >
-          {props.children}
-    </Splide>
+        {props.children}
+      </Splide>
     </div>
   );
 }

@@ -4,9 +4,10 @@ title: 'Roadmap 2022 — Q1 Wrap up'
 authors: [push]
 image: './cover-image.webp'
 description: 'Roadmap 2022 — Q1 Wrap up'
-text: "Q1’s already done and boy has it been an amazing 3 months! We showcase what the EPNS team achieved in Q1."
+text: 'Q1’s already done and boy has it been an amazing 3 months! We showcase what the EPNS team achieved in Q1.'
 tags: [Blockchain, Epnsproject, Web3, Crypto]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Roadmap 2022 — Q1 Wrap up](./cover-image.webp)
@@ -67,6 +68,7 @@ While these numbers are fantastic, we believe all this was possible because of s
 Let’s take a look at all the key updates that made this growth happen.
 
 ### Development
+
 - dApp, Browser Extension, & Mobile App successfully migrated to Ethereum Mainnet
 - We Introduced gasless notifications ⚙️ to send notifs without any gas fees.
 - We implemented subset notifications and launched it soon after, enabling a whole new set of combinations for notifications.
@@ -83,6 +85,7 @@ Let’s take a look at all the key updates that made this growth happen.
 - New Dapp UI 🎨 is live on staging with cool features like Dark Mode
 
 ### Governance
+
 In a Web3 ecosystem, Healthy governance is one where the community is actively engaged and contributing to the protocol. Whether it’s by suggestions, being active on social channels, amplifying messaging and also making governance proposals. And that’s where for EPNS, the community has always been at the forefront of the protocol.
 
 With the launch of governance, we launched an important step towards complete decentralisation and also with a mechanism to incentivize proposers who have their proposal approved on Snapshot!
@@ -112,7 +115,7 @@ A project like EPNS, always grows and expands with some really amazing partners 
 - Feb Week 3 — Our pilot collaborations with [Poolz Finance](https://twitter.com/epnsproject/status/1493276219009552384?s=20&t=UetkR1Yx0wEx9qGhlEf9Fg), [Crypto Manga](https://twitter.com/epnsproject/status/1493637670647463936?s=20&t=09iWUvMz8T0giWvvLd8G1Q), [Li.Finance](https://twitter.com/epnsproject/status/1493948442023923715?s=20&t=09iWUvMz8T0giWvvLd8G1Q) 😎 📲 and also opt-in from the Official Channels of [mStable](https://twitter.com/epnsproject/status/1493993763735470081?s=20&t=09iWUvMz8T0giWvvLd8G1Q) 🔔✨ were announced.
 - Feb Week 4 — We announced our pilot collaboration with [Nord Finance](https://twitter.com/epnsproject/status/1495769580316536832?s=20&t=u7uH6L53QY8jfohoQHD6PQ)
 - March Week 1 — Excited to announce our collaboration with [The Defiant](https://twitter.com/epnsproject/status/1498715887591129089?s=20&t=RWuIM5Dv0UW0k4oDctM8xg) 😎 📲 And yes, the opt-in from the Official Channel of [Aragon](https://twitter.com/epnsproject/status/1499067107715465217?s=20&t=RWuIM5Dv0UW0k4oDctM8xg) went live!
-Excited to announce our collaboration with [RealT](https://twitter.com/epnsproject/status/1501558467940982784?s=20&t=VojivKsQX6P2AvGpQp4ilg)😎 📲 And yes do check out the opt-in from the Official Channels of [Proof of Humanity](https://twitter.com/epnsproject/status/1501611224517480451?s=20&t=VojivKsQX6P2AvGpQp4ilg)
+  Excited to announce our collaboration with [RealT](https://twitter.com/epnsproject/status/1501558467940982784?s=20&t=VojivKsQX6P2AvGpQp4ilg)😎 📲 And yes do check out the opt-in from the Official Channels of [Proof of Humanity](https://twitter.com/epnsproject/status/1501611224517480451?s=20&t=VojivKsQX6P2AvGpQp4ilg)
 - March Week 2 — This week was the one where we announced our collaborations with [Earnifi](https://twitter.com/epnsproject/status/1503393070066274307?s=20&t=L2PtqMOa-FnVFIe1Ced0zg), [Digible](https://twitter.com/Digibleio/status/1501924317239681024?s=20&t=L2PtqMOa-FnVFIe1Ced0zg)
 - March Week 3 — This was the week of our collaborations with [Flipside Crypto](https://twitter.com/epnsproject/status/1505952867219230724?s=20&t=xN0D5gOeEHelQOYQedpSqQ), [Float Capital](https://twitter.com/epnsproject/status/1504869888250490880?s=20&t=xN0D5gOeEHelQOYQedpSqQ), [Notional Finance](https://twitter.com/epnsproject/status/1506632049477955584?s=20&t=xN0D5gOeEHelQOYQedpSqQto) enable Push Notifications 😎 📲 We’ve also got around 10 channels due to organic growth. And yes we’re also observing with other protocols like MeetWithWallet making their own implementations using our back end SDK.
 
@@ -127,5 +130,3 @@ Let’s keep PUSHing! 💪🏼
 The EPNS team
 
 Remember: The EPNS Team members will never DM you first, we never ask you to send money, crypto, private key, or any such thing. Stay safe out there, frens!
-
-

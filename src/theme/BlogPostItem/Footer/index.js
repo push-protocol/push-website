@@ -4,13 +4,13 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import clsx from "clsx";
-import { useBlogPost } from "@docusaurus/theme-common/internal";
-import EditThisPage from "@theme/EditThisPage";
-import TagsListInline from "@theme/TagsListInline";
-import ReadMoreLink from "@theme/BlogPostItem/Footer/ReadMoreLink";
-import styles from "./styles.module.css";
+import React from 'react';
+import clsx from 'clsx';
+import { useBlogPost } from '@docusaurus/theme-common/internal';
+import EditThisPage from '@theme/EditThisPage';
+import TagsListInline from '@theme/TagsListInline';
+import ReadMoreLink from '@theme/BlogPostItem/Footer/ReadMoreLink';
+import styles from './styles.module.css';
 export default function BlogPostItemFooter() {
   const { metadata, isBlogPostPage } = useBlogPost();
   const { tags, title, editUrl, hasTruncateMarker } = metadata;
@@ -26,29 +26,29 @@ export default function BlogPostItemFooter() {
       {isBlogPostPage && (
         <footer
           className={clsx(
-            "row docusaurus-mt-lg",
-            isBlogPostPage && styles.blogPostFooterDetailsFull,
+            'row docusaurus-mt-lg',
+            isBlogPostPage && styles.blogPostFooterDetailsFull
           )}
         >
           {tagsExists && (
-            <div className={clsx("col", { "col--9": truncatedPost })}>
+            <div className={clsx('col', { 'col--9': truncatedPost })}>
               <TagsListInline tags={tags} />
             </div>
           )}
 
           {editUrl && (
-            <div className="col margin-top--sm">
+            <div className='col margin-top--sm'>
               <EditThisPage editUrl={editUrl} />
             </div>
           )}
 
           {truncatedPost && (
             <div
-              className={clsx("col text--right", {
-                "col--3": tagsExists,
+              className={clsx('col text--right', {
+                'col--3': tagsExists,
               })}
             >
-              <ReadMoreLink blogPostTitle={title} to={metadata.permalink} />
+              <ReadMoreLink blogPostTitle={title} to={metadata?.permalink} />
             </div>
           )}
         </footer>
@@ -56,7 +56,7 @@ export default function BlogPostItemFooter() {
 
       {!isBlogPostPage && truncatedPost && (
         <div>
-          <ReadMoreLink blogPostTitle={title} to={metadata.permalink} />
+          <ReadMoreLink blogPostTitle={title} to={metadata?.permalink} />
         </div>
       )}
     </>

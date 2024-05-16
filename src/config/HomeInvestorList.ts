@@ -62,7 +62,7 @@ export const InvList = {
       title: null,
       subtitle: null,
       alt: 'Push Investor - Andrew Keys',
-    }
+    },
   ],
   bottom: [
     {
@@ -149,5 +149,5 @@ export const InvList = {
     //   subtitle: null,
     //   alt: 'Push Investor - 4RC',
     // },
-  ]
-}
+  ],
+};

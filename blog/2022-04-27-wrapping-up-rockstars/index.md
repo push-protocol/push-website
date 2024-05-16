@@ -11,12 +11,12 @@ tags: [Rockstar
 ,Blockchain
 ,Nft ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Wrapping Up Rockstars of EPNS NFT Drops](./cover-image.webp)
 
 <!--truncate-->
-
 
 With immense support & contributions from the EPNS community, the 52-week-long community NFT drops have finally come to an end. The **Rockstars of EPNS** is our gratitude collection of 100 NFTs commissioned by Indian artists to show our appreciation for the incredible support of the Push community. 48, out of the 100 NFTs were gifted to our early advisors, supporters, and evangelists of the EPNS protocol who helped us reach so many milestones. The remaining 52 NFTs were allocated for community members.
 
@@ -26,8 +26,7 @@ We are proud to have these 52 well-wishers & supporters of EPNS who have contrib
 
 The initial 24 Rockstars of EPNS were chosen by the EPNS team internally by carefully scrutinizing the submissions. Later, towards our efforts to make the platform progressively decentralized, the Push Governance community started choosing the winners among the nominations through governance voting. This made sure that the community’s voice is heard.
 
-What’s next?
-------------
+## What’s next?
 
 **1\. Token Gated Channel**
 
@@ -41,8 +40,7 @@ With 53% of PUSH allocated to the community, we plan on giving PUSH to the hands
 
 Push Governance in the long run would be an inevitable part of EPNS that drives the protocol. As we move towards that goal, we invite the Rockstars to hold the baton for Push Governance, be the community leaders & engage in all Push Governance activities ([Forum](https://gov.epns.io/), [Discord](https://discord.gg/YVPB99F9W5)).
 
-Thank you!
-----------
+## Thank you!
 
 After 52 weeks together, to thank all of you adequately is impossible. All your time spent and efforts help strengthen ourselves as a community as a whole.  
 We can’t wait to take together the next steps in bringing Web3 communication to new heights. Once again, thank you!

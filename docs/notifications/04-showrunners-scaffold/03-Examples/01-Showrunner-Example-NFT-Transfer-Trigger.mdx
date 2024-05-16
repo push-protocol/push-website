@@ -5,7 +5,7 @@ hide_title: true
 slug: ./nft-transfer-trigger
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 1
-image: "/assets/docs/previews/docs_notifications_showrunners_examples--nft_transfer_trigger.png"
+image: '/assets/docs/previews/docs_notifications_showrunners_examples--nft_transfer_trigger.png'
 ---
 
 # NFT transfer trigger via showrunner scaffold
@@ -94,7 +94,7 @@ You also will need to get the ABI file for the contract from [etherscan](https:/
 - Then import the ABI at the top of the `nttTransferChannel.ts` file
 
 ```js
-import abi from "./abi.json";
+import abi from './abi.json';
 ```
 
 ### Developing the Channel Logic
@@ -148,8 +148,8 @@ Phewww! 🤯, that's a lot of CODE. We really need to break this down now, to ge
 ```js
 const sdk = await this.getSdk();
 const coven = await sdk.getContract(
-  "0x5180db8f5c931aae63c74266b211f580155ecac8",
-  JSON.stringify(abi),
+  '0x5180db8f5c931aae63c74266b211f580155ecac8',
+  JSON.stringify(abi)
 );
 const filter = await coven.contract.filters.Transfer();
 ```
@@ -164,7 +164,7 @@ if (!this.LAST_CHECKED_BLOCK) {
 
 const toBlock = await coven.provider.getBlockNumber();
 this.logInfo(
-  `No of events fetching events from  ${this.LAST_CHECKED_BLOCK} to ${toBlock}`,
+  `No of events fetching events from  ${this.LAST_CHECKED_BLOCK} to ${toBlock}`
 );
 ```
 
@@ -175,7 +175,7 @@ this.logInfo(
 const events = await coven.contract.queryFilter(
   filter,
   this.LAST_CHECKED_BLOCK,
-  toBlock,
+  toBlock
 );
 
 this.logInfo(`No of events fetched ${events.length}`);
@@ -218,17 +218,17 @@ For that, we use a jobs file for scheduling the method using the built-in schedu
 - **Step 2**: Import our channel class that we previously created and the necessary packages.
 
 ```js
-import { Container } from "typedi";
-import schedule from "node-schedule";
-import NFTTransferChannel from "./nftTransferChannel";
+import { Container } from 'typedi';
+import schedule from 'node-schedule';
+import NFTTransferChannel from './nftTransferChannel';
 ```
 
 - **Step 3**: Export a function containing the scheduling logic
 
 ```js
-import { Container } from "typedi";
-import schedule from "node-schedule";
-import NFTTransferChannel from "./nftTransferChannel";
+import { Container } from 'typedi';
+import schedule from 'node-schedule';
+import NFTTransferChannel from './nftTransferChannel';
 
 export default () => {
   const startTime = new Date(new Date().setHours(0, 0, 0, 0));
@@ -237,7 +237,7 @@ export default () => {
   tenMinuteRule.minute = new schedule.Range(0, 59, 10);
 
   channel.logInfo(
-    `-- 🛵 Scheduling Showrunner ${channel.cSettings.name} -  Channel [on 5 mins ]`,
+    `-- 🛵 Scheduling Showrunner ${channel.cSettings.name} -  Channel [on 5 mins ]`
   );
   schedule.scheduleJob(
     { start: startTime, rule: tenMinuteRule },
@@ -250,7 +250,7 @@ export default () => {
         channel.logger.error(`❌ Cron Task Failed -- ${taskName}`);
         channel.logger.error(`Error Object: %o`, err);
       }
-    },
+    }
   );
 };
 ```

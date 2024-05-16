@@ -5,7 +5,7 @@ hide_title: true
 slug: ./chatuiprovider
 displayed_sidebar: pushChatSidebar
 sidebar_position: 1
-image: "/assets/docs/previews/docs_chat_ui_components_advanced--chatuiprovider.png"
+image: '/assets/docs/previews/docs_chat_ui_components_advanced--chatuiprovider.png'
 ---
 
 # ChatUIProvider
@@ -15,12 +15,14 @@ Enhance State Management: Boost Your Component's Functionality by Wrapping it wi
 You can seamlessly integrate your main root file with the ChatUIProvider, allowing you to effortlessly incorporate any component throughout your entire application. This simplifies the process of using components independently across the app, eliminating the need to manage common inputs such as account information and PGP private keys, among others.
 
 <head>
-  <title>ChatUIProvider | UI Components (@pushprotocol/uiweb) | Push Chat | Push
-    Documentation</title>
+  <title>
+    {`ChatUIProvider | UI Components (@pushprotocol/uiweb) | Push Chat | Push
+    Documentation`}
+  </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Usage
 
@@ -56,7 +58,7 @@ Customize the parameters as per your need and the chat component being used.
 | `theme`         | `IChatTheme`      | -       | [Theme object](/docs/chat/ui-components/Advanced/Themization/), it can be custom theme object, `lightChatTheme` `darkChatTheme` |
 | _`children`_    | `React.ReactNode` | -       |                                                                                                                                 |
 | `env`           | `Env`             | -       | API env - 'prod' or 'staging'                                                                                                   |
-| `signer`        | `SignerType`      | -       | Ethers or Viem Signer                                                                                                         |
-| `user`        | `PushAPI`      | -       | initialized Push user for accessing all function calls     
+| `signer`        | `SignerType`      | -       | Ethers or Viem Signer                                                                                                           |
+| `user`          | `PushAPI`         | -       | initialized Push user for accessing all function calls                                                                          |
 
 > Note: Parameters _`in this style`_ are mandatory.

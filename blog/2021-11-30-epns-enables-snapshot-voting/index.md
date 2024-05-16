@@ -10,6 +10,7 @@ tags: [ Governance
 ,Blockchain
 ,Dao ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Enables Snapshot Voting for PUSH and PUSH/ETH LP Stakers!](./cover-image.webp)
@@ -22,33 +23,29 @@ At present, EPNS uses the IPFS-based no-fee governance tool Snapshot for the com
 
 Up until now, it was only possible for someone to vote on proposals using Snapshot if they had delegated PUSH votes. But we have good news!
 
-Bringing Voting for all PUSH Patrons
-====================================
+# Bringing Voting for all PUSH Patrons
 
 With the latest update to EPNS Snapshot Space, it is now possible for community members to vote on proposals and participate in the governance decisions of EPNS even if they have:
 
-*   **Staked PUSH tokens on** [**incentives.epns.io**](http://incentives.epns.io)
-*   **Staked PUSH/ETH LP tokens on** [**incentives.epns.io**](http://incentives.epns.io), or
-*   **Delegated PUSH Votes**
+- **Staked PUSH tokens on** [**incentives.epns.io**](http://incentives.epns.io)
+- **Staked PUSH/ETH LP tokens on** [**incentives.epns.io**](http://incentives.epns.io), or
+- **Delegated PUSH Votes**
 
 Now that all PUSH holders and stakers can vote, take this chance to vote on the latest [proposal to choose this week’s ROCKSTAR](https://snapshot.org/#/epns.eth/proposal/0xee6809168a52ac203770958eb83de3c0fd90cd5fe1a4fcf54d902b1a10ffbfc0). Cast your vote NOW!!
 
-Calculate Your Voting Power on Snapshot
----------------------------------------
+## Calculate Your Voting Power on Snapshot
 
 Your voting power on Snapshot is calculated as follows:
 
 ![First image of EPNS Enables Snapshot Voting for PUSH and PUSH/ETH LP Stakers!](./image-1.webp)
 
-1\. Voting Power from Staked PUSH Tokens:
------------------------------------------
+## 1\. Voting Power from Staked PUSH Tokens:
 
 If you have staked PUSH tokens on [incentives.epns.io](http://incentives.epns.io), then
 
 ![Second image of EPNS Enables Snapshot Voting for PUSH and PUSH/ETH LP Stakers!](./image-2.webp)
 
-2\. Voting Power from Staked PUSH/ETH LP Tokens:
-------------------------------------------------
+## 2\. Voting Power from Staked PUSH/ETH LP Tokens:
 
 If you have staked PUSH/ETH LP tokens on [incentives.epns.io](http://incentives.epns.io), then
 
@@ -58,8 +55,7 @@ If you have staked PUSH/ETH LP tokens on [incentives.epns.io](http://incentives.
 
 ![Fourth image of EPNS Enables Snapshot Voting for PUSH and PUSH/ETH LP Stakers!](./image-4.webp)
 
-3\. Voting Power from Delegated PUSH Votes:
--------------------------------------------
+## 3\. Voting Power from Delegated PUSH Votes:
 
 If you have PUSH votes delegated by the community (or by you), then
 
@@ -67,8 +63,7 @@ If you have PUSH votes delegated by the community (or by you), then
 
 Head over to [incentives.epns.io](http://incentives.epns.io) under the PUSH Governance tab to check/delegate your voting power.
 
-Quick Governance Links
-======================
+# Quick Governance Links
 
 **Snapshot Voting guide-** [https://medium.com/ethereum-push-notification-service/epns-snapshot-voting-a-step-by-step-guide-832e44243e2a](https://medium.com/ethereum-push-notification-service/epns-snapshot-voting-a-step-by-step-guide-832e44243e2a)
 

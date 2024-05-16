@@ -12,6 +12,7 @@ tags: [ Snapshot
 ,Blockchain
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Partners with Snapshot to Deliver Notifications to Improve Community Governance](./cover-image.webp)
@@ -26,8 +27,7 @@ We’re excited to partner with Snapshot. With this collaboration EPNS will be c
 
 Working together will also give us the opportunity to further refine our protocol, and expand its core features and functionalities to cope up with the dynamics of governance.
 
-**About Snapshot**
-------------------
+## **About Snapshot**
 
 Snapshot defines itself as an off-chain, gasless, multi-governance client that allows the community to create and vote on proposals as well as to verify its results. The project enables communities to run token holder votes on an off-chain level.
 

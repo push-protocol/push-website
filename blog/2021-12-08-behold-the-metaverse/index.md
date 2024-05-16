@@ -11,6 +11,7 @@ tags: [ Metaverse
 ,Ethereum
 ,Web3 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Behold the Metaverse! What is it all about?](./cover-image.webp)
@@ -21,15 +22,13 @@ The Metaverse — a digital space of the future where people from all walks of l
 
 So what’s so exciting about this so-called Metaverse? In fact, what is it even? Let’s dive deep into this rabbit hole of endless possibilities and learn more about what all this hype is all about.
 
-**What is the Metaverse?**
---------------------------
+## **What is the Metaverse?**
 
 If you’ve seen movies like “Ready Player One”, you must already be able to grasp what a Metaverse means. A Metaverse is not a specific game or an application; it is a virtual space that could possibly combine virtual reality, augmented reality, the internet, and of course crypto. The Metaverse is one of the most obvious “next steps” in the evolution of social technological advancements and immersion we have as a human species. As we moved from local/regional gatherings to instant messaging and group chats, to now group video calls and meetings. Being “online” is now so common for us that life before it seems impossible or at least an inconvenience.
 
 One could say that a metaverse is a new form of digital nation-state, which is powered by cryptoeconomic systems which potentially has a single source of truth.
 
-**A Realm of Infinite Possibilities**
--------------------------------------
+## **A Realm of Infinite Possibilities**
 
 With the help of blockchain and Web3, we are able to create digital worlds that have cryptographically proven digital scarcity, interoperability, programmability, and permissionless innovation.
 
@@ -41,8 +40,7 @@ While no one is completely sure what the Metaverse is going to look like. There 
 
 Even Facebook, recently changed its name to [Meta](https://www.youtube.com/watch?v=gElfIo6uw4g) to signal its focus in working on building a Metaverse, although it would most probably be a closed-source one. Meta wants to bring everyone to their digital space, whereas Web3 is also working towards the same goal but using open and shared systems and in a privacy-centric way. It’s almost like a race to the finish, one that remains to be seen on who will win.
 
-**EPNS brings decentralized communication to a decentralized metaverse**
-------------------------------------------------------------------------
+## **EPNS brings decentralized communication to a decentralized metaverse**
 
 As Web3 brings about the Metaverse in a decentralized way, an issue of communication between users and protocols is posed. EPNS will play a key role in acting as the communication layer for the Web3 as the Metaverse is built in the coming years. DeFi in the Metaverse is what will connect different shared spaces to transfer value across each other, in the same way, for these protocols in the Metaverse to communicate with users, EPNS will act as the channel for it to happen.
 

@@ -11,13 +11,12 @@ tags: [ Fundraising
 ,Announcements
 ,Ethereum ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Announcing Our $10.1 Million Series A!](./cover-image.webp)
 
 <!--truncate-->
-
-
 
 > We’re proud to announce that EPNS has raised $10.1 million to continue building out the communication infrastructure for the decentralized future.
 
@@ -33,8 +32,7 @@ Starting with Ethereum and growing to other networks, EPNS is building the nativ
 
 [**Come join us!**](https://angel.co/company/ethereum-push-notification-service) **|** [**Checkout EPNS**](https://app.epns.io/#/live_walkthrough)
 
-**FAQs**
-========
+# **FAQs**
 
 **What’s the token design / economics?**
 

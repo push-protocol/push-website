@@ -5,8 +5,9 @@ description: Introducing SNS for Push Delivery Nodes — Quickest Way to Bootstr
 authors: [push]
 image: './cover-image.webp'
 text: "Instantly integrate push notifications to your platform of choice, whether it's a wallet, browser extension, Telegram, Twitter, Discord, or any app."
-tags: [ Push Notification ,Web3 ,Development ,Blockchain, Developers]
+tags: [Push Notification, Web3, Development, Blockchain, Developers]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Introducing SNS for Push Delivery Nodes — Quickest Way to Bootstrap Your Wallet, App, or Any Platform to Power Web3 Notifications, Chats & More](./cover-image.webp)
@@ -20,6 +21,7 @@ SNS module allows any developer to receive notifications, chats, or any other fo
 But before deep diving into what it is and how it works, let’s take a step back and understand the delivery nodes of EPNS.
 
 ### What Are Push Delivery Nodes
+
 <i>
 It all starts with a notification… but where should the notification go 🤔
 </i>
@@ -49,6 +51,7 @@ It works by writing all the user web3 wallet communication into Amazon SNS as a 
 <blockquote><i>We understand that most developers want an ideal web3 solution from us, which is what the push delivery node will deliver. However, speaking with some of the devs and observing hosted solutions from The Graph and Lens Protocol made it clear that a web2.5 way needs to exist to ease a developer’s burden while enabling web3 infra.</i></blockquote>
 
 ### 3 Steps for Getting Started With Hosted SNS Module
+
 Integrating the SNS module into your code takes less than 10 mins and contains just 3 steps:
 
 <b>Step 1</b>: Implement a webhook to listen to AWS SNS. Here’s a boilerplate along with specs to get you npm installed and running: https://github.com/push-protocol/push-sns-boilerplate
@@ -65,6 +68,7 @@ Here’s a time-lapse of how everything works… see you on the other side 😃
 <ImageText>How the SNS module works behind the scene, powered by EPNS</ImageText>
 
 #### Useful links:
+
 - EPNS SNS boilerplate specs
-https://github.com/push-protocol/push-sns-boilerplate
+  https://github.com/push-protocol/push-sns-boilerplate
 - Documentation: https://docs.epns.io/developers/developer-zone/receiving-notifications

@@ -1,54 +1,60 @@
 export const PageMeta = {
   HOME: {
     pageTitle: 'Home',
-    pageDescription: 'Homepage of Push Protocol - The communication protocol of Web3'
+    pageDescription:
+      'Homepage of Push Protocol - The communication protocol of Web3',
   },
   TOS: {
     pageTitle: 'Terms of Service',
-    pageDescription: 'Terms of Service of Push Protocol'
+    pageDescription: 'Terms of Service of Push Protocol',
   },
   PRIVACY: {
     pageTitle: 'Privacy Policy',
-    pageDescription: 'Privacy Policy of Push Protocol'
+    pageDescription: 'Privacy Policy of Push Protocol',
   },
   PRIVACYFORMOBILE: {
     pageTitle: 'Mobile Apps Privacy Policy',
-    pageDescription: 'Mobile Apps Privacy Policy of Push Protocol'
+    pageDescription: 'Mobile Apps Privacy Policy of Push Protocol',
   },
   FAQS: {
     pageTitle: 'FAQ',
-    pageDescription: 'Frequently Asked Questions of Push Protocol'
+    pageDescription: 'Frequently Asked Questions of Push Protocol',
   },
   FRENS: {
     pageTitle: 'Frens',
-    pageDescription: 'Explore integrations done by our frens'
+    pageDescription: 'Explore integrations done by our frens',
   },
   SPACES: {
     pageTitle: 'Spaces',
-    pageDescription: "Explore Push Spaces and how to get started with it's integration"
+    pageDescription:
+      "Explore Push Spaces and how to get started with it's integration",
   },
   CHEAT: {
     pageTitle: 'Cheat Sheet',
-    pageDescription: 'Explore Push Cheat Sheet and how to get started with it'
+    pageDescription: 'Explore Push Cheat Sheet and how to get started with it',
   },
   ABOUTUS: {
     pageTitle: 'About Us',
-    pageDescription: "Learn what makes Push Protocol tick... it's the team"
+    pageDescription: "Learn what makes Push Protocol tick... it's the team",
   },
   BRB: {
     pageTitle: 'Billion Reasons to Build (BRB)',
-    pageDescription: 'Solve a Hard Problem from top global web3 projects and earn prize and recognition'
+    pageDescription:
+      'Solve a Hard Problem from top global web3 projects and earn prize and recognition',
   },
   DOCS: {
     pageTitle: 'Documentation Hub',
-    pageDescription: 'One stop shop for all your Push Protocol documentation needs'
+    pageDescription:
+      'One stop shop for all your Push Protocol documentation needs',
   },
   BLOG: {
     pageTitle: 'Push Blog',
-    pageDescription: 'Learn about the latest updates and news from Push Protocol'
+    pageDescription:
+      'Learn about the latest updates and news from Push Protocol',
   },
   BOOTCAMP: {
     pageTitle: 'BRB Bootcamp Campaign',
-    pageDescription: 'BRB Bootcamp is the go-to place to learn every aspect of the web3 ecosystem from fundamentals to shipping your first project'
+    pageDescription:
+      'BRB Bootcamp is the go-to place to learn every aspect of the web3 ecosystem from fundamentals to shipping your first project',
   },
 };

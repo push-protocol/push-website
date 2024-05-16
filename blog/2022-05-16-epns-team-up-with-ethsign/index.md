@@ -4,9 +4,10 @@ title: 'EPNS team up with EthSign to deliver notifications for the next generati
 description: 'EPNS team up with EthSign to deliver notifications for the next generation of E-Signing platforms.'
 authors: [push]
 image: './cover-image.webp'
-text: "EPNS and Hermes DeFi collaborate to bring decentralized push notifications to the DeFi on the Harmony blockchain."
-tags: [ Ethereum ,Epnsproject ,Blockchain ,Newsletter ,Digital Signatures]
+text: 'EPNS and Hermes DeFi collaborate to bring decentralized push notifications to the DeFi on the Harmony blockchain.'
+tags: [Ethereum, Epnsproject, Blockchain, Newsletter, Digital Signatures]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS team up with EthSign to deliver notifications for the next generation of E-Signing platforms.](./cover-image.webp)
@@ -30,4 +31,5 @@ EPNS is proud and thrilled to integrate with EthSign for our pilot program. Duri
 We are excited to join hands with yet another project that is expanding the Web3 ethos of decentralization and bringing even more utility to Web3. We look forward to working with the EthSign team and bringing a decentralized communication layer to the next generation of electronic agreements.
 
 ### About EthSign
+
 EthSign is a decentralized, electronic signing application built on Ethereum that allows users to upload, sign, and verify digital agreements. EthSign brings several advantages to users including decentralized and immutable storage of encrypted files, ease of integration with other protocols and dApps, and transparency in how data is managed that’s entirely subject to users’ consent.

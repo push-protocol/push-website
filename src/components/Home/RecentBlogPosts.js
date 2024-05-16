@@ -1,24 +1,24 @@
 // React + Web3 Essentials
-import React from "react";
+import React from 'react';
 
 // External Components
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // Internal Components
-import { Button, H2, ItemH, ItemV, Span } from "@site/src/css/SharedStyling";
+import { Button, H2, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
 
 // Import Assets
-import BlogPostItemHeaderInfo from "@theme/BlogPostItem/Header/Info";
+import BlogPostItemHeaderInfo from '@theme/BlogPostItem/Header/Info';
 
 // Internal Configs
-import GLOBALS, { device } from "@site/src/config/globals";
+import GLOBALS, { device } from '@site/src/config/globals';
 
 import {
   Date,
   ReadingTime,
   Spacer,
-} from "@site/src/components/reusables/date.tsx";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
+} from '@site/src/components/reusables/date.tsx';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 const RecentBlogPosts = ({ recentPosts = [] }) => {
   const isTablet = useMediaQuery(device.laptop);
@@ -32,32 +32,32 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
         return (
           <BlogPostCardPrimary
             key={index}
-            className="item-3"
+            className='item-3'
             onClick={() => {
               window.open(
                 `/blog/${postItem.metadata.frontMatter.slug}`,
-                "_self",
+                '_self'
               );
             }}
             alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
           >
-            <postItem.Preview loading="lazy" />
+            <postItem.Preview loading='lazy' />
 
             <BodyItem>
               <ItemH
-                alignItems="flex-start"
-                alignSelf="flex-start"
-                color="#fff"
-                className="date"
-                display={isTablet && "none"}
+                alignItems='flex-start'
+                alignSelf='flex-start'
+                color='#fff'
+                className='date'
+                display={isTablet && 'none'}
               >
                 <Date
                   date={postItem.Preview.metadata.date}
                   formattedDate={postItem.Preview.metadata.formattedDate}
-                  mr={"3px"}
+                  mr={'3px'}
                 />
                 {typeof postItem.Preview.metadata.readingTime !==
-                  "undefined" && (
+                  'undefined' && (
                   <>
                     <Spacer />
                     <ReadingTime
@@ -68,12 +68,12 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
               </ItemH>
 
               <H2
-                margin={isTablet ? "0px 0 24px 0" : "8px 0"}
-                textAlign="left"
-                color="#fff"
-                lineHeight="135%"
-                fontFamily="FK Grotesk Neue"
-                letterSpacing="normal"
+                margin={isTablet ? '0px 0 24px 0' : '8px 0'}
+                textAlign='left'
+                color='#fff'
+                lineHeight='135%'
+                fontFamily='FK Grotesk Neue'
+                letterSpacing='normal'
               >
                 {postItem.metadata.title}
               </H2>
@@ -95,21 +95,21 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
             onClick={() => {
               window.open(
                 `/blog/${postItem.metadata.frontMatter.slug}`,
-                "_self",
+                '_self'
               );
             }}
             alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
           >
-            <postItem.Preview loading="lazy" />
+            <postItem.Preview loading='lazy' />
             <TitleItem>
               <H2
-                margin="auto 0"
-                textAlign="left"
-                fontWeight="500"
-                color="#fff"
-                lineHeight="150%"
-                fontFamily="FK Grotesk Neue"
-                letterSpacing="normal"
+                margin='auto 0'
+                textAlign='left'
+                fontWeight='500'
+                color='#fff'
+                lineHeight='150%'
+                fontFamily='FK Grotesk Neue'
+                letterSpacing='normal'
               >
                 {postItem.metadata.title}
               </H2>

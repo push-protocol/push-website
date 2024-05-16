@@ -11,6 +11,7 @@ tags: [Ethereum
 ,Nft
 ,Collaboration]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Fabwelt partners with EPNS to bring push notifications to crypto gaming](./cover-image.webp)
@@ -25,14 +26,13 @@ Fabwelt is a revolutionary concept which brings the world of NFTs and Gaming tog
 
 With respect to this, EPNS is glad to announce our pilot program with Fabwelt to decentralize their communication layer for their users/gamers. During our pilot program we will be:
 
-*   **Creating a channel for Fabwelt** that will allow them to communicate with their users about tournament timelines such as the _Start_ and _End_ of tournaments, and major announcements such as _winner declaration, giveaways, etc._
-*   **Creating a channel for their Marketplace** which will notify users about _new in-game NFT drops, listings, and ‘Almost Out of Stock’ alerts_
-*   **Creating a channel for in-game invitations** during gameplay, or user-to-user and organizer-to-user invites to join a game room.
+- **Creating a channel for Fabwelt** that will allow them to communicate with their users about tournament timelines such as the _Start_ and _End_ of tournaments, and major announcements such as _winner declaration, giveaways, etc._
+- **Creating a channel for their Marketplace** which will notify users about _new in-game NFT drops, listings, and ‘Almost Out of Stock’ alerts_
+- **Creating a channel for in-game invitations** during gameplay, or user-to-user and organizer-to-user invites to join a game room.
 
 We are glad to be integrating with Fabwelt and explore EPNS’s utilities within the gaming sector.
 
-**About Fabwelt**
-=================
+# **About Fabwelt**
 
 Fabwelt is a revolutionary concept that brings the worlds of blockchain, NFTs, and gaming together. We leverage blockchain technology to build an advanced gaming platform and bring the future to gamers in terms of utilities, incentives, and rewards.
 
@@ -41,7 +41,3 @@ Fabwelt will introduce a wide range of capabilities on the Polygon network such 
 Learn more about Fabwelt by visiting our website fabwelt.com or ask questions on our community channels like Discord or Telegram. Follow us on Twitter for the latest news.
 
 [Website](https://www.fabwelt.com/) |[Whitepaper](https://www.fabwelt.com/public/Fabwelt-whitepaper.pdf) | [Telegram](https://t.me/FabweltToken) | [Discord](https://discord.com/invite/Q3cetjFRTG) | [LinkedIn](https://www.linkedin.com/company/fabwelttoken) |[Twitter](https://twitter.com/FabweltToken) | [GitHub](https://github.com/Fabwelt)
-
-
-
-

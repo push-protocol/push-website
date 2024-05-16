@@ -5,7 +5,7 @@ hide_title: true
 slug: ./manage-user
 displayed_sidebar: pushVideoSidebar
 sidebar_position: 3
-image: "/assets/docs/previews/docs_video_develop--manage_user.png"
+image: '/assets/docs/previews/docs_video_develop--manage_user.png'
 ---
 
 # Manage user overview
@@ -16,9 +16,9 @@ These APIs are useful when you want to manage the **Push User** profile. This in
   <title>Manage User | Push Video | Push Documentation</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import Details from "@theme/Details";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
 
 ## User info API
 
@@ -42,7 +42,7 @@ const response = await userAlice.info();
 | Param     | Type                      | Sub-Type | Default | Remarks                                                                                                                                                                                                                                |
 | --------- | ------------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `options` | `InfoOptions`             | -        | -       | Optional configuration properties                                                                                                                                                                                                      |
-| -         | `options.overrideAccount` | -        | -       | The [account](/docs/video/supported-wallet-standards "Push Video support wallet standards") for which info is retrieved, can override to get info of other accounts not owned by the user. If not provided, it is derived from signer. |
+| -         | `options.overrideAccount` | -        | -       | The [account](/docs/video/supported-wallet-standards 'Push Video support wallet standards') for which info is retrieved, can override to get info of other accounts not owned by the user. If not provided, it is derived from signer. |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -134,7 +134,7 @@ const response = await userAlice.profile.info();
 | Param     | Type                      | Sub-Type | Default | Remarks                                                                                                                                                                                                                                |
 | --------- | ------------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `options` | `InfoOptions`             | -        | -       | Optional configuration properties                                                                                                                                                                                                      |
-| -         | `options.overrideAccount` | -        | -       | The [account](/docs/video/supported-wallet-standards "Push Video support wallet standards") for which info is retrieved, can override to get info of other accounts not owned by the user. If not provided, it is derived from signer. |
+| -         | `options.overrideAccount` | -        | -       | The [account](/docs/video/supported-wallet-standards 'Push Video support wallet standards') for which info is retrieved, can override to get info of other accounts not owned by the user. If not provided, it is derived from signer. |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -163,10 +163,10 @@ Used for updating profile of a user like name, avatar, description, etc.
 ```typescript
 // userAlice.profile.update({options?})
 const response = await userAlice.profile.update({
-  name: "Alice",
-  description: "Alice is a software developer",
+  name: 'Alice',
+  description: 'Alice is a software developer',
   picture:
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzUlEQVR4AcXBsWlDMRiF0c8XTeAJPIAgoFbgQew1PIbXyKsyhUGtCqM6ZAJX6Z32fykM4hnuObv71++TYJRKlHtji1EqUe6NSJgJM2G2W74/nkzIvfHKKJUZwkyYCbOUe+Odcm/MEGbCTJil2/VMdLx8Eo1S2SL3RnS7nomEmTATZmm//BANKlHujS1GqUT7hRVhJsyEWWLSKJVXcm/MEGbCTJgl/sm9EY1SmTFKJcq9EY1SiYSZMBNm6XE6sHJhJffGOz1OByJhJsyE2R/3lDA4e9QQhAAAAABJRU5ErkJggg==", // base64 encoded image
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAzUlEQVR4AcXBsWlDMRiF0c8XTeAJPIAgoFbgQew1PIbXyKsyhUGtCqM6ZAJX6Z32fykM4hnuObv71++TYJRKlHtji1EqUe6NSJgJM2G2W74/nkzIvfHKKJUZwkyYCbOUe+Odcm/MEGbCTJil2/VMdLx8Eo1S2SL3RnS7nomEmTATZmm//BANKlHujS1GqUT7hRVhJsyEWWLSKJVXcm/MEGbCTJgl/sm9EY1SmTFKJcq9EY1SiYSZMBNm6XE6sHJhJffGOz1OByJhJsyE2R/3lDA4e9QQhAAAAABJRU5ErkJggg==', // base64 encoded image
 });
 ```
 
@@ -342,7 +342,7 @@ Used for updating encryption version, algo or NFT user password. In case of NFT 
 // Wallet User Update,
 // Usually not required as it's handled internally by the SDK to automatically update to recommended encryption type
 const walletAlice = await userAlice.encryption.update(
-  CONSTANTS.USER.ENCRYPTION_TYPE.PGP_V3,
+  CONSTANTS.USER.ENCRYPTION_TYPE.PGP_V3
 );
 
 // NFT User Update
@@ -353,10 +353,10 @@ const nftAlice = await userAlice.encryption.update(
   {
     versionMeta: {
       NFTPGP_V1: {
-        password: "new_password",
+        password: 'new_password',
       },
     },
-  },
+  }
 );
 ```
 

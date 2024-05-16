@@ -3,21 +3,21 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React from "react";
+import React from 'react';
 
 // External Components
-import { useTranslation } from "react-i18next";
-import { AiOutlineArrowRight } from "react-icons/ai";
-import { BiLoaderAlt } from "react-icons/bi";
-import styled from "styled-components";
+import { useTranslation } from 'react-i18next';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import { BiLoaderAlt } from 'react-icons/bi';
+import styled from 'styled-components';
 
 // Internal Components
-import { Span } from "@site/src/css/SharedStyling";
+import { Span } from '@site/src/css/SharedStyling';
 
-import useEmailValidationAndSend from "@site/src/hooks/useEmailValidationAndSend";
+import useEmailValidationAndSend from '@site/src/hooks/useEmailValidationAndSend';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import { device } from '@site/src/config/globals';
 
 export type signupType = {
   showButton?: boolean;
@@ -42,9 +42,9 @@ export const MailingSignup = (props: signupType) => {
         onSubmit={onEmailSubmit}
       >
         <SignupInputField
-          type="text"
-          name="email"
-          placeholder="Email Address"
+          type='text'
+          name='email'
+          placeholder='Email Address'
           background={props.background}
           inputWidth={props.inputWidth}
           tabIndex={0}
@@ -52,10 +52,10 @@ export const MailingSignup = (props: signupType) => {
         />
         {props.showButton && (
           <>
-            <Button tabIndex={0} type="submit">
+            <Button tabIndex={0} type='submit'>
               {isLoading
-                ? t("home.email-section.loading-submit-button")
-                : t("home.email-section.submit-button")}
+                ? t('home.email-section.loading-submit-button')
+                : t('home.email-section.submit-button')}
             </Button>
             {isLoading ? <MaskInput /> : null}
           </>
@@ -63,32 +63,32 @@ export const MailingSignup = (props: signupType) => {
         {props.showArrow && (
           <>
             <IconButton
-              aria-label="Subscribe"
-              className="icon"
+              aria-label='Subscribe'
+              className='icon'
               tabIndex={0}
-              type="submit"
+              type='submit'
             >
               {!isLoading && <AiOutlineArrowRight />}
               {/* {isLoading && <MaskInput />} */}
-              {isLoading && <BiLoaderAlt size={24} className="loader" />}
+              {isLoading && <BiLoaderAlt size={24} className='loader' />}
             </IconButton>
           </>
         )}
       </Wrapper>
 
       {apiResponse && (
-        <ResponseSpan className="msg" color="green">
+        <ResponseSpan className='msg' color='green'>
           {apiResponse}
         </ResponseSpan>
       )}
       {!apiResponse && emailError && (
-        <ResponseSpan className="msg" color="#D98AEC">
+        <ResponseSpan className='msg' color='#D98AEC'>
           {emailError}
         </ResponseSpan>
       )}
     </Box>
   );
-}
+};
 
 const Box = styled.div`
   display: flex;
@@ -120,8 +120,8 @@ const Wrapper = styled.form`
   flex: 1;
   column-gap: 6px;
   align-items: center;
-  background: ${(props) => props.background || "#ffffff"};
-  border-bottom: 1px solid ${(props) => props.border || "#ffffff"};
+  background: ${(props) => props.background || '#ffffff'};
+  border-bottom: 1px solid ${(props) => props.border || '#ffffff'};
   padding: 5px 0px;
   justify-content: space-between;
 
@@ -160,10 +160,10 @@ const SignupInputField = styled.input`
   font-size: 15px;
   line-height: normal;
   letter-spacing: -0.03em;
-  color: #A5ABB8;
-  background: ${(props) => props.background || "#ffffff"};
+  color: #a5abb8;
+  background: ${(props) => props.background || '#ffffff'};
   // min-width: 220px;
-  width: ${(props) => props.inputWidth || "100%"};
+  width: ${(props) => props.inputWidth || '100%'};
   // padding: 0px;
   // padding-left: 8px;
 
@@ -172,7 +172,7 @@ const SignupInputField = styled.input`
   }
 
   &:placeholder {
-    color: #A5ABB8; 
+    color: #a5abb8;
     opacity: 1;
   }
 `;
@@ -224,5 +224,4 @@ const ResponseSpan = styled(Span)`
   font-weight: 400;
   font-size: 15px;
   margin-top: 12px;
-
 `;

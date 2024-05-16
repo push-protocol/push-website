@@ -4,9 +4,10 @@ title: 'EPNS Contract V2 features'
 authors: [push]
 image: './cover-image.webp'
 description: 'EPNS Contract V2 features'
-text: "As Q1 came to an end, one of the most significant tasks that we had was to plan and initiate the design for the 2nd version of our smart contracts."
-tags: [Roadmap ,Blockchain ,Ethereum, Notifications, Newsletter]
+text: 'As Q1 came to an end, one of the most significant tasks that we had was to plan and initiate the design for the 2nd version of our smart contracts.'
+tags: [Roadmap, Blockchain, Ethereum, Notifications, Newsletter]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Contract V2 features](./cover-image.webp)
@@ -32,6 +33,7 @@ However, with the deployment of the new version of the contract, the channel cre
 The usage of the $PUSH token for channel creation is one of the imperative steps in the direction of having more utility for our $PUSH token. The underlying channel creation mechanism in the smart contract, however, shall remain the same.
 
 ### 2. Allowing PUSH Holders to CLAIM their rewards
+
 It can be undoubtedly stated that the functionality for claiming rewards has been one of the most awaited features for our EPNS Core smart contracts, and is probably the star function of our 2nd version of the smart contract.⭐️
 
 In order to provide some colors to it, the intention of claim functionality is to not just limit our users to receiving notifications but also allow them to earn and claim their rewards in $PUSH tokens for being active users of the protocol.
@@ -51,6 +53,7 @@ Moreover, while incentives were initially planned to be distributed only among t
 <blockquote><i>More details about the reward distribution mechanism of the EPNS Core contract shall be shared soon</i></blockquote>
 
 ### 3. Channel Owners will be able to UPDATE-EDIT their channel details
+
 The new version of the EPNS core shall include the required function that allows a channel owner to edit his channel’s details.
 
 Before I dive deep into this feature, let’s quickly understand what exactly do I mean by channel details.
@@ -88,6 +91,7 @@ The above-mentioned procedures allow the users and subscribers to get a clear an
 Moreover, the strict requirement of fees for editing channel details and increasing the fees with every new edit penalizes and discourages the channel owner to edit important channel details time and again.
 
 ### 4. Functionalities for Wallet-To-Wallet Feature
+
 The Wallet-to-Wallet (W2W) chat feature is one of our major milestones of this year and an incredibly interesting feature for the entire Web3 world.
 
 The new version of our smart contracts shall also include the crucial functions in order to implement this feature adequately in our protocol.

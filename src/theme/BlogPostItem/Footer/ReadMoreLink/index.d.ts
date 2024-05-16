@@ -6,4 +6,6 @@
  */
 /// <reference types="react" />
 import type { Props } from '@theme/BlogPostItem/Footer/ReadMoreLink';
-export default function BlogPostItemFooterReadMoreLink(props: Props): JSX.Element;
+export default function BlogPostItemFooterReadMoreLink(
+  props: Props
+): JSX.Element;

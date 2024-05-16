@@ -10,6 +10,7 @@ tags: [ Gitcoin
 ,Quadraticfunding
 ,Sponsorship]
 ---
+
 import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS sponsoring Gitcoin Grants Round 13!](./cover-image.webp)
@@ -32,16 +33,11 @@ Harsh Rajat w/ Kevin Owocki on how powerful the Gitcoin Grants is!
 
 Gitcoin has always been close to EPNS, since our time in Grants Round 7, where we were the grantees and emerged as one of the **top 5** projects with **210 contributors!** The contribution and enthusiasm and support from the community, led us to successfully raise our seed round and formed partnerships with not only Gitcoin but many major Web3 protocols. Shortly after, we announced our [**partnership with Gitcoin**](https://twitter.com/epnsproject/status/1388131533735661573?s=20).
 
-
 The partnership builds on the EPNS platform to allow notifications for the grant process, better connecting grantees to grantors.
 
 This journey with Gitcoin led us to believe that we need to give back to the community that gave us so much, thus we really believed that paying it forward would be the best approach to give back to the community and decided to become the grantors of Gitcoin Grants Round **11 and 12**, where we sponsored **$50K** each round.
 
-
-
 **The latest Gitcoin Grants Round (Grants Round 13) kicked off on March 9th and will run through till March 24th**, and we are thrilled to be sponsoring yet another round, staying true to our grantees to grantors journey with Gitcoin.
-
-
 
 **How to apply for Gitcoin Grants?**
 
@@ -51,9 +47,9 @@ If you’re building an open-source project, you could consider creating a grant
 
 Grants are only eligible to receive contributions after approval from the Gitcoin team. In order to create a new grant and get it listed for the current Grants Round,
 
-*   Head to Gitcoin.co and [**create a Grant**](https://gitcoin.co/grants/new).
-*   Add relevant tags and information to create the Grant (Note: Ensure you have clear project title and description.
-*   Once your grant is approved it will be eligible to be part of the current and subsequent Gitcoin Grants Rounds.
+- Head to Gitcoin.co and [**create a Grant**](https://gitcoin.co/grants/new).
+- Add relevant tags and information to create the Grant (Note: Ensure you have clear project title and description.
+- Once your grant is approved it will be eligible to be part of the current and subsequent Gitcoin Grants Rounds.
 
 Let’s _push_ towards driving the ambitions and goals of fellow builders in the space, and support those who are building public goods for the betterment of the internet. We believe the community that backed us during our original grant back in Round 7, helped us grow to become who we are today, and we are glad to help and push other projects to grow the same.
 
@@ -64,5 +60,3 @@ Let us build the future of web3 together, by paying it forward in an open and tr
 Have you contributed to your favourite projects on Gitcoin Grants? If not, what are you waiting for? Head on over to [**Gitcoin Grants**](https://gitcoin.co/grants/) and fund a grant today! 🌱🌱🌱
 
 \_\_
-
-

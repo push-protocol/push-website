@@ -5,7 +5,7 @@ hide_title: true
 slug: ./all-api-calls
 displayed_sidebar: pushChatSidebar
 sidebar_position: 13
-image: "/assets/docs/previews/docs_chat_develop--all_api_calls.png"
+image: '/assets/docs/previews/docs_chat_develop--all_api_calls.png'
 ---
 
 # All API Calls
@@ -13,11 +13,13 @@ image: "/assets/docs/previews/docs_chat_develop--all_api_calls.png"
 This tutorial is designed to get you up and going by providing a step wise guide to use and explore the Push SDK.
 
 <head>
-  <title>Push SDK APIs playground tutorial | Push Chat | Push Documentation</title>
+  <title>
+    {`Push SDK APIs playground tutorial | Push Chat | Push Documentation`}
+  </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Step 1 - Setup and Installation
 
@@ -59,8 +61,8 @@ Initialization is a crucial step before utilizing the SDK. It involves creating 
 ```js
 // index.mjs
 
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
-import { ethers } from "ethers";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
 
 /**
  * Private key of the user can be exported from any wallet such as Metamask
@@ -75,8 +77,8 @@ const bobSigner = new ethers.Wallet.createRandom();
 const bobAddress = await bobSigner.getAddress();
 
 /** Initialization */
-const userAlice = await PushAPI.initialize(aliceSigner, { env: "prod" });
-const userBob = await PushAPI.initialize(bobSigner, { env: "prod" });
+const userAlice = await PushAPI.initialize(aliceSigner, { env: 'prod' });
+const userBob = await PushAPI.initialize(bobSigner, { env: 'prod' });
 
 /** Get details of the initialized user */
 const userAliceInfo = await userAlice.info();

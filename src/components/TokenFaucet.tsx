@@ -2,11 +2,11 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React, { useRef, useState } from "react";
+import React, { useRef, useState } from 'react';
 
 // External Components
-import { useClickAway } from "react-use";
-import styled from "styled-components";
+import { useClickAway } from 'react-use';
+import styled from 'styled-components';
 
 // Internal Components
 import {
@@ -16,19 +16,19 @@ import {
   ItemH,
   ItemV,
   Span,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 // Import Assets
-import Discord from "@site/static/assets/website/brb/Discord-BRB.svg";
-import X from "@site/static/assets/website/brb/X-BRB.svg";
-import Close from "@site/static/assets/website/brb/others/Close.svg";
-import DiscordCompleted from "@site/static/assets/website/brb/others/Discord-Completed.svg";
-import XCompleted from "@site/static/assets/website/brb/others/X-Completed.svg";
-import XRight from "@site/static/assets/website/brb/others/right-1.svg";
-import DiscordRight from "@site/static/assets/website/brb/others/right-2.svg";
+import Discord from '@site/static/assets/website/brb/Discord-BRB.svg';
+import X from '@site/static/assets/website/brb/X-BRB.svg';
+import Close from '@site/static/assets/website/brb/others/Close.svg';
+import DiscordCompleted from '@site/static/assets/website/brb/others/Discord-Completed.svg';
+import XCompleted from '@site/static/assets/website/brb/others/X-Completed.svg';
+import XRight from '@site/static/assets/website/brb/others/right-1.svg';
+import DiscordRight from '@site/static/assets/website/brb/others/right-2.svg';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import { device } from '@site/src/config/globals';
 
 export const TokenFaucet = ({
   handleFaucet,
@@ -41,7 +41,7 @@ export const TokenFaucet = ({
   const clickRef = useRef(null);
 
   const openLink = (link: string) => {
-    window.open(link, "_blank");
+    window.open(link, '_blank');
   };
 
   useClickAway(clickRef, () => handleFaucet(false));
@@ -53,35 +53,38 @@ export const TokenFaucet = ({
           width={108}
           height={41}
           src={
-            require(`@site/static/assets/website/brb/others/PushLogoTextWhite.webp`)
-              .default
+            require(
+              `@site/static/assets/website/brb/others/PushLogoTextWhite.webp`
+            ).default
           }
           srcSet={`${
-            require(`@site/static/assets/website/brb/others/PushLogoTextWhite@2x.webp`)
-              .default
+            require(
+              `@site/static/assets/website/brb/others/PushLogoTextWhite@2x.webp`
+            ).default
           } 2x, ${
-            require(`@site/static/assets/website/brb/others/PushLogoTextWhite@3x.webp`)
-              .default
+            require(
+              `@site/static/assets/website/brb/others/PushLogoTextWhite@3x.webp`
+            ).default
           } 3x`}
           alt={`Image showing BRB Chat is powered by Push Chat`}
         />
         <Span
-          fontSize="13px"
-          color="#F0A5FC"
-          margin="5px 0px 0px 16px"
-          flex="1"
-          letterSpacing="1.5px"
-          style={{ maxHeight: "20px" }}
+          fontSize='13px'
+          color='#F0A5FC'
+          margin='5px 0px 0px 16px'
+          flex='1'
+          letterSpacing='1.5px'
+          style={{ maxHeight: '20px' }}
         >
           TOKEN FAUCET
         </Span>
         <Button
-          position="absolute"
-          background="transparent"
-          padding="0px"
-          style={{ top: "5px", right: "5px" }}
+          position='absolute'
+          background='transparent'
+          padding='0px'
+          style={{ top: '5px', right: '5px' }}
           onClick={() => handleFaucet(false)}
-          alignSelf="flex-end"
+          alignSelf='flex-end'
         >
           <Close />
         </Button>
@@ -90,76 +93,76 @@ export const TokenFaucet = ({
         <Label>
           1. Follow, Post on X and mention your wallet address in the post
         </Label>
-        <ItemH justifyContent="flex-start" alignItems="center" gap="8px">
+        <ItemH justifyContent='flex-start' alignItems='center' gap='8px'>
           <ButtonItem
-            borderRadius="12px"
-            background={isFollowed ? "#FFF" : "#25AAF5"}
-            border="1px solid #25AAF5"
-            padding="6.5px 8.5px"
-            onClick={() => openLink("https://twitter.com/pushprotocol")}
+            borderRadius='12px'
+            background={isFollowed ? '#FFF' : '#25AAF5'}
+            border='1px solid #25AAF5'
+            padding='6.5px 8.5px'
+            onClick={() => openLink('https://twitter.com/pushprotocol')}
           >
             {!isPosted && <X />}
             {isPosted && <XCompleted />}
             <Span
-              fontSize="16px"
-              fontWeight="400"
-              color={isFollowed ? "#25AAF5" : "#FFF"}
+              fontSize='16px'
+              fontWeight='400'
+              color={isFollowed ? '#25AAF5' : '#FFF'}
             >
-              {isFollowed ? "Following" : "Follow @pushprotocol"}
+              {isFollowed ? 'Following' : 'Follow @pushprotocol'}
             </Span>
             {isFollowed && (
-              <Icon src={XRight} height="18px" width="18px" alt="x" />
+              <Icon src={XRight} height='18px' width='18px' alt='x' />
             )}
           </ButtonItem>
           <ButtonItem
-            borderRadius="12px"
-            background={isPosted ? "#FFF" : "#25AAF5"}
-            border="1px solid #25AAF5"
-            padding="6.5px 8.5px"
+            borderRadius='12px'
+            background={isPosted ? '#FFF' : '#25AAF5'}
+            border='1px solid #25AAF5'
+            padding='6.5px 8.5px'
             onClick={() =>
               openLink(
-                "https://twitter.com/intent/tweet?text=Getting some $PUSH Tokens at Billion Reasons to Build %23brbindia faucet for my <Your Wallet Address> wallet 🔔 %0A Visit : push.org/brb"
+                'https://twitter.com/intent/tweet?text=Getting some $PUSH Tokens at Billion Reasons to Build %23brbindia faucet for my <Your Wallet Address> wallet 🔔 %0A Visit : push.org/brb'
               )
             }
           >
             {!isPosted && <X />}
             {isPosted && <XCompleted />}
             <Span
-              fontSize="16px"
-              fontWeight="400"
-              color={isPosted ? "#25AAF5" : "#FFF"}
+              fontSize='16px'
+              fontWeight='400'
+              color={isPosted ? '#25AAF5' : '#FFF'}
             >
-              {isPosted ? "Posted" : "Post about BRB"}
+              {isPosted ? 'Posted' : 'Post about BRB'}
             </Span>
             {isPosted && (
-              <Icon src={XRight} height="18px" width="18px" alt="x" />
+              <Icon src={XRight} height='18px' width='18px' alt='x' />
             )}
           </ButtonItem>
         </ItemH>
       </InputContainer>
       <InputContainer>
         <Label>
-          2. Join Discord and Share a link of your post in{" "}
-          <span style={{ color: "#F878DC" }}>#brb-faucet</span>
+          2. Join Discord and Share a link of your post in{' '}
+          <span style={{ color: '#F878DC' }}>#brb-faucet</span>
         </Label>
         <ButtonItem
-          borderRadius="12px"
-          background={isJoined ? "#FFF" : "#3C63C6"}
-          border="1px solid #3C63C6"
-          padding="6.5px 8.5px"
-          onClick={() => openLink("https://discord.gg/cTRqvYzXpW")}
+          borderRadius='12px'
+          background={isJoined ? '#FFF' : '#3C63C6'}
+          border='1px solid #3C63C6'
+          padding='6.5px 8.5px'
+          onClick={() => openLink('https://discord.gg/cTRqvYzXpW')}
         >
           {!isJoined && <Discord />}
           {isJoined && <DiscordCompleted />}
           <Span
-            fontSize="16px"
-            fontWeight="400"
-            color={isJoined ? "#3C63C6" : "#FFF"}
+            fontSize='16px'
+            fontWeight='400'
+            color={isJoined ? '#3C63C6' : '#FFF'}
           >
-            {isJoined ? "Joined" : "Join Discord and Share link"}
+            {isJoined ? 'Joined' : 'Join Discord and Share link'}
           </Span>
           {isJoined && (
-            <Icon src={DiscordRight} height="18px" width="18px" alt="x" />
+            <Icon src={DiscordRight} height='18px' width='18px' alt='x' />
           )}
         </ButtonItem>
       </InputContainer>
@@ -178,13 +181,18 @@ export const TokenFaucet = ({
         Claim 10 PUSH
       </ButtonItem> */}
       <ItemV
-        justifyContent="flex-start"
-        alignItems="flex-start"
-        margin="10px 0px 0px 10px"
-        gap="3px"
+        justifyContent='flex-start'
+        alignItems='flex-start'
+        margin='10px 0px 0px 10px'
+        gap='3px'
       >
-        <Span fontSize="10px" fontWeight="300" color="#B5BCD6">* Twitter account must be 30 days old with 50+ followers to claim.</Span>
-        <Span fontSize="10px" fontWeight="300" color="#B5BCD6">* PUSH will be distributed by the Push Team on a first come first serve basis in 24 hours.</Span>
+        <Span fontSize='10px' fontWeight='300' color='#B5BCD6'>
+          * Twitter account must be 30 days old with 50+ followers to claim.
+        </Span>
+        <Span fontSize='10px' fontWeight='300' color='#B5BCD6'>
+          * PUSH will be distributed by the Push Team on a first come first
+          serve basis in 24 hours.
+        </Span>
       </ItemV>
     </Container>
   );
@@ -214,8 +222,8 @@ const HeaderContainer = styled(ItemH)`
 `;
 
 const Icon = styled.img`
-  width: ${(props) => props.width || "16px"};
-  height: ${(props) => props.height || "16px"};
+  width: ${(props) => props.width || '16px'};
+  height: ${(props) => props.height || '16px'};
   cursor: pointer;
 `;
 

@@ -5,7 +5,7 @@ hide_title: true
 slug: ./manage-subscriptions
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 9
-image: "/assets/docs/previews/docs_notifications_develop--manage_subscriptions.png"
+image: '/assets/docs/previews/docs_notifications_develop--manage_subscriptions.png'
 ---
 
 # Manage subscriptions overview
@@ -13,19 +13,20 @@ image: "/assets/docs/previews/docs_notifications_develop--manage_subscriptions.p
 These APIs are useful for managing subscriptions for specific channels including subscribing to a channel, indicating settings for a channel or unsubscribing from a channel.
 
 <head>
-  <title>{"Managa Subscriptions | Push Notifications | Push Documentation"}
+  <title>
+    {`Manage Subscriptions | Push Notifications | Push Documentation`}
   </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import Details from "@theme/Details";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AFocus,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 ## Subscribe channel API
 
@@ -37,7 +38,7 @@ Channel is any protocol that has activated themselves to send notifications. Use
 ```typescript
 // userAlice.notification.subscribe(channel, {settings?})
 const response = await userAlice.notification.subscribe(
-  `eip155:11155111:${channelAddress}`,
+  `eip155:11155111:${channelAddress}`
 );
 
 // Another example but with settings
@@ -46,11 +47,11 @@ const response = await userAlice.notification.subscribe(
   {
     settings: [
       // settings are dependent on channel
-      { enabled: true, value: "1" }, // setting 1
+      { enabled: true, value: '1' }, // setting 1
       { enabled: false }, // setting 2
-      { enabled: true, value: "50" }, // setting 3
+      { enabled: true, value: '50' }, // setting 3
     ],
-  },
+  }
 );
 ```
 
@@ -92,7 +93,7 @@ const response = await userAlice.notification.subscribe(
 ```typescript
 // userAlice.notification.unsubscribe(channel)
 const unsubscribeResponse = await userAlice.notification.unsubscribe(
-  `eip155:11155111:${channelAddress}`, // channel to unsubscribe
+  `eip155:11155111:${channelAddress}` // channel to unsubscribe
 );
 ```
 

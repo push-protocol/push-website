@@ -5,7 +5,7 @@ hide_title: true
 slug: ./types-of-notification
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 11
-image: "/assets/docs/previews/docs_notifications_develop--types_of_notification.png"
+image: '/assets/docs/previews/docs_notifications_develop--types_of_notification.png'
 ---
 
 # Types of notification overview
@@ -13,17 +13,19 @@ image: "/assets/docs/previews/docs_notifications_develop--types_of_notification.
 Before sending notifications, it's important to learn about their types to help in choosing what notifications you want to send and when.
 
 <head>
-  <title>Types of Notifications | Push Notifications | Push Documentation</title>
+  <title>
+    {`Types of Notifications | Push Notifications | Push Documentation`}
+  </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AFocus,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 ## Types of Notification
 
@@ -42,8 +44,8 @@ This type of notification is broadcasted or sent to all the subscribers of a cha
 ```typescript
 // userAlice.channel.send([recipients], {options?})
 // to send a broadcast notification - pass '*' in recipients array
-const broadcastNotif = await userAlice.channel.send(["*"], {
-  notification: { title: "test", body: "test" },
+const broadcastNotif = await userAlice.channel.send(['*'], {
+  notification: { title: 'test', body: 'test' },
 });
 ```
 
@@ -55,13 +57,13 @@ This type of notification is sent to a single wallet address.
 // userAlice.channel.send([recipients], {options?})
 // to send a targeted notification - pass that single wallet address in recipients array
 const targetedNotif = await userAlice.channel.send(
-  ["0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666"],
+  ['0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666'],
   {
     notification: {
-      title: "test",
-      body: "test",
+      title: 'test',
+      body: 'test',
     },
-  },
+  }
 );
 ```
 
@@ -77,13 +79,13 @@ const subsetNotif = await userAlice.channel.send(
     randomWallet1,
     randomWallet2,
     signer.address,
-    "0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666",
+    '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666',
   ],
   {
     notification: {
-      title: "test",
-      body: "test",
+      title: 'test',
+      body: 'test',
     },
-  },
+  }
 );
 ```

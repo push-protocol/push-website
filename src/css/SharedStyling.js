@@ -1,9 +1,9 @@
 // External Components
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 // Internal Configs
-import GLOBALS, { device, structure } from "@site/src/config/globals";
+import GLOBALS, { device, structure } from '@site/src/config/globals';
 /**
  * Usage Hierarchy
  *
@@ -17,14 +17,14 @@ import GLOBALS, { device, structure } from "@site/src/config/globals";
 
 export const HeroHeader = styled.h1`
   font-family: ${(props) =>
-    props.fontFamily || "Strawford, Helvetica, sans-serif"};
+    props.fontFamily || 'Strawford, Helvetica, sans-serif'};
   color: ${(props) => props.color || GLOBALS.COLORS.FONT_LIGHT};
   font-size: 68px;
   line-height: 110%;
   font-style: normal;
   font-weight: 700;
   letter-spacing: -0.03em;
-  text-align: ${(props) => props.textAlign || "initial"};
+  text-align: ${(props) => props.textAlign || 'initial'};
   text-transform: none;
   text-shadow: none;
   display: flex;
@@ -38,43 +38,43 @@ export const HeroHeader = styled.h1`
 
 // Section covers the entire width and height
 export const Section = styled.section`
-  align-items: ${(props) => props.alignItems || "center"};
-  align-self: ${(props) => props.alignSelf || "stretch"};
+  align-items: ${(props) => props.alignItems || 'center'};
+  align-self: ${(props) => props.alignSelf || 'stretch'};
   background: ${(props) =>
     props.gradient
       ? props.gradient
       : props.background
         ? props.background
-        : "transparent" || "transparent"};
-  display: ${(props) => props.display || "flex"};
-  flex: ${(props) => props.flex || "1"};
-  flex-direction: ${(props) => props.flexDirection || "row"};
-  justify-content: ${(props) => props.justifyContent || "center"};
-  width: ${(props) => props.width || "100%"};
-  margin: ${(props) => props.margin || "0px"};
-  min-height: ${(props) => props.minHeight || "auto"};
-  overflow: ${(props) => props.overflow || "initial"};
-  padding: ${(props) => props.padding || "0px"};
-  position: ${(props) => props.position || "relative"};
+        : 'transparent' || 'transparent'};
+  display: ${(props) => props.display || 'flex'};
+  flex: ${(props) => props.flex || '1'};
+  flex-direction: ${(props) => props.flexDirection || 'row'};
+  justify-content: ${(props) => props.justifyContent || 'center'};
+  width: ${(props) => props.width || '100%'};
+  margin: ${(props) => props.margin || '0px'};
+  min-height: ${(props) => props.minHeight || 'auto'};
+  overflow: ${(props) => props.overflow || 'initial'};
+  padding: ${(props) => props.padding || '0px'};
+  position: ${(props) => props.position || 'relative'};
 `;
 
 export const Content = styled.div`
-  display: ${(props) => props.display || "flex"};
-  flex-direction: ${(props) => props.flexDirection || "column"};
-  position: ${(props) => props.position || "relative"};
+  display: ${(props) => props.display || 'flex'};
+  flex-direction: ${(props) => props.flexDirection || 'column'};
+  position: ${(props) => props.position || 'relative'};
 
-  flex: ${(props) => props.flex || "1"};
-  align-self: ${(props) => props.alignSelf || "stretch"};
-  width: ${(props) => props.width || "auto"};
+  flex: ${(props) => props.flex || '1'};
+  align-self: ${(props) => props.alignSelf || 'stretch'};
+  width: ${(props) => props.width || 'auto'};
   max-width: ${(props) =>
     props.maxWidth ||
     `${GLOBALS.STRUCTURE.MAX_WIDTH + structure.PADDING.DESKTOP.LEFT + structure.PADDING.DESKTOP.RIGHT}px`};
   display: flex;
-  justify-content: ${(props) => props.justifyContent || "center"};
-  box-sizing: ${(props) => props.boxSizing || "border-box"};
-  margin: ${(props) => props.margin || "initial"};
+  justify-content: ${(props) => props.justifyContent || 'center'};
+  box-sizing: ${(props) => props.boxSizing || 'border-box'};
+  margin: ${(props) => props.margin || 'initial'};
   padding: ${(props) => props.padding || GLOBALS.STRUCTURE.PADDING.DESKTOP};
-  overflow: ${(props) => props.overflow || "hidden"};
+  overflow: ${(props) => props.overflow || 'hidden'};
 
   &.fluid {
     padding: ${(props) =>
@@ -127,39 +127,39 @@ export const ItemBreak = styled.div`
 `;
 
 export const ItemH = styled.div`
-  align-items: ${(props) => props.alignItems || "center"};
-  align-self: ${(props) => props.alignSelf || "stretch"};
+  align-items: ${(props) => props.alignItems || 'center'};
+  align-self: ${(props) => props.alignSelf || 'stretch'};
   background: ${(props) =>
     props.gradient
       ? props.gradient
-      : (props.background ? props.background : "transparent") || "transparent"};
-  border: ${(props) => props.border || "initial"};
-  border-radius: ${(props) => props.borderRadius || "initial"};
-  bottom: ${(props) => props.bottom || "auto"};
-  box-shadow: ${(props) => props.boxShadow || "initial"};
-  display: ${(props) => props.display || "flex"};
-  filter: ${(props) => props.filter || "initial"};
-  flex: ${(props) => props.flex || "1"};
-  flex-basis: ${(props) => props.flexBasis || "auto"};
-  flex-direction: ${(props) => props.flexDirection || "row"};
-  flex-wrap: ${(props) => props.flexWrap || "wrap"};
-  gap: ${(props) => props.gap || "normal"};
-  font-size: ${(props) => props.fontSize || "initial"};
-  height: ${(props) => props.height || "auto"};
-  min-height: ${(props) => props.minHeight || "initial"};
-  justify-content: ${(props) => props.justifyContent || "center"};
-  left: ${(props) => props.left || "auto"};
-  margin: ${(props) => props.margin || "0px"};
-  max-width: ${(props) => props.maxWidth || "initial"};
-  min-width: ${(props) => props.minWidth || "auto"};
-  overflow: ${(props) => props.overflow || "initial"};
-  padding: ${(props) => props.padding || "0px"};
-  position: ${(props) => props.position || "relative"};
-  right: ${(props) => props.right || "auto"};
-  text-align: ${(props) => props.textAlign || "initial"};
-  top: ${(props) => props.top || "auto"};
-  width: ${(props) => props.width || "auto"};
-  z-index: ${(props) => props.zIndex || "auto"};
+      : (props.background ? props.background : 'transparent') || 'transparent'};
+  border: ${(props) => props.border || 'initial'};
+  border-radius: ${(props) => props.borderRadius || 'initial'};
+  bottom: ${(props) => props.bottom || 'auto'};
+  box-shadow: ${(props) => props.boxShadow || 'initial'};
+  display: ${(props) => props.display || 'flex'};
+  filter: ${(props) => props.filter || 'initial'};
+  flex: ${(props) => props.flex || '1'};
+  flex-basis: ${(props) => props.flexBasis || 'auto'};
+  flex-direction: ${(props) => props.flexDirection || 'row'};
+  flex-wrap: ${(props) => props.flexWrap || 'wrap'};
+  gap: ${(props) => props.gap || 'normal'};
+  font-size: ${(props) => props.fontSize || 'initial'};
+  height: ${(props) => props.height || 'auto'};
+  min-height: ${(props) => props.minHeight || 'initial'};
+  justify-content: ${(props) => props.justifyContent || 'center'};
+  left: ${(props) => props.left || 'auto'};
+  margin: ${(props) => props.margin || '0px'};
+  max-width: ${(props) => props.maxWidth || 'initial'};
+  min-width: ${(props) => props.minWidth || 'auto'};
+  overflow: ${(props) => props.overflow || 'initial'};
+  padding: ${(props) => props.padding || '0px'};
+  position: ${(props) => props.position || 'relative'};
+  right: ${(props) => props.right || 'auto'};
+  text-align: ${(props) => props.textAlign || 'initial'};
+  top: ${(props) => props.top || 'auto'};
+  width: ${(props) => props.width || 'auto'};
+  z-index: ${(props) => props.zIndex || 'auto'};
 
   &:hover & {
     filter: ${(props) =>
@@ -167,7 +167,7 @@ export const ItemH = styled.div`
         ? props.filterHover
         : props.hover
           ? props.hover
-          : "none") || "none"};
+          : 'none') || 'none'};
   }
 
   ${ItemBreak} {
@@ -176,8 +176,8 @@ export const ItemH = styled.div`
 `;
 
 export const ItemV = styled(ItemH)`
-  flex: ${(props) => props.flex || "1"};
-  flex-direction: ${(props) => props.flexDirection || "column"};
+  flex: ${(props) => props.flex || '1'};
+  flex-direction: ${(props) => props.flexDirection || 'column'};
 
   ${ItemBreak} {
     height: 0;
@@ -190,16 +190,16 @@ export const H1 = styled.h1`
   font-weight: ${(props) => props.fontWeight || 700};
   font-size: ${(props) =>
     props.fontSize || GLOBALS.ADJUSTMENTS.FONT.PRIMARY_HEADING.DESKTOP};
-  text-transform: ${(props) => props.textTransform || "inherit"};
-  margin: ${(props) => props.margin || "0px"};
-  padding: ${(props) => props.padding || "0px"};
-  letter-spacing: ${(props) => props.letterSpacing || "-0.03em"};
+  text-transform: ${(props) => props.textTransform || 'inherit'};
+  margin: ${(props) => props.margin || '0px'};
+  padding: ${(props) => props.padding || '0px'};
+  letter-spacing: ${(props) => props.letterSpacing || '-0.03em'};
   font-family: ${(props) =>
-    props.fontFamily || "Strawford, Helvetica, sans-serif"};
-  text-align: ${(props) => props.textAlign || "inherit"};
-  line-height: ${(props) => props.lineHeight || "110%"};
+    props.fontFamily || 'Strawford, Helvetica, sans-serif'};
+  text-align: ${(props) => props.textAlign || 'inherit'};
+  line-height: ${(props) => props.lineHeight || '110%'};
   text-shadow: none;
-  z-index: ${(props) => props.zIndex || "auto"};
+  z-index: ${(props) => props.zIndex || 'auto'};
 
   @media ${device.laptop} {
     font-size: ${(props) =>
@@ -217,16 +217,16 @@ export const H2 = styled.h2`
   font-weight: ${(props) => props.fontWeight || 700};
   text-shadow: none;
   font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.HEADING};
-  text-transform: ${(props) => props.textTransform || "inherit"};
-  margin: ${(props) => props.margin || "0px"};
-  padding: ${(props) => props.padding || "0px"};
-  letter-spacing: ${(props) => props.letterSpacing || "-0.02em"};
+  text-transform: ${(props) => props.textTransform || 'inherit'};
+  margin: ${(props) => props.margin || '0px'};
+  padding: ${(props) => props.padding || '0px'};
+  letter-spacing: ${(props) => props.letterSpacing || '-0.02em'};
   font-family: ${(props) =>
-    props.fontFamily || "Strawford, Helvetica, sans-serif"};
-  text-align: ${(props) => props.textAlign || "inherit"};
-  line-height: ${(props) => props.lineHeight || "110%"};
+    props.fontFamily || 'Strawford, Helvetica, sans-serif'};
+  text-align: ${(props) => props.textAlign || 'inherit'};
+  line-height: ${(props) => props.lineHeight || '110%'};
   text-shadow: none;
-  z-index: ${(props) => props.zIndex || "auto"};
+  z-index: ${(props) => props.zIndex || 'auto'};
 
   @media ${device.laptop} {
     font-size: ${(props) =>
@@ -244,16 +244,16 @@ export const H3 = styled.h3`
   font-weight: ${(props) => props.fontWeight || 700};
   text-shadow: none;
   font-size: ${(props) => props.fontSize || GLOBALS.ADJUSTMENTS.FONT.HEADING};
-  text-transform: ${(props) => props.textTransform || "inherit"};
-  margin: ${(props) => props.margin || "0px"};
-  padding: ${(props) => props.padding || "0px"};
-  letter-spacing: ${(props) => props.letterSpacing || "-0.02em"};
+  text-transform: ${(props) => props.textTransform || 'inherit'};
+  margin: ${(props) => props.margin || '0px'};
+  padding: ${(props) => props.padding || '0px'};
+  letter-spacing: ${(props) => props.letterSpacing || '-0.02em'};
   font-family: ${(props) =>
-    props.fontFamily || "Strawford, Helvetica, sans-serif"};
-  text-align: ${(props) => props.textAlign || "inherit"};
-  line-height: ${(props) => props.lineHeight || "110%"};
+    props.fontFamily || 'Strawford, Helvetica, sans-serif'};
+  text-align: ${(props) => props.textAlign || 'inherit'};
+  line-height: ${(props) => props.lineHeight || '110%'};
   text-shadow: none;
-  z-index: ${(props) => props.zIndex || "auto"};
+  z-index: ${(props) => props.zIndex || 'auto'};
 
   @media ${device.laptop} {
     font-size: ${(props) =>
@@ -267,32 +267,32 @@ export const H3 = styled.h3`
 `;
 
 export const Image = styled.img`
-  width: ${(props) => props.width || "100%"};
-  height: ${(props) => props.height || "auto"};
-  display: ${(props) => props.display || "flex"};
-  border-radius: ${(props) => props.borderRadius || "initial"};
+  width: ${(props) => props.width || '100%'};
+  height: ${(props) => props.height || 'auto'};
+  display: ${(props) => props.display || 'flex'};
+  border-radius: ${(props) => props.borderRadius || 'initial'};
 `;
 
 export const Span = styled.span`
-  flex: ${(props) => props.flex || "initial"};
-  align-self: ${(props) => props.alignSelf || "auto"};
-  color: ${(props) => props.color || "inherit"};
-  background: ${(props) => props.background || "transparent"};
+  flex: ${(props) => props.flex || 'initial'};
+  align-self: ${(props) => props.alignSelf || 'auto'};
+  color: ${(props) => props.color || 'inherit'};
+  background: ${(props) => props.background || 'transparent'};
   font-weight: ${(props) => props.fontWeight || 400};
   font-size: ${(props) =>
     props.fontSize || GLOBALS.ADJUSTMENTS.FONT.NORMAL_TEXT.DESKTOP};
-  text-transform: ${(props) => props.textTransform || "inherit"};
-  margin: ${(props) => props.margin || "0px"};
-  padding: ${(props) => props.padding || "0px"};
-  letter-spacing: ${(props) => props.letterSpacing || "-0.03em"};
-  text-align: ${(props) => props.textAlign || "initial"};
-  line-height: ${(props) => props.lineHeight || "142%"};
-  position: ${(props) => props.position || "initial"};
-  right: ${(props) => props.right || "auto"};
-  left: ${(props) => props.left || "auto"};
-  bottom: ${(props) => props.bottom || "auto"};
-  top: ${(props) => props.top || "auto"};
-  z-index: ${(props) => props.zIndex || "auto"};
+  text-transform: ${(props) => props.textTransform || 'inherit'};
+  margin: ${(props) => props.margin || '0px'};
+  padding: ${(props) => props.padding || '0px'};
+  letter-spacing: ${(props) => props.letterSpacing || '-0.03em'};
+  text-align: ${(props) => props.textAlign || 'initial'};
+  line-height: ${(props) => props.lineHeight || '142%'};
+  position: ${(props) => props.position || 'initial'};
+  right: ${(props) => props.right || 'auto'};
+  left: ${(props) => props.left || 'auto'};
+  bottom: ${(props) => props.bottom || 'auto'};
+  top: ${(props) => props.top || 'auto'};
+  z-index: ${(props) => props.zIndex || 'auto'};
 
   @media ${device.laptop} {
     font-size: ${(props) =>
@@ -306,31 +306,31 @@ export const Span = styled.span`
 `;
 
 export const Button = styled.button`
-  display: ${(props) => props.display || "initial"};
-  line-height: ${(props) => props.lineHeight || "26px"};
-  flex: ${(props) => props.flex || "initial"};
-  flex-direction: ${(props) => props.flexDirection || "row"};
-  align-self: ${(props) => props.alignSelf || "auto"};
-  align-items: ${(props) => props.alignItems || "center"};
-  justify-content: ${(props) => props.justifyContent || "center"};
+  display: ${(props) => props.display || 'initial'};
+  line-height: ${(props) => props.lineHeight || '26px'};
+  flex: ${(props) => props.flex || 'initial'};
+  flex-direction: ${(props) => props.flexDirection || 'row'};
+  align-self: ${(props) => props.alignSelf || 'auto'};
+  align-items: ${(props) => props.alignItems || 'center'};
+  justify-content: ${(props) => props.justifyContent || 'center'};
   font-weight: ${(props) => props.fontWeight || 400};
-  font-size: ${(props) => props.fontSize || "inherit"};
-  color: ${(props) => props.color || "#fff"};
+  font-size: ${(props) => props.fontSize || 'inherit'};
+  color: ${(props) => props.color || '#fff'};
   background: ${(props) => props.background || GLOBALS.COLORS.BG_DARK};
-  margin: ${(props) => props.margin || "0"};
-  padding: ${(props) => props.padding || "14px 32px"};
-  border: ${(props) => props.border || "none"};
+  margin: ${(props) => props.margin || '0'};
+  padding: ${(props) => props.padding || '14px 32px'};
+  border: ${(props) => props.border || 'none'};
   border-radius: ${(props) =>
     props.borderRadius || GLOBALS.ADJUSTMENTS.RADIUS.SMALL};
-  position: ${(props) => props.position || "relative"};
-  text-decoration: ${(props) => props.textDecoration || "none"};
-  width: ${(props) => props.width || "initial"};
-  overflow: ${(props) => props.overflow || "hidden"};
-  z-index: ${(props) => props.zIndex || "3"};
-  pointer: ${(props) => props.pointer || "hand"};
-  cursor: ${(props) => props.cursor || "pointer"};
+  position: ${(props) => props.position || 'relative'};
+  text-decoration: ${(props) => props.textDecoration || 'none'};
+  width: ${(props) => props.width || 'initial'};
+  overflow: ${(props) => props.overflow || 'hidden'};
+  z-index: ${(props) => props.zIndex || '3'};
+  pointer: ${(props) => props.pointer || 'hand'};
+  cursor: ${(props) => props.cursor || 'pointer'};
   font-family: ${(props) =>
-    props.fontFamily || "Strawford, Helvetica, sans-serif"};
+    props.fontFamily || 'Strawford, Helvetica, sans-serif'};
 
   @media ${device.laptop} {
     font-size: ${(props) =>
@@ -344,9 +344,9 @@ export const Button = styled.button`
 
   &:before {
     background: ${(props) =>
-      props.hover || (props.background ? props.background : "transparent")};
+      props.hover || (props.background ? props.background : 'transparent')};
     bottom: 0;
-    content: "";
+    content: '';
     display: none;
     left: 0;
     position: absolute;
@@ -356,9 +356,9 @@ export const Button = styled.button`
   }
 
   &:after {
-    background: ${(props) => props.hoverBackground || "#000"};
+    background: ${(props) => props.hoverBackground || '#000'};
     bottom: 0;
-    content: "";
+    content: '';
     left: 0;
     opacity: 0;
     position: absolute;
@@ -368,10 +368,10 @@ export const Button = styled.button`
   }
 
   &:hover {
-    border: ${(props) => props.hoverBorder || "inherit"};
+    border: ${(props) => props.hoverBorder || 'inherit'};
 
     & svg > path {
-      stroke: ${(props) => props.hoverSVGPathStroke || "auto"};
+      stroke: ${(props) => props.hoverSVGPathStroke || 'auto'};
     }
   }
 
@@ -392,27 +392,27 @@ export const Button = styled.button`
 `;
 
 export const A = styled.a`
-  display: ${(props) => props.display || "initial"};
-  line-height: ${(props) => props.lineHeight || "26px"};
-  flex: ${(props) => props.flex || "initial"};
-  align-self: ${(props) => props.alignSelf || "auto"};
-  align-items: ${(props) => props.alignItems || "center"};
-  justify-content: ${(props) => props.justifyContent || "center"};
+  display: ${(props) => props.display || 'initial'};
+  line-height: ${(props) => props.lineHeight || '26px'};
+  flex: ${(props) => props.flex || 'initial'};
+  align-self: ${(props) => props.alignSelf || 'auto'};
+  align-items: ${(props) => props.alignItems || 'center'};
+  justify-content: ${(props) => props.justifyContent || 'center'};
   font-weight: ${(props) => props.fontWeight || 500};
-  font-size: ${(props) => props.fontSize || "inherit"};
-  color: ${(props) => props.color || "#fff"} !important;
+  font-size: ${(props) => props.fontSize || 'inherit'};
+  color: ${(props) => props.color || '#fff'} !important;
   background: ${(props) => props.background || GLOBALS.COLORS.BG_DARK};
-  margin: ${(props) => props.margin || "0"};
-  padding: ${(props) => props.padding || "14px 32px"};
-  border: ${(props) => props.border || "none"};
+  margin: ${(props) => props.margin || '0'};
+  padding: ${(props) => props.padding || '14px 32px'};
+  border: ${(props) => props.border || 'none'};
   border-radius: ${(props) =>
     props.borderRadius || GLOBALS.ADJUSTMENTS.RADIUS.SMALL};
-  position: ${(props) => props.position || "relative"};
-  text-decoration: ${(props) => props.textDecoration || "none"};
-  overflow: ${(props) => props.overflow || "hidden"};
-  z-index: ${(props) => props.zIndex || "3"};
-  pointer: ${(props) => props.pointer || "hand"};
-  cursor: ${(props) => props.cursor || "pointer"};
+  position: ${(props) => props.position || 'relative'};
+  text-decoration: ${(props) => props.textDecoration || 'none'};
+  overflow: ${(props) => props.overflow || 'hidden'};
+  z-index: ${(props) => props.zIndex || '3'};
+  pointer: ${(props) => props.pointer || 'hand'};
+  cursor: ${(props) => props.cursor || 'pointer'};
 
   @media ${device.laptop} {
     font-size: ${(props) =>
@@ -426,9 +426,9 @@ export const A = styled.a`
 
   &:before {
     background: ${(props) =>
-      props.hover || (props.background ? props.background : "transparent")};
+      props.hover || (props.background ? props.background : 'transparent')};
     bottom: 0;
-    content: "";
+    content: '';
     display: none;
     left: 0;
     position: absolute;
@@ -439,9 +439,9 @@ export const A = styled.a`
   }
 
   &:after {
-    background: ${(props) => props.hoverBackground || "#000"};
+    background: ${(props) => props.hoverBackground || '#000'};
     bottom: 0;
-    content: "";
+    content: '';
     left: 0;
     opacity: 0;
     position: absolute;
@@ -476,47 +476,47 @@ export const A = styled.a`
 `;
 
 export const P = styled.p`
-  flex: ${(props) => props.flex || "initial"};
-  align-self: ${(props) => props.alignSelf || "auto"};
-  color: ${(props) => props.color || "#000"};
-  background: ${(props) => props.background || "transparent"};
+  flex: ${(props) => props.flex || 'initial'};
+  align-self: ${(props) => props.alignSelf || 'auto'};
+  color: ${(props) => props.color || '#000'};
+  background: ${(props) => props.background || 'transparent'};
   font-weight: ${(props) => props.fontWeight || 300};
-  font-size: ${(props) => props.fontSize || "inherit"};
-  text-transform: ${(props) => props.textTransform || "inherit"};
-  margin: ${(props) => props.margin || "20px 0px"};
-  padding: ${(props) => props.padding || "0px"};
-  letter-spacing: ${(props) => props.letterSpacing || "inherit"};
-  text-align: ${(props) => props.textAlign || "initial"};
+  font-size: ${(props) => props.fontSize || 'inherit'};
+  text-transform: ${(props) => props.textTransform || 'inherit'};
+  margin: ${(props) => props.margin || '20px 0px'};
+  padding: ${(props) => props.padding || '0px'};
+  letter-spacing: ${(props) => props.letterSpacing || 'inherit'};
+  text-align: ${(props) => props.textAlign || 'initial'};
 `;
 
 export const LinkTo = styled(Link)`
-  font-family: ${(props) => props.fontFamily || "inherit"};
-  line-height: ${(props) => props.lineHeight || "inherit"};
+  font-family: ${(props) => props.fontFamily || 'inherit'};
+  line-height: ${(props) => props.lineHeight || 'inherit'};
   display: flex;
-  flex-direction: ${(props) => props.flexDirection || "row"};
-  flex: ${(props) => props.flex || "initial"};
-  align-self: ${(props) => props.alignSelf || "auto"};
-  align-items: ${(props) => props.alignItems || "center"};
-  justify-content: ${(props) => props.justifyContent || "center"};
+  flex-direction: ${(props) => props.flexDirection || 'row'};
+  flex: ${(props) => props.flex || 'initial'};
+  align-self: ${(props) => props.alignSelf || 'auto'};
+  align-items: ${(props) => props.alignItems || 'center'};
+  justify-content: ${(props) => props.justifyContent || 'center'};
   font-weight: ${(props) => props.fontWeight || 400};
-  font-size: ${(props) => props.fontSize || "inherit"};
-  color: ${(props) => props.color || "#fff"};
-  background: ${(props) => props.background || "transparent"};
-  margin: ${(props) => props.margin || "0"};
-  padding: ${(props) => props.padding || "10px 15px"};
-  letter-spacing: ${(props) => props.letterSpacing || "0.2em"};
-  border: ${(props) => props.border || "none"};
-  border-radius: ${(props) => props.borderRadius || "0px"};
-  width: ${(props) => props.width || "initial"};
+  font-size: ${(props) => props.fontSize || 'inherit'};
+  color: ${(props) => props.color || '#fff'};
+  background: ${(props) => props.background || 'transparent'};
+  margin: ${(props) => props.margin || '0'};
+  padding: ${(props) => props.padding || '10px 15px'};
+  letter-spacing: ${(props) => props.letterSpacing || '0.2em'};
+  border: ${(props) => props.border || 'none'};
+  border-radius: ${(props) => props.borderRadius || '0px'};
+  width: ${(props) => props.width || 'initial'};
 
   position: relative;
   text-decoration: none;
-  overflow: ${(props) => props.overflow || "hidden"};
+  overflow: ${(props) => props.overflow || 'hidden'};
   z-index: 3;
 
-  filter: ${(props) => props.filter || "none"};
+  filter: ${(props) => props.filter || 'none'};
 
-  cursor: ${(props) => (props.disabled ? "none" : "pointer")};
+  cursor: ${(props) => (props.disabled ? 'none' : 'pointer')};
 
   &:hover & {
     filter: ${(props) =>
@@ -524,37 +524,37 @@ export const LinkTo = styled(Link)`
         ? props.filterHover
         : props.hover
           ? props.hover
-          : "none") || "none"};
+          : 'none') || 'none'};
 
     color: ${(props) =>
       (props.hoverColor
         ? props.hoverColor
         : props.color
           ? props.color
-          : "#fff") || "#fff"};
+          : '#fff') || '#fff'};
   }
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: ${(props) =>
-      props.hover || (props.background ? props.background : "transparent")};
+      props.hover || (props.background ? props.background : 'transparent')};
     display: none;
     z-index: -1;
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: ${(props) => props.hoverBackground || "#000"};
+    background: ${(props) => props.hoverBackground || '#000'};
     opacity: 0;
     z-index: -1;
   }
@@ -578,8 +578,8 @@ export const LinkTo = styled(Link)`
 `;
 
 export const B = styled.span`
-  color: ${(props) => props.color || "#000"};
-  font-weight: ${(props) => props.fontWeight || "bold"};
+  color: ${(props) => props.color || '#000'};
+  font-weight: ${(props) => props.fontWeight || 'bold'};
 `;
 
 export const UL = styled.ul``;
@@ -604,7 +604,7 @@ export const AImp = styled.a`
   line-height: 30px;
 
   &:before {
-    content: "💡 ";
+    content: '💡 ';
     position: relative;
   }
 
@@ -628,7 +628,7 @@ export const ABlock = styled.a`
   transition: all 0.2s ease-in-out 0s;
 
   &:after {
-    content: ">";
+    content: '>';
     position: relative;
     display: flex;
     float: right;

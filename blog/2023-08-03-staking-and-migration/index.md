@@ -3,9 +3,8 @@ slug: staking-and-migration-guide-for-push-v2-rewards-program
 title: 'Staking & Migration Guide for PushV2 Rewards Program📜'
 authors: [push]
 image: './cover-image.webp'
-text: "We recently released an article extensively discussing the details of our new staking programs of the Push V2 Rewards Program including…"
+text: 'We recently released an article extensively discussing the details of our new staking programs of the Push V2 Rewards Program including…'
 tags: [Push Protocol, Web3, Yield Farming, Liquidity Mining, Liquidity Pool]
-
 ---
 
 import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
@@ -20,7 +19,6 @@ import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 We recently released an [article](https://push-protocol.medium.com/new-push-yield-farming-rewards-full-details-4a9ff473226d) extensively discussing the details of our new staking programs of the Push V2 Rewards Program including…
 
-
 1. <b>UNI-V2 LP Token Staking</b>: Similar to v1 incentive program, this procedure allows users to stake their UNI-V2 LP tokens in our staking contract and earn $PUSH tokens as a reward.
 2. <b>Push Fee Pool Staking</b>: The second procedure is the new staking feature of the Push Core V2 smart contract that allows users to directly stake in the core contract itself and earn rewards in $PUSH Tokens generated from the Fee Pool.
 
@@ -32,10 +30,12 @@ In this article, we will now walk you through the specific steps for both the UN
 
 For each of these steps, we will first talk about the 🔴 <b>Push Fee Staking Pool</b> and then the 🟣 <b>UNI-V2 LP Token Staking Pool</b>
 
-
 ## How to Stake & Unstake Tokens
+
 ### 🔴 PUSH Fee Staking Pool
+
 ### Staking $PUSH Tokens
+
 Push Fee Staking Pool allows you to stake your PUSH tokens directly in the [Push Core contract](https://etherscan.io/address/0x66329Fdd4042928BfCAB60b179e1538D56eeeeeE) itself.
 
 <VideoContainer>
@@ -60,6 +60,7 @@ Follow the simple steps below to Stake to Push Fee Staking Pool:
 ![Right staked amount in the UI Image](./staking-pool2.webp)
 
 ### Unstaking $PUSH Tokens
+
 1. Simply click on the <b>Unstake PUSH</b> button to unstake from the staking pool.
 2. After successful execution of your transaction, your tokens should be unstaked from the contract and transferred back to your wallet.
 
@@ -67,9 +68,9 @@ Follow the simple steps below to Stake to Push Fee Staking Pool:
 
 - The pool <b>doesn’t impose any lock-in period</b>. This means holders are free to stake or un-stake whenever they wish.
 - While no lock-in period is imposed, <b>there is a delay period of at least one epoch before a user can withdraw or harvest</b>. This means that any stake (within the current epoch) will require the user to wait T+1 epoch before they can claim rewards or withdraw their harvest. 1 epoch is 21 days long.
-Unstaking tokens in this pool will automatically harvest and transfer any pending reward tokens to your wallet as well.
-🟣 UNI-V2 LP Staking Pool
-The UNI-V2 LP staking pool allows you to stake your LP tokens and earn yields for the same.
+  Unstaking tokens in this pool will automatically harvest and transfer any pending reward tokens to your wallet as well.
+  🟣 UNI-V2 LP Staking Pool
+  The UNI-V2 LP staking pool allows you to stake your LP tokens and earn yields for the same.
 
 <blockquote>
 <i>
@@ -81,11 +82,13 @@ The UNI-V2 LP staking pool allows you to stake your LP tokens and earn yields fo
 <iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/lqMuOlOGP0s" title="Push Uniswap V2 LP Staking Pool | $PUSH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </VideoContainer>
 
-1. Go to the [PUSH/ETH V2 pool on Uniswap](https://app.uniswap.org/#/add/v2/ETH/0xf418588522d5dd018b425E472991E52EBBeEEEEE)  (Remember to navigate to Uniswap V2 pool and not V3 pool).
+1. Go to the [PUSH/ETH V2 pool on Uniswap](https://app.uniswap.org/#/add/v2/ETH/0xf418588522d5dd018b425E472991E52EBBeEEEEE) (Remember to navigate to Uniswap V2 pool and not V3 pool).
 2. Add liquidity into the pool with both $PUSH and $ETH.
 3. Once added, you should receive UNI-V2 LP tokens in your wallet.
 4. You are now ready to stake to these LP tokens into for Push V2 reward program.
+
 ### Staking UNI-V2 LP tokens
+
 1. Go to Yield Farming v2 Page on PUSH Dapp 👉 https://app.push.org/yieldv2
 2. Go to the right-hand part of the UI that displays <b>Uniswap v2 LP Staking Pool.</b>
 3. Click on the <b>Stake $UNI-V2 LP Tokens</b> button
@@ -101,10 +104,12 @@ The UNI-V2 LP staking pool allows you to stake your LP tokens and earn yields fo
 6. After successful execution of your transaction, you should the right staked amount in the UI.
 
 ### Unstaking UNI-V2 LP Tokens
+
 1. Click on <b>Unstake UNI-V2</b> button.
 2. This will trigger a metamask Pop-UP. Once confirmed you should simply be able to unstake your LP tokens from the pool.
 
 ## How to Claim Rewards
+
 Claiming rewards for both the pools is fairly similar.
 
 1. Go to the respective pool on [Push Dapp Yield Farming V2 page](https://app.push.org/yieldv2).
@@ -114,6 +119,7 @@ Claiming rewards for both the pools is fairly similar.
 However, there are a couple of considerations to keep in mind related when harvesting rewards.
 
 ### 🔴 Harvesting in PUSH Fee Staking Pool
+
 The very first claim reward procedure for this pool shall include two transactions:
 
 - 1st Transaction is <b>to Set Holder Delegation for the Push Core Contract address.</b>
@@ -133,12 +139,14 @@ The very first claim reward procedure for this pool shall include two transactio
 </blockquote>
 
 ### 🟣 Harvesting in UNI-V2 LP Staking Pool
+
 - The steps for harvesting in UNI-V2 LP Staking Pool are identical to that of harvesting in the PUSH Fee Staking Pool
 - Go to the UNI-V2 LP Pool on [Push Dapp Yield Farming V2 page](https://app.push.org/yieldv2).
 - Click on the Claim Rewards button of the UNI-V2 Staking Pool.
 - Confirm the transaction and rewards will be transferred to your wallet.
 
 ## How to migrate from the old staking pool to the new pool?
+
 If you’re an early holder of $PUSH, chances are you’ve staked in the first rewards program.
 
 If that’s the case for you, the migration feature is specifically designed to provide you with a smooth and easy procedure to shift from the old staking pool to the new v2 staking pool.
@@ -158,14 +166,16 @@ In order to perform the migration procedure, please follow the steps below:
 1. Go to Yield Farming v2 Page on PUSH Dapp 👉 https://app.push.org/yieldv2
 2. Go to the <b>Yield Farming V1 (Deprecated)</b> section.
 
-
 ![Yield Farming V1 (Deprecated) Image](./staking-pool5.webp)
 
 ### 🔴 For Push Staking Pool Migration
+
 1. Simply go to the Push Staking Pool section
 2. Click on <b>Migrate to PUSH Fee Pool</b> button
 3. After the above-mentioned 3 transactions, your staked tokens will be migrated from the previous $PUSH Token staking contract to the new $PUSH Fee Staking Pool <b><i>(which essentially is the main Push Core contract itself).</i></b>
+
 ### 🟣 For UNI V2 Staking Pool
+
 1. The procedure remains the same as mentioned above.
 2. However, in this migration, your tokens will be staked in the new UNI-V2 Staking Pool.
 
@@ -175,6 +185,5 @@ In order to perform the migration procedure, please follow the steps below:
 
 In order to claim any available pending reward from your previous pools, you can click on the Claim Rewards button of that respective pool in the Yield Farming V1 section.
 </i>
+
 </blockquote>
-
-

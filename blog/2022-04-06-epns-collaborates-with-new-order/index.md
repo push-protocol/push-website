@@ -11,6 +11,7 @@ tags: [ Ethereum
 ,Newsletter
 ,Blockchain ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Collaboration With New Order Will Bring Push Notifications to its Venture DAO Governance](./cover-image.webp)
@@ -27,21 +28,19 @@ As an ecosystem DAO, New Order is built as an incubator & accelerator to foster 
 
 New Order’s overall vision is quite simple: to create an ecosystem of decentralized financial products that are not limited by constraints like interoperability and built to unleash DeFi’s full potential. As such, the DAO encourages its community to participate in important decisions and steer direction of growth. This is where EPNS push notifications are vital to help reduce friction and increase participation..
 
-What Does the Collaboration Entail
-==================================
+# What Does the Collaboration Entail
 
 As a result of New Order’s collaboration with EPNS, it will have an official channel on the EPNS platform that acts as a direct communication medium between the platform and its users. Users can subscribe to this channel to stay updated with the various stages of the governance process. They will receive decentralized push notifications on devices of their choice whenever
 
-*   A new governance proposal is created and voting begins
-*   Updates are made to the proposal
-*   Voting results are declared.
+- A new governance proposal is created and voting begins
+- Updates are made to the proposal
+- Voting results are declared.
 
 EPNS has a chrome extension, mobile application, and decentralized application to ensure that users don’t miss out on important updates.
 
 As New Order works towards building the new-age DeFi Ecosystem, we’re pleased to team up with them on their journey and hope to continue this alliance into the future.
 
-**About New Order**
-===================
+# **About New Order**
 
 New Order is an Ecosystem DAO that is built to operate as a launchpad for the most innovative Web3 financial products, tools, and applications that contribute to the vision of creating a fully composable financial ecosystem embracing multi-chain DeFi at its core. The DAO will support early-stage projects aligned with its vision of being chain-agnostic, focused on a plethora of innovative new-age asset classes including data-driven tokens.
 

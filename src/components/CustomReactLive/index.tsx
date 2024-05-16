@@ -7,7 +7,7 @@ const CustomLiveEditor = (props) => {
 
   return (
     <div className={`custom-live-editor ${isMinimized ? 'minimized' : ''}`}>
-      <div className="editor-header">
+      <div className='editor-header'>
         <button onClick={() => setIsMinimized(!isMinimized)}>
           {isMinimized ? 'Expand' : 'Minimize'}
         </button>

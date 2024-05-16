@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 // Internal Components
 import {
@@ -11,16 +11,16 @@ import {
   ItemH,
   ItemV,
   Span,
-} from "@site/src/css/SharedStyling";
-import { BsLinkedin, BsTwitter, BsYoutube, BsX } from "react-icons/bs";
-import { BiLink, BiShareAlt } from "react-icons/bi";
-import { FaDiscord, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
+} from '@site/src/css/SharedStyling';
+import { BsLinkedin, BsTwitter, BsYoutube, BsX } from 'react-icons/bs';
+import { BiLink, BiShareAlt } from 'react-icons/bi';
+import { FaDiscord, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
-import Modal from "react-modal";
+import Modal from 'react-modal';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import { device } from '@site/src/config/globals';
 
 const FooterItem = () => {
   const isMobile = useMediaQuery(device.tablet);
@@ -32,39 +32,39 @@ const FooterItem = () => {
   };
 
   function afterOpenModal() {
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = 'hidden';
     // references are now sync'd and can be accessed.
   }
 
   const closeModal = () => {
     setOpen(false);
-    document.body.style.overflow = "auto"; // Enable scrollin
+    document.body.style.overflow = 'auto'; // Enable scrollin
   };
 
   const customStyles = {
     overlay: {
-      background: "rgba(0, 0, 0, 0.60)",
-      backdropFilter: "blur(10px)",
+      background: 'rgba(0, 0, 0, 0.60)',
+      backdropFilter: 'blur(10px)',
     },
     content: {
-      height: "230px",
-      width: "348px",
-      top: "50%",
-      left: "50%",
-      transform: "translate(-50%, -50%)",
-      borderRadius: "16px",
-      border: "none",
-      background: "var(--ifm-color-primary-inverse)",
+      height: '230px',
+      width: '348px',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      borderRadius: '16px',
+      border: 'none',
+      background: 'var(--ifm-color-primary-inverse)',
     },
   };
 
   const OpenURL = (link) => {
-    window.open(link, "_blank");
+    window.open(link, '_blank');
   };
 
   const LinkModal = () => {
     const openLink = (link) => {
-      window.open(link, "_blank");
+      window.open(link, '_blank');
     };
 
     return (
@@ -78,45 +78,45 @@ const FooterItem = () => {
           <ModalDiv>
             <ModalTopic>Share</ModalTopic>
             <BsX
-              color=""
+              color=''
               size={28}
               onClick={closeModal}
-              className="closeIcon"
+              className='closeIcon'
             />
           </ModalDiv>
 
           <ModalIcons>
             <ModalFigure
-              color="#1DA1F2"
+              color='#1DA1F2'
               onClick={() =>
                 openLink(
-                  `https://twitter.com/intent/tweet?text=${window.location.href}`,
+                  `https://twitter.com/intent/tweet?text=${window.location.href}`
                 )
               }
             >
-              <BsTwitter size={32} color="#fff" />
+              <BsTwitter size={32} color='#fff' />
             </ModalFigure>
 
             <ModalFigure
-              color="#0077B5"
+              color='#0077B5'
               onClick={() =>
                 openLink(
-                  `https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`,
+                  `https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`
                 )
               }
             >
-              <FaLinkedinIn size={32} color="#fff" />
+              <FaLinkedinIn size={32} color='#fff' />
             </ModalFigure>
 
             <ModalFigure
-              color="#4867AA"
+              color='#4867AA'
               onClick={() =>
                 openLink(
-                  `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`,
+                  `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`
                 )
               }
             >
-              <FaFacebookF size={32} color="#fff" />
+              <FaFacebookF size={32} color='#fff' />
             </ModalFigure>
           </ModalIcons>
 
@@ -139,11 +139,11 @@ const FooterItem = () => {
     <div>
       <ShareRow>
         <ResponsiveH2
-          size={isMobile ? "16px" : "24px"}
-          weight="500"
-          spacing="-0.02em"
-          lineHeight="110%"
-          color="#00000"
+          size={isMobile ? '16px' : '24px'}
+          weight='500'
+          spacing='-0.02em'
+          lineHeight='110%'
+          color='#00000'
         >
           Be a part of the conversation by sharing this article
         </ResponsiveH2>
@@ -162,21 +162,21 @@ const FooterItem = () => {
                   self={isMobile ? 'stretch' : 'self'}
                 > */}
         <ShareButton
-          title="Developer Docs"
-          background="#D53A94"
-          radius="12px"
-          padding="14px 20px"
-          size="16px"
-          weight="500"
-          spacing="-0.03em"
-          lineHeight="26px"
-          display="flex"
-          flexDirection="row"
-          alignItems="center"
-          self={isMobile ? "stretch" : "self"}
+          title='Developer Docs'
+          background='#D53A94'
+          radius='12px'
+          padding='14px 20px'
+          size='16px'
+          weight='500'
+          spacing='-0.03em'
+          lineHeight='26px'
+          display='flex'
+          flexDirection='row'
+          alignItems='center'
+          self={isMobile ? 'stretch' : 'self'}
           onClick={openModal}
         >
-          <BiShareAlt size={23} color="#fff" style={{ marginRight: "10px" }} />
+          <BiShareAlt size={23} color='#fff' style={{ marginRight: '10px' }} />
           Share
         </ShareButton>
         {/* </Anchor> */}
@@ -187,11 +187,11 @@ const FooterItem = () => {
       <AboutSection>
         <AboutTitle>About Push Protocol</AboutTitle>
         <AboutSpan
-          fontFamily="Strawford"
-          textAlign="center"
-          fontSize="19px"
-          fontWeight="400"
-          lineHeight="32px"
+          fontFamily='Strawford'
+          textAlign='center'
+          fontSize='19px'
+          fontWeight='400'
+          lineHeight='32px'
         >
           Push is the communication protocol of web3. Push protocol enables
           cross-chain notifications and messaging for dapps, wallets, and
@@ -204,9 +204,9 @@ const FooterItem = () => {
 
       <KPIBanner>
         <BannerItem
-          onClick={() => OpenURL("https://twitter.com/pushprotocol")}
-          gap="18px"
-          className="kpiItem"
+          onClick={() => OpenURL('https://twitter.com/pushprotocol')}
+          gap='18px'
+          className='kpiItem'
         >
           {/* <KPIFigure> */}
           <BsTwitter size={32} />
@@ -215,9 +215,9 @@ const FooterItem = () => {
         </BannerItem>
 
         <BannerItem
-          onClick={() => OpenURL("https://discord.gg/pushprotocol")}
-          gap="18px"
-          className="kpiItem"
+          onClick={() => OpenURL('https://discord.gg/pushprotocol')}
+          gap='18px'
+          className='kpiItem'
         >
           {/* <KPIFigure> */}
           <FaDiscord size={32} />
@@ -226,9 +226,9 @@ const FooterItem = () => {
         </BannerItem>
 
         <BannerItem
-          onClick={() => OpenURL("https://www.youtube.com/@pushprotocol")}
-          gap="18px"
-          className="kpiItem"
+          onClick={() => OpenURL('https://www.youtube.com/@pushprotocol')}
+          gap='18px'
+          className='kpiItem'
         >
           {/* <KPIFigure> */}
           <BsYoutube size={32} />
@@ -238,10 +238,10 @@ const FooterItem = () => {
 
         <BannerItem
           onClick={() =>
-            OpenURL("https://www.linkedin.com/company/push-protocol/")
+            OpenURL('https://www.linkedin.com/company/push-protocol/')
           }
-          gap="18px"
-          className="kpiItem"
+          gap='18px'
+          className='kpiItem'
         >
           {/* <KPIFigure> */}
           <BsLinkedin size={32} />
@@ -271,7 +271,7 @@ const AboutSection = styled.div`
 `;
 
 const AboutTitle = styled.div`
-  font-family: "Strawford" !important;
+  font-family: 'Strawford' !important;
   font-weight: 700;
   font-size: 28px;
   line-height: 38px;
@@ -297,7 +297,7 @@ const KPIBanner = styled.div`
   justify-content: center;
   width: 100%;
   padding: 20px 0px;
-  font-family: "Strawford";
+  font-family: 'Strawford';
   font-style: normal;
   margin-top: 30px;
   margin-bottom: 100px;

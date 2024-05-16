@@ -12,11 +12,12 @@ const MESSAGES = {
   SUCCESS: 'Thanks for subscribing!',
   ERROR: 'Something went wrong!',
   REPEAT: 'Already subscribed!',
-  INVALID: 'Invalid Email!'
+  INVALID: 'Invalid Email!',
 };
 
 const validateEmail = (email) => {
-  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 };
 
@@ -25,18 +26,17 @@ function useEmailValidationAndSend() {
   const [emailError, setEmailError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-
   const onEmailSubmit = async (e) => {
     e.preventDefault();
     const formData = Object.fromEntries(new FormData(e.target));
     // console.log(formData.email);
 
     if (validateEmail(formData.email)) {
-      try {   
+      try {
         setIsLoading(true);
         const sendyAPIResponse = await sendEmailToMailingList({
           email: formData.email,
-          name: formData.email
+          name: formData.email,
         });
 
         // check https://sendy.co/api for details
@@ -54,20 +54,13 @@ function useEmailValidationAndSend() {
       } finally {
         setIsLoading(false);
       }
-         
     } else {
       setEmailSuccess('');
       setEmailError(MESSAGES.INVALID);
     }
   };
 
-
-  return [
-    isLoading,
-    emailSuccess,
-    emailError,
-    onEmailSubmit
-  ];
+  return [isLoading, emailSuccess, emailError, onEmailSubmit];
 }
 
 export default useEmailValidationAndSend;

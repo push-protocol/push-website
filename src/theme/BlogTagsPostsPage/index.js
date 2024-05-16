@@ -4,24 +4,24 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import clsx from "clsx";
-import Translate, { translate } from "@docusaurus/Translate";
+import React from 'react';
+import clsx from 'clsx';
+import Translate, { translate } from '@docusaurus/Translate';
 import {
   PageMetadata,
   HtmlClassNameProvider,
   ThemeClassNames,
   usePluralForm,
-} from "@docusaurus/theme-common";
-import Link from "@docusaurus/Link";
-import BlogLayout from "@theme/BlogLayout";
-import BlogListPaginator from "@theme/BlogListPaginator";
-import SearchMetadata from "@theme/SearchMetadata";
-import BlogPostItems from "@theme/BlogPostItems";
-import styled from "styled-components";
+} from '@docusaurus/theme-common';
+import Link from '@docusaurus/Link';
+import BlogLayout from '@theme/BlogLayout';
+import BlogListPaginator from '@theme/BlogListPaginator';
+import SearchMetadata from '@theme/SearchMetadata';
+import BlogPostItems from '@theme/BlogPostItems';
+import styled from 'styled-components';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import { device } from '@site/src/config/globals';
 
 // Very simple pluralization: probably good enough for now
 function useBlogPostsPlural() {
@@ -31,24 +31,24 @@ function useBlogPostsPlural() {
       count,
       translate(
         {
-          id: "theme.blog.post.plurals",
+          id: 'theme.blog.post.plurals',
           description:
             'Pluralized label for "{count} posts". Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
-          message: "One post|{count} posts",
+          message: 'One post|{count} posts',
         },
-        { count },
-      ),
+        { count }
+      )
     );
 }
 function useBlogTagsPostsPageTitle(tag) {
   const blogPostsPlural = useBlogPostsPlural();
   return translate(
     {
-      id: "theme.blog.tagTitle",
-      description: "The title of the page for a blog tag",
+      id: 'theme.blog.tagTitle',
+      description: 'The title of the page for a blog tag',
       message: '{nPosts} tagged with "{tagName}"',
     },
-    { nPosts: blogPostsPlural(tag.count), tagName: tag.label },
+    { nPosts: blogPostsPlural(tag.count), tagName: tag.label }
   );
 }
 function BlogTagsPostsPageMetadata({ tag }) {
@@ -56,7 +56,7 @@ function BlogTagsPostsPageMetadata({ tag }) {
   return (
     <>
       <PageMetadata title={title} />
-      <SearchMetadata tag="blog_tags_posts" />
+      <SearchMetadata tag='blog_tags_posts' />
     </>
   );
 }
@@ -69,8 +69,8 @@ function BlogTagsPostsPageContent({ tag, items, sidebar, listMetadata }) {
 
         <Link href={tag.allTagsPath}>
           <Translate
-            id="theme.tags.tagsPageLink"
-            description="The label of the link targeting the tag list page"
+            id='theme.tags.tagsPageLink'
+            description='The label of the link targeting the tag list page'
           >
             View All Tags
           </Translate>
@@ -89,7 +89,7 @@ export default function BlogTagsPostsPage(props) {
     <HtmlClassNameProvider
       className={clsx(
         ThemeClassNames.wrapper.blogPages,
-        ThemeClassNames.page.blogTagPostListPage,
+        ThemeClassNames.page.blogTagPostListPage
       )}
     >
       <BlogTagsPostsPageMetadata {...props} />

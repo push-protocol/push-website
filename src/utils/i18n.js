@@ -9,7 +9,6 @@ import english from '/static/locales/en/translation.json';
 import spanish from '/static/locales/es/translation.json';
 import hindi from '/static/locales/hi/translation.json';
 
-
 export default function i18nInitialize() {
   i18n
     .use(Backend)
@@ -21,7 +20,7 @@ export default function i18nInitialize() {
       resources: {
         en: { translation: english },
         es: { translation: spanish },
-        hi: { translation: hindi }
+        hi: { translation: hindi },
       },
       lng: 'en', // language to use
       fallbackLng: 'en',

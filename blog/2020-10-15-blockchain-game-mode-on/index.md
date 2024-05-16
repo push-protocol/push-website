@@ -12,6 +12,7 @@ tags: [ Blockchain
 ,Notifications
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of 13 DeFi Notifications Ethereum Needs Today](./cover-image.webp)
@@ -32,8 +33,7 @@ Even emerging technologies like AI has tried its hand in video games with big pl
 
 Similarly, it is inevitable for gaming to cross paths with another emerging technology. **Blockchain.**
 
-Blockchain and Crypto Gaming
-============================
+# Blockchain and Crypto Gaming
 
 In the past few years, Crypto Gaming has been picking up quite a lot of steam. With the combination of NFTs (a unique token that represents an asset) and some solid gameplay, crypto gaming is turning out to be one of those spaces which will influence the mainstream adoption of Web3.0.
 
@@ -45,8 +45,7 @@ But gaming on the blockchain has its drawbacks, and one of the most major pain p
 
 > EPNS AOE (Area of effect) can enhance User Experience, to encourage adoption of blockchain games, and to ensure retention rates effectively.
 
-1\. Trading and Auctions of NFTs in a Marketplace
--------------------------------------------------
+## 1\. Trading and Auctions of NFTs in a Marketplace
 
 Auctions and trading are some of the most important features when it comes to crypto gaming. You may be someone who has set up a marketplace and you want to know when something in your market place just got sold, currently, you are either being sent an email when this happens or you just have to log in to your marketplace and check for yourself. Imagine if you didn’t have to do that; imagine if the news comes directly to you from your marketplace as a push notification.
 
@@ -60,8 +59,7 @@ Currently, in Web3.0 marketplaces like [OpenSea](https://opensea.io), they advis
 
 _More on NFT’s coming soon …(stay tuned)_
 
-2\. Announce exclusive In-Game Assets
--------------------------------------
+## 2\. Announce exclusive In-Game Assets
 
 Marketplaces as explored above are not exactly gaming in blockchain but an essential part. Notifications are still missing even in in-game features. Have you noticed that when you play traditional mobile games these days that you get notifications? Maybe there is a new Season, a new campaign, new characters, and weapons, or even new storylines you want players to check out. But this is missing currently in the arena of Blockchain Games.
 
@@ -69,22 +67,19 @@ Maybe your game just dropped a rare item on the map which is up for grabs in a l
 
 Sending out notifications for these events creates anticipation and excitement, making players want to check out these new features or try their hand in the new challenges that have never been seen before.
 
-3\. Personalized Gaming
------------------------
+## 3\. Personalized Gaming
 
 Nudging players a little with a message like **“_Oh Chosen one, it has been a while since you have visited us. Come back where you left off and lead our clan to victory_**” or an **“_ALERT — You have been attacked by LordMaster6565, we need to take Revenge_”** will go a long way as game developers are able to ensure that they personalize and add a bit of flare in the gaming experience and push them enough to return to the game.
 
 If this was not enough, sending out notifications to create a sense of competition among friends like, **_“ Your friend Kobe just reached Level 50! Start playing in order to keep up!_**” or just applauding some achievements or milestones reached by the player can be celebrated with notifications like **_“You just won 5 Duels in a row! Continue playing to keep the streak going!”_** can increase player return rates and enhance the overall experience both in-game and off-game.
 
-4\. Waiting time
-----------------
+## 4\. Waiting time
 
 Some games as you know, have waiting times where your gameplay may not move forward. This waiting time may come as some sort of Energy Refill to play matches again or as Breeding Times. Often these waiting times start off as 5 mins, and then as you level up or the rarer the item, the waiting time increases, and sometimes may take several hours. And as a game developer, these are hours your players are not in your game but are outside it doing their daily activities, and you need them to return to your game as soon as the waiting period ends. This is where notifications can help you as well. For example, **_“Your Rocket Fuel has been replenished! Log back in and resume defeating galactic baddies from conquering the universe!”_**
 
 This even holds true for idle games where you grow your own farm or city or metropolis or pet! You may have assigned your Sims to do a task in order to complete a quest, but it sadly takes 2 hours to complete. What now? From the POV of a game developer, I want my player to return to the game as soon as this task is done so that they keep playing on my platform, so what do I do? I send a notification, as simple as that!
 
-5\. Multiplayer Invites
------------------------
+## 5\. Multiplayer Invites
 
 Blockchain games fundamentally are Multiplayer games, this means that it is not only you playing the game, hence there arises a high probability that you’ve made friends along the way or you already have friends who play the game with you. One way EPNS can completely change the Crypto Gaming industry is with the functionality of an Invite.
 
@@ -96,8 +91,7 @@ Imagine in a blockchain game such as Gods Unchained, where you get to have duels
 
 This novel aspect provides an untapped potential of notifications that we haven’t seen anywhere in Web3.0 games and will change how games are built from here on out in Blockchain!
 
-Gaming For The Win
-==================
+# Gaming For The Win
 
 Gaming has always been an industry that has had multitudes of people in its community. Gaming can be anything from a pastime to passion for different individuals but it is true that it unites everyone. With Blockchain & Crypto Gaming in the market we are yet to see but hopeful for mainstream adoption, which will only happen if we provide a better user as well as gaming experience in-game and off-game. EPNS believes that one of the ways we can inch towards creating a wholesome gaming experience and achieving mainstream adoption would be the use of Push Notifications by developers in new and creative ways.
 

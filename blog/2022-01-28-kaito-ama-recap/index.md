@@ -11,6 +11,7 @@ tags: [ Interview
 ,Epnsproject
 ,Defi ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of KAITO AMA RECAP](./cover-image.webp)
@@ -243,5 +244,3 @@ _(RockstarsofEPNS “is a really creative and unique concept. What is the role o
 **Richa :** EPNSの$ROCKSTARは、それぞれ 2400 PUSHを含んだ100個のユニークなカスタムメイドのNFTです。毎週、最もクリエイティブなコミュニティメンバーに1つが与えられます。EPNSのために何かクールなもの、クレイジーなもの、またはその両方をお持ちの方は、こちらのルールに従ってください： [https://medium.com/ethereum-push-notification-service/kicking-off-the-epns-nft-community-drops-6a5c49808cf](https://medium.com/ethereum-push-notification-service/kicking-off-the-epns-nft-community-drops-6a5c49808cf) そして、あなたも1つ獲得することができます 🙂 これ（上の画像）はROCKSTAR NFTのうちの１つのご紹介です😉
 
 _($ ROCKSTAR of EPNS are 100 unique custom-created NFTs that contain 2400 $ PUSH each. One is awarded to the most creative community member every week. Have something cool, crazy, or a bit of both that you have done for EPNS? Then follow the rules here:_ [_https://medium.com/ethereum-push-notification-service/kicking-off-the-epns-nft-community-drops-6a5c49808cf_](https://medium.com/ethereum-push-notification-service/kicking-off-the-epns-nft-community-drops-6a5c49808cf) _and you can also win one :). here’s a teaser of one such ROCKSTAR NFT 😉)_
-
-

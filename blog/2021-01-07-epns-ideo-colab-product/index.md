@@ -12,6 +12,7 @@ tags: [ Defi
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS IDEO CoLab Product Validation Day 2020 Recap!](./cover-image.webp)
@@ -39,10 +40,9 @@ IDEO PVD is an amazing hands-on approach that all blockchain startups can imbibe
 Finally, as Dan mentioned during the IDEO PVD session.
 
 > Remember, [#DeFi](https://twitter.com/hashtag/DeFi?src=hashtag_click) friends: we’re all human.
-> 
+>
 > Even if you’re building a money robot, don’t be one yourself.
 
-About IDEO CoLab
-================
+# About IDEO CoLab
 
 From investing in early-stage distributed web startups to using design and emerging technology to accelerate ventures into market, [CoLab](https://www.ideocolab.com/) is IDEO’s platform for collaborative impact. Applying design thinking to emerging technologies, CoLab is dedicated to exploring opportunities within the following 2019 portfolios: Circular Economy, Collaborative Cities, Dynamic Workforce, and Open Financial Systems.

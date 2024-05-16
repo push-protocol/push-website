@@ -4,9 +4,10 @@ title: 'Roadmap Q2: Introducing the EPNS Chrome Browser Extension Alpha v0.1'
 authors: [push]
 image: './cover-image.webp'
 description: 'Roadmap Q2: Introducing the EPNS Chrome Browser Extension Alpha v0.1'
-text: "Since its inception, EPNS has been on its mission to build the most effective and reliable communication layer on Web3 to allow sending platform-agnostic and decentralized notifications."
-tags: [Ethereum ,Blockchain ,Web3 ,Roadmap, Newsletter]
+text: 'Since its inception, EPNS has been on its mission to build the most effective and reliable communication layer on Web3 to allow sending platform-agnostic and decentralized notifications.'
+tags: [Ethereum, Blockchain, Web3, Roadmap, Newsletter]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Roadmap Q2: Introducing the EPNS Chrome Browser Extension Alpha v0.1](./cover-image.webp)
@@ -22,20 +23,23 @@ Note: Currently it’s recommended for developers and advance users to install t
 
 The EPNS Chrome Browser extension is now LIVE in the Chrome Web Store!!
 https://chrome.google.com/webstore/detail/epns-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg/
+
 </blockquote>
 
-
 #### Setup
+
 If you have used the mobile App before you should already be familiar with the basics, however if it’s your first time please continue reading this guide and in 3 simples steps you will start receiving notifications from your favorite services.
 
 👉 Chrome Browser Extension: https://chrome.google.com/webstore/detail/epns-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg/
 
 #### Repos
+
 👉 Production Environment Repo: https://github.com/push-protocol/push-browser-ext
 
 👉 Staging Environment Repo: https://github.com/push-protocol/push-browser-ext-staging
 
 #### Getting Started
+
 Setting up your extension to start receiving notifications is super easy.
 
 ![First Image of Roadmap Q2: Introducing the EPNS Chrome Browser Extension Alpha v0.1](./image-1.gif)
@@ -47,6 +51,7 @@ Setting up your extension to start receiving notifications is super easy.
 By simply clicking the QR code on the left of your wallet address you can switch to another wallet.
 
 ### Update as of July 4th, 2021
+
 The EPNS Browser Extension is now available in the Chrome Web Store!!
 https://chrome.google.com/webstore/detail/epns-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg/
 

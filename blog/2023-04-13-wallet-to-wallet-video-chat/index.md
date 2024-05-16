@@ -1,22 +1,21 @@
 ---
-
 slug: push-launches-wallet-to-wallet-video-chat
 title: Push Launches Wallet-to-Wallet Video Chat📹
 authors: [push]
 image: './cover-image.gif'
-text: "Today, Push Protocol is excited to announce the launch of Push Video! Push Video is the first wallet-to-wallet video chat that allows web3 users to video chat with each other live. Get started at app.push.org"
-tags: [ Web3, Push Notification, Chat, Video, Social]
-
+text: 'Today, Push Protocol is excited to announce the launch of Push Video! Push Video is the first wallet-to-wallet video chat that allows web3 users to video chat with each other live. Get started at app.push.org'
+tags: [Web3, Push Notification, Chat, Video, Social]
 ---
 
 ![Cover image of Push Launches Wallet-to-Wallet Video Chat📹](./cover-image.gif)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # Push Video is live, allowing web3 users to video chat without intermediaries.<br/>
 
 Today, Push Protocol is excited to announce the launch of Push Video! Push Video is the first wallet-to-wallet video chat that allows web3 users to video chat with each other live. Get started at [app.push.org](https://app.push.org/chat)!
-
 
 Push Protocol began with push notifications to web3 in January 2022 on Ethereum. Since then, Push has expanded to Polygon and BNB Chain. In October 2022 at Devcon in Bogota, we announced the launch of Push Chat, our wallet-to-wallet messaging protocol. Since launch, Push Protocol has powered over 30M messages to 85,000+ users across 500+ integrations.
 
@@ -35,14 +34,16 @@ Back in 2020, Push Protocol (then, EPNS) was born out of ETHGlobal 2020. Today, 
 After Push Chat, Push Video is the second major social networking product to be launched by Push Protocol. We will continue to develop these products, adding features like group and streaming. Soon in our roadmap we have web3 “Twitter spaces like experience”, allowing communities to come together on decentralized online forum. All of these products will be tied together by the fundamental notifications layer that we have built and scaled to date. Piece by piece, Push Protocol is building the decentralized social networking ecosystem for all users of the future internet.
 
 ### The Push Developer Video SDK
+
 The Push Developer Video SDK is launching soon! The SDK will give app developers an easy way to start integrating decentralized notifications, chat, and/or video directly into their applications. We’ll be launching the SDK imminently, so join the #dev-chat channel in our [Discord](https://discord.gg/pushprotocol) to learn more.
 
 ### How to Get Started with Push Video?
+
 Sending a video request and getting started with decentralized video chat is easy! Here’s a step by step guide.
 
 <b>Step 1:</b> Head to <a href="https://app.push.org/">app.push.org</a> and connect your MetaMask (or your preferred wallet).<br/><br/>
 
-<b>Step 2:</b> Click on “Push Chat” on the left navigation bar. Search for the recipient you want to video call with their wallet address or their ENS name.*<br/><br/>
+<b>Step 2:</b> Click on “Push Chat” on the left navigation bar. Search for the recipient you want to video call with their wallet address or their ENS name.\*<br/><br/>
 
 ![Push Video 2](./image-2.png)
 
@@ -52,5 +53,4 @@ Sending a video request and getting started with decentralized video chat is eas
 
 ![Push Video 4](./image-4.png)
 
-*Note: You need to be friends prior to making a call. You can do this by starting a text conversation first. Once the other person accepts your message request, you’re all set to have a safe & secure video call.
-
+\*Note: You need to be friends prior to making a call. You can do this by starting a text conversation first. Once the other person accepts your message request, you’re all set to have a safe & secure video call.

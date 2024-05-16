@@ -4,31 +4,31 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import Link from "@docusaurus/Link";
-import { translate } from "@docusaurus/Translate";
-import { useLocation } from "@docusaurus/router";
-import { ThemeClassNames } from "@docusaurus/theme-common";
+import Link from '@docusaurus/Link';
+import { translate } from '@docusaurus/Translate';
+import { useLocation } from '@docusaurus/router';
+import { ThemeClassNames } from '@docusaurus/theme-common';
 import {
   useHomePageRoute,
   useSidebarBreadcrumbs,
-} from "@docusaurus/theme-common/internal";
-import HomeBreadcrumbItem from "@theme/DocBreadcrumbs/Items/Home";
-import clsx from "clsx";
-import React from "react";
-import styles from "./styles.module.css";
+} from '@docusaurus/theme-common/internal';
+import HomeBreadcrumbItem from '@theme/DocBreadcrumbs/Items/Home';
+import clsx from 'clsx';
+import React from 'react';
+import styles from './styles.module.css';
 // TODO move to design system folder
 function BreadcrumbsItemLink({ children, href, isLast }) {
-  const className = "breadcrumbs__link";
+  const className = 'breadcrumbs__link';
   if (isLast) {
     return (
-      <span className={className} itemProp="name">
+      <span className={className} itemProp='name'>
         {children}
       </span>
     );
   }
   return href ? (
-    <Link className={className} href={href} itemProp="item">
-      <span itemProp="name">{children}</span>
+    <Link className={className} href={href} itemProp='item'>
+      <span itemProp='name'>{children}</span>
     </Link>
   ) : (
     // TODO Google search console doesn't like breadcrumb items without href.
@@ -45,15 +45,15 @@ function BreadcrumbsItem({ children, active, index, addMicrodata }) {
     <li
       {...(addMicrodata && {
         itemScope: true,
-        itemProp: "itemListElement",
-        itemType: "https://schema.org/ListItem",
+        itemProp: 'itemListElement',
+        itemType: 'https://schema.org/ListItem',
       })}
-      className={clsx("breadcrumbs__item", {
-        "breadcrumbs__item--active": active,
+      className={clsx('breadcrumbs__item', {
+        'breadcrumbs__item--active': active,
       })}
     >
       {children}
-      <meta itemProp="position" content={String(index + 1)} />
+      <meta itemProp='position' content={String(index + 1)} />
     </li>
   );
 }
@@ -63,9 +63,9 @@ export default function DocBreadcrumbs() {
   // override breadcrumps to add product as well
   let locationpath = useLocation().pathname;
   // remove /docs/ from path
-  locationpath = locationpath.replace("/docs/", "");
+  locationpath = locationpath.replace('/docs/', '');
   // split path into array
-  const pathArray = locationpath.split("/");
+  const pathArray = locationpath.split('/');
   // take first item of array
   const product = pathArray[0];
 
@@ -73,7 +73,10 @@ export default function DocBreadcrumbs() {
   if (product.length > 0) {
     breadcrumbs = [
       {
-        label: product.toUpperCase() === 'DAO' ? product.toUpperCase() : product.charAt(0).toUpperCase() + product.slice(1),
+        label:
+          product.toUpperCase() === 'DAO'
+            ? product.toUpperCase()
+            : product.charAt(0).toUpperCase() + product.slice(1),
         href: `/docs/${product}`,
       },
       ...breadcrumbs,
@@ -91,15 +94,15 @@ export default function DocBreadcrumbs() {
         styles.breadcrumbsContainer
       )}
       aria-label={translate({
-        id: "theme.docs.breadcrumbs.navAriaLabel",
-        message: "Breadcrumbs",
-        description: "The ARIA label for the breadcrumbs",
+        id: 'theme.docs.breadcrumbs.navAriaLabel',
+        message: 'Breadcrumbs',
+        description: 'The ARIA label for the breadcrumbs',
       })}
     >
       <ul
-        className="breadcrumbs"
+        className='breadcrumbs'
         itemScope
-        itemType="https://schema.org/BreadcrumbList"
+        itemType='https://schema.org/BreadcrumbList'
       >
         {homePageRoute && <HomeBreadcrumbItem />}
         {breadcrumbs.map((item, idx) => {

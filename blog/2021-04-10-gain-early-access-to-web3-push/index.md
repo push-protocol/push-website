@@ -11,6 +11,7 @@ tags: [ Quiz
 ,Decentralization
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Gain Early Access to Web3 Push Notifications and Win $PUSH in the EPNS 2-day YouTube Campaign](./cover-image.webp)
@@ -49,11 +50,9 @@ All 3 steps are **mandatory** to be eligible for the random selection.
 
 ❌ **Anyone found using multiple IDs to participate in the campaign will be immediately disqualified. The team will be checking for duplicates.**
 
-Disclaimer
-==========
+# Disclaimer
 
-🚨 WARNING 🚨
--------------
+## 🚨 WARNING 🚨
 
 ❗**Beware of scammers and fake addresses**❗
 
@@ -74,4 +73,3 @@ Disclaimer
 **Telegram** **Announcement** **Channel** [https://t.me/epnsprojectnews](https://t.me/epnsprojectnews)
 
 🚨 WARNING 🚨
-

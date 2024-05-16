@@ -12,6 +12,7 @@ tags: [ Snapshot
 ,Blockchain
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Push Notifications Arrive at DeFi on Oasis.app](./cover-image.webp)
@@ -20,8 +21,7 @@ import { ImageText } from '@site/src/css/SharedStyling';
 
 Dai is considered among the most reliable stablecoins because the widely circulated coin is both pegged to the US dollar and backed by MakerDAO-approved crypto collateral. Dai can be created by opening Vaults (overcollateralized debt positions) through Oasis.app, which aims to be the most trusted decentralized application to interact with the Maker Protocol and to manage vaults. EPNS is pleased to deepen its exploration of push notification use cases, using Dai by launching a pilot program to provide decentralized push notifications for monitoring Maker Vaults on Oasis.app. Maker Vault owners can now enjoy a trading edge by receiving notifications when a price of an asset goes above or below a certain threshold, changing the collateralization ratio, and then being aware when the Vault risks being liquidated .
 
-Maximize DeFi Opportunities With Oasis.app and Maker Vaults Powered by Push Notifications
-=========================================================================================
+# Maximize DeFi Opportunities With Oasis.app and Maker Vaults Powered by Push Notifications
 
 With a market cap surpassing $5 billion, the usage of the Dai stablecoin is growing, particularly in DeFi applications where it is being combined in a multitude of ways with DeFi products to reduce price volatility. Oasis.app is the most trusted way to access the Maker Protocol so anyone can borrow and use Dai anywhere through its simple user interface.
 
@@ -29,25 +29,23 @@ Oasis.app makes it easy to borrow Dai by opening a Maker Vault, a deposit accoun
 
 Managing DeFi services, however, involves a lot of checking of different sources and messages from multiple platforms yet no central messaging service exists. One essential element is missing, **decentralized push notifications**. In order to worry less about what might happen, Oasis.app users are highly dependent on a notification service that would help them to manage their Maker Vaults, including:
 
-*   When the Vault might be at risk of liquidation on the next price update due to a sudden price drop
-*   When the Vault has reached a certain collateralization ratio that you’d like to take a certain action at, either to buy additional collateral, or repay.
-*   When risk parameters, such as Stability Fee’s or Debt Ceiling changes are made by Maker Governance that affect a Vault you own.
+- When the Vault might be at risk of liquidation on the next price update due to a sudden price drop
+- When the Vault has reached a certain collateralization ratio that you’d like to take a certain action at, either to buy additional collateral, or repay.
+- When risk parameters, such as Stability Fee’s or Debt Ceiling changes are made by Maker Governance that affect a Vault you own.
 
 Though Oasis.app simplifies access to the Maker Protocol, the lack of a decentralized push notification service, until now, means important notifications are distributed to multiple places, such as email or a Twitter or Telegram account. A push notification service sending all notifications to the Oasis.app wallet would **allow all platform users to receive and take timely action on important DeFi notifications while still protecting data privacy** as Oasis.app users interact with internal and external data sources.
 
 > _Receiving notifications directly within Oasis.app will allow our customers to live a safer and conscious experience, without always worrying about checking different sources. It has always been one of the most asked-for features and that is why this partnership is crucial to us.- Chris Bradbury, CEO of Oasis.app_
 
-The EPNS Solution
-=================
+# The EPNS Solution
 
 The EPNS decentralized push notification service sends timely notifications through a single source of communication, the investor’s wallet. All Maker Vault notifications will go directly to the user’s Oasis.app wallet where they can track vault positions and take immediate action. EPNS is the first native, on-chain notification solution to stream all crucial time-sensitive information to a user’s wallet. The partnership benefits to Oasis.app users include:
 
-*   EPNS will send all data notifications directly to Oasis.app user wallets.
-*   The EPNS and Oasis.app teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of Dai users in DeFi markets.
-*   EPNS channels and users can customize their notification settings for different notification requirements.
+- EPNS will send all data notifications directly to Oasis.app user wallets.
+- The EPNS and Oasis.app teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of Dai users in DeFi markets.
+- EPNS channels and users can customize their notification settings for different notification requirements.
 
-How EPNS Will Support Oasis.app
-===============================
+# How EPNS Will Support Oasis.app
 
 Under this pilot program, EPNS is building a dedicated channel for Oasis.app (see our lightpaper for definitions of channels, services, and more). Oasis.app users can subscribe to the Oasis.app channel to receive customized notifications to their wallets. Through collaboration with the Oasis.app team, we will gain insight into the push notification needs of Maker Vault and Dai stablecoin users and what they want from the EPNS protocol.
 
@@ -61,8 +59,7 @@ The long-term goal of the pilot program is to develop a notification system for 
 
 We are pleased to be partnering with Oasis.app and anticipate EPNS push notifications becoming an indispensable tool in stablecoin DeFi markets.
 
-About Oasis.app
----------------
+## About Oasis.app
 
 Oasis.app is the home for everything you want to accomplish with Dai. A decentralized application that runs on the Ethereum blockchain, Oasis aims to be the most trusted app to access the Maker protocol, get Dai and in general to deploy your capital into DeFi. Dai is a better, smarter digital currency for everyone. It is the world’s first unbiased currency and its value consistently tracks the US Dollar, which means it doesn’t suffer from the volatility associated with many other digital currencies.
 

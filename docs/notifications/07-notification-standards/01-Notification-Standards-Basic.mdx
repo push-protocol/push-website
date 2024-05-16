@@ -5,7 +5,7 @@ hide_title: true
 slug: ./notification-standards-basic
 displayed_sidebar: pushNotificationSidebar
 sidebar_position: 1
-image: "/assets/docs/previews/docs_notifications_ns_notif_standards_basic--notification_standards_(basic).png"
+image: '/assets/docs/previews/docs_notifications_ns_notif_standards_basic--notification_standards_(basic).png'
 ---
 
 # Notification Standards Overview
@@ -13,24 +13,26 @@ image: "/assets/docs/previews/docs_notifications_ns_notif_standards_basic--notif
 All notifications passed to the network are eventually transformed to JSON payload. The following glossaries help cover some of the basics that can help in understanding what is happening and how to customize the behavior.
 
 <head>
-  <title>Notification Standards (Basic) | Push Notifications | Push Documentation</title>
+  <title>
+    {`Notification Standards (Basic) | Push Notifications | Push Documentation`}
+  </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Important glossaries
 
 - **Verification Proof** - Each notification sent carries with itself a verification proof that allows the network to validate that the notification is coming from a channel or one of it's delegate.
 
   :::note
-  Verification Proof is handled automatically by the SDK but you if you want to, you can read about it [over here](docs/notifications/notification-standards/notification-standards-advance/#notification-verification-proof "post explaining notification verification proof in Push protocol").
+  Verification Proof is handled automatically by the SDK but you if you want to, you can read about it [over here](docs/notifications/notification-standards/notification-standards-advance/#notification-verification-proof 'post explaining notification verification proof in Push protocol').
   :::
 
 - **Notification Identity** - Each notification passed to the network is actually an identity which defines how the notification is formatted, where it's stored, etc.
 
   :::note
-  Notification identity is abstracted away by the SDK except when invoking directly from your smart contracts. Advance section has detailed explaination about [Notification Identity](docs/notifications/notification-standards/notification-standards-advance/#notification-identity "post explaining notification identity in Push protocol").
+  Notification identity is abstracted away by the SDK except when invoking directly from your smart contracts. Advance section has detailed explaination about [Notification Identity](docs/notifications/notification-standards/notification-standards-advance/#notification-identity 'post explaining notification identity in Push protocol').
 
 - **Identity Type** - Defines the format in which the notification json payload is sent to the network. Common types you need to know about.
 
@@ -73,12 +75,12 @@ import TabItem from "@theme/TabItem";
   ```
 
   :::note
-  These concepts are for your understanding as most of them are abstracted away but if you wish to dive deeper then read more about [notification payload here](docs/notifications/notification-standards/notification-standards-advance/#notification-payload "post explaining notification payload in in Push protocol").
+  These concepts are for your understanding as most of them are abstracted away but if you wish to dive deeper then read more about [notification payload here](docs/notifications/notification-standards/notification-standards-advance/#notification-payload 'post explaining notification payload in in Push protocol').
   :::
 
-- **Content Markdown** - Defines how the content markdown should be passed to enable variety of notifications. Covered in detail in the advanced section - [Notification Content](docs/notifications/notification-standards/notification-standards-advance/#notification-content "post explaining notification content and how to customize it in in Push protocol").
+- **Content Markdown** - Defines how the content markdown should be passed to enable variety of notifications. Covered in detail in the advanced section - [Notification Content](docs/notifications/notification-standards/notification-standards-advance/#notification-content 'post explaining notification content and how to customize it in in Push protocol').
 
-- **Sender** - Defines who is sending the message. The sender is the channel address or the alias address. The address should be represented in chain specific format as [depicted over here](/docs/notifications/important-concepts/#chain-specific-wallet-address "About chain specific wallet address")
+- **Sender** - Defines who is sending the message. The sender is the channel address or the alias address. The address should be represented in chain specific format as [depicted over here](/docs/notifications/important-concepts/#chain-specific-wallet-address 'About chain specific wallet address')
 
   Examples:
 
@@ -87,14 +89,14 @@ import TabItem from "@theme/TabItem";
   - Polygon(Mumbai): `eip155:80001:<Address>`
 
   :::caution
-  One exception to chain specific format is for smart contract to smart contract interaction (ie: [Send Notification (via smart contract)](/docs/notifications/build/send-notification-via-smart-contract/ "Send notification via smart contract")), For this specific feature, the native blockchain address is required and not chain specific format.
+  One exception to chain specific format is for smart contract to smart contract interaction (ie: [Send Notification (via smart contract)](/docs/notifications/build/send-notification-via-smart-contract/ 'Send notification via smart contract')), For this specific feature, the native blockchain address is required and not chain specific format.
   :::
 
 - **Source** - The source from which the notification is coming from. Currently supports `ETH_MAINNET`, `POLYGON_MAINNET`, `BNB_MAINNET`, `ARB_MAINNET`, `THE_GRAPH`, `ETH_TEST_SEPOLIA` `ETH_TEST_GOERLI`, `POLYGON_TESTNET`, `BNB_TESTNET`.
 
-  Source is determined [by the chain at which the user is inititialized](http://localhost:3000/docs/notifications/build/initialize-user/ "Initialize User Push SDK") from Push SDK, by the network it is coming from in case of smart contracts.
+  Source is determined [by the chain at which the user is inititialized](http://localhost:3000/docs/notifications/build/initialize-user/ 'Initialize User Push SDK') from Push SDK, by the network it is coming from in case of smart contracts.
 
-- **Recipient(s)** - The address to the notification should reach. Push supports multiple address formats as [depicted over here](/docs/notifications/important-concepts/#types-of-supported-wallet-address-account "learn about all supported wallet address account").
+- **Recipient(s)** - The address to the notification should reach. Push supports multiple address formats as [depicted over here](/docs/notifications/important-concepts/#types-of-supported-wallet-address-account 'learn about all supported wallet address account').
 
   Few examples:
 
@@ -103,7 +105,7 @@ import TabItem from "@theme/TabItem";
   - Polygon(Mumbai): `eip155:80001:<Address>`
 
   :::caution
-  One exception to address format support is for smart contract to smart contract interaction (ie: [Send Notification (via smart contract)](/docs/notifications/build/send-notification-via-smart-contract/ "Send notification via smart contract")), For this specific feature, the native blockchain address is required. for example: `0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666`
+  One exception to address format support is for smart contract to smart contract interaction (ie: [Send Notification (via smart contract)](/docs/notifications/build/send-notification-via-smart-contract/ 'Send notification via smart contract')), For this specific feature, the native blockchain address is required. for example: `0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666`
   :::
 
 ## Sending notification examples
@@ -114,20 +116,20 @@ import TabItem from "@theme/TabItem";
 ```typescript
 // userAlice.channel.send([recipients], {options?})
 // to send a broadcast notification - pass '*' in recipients array
-const broadcastNotif = await userAlice.channel.send(["*"], {
-  notification: { title: "test", body: "test" },
+const broadcastNotif = await userAlice.channel.send(['*'], {
+  notification: { title: 'test', body: 'test' },
 });
 
 // userAlice.channel.send([recipients], {options?})
 // to send a targeted notification - pass that single wallet address in recipients array
 const targetedNotif = await userAlice.channel.send(
-  ["0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666"],
+  ['0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666'],
   {
     notification: {
-      title: "test",
-      body: "test",
+      title: 'test',
+      body: 'test',
     },
-  },
+  }
 );
 
 // userAlice.channel.send([recipients], {options?})
@@ -136,10 +138,10 @@ const subsetNotif = await userAlice.channel.send(
   [randomWallet1, randomWallet2, randomWallet3],
   {
     notification: {
-      title: "test",
-      body: "test",
+      title: 'test',
+      body: 'test',
     },
-  },
+  }
 );
 ```
 

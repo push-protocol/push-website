@@ -11,12 +11,12 @@ tags: [ Web3, NewsLetter, Blockchain Development, Blockchain Technology]
 ---
 
 ![Cover image of April Monthly Recap✨](./cover-image.webp)
+
 <!--truncate-->
 
 Welcome to another exciting month at Push Protocol!
 
 While there’s a lot to get through, there is one announcement that stands out and we think is worthwhile giving extra attention.
-
 
 As we’ve been busy expanding our reach, adding to our suite of decentralized communication tools, and working to revolutionize web3 communication, April hosted the release of our latest development. Introducing [Push Video Chat](https://twitter.com/pushprotocol/status/1646483829287182339) — a groundbreaking wallet-to-wallet video chat that allows web3 users to connect in real time.
 
@@ -46,6 +46,7 @@ Additionally, we [integrated with Safe](https://twitter.com/pushprotocol/status/
 As we continue to work with like-minded partners, we look forward to achieving great things together and bringing new value to our users.
 
 ![Ecosystem](./image-1.webp)
+
 <center>A look at the Push Ecosystem as of April, 2023</center>
 
 ## Featured📰
@@ -93,4 +94,3 @@ We look forward to hosting more exciting events in the future to reward our amaz
 As we wrap up another exciting month at Push, we are grateful for the tremendous support from our community and partners in the web3 ecosystem.
 
 We’re excited to see what the future holds for Push. Until next time!
-

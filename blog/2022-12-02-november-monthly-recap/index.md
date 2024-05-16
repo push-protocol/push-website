@@ -9,10 +9,10 @@ tags: [ Web3, Push Notification Service, Push Notification, Developer Tools, New
 ---
 
 ![Cover image of November Monthly Recap](./cover-image.webp)
+
 <!--truncate-->
 
 What a month for the Push project and community! From making many new frens to launching our very own Improvement Proposals, much has happened and we cannot wait to share everything with you. 🤩
-
 
 Let’s unpack everything that happened this month!
 
@@ -22,6 +22,7 @@ Let’s unpack everything that happened this month!
 4. [Push in The News](https://medium.com/push-protocol/november-monthly-recap-95e0e53c65f9#1569)
 
 ## 🏗️ Developments 🏗️
+
 Starting with the introduction of the <b>Push Improvement Proposal (PIP).</b>
 
 Push community members can now submit proposals for standardized, community-driven improvements, specs, and standards or improvements to the Push ecosystem via PIPs.
@@ -41,6 +42,7 @@ Beyond just the introduction of PIPs though, there have been a host of improveme
 With so much happening on the development front and with the launch of PIP, we invite you all to join us and have a chat with our team on [Push Discord](https://discord.gg/pushprotocol). All the good conversations are happening there!
 
 ## 🤝 Frens of Push 🤝
+
 We’re delighted to have grown our ecosystem with some very meaningful collaborations including:
 
 - <a href="https://indexcoop.com/"><b>Index Coop:</b></a> to enable decentralized, seamless communication on their platform. <a href="https://twitter.com/pushprotocol/status/1588177926633435136?s=20&t=f1y9i26iSB4u0d9htusCNA">Read more</a>.
@@ -50,18 +52,19 @@ We’re delighted to have grown our ecosystem with some very meaningful collabor
 We welcome these new frens and look forward to supporting one another growth. Let’s BUIDL together!
 
 ## 🗳️ Governance and Community 🗳️
+
 With the launch of PIP, we’ve taken a significant step in enabling changes and improvements in the Push ecosystem.
 
 A number of Push Grant Proposals were also discussed in the [Push Gov Forum](https://gov.push.org/) this month and we want to congratulate SPECT for making it to the finish line and getting their proposal approved. Other PGPs are open for voting and we wish them lots of luck.
 
-The proposal to introduce [Push Notifications to Element Finance](https://twitter.com/pushprotocol/status/1594699505701879808?s=20&t=HrRpWmCJh6RTEWV8-2Qk0Q) has also passed and we look forward to enhancing governance on 
+The proposal to introduce [Push Notifications to Element Finance](https://twitter.com/pushprotocol/status/1594699505701879808?s=20&t=HrRpWmCJh6RTEWV8-2Qk0Q) has also passed and we look forward to enhancing governance on
 ElementFi
 .
 
 There was tons of action with our community:
 
-- Hosted amazing Friday Push calls. One with our fren 
-[Phuture](https://medium.com/u/bd0c8ba3658d?source=post_page-----95e0e53c65f9--------------------------------) and another with two of the top protocols from [ETHGlobal’s](https://medium.com/u/3d1733b8e86a?source=post_page-----95e0e53c65f9--------------------------------) ETHSanFrancisco <a href="https://twitter.com/pushprotocol/status/1593580530364203008"><b>Pepperstake and CoverFi</b></a>.
+- Hosted amazing Friday Push calls. One with our fren
+  [Phuture](https://medium.com/u/bd0c8ba3658d?source=post_page-----95e0e53c65f9--------------------------------) and another with two of the top protocols from [ETHGlobal’s](https://medium.com/u/3d1733b8e86a?source=post_page-----95e0e53c65f9--------------------------------) ETHSanFrancisco <a href="https://twitter.com/pushprotocol/status/1593580530364203008"><b>Pepperstake and CoverFi</b></a>.
 - Kicked off #FrensofPush, a weekly content series to spotlight projects that are building with Push. We sat down with <a href="https://twitter.com/pushprotocol/status/1593231543048499202?s=20&t=eKqRdKyLPXiE9xu-s5KS6Q"><b>Earnifi</b></a> and <a href="https://twitter.com/pushprotocol/status/1595779712374153218?cxt=HHwWhICx_bHMrKUsAAAA"><b>Cryptocurrency Jobs</b></a> and explored how Push is helping enhance their user experience through decentralized communication.
 
 And while we’re talking about community, we cannot go without a huge shoutout to all the Rockstars of Push who created a host of fantastic content about Push.
@@ -69,6 +72,7 @@ And while we’re talking about community, we cannot go without a huge shoutout 
 You guys are amazing! 🎉
 
 ## 📰 Push in the News 📰
+
 A beautiful month for Push as we were featured on some of the best crypto publications and podcasts out there:
 
 - Our founder, Harsh Rajat, took a session on “Communication is a public good” at Schelling Point in Bogota. [Check it out!](https://twitter.com/pushprotocol/status/1586358935178526726?s=20&t=f1y9i26iSB4u0d9htusCNA)
@@ -82,5 +86,3 @@ A beautiful month for Push as we were featured on some of the best crypto public
 With such an exciting month behind us, we’re all geared up for December and have some exciting updates to release! Stay tuned!
 
 — The Push Team
-
-

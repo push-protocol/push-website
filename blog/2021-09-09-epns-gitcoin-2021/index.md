@@ -11,6 +11,7 @@ tags: [ Ethereum
 ,Open Source
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS 💕 Gitcoin](./cover-image.webp)
@@ -44,4 +45,3 @@ And today, we’re excited to announce our **Sponsorship of Gitcoin Grants Round
 Our journey from grantee to grantor “completes the circle” of our journey with [Gitcoin](https://twitter.com/gitcoin), but it doesn’t mark the end! We look forward to continuing to support and give back to the community that has given us so much.
 
 Thank you Gitcoin! 💝
-

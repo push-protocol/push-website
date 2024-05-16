@@ -12,6 +12,7 @@ tags: [ Blockchain
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of How Decentralized Notifications can Revolutionize On-Chain Governance](./cover-image.webp)
@@ -28,28 +29,26 @@ What we will be discussing here today in Part 2 of this series will be a differe
 
 This is where **Game Theory & Governance** join hands and provide us with a way to analyze user sentiments and predict human reasoning in order to facilitate a decision better on-chain.
 
-TL;DR Key Points:
------------------
+## TL;DR Key Points:
 
-> 1) In Blockchain, upgrading the system or various protocols and policies is often a coordination game.
-> 
+> 1. In Blockchain, upgrading the system or various protocols and policies is often a coordination game.
+>
 > 2)A governance system in Blockchain can help facilitate the coordination of the community on an equilibrium that everyone can accept. It acts as a focal point (Signal). It doesn’t enforce a decision on the system, instead, it guides the stakeholders of the system to a coordinated choice.
-> 
-> 3) Right now, the overwhelming majority of the governance of decentralized systems such as measuring community sentiment and user intentions is mostly done on Web 2.0 platforms such as Reddit, Twitter, Github and forums — centralized platforms that are susceptible to various forms of opaque attack and bias.
-> 
+>
+> 3. Right now, the overwhelming majority of the governance of decentralized systems such as measuring community sentiment and user intentions is mostly done on Web 2.0 platforms such as Reddit, Twitter, Github and forums — centralized platforms that are susceptible to various forms of opaque attack and bias.
+>
 > 4)**EPNS** can act as a focal point for governance decisions as services are able to broadcast messages and signals to the public.
 
-**Game Theory and Focal Points in Governance**
-==============================================
+# **Game Theory and Focal Points in Governance**
 
 Game theory is the study of rational behaviour in situations involving interdependence. The goal of game theory for cryptocurrency and Blockchain systems is to build networks that need no oversight by modelling and predicting human reasoning and yet have positive outcomes for the greater good. In Blockchain, upgrading the system or various protocols and policies is often a coordination game. Coordination games are strategic games with multiple [**_Nash equilibria_**](https://medium.com/@robin.rrt123/blockchain-governance-game-theory-2bd28e6513e3)**_._**
 
 The 3 possibilities for a **blockchain policy upgrade** are:
 
 > _1\. The entire chain stays with the current status quo_
-> 
+>
 > _2\. The entire chain can upgrade to the new policy_
-> 
+>
 > _3\. There can be a hard fork, wherein a considerable amount of stakeholders want to change to the new policy whereas the rest desire to continue with the status quo, and hence both the old and new chains co-exist simultaneously. (Coordination Failure)_
 
 Blockchain communities can prevent coordination failures by introducing **focal points**.
@@ -72,8 +71,7 @@ Carbon Vote acted as a signalling device, where stakeholders of the Ethereum pro
 
 With the help of Carbon Vote as a focal point, stakeholders of Ethereum were able to make decisions on whether to fork or not, after the DAO incident.
 
-**EPNS: A Focal Point for the future?**
-=======================================
+# **EPNS: A Focal Point for the future?**
 
 EPNS aims to be a platform-agnostic decentralized notification system. It provides a uniform and standardized way for Web3 services to communicate seamlessly with their users. As Phil Lucsok from Polkadot says in his [article](https://medium.com/polkadot-network/why-on-chain-governance-82ecf28f314c), that right now, the overwhelming majority of the governance of decentralized systems such as measuring community sentiment and user intentions is mostly done on Web 2.0 platforms such as Reddit, Twitter, Github and forums — centralized platforms that are susceptible to various forms of opaque attack and bias. In simple words, **Web 3.0 shouldn’t be governed using Web 2.0 platforms.**
 
@@ -87,8 +85,7 @@ What we will focus here will be the second cycle — the voting. Tezos could act
 
 The Channel, in this way, can act as a focal point and provide an idea to all stakeholders about the possible outcome of the actual voting when it occurs. This will allow the facilitation of educated decision making when it comes to the actual voting. As explained earlier, using **such a system doesn’t enforce a decision on the system, instead, it guides the stakeholders of the system to a coordinated choice.**
 
-**Conclusion**
-==============
+# **Conclusion**
 
 In Blockchain, upgrading the system or various protocols and policies is often a coordination game. Often, achieving this coordination to make unanimous collective decisions is not as easy as it sounds. With the help of Game Theory and the concept of Focal points, one can try to facilitate decision making by using Signals to indicate stakeholder preferences.
 
@@ -99,9 +96,9 @@ If you like what EPNS is attempting to do by shaking the very foundations of blo
 _Consider joining our buzzing Social Media Community!_
 
 > _Telegram:_ [_https://t.me/epnsproject_](https://t.me/epnsproject)
-> 
+>
 > _Twitter:_ [_https://twitter.com/epnsproject_](https://twitter.com/epnsproject)
-> 
+>
 > _Github:_ [_https://github.com/push-protocol_](https://github.com/push-protocol)
 
 _References:_ [_Blockchain Governance & Game Theory_](https://medium.com/@robin.rrt123/blockchain-governance-game-theory-2bd28e6513e3) _— Robin Roy |_ [_Why On-Chain Governance?_](https://medium.com/polkadot-network/why-on-chain-governance-82ecf28f314c) _— Phil Lucsok |_ [_Voting vs Signaling_](https://medium.com/strongblock-consulting/voting-vs-signaling-in-blockchain-governance-24ddacdaab9d) _— Thomas Cox_

@@ -4,21 +4,21 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import Head from "@docusaurus/Head";
-import Link from "@docusaurus/Link";
-import { useLocation } from "@docusaurus/router";
-import { useColorMode } from "@docusaurus/theme-common";
-import useBaseUrl from "@docusaurus/useBaseUrl";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Head from '@docusaurus/Head';
+import Link from '@docusaurus/Link';
+import { useLocation } from '@docusaurus/router';
+import { useColorMode } from '@docusaurus/theme-common';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import CodeBlock from "@theme/CodeBlock";
-import Layout from "@theme/Layout";
-import React, { useState } from "react";
-import "./styles.css";
+import CodeBlock from '@theme/CodeBlock';
+import Layout from '@theme/Layout';
+import React, { useState } from 'react';
+import './styles.css';
 
 // External Components
-import clsx from "clsx";
-import styled, { keyframes } from "styled-components";
+import clsx from 'clsx';
+import styled, { keyframes } from 'styled-components';
 
 // Internal Components
 import {
@@ -32,26 +32,26 @@ import {
   ItemV,
   Section,
   Span,
-} from "@site/src/css/SharedStyling";
-import Footer from "@site/src/segments/Footer";
+} from '@site/src/css/SharedStyling';
+import Footer from '@site/src/segments/Footer';
 
 // Import Assets
-import ArrowUp from "@site/static/assets/docs/ArrowUpRight-pink.svg";
-import { FiArrowUpRight } from "react-icons/fi";
+import ArrowUp from '@site/static/assets/docs/ArrowUpRight-pink.svg';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 // Internal Configs
-import BrowserOnly from "@docusaurus/BrowserOnly";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import Spinner, {
   SPINNER_TYPE,
-} from "@site/src/components/reusables/spinners/SpinnerUnit";
+} from '@site/src/components/reusables/spinners/SpinnerUnit';
 import {
   ITechDocItem,
   QuickstartItems,
   SdkItemsList,
   TechDocItems,
-} from "@site/src/config/DocsHubList";
-import GLOBALS, { device } from "@site/src/config/globals";
-import { PageMeta } from "@site/src/config/pageMeta";
+} from '@site/src/config/DocsHubList';
+import GLOBALS, { device } from '@site/src/config/globals';
+import { PageMeta } from '@site/src/config/pageMeta';
 
 function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   return (
@@ -61,7 +61,7 @@ function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
       </PopularQuickiesHeader>
 
       <PopularQuickiesContent>
-        <PopularQuickiesCodeBlock language="jsx" showLineNumbers={true}>
+        <PopularQuickiesCodeBlock language='jsx' showLineNumbers={true}>
           {codeblock}
         </PopularQuickiesCodeBlock>
       </PopularQuickiesContent>
@@ -87,14 +87,14 @@ function TechDocItem({
       <TechDocContent
         onClick={(e) => {
           e.preventDefault();
-          target === "_self"
+          target === '_self'
             ? (window.location.href = link)
             : window.open(link, target);
         }}
-        hoverBackground="transparent"
+        hoverBackground='transparent'
       >
-        <ItemV alignSelf="stretch" margin="0px 8%">
-          <ItemV padding="0px 0px 30px 0px" alignItems="flex-start">
+        <ItemV alignSelf='stretch' margin='0px 8%'>
+          <ItemV padding='0px 0px 30px 0px' alignItems='flex-start'>
             <TechDocIcon docutheme={docutheme}>
               <Image
                 src={
@@ -109,7 +109,7 @@ function TechDocItem({
           </ItemV>
 
           {codeblock && (
-            <TechDocSwitcher gap="10px">
+            <TechDocSwitcher gap='10px'>
               <TechDocButton
                 onClick={(e) => {
                   e.stopPropagation();
@@ -118,13 +118,13 @@ function TechDocItem({
                 }}
                 background={
                   content == 0
-                    ? "var(--ifm-color-primary)"
-                    : "var(--ifm-color-background)"
+                    ? 'var(--ifm-color-primary)'
+                    : 'var(--ifm-color-background)'
                 }
                 color={
                   content == 0
-                    ? "var(--ifm-color-primary-inverse)"
-                    : "var(--ifm-color-content)"
+                    ? 'var(--ifm-color-primary-inverse)'
+                    : 'var(--ifm-color-content)'
                 }
               >
                 Overview
@@ -137,13 +137,13 @@ function TechDocItem({
                 }}
                 background={
                   content == 1
-                    ? "var(--ifm-color-primary)"
-                    : "var(--ifm-color-background)"
+                    ? 'var(--ifm-color-primary)'
+                    : 'var(--ifm-color-background)'
                 }
                 color={
                   content == 1
-                    ? "var(--ifm-color-primary-inverse)"
-                    : "var(--ifm-color-content)"
+                    ? 'var(--ifm-color-primary-inverse)'
+                    : 'var(--ifm-color-content)'
                 }
               >
                 API
@@ -151,7 +151,7 @@ function TechDocItem({
             </TechDocSwitcher>
           )}
 
-          <ItemV alignItems="stretch">
+          <ItemV alignItems='stretch'>
             {content == 0 && <TechDocOverview>{description}</TechDocOverview>}
           </ItemV>
         </ItemV>
@@ -163,7 +163,7 @@ function TechDocItem({
               e.preventDefault();
             }}
           >
-            <TechDocCodeBlock language="jsx">{codeblock}</TechDocCodeBlock>
+            <TechDocCodeBlock language='jsx'>{codeblock}</TechDocCodeBlock>
           </Div>
         )}
       </TechDocContent>
@@ -183,48 +183,48 @@ export default function HomepageFeatures(): JSX.Element {
     >
       <Head>
         {/* <!-- Facebook Meta Tags --> */}
-        <meta property="og:url" content="https://push.org/docs" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Push | Documentation Hub" />
+        <meta property='og:url' content='https://push.org/docs' />
+        <meta property='og:type' content='website' />
+        <meta property='og:title' content='Push | Documentation Hub' />
         <meta
-          property="og:description"
-          content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly."
+          property='og:description'
+          content='Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly.'
         />
         <meta
-          property="og:image"
+          property='og:image'
           content={useBaseUrl(
-            require("/static/assets/previews/docspreview.png").default,
-            { absolute: true },
+            require('/static/assets/previews/docspreview.png').default,
+            { absolute: true }
           )}
         />
 
         {/* <!-- Twitter Meta Tags --> */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@pushprotocol" />
-        <meta name="twitter:title" content="Push | Documentation Hub" />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='@pushprotocol' />
+        <meta name='twitter:title' content='Push | Documentation Hub' />
         <meta
-          name="twitter:description"
-          content="Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly."
+          name='twitter:description'
+          content='Explore our comprehensive cheat sheet, packed with quick references, tips, and key information to master the subject. Get a handy resource to boost your knowledge and productivity instantly.'
         />
         <meta
-          name="twitter:image"
+          name='twitter:image'
           content={useBaseUrl(
-            require("/static/assets/previews/docspreview.png").default,
-            { absolute: true },
+            require('/static/assets/previews/docspreview.png').default,
+            { absolute: true }
           )}
         />
 
-        <script type="application/ld+json">
+        <script type='application/ld+json'>
           {JSON.stringify({
-            "@context": "https://schema.org/",
-            "@type": "Organization",
-            name: "Push Protocol",
-            description: "The Communication Protocol of Web3",
-            url: "https://push.org",
-            logo: "/assets/website/favicon.ico",
+            '@context': 'https://schema.org/',
+            '@type': 'Organization',
+            name: 'Push Protocol',
+            description: 'The Communication Protocol of Web3',
+            url: 'https://push.org',
+            logo: '/assets/website/favicon.ico',
             sameAs: [
-              "https://twitter.com/pushprotocol",
-              "https://www.linkedin.com/company/push-protocol/mycompany/",
+              'https://twitter.com/pushprotocol',
+              'https://www.linkedin.com/company/push-protocol/mycompany/',
             ],
           })}
         </script>
@@ -233,29 +233,29 @@ export default function HomepageFeatures(): JSX.Element {
       {/* DOCS HERO SECTION */}
       <DocsHeroSection>
         <ItemV
-          position="absolute"
-          top="-149px"
-          left="0"
-          right="0"
-          height="149px"
-          background={"var(--ifm-docs-hero-bg)"}
+          position='absolute'
+          top='-149px'
+          left='0'
+          right='0'
+          height='149px'
+          background={'var(--ifm-docs-hero-bg)'}
         ></ItemV>
-        <Content padding="0px">
+        <Content padding='0px'>
           <HeroHeader>
-            <ItemV zIndex="1">
-              <H1 color="var(--ifm-color-primary-text)" margin="0 !important">
+            <ItemV zIndex='1'>
+              <H1 color='var(--ifm-color-primary-text)' margin='0 !important'>
                 Push Documentation Hub
               </H1>
               <Span
-                color="var(--ifm-color-primary-text)"
-                padding="0 0 64px 0"
-                textAlign="center"
+                color='var(--ifm-color-primary-text)'
+                padding='0 0 64px 0'
+                textAlign='center'
               >
                 Get started with building native web3 communition for your
                 protocol!
               </Span>
-              <HeroButton to="#techdocs">
-                <Span padding="0 10px 0 0" fontSize="18px">
+              <HeroButton to='#techdocs'>
+                <Span padding='0 10px 0 0' fontSize='18px'>
                   Get Started
                 </Span>
                 <FiArrowUpRight size={16} />
@@ -263,11 +263,11 @@ export default function HomepageFeatures(): JSX.Element {
             </ItemV>
 
             <ItemV
-              position="absolute"
-              bottom="-25%"
-              left="0"
-              right="0"
-              height="50%"
+              position='absolute'
+              bottom='-25%'
+              left='0'
+              right='0'
+              height='50%'
             >
               <PulseStatic />
               <Pulse>
@@ -285,7 +285,7 @@ export default function HomepageFeatures(): JSX.Element {
       </DocsHeroSection>
 
       {/* QUICKSTART SECTION */}
-      <HomepageSection alignItems="flex-start">
+      <HomepageSection alignItems='flex-start'>
         <FluidContent>
           <HomepageSubHeader>Popular Quickstart</HomepageSubHeader>
 
@@ -299,7 +299,7 @@ export default function HomepageFeatures(): JSX.Element {
 
                   <PopularQuickiesContent>
                     <PopularQuickiesCodeBlock
-                      language="jsx"
+                      language='jsx'
                       showLineNumbers={true}
                     >
                       {item.codeblock}
@@ -312,11 +312,10 @@ export default function HomepageFeatures(): JSX.Element {
         </FluidContent>
       </HomepageSection>
 
-
       {/* TECH DOCS SECTION */}
       <HomepageSection>
         <FluidContent>
-          <HomepageSubHeader id="techdocs">
+          <HomepageSubHeader id='techdocs'>
             Technical Documentation
           </HomepageSubHeader>
           <TechDocCardList>
@@ -330,13 +329,13 @@ export default function HomepageFeatures(): JSX.Element {
       {/* SDK SECTION */}
       <HomepageSection>
         <FluidContent>
-          <ItemH justifyContent="flex-start">
+          <ItemH justifyContent='flex-start'>
             <HomepageSubHeader>Push SDK</HomepageSubHeader>
             <Link
-              to="https://www.npmjs.com/package/@pushprotocol/restapi"
-              target="_blank"
+              to='https://www.npmjs.com/package/@pushprotocol/restapi'
+              target='_blank'
             >
-              <Span fontSize="18px" margin="0 5px 0 10px">
+              <Span fontSize='18px' margin='0 5px 0 10px'>
                 Explore SDK
               </Span>
               <Span>
@@ -345,10 +344,10 @@ export default function HomepageFeatures(): JSX.Element {
             </Link>
           </ItemH>
 
-          <PushSdkCardList justifyContent="flex-start">
+          <PushSdkCardList justifyContent='flex-start'>
             {SdkItemsList.map((item, idx) => (
               <PushSdkCard>
-                <PushSdkContent href={item.link} target="_blank">
+                <PushSdkContent href={item.link} target='_blank'>
                   <PushSdkContentTitle>{item.title}</PushSdkContentTitle>
                   <PushSdkContentArrow>
                     <FiArrowUpRight size={24} />
@@ -480,7 +479,7 @@ const TechDocIcon = styled(ItemV)`
   align-self: flex-start;
 
   & ${Image} {
-    filter: ${(props) => (props.docutheme === "dark" ? "invert(100%)" : "")};
+    filter: ${(props) => (props.docutheme === 'dark' ? 'invert(100%)' : '')};
 
     height: 44px;
     width: 44px;
@@ -500,7 +499,6 @@ const FluidContent = styled(Content)`
     box-sizing: border-box;
   }
 `;
-
 
 const HomepageSection = styled(Section)`
   margin-top: 70px;
@@ -583,7 +581,7 @@ const PopularQuickiesHeader = styled(ItemH)`
   width: 100%;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     height: 0.6em;
     width: 0.6em;

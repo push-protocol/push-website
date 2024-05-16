@@ -3,19 +3,18 @@ slug: july-monthly-recap
 title: July Monthly Recap✨
 authors: [push]
 image: './cover-image.webp'
-text: "July has been nothing short of extraordinary! We made some groundbreaking developments that have taken Push to new heights. Let’s dive into the major achievements that have shaped our journey this month."
+text: 'July has been nothing short of extraordinary! We made some groundbreaking developments that have taken Push to new heights. Let’s dive into the major achievements that have shaped our journey this month.'
 tags: [Push Protocol, Newsletter, Web3, Blockchain Technology]
-
 ---
 
 ![Cover image of July Monthly Recap✨](./cover-image.webp)
-<!--truncate-->
 
+<!--truncate-->
 
 July has been nothing short of extraordinary! We made some groundbreaking developments that have taken Push to new heights. Let’s dive into the major achievements that have shaped our journey this month.
 
-
 ## Development⚒️
+
 Most notably, we’re thrilled to [unveil Push V2!](https://medium.com/push-protocol/push-v2-is-live-new-rewards-utility-functionality-4d591284209d)
 
 This update introduces exciting new features including brand [new yield farming rewards via Push Fee Pool Staking](https://medium.com/push-protocol/new-push-yield-farming-rewards-full-details-4a9ff473226d), Incentivized Chat functionality, [all-new Push Spaces](https://push-protocol.medium.com/push-spaces-is-live-decentralized-audio-and-video-streaming-is-here-bc77deed16ca) and Customized Profiles. All these features aim at empowering users, rewarding participation, creating a circular economy to democratize web3 communication and expand the horizons of dApp UX possibilities. We’re excited for the future!
@@ -27,6 +26,7 @@ Following the successful launch of $PUSH on Polygon, we launched the [$PUSH-USDC
 There’s more! We continue to elevate the Push experience as we [unveiled Push Spaces](https://medium.com/push-protocol/push-spaces-is-live-decentralized-audio-and-video-streaming-is-here-bc77deed16ca), a decentralized, incentivized, community-based streaming solution for the future of online communication. With Push Spaces, we’re continuing to build out the decentralized communication space by providing the web3 with better UX, privacy, and censorship-resistant communication solutions.
 
 ## Frens of Push💜
+
 July was brimming with exciting partnerships, forging a stronger web3 communication ecosystem for Push and our frens. We’re excited to have new members in the fam:
 
 1. Our collaboration with [DataverseOS](https://twitter.com/pushprotocol/status/1678455797867585564) allows web3 data infrastructure developers to leverage the power of decentralized Push communication tools.
@@ -36,9 +36,11 @@ July was brimming with exciting partnerships, forging a stronger web3 communicat
 5. We’re excited to integrate Push Notifications for [Lif3 Wallet](https://twitter.com/pushprotocol/status/1680245839636176897) users, delivering real-time alerts based on individual configurations.
 
 ## Featured In📰
+
 We had the privilege of being featured and participating in various esteemed events and platforms:
 
 1. [EthCC was incredible](https://twitter.com/pushprotocol/status/1686053348619829256). We were delighted to be part of several awesome discussions and events. We always enjoy making new frens and meeting old ones. Here’s what we got up to:
+
 - Our CEO and co-founder, Harsh, took the stage at EthCC with his insights on “[How Improving the Crypto UX Can Drive Mass Adoption.](https://twitter.com/pushprotocol/status/1681695398191325184)”
 - Harsh also joined in various discussions during EthCC, including topics like “[Pushing the Boundaries of Web3 UX](https://twitter.com/pushprotocol/status/1679845888854831105)” at Infracon hosted by Biconomy, Particle Network, and Transak, and “[Unleashing the Crypto AI Nexus”](https://twitter.com/pushprotocol/status/1681240353750253569) with IOSG Ventures.
 - Our co-founder, Richa, joined a panel of experts to talk about “[The Power of Unstoppable Marketplace and Building a Community with Branded TLDS](https://twitter.com/pushprotocol/status/1680238517006336006)” hosted by Unstoppable Domains.
@@ -50,6 +52,7 @@ We had the privilege of being featured and participating in various esteemed eve
 4. Harsh was featured in [Quickswap’s Mega Twitter Space](https://twitter.com/pushprotocol/status/1681768659214106627) event, “All Roads Lead to Polygon,” alongside other prominent Polygon frens, discussing the exciting “Wild West of web3 Marketing.”
 
 ## Community and Governance🤝
+
 Our community continues to thrive with a multitude of exciting engagements.
 
 We hosted two engaging Twitter Spaces. The first session, “[The Art of Successful Grant Proposals](https://twitter.com/pushprotocol/status/1681664158582939648)” featured industry experts sharing invaluable insights on securing grants for web3 projects. Our second session, “[How to Create a Sticky web3 Gaming UX,](https://twitter.com/pushprotocol/status/1680980161137704961)” delved into the realm of web3 gaming, where experts shared their secrets on crafting immersive user experiences in web3 gaming.
@@ -65,6 +68,3 @@ Lastly, we congratulate the [16 incredible winning teams](https://twitter.com/pu
 As we bid farewell to July, we are inspired by the progress we’ve made and the extraordinary community support.
 
 Thank you for being a part of the Push journey. Stay tuned for more updates and exciting developments!
-
-
-

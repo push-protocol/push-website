@@ -11,7 +11,20 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "prepare": "husky install",
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,jsx,tsx,json}": "prettier --write",
+    "src/**/*.{ts,js,jsx,tsx,json}": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "@docusaurus/core": "3.0.1",
@@ -65,24 +78,25 @@
     "styled-components": "^6.0.8",
     "swiper": "^11.0.3",
     "url": "^0.11.3",
-    "vanilla-tilt": "^1.8.0"
+    "vanilla-tilt": "^1.8.0",
+    "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
+    "@docusaurus/eslint-plugin": "^3.3.2",
     "@docusaurus/module-type-aliases": "3.0.1",
     "@docusaurus/types": "3.0.1",
     "@tsconfig/docusaurus": "^1.0.5",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
     "babel-plugin-styled-components": "^2.1.4",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "husky": "9.0.11",
+    "husky": "^8.0.0",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.0.3",
     "typescript": "^4.7.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "eslint 'src/**/*.{js,jsx,ts,tsx}' && prettier --check 'src/**/*.{js,jsx,ts,tsx,css,md}'"
-    }
   },
   "browserslist": {
     "production": [

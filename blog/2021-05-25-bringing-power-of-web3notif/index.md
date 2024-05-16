@@ -12,6 +12,7 @@ tags: [ Defi
 ,Notifications
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Bringing Power of Web3Notif to the Awesome YAM Community!!](./cover-image.webp)
@@ -28,12 +29,11 @@ The collaboration with the YAM team will also help us in understanding the requi
 
 Our pilot program with YAM Finance will consist of:
 
-*   Creating a channel for YAM Finance to notify their users of liquidation risks. Users will get notified before reaching their minimum collateral ratio.
-*   Exploring and building further important notifications for various use cases in the YAM Ecosystem, such as alerts on governance actions (snapshot and on-chain votes).
-*   Working with the YAM Finance team to enable technical discussions towards building a decentralized communication layer that is scalable and powerful for the whole of Web3.0.
+- Creating a channel for YAM Finance to notify their users of liquidation risks. Users will get notified before reaching their minimum collateral ratio.
+- Exploring and building further important notifications for various use cases in the YAM Ecosystem, such as alerts on governance actions (snapshot and on-chain votes).
+- Working with the YAM Finance team to enable technical discussions towards building a decentralized communication layer that is scalable and powerful for the whole of Web3.0.
 
-**About YAM Finance**
----------------------
+## **About YAM Finance**
 
 YAM Finance is a community-owned DAO that is innovating at the intersection of decentralized governance and programmable finance. Yam started as a fair-launch DAO and is now building DeFi products such as Synthetic Tokens, Treasury Management as a Service for other DAOs and permissionless Insurance.
 
