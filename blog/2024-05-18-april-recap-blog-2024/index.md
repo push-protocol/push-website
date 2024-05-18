@@ -1,5 +1,5 @@
 ---
-slug: announcing-communicate-with-push-contest
+slug: april-recap-blog-2024
 title: "Push Protocol Monthly Updates: A Look Back at April"
 authors: [push]
 image: "./cover-image.webp"
