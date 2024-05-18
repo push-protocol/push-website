@@ -2,11 +2,47 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://push.org/blog</id>
     <title>Push | The Communication Protocol of Web3 Blog</title>
-    <updated>2024-05-16T00:00:00.000Z</updated>
+    <updated>2024-05-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://push.org/blog"/>
     <subtitle>Push | The Communication Protocol of Web3 Blog</subtitle>
     <icon>https://push.org/assets/website/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Push Protocol Monthly Updates: A Look Back at April]]></title>
+        <id>https://push.org/blog/april-recap-blog-2024</id>
+        <link href="https://push.org/blog/april-recap-blog-2024"/>
+        <updated>2024-05-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Push Protocol Monthly Updates: A Look Back at April]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image for April Month Protocol updates for year 2024" src="https://push.org/assets/images/cover-image-73ee01077d5f1540f53f716312e0a341.webp" width="1600" height="840" class="img_ev3q"></p>
+<p>April was a month of significant progress for the <a href="https://push.org/frens" target="_blank" rel="noopener noreferrer">Push Ecosystem</a>. We reached new milestones and launched exciting initiatives. We sent out more than <strong>6 Million</strong> notifications in April reaching a cumulative <strong>74 Million notifications</strong> since the launch and 177K subscribers. The Push journey continues to gain momentum. Here’s a recap of what happened:</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="product-updates">Product Updates:<a href="https://push.org/blog/april-recap-blog-2024#product-updates" class="hash-link" aria-label="Direct link to Product Updates:" title="Direct link to Product Updates:">​</a></h2>
+<p>We've made significant strides in our development journey. We successfully deployed our <a href="https://www.npmjs.com/package/@pushprotocol/react-native-sdk" target="_blank" rel="noopener noreferrer">React Native SDK</a> on NPM, simplifying the process for developers to access it. We've also rolled out improved notification settings on app stores, allowing for a more customized user experience.</p>
+<p>In our SDK, we introduced a new <strong>ChatWidget</strong> component and broadened our blockchain support to include <strong>Berachain</strong> and <strong>Polygon Amoy</strong>.</p>
+<p>Our website has been enhanced with a fresh landing page for the <a href="https://push.org/bootcamp/" target="_blank" rel="noopener noreferrer">Billion Reasons to Build (BRB) Bootcamp</a>, and we've enhanced the footer for smoother navigation.</p>
+<p>We're steadily advancing with new blockchain integrations that are currently under review. We've streamlined our channel addition process by separating it from IPFS, among other improvements. We're in the process of developing support for SCW wallets on our Push SDK.</p>
+<p>Our research on the Cross Chain Feature, which enables Ethereum and Layer 2 requests, has been completed and its development is underway. The <strong>Push Governance</strong> contract has been redesigned to align with the updated OpenZeppelin governance structure. We've managed to reduce the Smart Contract size by 30% and optimize gas fees for key functions like channel creation.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="partnership-updates">Partnership Updates<a href="https://push.org/blog/april-recap-blog-2024#partnership-updates" class="hash-link" aria-label="Direct link to Partnership Updates" title="Direct link to Partnership Updates">​</a></h2>
+<p>We're thrilled to announce new partnerships with amazing projects including <a href="https://twitter.com/vurse_official/status/1782414484700533169" target="_blank" rel="noopener noreferrer">Vurse</a>, <a href="https://www.rivo.xyz/" target="_blank" rel="noopener noreferrer">Rivo</a>, <a href="https://twitter.com/pushprotocol/status/1778091601597960326" target="_blank" rel="noopener noreferrer">Estate Protocol</a>, and <a href="https://twitter.com/pushprotocol/status/1780266671783194989" target="_blank" rel="noopener noreferrer">Pistachio Fi</a> to integrate notifications and messaging. We also partnered with <a href="https://twitter.com/DoraHacks/status/1783170660346544309" target="_blank" rel="noopener noreferrer">Dora Hacks</a> for the Data Economy Hackathon.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="billion-reasons-to-build-brb">Billion Reasons to Build (BRB):<a href="https://push.org/blog/april-recap-blog-2024#billion-reasons-to-build-brb" class="hash-link" aria-label="Direct link to Billion Reasons to Build (BRB):" title="Direct link to Billion Reasons to Build (BRB):">​</a></h2>
+<p><img loading="lazy" alt="Banner for Billion Reasons to Build" src="https://push.org/assets/images/image1-358b6918b20c34665aa81929c4316452.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>We took a big step forward in our <a href="https://push.org/brb/" target="_blank" rel="noopener noreferrer">BRB journey</a> by launching the BRB Bootcamp. This <a href="https://github.com/orgs/push-protocol/discussions/52" target="_blank" rel="noopener noreferrer">6-week virtual program</a> is designed to jumpstart your journey as a Web3 builder. You can register <a href="https://zv9atndluia.typeform.com/to/ToIpDLT2?typeform-source=push.org" target="_blank" rel="noopener noreferrer">here</a> (limited seats available).</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="community-engagement">Community Engagement:<a href="https://push.org/blog/april-recap-blog-2024#community-engagement" class="hash-link" aria-label="Direct link to Community Engagement:" title="Direct link to Community Engagement:">​</a></h2>
+<p>April was all about building a strong and vibrant community. We hosted a Push Video Contest asking the community to share their experience with Push Protocol. Rewarded the ultra-rare first <strong>“Push Chad"</strong> role. We held an <strong>AMA</strong> with <a href="https://www.berachain.com/" target="_blank" rel="noopener noreferrer">Berachain</a> - a modular EVM-compatible L1 blockchain. Partnered with <a href="http://cookie3.com/" target="_blank" rel="noopener noreferrer">cookie3.com</a> for <strong>"The Great Bake Off"</strong> campaign.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ecosystem-highlights">Ecosystem Highlights:<a href="https://push.org/blog/april-recap-blog-2024#ecosystem-highlights" class="hash-link" aria-label="Direct link to Ecosystem Highlights:" title="Direct link to Ecosystem Highlights:">​</a></h2>
+<p>In April 2024, we featured <a href="https://ens.domains/" target="_blank" rel="noopener noreferrer">ENS Domains</a>, <a href="https://cryptocurrencyjobs.co/" target="_blank" rel="noopener noreferrer">Cryptocurrency Jobs</a>, <a href="https://www.coindesk.com/" target="_blank" rel="noopener noreferrer">CoinDesk</a>, <a href="https://aave.com/" target="_blank" rel="noopener noreferrer">Aave</a>, and <a href="https://app.push.org/channels/0x03EAAAa48ea78d1E66eA3458364d553AD981871E" target="_blank" rel="noopener noreferrer">BTC Tracker</a> as the #PushChannelOfTheWeek.</p>
+<p>Our team was invited to speak at various side events during <a href="https://www.token2049.com/" target="_blank" rel="noopener noreferrer">Token2049</a>, including Tribe Connect by <a href="https://buidl.so/" target="_blank" rel="noopener noreferrer">Buidlers Tribe</a>, Block Vision by <a href="https://www.nordek.io/" target="_blank" rel="noopener noreferrer">Nordek</a>, Hadron Founders Club by <a href="https://hadronfc.com/" target="_blank" rel="noopener noreferrer">Hadron Founders Club</a> &amp; <a href="https://polygon.technology/" target="_blank" rel="noopener noreferrer">Polygon</a>, DataCon 2024 by <a href="https://dapplooker.com/" target="_blank" rel="noopener noreferrer">dapplooker</a>, DeSoc Unleashed Dubai Edition by <a href="https://mask.io/" target="_blank" rel="noopener noreferrer">Mask Network</a> &amp; <a href="https://tako.so/" target="_blank" rel="noopener noreferrer">Tako Protocol</a>, and Builder Day Dubai by <a href="https://consensys.io/" target="_blank" rel="noopener noreferrer">Consensys</a>.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="dao-updates">DAO Updates:<a href="https://push.org/blog/april-recap-blog-2024#dao-updates" class="hash-link" aria-label="Direct link to DAO Updates:" title="Direct link to DAO Updates:">​</a></h2>
+<p>We had the pleasure of hosting <a href="https://twitter.com/FactorDAO" target="_blank" rel="noopener noreferrer">FactorDAO</a> for an exclusive X space for <strong>DAO to DAO Talk</strong>. In our ambassador program, we welcomed two new members for Push Protocol in the Spanish Ambassadors community and opened up five additional spots for the Push Protocol Indian Ambassadors community. We've also submitted a proposal "<a href="https://forum.devcon.org/t/billion-reasons-to-build-bangkok-sea-web3-builders/3482?u=richa_joshi" target="_blank" rel="noopener noreferrer">Billion Reasons to Build, Bangkok</a>" to host a builder-centric event at <a href="https://devcon.org/en/" target="_blank" rel="noopener noreferrer">Devcon 2024</a>, aimed at celebrating, engaging, and supporting developers.</p>
+<p>In other exciting news, we managed to pass three key votes for the BD subDAO, Grants subDAO, and the DAO Council. This significant achievement has paved the way for the launch of our subDAOs on the first of June. With this, we are thrilled to introduce the community-led Push Grants V3. This new initiative opens up a world of opportunities for grantees to contribute and vote, marking an exciting new phase for Push Grants V3. Our Push DAO V2 Proposal caught the attention of the <a href="https://messari.io/" target="_blank" rel="noopener noreferrer">Messari</a> and was featured there. Check out the <a href="https://gov.push.org/" target="_blank" rel="noopener noreferrer">Push Governance Forum</a> to stay updated with all the activities in <strong>PushDAO</strong>.</p>
+<p>Stay tuned for more updates as we continue to push the boundaries of the Web3 ecosystem!</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Roseon - Leading AI-Powered Exchange Joins Frens Of Push]]></title>
         <id>https://push.org/blog/roseon-joins-frens-of-push</id>
@@ -83,52 +119,6 @@
         <category label="Blockchain Technology" term="Blockchain Technology"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats]]></title>
-        <id>https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi</id>
-        <link href="https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi"/>
-        <updated>2024-05-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats Blog " src="https://push.org/assets/images/cover-image-f9f5895933518cea811176b969e8d1bf.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>The NFT and DeFi landscapes are hotbeds of innovation but building a loyal and engaged community around your project can be a challenge. Traditional communication methods often fall short, leaving users scattered across different platforms and lacking a true sense of belonging.</p>
-<p>Enter <strong>Push Protocol Group Chat</strong>, a revolutionary tool that empowers NFT brands and DeFi protocols to cultivate thriving communities through secure, token-gated experiences.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benefits-of-token-gated-chats">Benefits of Token-Gated Chats<a href="https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi#benefits-of-token-gated-chats" class="hash-link" aria-label="Direct link to Benefits of Token-Gated Chats" title="Direct link to Benefits of Token-Gated Chats">​</a></h3>
-<ul>
-<li>
-<p><strong>Enhanced Engagement:</strong>&nbsp;Exclusive access creates a sense of value and incentivizes deeper participation within the community.</p>
-</li>
-<li>
-<p><strong>Stronger Brand Loyalty:</strong>&nbsp;Token-gated chats foster a sense of belonging and exclusivity, strengthening the bond between users and your project.</p>
-</li>
-<li>
-<p><strong>Targeted Communication:</strong>&nbsp;Connect directly with your most engaged user base, ensuring your message reaches the right audience.</p>
-</li>
-</ul>
-<p><strong>Unstoppable Domains: Powering Communities with Human-Readable Addresses:</strong></p>
-<p>Push Protocol seamlessly integrates with <a href="https://unstoppabledomains.com/" target="_blank" rel="noopener noreferrer">Unstoppable Domains (UD)</a>. This allows users to join group chats using their UD (e.g., yourname.nft) instead of complex wallet addresses. This enhances user experience and makes it easier for new members to join the conversation.</p>
-<p><strong>Taking it a Step Further: Gated Roles with Guild.xyz:</strong></p>
-<p>Push Protocol's partnership with <a href="https://guild.xyz/explorer" target="_blank" rel="noopener noreferrer">Guild.xyz</a> unlocks even more possibilities for community management. You can now leverage Guild roles to create additional access tiers within your token-gated chat.</p>
-<p>Imagine offering exclusive channels within your main chat, accessible only to users with specific Guild roles (e.g., early adopters, high-volume traders). This allows you to tailor the chat experience to different user segments and cater to their unique needs.</p>
-<p><strong>Examples in Action:</strong></p>
-<ul>
-<li>A limited-edition NFT collection can create a token-gated chat where holders can discuss upcoming collaborations and access exclusive artwork previews.</li>
-</ul>
-<p>Similar to the <a href="https://twitter.com/pushprotocol/status/1777929898784444842?utm_source=google&amp;utm_medium=twitter&amp;utm_campaign=amplify_upgrade" target="_blank" rel="noopener noreferrer">Pudgy Penguin's Unstopabble Domains token gated group chat</a> powered by Push Protocol, where only Pudgy Penguin Hodlers can join and communicate with each other and share their sense of community pride!</p>
-<ul>
-<li>A DeFi platform like <a href="https://curve.fi/#/ethereum/pools" target="_blank" rel="noopener noreferrer">Curve</a> can offer a tiered chat system, with basic access for all token holders and a dedicated channel for high-level stakers to discuss governance proposals and advanced strategies.</li>
-</ul>
-<p>Push Protocol empowers NFT brands and DeFi protocols to build vibrant, engaged communities that drive long-term success. By fostering a sense of exclusivity, targeted communication, and deeper connections, Push Protocol unlocks the true potential of Web3 communities.</p>
-<p><strong>Ready to build a thriving community around your project?</strong></p>
-<p><strong>Explore Push Protocol Group Chat today and unlock the power of secure, token-gated communication!</strong></p>
-<p>To know more about how Push Protocol can your elevate your project's UX by delivering seamless notifications to your userbase, <a href="https://push.org/blog/revolutionising-communication-for-defi-and-nft-with-push/?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=amplify_upgrade" target="_blank" rel="noopener noreferrer">read here</a>👈.</p>]]></content>
-        <author>
-            <name>Push Protocol</name>
-            <uri>https://twitter.com/pushprotocol</uri>
-        </author>
-        <category label="Push Protocol" term="Push Protocol"/>
-        <category label="Web3" term="Web3"/>
-        <category label="Blockchain Technology" term="Blockchain Technology"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[ QuickSwap: Leading Asset Exchange on Polygon Joins Frens Of Push ]]></title>
         <id>https://push.org/blog/quickswap-joins-frens-of-push</id>
         <link href="https://push.org/blog/quickswap-joins-frens-of-push"/>
@@ -178,6 +168,52 @@
         <category label="Blockchain Technology" term="Blockchain Technology"/>
         <category label="QuickSwap" term="QuickSwap"/>
         <category label="frensofpush" term="frensofpush"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats]]></title>
+        <id>https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi</id>
+        <link href="https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi"/>
+        <updated>2024-05-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats Blog " src="https://push.org/assets/images/cover-image-f9f5895933518cea811176b969e8d1bf.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>The NFT and DeFi landscapes are hotbeds of innovation but building a loyal and engaged community around your project can be a challenge. Traditional communication methods often fall short, leaving users scattered across different platforms and lacking a true sense of belonging.</p>
+<p>Enter <strong>Push Protocol Group Chat</strong>, a revolutionary tool that empowers NFT brands and DeFi protocols to cultivate thriving communities through secure, token-gated experiences.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benefits-of-token-gated-chats">Benefits of Token-Gated Chats<a href="https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi#benefits-of-token-gated-chats" class="hash-link" aria-label="Direct link to Benefits of Token-Gated Chats" title="Direct link to Benefits of Token-Gated Chats">​</a></h3>
+<ul>
+<li>
+<p><strong>Enhanced Engagement:</strong>&nbsp;Exclusive access creates a sense of value and incentivizes deeper participation within the community.</p>
+</li>
+<li>
+<p><strong>Stronger Brand Loyalty:</strong>&nbsp;Token-gated chats foster a sense of belonging and exclusivity, strengthening the bond between users and your project.</p>
+</li>
+<li>
+<p><strong>Targeted Communication:</strong>&nbsp;Connect directly with your most engaged user base, ensuring your message reaches the right audience.</p>
+</li>
+</ul>
+<p><strong>Unstoppable Domains: Powering Communities with Human-Readable Addresses:</strong></p>
+<p>Push Protocol seamlessly integrates with <a href="https://unstoppabledomains.com/" target="_blank" rel="noopener noreferrer">Unstoppable Domains (UD)</a>. This allows users to join group chats using their UD (e.g., yourname.nft) instead of complex wallet addresses. This enhances user experience and makes it easier for new members to join the conversation.</p>
+<p><strong>Taking it a Step Further: Gated Roles with Guild.xyz:</strong></p>
+<p>Push Protocol's partnership with <a href="https://guild.xyz/explorer" target="_blank" rel="noopener noreferrer">Guild.xyz</a> unlocks even more possibilities for community management. You can now leverage Guild roles to create additional access tiers within your token-gated chat.</p>
+<p>Imagine offering exclusive channels within your main chat, accessible only to users with specific Guild roles (e.g., early adopters, high-volume traders). This allows you to tailor the chat experience to different user segments and cater to their unique needs.</p>
+<p><strong>Examples in Action:</strong></p>
+<ul>
+<li>A limited-edition NFT collection can create a token-gated chat where holders can discuss upcoming collaborations and access exclusive artwork previews.</li>
+</ul>
+<p>Similar to the <a href="https://twitter.com/pushprotocol/status/1777929898784444842?utm_source=google&amp;utm_medium=twitter&amp;utm_campaign=amplify_upgrade" target="_blank" rel="noopener noreferrer">Pudgy Penguin's Unstopabble Domains token gated group chat</a> powered by Push Protocol, where only Pudgy Penguin Hodlers can join and communicate with each other and share their sense of community pride!</p>
+<ul>
+<li>A DeFi platform like <a href="https://curve.fi/#/ethereum/pools" target="_blank" rel="noopener noreferrer">Curve</a> can offer a tiered chat system, with basic access for all token holders and a dedicated channel for high-level stakers to discuss governance proposals and advanced strategies.</li>
+</ul>
+<p>Push Protocol empowers NFT brands and DeFi protocols to build vibrant, engaged communities that drive long-term success. By fostering a sense of exclusivity, targeted communication, and deeper connections, Push Protocol unlocks the true potential of Web3 communities.</p>
+<p><strong>Ready to build a thriving community around your project?</strong></p>
+<p><strong>Explore Push Protocol Group Chat today and unlock the power of secure, token-gated communication!</strong></p>
+<p>To know more about how Push Protocol can your elevate your project's UX by delivering seamless notifications to your userbase, <a href="https://push.org/blog/revolutionising-communication-for-defi-and-nft-with-push/?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=amplify_upgrade" target="_blank" rel="noopener noreferrer">read here</a>👈.</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[ Revolutionising Communication for DeFi and NFT Brands with Push! ]]></title>
@@ -551,43 +587,5 @@ Let us know about your favorite channel on <a href="https://discord.com/invite/p
         <category label="Push Protocol" term="Push Protocol"/>
         <category label="Web3" term="Web3"/>
         <category label="Blockchain Technology" term="Blockchain Technology"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[$PUSH Tokenomics V2: Unveiling the New Economic Engine]]></title>
-        <id>https://push.org/blog/push-tokenomics-v2-engine</id>
-        <link href="https://push.org/blog/push-tokenomics-v2-engine"/>
-        <updated>2024-03-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Unveiling the new economic engine of the $PUSH token. The new tokenomics V2 is designed to align the incentives of the community and the protocol.]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of $PUSH tokenomics v2 economic engine ⚡" src="https://push.org/assets/images/cover-image-e58e500bcd8a9ae100665098bc95f10e.webp" width="2000" height="1050" class="img_ev3q"></p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="overview">Overview<a href="https://push.org/blog/push-tokenomics-v2-engine#overview" class="hash-link" aria-label="Direct link to Overview" title="Direct link to Overview">​</a></h2>
-<p>Push Protocol recently unveiled Push Nodes, paving way for Push to become blockchain of communication and unleashing a new era for Web3 communication.</p>
-<p>With the public launch of Push Nodes getting closer, we are excited to unveil the new economic engine of the <a href="https://coinmarketcap.com/currencies/epns/" target="_blank" rel="noopener noreferrer" title="$PUSH at Coinmarketcap.com"><strong><em><code>$PUSH</code></em></strong></a> token that will sit at the core of securing, decentralizing and incentiving the Push Network.</p>
-<!-- -->
-<!-- -->
-<div style="width:100%;height:360px"></div>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="tokenomics-v2-additions">Tokenomics V2 Additions<a href="https://push.org/blog/push-tokenomics-v2-engine#tokenomics-v2-additions" class="hash-link" aria-label="Direct link to Tokenomics V2 Additions" title="Direct link to Tokenomics V2 Additions">​</a></h2>
-<p><a href="https://coinmarketcap.com/currencies/epns/" target="_blank" rel="noopener noreferrer" title="$PUSH at Coinmarketcap.com"><strong><em><code>$PUSH</code></em></strong></a> is the native token of the Push Network and it will be used to enable several key functions of the network apart from the already existing utilities defined in the <a title="Deepdive on Push Tokenomics" href="https://push.org/docs/tokenomics/deepdive/$push/">current tokenomics</a>.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-staking-for-push-validator-nodes">1. Staking for Push Validator Nodes<a href="https://push.org/blog/push-tokenomics-v2-engine#1-staking-for-push-validator-nodes" class="hash-link" aria-label="Direct link to 1. Staking for Push Validator Nodes" title="Direct link to 1. Staking for Push Validator Nodes">​</a></h3>
-<p>Push Validator Nodes are going to be the computational backbone of the Push Network. They will be responsible for validating the network and ensuring that the network is secure and reliable. They are also responsible for penalizing and kicking out bad actors from the network.</p>
-<p>Running a Push Validator Nodes will require staking a certain amount of <a href="https://coinmarketcap.com/currencies/epns/" target="_blank" rel="noopener noreferrer" title="$PUSH at Coinmarketcap.com"><strong><em><code>$PUSH</code></em></strong></a> tokens along with having a domain name and a server to run the node.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-staking-for-push-storage-nodes">2. Staking for Push Storage Nodes<a href="https://push.org/blog/push-tokenomics-v2-engine#2-staking-for-push-storage-nodes" class="hash-link" aria-label="Direct link to 2. Staking for Push Storage Nodes" title="Direct link to 2. Staking for Push Storage Nodes">​</a></h3>
-<p>Push Storage Nodes are meant to store the data of the Push Network. They will be responsible for storing the data of the network and ensuring that the data is available to the network.</p>
-<p>Running a Push Storage Nodes will also require staking a certain amount of <a href="https://coinmarketcap.com/currencies/epns/" target="_blank" rel="noopener noreferrer" title="$PUSH at Coinmarketcap.com"><strong><em><code>$PUSH</code></em></strong></a>.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-staking-for-push-delivery-nodes">3. Staking for Push Delivery Nodes<a href="https://push.org/blog/push-tokenomics-v2-engine#3-staking-for-push-delivery-nodes" class="hash-link" aria-label="Direct link to 3. Staking for Push Delivery Nodes" title="Direct link to 3. Staking for Push Delivery Nodes">​</a></h3>
-<p>Push Delivery Nodes serve as a light node that enables the last mile delivery of notifications to the end users. Running them will also have staking requirements.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4-stake-for-writing-api-calls-on-push-node">4. Stake for Writing API Calls on Push Node<a href="https://push.org/blog/push-tokenomics-v2-engine#4-stake-for-writing-api-calls-on-push-node" class="hash-link" aria-label="Direct link to 4. Stake for Writing API Calls on Push Node" title="Direct link to 4. Stake for Writing API Calls on Push Node">​</a></h3>
-<p>Having a trustless and decentralized network requires a mechanism to ensure that the network is not spammed with unnecessary API calls. To ensure this, a staking mechanism requiring <a href="https://coinmarketcap.com/currencies/epns/" target="_blank" rel="noopener noreferrer" title="$PUSH at Coinmarketcap.com"><strong><em><code>$PUSH</code></em></strong></a> will be introduced for writing API calls on the Push Network for sending notifications.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="exciting-times-ahead">Exciting Times Ahead<a href="https://push.org/blog/push-tokenomics-v2-engine#exciting-times-ahead" class="hash-link" aria-label="Direct link to Exciting Times Ahead" title="Direct link to Exciting Times Ahead">​</a></h2>
-<p>We are excited for the economic engine for Push Network and the new tokenomics V2. The new tokenomics will be a game-changer for the Push ecosystem, and we would love to invite the community for a discussion on the addition of the new tokenomics.</p>
-<p>We will be updating the tokenomics page and open a discourse thread for the community to also share their thoughts and feedback soon! Let's Push the boundaries of Web3 together <!-- -->❤️<!-- -->!</p>]]></content>
-        <author>
-            <name>Push Protocol</name>
-            <uri>https://twitter.com/pushprotocol</uri>
-        </author>
-        <category label="Push Protocol" term="Push Protocol"/>
-        <category label="Push Network" term="Push Network"/>
-        <category label="Web3" term="Web3"/>
-        <category label="Blockchain Technology" term="Blockchain Technology"/>
-        <category label="Push Tokenomics" term="Push Tokenomics"/>
     </entry>
 </feed>
