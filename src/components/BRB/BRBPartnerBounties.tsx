@@ -5,10 +5,11 @@
 import React from 'react';
 // External Components
 import styled from 'styled-components';
-import medal from '../../../static/assets/website/brb/win.svg';
+
 // Internal Components
-import { Button, Image, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
+import { Button, Image, ItemH, Span } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import Link from '@docusaurus/Link';
 
 // Import Assets
 import Arrow from '@site/static/assets/website/brb/schedules/arrow.svg';
@@ -93,9 +94,9 @@ export const PartnerBounties = ({
                   height='24px'
                 />
                 {item.winners.length > 1 ? 'Winners :' : 'Winner :'}
-                {item.winners.map((winner, index) => (
+                {item.winners.map((winner) => (
                   <>
-                    <a href={winner.github} target='_blank'>
+                    <Link href={winner.github} target='_blank'>
                       <TwitterLink>
                         {winner.winner}
                         <Image
@@ -110,7 +111,7 @@ export const PartnerBounties = ({
                           height='8px'
                         />
                       </TwitterLink>
-                    </a>
+                    </Link>
                   </>
                 ))}
               </WinnerItem>
@@ -256,7 +257,7 @@ const ViewBountyText = styled(Span)`
   font-style: normal;
   font-weight: 400;
   line-height: 12px;
-  color: var(--ifm-color-primary-inverse);
+  color: #fff;
 
   @media ${device.mobileS} {
     flex: 1;
@@ -284,7 +285,7 @@ const ArrowSmall = styled(Arrow)`
 const BountyDescription = styled(Span)`
   font-weight: 400;
   font-size: 18px;
-  color: var(--ifm-color-primary-inverse);
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -311,7 +312,7 @@ const BountyDescription = styled(Span)`
 `;
 
 const PriceSpan = styled(Span)`
-  color: var(--ifm-color-primary-inverse);
+  color: #fff;
   font-weight: 400;
 `;
 

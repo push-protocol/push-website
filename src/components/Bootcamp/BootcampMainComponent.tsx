@@ -4,21 +4,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 // External Components
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import { gsap } from 'gsap';
-import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 // Internal Components
-import { CommunityPartners } from '@site/src/components/BRB/BRBCommunityPartners';
-import BRBParallax from '@site/src/components/BRB/BRBParallax';
-import { PartnerBounties } from '@site/src/components/BRB/BRBPartnerBounties';
-import { Partners } from '@site/src/components/BRB/BRBPartners';
-import Schedules from '@site/src/components/BRB/BRBSchedules';
-// import ImageHolder from "@site/src/components/ImageHolder";
-import { ChatComponent } from '@site/src/components/PushChat/PushChatComponent';
 import {
   Button,
   Content,
@@ -36,16 +26,9 @@ import BootcampCurriculum from './BootcampCurriculum';
 import { bootcampFaq } from '@site/src/config/BootcampFaq';
 import { bootcampCards } from '@site/src/config/BootcampCard';
 
-// import { BRBAlert } from "./BRBAlert";
-
 // Import Assets
-import ArrowIcon from '@site/static/assets/website/brb/ArrowIcon.svg';
 import Discord from '@site/static/assets/website/brb/Discord-BRB.svg';
 import Query from '@site/static/assets/website/bootcamp/query.svg';
-import Github from '@site/static/assets/website/bootcamp/github-dis.svg';
-import ImageBRB from '@site/static/assets/website/brb/Image-BRB.png';
-import MobileBRB from '@site/static/assets/website/brb/Mobile-BRB.png';
-import PlaygroundBg from '@site/static/assets/website/brb/PlaygroundBg.png';
 import FirstImage from '@site/static/assets/website/bootcamp/bg-image1.png';
 import X from '@site/static/assets/website/brb/X-BRB.svg';
 import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
@@ -58,7 +41,6 @@ import GLOBALS, { device } from '@site/src/config/globals';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(ScrollToPlugin);
 
 let lastScrollY = 0;
 const SCROLL_DELTA = 5;
@@ -69,7 +51,6 @@ if (typeof window !== 'undefined') {
 
 function useScrollDirection(mobileMenuActive) {
   const [scrollDirection, setScrollDirection] = useState(null);
-  const [bkg, setBkg] = useState('dark');
 
   useEffect(() => {
     const updateScrollDirection = () => {
@@ -93,13 +74,6 @@ function useScrollDirection(mobileMenuActive) {
         setScrollDirection(direction);
       }
 
-      // hacky way, optimize later when time
-      // if (scrollY > 970) {
-      //   setBkg('light');
-      // } else {
-      //   setBkg('dark');
-      // }
-
       lastScrollY = scrollY > 0 ? scrollY : 0;
     };
 
@@ -111,32 +85,17 @@ function useScrollDirection(mobileMenuActive) {
     };
   }, [scrollDirection, mobileMenuActive]);
 
-  return [scrollDirection, bkg];
+  return [scrollDirection];
 }
-
-const defaultMobileMenuState = {
-  0: false,
-  1: false,
-  2: false,
-  3: false,
-  // add next [index]: false for new main Nav menu item
-};
 
 export const BootcampMainComponent = () => {
   const d = new Date();
-  let year = d.getFullYear();
+  const year = d.getFullYear();
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
   const isLaptop = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [scrollDirection, bkg] = useScrollDirection(isMobileMenuOpen);
-  const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
-
-  const [isAlertVisible, setIsAlertVisible] = React.useState(true);
-
-  const plugins = [ScrollToPlugin];
-
-  const { t, i18n } = useTranslation();
+  const [scrollDirection] = useScrollDirection(isMobileMenuOpen);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
@@ -145,36 +104,13 @@ export const BootcampMainComponent = () => {
   const showMobileMenu = isMobile && isMobileMenuOpen;
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
 
-  const onMobileHeaderMenuClick = (e, menuIndex) => {
-    e.preventDefault();
-
-    // if (isMobile) {
-    setMobileMenuMap((oldMap) => {
-      return {
-        ...defaultMobileMenuState,
-        [menuIndex]: !oldMap[menuIndex],
-      };
-    });
-    // }
-  };
-
-  const enableScroll = () => {
-    setTimeout(() => {
-      if (!isMobile) ScrollTrigger.enable();
-    }, 1000);
-  };
-
   const handleSectionNavigation = (id) => {
     if (showMobileMenu) toggleMobileMenu();
-    // ScrollTrigger.disable();
 
     gsap.to(window, {
       duration: 0.75,
       scrollTo: { y: `#${id}` },
-      // onComplete: enableScroll
     });
-
-    // enableScroll();
   };
 
   const openLink = (link: string) => {
@@ -182,49 +118,9 @@ export const BootcampMainComponent = () => {
   };
 
   const elem0 = useRef(null);
-  const newRef = useRef(null);
-
-  const newTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#new',
-      start: 'top top',
-      end: '+=100',
-      scrub: true,
-      pinSpacing: true,
-    },
-  });
-
-  useEffect(() => {
-    // ScrollTrigger.matchMedia({
-    //   '(min-width: 480px)': function() {
-    //     newTl.to(elems0, {
-    //       opacity: 0,
-    //     });
-    //     newTl.to(elems, {
-    //       opacity: 0,
-    //     });
-    //   },
-    //   '(max-width: 479px)': function() {
-    //     return;
-    //   },
-    //   'all': function() { return; }
-    // });
-  }, []);
 
   const openHomePage = () => {
     window.open('/', '_self');
-  };
-
-  const BootcampFooter = {
-    first: [
-      {
-        text: 'Ask our Ai for any Push Queries',
-        textColor: '#F576F8',
-        href: 'https://app.push.org/chat',
-        iconhref: 'ArrowIcon',
-        mainicon: "<Query className='same' />",
-      },
-    ],
   };
 
   return (
@@ -235,15 +131,7 @@ export const BootcampMainComponent = () => {
           showMobileMenu={showMobileMenu}
           className={`header ${headerClass}`}
         >
-          {/* <BRBAlert
-          isAlertVisible={isAlertVisible}
-          setIsAlertVisible={setIsAlertVisible}
-        /> */}
-
           <Section>
-            {/* <Content
-            padding="0px 0px 0px 0px" 
-            alignSelf="center"> */}
             <NavList isMobileMenuOpen={isMobileMenuOpen}>
               <MenuTop flex='initial'>
                 <PushLogoBlackContainer className='headerlogo' flex='initial'>
@@ -352,10 +240,7 @@ export const BootcampMainComponent = () => {
         </StyledHeader>
 
         <ItemTop>
-          <ItemV
-            id='new'
-            margin={isAlertVisible && isMobile ? '5em 0 0 0' : '0 0 0 0'}
-          >
+          <ItemV id='new' margin={isMobile ? '5em 0 0 0' : '0 0 0 0'}>
             <MemberImage
               className='pushMissingSvg'
               src={
@@ -887,44 +772,6 @@ const NavList = styled.div`
   }
 `;
 
-const ScheduleDiv = styled.div`
-  margin: 120px 0px 0px 0px;
-  width: 100%;
-`;
-
-const BountyDiv = styled.div`
-  width: 100%;
-`;
-
-const BRBOnlineDiv = styled.div`
-  width: 100%;
-`;
-
-const PartnersDiv = styled.div`
-  z-index: 20;
-  width: 100%;
-`;
-
-const PlaygroundDiv = styled.div`
-  width: 100%;
-  margin: 0 0px 120px 0px;
-`;
-
-const Playground = styled(Section)`
-  flex-direction: column;
-  background-image: url(${PlaygroundBg});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  font-family: 'Strawford', sans-serif;
-  width: 80%;
-  height: 75vh;
-  margin: 0 auto;
-  @media ${device.mobileL} {
-    width: 95%;
-  }
-`;
-
 const StyledHeader = styled.header`
   font-family: 'Strawford', sans-serif;
 
@@ -1183,11 +1030,12 @@ const NavigationMenuHeader = styled.div`
     transition-property: transform;
   }
 
+  & span {
+    color: #fff;
+  }
+
   @media ${device.laptop} {
     justify-content: space-between;
-
-    & span {
-    }
 
     & .chevronIcon {
       width: 16px;
@@ -1209,47 +1057,6 @@ const ItemFooter = styled(ItemV)`
 
   @media ${device.laptop} {
     width: 90%;
-  }
-`;
-
-const SpanContent = styled(Span)`
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  white-space: normal;
-
-  @media ${device.laptop} {
-    -webkit-line-clamp: 3;
-  }
-
-  @media ${device.mobileL} {
-    font-size: 89px;
-    line-height: 110%;
-  }
-`;
-
-const FooterItem = styled.div`
-  border-radius: 48px;
-  background: #2a2a39;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // text-align: center;
-  padding: 0px 50px;
-  box-sizing: border-box;
-  min-width: 300px;
-
-  @media ${device.mobileL} {
-    border-radius: 32px;
-    padding: 40px 20px;
-  }
-
-  & ${SpanContent} {
-    @media ${device.laptop} {
-      font-size: 90px;
-    }
   }
 `;
 
@@ -1320,14 +1127,6 @@ const FooterBar = styled.div`
     flex-direction: row;
     flex-wrap: nowrap;
   }
-`;
-
-const FooterCol = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  gap: 20px;
-  width: 100%;
 `;
 
 const BottomGrad = styled.div`
