@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-/* eslint-disable react/prop-types */
 /* eslint-disable */
 
 // React + Web3 Essentials
@@ -437,12 +436,7 @@ const FrensText = () => {
         </Content>
       </AnimationSection>
 
-      <Section
-        id='story'
-        data-bkg='light'
-        className='lightBackground'
-        curve='bottom'
-      >
+      <Section id='story' background='white !important'>
         <Content alignSelf='center' justifyContent='flex-start'>
           <PushRow>
             <ItemH justifyContent='flex-start'>
@@ -542,7 +536,7 @@ const FrensText = () => {
       </Section>
 
       {/* Mailing List Section */}
-      <Section>
+      <Section background='white !important'>
         <Content>
           <SignupBox margin='0 0 0px 0'>
             <ItemV
@@ -572,7 +566,13 @@ const FrensText = () => {
             </ItemV>
 
             <ItemV>
-              <MailingSignup showButton={true} />
+              <MailingSignup
+                showArrow={true}
+                background='transparent'
+                borderColor='rgba(255, 255, 255, 0.80)'
+                textColor='#fff'
+                inputWidth='100%'
+              />
             </ItemV>
           </SignupBox>
         </Content>

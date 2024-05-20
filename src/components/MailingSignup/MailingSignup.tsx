@@ -25,6 +25,7 @@ export type signupType = {
   background?: string;
   borderColor?: string;
   inputWidth?: string;
+  textColor?: string;
 };
 
 export const MailingSignup = (props: signupType) => {
@@ -47,6 +48,7 @@ export const MailingSignup = (props: signupType) => {
           placeholder='Email Address'
           background={props.background}
           inputWidth={props.inputWidth}
+          textColor={props.textColor}
           tabIndex={0}
           required
         />
@@ -160,7 +162,7 @@ const SignupInputField = styled.input`
   font-size: 15px;
   line-height: normal;
   letter-spacing: -0.03em;
-  color: #a5abb8;
+  color: ${(props) => props.textColor || '#a5abb8'};
   background: ${(props) => props.background || '#ffffff'};
   // min-width: 220px;
   width: ${(props) => props.inputWidth || '100%'};
