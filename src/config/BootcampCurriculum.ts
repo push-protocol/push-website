@@ -6,13 +6,13 @@ export const bootcampCurriculum = [
         session: '1',
         title: 'Understanding Web3 Fundamentals',
         time: '2 hrs',
-        date: 'TBA',
+        date: '5th June, 2024',
       },
       {
         session: '2',
         title: 'Solidity and wallet fundamentals',
         time: '2 hrs',
-        date: 'TBA',
+        date: '7th June, 2024',
       },
     ],
   },
@@ -21,15 +21,15 @@ export const bootcampCurriculum = [
     session: [
       {
         session: '3',
-        title: 'Advanced Solidity and Testing Essentials',
+        title: 'Advanced Solidity: Design, Security, and Optimization',
         time: '2 hrs',
-        date: 'TBA',
+        date: '12th June, 2024',
       },
       {
         session: '4',
-        title: 'Advanced Solidity: Design, Security, and Optimization',
+        title: 'Interacting with Smart Contracts from the Frontend',
         time: '2 hrs',
-        date: 'TBA',
+        date: '14th June, 2024',
       },
     ],
   },
@@ -38,16 +38,17 @@ export const bootcampCurriculum = [
     session: [
       {
         session: '5',
-        title: 'Interacting with Smart Contracts from the Frontend',
+        title:
+          'Exploring Decentralized Communication: Push Notifications, Chat, and Video',
         time: '2 hrs',
-        date: 'TBA',
+        date: '19th June, 2024',
       },
       {
         session: '6',
         title:
-          'Exploring Decentralized Communication: Push Notifications, Chat, and Video',
+          'Pushing the Boundaries(Challenge): Building a full-fledged DApp',
         time: '2 hrs',
-        date: 'TBA',
+        date: '21st June, 2024',
       },
     ],
   },
@@ -57,16 +58,15 @@ export const bootcampCurriculum = [
       {
         session: '7',
         title:
-          'Pushing the Boundaries(Challenge): Building a full-fledged DApp',
+          'A UI/UX guide to designing an accessible and user-centric product',
         time: '2 hrs',
-        date: 'TBA',
+        date: '26th June, 2024',
       },
       {
         session: '8',
-        title:
-          'A UI/UX guide to designing an accessible and user-centric product',
+        title: 'Empowering Communities through Web3 Marketing',
         time: '2 hrs',
-        date: 'TBA',
+        date: '28th June, 2024',
       },
     ],
   },
@@ -75,15 +75,15 @@ export const bootcampCurriculum = [
     session: [
       {
         session: '9',
-        title: 'Empowering Communities through Web3 Marketing',
+        title: 'How to build your startup, fundraise, apply for grants',
         time: '2 hrs',
-        date: 'TBA',
+        date: '30th June, 2024',
       },
       {
         session: '10',
-        title: 'How to build your startup, fund raise, apply for grants',
+        title: 'Governing the Future with Push DAO',
         time: '2 hrs',
-        date: 'TBA',
+        date: '3rd July, 2024',
       },
     ],
   },
@@ -92,15 +92,9 @@ export const bootcampCurriculum = [
     session: [
       {
         session: '11',
-        title: 'Exploring Career Paths',
-        time: '2 hrs',
-        date: 'TBA',
-      },
-      {
-        session: '12',
         title: 'Pitching Day',
         time: '2 hrs',
-        date: 'TBA',
+        date: '17th July, 2024',
       },
     ],
   },
