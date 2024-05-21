@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-/* eslint-disable react/prop-types */
 /* eslint-disable */
 
 // React + Web3 Essentials
@@ -398,184 +397,188 @@ const FrensText = () => {
         </script>
       </Head>
 
-      <AnimationSection
-        minHeight='70vh'
-        padding='50px 0px 70px 0px'
-        margin='0 auto'
-      >
-        {FrensHeaderList.map((item) => {
-          return (
-            <Image
-              width='auto'
-              src={
-                require(`@site/static/assets/website/frens/${item.srcref}.webp`)
-                  .default
-              }
-              srcSet={`${require(`@site/static/assets/website/frens/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/frens/${item.srcref}@3x.webp`).default} 3x`}
-              alt={`${item?.alt}`}
-              className={item.classname}
-              loading='lazy'
-            />
-          );
-        })}
-
-        <Content alignSelf='center'>
-          <ItemH flexDirection='column' flex='0' justifyContent='center'>
-            <HeroHeader color='#fff'>{t('frens.hero.title')}</HeroHeader>
-            <HeroDesc
-              textAlign='center'
-              margin='20px 0 0 0'
-              letterSpacing='-0.03em'
-              color='#fff'
-              fontWeight='400'
-              fontSize='23px'
-            >
-              {t('frens.hero.description.part1')} {!isTablet && <br />}{' '}
-              {t('frens.hero.description.part2')}
-            </HeroDesc>
-          </ItemH>
-        </Content>
-      </AnimationSection>
-
-      <Section
-        id='story'
-        data-bkg='light'
-        className='lightBackground'
-        curve='bottom'
-      >
-        <Content alignSelf='center' justifyContent='flex-start'>
-          <PushRow>
-            <ItemH justifyContent='flex-start'>
-              <ResponsiveH2
-                fontSize='40px'
-                fontWeight='500'
-                letterSpacing='-0.02em'
-                lineHeight='110%'
-              >
-                {t('frens.powered-section.title')}
-              </ResponsiveH2>
-            </ItemH>
-            <SearchContainer maxWidth='350px' justifyContent='flex-end'>
-              <Wrapper>
-                <BiSearch size='23' color='#121315' />
-                <input
-                  type='text'
-                  value={search}
-                  placeholder={t('frens.powered-section.search-placeholder')}
-                  onChange={channelSearch}
-                  className='input-text'
-                />
-              </Wrapper>
-            </SearchContainer>
-          </PushRow>
-
-          <ToggleSection>
-            {typeList.map((item, i) => (
-              <ToggleButton
-                key={item?.name}
-                active={active === item?.name ? true : false}
-                onClick={() => handleSort(item?.name)}
-              >
-                <Span>{item?.name}</Span>
-
-                {active === item?.name && <b>{count}</b>}
-              </ToggleButton>
-            ))}
-          </ToggleSection>
-
-          <ChannelsSection>
-            {channels?.map((item, i) => (
-              // <FadeInAnimation wrapperElement="div" delay={0.25} >
-              <Channels key={item.ipfshash}>
-                {isMobile ? (
-                  <ChannelItem channelProp={item} />
-                ) : (
-                  <Tilt options={options} className='box'>
-                    <ChannelItem channelProp={item} delay={0.25} />
-                  </Tilt>
-                )}
-              </Channels>
-              // </FadeInAnimation>
-            ))}
-          </ChannelsSection>
-
-          {search && !loading && channels.length === 0 && (
-            <CenteredContainerInfo>
-              <DisplayNotice>
-                {t('frens.powered-section.no-channels-query')}
-              </DisplayNotice>
-            </CenteredContainerInfo>
-          )}
-
-          {active !== 'All' && !loading && count === 0 && (
-            <CenteredContainerInfo>
-              <DisplayNotice>
-                {t('frens.powered-section.no-channels-category')}
-              </DisplayNotice>
-            </CenteredContainerInfo>
-          )}
-
-          {loading && (
-            <ItemH>
-              <Spinner
-                size={70}
-                color={GLOBALS.COLORS.PRIMARY_COLOR}
-                type={SPINNER_TYPE.PROCESSING}
+      <Section flexDirection='column' background='white !important'>
+        <AnimationSection
+          minHeight='70vh'
+          padding='50px 0px 70px 0px'
+          margin='0 auto'
+        >
+          {FrensHeaderList.map((item) => {
+            return (
+              <Image
+                width='auto'
+                src={
+                  require(
+                    `@site/static/assets/website/frens/${item.srcref}.webp`
+                  ).default
+                }
+                srcSet={`${require(`@site/static/assets/website/frens/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/frens/${item.srcref}@3x.webp`).default} 3x`}
+                alt={`${item?.alt}`}
+                className={item.classname}
+                loading='lazy'
               />
-            </ItemH>
-          )}
+            );
+          })}
 
-          {!loading && active === 'All' && search.length === 0 && (
-            <ShowMoreSection onClick={ShowMore}>
-              <FiChevronDown size={23} />
-              <b>{t('frens.powered-section.show-more-button')}</b>
-            </ShowMoreSection>
-          )}
-
-          {!loading && active === 'Hackathons' && search.length === 0 && (
-            <ShowMoreSection onClick={showMoreHackathons}>
-              <FiChevronDown size={23} />
-              <b>{t('frens.powered-section.show-more-button')}</b>
-            </ShowMoreSection>
-          )}
-        </Content>
-      </Section>
-
-      {/* Mailing List Section */}
-      <Section>
-        <Content>
-          <SignupBox margin='0 0 0px 0'>
-            <ItemV
-              justifyContent='flex-start'
-              alignItems='flex-start'
-              gap='12px'
-            >
-              <ResponsiveH2
-                color='#09090B'
-                size='40px'
-                weight='700'
-                spacing='-0.02em'
-                lineHeight='110%'
-                margin='0'
-              >
-                {t('frens.email-section.title')}
-              </ResponsiveH2>
-              <Span
-                color='#303C5E'
-                fontSize='20px'
-                fontWeight='400'
+          <Content alignSelf='center'>
+            <ItemH flexDirection='column' flex='0' justifyContent='center'>
+              <HeroHeader color='#fff'>{t('frens.hero.title')}</HeroHeader>
+              <HeroDesc
+                textAlign='center'
+                margin='20px 0 0 0'
                 letterSpacing='-0.03em'
-                lineHeight='138.5%'
+                color='#fff'
+                fontWeight='400'
+                fontSize='23px'
               >
-                {t('frens.email-section.text')}
-              </Span>
-            </ItemV>
+                {t('frens.hero.description.part1')} {!isTablet && <br />}{' '}
+                {t('frens.hero.description.part2')}
+              </HeroDesc>
+            </ItemH>
+          </Content>
+        </AnimationSection>
 
-            <ItemV>
-              <MailingSignup showButton={true} />
-            </ItemV>
-          </SignupBox>
-        </Content>
+        <Section id='story' background='white !important'>
+          <Content alignSelf='center' justifyContent='flex-start'>
+            <PushRow>
+              <ItemH justifyContent='flex-start'>
+                <ResponsiveH2
+                  fontSize='40px'
+                  fontWeight='500'
+                  letterSpacing='-0.02em'
+                  lineHeight='110%'
+                >
+                  {t('frens.powered-section.title')}
+                </ResponsiveH2>
+              </ItemH>
+              <SearchContainer maxWidth='350px' justifyContent='flex-end'>
+                <Wrapper>
+                  <BiSearch size='23' color='#121315' />
+                  <input
+                    type='text'
+                    value={search}
+                    placeholder={t('frens.powered-section.search-placeholder')}
+                    onChange={channelSearch}
+                    className='input-text'
+                  />
+                </Wrapper>
+              </SearchContainer>
+            </PushRow>
+
+            <ToggleSection>
+              {typeList.map((item, i) => (
+                <ToggleButton
+                  key={item?.name}
+                  active={active === item?.name ? true : false}
+                  onClick={() => handleSort(item?.name)}
+                >
+                  <Span>{item?.name}</Span>
+
+                  {active === item?.name && <b>{count}</b>}
+                </ToggleButton>
+              ))}
+            </ToggleSection>
+
+            <ChannelsSection>
+              {channels?.map((item, i) => (
+                // <FadeInAnimation wrapperElement="div" delay={0.25} >
+                <Channels key={item.ipfshash}>
+                  {isMobile ? (
+                    <ChannelItem channelProp={item} />
+                  ) : (
+                    <Tilt options={options} className='box'>
+                      <ChannelItem channelProp={item} delay={0.25} />
+                    </Tilt>
+                  )}
+                </Channels>
+                // </FadeInAnimation>
+              ))}
+            </ChannelsSection>
+
+            {search && !loading && channels.length === 0 && (
+              <CenteredContainerInfo>
+                <DisplayNotice>
+                  {t('frens.powered-section.no-channels-query')}
+                </DisplayNotice>
+              </CenteredContainerInfo>
+            )}
+
+            {active !== 'All' && !loading && count === 0 && (
+              <CenteredContainerInfo>
+                <DisplayNotice>
+                  {t('frens.powered-section.no-channels-category')}
+                </DisplayNotice>
+              </CenteredContainerInfo>
+            )}
+
+            {loading && (
+              <ItemH>
+                <Spinner
+                  size={70}
+                  color={GLOBALS.COLORS.PRIMARY_COLOR}
+                  type={SPINNER_TYPE.PROCESSING}
+                />
+              </ItemH>
+            )}
+
+            {!loading && active === 'All' && search.length === 0 && (
+              <ShowMoreSection onClick={ShowMore}>
+                <FiChevronDown size={23} />
+                <b>{t('frens.powered-section.show-more-button')}</b>
+              </ShowMoreSection>
+            )}
+
+            {!loading && active === 'Hackathons' && search.length === 0 && (
+              <ShowMoreSection onClick={showMoreHackathons}>
+                <FiChevronDown size={23} />
+                <b>{t('frens.powered-section.show-more-button')}</b>
+              </ShowMoreSection>
+            )}
+          </Content>
+        </Section>
+
+        {/* Mailing List Section */}
+        <Section background='white !important'>
+          <Content>
+            <SignupBox margin='0 0 0px 0'>
+              <ItemV
+                justifyContent='flex-start'
+                alignItems='flex-start'
+                gap='12px'
+              >
+                <ResponsiveH2
+                  color='#09090B'
+                  size='40px'
+                  weight='700'
+                  spacing='-0.02em'
+                  lineHeight='110%'
+                  margin='0'
+                >
+                  {t('frens.email-section.title')}
+                </ResponsiveH2>
+                <Span
+                  color='#303C5E'
+                  fontSize='20px'
+                  fontWeight='400'
+                  letterSpacing='-0.03em'
+                  lineHeight='138.5%'
+                >
+                  {t('frens.email-section.text')}
+                </Span>
+              </ItemV>
+
+              <ItemV>
+                <MailingSignup
+                  showArrow={true}
+                  background='transparent'
+                  borderColor='rgba(255, 255, 255, 0.80)'
+                  textColor='#fff'
+                  inputWidth='100%'
+                />
+              </ItemV>
+            </SignupBox>
+          </Content>
+        </Section>
       </Section>
     </Layout>
   );
