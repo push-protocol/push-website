@@ -28,7 +28,7 @@ The initiative also honors our partner channels for their dedication to consiste
 
 ### What is PWN?
 
-PWN is a peer-to-peer lending protocol which enables quick crypto loans against a multitude of collateral types, including NFTs, ERC-20 Tokens, Vault Tokens, LP Positions or a bundle of all them!
+[PWN](https://pwn.xyz/#howItWorks) is a peer-to-peer lending protocol which enables quick crypto loans against a multitude of collateral types, including NFTs, ERC-20 Tokens, Vault Tokens, LP Positions or a bundle of all them!
 
 
 ### What notifications does the PWN Notifications channel power?
@@ -37,6 +37,7 @@ The “PWN Notifications” channel acts as your personal loan reminder ⏰ by 
 
 ### How to Opt-In to the PWN Notifications Channel?
 ![ PWN Notifications channel](./image18.webp)
+
 
 To opt-in to the PWN Notifications Channel, visit the [PWN Notifications Channel Profile Page](https://app.push.org/channels/0x991552E1C2A96D0Ae72E19552b08A1889aebCF53?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), click on **opt-in** and receive latet updates to your chosen wallet address for free (without Gas). 
 
@@ -48,7 +49,7 @@ To opt-in to the PWN Notifications Channel, visit the [PWN Notifications Channel
 
 ### What is ApeSwap (Now ApeBond)?
 
-ApeBond is an all-roound multi-chiain DeFi bonding protocol offering a pleathora of services including:
+[ApeBond](https://ape.bond/) is an all-roound multi-chiain DeFi bonding protocol offering a pleathora of services including:
 - Swapping
 - Staking
 - Liquidity
@@ -63,6 +64,7 @@ The ApeSwap channel sends you on-the-go notifications on new discounted token sc
 ### How to Opt-In to the Rekt Channel?
 
 ![ ApeSwap channel](./image16.webp)
+
 
 To opt-in to the ApeSwap channel, navigate to the [ApeSwap Channel Profile Page](https://app.push.org/channels/0x0e255B1900b8cE23f8E818C7Ee08cfd5b41df748?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week) on Push DApp and click opt-in to subscribe to the channel.
 
