@@ -1,22 +1,19 @@
 ---
-
 slug: push-protocol-1
 title: Push Protocolについて知っておくべきこと🔔
 authors: [push]
 image: './cover-image.webp'
-text: "Push Protocol（前身はEPNS）は、Web3通信プロトコルであり、任意のdAppsやスマートコントラクト、バックエンド、またはプロトコルが、ユーザーウォレットアドレスを介してオンチェーンとオフチェーンの両方において、オープンで、Gasless、マルチチェーン、及びプラットフォームに依存しない方法で通信できるようにします。"
-tags: [ Ethglobal, Web3, Push Notification, Hackathons]
-
+text: 'Push Protocol（前身はEPNS）は、Web3通信プロトコルであり、任意のdAppsやスマートコントラクト、バックエンド、またはプロトコルが、ユーザーウォレットアドレスを介してオンチェーンとオフチェーンの両方において、オープンで、Gasless、マルチチェーン、及びプラットフォームに依存しない方法で通信できるようにします。'
+tags: [Ethglobal, Web3, Push Notification, Hackathons]
 ---
 
 ![Cover image of Push Protocolについて知っておくべきこと🔔](./cover-image.webp)
-<!--truncate-->
 
+<!--truncate-->
 
 ## Push Protocolとは？
 
 Push Protocol（前身はEPNS）は、Web3通信プロトコルであり、任意のdAppsやスマートコントラクト、バックエンド、またはプロトコルが、ユーザーウォレットアドレスを介してオンチェーンとオフチェーンの両方において、オープンで、Gasless、マルチチェーン、及びプラットフォームに依存しない方法で通信できるようにします。
-
 
 ## 提供するもの
 
@@ -74,7 +71,7 @@ Group Chatには、以下のようなユーザーエクスペリエンスを向�
 - アドミンコントロール：グループチャットの作成者は、ユーザーを管理者に昇格させたり、グループ情報の変更、チャットからウォレットを追加または削除することができます。
 - ファイル共有：ユーザーはGIF、画像を共有したり、ファイルをアップロードしてグループチャットのメンバーと共有することができます。
 
-👉 [Integrating Push Chat](/docs/chat/ "Docs explaining how to integrate Push Chat")
+👉 [Integrating Push Chat](/docs/chat/ 'Docs explaining how to integrate Push Chat')
 
 ## ユースケース
 

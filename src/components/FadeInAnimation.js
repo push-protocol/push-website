@@ -6,7 +6,13 @@ import React, { useEffect, useRef } from 'react';
 // External Components
 import { gsap } from 'gsap';
 
-const FadeInAnimation = ({ children, wrapperElement = 'div', direction = null, delay = 0, ...props }) => {
+const FadeInAnimation = ({
+  children,
+  wrapperElement = 'div',
+  direction = null,
+  delay = 0,
+  ...props
+}) => {
   const Component = wrapperElement;
   let compRef = useRef(null);
   const distance = 200;
@@ -40,10 +46,7 @@ const FadeInAnimation = ({ children, wrapperElement = 'div', direction = null, d
     });
   }, [compRef.current]);
   return (
-    <Component
-      ref={compRef}
-      {...props}
-    >
+    <Component ref={compRef} {...props}>
       {children}
     </Component>
   );

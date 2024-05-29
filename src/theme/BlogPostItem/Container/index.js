@@ -4,9 +4,9 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
-import { useBlogPost } from "@docusaurus/theme-common/internal";
+import React from 'react';
+import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
+import { useBlogPost } from '@docusaurus/theme-common/internal';
 export default function BlogPostItemContainer({ children, className }) {
   const {
     frontMatter,
@@ -19,16 +19,16 @@ export default function BlogPostItemContainer({ children, className }) {
   return (
     <article
       className={className}
-      itemProp="blogPost"
+      itemProp='blogPost'
       itemScope
-      itemType="https://schema.org/BlogPosting"
+      itemType='https://schema.org/BlogPosting'
     >
-      {description && <meta itemProp="description" content={description} />}
+      {description && <meta itemProp='description' content={description} />}
       {image && (
-        <link itemProp="image" href={withBaseUrl(image, { absolute: true })} />
+        <link itemProp='image' href={withBaseUrl(image, { absolute: true })} />
       )}
       {keywords.length > 0 && (
-        <meta itemProp="keywords" content={keywords.join(",")} />
+        <meta itemProp='keywords' content={keywords.join(',')} />
       )}
       {children}
     </article>

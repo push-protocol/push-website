@@ -11,6 +11,7 @@ tags: [ Ethglobal
 ,Blockchain
 ,Web3 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Devconnect 2022: EPNS is all set to meet you!](./cover-image.webp)
@@ -49,7 +50,7 @@ We’re really excited, and of course proud to be sponsoring the Global Governan
 
 As we Ride and DAO, at this event do drop by at the **Tobacco Theater on 19th April, 2:00 PM, Amsterdam time** where our BizDev and Operations Lead Jafett Sandi talks about the Foundational Tools of DAO Infrastructure, and how we could govern better resolve the many challenges DAOs have those can be solved to form resilient communities.
 
-If you can’t make it there, you can watch the livestream on their [**YouTube**](https://www.youtube.com/thedaoist) & [**Twitch**](https://www.twitch.tv/thedaoist_)  channels
+If you can’t make it there, you can watch the livestream on their [**YouTube**](https://www.youtube.com/thedaoist) & [**Twitch**](https://www.twitch.tv/thedaoist_) channels
 
 **On 19th April: Never REKT @ Devconnect, Amsterdam Party**
 
@@ -89,11 +90,10 @@ To tell you the truth, it truly feels so good to be part of such a vibrant commu
 
 One last thing! Now you can also get all the important updates and happenings @ **Devconnect**!
 
-You can simply opt-in to ‘**Push For Devconnect’** channel on [**https://app.epns.io/**](https://app.epns.io/)  via your wallet using our dApp / Mobile App on [**iPhone**](https://apps.apple.com/us/app/ethereum-push-service-epns/id1528614910) or [**Android**](https://play.google.com/store/apps/details?id=io.epns.epns&hl=en_IN&gl=US) device!
+You can simply opt-in to ‘**Push For Devconnect’** channel on [**https://app.epns.io/**](https://app.epns.io/) via your wallet using our dApp / Mobile App on [**iPhone**](https://apps.apple.com/us/app/ethereum-push-service-epns/id1528614910) or [**Android**](https://play.google.com/store/apps/details?id=io.epns.epns&hl=en_IN&gl=US) device!
 
 P.S If you’re a BUIDLer who wants to BUIDL the next phase of the internet then this is the perfect event for that!
 
 Check out our [**docs**](https://docs.epns.io/) and tutorials to learn more about how to build with EPNS Make sure to **join our** [**Discord Community**](https://discord.gg/YVPB99F9W5) **too while you’re at it!** And yes, our team will be there to support you at the event too!
 
 All the best at **ETHAmsterdam**, we look forward to seeing you there!
-

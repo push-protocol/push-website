@@ -12,6 +12,7 @@ tags: [ Announcements
 ,Decentralization
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Advancing Ceramic Networks Decentralized Identity Network with EPNS](./cover-image.webp)
@@ -24,14 +25,13 @@ Towards this effort, we are excited to announce that we are working with [Cerami
 
 Our pilot program with Ceramic will consist of:
 
-*   Embracing Ceramic protocol and DID in EPNS protocol to enable blockchain agonistic behavior for receiving nodes of EPNS.
-*   Working with the Ceramic team to enable technical discussion towards building the decentralized communication layer that is scalable and powerful.
-*   Exploring / creating together a standard for Ceramic protocol that can enable sending notifications through a user’s DID, with routing preferences managed in Ceramic’s [IDX](http://idx.xyz) identity protocol
+- Embracing Ceramic protocol and DID in EPNS protocol to enable blockchain agonistic behavior for receiving nodes of EPNS.
+- Working with the Ceramic team to enable technical discussion towards building the decentralized communication layer that is scalable and powerful.
+- Exploring / creating together a standard for Ceramic protocol that can enable sending notifications through a user’s DID, with routing preferences managed in Ceramic’s [IDX](http://idx.xyz) identity protocol
 
 Ceramic Network plays a critical role in the development of the entire ecosystem, bringing decentralized identity and open data to life. It is for us a pleasure and an honor to have the opportunity to work with this amazing team to help reclaim the web.
 
-**About Ceramic Network**
--------------------------
+## **About Ceramic Network**
 
 Ceramic is a decentralized network for managing and processing mutable information on the open web. By combining IPFS, libp2p, blockchain, DIDs, and standards for authenticated data, Ceramic gives developers the ability to build completely serverless and silo-free applications using dynamic, verifiable, decentralized data.
 

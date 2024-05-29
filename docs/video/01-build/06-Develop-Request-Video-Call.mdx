@@ -31,11 +31,11 @@ await aliceVideoCall.request([recipient]);
 
 | Property       | Type                                | Sub Type | Description                                                                                                                                                                         |
 | -------------- | ----------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipients`_ | `string[]`                          | -        | Wallet address or addresses of the recipient(s). Number of different [wallet standards](/docs/chat/supported-wallet-standards "Push Chat support wallet standards") are suppported. |
+| _`recipients`_ | `string[]`                          | -        | Wallet address or addresses of the recipient(s). Number of different [wallet standards](/docs/chat/supported-wallet-standards 'Push Chat support wallet standards') are suppported. |
 | `options?`     | `VideoInitializeOptions`            | -        | -                                                                                                                                                                                   |
 |                | `options.rules.access.type`         | `string` | Identifier for Push Video or Space. We use `VIDEO_NOTIFICATION_ACCESS_TYPE.PUSH_CHAT` from `@pushprotocol/restapi` here for Push Video                                              |
 |                | `options.rules.access.data.chatId?` | `string` | Unique identifier for every push chat, here, the one between the alice and the bob                                                                                                  |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<Details summary="Expected response">200 OK</Details>
+<Details summary='Expected response'>200 OK</Details>

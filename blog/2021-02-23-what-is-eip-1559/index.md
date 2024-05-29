@@ -12,6 +12,7 @@ tags: [ Ethereum
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of What is EIP-1559? Why is it important for the future of Ethereum?](./cover-image.webp)
@@ -22,8 +23,7 @@ An EIP (Ethereum Improvement Proposal) is a design document that provides inform
 
 If you have been following the recent conversations within the Ethereum community, you may have come across the term EIP-1559, and there seems to be quite a lot of discussion on this topic. In this article, we try to briefly explain what EIP-1559 is, what the discussion and debate is all about within the Ethereum ecosystem.
 
-**What is EIP-1559?**
-=====================
+# **What is EIP-1559?**
 
 EIP-1559 is an EIP proposed by Vitalik Buterin and Eric Conner, in an attempt to greatly improve the user experience (UX) of transactions in the Ethereum ecosystem. The proposal aims to do this by changing the current “gas-fee auction” model (similar to Bitcoin). In the gas fee auction model, users bid for block space to include their transactions in the next block by increasing their gas limits and hence incentivizing miners to choose that transaction rather than one with lesser gas fees. The change that the EIP aims to push forward is to do away with the current model, and instead introduce a BASEFEE, which algorithmically adjusts itself based on the network congestion at that time. This means that if Ethereum is utilized by more than 50% then the BASEFEE increases and if the network is congested by less than 50% then the BASEFEE decreases. This would mean that gas prices would be set automatically by the network and users do not have to individually input their gas limit. With the introduction of BASEFEE, we would fundamentally get a “market price” for gas at the time. This also means that wallets no longer need to develop and estimate their own algorithms to show an estimate of the network congestion, but rather the BASEFEE itself shows the exact gas fee required to execute a transaction in the network.
 
@@ -37,11 +37,10 @@ Currently, miners are compensated for securing the network with the sum of block
 
 Hence EIP-1559 does these 2 things:
 
-*   Creates “**a market rate**” for block inclusion
-*   **Burns ETH** in the transaction fee
+- Creates “**a market rate**” for block inclusion
+- **Burns ETH** in the transaction fee
 
-W**hy is this EIP important?**
-==============================
+# W**hy is this EIP important?**
 
 As mentioned earlier, this EIP aims to drastically improve the UX for end-users, by algorithmically setting the BASEFEE such that wallets no longer need to estimate gas fees by approximating the network congestion. Although, there seems to be a misconception that EIP-1559 would result in the reduction of gas fees, which is not the case. The EIP according to Eric Conner, aims to provide wallets and users a much-needed improvement to the user-experience of gas management. This means that rather than having spikes of high gas fees during high network congestion, the graph is smoothened out, but it still doesn’t reduce the gas fees, nor does it provide more scalability.
 
@@ -49,8 +48,7 @@ Another critical aspect of the proposal is the burning of the BASEFEE, which wou
 
 But Eric Conners once again steps into the limelight to clear the misconception that the reason EIP-1559 needs to be implemented is that it burns ETH. He argues that the main point of the EIP is enhanced UX, but the burning of ETH is just a nice add-on that shouldn’t take center stage, and that once Ethereum scaling arrives, the fee burnt will be less eventually hence making ETH inflationary once again.
 
-**#STOPEIP1559 vs #SUPPORTEIP1559**
-===================================
+# **#STOPEIP1559 vs #SUPPORTEIP1559**
 
 You may have recently come across these #tag campaigns as you scroll through Twitter recently. What is the problem with EIP-1559 that has sparked such controversy among folks in the Ethereum ecosystem?
 
@@ -66,15 +64,13 @@ And on the other hand, we have a group of miners who stand by **_#StopEIP1559_**
 
 On February 26th a community call will take place to discuss the implementation of EIP-1559, and Flexpool has been invited on behalf of miners to voice their opinions and to push for a compromise on the issue. As we approach the date for the community call, tensions rise and all eyes are on what the discussion would be and the decisions made by the community during this call.
 
-**In Summary**
-==============
+# **In Summary**
 
 EIP-1559 is an Ethereum Improvement Proposal that aims to drastically improve the user-experience of gas management in Ethereum, by removing the current fee auction model for block inclusion but rather introducing a BASEFEE which is algorithmically set according to how much of the network is being utilized at that time and is burnt. The burning of the BASEFEE has sparked a divide within the Ethereum community, between miners and the rest, which resulted in two major campaigns #SUPPORTEIP1559 and #STOPEIP1559 that has been making rounds throughout crypto-twitter. On February 26, 2021, a community call will take place to discuss the implementation of EIP-1559 with participation from Flexpool on behalf of miners to push for a compromise.
 
 As we move closer to February 26th it remains to be seen how this major proposal to change how the Ethereum consensus fundamentally works will play out in the end.
 
-**EDIT: UPDATE ON EIP-1559 STATUS**
------------------------------------
+## **EDIT: UPDATE ON EIP-1559 STATUS**
 
 Ethereum Improvement Proposal [(EIP) 1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md) will be packaged with the London hard fork this coming July regardless of the mining industry’s discontent with the proposal, according to the All Core Developers [call](https://www.youtube.com/watch?v=xWfR-WxjmYg) Friday.
 

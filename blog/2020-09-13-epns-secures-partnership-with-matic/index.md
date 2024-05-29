@@ -11,6 +11,7 @@ tags: [ BlockchainDefi
 ,Matic
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS secures partnership with Matic along with a sweet grant!](./cover-image.webp)
@@ -25,14 +26,13 @@ We are excited to announce that we’ve won a grant from Matic Network and will 
 
 The partnership will enable EPNS to leverage the Matic Layer-2 solution to drive high-performance and the ability to seamlessly cater to large numbers of users. Some of the core functions of EPNS includes:
 
-*   Messages from dApps, services, smart contracts
-*   Earning crypto
-*   Push notifications, and much more!
+- Messages from dApps, services, smart contracts
+- Earning crypto
+- Push notifications, and much more!
 
 Matic partnership announcement
 
-Join us!
---------
+## Join us!
 
 Become part of our buzzing community! Join the conversation on one of our channels:  
 [Website](https://epns.io/) | [Twitter](https://twitter.com/epnsproject) | [Telegram](https://t.me/epnsproject) | [Github](https://github.com/push-protocol)

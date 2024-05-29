@@ -11,10 +11,10 @@ tags: [ Web3, Partnerships, Push Protocol, Blockchain Development, Aragon]
 ---
 
 ![Cover image of Taking DAO Communication to New Heights | Push x Aragon🦅](./cover-image.gif)
+
 <!--truncate-->
 
 We are thrilled to announce that Aragon, the premier DAO creation and management platform, is joining forces with Push to provide users with enhanced functionalities and seamless communication🎉
-
 
 Aragon’s suite of applications and services makes it easy to create a DAO, customize it, and deploy it on the Ethereum network in just a few clicks. Once a DAO is deployed, Aragon provides a secure and flexible interface that can be used to create and vote on proposals, manage funds, administer tokens with ease, and more. The power of permissionless, trustless technology on the platform makes DAO management and governance a breeze. With a no-code setup, Aragon provides the most user-friendly tech stack to build, launch, and manage your DAO.
 
@@ -45,4 +45,3 @@ Aragon builds flexible and secure tools that enable anyone to launch and manage 
 Aragon recently deployed the new modular Aragon OSx protocol and no-code Aragon App on Ethereum and Polygon. Driven by the mission to enable everyone to experiment with governance at the speed of software, Aragon aims to build a hyperstructure for governance. The Aragon Project is governed by Aragon Network Token (ANT) Holders in the Aragon DAO and built by globally distributed teams.
 
 Know more about Aragon: [Website](https://aragon.org/), [Discord](https://discord.com/invite/eqQJkdp), [Twitter](https://twitter.com/aragonproject?lang=es), [LinkedIn](https://www.linkedin.com/company/aragonproject/), [YouTube](https://www.youtube.com/channel/UCODiU_-FWhr4SVOoBlm-qaQ), [Telegram](https://t.me/AragonProject), [Github](https://github.com/aragon)
-

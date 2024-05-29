@@ -14,8 +14,8 @@ image: "/assets/docs/previews/aave_settings_with_showrunners_example--aave_chann
   </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Channel Settings using Showrunners
 
@@ -30,12 +30,12 @@ import TabItem from "@theme/TabItem";
 ### Pre-requisites
 
 - In this tutorial, we will only understand the logic part of Aave i.e how Notifications are being triggered in Aave.
-- For step-by-step tutorial of Channel Settings,please refer [BTC Tracker Tutorial](https://push.org/docs/notifications/showrunners-scaffold/Examples/eth-tracker-with-showrunners-example/ "BTC Tracker tutorial").
-- Subscribe to this channel Address [Aave Channel](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50/ "Aave channel on Push")
+- For step-by-step tutorial of Channel Settings,please refer [BTC Tracker Tutorial](https://push.org/docs/notifications/showrunners-scaffold/Examples/eth-tracker-with-showrunners-example/ 'BTC Tracker tutorial').
+- Subscribe to this channel Address [Aave Channel](https://app.push.org/channels/0xAA940b3501176af328423d975C350d0d1BaAae50/ 'Aave channel on Push')
 
 ### Perform following steps to get started with Channel Settings.
 
-Step 1 : Create a Position on [Aave V3/V2 Mainnet](https://app.aave.com/ "Link to Aave") by Supplying and borrowing against some asset.
+Step 1 : Create a Position on [Aave V3/V2 Mainnet](https://app.aave.com/ 'Link to Aave') by Supplying and borrowing against some asset.
 Step 2: You should be able to see some health Factor like 1.5 or 1.8.
 Step 3:
 
@@ -258,9 +258,9 @@ Step 6 : Filtering APYs on the basis of channel settings and send notification.
 if (settings.index == 2 && settings.enabled == true) {
   let k = 0;
   let loopCounter = 0;
-  let title = "Aave v3 supply APYs are here!";
-  let message = "Here is a List of Assets that you can supply to on Aave v3";
-  let payloadTitle = "Aave V3 Supply APY Alert!";
+  let title = 'Aave v3 supply APYs are here!';
+  let message = 'Here is a List of Assets that you can supply to on Aave v3';
+  let payloadTitle = 'Aave V3 Supply APY Alert!';
   let payloadMsg = ``;
   let notificationType = 3;
   this.supplyApy.map(async (apy) => {
@@ -285,7 +285,7 @@ if (settings.index == 2 && settings.enabled == true) {
     payloadTitle: payloadTitle,
     payloadMsg: payloadMsg,
     notificationType: notificationType,
-    cta: "https://app.aave.com/#/dashboard",
+    cta: 'https://app.aave.com/#/dashboard',
     image: null,
     simulate: simulate,
   });
@@ -294,4 +294,4 @@ if (settings.index == 2 && settings.enabled == true) {
 
 - We are using a similar logic for Borrow APY too which can be decoded easily.
 
-- I hope you enjoyed this tutotial,reach out to [Push Discord](https://discord.gg/pushprotocol/ "Push Discord Link") if you stuck somehwere or have any doubts.
+- I hope you enjoyed this tutotial,reach out to [Push Discord](https://discord.gg/pushprotocol/ 'Push Discord Link') if you stuck somehwere or have any doubts.

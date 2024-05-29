@@ -4,9 +4,10 @@ title: EPNS Monthly Blocks
 description: EPNS Monthly Blocks
 authors: [push]
 image: './cover-image.webp'
-text: "Hi EPNS frens 👋🏽! In the blink of an eye we’ve come to the final stretch of Q2. Lots of things are coming together nicely, and it’s time for a recap!"
-tags: [ Newsletter ,Blockchain ,Ethereum ,Epnsproject ,Communication]
+text: 'Hi EPNS frens 👋🏽! In the blink of an eye we’ve come to the final stretch of Q2. Lots of things are coming together nicely, and it’s time for a recap!'
+tags: [Newsletter, Blockchain, Ethereum, Epnsproject, Communication]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Monthly Blocks](./cover-image.webp)
@@ -21,7 +22,6 @@ Development 🏗️
 Let’s start with something super cool on the Development front — our revamped Documentation Hub: https://docs.epns.io/hub/
 
 After our participation in ETH Amsterdam and DevConnect our team set on a mission to take all lessons learned and come up with world class documentation for everyone! We created a very extensive and comprehensive documentation for developers, services, and end users. Additionally, we prepared a youtube playlist covering the many aspects of EPNS and its usage — [the EPNS 101 series](https://www.youtube.com/playlist?list=PLyWTqFLqKt9a2WVohtCzzsdo6GVpu1uTw). Make sure to check it out!
-
 
 Many other things worked this month are the result of feedback from the community and our collaborations, other things are us following our roadmap to ensure we achieve all our goals for this 2022. Some of the development efforts that took place this month are:
 
@@ -40,6 +40,7 @@ Also, we highly recommend this month that you read our blog on how EPNS aims to 
 Finally, our always open invitation to join us on Discord to participate in our discussions, make questions, and ask for any help you need while working on your projects implementing EPNS!
 
 #### Governance 🗳️
+
 After our Rockstars of EPNS Program came to an end, we continued our efforts towards solidifying our Governance and laying the foundation for all the things coming ahead for EPNS. We observed an important increase in community participation in our Office hours, PUSH Grants Program, and also submitting PUSH Improvement Proposals (PIPs).
 
 - [PIP-05: Lend Funds to Provide Liquidity Provisioning from Community Treasury](https://twitter.com/epnsproject/status/1524313370811412481?s=20&t=Uv5U-F13rHJkNX659gcj1A) was approved by Push Governance.
@@ -54,10 +55,10 @@ We have four more very interest proposals ongoing, don’t miss the opportunity 
 We’ll be announcing more Governance related initiatives very soon. Stay tuned!
 
 #### Frens of EPNS 🎎
+
 This month as usual we remained consistently growing our circle of frens, making sure that EPNS gets battle-tested in a wide variety of use cases and new challenges.
 
 Let’s take a look at our new frens this month:
-
 
 <b>[0vix protocol:](https://medium.com/ethereum-push-notification-service/epns-x-0vix-enabling-communication-for-the-next-generation-of-money-markets-304a26092e14)</b> to notify users when their collateral approaches liquidation or if it has been liquidated.
 
@@ -93,6 +94,7 @@ This was an intense month with lots of celebrations going on thanks to our colla
 - [AMA with frens from Notional Finance & Shipooor](https://twitter.com/epnsproject/status/1529817129549283329?s=20&t=SVE18MKdCYMjChx5e5xyvA)
 
 #### News and Community 🎪
+
 We love sharing everything EPNS is doin, and this month EPNS got featured in many great news outlets, and participated in several different podcasts and events.
 
 - [Excited to sponsor HackMoney2022](https://twitter.com/epnsproject/status/1521535057319636992?s=20&t=nbf_IdQj5oc5_cHrXXOHxg) — EthGlobal’s biggest DeFi Hackathon!, and conducted a workshop on [Building Web3 communication in your DeFi application](https://twitter.com/epnsproject/status/1522622218030788611?s=20&t=Uv5U-F13rHJkNX659gcj1A)
@@ -109,6 +111,3 @@ In an always demanding and super fast paced environment like the web3, everyday 
 Let’s keep PUSHing! 💪🏼
 
 The EPNS team
-
-
-

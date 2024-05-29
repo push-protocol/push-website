@@ -4,7 +4,7 @@ title: Deep-dive into Push Snaps Features & Getting Started 🛠️
 authors: [push]
 image: './cover-image.webp'
 description: Deep-dive into Push Snaps Features & Getting Started 🛠️
-text: "As we outlined in our announcement article — the Push Snap is a powerful tool that allows any wallet address and user to receive notifications directly in their MetaMask wallet."
+text: 'As we outlined in our announcement article — the Push Snap is a powerful tool that allows any wallet address and user to receive notifications directly in their MetaMask wallet.'
 tags: [Push Protocol, Metamask, Metamask Wallet, Web3, Blockchain]
 ---
 
@@ -13,10 +13,10 @@ tags: [Push Protocol, Metamask, Metamask Wallet, Web3, Blockchain]
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # All the technical specifications and getting started tips you need.
 
 As we outlined in our [announcement article](https://push-protocol.medium.com/bringing-push-to-metamask-snaps-fc780fec004b) — the Push Snap is a powerful tool that allows any wallet address and user to receive notifications directly in their MetaMask wallet. With the Push Snap installed, you can now seamlessly receive notifications powered by [Push Protocol](https://push.org/) directly into your wallet, ensuring you never miss out on important updates from the channels you subscribe to.
-
 
 By delivering notifications directly to your wallet address, we’re eliminating the need to log in to any other front-end separately to get those same notifications and alerts. By bringing all your notifications into one place, we’re saving you time, effort, and allowing you to more easily stay connected and informed.
 
@@ -85,7 +85,7 @@ Mentioned below are the imperative calls made by the Push Snap.
   chosen by the user. That address won’t be served the notification anymore.
 - <b>‘pushproto_welcome’</b> — Serves as an initial popup to introduce the user to
   what the snap does and redirects the user to <a href="https://app.push.org">
-    app.push.org
+  app.push.org
   </a> to opt-in to the push channels to start getting notifications.
 - <b>‘pushproto_togglepopup’</b> — This method turns off the snooze and notifications
   would be allowed to be shown in the form of popups again.
@@ -152,8 +152,6 @@ Yes, every wallet you add will receive a notification.
 ### Does the MetaMask Wallet need to be unlocked to receive notification?
 
 Yes, the browser window needs to be active and MetaMask needs to be unlocked to start receiving notifications.
-
-
 
 <!-- [Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).
 

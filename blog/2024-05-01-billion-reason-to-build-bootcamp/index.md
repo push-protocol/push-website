@@ -4,7 +4,7 @@ title: 'Billion Reasons to Build Bootcamp: Covering Every Dimension of the Web3 
 authors: [push]
 image: './cover-image.webp'
 description: 'Billion Reasons to Build Bootcamp: Covering Every Dimension of the Web3 Ecosystem'
-text: "BRB was initiated with a vision to solve the 1 HARD problem with the first step taken in 2023 by traveling to 18 cities where amazing minds come together to learn and build with a chance to win over $50,000 in prizes!"
+text: 'BRB was initiated with a vision to solve the 1 HARD problem with the first step taken in 2023 by traveling to 18 cities where amazing minds come together to learn and build with a chance to win over $50,000 in prizes!'
 tags: [Push Protocol, Web3, Blockchain Technology, BRB]
 ---
 
@@ -14,7 +14,7 @@ tags: [Push Protocol, Web3, Blockchain Technology, BRB]
 
 (BRB Bootcamp is the go-to place to learn every aspect of the web3 ecosystem from fundamentals to shipping your first project)
 
-BRB was initiated with a vision to solve the [1 HARD problem](https://twitter.com/pushprotocol/status/1694711099336347979) with the first step taken in 2023 by traveling to 18 cities where amazing minds come together to learn and build with a chance to win over $50,000 in prizes! 
+BRB was initiated with a vision to solve the [1 HARD problem](https://twitter.com/pushprotocol/status/1694711099336347979) with the first step taken in 2023 by traveling to 18 cities where amazing minds come together to learn and build with a chance to win over $50,000 in prizes!
 
 Now, we are back with a bigger step "[Billion Reasons to Build (BRB) Bootcamp](https://twitter.com/pushprotocol/status/1785312909649707485)" a global virtual program designed to cover every aspect of the Web3 ecosystem, far beyond technology alone 💯"
 
@@ -31,20 +31,19 @@ For a **comprehensive dive into our 6-week curriculum**, covering everything fro
 
 ![First Image of Billion Reasons to Build Bootcamp: Covering Every Dimension of the Web3 Ecosystem](./image-1.webp)
 
-
 ## How can I become a part of this?
 
-To make this bootcamp a quality-oriented program only 80 students from applications worldwide will get this opportunity. 
+To make this bootcamp a quality-oriented program only 80 students from applications worldwide will get this opportunity.
 
 No matter what background, experience, and skills you have this bootcamp is for you if you are interested in tech, marketing, or design and are willing to engage actively with our curriculum.
 
-The selection for the Bootcamp will be completely dependent on 
+The selection for the Bootcamp will be completely dependent on
 
 Registrations will start from 30th April 2024 and will end by 17th May!
 
 To be a part of it you can apply through ⬇️
 
-Application Link - https://bit.ly/brbbootcamp 
+Application Link - https://bit.ly/brbbootcamp
 
 After this, our team will shortlist the top 80 people who will become a part of this learning journey with us.
 

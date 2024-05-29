@@ -10,20 +10,21 @@ tags: [ Push Protocol, Web3, DAO]
 ---
 
 ![Cover image of Push DAO Progressive Decentralization — The Next Phase of Push Governance🌐](./cover-image.webp)
-<!--truncate-->
 
+<!--truncate-->
 
 Over the past year, our team has worked hard to create a strong foundation to build & scale the Push DAO.
 
 Today, we are launching the next phase of Push governance via the <b>Push Progressive Decentralization Roadmap</b>, opening opportunities for our community to get more involved with Push Protocol in our journey to become a community-owned project.
 
-
 ## The TL;DR of Push DAO Phase 0
+
 Before we get into the details of Phase 1, let’s look at the success of Phase 0.
 
 Phase 0 was focused on creating a thriving community and fine-tuning our governance processes. Here’s what we achieved in Phase 0:
 
 ### Metagovernance
+
 - Implemented 4 roles with different capabilities to allow community members to participate in Push governance in a variety of ways. DAO members can vote directly in governance proposals or delegate their voting power to a delegate that represents their ideals.
 - Learning from best practices from other successful DAOs, we created an efficient mechanism to enable faster implementation and execution of important proposals that got immediate traction within the community.
 - Implemented PIPs (Push Improvement Proposals) to enable Push Protocol to work together with the community to form standardized, community-driven improvements, specs, and standards.
@@ -63,11 +64,13 @@ The Push Ambassadors Program kicked-off phase 1 of the Push Decentralization Roa
 This program will run in the paid contributor modality, where the ambassadors will be the first official community contributors to the Push DAO. This comes together with contributor reputation and other important DAO activities that need to happen to build an effective, efficient, and decentralized DAO.
 
 ### Community-managed Push Grants Program
+
 Lessons learned during this second iteration of the Push Grants Program will be implemented for future editions to improve even more the program and maximize the benefit for the grantees. The process is now being fine-tuned to have minimal social coordination cost and enable the program to be managed by a <b>Grants Workstream</b>.
 
 More details will be shared as we advance towards completing this goal!
 
 ### Open the floor for Push Contributors
+
 This will be an ongoing process that will happen slowly through the rest of the year in a controlled fashion, where the team will work closely with the contributors.
 
 Slowly giving control of the work streams to the community, and more important making sure all governance infrastructure and procedures are in place to empower the community and each work stream to operate, grow, and take decisions.
@@ -87,4 +90,3 @@ This will help us to realize our Push DAO vision of creating the necessary frame
 As well as our Push DAO mission of revolutionizing the web3 UX by ensuring wallets, protocols and all web3 services are able to communicate via notifications, chats, video calls or more via a open and secure network.
 
 We are excited about all the opportunities ahead and we are happy to continue BUIDLing and PUSHing together.
-

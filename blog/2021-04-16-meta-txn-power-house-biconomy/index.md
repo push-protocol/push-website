@@ -12,12 +12,12 @@ tags: [ Announcements
 ,Notifications
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Meta Txn Power House Biconomy Collaborates with EPNS](./cover-image.webp)
 
 <!--truncate-->
-
 
 With the growing Ethereum ecosystem, especially DeFi, more and more users are entering the ecosystem. The main need for new users is to easily start using dApps, without having to deal with the complexities of blockchain. Biconomy plays a vital role in bringing this user experience for the masses by enabling a gasless experience for the end-users. From a dApp owner perspective, this is very valuable as plug-n-play of meta transactions using Biconomy can greatly remove any friction while onboarding new users into the ecosystem.
 
@@ -29,8 +29,7 @@ At EPNS, we are constantly looking out to ease the use cases for the services an
 
 By working on integration with Biconomy, EPNS is excited to showcase how collaborations are important for decentralized applications to take their business to the next level and provide a frictionless user experience and higher level of participation.
 
-**About Ethereum Push Notification Service**
---------------------------------------------
+## **About Ethereum Push Notification Service**
 
 Ethereum Push Notification Service (EPNS) is a decentralized notification protocol that enables any smart contracts, dApps or even traditional services to send notifications to wallet addresses, as long as those wallet addresses have opted in to receive them from that particular service.
 

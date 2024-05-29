@@ -4,11 +4,11 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import Link from "@docusaurus/Link";
-import BlogPostItemHeaderInfo from "@theme/BlogPostItem/Header/Info";
-import clsx from "clsx";
-import React from "react";
-import styled from "styled-components";
+import Link from '@docusaurus/Link';
+import BlogPostItemHeaderInfo from '@theme/BlogPostItem/Header/Info';
+import clsx from 'clsx';
+import React from 'react';
+import styled from 'styled-components';
 
 function MaybeLink(props) {
   if (props.href) {
@@ -22,8 +22,8 @@ export default function BlogPostItemHeaderAuthor({ author, className }) {
   return (
     <AvatarDiv>
       {imageURL && (
-        <MaybeLink href={link} className="avatar__photo-link">
-          <Img src={imageURL} alt={name} itemProp="image" />
+        <MaybeLink href={link} className='avatar__photo-link'>
+          <Img src={imageURL} alt={name} itemProp='image' />
         </MaybeLink>
       )}
 
@@ -31,17 +31,17 @@ export default function BlogPostItemHeaderAuthor({ author, className }) {
         {name && (
           <div
             // className="avatar__intro"
-            itemProp="author"
+            itemProp='author'
             itemScope
-            itemType="https://schema.org/Person"
+            itemType='https://schema.org/Person'
           >
-            <div className="avatar__name">
-              <MaybeLink href={link} itemProp="url">
-                <span itemProp="name">{name}</span>
+            <div className='avatar__name'>
+              <MaybeLink href={link} itemProp='url'>
+                <span itemProp='name'>{name}</span>
               </MaybeLink>
             </div>
             {title && (
-              <small className="avatar__subtitle" itemProp="description">
+              <small className='avatar__subtitle' itemProp='description'>
                 {title}
               </small>
             )}

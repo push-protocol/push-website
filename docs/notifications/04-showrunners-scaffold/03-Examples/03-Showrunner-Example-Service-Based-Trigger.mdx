@@ -163,7 +163,7 @@ If the above condition is verified the process of triggering a notification is i
 ```jsx
 const message = `Your ENS Domain ${reg.domain.name} is set to expire 
       ${expiresInDays > 0 ? `in ${expiresInDays} day(s)` : `today`}.`;
-const title = "ENS Domain Expiry Alert!!";
+const title = 'ENS Domain Expiry Alert!!';
 const cta = `https://app.ens.domains/name/${reg.domain.name}/details`;
 ```
 
@@ -240,7 +240,7 @@ schedule.scheduleJob({ start: startTime, rule: dailyRule }, async function () {
     channel.logInfo(`🐣 Cron Task Completed -- ${taskName}`);
   } catch (err) {
     logger.error(
-      `[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`,
+      `[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`
     );
     logger.error(`[${new Date(Date.now())}] Error Object: %o`, err);
   }

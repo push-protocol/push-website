@@ -3,22 +3,24 @@ slug: join-us-for-the-ethbogotá-2022-hackathon
 title: Join Us for the ETHBogotá 2022 Hackathon
 authors: [push]
 image: './cover-image.webp'
-text: "A few weeks ago, we teamed up with our frens at ETHGlobal for a month-long ETHOnline hackathon with thousands of builders hacking from across the world. As expected, all the hackers delivered impressive work."
-tags: [ Developer, Hackathons, Ethglobal, Web3, Push Notification]
+text: 'A few weeks ago, we teamed up with our frens at ETHGlobal for a month-long ETHOnline hackathon with thousands of builders hacking from across the world. As expected, all the hackers delivered impressive work.'
+tags: [Developer, Hackathons, Ethglobal, Web3, Push Notification]
 ---
 
 ![Cover image of Join Us for the ETHBogotá 2022 Hackathon](./cover-image.webp)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # We’re partnering up with the wonderful ETHGlobal team (again!) to bring you a new hackathon — ETHBogotá, and let’s build something cool with Push over Devcon week!<br/>
 
 A few weeks ago, we teamed up with our frens at [ETHGlobal](https://medium.com/u/3d1733b8e86a?source=post_page-----96801a44ee64--------------------------------) for a month-long ETHOnline hackathon with thousands of builders hacking from across the world. As expected, all the hackers delivered impressive [work](https://twitter.com/pushprotocol/status/1575838134251626496).
 
-
 Now, it’s [ETHBogotá](https://ethglobal.com/events/ethbogota/prizes#push-protocol) time! This Friday, we’re challenging you to surprise and inspire the community with your projects — at the largest web3 hackathon in LATAM’s history and pushing new boundaries in web3 communication!
 
 ## Prizes and Ideas 💡
+
 We’ll be awarding multiple prizes totaling $10k for the best and most creative use cases using Push:
 
 - 🥇1st Prize — $3,500
@@ -34,6 +36,7 @@ Since Push mainnet went live earlier this year, we’ve seen builders from the w
 - 🔧 Tooling: Offer a smooth user journey with push notifications.
 
 ## Getting Started 🚀
+
 We know getting started with building a new project can involve a lot of boilerplate code. That’s why we’ve put together some simple steps you can follow and create a channel — as the first step for sending notifications via Push Protocol, and get everything up and running in no time.
 
 1. Go to http://staging.push.org and connect your wallet.
@@ -44,11 +47,13 @@ We know getting started with building a new project can involve a lot of boilerp
 6. Congratulations — your channel has been successfully created, and you are all set to send or receive notifications.
 
 ### Useful links:
+
 - [Use case](https://www.notion.so/pushprotocol/Push-Protocol-Use-Cases-c0fe5e17bc634502817bdc60c29221e3)
 - [Monorepo SDK](https://medium.com/push-protocol/here-comes-the-all-new-epns-sdk-monorepo-framework-8447b486a801)
-- [Developer docs](/docs/ "Push Developer docs")
+- [Developer docs](/docs/ 'Push Developer docs')
 
 ### Hackathon survival guide — if it’s your first hackathon:
+
 - Join ETHGlobal [Discord](https://ethglobal.com/discord) to find a team before the hackathon gets started, but it’s totally okay to hack alone.
 - Go through the [use cases](https://www.notion.so/pushprotocol/Push-Protocol-Use-Cases-c0fe5e17bc634502817bdc60c29221e3) to get some inspo.
 - Join workshops during the hackathon, i.e., <a href="https://youtu.be/_tJGwyJBclY"><i>How to Add Web3 Notifications to Your Project</i></a>.
@@ -58,10 +63,9 @@ We know getting started with building a new project can involve a lot of boilerp
 - One $ tip: the more protocols you are integrating with your hack, the more $ you are more likely to get if you do win.
 
 ## Let’s Push for Web3 Communication Together 🔔
+
 <b>A little fun fact:</b> We started building Push (EPNS) in 2020 at the ETHGlobal hackathon, and the feedback we got from the early hackathon community convinced us that it could be so much more. So please remember, you can get pretty far in just a 3-day hackathon, and ETHBogotá is exactly your opportunity to make something happen!
 
 The Push crew will be around to answer questions and offer our support. If something is missing that you want access to — find our crew members on site or let us know [online](https://twitter.com/pushprotocol). And don’t hesitate to get in touch on our [Discord](https://discord.gg/pushprotocol).
 
 Good luck and have fun! We can’t wait to see what you build!
-
-

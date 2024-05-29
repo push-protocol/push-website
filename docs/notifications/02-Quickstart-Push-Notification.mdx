@@ -16,8 +16,8 @@ Everything you will need to get up and running in 2 mins or less!
   <title>Quickstart | Push Notification | Push Documentation</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ### Installation
 
@@ -55,10 +55,10 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 
 ```js
 // Import restapi for function calls
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
 
 // Ethers or Viem, both are supported
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 ```
 
   </TabItem>
@@ -67,10 +67,10 @@ import { ethers } from "ethers";
 
 ```js
 // Import restapi for function calls
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
 
 // Ethers or Viem, both are supported
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 ```
 
   </TabItem>
@@ -79,10 +79,10 @@ import { ethers } from "ethers";
 
 ```js
 // Import restapi for function calls
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
 
 // Ethers or Viem, both are supported
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 ```
 
   </TabItem>
@@ -99,7 +99,9 @@ const signer = ethers.Wallet.createRandom();
 
 // Initialize wallet user
 // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
-const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
 ```
 
   </TabItem>
@@ -112,7 +114,9 @@ const signer = ethers.Wallet.createRandom();
 
 // Initialize wallet user
 // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
-const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
 ```
 
   </TabItem>
@@ -125,7 +129,9 @@ const signer = ethers.Wallet.createRandom();
 
 // Initialize wallet user
 // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
-const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING });
+const userAlice = await PushAPI.initialize(signer, {
+  env: CONSTANTS.ENV.STAGING,
+});
 ```
 
   </TabItem>
@@ -139,10 +145,10 @@ const userAlice = await PushAPI.initialize(signer, { env: CONSTANTS.ENV.STAGING 
 ```js
 // Requires user to have a channel, see Create Channel section for more info
 // ['*'] sends to all wallets who have opted in to your channel
-const response = await userAlice.channel.send(["*"], {
+const response = await userAlice.channel.send(['*'], {
   notification: {
-    title: "You awesome notification",
-    body: "from your amazing protocol",
+    title: 'You awesome notification',
+    body: 'from your amazing protocol',
   },
 });
 ```
@@ -154,10 +160,10 @@ const response = await userAlice.channel.send(["*"], {
 ```js
 // Requires user to have a channel, see Create Channel section for more info
 // ['*'] sends to all wallets who have opted in to your channel
-const response = await userAlice.channel.send(["*"], {
+const response = await userAlice.channel.send(['*'], {
   notification: {
-    title: "You awesome notification",
-    body: "from your amazing protocol",
+    title: 'You awesome notification',
+    body: 'from your amazing protocol',
   },
 });
 ```
@@ -169,10 +175,10 @@ const response = await userAlice.channel.send(["*"], {
 ```js
 // Requires user to have a channel, see Create Channel section for more info
 // ['*'] sends to all wallets who have opted in to your channel
-const response = await userAlice.channel.send(["*"], {
+const response = await userAlice.channel.send(['*'], {
   notification: {
-    title: "You awesome notification",
-    body: "from your amazing protocol",
+    title: 'You awesome notification',
+    body: 'from your amazing protocol',
   },
 });
 ```

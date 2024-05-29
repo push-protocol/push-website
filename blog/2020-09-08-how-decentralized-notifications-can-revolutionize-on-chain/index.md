@@ -12,6 +12,7 @@ tags: [ Blockchain
 ,Notifications
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of How Decentralized Notifications can Revolutionize On-Chain Governance (Part I)!](./cover-image.webp)
@@ -34,8 +35,7 @@ It just seems odd that such a critical announcement that could decide the fate o
 
 It is high time for a reliable and standardized mode of communication to be established between users of a protocol. In this article, we will define what on-chain governance is as well as explain why a standard and unified communication medium between a decentralized protocol or service and their respective user base is needed and how one may go about establishing one. Before diving deeper into this rabbit hole, let’s explain what on-chain governance is.
 
-Off-chain & On-Chain Governance
-===============================
+# Off-chain & On-Chain Governance
 
 Governance in the context of blockchain is a means to facilitate collective decision making. It involves updates and changes that need to be made by the community to the operational rules in order to adapt to a changing world. All blockchains require some form of governance to implement changes on the network. Governance is usually classified into 2 types: on-chain and off-chain governance.
 
@@ -45,8 +45,7 @@ Off-chain governance is generally implemented outside the blockchain through a s
 
 One of the biggest disadvantages and problems faced by governance models which involve on-chain voting is low voter turnout, this is usually linked with miscommunication and voter apathy.
 
-**The Case of Voter Apathy in Blockchain**
-==========================================
+# **The Case of Voter Apathy in Blockchain**
 
 With On-Chain governance gaining steam and evolving in the past years being considered as a truly decentralized model of governance, more projects with on-chain voting have started to take form. While the importance of different proposals may vary, we can often consider the voter turnout during on-chain voting as a general indicator of community participation in governance.
 
@@ -64,8 +63,7 @@ In his article “[Blockchain Voter Apathy](https://medium.com/wave-financial/bl
 
 One of the main reasons for this — one can deduce — is the lack of a standardized communication medium which informs users of critical voting sessions that take place on-chain. How does a standardized but decentralized communication medium help in reducing voter apathy? It keeps the user base up to date on the state of the network and educates and encourages the casual users along with the expert users to be more involved with the state of the chain as well as the happenings in the community. This makes the users more proactive and more prone to make educated decisions when the time comes to vote. In other words, the gap between the casual and an educated user of the chain will be narrowed significantly.
 
-**EPNS to the Rescue!**
-=======================
+# **EPNS to the Rescue!**
 
 So far we have talked about the low voter turnout and voter apathy which is often associated with on-chain governance. We also discuss why this all leads to the need for a standardized communication medium needed between the protocol and its users. Enter EPNS- a decentralized push notification protocol built on top of the Ethereum chain. EPNS aims to provide a standard, transparent and efficient communication channel to be established between Web3 services and its users.
 
@@ -89,8 +87,7 @@ SAVE YAM!!
 
 In this way, EPNS is able to act as a decentralized notification system in order to increase voter turnout, as well as reduce voter apathy, by providing timely and immediate information to users hence allowing casual users to also be better involved in the happenings of the protocol.
 
-**Conclusion**
-==============
+# **Conclusion**
 
 With the ever-evolving growth of on-chain governance models, comes the issue of voter apathy and low voter turnout which largely undermines the notion of decentralization within the chain since we see that users with more stake only come up to vote on governance-related matters. With EPNS we provide not only a way to establish a better connection for chain developers with the user base, but also allows greater fluidity in the governance of the chain itself. It provides a way to narrow the gap between casual and subject experts when it comes to governance and hence enables the growth of the chain in a way that is purely decentralized.
 
@@ -101,7 +98,7 @@ If you like what EPNS is attempting to do by shaking the very foundations of blo
 _Consider joining our buzzing Social Media Community!_
 
 > _Telegram:_ [_https://t.me/epnsproject_](https://t.me/epnsproject)
-> 
+>
 > _Twitter:_ [_https://twitter.com/epnsproject_](https://twitter.com/epnsproject)
-> 
-> Github_:_ [_https://github.com/push-protocol_](https://github.com/push-protocol)
+>
+> Github*:* [_https://github.com/push-protocol_](https://github.com/push-protocol)

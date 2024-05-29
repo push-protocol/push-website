@@ -3,18 +3,15 @@ slug: enhancing-the-de-fi-ux-on-polygon-push-x-quick-swap
 title: 'Enhancing the DeFi UX on Polygon | Push x QuickSwap🐲'
 authors: [push]
 image: './cover-image.webp'
-text: "QuickSwap is revolutionizing the DeFi landscape by offering lightning-fast transaction speeds and near-zero gas fees, making it an attractive platform for traders, swappers, liquidity providers, and yield farmers. Through its Automated Market Maker (AMM) model, QuickSwap enables users to exchange tokens seamlessly in liquidity pools without the need for a traditional order book."
+text: 'QuickSwap is revolutionizing the DeFi landscape by offering lightning-fast transaction speeds and near-zero gas fees, making it an attractive platform for traders, swappers, liquidity providers, and yield farmers. Through its Automated Market Maker (AMM) model, QuickSwap enables users to exchange tokens seamlessly in liquidity pools without the need for a traditional order book.'
 tags: [Push Protocol, Frensofpush]
-
 ---
 
 ![Cover image of Enhancing the DeFi UX on Polygon | Push x QuickSwap🐲](./cover-image.webp)
+
 <!--truncate-->
 
-
 Introducing this week’s ‘Frens of Push’: [QuickSwap](https://quickswap.exchange/), the next-gen layer-2 DEX and AMM on Polygon🎉
-
-
 
 QuickSwap is revolutionizing the DeFi landscape by offering lightning-fast transaction speeds and near-zero gas fees, making it an attractive platform for traders, swappers, liquidity providers, and yield farmers. Through its Automated Market Maker (AMM) model, QuickSwap enables users to exchange tokens seamlessly in liquidity pools without the need for a traditional order book.
 
@@ -24,29 +21,32 @@ In a significant development recently announced, we are excited to share that th
 
 This edition of “Frens of Push” features an interview with QuickSwap, shedding light on their mission, technology, and collaboration with Push. Let’s dive in!
 
-
 ### 1. Tell us about QuickSwap — what’s it about, and what problem does QuickSwap solve?
+
 QuickSwap is the leading DEX and AMM on Polygon PoS, Polygon zkEVM, and Dogechain where users can trade, swap, LP, farm, and take part in other DeFi activities at lightning fast speeds and with near-zero gas fees. The DEX has helped spark adoption for DeFi across the Polygon ecosystem and has become an attractive environment for DeFi because of fast transaction speeds and low gas fees, in addition to the DragonFi ecosystem which serves as a hub for other products, such as QuickPerps (decentralized Perpetual Exchange) and the Gaming Hub.
 
 ### 2. How do developers use QuickSwap? (feel free to add a step-by-step guide or quick tutorial like a video here )
+
 References here https://docs.quickswap.exchange/ https://github.com/QuickSwap
 
 ### 3. What’s the 2023 plan for QuickSwap’s ecosystem?
+
 Multiple integrations with projects on all 3 ecosystems and QuickPerps — more info to be revealed but integrations mostly aimed at enhancing the UI/UX and adding more features for DEX users
 
 ### 4. How is QuickSwap using Push’s web3 communication layer?
+
 QuickSwap will be using Push’s Web3 communication layer to enable push notifications for DeFi users on the DEX who want to be alerted about their positions and any other on-chain actions related to swaps, LP, farms, leverage trades, etc.
 
 ### 5. How would you describe your experience using Push? What benefits have you seen?
+
 It’s a pretty smooth UI and easy to understand, I like the simplicity. It seems to also offer a wide range of notifications and features
 
 ### 6. What cool use cases do you see Push being used for in the future?
+
 Perhaps besides just on-chain actions users could have a checklist of things they want to opt into for each protocol, such as other types of news feeds, updates on token listings, etc.
 
 ## About Quickswap
+
 QuickSwap stands as a next-generation layer-2 DEX and AMM operating on Polygon. It facilitates rapid token swaps, liquidity provision, and yield farming with minimal gas fees. The platform’s AMM model eliminates order books, promoting seamless token exchange through liquidity pools.
 
 For more information about Quickswap, check out their: [Website](https://quickswap.exchange/#/), [Twitter](https://twitter.com/QuickswapDEX), [Telegram](https://t.me/QuickSwapDEX), [Discord](https://discord.com/invite/dSMd7AFH36), [Youtube](https://www.youtube.com/channel/UCrPlF-DBwD-UzLFDzJ4Z5Fw), [Medium](https://quickswap-layer2.medium.com/)
-
-
-

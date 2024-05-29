@@ -3,18 +3,19 @@ slug: loan-update-high-utilization-or-low-liquidity-please-check-your-position
 title: 'Loan Update: High Utilization or Low Liquidity, Please Check Your Position'
 authors: [push]
 image: './cover-image.webp'
-text: "Part 2 of the - An Introduction to Push Notification series will focus on use cases for push notifications in web3, and demonstrate how the web3 communication layer is the missing piece for the next iteration of the web. In this post, we will focus on decentralized finance (DeFi)."
-tags: [ Pn101, Push Notification, Web3, Developer, Blockchain]
+text: 'Part 2 of the - An Introduction to Push Notification series will focus on use cases for push notifications in web3, and demonstrate how the web3 communication layer is the missing piece for the next iteration of the web. In this post, we will focus on decentralized finance (DeFi).'
+tags: [Pn101, Push Notification, Web3, Developer, Blockchain]
 ---
 
 ![Cover image of 'Loan Update: High Utilization or Low Liquidity, Please Check Your Position'](./cover-image.webp)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # An Introduction to Push Notification: Part 2.1<br/>
 
 Part 2 of the <a href="https://medium.com/ethereum-push-notification-service/tagged/pn101"><i>An Introduction to Push Notification</i></a> series will focus on use cases for push notifications in web3, and demonstrate how the web3 communication layer is the missing piece for the next iteration of the web. In this post, we will focus on decentralized finance (DeFi).
-
 
 While there are trade-offs to be made, DeFi should not be a step back in financial processes or user experience. The web3 communication layer enables solutions to increase the DeFi experience significantly. Let’s take some time to consider some of the current pitfalls in DeFi.
 
@@ -55,5 +56,3 @@ DeFi solutions across web3 continue to integrate with EPNS to alleviate the fric
 Push services through push or alert nodes aren’t new, but a chain agnostic solution that is robust, modular, and interoperable is yet to be established. The web3 communication layer allows for universal notifications, no matter the use case or the platform. EPNS encourages universal messaging, so dapps and wallets can talk to each other and notify their users. Without effective communication in place between peers, the goal for mass DeFi adaption is far-fetched. We will continue to explore other use cases for EPNS in the coming articles, stay tuned!
 
 <i>By Danny Salman</i>
-
-

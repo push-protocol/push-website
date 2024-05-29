@@ -3,12 +3,12 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 // External Components
-import ReactPlayer from "react-player";
-import styled from "styled-components";
+import ReactPlayer from 'react-player';
+import styled from 'styled-components';
 
 // Internal Components
 import {
@@ -20,15 +20,15 @@ import {
   ItemV,
   Section,
   Span,
-} from "@site/src/css/SharedStyling";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
+} from '@site/src/css/SharedStyling';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
-import WhiteArrow from "@site/static/assets/website/brb/others/white-arrow.svg";
-import { BsArrowRight } from "react-icons/bs";
+import WhiteArrow from '@site/static/assets/website/brb/others/white-arrow.svg';
+import { BsArrowRight } from 'react-icons/bs';
 
 // Internal Configs
-import { device, size } from "@site/src/config/globals";
+import { device, size } from '@site/src/config/globals';
 
 const Glassy = ({ item }) => {
   const isMobile = useMediaQuery(device.mobileL);
@@ -50,7 +50,7 @@ const Glassy = ({ item }) => {
     bgtitle,
     link,
     hidehovereffect,
-  } = config || "";
+  } = config || '';
 
   const {
     title,
@@ -63,19 +63,19 @@ const Glassy = ({ item }) => {
     subheader,
     iconalt,
     icontitle,
-  } = header || "";
+  } = header || '';
 
-  const { text } = footer || "";
-  const { message, alignment } = after || "";
+  const { text } = footer || '';
+  const { message, alignment } = after || '';
 
   // decide video format for bg and header illustration
   const disableVideoAt = size.tablet;
-  const bgVideoFormat = item.config && item.config.bgvideowebm ? "webm" : "mp4";
+  const bgVideoFormat = item.config && item.config.bgvideowebm ? 'webm' : 'mp4';
   const headerIllustrationFormat =
-    item.header && item.header.illustrationvideowebm ? "webm" : "mp4";
+    item.header && item.header.illustrationvideowebm ? 'webm' : 'mp4';
 
   const Tag = ({ item }) => {
-    const { background, border, color, title, fontSize } = item || "";
+    const { background, border, color, title, fontSize } = item || '';
     return (
       <TagItem
         background={background}
@@ -130,7 +130,7 @@ const Glassy = ({ item }) => {
 
     if (
       !item.config.hide3deffect &&
-      typeof window !== "undefined" &&
+      typeof window !== 'undefined' &&
       window.innerWidth > size.tablet
     ) {
       // Calculate the distance for the Z translation (for a subtle effect, we limit the translation to 20px)
@@ -159,15 +159,15 @@ const Glassy = ({ item }) => {
       fluid={item.config.fluid}
       hide={item.config.hide ? item.config.hide : null}
       hideEffect={hidehovereffect}
-      className={`${hovered ? "active" : ""} ${id}`}
+      className={`${hovered ? 'active' : ''} ${id}`}
     >
       <GlowwyBorder
-        className={`${hovered ? "active" : ""} glowwy`}
+        className={`${hovered ? 'active' : ''} glowwy`}
         hideEffect={hidehovereffect}
       />
 
       <Glowwy
-        className={`${hovered ? "active" : ""} glowwy`}
+        className={`${hovered ? 'active' : ''} glowwy`}
         hideEffect={hidehovereffect}
       />
 
@@ -188,37 +188,37 @@ const Glassy = ({ item }) => {
           <ReactPlayer
             url={
               require(
-                `@site/static/assets/website/home/${bgvideosrc}.${bgVideoFormat}`,
+                `@site/static/assets/website/home/${bgvideosrc}.${bgVideoFormat}`
               ).default
             }
             playing={
               hovered &&
-              typeof window !== "undefined" &&
+              typeof window !== 'undefined' &&
               window.innerWidth > size.tablet
                 ? true
                 : false
             }
             loop={false}
             muted={true}
-            width="100%"
-            height="100%"
+            width='100%'
+            height='100%'
             config={{
               file: {
                 attributes: {
-                  controlsList: "nofullscreen",
+                  controlsList: 'nofullscreen',
                 },
               },
             }}
             style={{
-              position: "absolute",
+              position: 'absolute',
               top: 0,
               bottom: 0,
               right: 0,
               left: 0,
               visibility:
                 hovered && window.innerWidth > disableVideoAt && bgvideosrc
-                  ? "visible"
-                  : "hidden",
+                  ? 'visible'
+                  : 'hidden',
             }}
           />
         )}
@@ -226,9 +226,9 @@ const Glassy = ({ item }) => {
         <Header highlight={highlight} id={id}>
           <Subheader highlight={highlight} id={id} illustration={illustration}>
             <ItemH
-              flex="1"
-              alignSelf={illustration ? "center" : "flex-start"}
-              gap={icon && "8px"}
+              flex='1'
+              alignSelf={illustration ? 'center' : 'flex-start'}
+              gap={icon && '8px'}
             >
               {icon && (
                 <GridImage
@@ -239,21 +239,21 @@ const Glassy = ({ item }) => {
                   srcSet={`${require(`@site/static/assets/website/home/${icon}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${icon}@3x.webp`).default} 3x`}
                   alt={t(iconalt)}
                   title={t(icontitle)}
-                  width="16px"
-                  height="16px"
+                  width='16px'
+                  height='16px'
                 />
               )}
               <Title align={align} highlight={highlight} subheader={subheader}>
                 <H2
-                  fontSize={isTablet ? "9px" : "11px"}
-                  color="#D98AEC"
-                  fontWeight="bold"
-                  fontFamily="FK Grotesk Neue"
+                  fontSize={isTablet ? '9px' : '11px'}
+                  color='#D98AEC'
+                  fontWeight='bold'
+                  fontFamily='FK Grotesk Neue'
                 >
                   {t(subheader)}
                 </H2>
 
-                <H2Text fontFamily="FK Grotesk Neue" theme={theme}>
+                <H2Text fontFamily='FK Grotesk Neue' theme={theme}>
                   {t(title)}
                 </H2Text>
               </Title>
@@ -264,36 +264,36 @@ const Glassy = ({ item }) => {
             {illustration && (
               <HeaderImageWrapper>
                 {item.header.illustrationvideo &&
-                  typeof window !== "undefined" &&
+                  typeof window !== 'undefined' &&
                   window.innerWidth > size.tablet && (
                     <ReactPlayer
                       url={
                         require(
-                          `@site/static/assets/website/home/${item.header.illustrationvideo}.${headerIllustrationFormat}`,
+                          `@site/static/assets/website/home/${item.header.illustrationvideo}.${headerIllustrationFormat}`
                         ).default
                       }
                       config={{
                         file: {
                           attributes: {
-                            controlsList: "nofullscreen",
+                            controlsList: 'nofullscreen',
                           },
                         },
                       }}
                       playing={hovered ? true : false}
                       loop={true}
                       muted={true}
-                      width="100%"
-                      height="100%"
+                      width='100%'
+                      height='100%'
                       style={{
-                        position: "absolute",
+                        position: 'absolute',
                         top: 0,
                         left: 0,
                         visibility:
                           hovered &&
                           window.innerWidth > disableVideoAt &&
                           item.header.illustrationvideo
-                            ? "visible"
-                            : "hidden",
+                            ? 'visible'
+                            : 'hidden',
                       }}
                     />
                   )}
@@ -301,21 +301,21 @@ const Glassy = ({ item }) => {
                 <GridImage
                   src={
                     require(
-                      `@site/static/assets/website/home/${illustration}.webp`,
+                      `@site/static/assets/website/home/${illustration}.webp`
                     ).default
                   }
                   srcSet={`${require(`@site/static/assets/website/home/${illustration}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${illustration}@3x.webp`).default} 3x`}
                   alt={t(iconalt)}
                   title={t(icontitle)}
-                  width={isTablet ? "27px" : "auto"}
-                  height={isTablet ? "auto" : "37px"}
+                  width={isTablet ? '27px' : 'auto'}
+                  height={isTablet ? 'auto' : '37px'}
                   style={{
                     visibility:
                       hovered &&
                       window.innerWidth > disableVideoAt &&
                       item.header.illustrationvideo
-                        ? "hidden"
-                        : "visible",
+                        ? 'hidden'
+                        : 'visible',
                   }}
                 />
               </HeaderImageWrapper>
@@ -325,11 +325,11 @@ const Glassy = ({ item }) => {
           {/* tags */}
           {tags && (
             <TagItems
-              flexDirection="row"
-              alignItems="flex-start"
-              justifyContent="flex-start"
-              gap="12px"
-              margin="14px 0 0 0"
+              flexDirection='row'
+              alignItems='flex-start'
+              justifyContent='flex-start'
+              gap='12px'
+              margin='14px 0 0 0'
             >
               {tags?.map((item) => <Tag item={item} />)}
             </TagItems>
@@ -340,19 +340,19 @@ const Glassy = ({ item }) => {
           <Body>
             <BodyInner
               bodyjustifycontent={
-                item.config.bodyjustifycontent === "top"
-                  ? "flex-start"
-                  : item.config.bodyjustifycontent === "bottom"
-                    ? "flex-end"
-                    : "center"
+                item.config.bodyjustifycontent === 'top'
+                  ? 'flex-start'
+                  : item.config.bodyjustifycontent === 'bottom'
+                    ? 'flex-end'
+                    : 'center'
               }
             >
               {/* Loop through and emit all body item based on types */}
 
               {item.body.map((object) => {
                 // Render type "image"
-                if (object.type === "image") {
-                  const videoFormat = object.videowebm ? "webm" : "mp4";
+                if (object.type === 'image') {
+                  const videoFormat = object.videowebm ? 'webm' : 'mp4';
 
                   return (
                     <BodyImageWrapper>
@@ -360,31 +360,31 @@ const Glassy = ({ item }) => {
                         <ReactPlayer
                           url={
                             require(
-                              `@site/static/assets/website/home/${object.videosrc}.${videoFormat}`,
+                              `@site/static/assets/website/home/${object.videosrc}.${videoFormat}`
                             ).default
                           }
                           config={{
                             file: {
                               attributes: {
-                                controlsList: "nofullscreen",
+                                controlsList: 'nofullscreen',
                               },
                             },
                           }}
                           playing={hovered ? true : false}
                           loop={true}
                           muted={true}
-                          width="100%"
-                          height="100%"
+                          width='100%'
+                          height='100%'
                           style={{
-                            position: "absolute",
+                            position: 'absolute',
                             top: 0,
                             left: 0,
                             visibility:
                               hovered &&
                               window.innerWidth > disableVideoAt &&
                               object.videosrc
-                                ? "visible"
-                                : "hidden",
+                                ? 'visible'
+                                : 'hidden',
                           }}
                         />
                       )}
@@ -392,7 +392,7 @@ const Glassy = ({ item }) => {
                       <BodyImage
                         src={
                           require(
-                            `@site/static/assets/website/home/${object.imagesrc}.webp`,
+                            `@site/static/assets/website/home/${object.imagesrc}.webp`
                           ).default
                         }
                         srcSet={`${require(`@site/static/assets/website/home/${object.imagesrc}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/home/${object.imagesrc}@3x.webp`).default} 3x`}
@@ -403,8 +403,8 @@ const Glassy = ({ item }) => {
                             hovered &&
                             window.innerWidth > disableVideoAt &&
                             object.videosrc
-                              ? "hidden"
-                              : "visible",
+                              ? 'hidden'
+                              : 'visible',
                         }}
                         type={object.type}
                       />
@@ -413,17 +413,17 @@ const Glassy = ({ item }) => {
                 }
 
                 // Render type "title"
-                if (object.type === "title") {
+                if (object.type === 'title') {
                   return (
                     <ItemV
-                      padding="0px 0px 0px 0px"
-                      flex="initial"
+                      padding='0px 0px 0px 0px'
+                      flex='initial'
                       alignSelf={
-                        object.align === "left"
-                          ? "flex-start"
-                          : object.align === "right"
-                            ? "flex-end"
-                            : "center"
+                        object.align === 'left'
+                          ? 'flex-start'
+                          : object.align === 'right'
+                            ? 'flex-end'
+                            : 'center'
                       }
                     >
                       <SubscribeText>{t(object.titletext)}</SubscribeText>
@@ -432,19 +432,19 @@ const Glassy = ({ item }) => {
                 }
 
                 // Render type "regular text"
-                if (object.type === "text") {
+                if (object.type === 'text') {
                   return (
                     <BodyTextItem
                       bodytextwidth={object.bodytextwidth}
                       mobilebodytextwidth={object.mobilebodytextwidth}
-                      padding="0px 0px 0px 0px"
-                      flex="initial"
+                      padding='0px 0px 0px 0px'
+                      flex='initial'
                       alignSelf={
-                        object.align === "left"
-                          ? "flex-start"
-                          : object.align === "right"
-                            ? "flex-end"
-                            : "center"
+                        object.align === 'left'
+                          ? 'flex-start'
+                          : object.align === 'right'
+                            ? 'flex-end'
+                            : 'center'
                       }
                     >
                       <BodyText
@@ -462,42 +462,42 @@ const Glassy = ({ item }) => {
                 }
 
                 // Render type "styled link"
-                if (object.type === "styled-link") {
+                if (object.type === 'styled-link') {
                   return (
                     <SlideLink
                       href={object.href}
-                      title={"new"}
-                      target="_blank"
-                      padding="0px 0px"
-                      className="button"
-                      background="transparent"
-                      alignItems="center"
+                      title={'new'}
+                      target='_blank'
+                      padding='0px 0px'
+                      className='button'
+                      background='transparent'
+                      alignItems='center'
                       margin={object.margin}
                       alignSelf={
-                        object.align === "left"
-                          ? "flex-start"
-                          : object.align === "right"
-                            ? "flex-end"
-                            : "center"
+                        object.align === 'left'
+                          ? 'flex-start'
+                          : object.align === 'right'
+                            ? 'flex-end'
+                            : 'center'
                       }
                     >
                       <SpanLink>{t(object.hrefText)}</SpanLink>
-                      <BsArrowRight className="anchorSVGlink" />
+                      <BsArrowRight className='anchorSVGlink' />
                     </SlideLink>
                   );
                 }
 
                 // Render type "button"
-                if (object.type === "button") {
+                if (object.type === 'button') {
                   return (
-                    <ItemV padding="0px 0px 0px 0px" flex="initial">
+                    <ItemV padding='0px 0px 0px 0px' flex='initial'>
                       <ButtonItem
-                        background="#E64DE9"
-                        padding={!isTablet ? "14px 22px" : "10px 11px"}
-                        margin="0px auto"
-                        fontWeight="500"
-                        fontSize="16px"
-                        fontFamily="FK Grotesk Neue"
+                        background='#E64DE9'
+                        padding={!isTablet ? '14px 22px' : '10px 11px'}
+                        margin='0px auto'
+                        fontWeight='500'
+                        fontSize='16px'
+                        fontFamily='FK Grotesk Neue'
                         href={object.buttonlink}
                         title={t(object.buttontitle)}
                       >
@@ -517,7 +517,7 @@ const Glassy = ({ item }) => {
         {footer && (
           <Footer>
             {text && (
-              <H2Text fontFamily="FK Grotesk Neue" id={id}>
+              <H2Text fontFamily='FK Grotesk Neue' id={id}>
                 {t(text)}
               </H2Text>
             )}
@@ -528,10 +528,10 @@ const Glassy = ({ item }) => {
       {after && (
         <AfterItem alignment={alignment}>
           <H2
-            fontSize="12px"
-            color="#FFF"
-            fontFamily="FK Grotesk Neue"
-            lineHeight="130%"
+            fontSize='12px'
+            color='#FFF'
+            fontFamily='FK Grotesk Neue'
+            lineHeight='130%'
           >
             {t(message)}
           </H2>
@@ -543,16 +543,16 @@ const Glassy = ({ item }) => {
 
 const Container = styled.div`
   flex: ${(props) =>
-    props.fluid && props.fluid.desktop ? "1 0 auto" : "initial"};
+    props.fluid && props.fluid.desktop ? '1 0 auto' : 'initial'};
   align-self: flex-start;
   position: relative;
   width: 100%;
-  min-height: ${(props) => props.height || "auto"};
+  min-height: ${(props) => props.height || 'auto'};
   border-radius: 24px;
   box-sizing: border-box;
   overflow: hidden !important;
   display: flex;
-  display: ${(props) => props.hide && props.hide.desktop && "none"};
+  display: ${(props) => props.hide && props.hide.desktop && 'none'};
   flex-direction: column;
   justify-content: space-between;
 
@@ -561,7 +561,7 @@ const Container = styled.div`
   z-index: 1;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -572,34 +572,33 @@ const Container = styled.div`
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 1px;
     left: 1px;
     bottom: 1px;
     right: 1px;
     border-radius: inherit;
-    background: ${(props) => (props.hideEffect ? "transparent" : "#0d0d0f")};
+    background: ${(props) => (props.hideEffect ? 'transparent' : '#0d0d0f')};
     z-index: -8; /* Glowwy comes as -9 */
   }
 
   @media ${device.laptopM} {
     flex: ${(props) =>
-      props.fluid && props.fluid.laptop ? "1 0 auto" : "initial"};
-    display: ${(props) => props.hide && props.hide.laptop && "none"};
+      props.fluid && props.fluid.laptop ? '1 0 auto' : 'initial'};
+    display: ${(props) => props.hide && props.hide.laptop && 'none'};
   }
 
   @media ${device.tablet} {
     flex: ${(props) =>
-      props.fluid && props.fluid.tablet ? "1 0 auto" : "initial"};
-    width: ${(props) => (props.fluid && props.fluid.tablet ? "auto" : "100%")};
-    display: ${(props) => props.hide && props.hide.tablet && "none"};
+      props.fluid && props.fluid.tablet ? '1 0 auto' : 'initial'};
+    width: ${(props) => (props.fluid && props.fluid.tablet ? 'auto' : '100%')};
   }
 
   @media ${device.mobileL} {
-    flex: ${(props) => (props.fluid && props.fluid.mobile ? "1" : "initial")};
-    width: ${(props) => (props.fluid && props.fluid.mobile ? "auto" : "100%")};
-    display: ${(props) => props.hide && props.hide.mobile && "none"};
+    flex: ${(props) => (props.fluid && props.fluid.mobile ? '1' : 'initial')};
+    width: ${(props) => (props.fluid && props.fluid.mobile ? 'auto' : '100%')};
+    display: ${(props) => props.hide && props.hide.mobile && 'none'};
   }
 `;
 
@@ -617,7 +616,7 @@ const GlowwyBorder = styled.div`
 
   &.active {
     // display: block;
-    display: ${(props) => (props.hideEffect ? "none" : "block")};
+    display: ${(props) => (props.hideEffect ? 'none' : 'block')};
   }
 `;
 
@@ -625,7 +624,7 @@ const Glowwy = styled(GlowwyBorder)`
   box-shadow: 0 0 100px 100px rgba(135, 34, 158, 0.15);
   z-index: 1;
 
-  display: ${(props) => props.hideEffect && "none"};
+  display: ${(props) => props.hideEffect && 'none'};
 `;
 
 const Subcontainer = styled.div`
@@ -635,24 +634,18 @@ const Subcontainer = styled.div`
   justify-content: space-between;
   height: 100%;
   gap: 16px;
-  padding: ${(props) => props.padding || "24px"};
+  padding: ${(props) => props.padding || '24px'};
   background-image: url(${(props) => props.bg});
   background-position: center;
   background-repeat: no-repeat;
-  background-size: ${(props) => props.bgsize || "contain"};
+  background-size: ${(props) => props.bgsize || 'contain'};
   overflow: hidden;
   border-radius: inherit;
   position: relative;
   margin: 1px;
 
-  @media ${device.laptopM} {
-  }
-
-  @media ${device.tablet} {
-  }
-
   @media ${device.mobileL} {
-    padding: ${(props) => props.mobilepadding || "24px"};
+    padding: ${(props) => props.mobilepadding || '24px'};
   }
 `;
 
@@ -660,11 +653,11 @@ const TagItem = styled.div`
   width: fit-content;
   border-radius: 12px;
   border: ${(props) => props.border};
-  background: ${(props) => props.background || "transparent"};
-  padding: ${(props) => (props.fontSize ? "4px 8px" : "4px 12px")};
+  background: ${(props) => props.background || 'transparent'};
+  padding: ${(props) => (props.fontSize ? '4px 8px' : '4px 12px')};
   color: ${(props) => props.color};
   text-align: center;
-  font-size: ${(props) => props.fontSize || "12px"};
+  font-size: ${(props) => props.fontSize || '12px'};
   font-style: normal;
   font-weight: bold;
   line-height: normal;
@@ -677,7 +670,7 @@ const TagItem = styled.div`
 const TagItems = styled(ItemV)`
   gap: 6px;
   &:before {
-    content: "";
+    content: '';
     flex-basis: 100%;
   }
 `;
@@ -691,14 +684,14 @@ const H2Text = styled(H2)`
 
   @media ${device.mobileL} {
     white-space: pre;
-    margin-top: ${({ id }) => (id == "snap" ? "24px" : "0")};
+    margin-top: ${({ id }) => (id == 'snap' ? '24px' : '0')};
   }
 
   background: ${(props) =>
-    props.theme === "hue" &&
-    "linear-gradient(270deg, #D162EC 4.53%, #D162EC 63.29%, #EAB7F6 99.72%)"};
-  -webkit-background-clip: ${(props) => props.theme === "hue" && "text"};
-  -webkit-text-fill-color: ${(props) => props.theme === "hue" && "transparent"};
+    props.theme === 'hue' &&
+    'linear-gradient(270deg, #D162EC 4.53%, #D162EC 63.29%, #EAB7F6 99.72%)'};
+  -webkit-background-clip: ${(props) => props.theme === 'hue' && 'text'};
+  -webkit-text-fill-color: ${(props) => props.theme === 'hue' && 'transparent'};
 `;
 
 const SubscribeText = styled.h2`
@@ -732,7 +725,7 @@ const BodyText = styled.h2`
   color: ${(props) => props.color};
   font-size: ${(props) => props.size};
   font-weight: ${(props) => props.weight};
-  text-transform: ${(props) => props.uppercase && "uppercase"};
+  text-transform: ${(props) => props.uppercase && 'uppercase'};
   margin: ${(props) => props.margin};
   // text-align: center;
   letter-spacing: normal;
@@ -766,36 +759,36 @@ const ButtonItem = styled(A)`
 `;
 
 const GridImage = styled(Image)`
-  margin: ${(props) => props.margin || "initial"};
+  margin: ${(props) => props.margin || 'initial'};
   object-fit: contain !important;
 
   @media ${device.mobileL} {
     width: inherit;
-    margin: ${(props) => props.type == "image" && "0 auto"};
+    margin: ${(props) => props.type == 'image' && '0 auto'};
   }
 `;
 
 const Header = styled(ItemV)`
   justify-content: ${({ highlight, tags }) =>
-    highlight ? "flex-start" : tags ? "center" : "center"};
+    highlight ? 'flex-start' : tags ? 'center' : 'center'};
   flex: initial;
 `;
 
 const Subheader = styled(ItemH)`
   flex: 1;
-  align-items: ${(props) => props.illustration && "center"};
-  align-self: ${(props) => props.highlight && "flex-start"};
+  align-items: ${(props) => props.illustration && 'center'};
+  align-self: ${(props) => props.highlight && 'flex-start'};
 `;
 
 const Title = styled(ItemV)`
   align-items: ${({ align }) =>
-    align === "left"
-      ? "flex-start"
-      : align === "right"
-        ? "flex-end"
-        : "center"};
-  flex: ${({ highlight }) => highlight && "0"};
-  gap: ${({ subheader }) => subheader && "8px"};
+    align === 'left'
+      ? 'flex-start'
+      : align === 'right'
+        ? 'flex-end'
+        : 'center'};
+  flex: ${({ highlight }) => highlight && '0'};
+  gap: ${({ subheader }) => subheader && '8px'};
 `;
 
 const HeaderImageWrapper = styled.div`
@@ -815,14 +808,14 @@ const BodyInner = styled(ItemV)`
   gap: 20px;
 
   justify-content: ${(props) =>
-    props.bodyjustifycontent ? props.bodyjustifycontent : "center"};
+    props.bodyjustifycontent ? props.bodyjustifycontent : 'center'};
 `;
 const BodyTextItem = styled(ItemV)`
   max-width: ${(props) => props.bodytextwidth};
 
-  @media ${device.tablet} {
-    max-width: ${(props) => props.mobilebodytextwidth};
-  }
+  // @media ${device.tablet} {
+  //   max-width: ${(props) => props.mobilebodytextwidth};
+  // }
 `;
 
 const BodyImageWrapper = styled.div`
@@ -832,7 +825,7 @@ const BodyImageWrapper = styled.div`
 `;
 
 const BodyImage = styled(Image)`
-  margin: ${(props) => props.margin || "initial"};
+  margin: ${(props) => props.margin || 'initial'};
   object-fit: contain !important;
 
   @media ${device.mobileL} {
@@ -844,11 +837,11 @@ const Background = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: ${(props) => (props.bg ? "#0D0D10" : "transparent")};
+  background: ${(props) => (props.bg ? '#0D0D10' : 'transparent')};
   flex: 1;
   box-sizing: border-box;
-  padding: ${(props) => props.id == "hyperscalable" && "24px"};
-  border-radius: ${(props) => props.id == "hyperscalable" && "24px"};
+  padding: ${(props) => props.id == 'hyperscalable' && '24px'};
+  border-radius: ${(props) => props.id == 'hyperscalable' && '24px'};
 
   background-image: url(${(props) => props.bg});
   background-position: center;
@@ -874,15 +867,15 @@ const AfterItem = styled.div`
   align-items: center;
   padding: 8px 24px;
   justify-content: ${(props) =>
-    props.alignment == "left"
-      ? "flex-start"
-      : props.alignment == "right"
-        ? "flex-end"
-        : "center"};
+    props.alignment == 'left'
+      ? 'flex-start'
+      : props.alignment == 'right'
+        ? 'flex-end'
+        : 'center'};
 
   ::after,
   ::before {
-    content: "";
+    content: '';
     position: absolute;
     top: -29px;
     width: 0;
@@ -935,7 +928,7 @@ const SpanLink = styled(Span)`
   line-height: 142%;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     transform: scaleX(0);

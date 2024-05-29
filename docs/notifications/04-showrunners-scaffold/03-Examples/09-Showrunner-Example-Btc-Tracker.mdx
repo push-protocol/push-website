@@ -10,7 +10,7 @@ image: "/assets/docs/previews/docs_slider_settings_with_showrunners_example--not
 
 # Notification Settings in BTC Tracker Channel
 
-This example is intended to get you understand slider based notification settings with a real-world application. For the example we are going to look at a scenario where users can choose a time interval and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"), [Showrunners Framework](https://github.com/push-protocol/push-showrunners-framework/tree/main "Push Showrunners Github"), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/ "Push Channel Settings Docs") and [Channel Settings Demo](https://github.com/push-protocol/push-showrunners-framework/tree/main/src/sample_showrunners/bank "Channel Settings Example Github") for better understanding!
+This example is intended to get you understand slider based notification settings with a real-world application. For the example we are going to look at a scenario where users can choose a time interval and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ 'Push Showrunners Docs'), [Showrunners Framework](https://github.com/push-protocol/push-showrunners-framework/tree/main 'Push Showrunners Github'), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/ 'Push Channel Settings Docs') and [Channel Settings Demo](https://github.com/push-protocol/push-showrunners-framework/tree/main/src/sample_showrunners/bank 'Channel Settings Example Github') for better understanding!
 
 <head>
   <title>
@@ -18,20 +18,20 @@ This example is intended to get you understand slider based notification setting
   </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## What we gonna build?
 
 Imagine you are a crypto trader or a general crypto enthusiast. You want to be notified every once in a while about the price movements and activities in the market. But you either lose track of time or forget about it. To solve this exact problem, we will be looking into a slider type notification settings implementation where you as a user can specify the time interval and/or required percentage change of a token on which he/she would like to get notified.
 
-We will choose the [BTC Tracker](https://github.com/push-protocol/push-showrunners-framework/tree/main/src/sample_showrunners/btcTicker "Push Channel BTC Tracker") channel to demonstrate this example.
+We will choose the [BTC Tracker](https://github.com/push-protocol/push-showrunners-framework/tree/main/src/sample_showrunners/btcTicker 'Push Channel BTC Tracker') channel to demonstrate this example.
 
 ## Creating BTC Tracker in Showrunners
 
 ### Step 1: Setup the Showrunners in your local machine
 
-For detailed, step-by-step guide visit the Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"). First we need to create a folder in `src/showrunners/<your_channel_name>`
+For detailed, step-by-step guide visit the Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ 'Push Showrunners Docs'). First we need to create a folder in `src/showrunners/<your_channel_name>`
 
 ### Step 2: Install Dependencies & start up
 
@@ -46,10 +46,10 @@ yarn run dev
 
 ### Step 3: Import the Push SDK
 
-After you have created a channel folder. Refer to Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"). Move to the [name]Channel.ts file and import the dependencies.
+After you have created a channel folder. Refer to Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ 'Push Showrunners Docs'). Move to the [name]Channel.ts file and import the dependencies.
 
 ```jsx
-import { PushAPI } from "@pushprotocol/restapi";
+import { PushAPI } from '@pushprotocol/restapi';
 ```
 
 ### Step 4: Create a `btcTickerKeys.json` file in the channel folder
@@ -170,9 +170,9 @@ const weekChangeFixed = weekChange.toFixed(2);
 ```jsx
 // Retrive Global data
 const btcTrackerGlobalData =
-  (await btcTickerGlobalModel.findOne({ _id: "btcTrackerGlobal" })) ||
+  (await btcTickerGlobalModel.findOne({ _id: 'btcTrackerGlobal' })) ||
   (await btcTickerGlobalModel.create({
-    _id: "btcTrackerGlobal",
+    _id: 'btcTrackerGlobal',
     prevBtcPrice: Number(formattedPrice),
     cycles: 0,
   }));
@@ -185,14 +185,14 @@ const prevPrice = btcTrackerGlobalData.prevBtcPrice
 
 // Update current price as prev price
 await btcTickerGlobalModel.findByIdAndUpdate(
-  { _id: "btcTrackerGlobal" },
+  { _id: 'btcTrackerGlobal' },
   { prevBtcPrice: Number(formattedPrice) },
-  { upsert: true },
+  { upsert: true }
 );
 
 // Calculate percentage change
 const globalChangePercentage = Math.round(
-  (Math.abs(formattedPrice - prevPrice) / prevPrice) * 100,
+  (Math.abs(formattedPrice - prevPrice) / prevPrice) * 100
 );
 ```
 
@@ -201,30 +201,30 @@ const globalChangePercentage = Math.round(
 ```jsx
 // Build Payload Content
 let changeInper = Number(
-  ((Math.abs(formattedPrice - prevPrice) / prevPrice) * 100).toFixed(2),
+  ((Math.abs(formattedPrice - prevPrice) / prevPrice) * 100).toFixed(2)
 );
 
-const title = "BTC at $" + formattedPrice;
+const title = 'BTC at $' + formattedPrice;
 const message = `\nHourly Movement: ${hourChangeFixed}%\nDaily Movement: ${dayChangeFixed}%\nWeekly Movement: ${weekChangeFixed}%`;
 const payloadTitle = `BTC Price Movement`;
 const globalPayloadMsg = `BTC at [t:$${formattedPrice} (${
   changeInper >= 0
     ? changeInper < 100
-      ? `+` + changeInper + "%"
-      : "+" + 0 + "%"
-    : `-` + changeInper + "%"
+      ? `+` + changeInper + '%'
+      : '+' + 0 + '%'
+    : `-` + changeInper + '%'
 })]\n\nHourly Movement: ${
   hourChange >= 0
-    ? "[s: +" + hourChangeFixed + "%]"
-    : "[d: -" + hourChangeFixed + "%]"
+    ? '[s: +' + hourChangeFixed + '%]'
+    : '[d: -' + hourChangeFixed + '%]'
 }\nDaily Movement: ${
   dayChange >= 0
-    ? "[s: +" + dayChangeFixed + "%]"
-    : "[d: -" + dayChangeFixed + "%]"
+    ? '[s: +' + dayChangeFixed + '%]'
+    : '[d: -' + dayChangeFixed + '%]'
 }\nWeekly Movement: ${
   weekChange >= 0
-    ? "[s: +" + weekChangeFixed + "%]"
-    : "[d: -" + weekChangeFixed + "%]"
+    ? '[s: +' + weekChangeFixed + '%]'
+    : '[d: -' + weekChangeFixed + '%]'
 }[timestamp: ${Math.floor(Date.now() / 1000)}]`;
 ```
 
@@ -386,7 +386,7 @@ if (userSettings[0]?.enabled == true && userSettings[1]?.enabled == true) {
       await btcTickerUserModel.findOneAndUpdate(
         { _id: subscriberObj.subscriber },
         { lastCycle: CYCLES },
-        { upsert: true },
+        { upsert: true }
       );
     }
   }
@@ -410,7 +410,7 @@ if (userSettings[0]?.enabled == true && userSettings[1]?.enabled == true) {
   if (userChangedValue) {
     await btcTickerUserModel.findOneAndUpdate(
       { _id: subscriberObj.subscriber },
-      { lastCycle: CYCLES, settingsValue: settingUserValue2 },
+      { lastCycle: CYCLES, settingsValue: settingUserValue2 }
     );
   }
 
@@ -426,7 +426,7 @@ if (userSettings[0]?.enabled == true && userSettings[1]?.enabled == true) {
       await btcTickerUserModel.findOneAndUpdate(
         { _id: subscriberObj.subscriber },
         { lastCycle: CYCLES, lastBtcPrice: Number(formattedPrice) },
-        { upsert: true },
+        { upsert: true }
       );
 
       // Sending Notification
@@ -460,7 +460,7 @@ if (userSettings[0]?.enabled == true && userSettings[1]?.enabled == true) {
       await btcTickerUserModel.findOneAndUpdate(
         { _id: subscriberObj.subscriber },
         { lastCycle: CYCLES, lastBtcPrice: Number(formattedPrice) },
-        { upsert: true },
+        { upsert: true }
       );
     }
   }
@@ -522,7 +522,7 @@ else if (userSettings[1]?.enabled === true) {
       await btcTickerUserModel.findOneAndUpdate(
         { _id: subscriberObj.subscriber },
         { lastCycle: CYCLES },
-        { upsert: true },
+        { upsert: true }
       );
     }
   }
@@ -546,7 +546,7 @@ else if (userSettings[1]?.enabled === true) {
   if (userChangedValue) {
     await btcTickerUserModel.findOneAndUpdate(
       { _id: subscriberObj.subscriber },
-      { lastCycle: CYCLES, settingsValue: settingUserValue2 },
+      { lastCycle: CYCLES, settingsValue: settingUserValue2 }
     );
   }
 
@@ -561,7 +561,7 @@ else if (userSettings[1]?.enabled === true) {
     await btcTickerUserModel.findOneAndUpdate(
       { _id: subscriberObj.subscriber },
       { lastCycle: CYCLES, lastBtcPrice: Number(formattedPrice) },
-      { upsert: true },
+      { upsert: true }
     );
 
     // Sending Notification
@@ -707,12 +707,12 @@ It is a good practice to write your `Interface` then `Schema` and then create yo
 // Execute a cron job every 5 Minutes = */5 * * * *
 // Starts from seconds = * * * * * *
 
-import logger from "../../loaders/logger";
+import logger from '../../loaders/logger';
 
-import { Container } from "typedi";
-import schedule from "node-schedule";
+import { Container } from 'typedi';
+import schedule from 'node-schedule';
 
-import BtcTickerChannel from "./btcTickerChannel";
+import BtcTickerChannel from './btcTickerChannel';
 
 export default async () => {
   const startTime = new Date(new Date().setHours(0, 0, 0, 0));
@@ -728,19 +728,19 @@ export default async () => {
   schedule.scheduleJob(
     { start: startTime, rule: threeHourRule },
     async function () {
-      const taskName = "BTC Ticker Fetch and sendMessageToContract()";
+      const taskName = 'BTC Ticker Fetch and sendMessageToContract()';
       try {
         await channel.sendMessageToContract(true);
         logger.info(
-          `[${new Date(Date.now())}] 🐣 Cron Task Completed -- ${taskName}`,
+          `[${new Date(Date.now())}] 🐣 Cron Task Completed -- ${taskName}`
         );
       } catch (err) {
         logger.error(
-          `[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`,
+          `[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`
         );
         logger.error(`[${new Date(Date.now())}] Error Object: %o`, err);
       }
-    },
+    }
   );
 };
 ```

@@ -1,24 +1,24 @@
 ---
-
 slug: getting-started-with-push-sdk-uiweb-api
 title: 'Getting Started With Push SDK: uiweb API🛠️'
 authors: [push]
 image: './cover-image.webp'
-text: "The @pushprotocol/uiweb package is a collection of React components for building dApps that interact with the Push Protocol. It includes components for rendering notifications, spam notifications, and forms for subscribing and unsubscribing to spam notification channels."
-tags: [ Web3, Developer, Blockchain Development, Web3 Notifications]
-
+text: 'The @pushprotocol/uiweb package is a collection of React components for building dApps that interact with the Push Protocol. It includes components for rendering notifications, spam notifications, and forms for subscribing and unsubscribing to spam notification channels.'
+tags: [Web3, Developer, Blockchain Development, Web3 Notifications]
 ---
 
 ![Cover image of Getting Started With Push SDK: uiweb API🛠️](./cover-image.webp)
+
 <!--truncate-->
 
 The <b>@pushprotocol/uiweb</b> package is a collection of React components for building dApps that interact with the Push Protocol. It includes components for rendering notifications, spam notifications, and forms for subscribing and unsubscribing to spam notification channels.
 
-
 In this blog post, we'll take a closer look at the components included in the <b>@pushprotocol/uiweb</b> package and how you can use them in your dApp.
 
 ## Components
+
 ### NotificationItem
+
 This component displays a single notification item. It takes the following props:
 
 - <b>notificationTitle</b> (string): The title of the notification.
@@ -36,28 +36,28 @@ This component displays a single notification item. It takes the following props
 Example:
 
 ```js
-import { NotificationItem } from "@pushprotocol/uiweb";
+import { NotificationItem } from '@pushprotocol/uiweb';
 
 function MydApp() {
   const notifications = [
     {
-      title: "Notification 1",
-      message: "This is the first notification",
-      app: "My App",
-      icon: "https://my-app.com/icon.png",
-      image: "https://my-app.com/image.png",
-      url: "https://my-app.com/notification-1",
-      blockchain: "ETH_TEST_GOERLI"
+      title: 'Notification 1',
+      message: 'This is the first notification',
+      app: 'My App',
+      icon: 'https://my-app.com/icon.png',
+      image: 'https://my-app.com/image.png',
+      url: 'https://my-app.com/notification-1',
+      blockchain: 'ETH_TEST_GOERLI',
     },
     {
-      title: "Notification 2",
-      message: "This is the second notification",
-      app: "My App",
-      icon: "https://my-app.com/icon.png",
-      image: "https://my-app.com/image.png",
-      url: "https://my-app.com/notification-2",
-      blockchain: "ETH_TEST_GOERLI"
-    }
+      title: 'Notification 2',
+      message: 'This is the second notification',
+      app: 'My App',
+      icon: 'https://my-app.com/icon.png',
+      image: 'https://my-app.com/image.png',
+      url: 'https://my-app.com/notification-2',
+      blockchain: 'ETH_TEST_GOERLI',
+    },
   ];
 
   return (
@@ -71,16 +71,14 @@ function MydApp() {
           icon={notification.icon}
           image={notification.image}
           url={notification.url}
-          theme={{ background: "blue", color: "white" }}
+          theme={{ background: 'blue', color: 'white' }}
           chainName={notification.blockchain}
         />
       ))}
     </div>
   );
 }
-
 ```
-
 
 The <b>Notification Item</b> component can also be used to render spam notifications. To get the spam data, you can use the <b>PushAPI.user.getFeeds() </b> method with the <b>spam</b> parameter set to <b>true</b>.
 
@@ -90,12 +88,11 @@ The <b>Spam</b> component is a specialized variant of the <b>NotificationItem</b
 
 You can use the <b>PushAPI.user.getFeeds()</b> method with the <b>spam</b> parameter set to <b>true</b> to get the spam data. Here's an example of how you can use it:
 
-
 ```js
 const spams = await PushAPI.user.getFeeds({
   user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   spam: true,
-  env: 'staging'
+  env: 'staging',
 });
 ```
 
@@ -104,42 +101,43 @@ To render the <b>Notification Item</b> component for each spam notification, you
 - isSpam: A boolean value indicating whether the notification is a spam notification
 - subscribeFn: A function that opts the user in to the spam notification's channel
 - isSubscribedFn: A function that returns a boolean value indicating whether the user is subscribed to the spam notification's channel
-Here’s an example of how you can render the Notification Item component for each spam notification:
-
+  Here’s an example of how you can render the Notification Item component for each spam notification:
 
 ```js
-{spams.map((oneNotification, i) => {
-  const { 
-    cta,
-    title,
-    message,
-    app,
-    icon,
-    image,
-    url,
-    blockchain,
-    secret,
-    notification
-  } = oneNotification;
+{
+  spams.map((oneNotification, i) => {
+    const {
+      cta,
+      title,
+      message,
+      app,
+      icon,
+      image,
+      url,
+      blockchain,
+      secret,
+      notification,
+    } = oneNotification;
 
-return (
-    <NotificationItem
-      key={`spam-${i}`}
-      notificationTitle={title}
-      notificationBody={message}
-      cta={cta}
-      app={app}
-      icon={icon}
-      image={image}
-      url={url}
-      theme={theme}
-      chainName={blockchain}
-      isSpam={true}
-      subscribeFn={subscribeFn}
-      isSubscribedFn={isSubscribedFn}
-    />
-  );
-})}
+    return (
+      <NotificationItem
+        key={`spam-${i}`}
+        notificationTitle={title}
+        notificationBody={message}
+        cta={cta}
+        app={app}
+        icon={icon}
+        image={image}
+        url={url}
+        theme={theme}
+        chainName={blockchain}
+        isSpam={true}
+        subscribeFn={subscribeFn}
+        isSubscribedFn={isSubscribedFn}
+      />
+    );
+  });
+}
 ```
 
 To implement the <b>subscribeFn</b> and <b>isSubscribedFn</b> functions, you can use the <b>PushAPI.channel.subscribe()</b> and <b>PushAPI.channel.subscribe()</b> methods from @pushprotocol/restapi package, respectively.
@@ -153,16 +151,17 @@ await PushAPI.channels.subscribe({
   signer: _signer,
   user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
   channel: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
-	env: 'staging'
+  env: 'staging',
 });
 
 const subscriptions = await PushAPI.user.getSubscriptions({
   user: 'eip155:11155111:0xD8634C39BBFd4033c0d3289C4515275102423681',
-  env: 'staging'
+  env: 'staging',
 });
 ```
 
 ## Putting it all together
+
 Here is an example using <b>subscribeFn</b> that demonstrates the <b>uiweb</b> components used together.
 
 ```js
@@ -250,38 +249,39 @@ There are of course other React components that you can to compliment the uiweb 
 - <b>chainName</b> (string): The name of the blockchain to be displayed in the feed.
 
 Example:
+
 ```js
-import NotificationItem from "@pushprotocol/uiweb/NotificationItem";
-import Feed from "./Feed"; // User-implemented component
+import NotificationItem from '@pushprotocol/uiweb/NotificationItem';
+import Feed from './Feed'; // User-implemented component
 
 const notifications = [
   {
-    cta: "Learn More",
-    title: "Notification 1",
-    message: "This is the first notification",
-    app: "My App",
-    icon: "<https://my-app.com/icon.png>",
-    image: "<https://my-app.com/image.png>",
-    url: "<https://my-app.com/notification-1>",
-    blockchain: "Ethereum"
+    cta: 'Learn More',
+    title: 'Notification 1',
+    message: 'This is the first notification',
+    app: 'My App',
+    icon: '<https://my-app.com/icon.png>',
+    image: '<https://my-app.com/image.png>',
+    url: '<https://my-app.com/notification-1>',
+    blockchain: 'Ethereum',
   },
   {
-    cta: "Get Started",
-    title: "Notification 2",
-    message: "This is the second notification",
-    app: "My App",
-    icon: "<https://my-app.com/icon.png>",
-    image: "<https://my-app.com/image.png>",
-    url: "<https://my-app.com/notification-2>",
-    blockchain: "Ethereum"
-  }
+    cta: 'Get Started',
+    title: 'Notification 2',
+    message: 'This is the second notification',
+    app: 'My App',
+    icon: '<https://my-app.com/icon.png>',
+    image: '<https://my-app.com/image.png>',
+    url: '<https://my-app.com/notification-2>',
+    blockchain: 'Ethereum',
+  },
 ];
 function MydApp() {
   return (
     <Feed
       notifications={notifications}
-      theme={{ background: "blue", color: "white" }}
-      chainName="Ethereum"
+      theme={{ background: 'blue', color: 'white' }}
+      chainName='Ethereum'
     />
   );
 }
@@ -294,5 +294,3 @@ We’ll cover the other parts of the SDK in the coming posts. More reference mat
 In addition, try out the [Push SDK sandbox](https://github.com/push-protocol/push-sdk-sandbox).
 
 Keep PUSHING! #PoweredbyPush
-
-

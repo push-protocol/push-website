@@ -10,6 +10,7 @@ tags: [Ethereum
 ,Airdrop
 ,Newsletter]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Make the Most of Airdrops: Earnifi and EPNS Collaborate to Bring Airdrop Opportunities to Users](./cover-image.webp)
@@ -30,8 +31,7 @@ Earnifi has its wings spread across multiple major blockchain networks including
 
 “We are keen on ensuring decentralization in every aspect and as such, we believe that decentralized platforms need a decentralized communication system,” says the team at Earnifi. “EPNS successfully eliminates the need for DeFi protocols to depend on centralized solutions like mail or social media, while building direct communication between the protocol and users. We’re thrilled about the collaboration and can’t wait for our users to reap its benefits.”
 
-What Does the Collaboration Entail
-==================================
+# What Does the Collaboration Entail
 
 Through this pilot collaboration, EPNS and Earnifi are building an official decentralized communication medium between the platform and its users. Earnifi will have a verified channel on the EPNS platform. Subscribers of this channel will receive push notifications when new airdrops associated with their wallet address are available to claim. Given the limited timeframe for airdrops, a push notification service like this could ensure that eligible users claim their share before it’s too late.
 
@@ -39,7 +39,6 @@ Through this pilot collaboration, EPNS and Earnifi are building an official dece
 
 EPNS has a chrome extension, a decentralized application, and a mobile application to ensure that users do not miss these notifications on any device.
 
-**About Earnifi**
-=================
+# **About Earnifi**
 
 EarniFi was created by [DeFi Dawson](https://twitter.com/DawsonBotsford) and allows users to track a number of blockchains including Ethereum, [Binance Smart Chain](https://everybithelps.co.uk/binance-smart-chain-to-metamask//), [Polygon](https://everybithelps.co.uk/connect-polygon-to-metamask/) addresses for airdrops. Some airdrops will often have an expiration date and after which time, you lose the opportunity to claim your free crypto. However, Earnifi solves this by notifying users when they have an airdrop available to claim. Contact: [Website](https://earni.fi/)

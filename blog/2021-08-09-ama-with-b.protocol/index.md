@@ -11,6 +11,7 @@ tags: [ Ethereum
 ,Dao
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of AMA with B. Protocol](./cover-image.webp)
@@ -76,7 +77,7 @@ I hope you’re ready @Ekatch? I will be asking some questions. 🙂
 
 > **Q1. Can you briefly tell our community about B.Protocol’s mission and vision and why it was launched?**
 
-**EITAN KATCHKA**:  Sure.
+**EITAN KATCHKA**: Sure.
 
 B.Protocol is the Backstop liquidity protocol for DeFi lending platforms.
 
@@ -197,7 +198,7 @@ Now really done… ;)
 Here is the next Question :D
 
 > **Q4. EPNS is building a dedicated channel for B.Protocol which will allow your users to subscribe to the B.Protocol channel to receive customized notifications to their wallets.**
-> 
+>
 > **Can you tell us how you envision EPNS notifications playing an important role to help improve the experience for your current users, and attracting more new users?**
 
 **EITAN KATCHKA**: In the “non-crypto” world we are so used to getting notified on our “regular” apps — Telegram, Whatsapp, Twitter, and definitely any finance application we are using. Even my bank app sends me notifications.

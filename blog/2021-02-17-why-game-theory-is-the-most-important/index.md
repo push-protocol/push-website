@@ -12,6 +12,7 @@ tags: [ Game Theory
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Why Game Theory is the Most Important Thing in a Decentralized Notification Protocol](./cover-image.webp)
@@ -24,8 +25,7 @@ Game theory is the study of rational behavior in situations involving [interdepe
 
 It originally addressed zero-sum games, in which one person’s gains result in losses for the other participants. This can be easily visualized in a game of poker — any profits gained by a player in a game is caused by the loss of the other players playing in that game.
 
-**The (bizarre) Christmas Truce of 1914**
-=========================================
+# **The (bizarre) Christmas Truce of 1914**
 
 One of the most historic showcases of game theory was the Christmas Truce of 1914. In 1914, during the First World War, an unofficial truce was declared on Christmas Eve among the men in the trenches from both the rival sides.
 
@@ -47,8 +47,7 @@ The soldiers know that if they disregard the truce and initiate a **_“surprise
 
 Although this agreement deteriorated slowly in the following years as the war got more aggressive, the Christmas Eve of 1914 shows us how a simple consensus for peace and happiness and celebrating humanity even for a day can be rationalized.
 
-**Game Theory in Blockchain and Decentralized Technology**
-==========================================================
+# **Game Theory in Blockchain and Decentralized Technology**
 
 The goal of game theory for blockchain systems and protocols is to build networks that need no oversight by modeling and predicting human reasoning and yet have positive outcomes for the greater good. This is done with the help of coordination games or by achieving a Nash Equilibrium in a non-zero-sum game, and by aligning stakeholder incentives in such a way that any action that they perform for their **self-gain** would result in the **gain of the entire system at large.**
 
@@ -56,7 +55,7 @@ Coordination games are strategic games with multiple Nash equilibria. Nash equil
 
 Let us first explore what economists actually consider as a **_game_**.
 
-A game according to an economist —  [_as explained by Dr. Stephanie Hurder_](https://medium.com/prysmeconomics/nash-equilibrium-and-blockchain-d6a6f47a7a37) — satisfies these criteria:
+A game according to an economist — [_as explained by Dr. Stephanie Hurder_](https://medium.com/prysmeconomics/nash-equilibrium-and-blockchain-d6a6f47a7a37) — satisfies these criteria:
 
 1.  A game must have 2 or more players
 2.  Each participant is going to choose among several actions available to them.
@@ -72,8 +71,7 @@ Blockchain, by being decentralized, becomes a **collaborative technology** that 
 
 This game-theoretical thinking of promoting good behavior and punishing bad exists in daily life, as we’ve built societies to reward work that we value and deter behavior that we don’t. Hence, game theory plays a very important role in governing decentralized protocols and ensuring that all participants in the network act for the benefit of the protocol.
 
-**The Game Theory in EPNS**
-===========================
+# **The Game Theory in EPNS**
 
 EPNS has designed its protocol in such a way that the incentives are aligned for all participants in the network, which makes its governance effective, and self-sustaining for the long run.
 
@@ -97,21 +95,19 @@ The incentive layer of the EPNS protocol is designed as follows for the differen
 2.  **Users**​ are incentivized as they want to receive notifications related to payments, DeFi, gaming, or service​ ​on web3. As can be seen by traditional services (web 2) and the rampant use of notifications to drive engagement which is working and has become a part of all of our daily lives. Users also benefit by ​**receiving token incentives from notifications** ​and by **universal delivery**​.
 3.  **Wallets / Infra Services**
 
-*   **Existing Wallets / Services** ​are incentivized to continue performing as that ensures their perpetual share from the integration partners pool.
-*   **Future Wallets** ​are incentivized to integrate with the growing reward pool of **EDP**, ​as​ ​it gets higher over time as more fee flows in the protocol (as more and more notifications are sent). This creates an incentive for future wallets to consider integration to the protocol to claim this reward and also to move a proposal to have a perpetual share in the Integration partners pool.
-*   **Note:** ​The integration in turn drives more users to the protocol which drives more services and thus an increase in the fees pool which starts the cycle of future wallets integration again.
+- **Existing Wallets / Services** ​are incentivized to continue performing as that ensures their perpetual share from the integration partners pool.
+- **Future Wallets** ​are incentivized to integrate with the growing reward pool of **EDP**, ​as​ ​it gets higher over time as more fee flows in the protocol (as more and more notifications are sent). This creates an incentive for future wallets to consider integration to the protocol to claim this reward and also to move a proposal to have a perpetual share in the Integration partners pool.
+- **Note:** ​The integration in turn drives more users to the protocol which drives more services and thus an increase in the fees pool which starts the cycle of future wallets integration again.
 
 **Token Holders** ​are incentivized to keep and to pass the best proposal and keep core features fees competitive at the best rate possible as they gain the most of all the participating users are properly incentivized as it drives utility to the protocol and the usage of the protocol.
 
 In this way, for EPNS — a decentralized notifications platform — game theory becomes very important in order to effectively align stakeholder incentives in both business and economical sense in order to enhance network effects and drive more users and services to the platform.
 
-**Takeaways**
-=============
+# **Takeaways**
 
 Game theory is the study of rational behavior in situations involving interdependence. Blockchain, by being decentralized, becomes a collaborative technology that thrives on coordination and collaboration of participants in the network, who are themselves driven for their self-gain but also by doing so contribute to the overall success of the network. The goal of game theory for blockchain systems and protocols is to build networks that need no oversight by modeling and predicting human reasoning and yet have positive outcomes for the greater good. EPNS being a decentralized notifications protocol uses game theory in order to generate network effects and creates a win-win situation for all parties involved in the ecosystem, be it users, services, wallet providers, or token holders.
 
-**BONUS!**
-----------
+## **BONUS!**
 
 If you made it this far and would like to learn more about how game theory works, check out this game — The Evolution of Trust ( [https://ncase.me/trust/](https://ncase.me/trust/) ) — that explores how different personalities and relationships of trust can create different outcomes in different games, and also it illustrates how important it is to align incentives in such a way that we create a win-win situation for all. Shoutout to Gitcoin [Kernel](https://www.notion.so/What-is-KERNEL-b9520eb29d954f5fb709150cae3975b1) for original share of this awesome game!!
 

@@ -11,6 +11,7 @@ tags: [ Announcements
 ,Decentralization
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Building Web3 on top of Web2.0 with Mask.io](./cover-image.webp)
@@ -35,15 +36,13 @@ With this new way of adding Web3 features on top of social media, we anticipate 
 
 We believe in providing a strong decentralized communication channel for a seamless privacy-protected experience through EPNS. By closely working with the team of Mask Network, we hope to refine EPNS protocol to meet the expectations of users and services.
 
-About Ethereum Push Notification Service
-========================================
+# About Ethereum Push Notification Service
 
 EPNS is a decentralized notification protocol that enables users (wallet addresses) to receive notifications. Using the protocol, any dApp, service or smart contract can send notifications to users in a platform agnostic fashion (mobile, tablet, web, user wallets, etc). The DeFi aspect of the protocol ensures that the user receives notifications and also earns from them.
 
 Stay in touch! [Website](https://epns.io/), [Twitter](https://twitter.com/epnsproject), [Telegram](https://t.me/epnsproject), [Medium](https://medium.com/ethereum-push-notification-service)
 
-About Mask.io
-=============
+# About Mask.io
 
 Mask Network is a portal to the new, open internet. With Mask Network, you can send encrypted posts to your friends, participate in cryptocurrency lucky-draws, and share encrypted files on the platforms you are already using.
 

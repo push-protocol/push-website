@@ -10,7 +10,7 @@ image: "/assets/docs/previews/price_tracker_with_showrunners_example--price_trac
 
 # Price Tracker in Showrunners
 
-This example is intended to get you understand channel Settings with a real-world application. For the example we are going to look at a scenario where users can choose a their preferred tokens, a time interval and a price percentage change and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"), [Showrunners Framework](https://github.com/push-protocol/push-showrunners-framework/tree/main "Push Showrunners Github"), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/ "Push Channel Settings Docs") and [Channel Settings Demo](https://github.com/push-protocol/push-showrunners-framework/tree/main/src/sample_showrunners/bank "Channel Settings Example Github") for better understanding!
+This example is intended to get you understand channel Settings with a real-world application. For the example we are going to look at a scenario where users can choose a their preferred tokens, a time interval and a price percentage change and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ 'Push Showrunners Docs'), [Showrunners Framework](https://github.com/push-protocol/push-showrunners-framework/tree/main 'Push Showrunners Github'), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/ 'Push Channel Settings Docs') and [Channel Settings Demo](https://github.com/push-protocol/push-showrunners-framework/tree/main/src/sample_showrunners/bank 'Channel Settings Example Github') for better understanding!
 
 <head>
   <title>
@@ -19,18 +19,18 @@ This example is intended to get you understand channel Settings with a real-worl
   </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## What we gonna build?
 
-Imagine you are a crypto trader or a general crypto enthusiast. You want to be notified every once in a while about the price movements and activities in the market. But you either lose track of time or forget about it. To solve this exact problem, we will be looking into a [Price Tracker](https://github.com/push-protocol/push-showrunners-framework/tree/main/src/sample_showrunners/priceTracker/ "Price tracker github repo") and Channel Settings implementation where you as a user can specify conditions on which you would like to get notified.
+Imagine you are a crypto trader or a general crypto enthusiast. You want to be notified every once in a while about the price movements and activities in the market. But you either lose track of time or forget about it. To solve this exact problem, we will be looking into a [Price Tracker](https://github.com/push-protocol/push-showrunners-framework/tree/main/src/sample_showrunners/priceTracker/ 'Price tracker github repo') and Channel Settings implementation where you as a user can specify conditions on which you would like to get notified.
 
 ## Creating Price Tracker in Showrunners
 
 ### Step 1: Setup the Showrunners in your local machine
 
-For detailed, step-by-step guide visit the Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"). First we need to create a folder in `src/showrunners/<your_channel_name>`
+For detailed, step-by-step guide visit the Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ 'Push Showrunners Docs'). First we need to create a folder in `src/showrunners/<your_channel_name>`
 
 ### Step 2: Install Dependencies & start up
 
@@ -45,10 +45,10 @@ yarn run dev
 
 ### Step 3: Import the Push SDK
 
-After you have created a channel folder. Refer to Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"). Move to the [name]Channel.ts file and import the dependencies.
+After you have created a channel folder. Refer to Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ 'Push Showrunners Docs'). Move to the [name]Channel.ts file and import the dependencies.
 
 ```jsx
-import { PushAPI } from "@pushprotocol/restapi";
+import { PushAPI } from '@pushprotocol/restapi';
 ```
 
 ### Step 4: Create a `priceTrackerKeys.json` file in the channel folder
@@ -263,7 +263,7 @@ await Promise.all(
 if (mapObj.user == true) {
   // Get current price of the token
   const currentToken = tokenInfo.find(
-    (obj) => obj.symbol === mapObj.description,
+    (obj) => obj.symbol === mapObj.description
   );
   const currentPrice = currentToken?.price;
 }
@@ -287,7 +287,7 @@ const previousPriceData = (await priceTrackerTokenModel.findOne({
 await priceTrackerTokenModel.findOneAndUpdate(
   { _id: mapObj.description },
   { tokenPrevPrice: currentPrice },
-  { upsert: true },
+  { upsert: true }
 );
 
 // Calculate Change
@@ -332,7 +332,7 @@ iv. **Receive general notifications** <br/>
 
 if (userSettings[9]?.enabled == true && userSettings[10]?.enabled == true) {
   this.logInfo(
-    `Price Alert & Time Interval Slider case: ${subscriberObj.subscriber}`,
+    `Price Alert & Time Interval Slider case: ${subscriberObj.subscriber}`
   );
 
   // Fetch user values for settings
@@ -348,10 +348,10 @@ if (userSettings[9]?.enabled == true && userSettings[10]?.enabled == true) {
     }));
 
   this.logInfo(
-    `Mapped value of ${userDBValue._id} is ${userDBValue.lastCycle} from both price and time`,
+    `Mapped value of ${userDBValue._id} is ${userDBValue.lastCycle} from both price and time`
   );
   this.logInfo(
-    `User value of ${userDBValue._id} is ${userValueTime} from both price and time`,
+    `User value of ${userDBValue._id} is ${userValueTime} from both price and time`
   );
 
   // Condition to trigger notification
@@ -363,7 +363,7 @@ if (userSettings[9]?.enabled == true && userSettings[10]?.enabled == true) {
     await priceTrackerModel.findOneAndUpdate(
       { _id: subscriberObj.subscriber },
       { lastCycle: CYCLES },
-      { upsert: true },
+      { upsert: true }
     );
     // Build the payload of the notification
     const payloadMsg =
@@ -414,7 +414,7 @@ if (userSettings[9]?.enabled == true && userSettings[10]?.enabled == true) {
     await priceTrackerModel.findOneAndUpdate(
       { _id: subscriberObj.subscriber },
       { lastCycle: CYCLES },
-      { upsert: true },
+      { upsert: true }
     );
 
     // Build the payload of the notification

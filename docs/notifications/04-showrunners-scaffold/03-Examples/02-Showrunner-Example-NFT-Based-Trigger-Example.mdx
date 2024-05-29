@@ -125,12 +125,12 @@ The below given lines of code are using our SDK to get a contract from the Provi
 const sdk = await this.getSdk();
 const digibleContract = await sdk.getContract(
   digibleSettings.digiTrackContractAddressMainnet,
-  JSON.stringify(digiTrackABI),
+  JSON.stringify(digiTrackABI)
 );
 const filter = digibleContract.contract.filters.StatusUpdated();
 const blockNumbers = await this.getBlockNumbers(
   simulate,
-  digibleContract.contract,
+  digibleContract.contract
 );
 ```
 
@@ -166,7 +166,7 @@ Sometimes to provide we have to provide some necessary information in the notifi
 ```jsx
 const contract = await sdk.getContract(
   e.args.nftAddress,
-  JSON.stringify(ERC20ABI),
+  JSON.stringify(ERC20ABI)
 );
 const name = await contract.contract.name();
 const newStatus = e.args[2];
@@ -232,7 +232,7 @@ schedule.scheduleJob(
       logger.error(`❌ Cron Task Failed -- ${taskName}`);
       logger.error(`Error Object: %o`, err);
     }
-  },
+  }
 );
 ```
 

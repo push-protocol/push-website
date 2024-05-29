@@ -11,6 +11,7 @@ tags: [ Mainnet
 ,Notifications
 ,Web3 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of The EPNS Mainnet is Here!](./cover-image.webp)

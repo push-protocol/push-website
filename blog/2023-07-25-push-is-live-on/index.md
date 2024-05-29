@@ -3,19 +3,19 @@ slug: push-is-live-on-polygon-and-quickswap
 title: $PUSH is Live on Polygon & Quickswap!💜
 authors: [push]
 image: './cover-image.webp'
-text: "Today we are excited to announce the launch of the $PUSH token on Polygon! Following the successful launch of Push Protocol onto Polygon mainnet last year, we are now carrying over that multi-chain functionality and composability to our $PUSH token."
+text: 'Today we are excited to announce the launch of the $PUSH token on Polygon! Following the successful launch of Push Protocol onto Polygon mainnet last year, we are now carrying over that multi-chain functionality and composability to our $PUSH token.'
 tags: [Push Protocol, Web3, Yield Farming, Liquidity Mining, Polygon Network]
-
 ---
+
 ![Cover image of $PUSH is Live on Polygon & Quickswap!💜](./cover-image.webp)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # New composability, accessibility, and utility for the $PUSH token.
 
-
 Today we are excited to announce the launch of the $PUSH token on Polygon!
-
 
 Following the successful launch of Push Protocol onto Polygon mainnet last year, we are now carrying over that multi-chain functionality and composability to our $PUSH token.
 
@@ -26,11 +26,13 @@ We’re extremely excited to be introducing a new set of benefits to our users a
 Let’s dive in.
 
 ## Double the utility following the launch of Pushv2
+
 Pushv2 introduced incentivized chats and fee pool staking, two exciting new ways that our community can earn fees, play a more active role as a stakeholder in the Push ecosystem, and get involved. This was designed to introduce a new wave of utility to the $PUSH token.
 
 Now with our $PUSH token launch on Polygon, we’re extending that utility even further.
 
 ## New composability, new accessibility, new utility
+
 For the wide range of dApps and protocols already building on top of Push in the Polygon ecosystem, the introduction of $PUSH to Polygon will foster an even greater innovation arena for builders to come up with new projects, ideas, and utility potential.
 
 Additionally, the Polygon network offers incredibly fast and cheap transactions, which makes it an ideal environment to run Push DAO operations.
@@ -52,10 +54,7 @@ Liquidity will be managed by Gamma AMM and you can stake your LP tokens to earn 
 ✨✨✨👉[Provide $PUSH/WETH Liquidity here](https://quickswap.exchange/#/pools?currency0=0x58001cC1A9E17A20935079aB40B1B8f4Fc19EFd1&currency1=0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619) 👈✨✨✨
 
 ### Let’s go!
+
 We are confident that launching on Polygon will help further our goals and bring our vision of decentralized communication to life. We look forward to sharing more exciting news related to our token launch in the coming days — so stay tuned.
 
 Thank you for your support and happy trading!
-
-
-
-

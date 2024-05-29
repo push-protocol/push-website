@@ -12,6 +12,7 @@ tags: [ Gitcoin
 ,Blockchain
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of KERNEL, A Gitcoin Collective, Joins EPNS Advisory 🌱](./cover-image.webp)
@@ -24,9 +25,9 @@ They say there’s strength in numbers. In the case of [KERNEL](https://kernel.c
 
 With a shared vision to build a better web, we look forward to strategic guidance from the KERNEL community as we build out a critical communication component of Ethereum and Web 3.0, decentralized communication, including:
 
-*   Insight into developer issues and requirements for Web 3.0 services
-*   The pulse of the Web 3.0 industry and latest technological developments
-*   An understanding of cross-chain communication integration issues and value stream creation opportunities
+- Insight into developer issues and requirements for Web 3.0 services
+- The pulse of the Web 3.0 industry and latest technological developments
+- An understanding of cross-chain communication integration issues and value stream creation opportunities
 
 Web 3.0 developers are at the forefront of building scalable and interoperable blockchains and protocols for next generation permissionless networks. Yet as cross-chain communication becomes standard, the users of the dApps, platforms, and smart contracts deploying on these blockchains still lack a decentralized communication medium.
 
@@ -40,8 +41,7 @@ Taking the advisor role, Gitcoin KERNEL (Vivek Singh) said:
 
 > EPNS (Harsh and Richa, specifically) are shining stars who we are grateful to have in KERNEL. They are a thoughtful leadership team suited to explore how internet communication protocols (starting with notifications) can be implemented in more harmonious and humane ways.
 
-**ABOUT KERNEL**
-----------------
+## **ABOUT KERNEL**
 
 KERNEL is a Web 3 family. It breathes through the deep bonds created amongst 600 (and counting) builders in Web 3 who have joined an 8 week experience called a KERNEL Block. Building something new in Web 3? We’d love for you to consider joining us for the next block, [KB3](http://kernel.community).
 

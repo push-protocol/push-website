@@ -94,38 +94,31 @@ function BRBParallax() {
   return (
     <Container>
       <BRBWrapper id='home'>
-        <FirstBackground
-          className="firstBackground"
-        >
+        <FirstBackground className='firstBackground'>
           <ParallaxBRBBG>
-            {isMobile && 
+            {isMobile && (
               <Image
-                src={require(`@site/static/assets/website/brb/mainbgmobile.webp`).default}
+                src={
+                  require(`@site/static/assets/website/brb/mainbgmobile.webp`)
+                    .default
+                }
                 srcSet={`${require(`@site/static/assets/website/brb/mainbgmobile@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/mainbgmobile@3x.webp`).default} 3x`}
-                alt="Mobile main background image for Billion Reasons to Build website (#BRBIndia)"
-                loading="lazy"
+                alt='Mobile main background image for Billion Reasons to Build website (#BRBIndia)'
+                loading='lazy'
               />
-            }
-            {!isMobile &&
-              <ParallaxBRB />
-            }
+            )}
+            {!isMobile && <ParallaxBRB />}
           </ParallaxBRBBG>
-          
+
           <ParallaxContent>
-            <ParallaxHeader>
-              #BRBIndia
-            </ParallaxHeader>
+            <ParallaxHeader>#BRBIndia</ParallaxHeader>
 
             <ParallaxFlex>
               {Stats.map((item, i) => (
                 <FlexItem key={i}>
-                  <ParallelFlexTitle>
-                    {item.figure}
-                  </ParallelFlexTitle>
+                  <ParallelFlexTitle>{item.figure}</ParallelFlexTitle>
 
-                  <ParallelFlexBody>
-                    {item.body}
-                  </ParallelFlexBody>
+                  <ParallelFlexBody>{item.body}</ParallelFlexBody>
                 </FlexItem>
               ))}
             </ParallaxFlex>
@@ -140,7 +133,7 @@ function BRBParallax() {
 
 const Container = styled.div`
   width: 100%;
-  font-family: "Glancyr", sans-serif;
+  font-family: 'Glancyr', sans-serif;
   color: white;
   margin-top: -15em;
   margin-bottom: 200px;
@@ -206,7 +199,7 @@ const ParallaxBRBBG = styled(ItemV)`
     width: 100%;
     height: auto;
   }
-`
+`;
 
 const ParallaxContent = styled(ItemV)`
   margin-top: -6%;
@@ -214,13 +207,13 @@ const ParallaxContent = styled(ItemV)`
   @media ${device.tablet} {
     margin-top: 0%;
   }
-`
+`;
 
 const ParallaxHeader = styled(Span)`
   font-size: 60px;
   font-weight: 400;
   letter-spacing: inherit;
-  color: #E64DE9;
+  color: #e64de9;
   font-stretch: ultra-expanded;
 
   @media ${device.laptop} {
@@ -268,12 +261,11 @@ const ParallelFlexTitle = styled(Span)`
   font-weight: 400;
   color: #fff;
   line-height: inherit;
-  
+
   @media ${device.tablet} {
     font-size: 45px;
   }
-
-`
+`;
 
 const ParallelFlexBody = styled(Span)`
   font-size: 18px;
@@ -285,6 +277,6 @@ const ParallelFlexBody = styled(Span)`
   @media ${device.mobileL} {
     font-size: 14px;
   }
-`
+`;
 
 export default BRBParallax;

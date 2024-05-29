@@ -3,37 +3,41 @@ slug: push-monthly-blocks-october
 title: Push Monthly Blocks
 authors: [push]
 image: './cover-image.webp'
-text: "Hello Push fam 🎎. Get comfortable and relax. We have so much to talk about this month! After our rebrand to Push Protocol many things followed up and it’s time we go over them."
-tags: [ Newsletter, Blockchain, Ethereum, Pushprotocol]
+text: 'Hello Push fam 🎎. Get comfortable and relax. We have so much to talk about this month! After our rebrand to Push Protocol many things followed up and it’s time we go over them.'
+tags: [Newsletter, Blockchain, Ethereum, Pushprotocol]
 ---
+
 import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Push Monthly Blocks](./cover-image.webp)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # October 2022<br/>
 
 Hello <b>Push</b> fam 🎎. Get comfortable and relax. We have so much to talk about this month! After our rebrand to Push Protocol many things followed up and it’s time we go over them.
 
-
 ![What's New](./image-1.webp)
 
 ## Development 🏗️
+
 The fun in the development team never ends. As we mentioned last month, many initiatives were coming together and this month they made it live!
 
 ### Push Protocol in Polygon Mainnet
+
 October started strong with our announcement of Push Protocol deployed in Polygon Mainnet to bring world-class communication infrastructure to the Polygon ecosystem.
 
 You can [read more here](https://twitter.com/pushprotocol/status/1575485566065381377?s=20&t=TdVmvodS54VtGSPTMr-Ovw&utm_source=substack&utm_medium=email) in case you missed it!
 
 ### Push Chat (Alpha)
+
 A wallet-to-wallet communication protocol! We started development activities some time ago and Push Chat made it Live at the Polygon Connect event in Bogota. <b>Wanna give it a try?</b> Ping us on Discord!<br/><br/>
 
 <VideoContainer>
 <iframe width="100%" height="100%" style={{ borderRadius: "32px" }} src="https://www.youtube.com/embed/n-5wsuRIS3s" title="PushChat Product Launch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></VideoContainer>
 <br/><br/>
-
 
 And it doesn’t end there. We are working to launch very soon the Push Chat SDK, which will enable hackers and development teams to implement wallet to wallet communication in your solutions!
 
@@ -51,6 +55,7 @@ And last, but not least… Push Smart Contracts v2 is now in development. More n
 <center><b>. . .</b></center>
 
 ## The Push circle of Frens gets bigger 🤗
+
 Always exciting to see more projects trusting their Web3 communication on Push Protocol!
 
 This month we started with amazing news of many projects joining us to celebrate Push Protocol coming to Polygon. We announced our partnerships with <a href="https://twitter.com/pushprotocol/status/1576959192761438209?s=20&t=PVga-t-8zgBi6Vw5A6EWqA&utm_source=substack&utm_medium=email"><b>Lens Protocol</b></a>, <a href="https://twitter.com/pushprotocol/status/1577328098047332358?s=20&t=PVga-t-8zgBi6Vw5A6EWqA&utm_source=substack&utm_medium=email"><b>PoolTogether</b></a>, <a href="https://twitter.com/pushprotocol/status/1577328098047332358?s=20&t=PVga-t-8zgBi6Vw5A6EWqA&utm_source=substack&utm_medium=email"><b>Qi Dao</b></a>, <a href="https://twitter.com/pushprotocol/status/1577328098047332358?s=20&t=PVga-t-8zgBi6Vw5A6EWqA&utm_source=substack&utm_medium=email"><b>Mean Finance</b></a>, <a href="https://twitter.com/pushprotocol/status/1577328098047332358?s=20&t=PVga-t-8zgBi6Vw5A6EWqA&utm_source=substack&utm_medium=email"><b>GoodGhosting</b></a>, <a href="https://twitter.com/pushprotocol/status/1577328098047332358?s=20&t=PVga-t-8zgBi6Vw5A6EWqA&utm_source=substack&utm_medium=email"><b></b>MahaDAO</a>, <a href="https://twitter.com/pushprotocol/status/1577328098047332358?s=20&t=PVga-t-8zgBi6Vw5A6EWqA&utm_source=substack&utm_medium=email"><b>EthSign</b></a>, <a href="https://twitter.com/pushprotocol/status/1577328098047332358?s=20&t=PVga-t-8zgBi6Vw5A6EWqA&utm_source=substack&utm_medium=email"><b>Polychain Monsters</b></a> on Polygon Mainnet.
@@ -64,10 +69,11 @@ We love how all our frens help make Push notifications a battle tested use case 
 <center><b>.  .  .</b></center>
 
 ## Community 🎡
+
 This was a very intense & beautiful month for the Push Team to interact with our community thanks to all the virtual and IRL events that happened this month.
 
 1. We received an overwhelming response with 55+ projects building on top of <a href="https://twitter.com/pushprotocol/status/1575838134251626496?s=20&t=9cwhxiIYke5lIs7SM5f8Hg&utm_source=substack&utm_medium=email"><b>Push at EthGlobal’s ETHOnline2022 Hackathon!</b></a> Lots and lots of very creative projects by awesome hackers.
-2.  Push Team had the opportunity to participate in in ETHGlobal’s <a href="https://twitter.com/pushprotocol/status/1577698820632084489?s=20&t=PVga-t-8zgBi6Vw5A6EWqA&utm_source=substack&utm_medium=email"><b>ETHBogota hackathon</b></a>. Which again gave us the chance to interact IRL with hackers and receive first-hand feedback from them to improve our Protocol. Thanks for that hackers! And congratulations to all <a href="https://twitter.com/pushprotocol/status/1580196671266246656?s=20&t=8Uce2YW1VuHsKVjqMAhKQQ&utm_source=substack&utm_medium=email"><b>EthBogota Hackathon Winners</b></a>.
+2. Push Team had the opportunity to participate in in ETHGlobal’s <a href="https://twitter.com/pushprotocol/status/1577698820632084489?s=20&t=PVga-t-8zgBi6Vw5A6EWqA&utm_source=substack&utm_medium=email"><b>ETHBogota hackathon</b></a>. Which again gave us the chance to interact IRL with hackers and receive first-hand feedback from them to improve our Protocol. Thanks for that hackers! And congratulations to all <a href="https://twitter.com/pushprotocol/status/1580196671266246656?s=20&t=8Uce2YW1VuHsKVjqMAhKQQ&utm_source=substack&utm_medium=email"><b>EthBogota Hackathon Winners</b></a>.
 3. Right after ETHBogota, DevCon came in! And the <a href="https://twitter.com/pushprotocol/status/1578782319430623232?s=20&t=PVga-t-8zgBi6Vw5A6EWqA&utm_source=substack&utm_medium=email"><b>Push Crew</b></a> was there ready to mingle with all our old and new frens! We couldn’t have had more fun.
 
 ![EthBogota](./image-2.jpg)
@@ -82,6 +88,7 @@ During DevCon week the Push Crew also participated in talks, workshops , and pan
 <center><b>.  .  .</b></center>
 
 ## Push in the news 📺
+
 - <a href="https://twitter.com/Blockworks_/status/1575495817368338433?s=20&t=TdVmvodS54VtGSPTMr-Ovw&utm_source=substack&utm_medium=email"><b>Blockworks</b></a> featured Push Protocol rebranding and Polygon launch
 - Push is now tracked on <a href="https://twitter.com/DeBankDeFi/status/1583245429139013634?s=20&t=HNE_pPg4jdJB31S47M_zuQ&utm_source=substack&utm_medium=email"><b>DeBank</b></a>
 - Subscribe to Push Protocol channels directly from <a href="https://twitter.com/meetwithwallet/status/1585588116294758400?s=20&t=WLH5_GW8954-niduUfDuNg&utm_source=substack&utm_medium=email"><b>Meet with Wallet</b></a>
@@ -100,5 +107,3 @@ After such an incredible month our motivation is to the top to continue deliveri
 Let’s keep <b>Pushing</b> 💪
 
 — The Push Team
-
-

@@ -11,6 +11,7 @@ tags: [ Mainnet
 ,Notifications
 ,Communication ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of Just What Can You Use EPNS For?](./cover-image.webp)
@@ -21,8 +22,7 @@ We’re pretty excited that the [EPNS mainnet has launched](https://medium.com/e
 
 All the fun happens at [app.epns.io](http://app.epns.io). There, under ‘Channels’, you’ll find a list of all the live channels and descriptions of what kinds of notifications you’ll receive if you opt-in. So let’s dive in:
 
-EPNS for DeFi 💰
-================
+# EPNS for DeFi 💰
 
 Right now, you can subscribe to receive notifications from the top DeFi projects in the space. Notifications are sent for either liquidation dangers or governance updates.
 
@@ -36,8 +36,7 @@ The **Oasis** channel notifies subscribers when their vaults are reaching a high
 
 The **Mover** channel notifies you about your yield harvested on the platform.
 
-EPNS for Domains and Governance 🖥
-==================================
+# EPNS for Domains and Governance 🖥
 
 Never miss an update from some of the leading protocols in Web3 offering critical consumer applications and infrastructure.
 
@@ -45,8 +44,7 @@ The **ENS** channel notifies users when their domains are about to expire. No mo
 
 The **Snapshot** channel notifies you when governance proposals are made from the projects you follow on Snapshot.
 
-EPNS for Traders and Investors 📈
-=================================
+# EPNS for Traders and Investors 📈
 
 All the information you need to trade and invest intelligently, delivered to an EPNS inbox near you.
 
@@ -54,8 +52,7 @@ The **ETH Tracker** and **BTC Tracker** channels notify subscribers every 6 hour
 
 The **ETH Gas Tracker** channel tells users when ETH gas prices hit new highs, letting you more intelligently place those trades.
 
-EPNS for Media and News 🗞
-==========================
+# EPNS for Media and News 🗞
 
 We’re proud to have partnered with **CoinDesk** to launch the first media channel on EPNS. Users will be notified whenever a news story goes live.
 
@@ -64,5 +61,3 @@ And there you have it! And yet, that’s only the beginning. Expect a lot more c
 _\*Note: the EPNS protocol has been under development for 1+ year, and completed a_ [_ChainSafe audit_](https://epns.io/EPNS-Protocol-Audit2021.pdf) _in October 2021. However, the mainnet is still a new product milestone. Always DYOR, and anticipate bugs and UI improvements. Learn how to report any bugs in our_ [_Discord_](https://discord.gg/YVPB99F9W5)_._
 
 Follow us to stay up to date: [Twitter](https://twitter.com/epnsproject), [Discord](https://discord.gg/YVPB99F9W5), [Telegram](https://t.me/epnsproject).
-
-

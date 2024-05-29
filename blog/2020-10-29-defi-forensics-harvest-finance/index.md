@@ -12,6 +12,7 @@ tags: [ Defi
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of DeFi Forensics🕵️‍️- HARVEST Finance](./cover-image.webp)
@@ -30,8 +31,7 @@ In this article, we will be putting our magnifying glass on [Harvest Finance](ht
 
 Harvest Finance, similar to [Yearn Finance](https://yearn.finance), is a DeFi yield aggregator. A yield aggregator is basically a platform that implements investment strategies on different DeFi Projects in order to maximize yields. Dubbed to be Yearn’s competitor in the field, Harvest, within a fortnight of its launch grew among the ranks in DeFi to gain $1billion in total value locked (TVL). This is despite early warnings in their audit reports as well as concerns of centralization surrounding the project.
 
-**What happened?**
-==================
+# **What happened?**
 
 On October 26, 02:53:31 AM +UTC, an anonymous attacker executed the theft of funds from the USDC and USDT vaults of Harvest Finance. The heist resulted in $24 million worth of funds being stolen out of which $2.5 million was sent back, these returned funds will be distributed among those who lost funds in this exploit.
 
@@ -41,13 +41,11 @@ Harvest Finance acted and withdrew all the funds from the shared pools immediate
 
 The addresses used for carrying out the heist has been requested to be blacklisted. With the Harvest team not ready to dox the attacker even after their claim that they have identified the attacker and that the attacker is “well known in the crypto community”, there has been speculation that either the Harvest team has been bluffing all along about the identity of the attacker or they are carrying out an inside job.
 
-**How did it happen?**
-======================
+# **How did it happen?**
 
 With the release of the O[fficial post mortem report](https://medium.com/harvest-finance/harvest-flashloan-economic-attack-post-mortem-3cf900d65217) of Harvest Finance released by the team itself, we get to see the exact steps in how the attacker managed to pull off such a heist. The entire attack took place with the help of Flash loans and a well-planned arbitrage attack.
 
 The exploits were a series of arbitrage trades between Uniswap, Curve Finance, and Harvest Finance, and the funds were then cashed out via renBTC and Tornado.
-
 
 <iframe src="https://cdn.embedly.com/widgets/media.html?type=text%2Fhtml&amp;key=a19fcc184b9711e1b4764040d3dc5c07&amp;schema=twitter&amp;url=https%3A//twitter.com/devops199fan/status/1320579856938119168&amp;image=" allowfullscreen="" frameborder="0" height="795" width="680" title="" class="eo n ff dy bg" scrolling="no"></iframe>
 
@@ -57,8 +55,7 @@ There is still a widespread debate on whether or not this attack was “illegal�
 
 <iframe src="https://cdn.embedly.com/widgets/media.html?type=text%2Fhtml&amp;key=a19fcc184b9711e1b4764040d3dc5c07&amp;schema=twitter&amp;url=https%3A//twitter.com/bneiluj/status/1320686478486347778&amp;image=" allowfullscreen="" frameborder="0" height="787" width="680" title="" class="eo n ff dy bg" scrolling="no"></iframe>
 
-**Why did it happen**
-=====================
+# **Why did it happen**
 
 One of the major reasons this attack happened was because of a single design flaw in Harvest Finance’s smart contract design.
 
@@ -68,8 +65,7 @@ According to @PancakeBunnyFin’s analysis and also as confirmed by the Harvest 
 
 <iframe src="https://cdn.embedly.com/widgets/media.html?type=text%2Fhtml&amp;key=a19fcc184b9711e1b4764040d3dc5c07&amp;schema=twitter&amp;url=https%3A//twitter.com/pancakebunnyfin/status/1320615025560547328&amp;image=" allowfullscreen="" frameborder="0" height="950" width="680" title="" class="eo n ff dy bg" scrolling="no"></iframe>
 
-**This is where EPNS can help**
-===============================
+# **This is where EPNS can help**
 
 Although hacks and exploits will continue to happen, EPNS is building infrastructure to help trigger actions in a more timely, automated, and accurate manner. In other words, EPNS can help mitigate the after-effects much quicker and effectively.
 
@@ -79,8 +75,7 @@ Along with the fact that sharing the attacker’s BTC addresses on Twitter to bl
 
 With the help of EPNS, one can make sure that risk is always mitigated when such exploits happen.
 
-**What next for HARVEST?**
-==========================
+# **What next for HARVEST?**
 
 Harvest is still on the chase to recover funds and has resolved to even commend the skills of the attacker and requesting the attacker to return the funds.
 
@@ -94,8 +89,7 @@ This article will be updated in the coming days.
 
 **This was…**
 
-**DeFi Forensics…**
-===================
+# **DeFi Forensics…**
 
 Become part of our buzzing community! Join the conversation on one of our channels:  
 [Website](https://epns.io/) | [Twitter](https://twitter.com/epnsproject) | [Telegram](https://t.me/epnsproject) | [Github](https://github.com/push-protocol)

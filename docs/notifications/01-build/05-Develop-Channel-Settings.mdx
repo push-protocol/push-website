@@ -13,7 +13,7 @@ image: "/assets/docs/previews/docs_notifications_develop--channel_settings.png"
 This section covers APIs related to creation of channel setting.
 
 <head>
-  <title>Channel Settings | Push Notifications | Push Documentation</title>
+  <title>{`Channel Settings | Push Notifications | Push Documentation`}</title>
 </head>
 
 ## What are channel settings?
@@ -22,21 +22,21 @@ A channel may want to send notification for multiple categories. Ex: Coindesk ma
 
 Having settings for your channel enables your users to express interest on what settings they want to receive notifications for and when they want to receive it.
 
-Once you have enabled channel settings, you can access settings prefrence of each user via [Fetch Subscription API](/docs/notifications/build/fetch-subscriptions/ "Fetch subscription API for channel settings"). You can also trigger notifications which target particular settings category via [Send Notification API](/docs/notifications/build/send-notification/ "Send notification API for sending notification meant for vertain category").
+Once you have enabled channel settings, you can access settings prefrence of each user via [Fetch Subscription API](/docs/notifications/build/fetch-subscriptions/ 'Fetch subscription API for channel settings'). You can also trigger notifications which target particular settings category via [Send Notification API](/docs/notifications/build/send-notification/ 'Send notification API for sending notification meant for vertain category').
 
 :::note
 If a user hasn't opted in for a particular setting and you trigger notification for that setting category then the notification will be filtered out by Push Node.
 :::
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import Details from "@theme/Details";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AFocus,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 ## Channel setting API
 
@@ -46,16 +46,15 @@ import {
 ```typescript
 // creates channel settings
 const createChannelSettingRes = userAlice.channel.setting([
-  { 
-
+  {
     type: 1, // Boolean type
     default: 1,
-    description: "Receive marketing notifications",
+    description: 'Receive marketing notifications',
   },
   {
     type: 2, // Slider type
     default: 10,
-    description: "Notify when loan health breaches",
+    description: 'Notify when loan health breaches',
     data: { upper: 100, lower: 5, ticker: 1 },
   },
 ]);
@@ -83,7 +82,7 @@ const createChannelSettingRes = userAlice.channel.setting([
 
 ```typescript
 {
-  transactionHash: "0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32";
+  transactionHash: '0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32';
 }
 ```
 

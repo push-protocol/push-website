@@ -1,10 +1,10 @@
 ---
 slug: benchmarking-push-chat-message
-title: "Benchmarking Push Chat Message Architecture: What Changed? 💬 ⚡"
+title: 'Benchmarking Push Chat Message Architecture: What Changed? 💬 ⚡'
 authors: [push]
-image: "./cover-image.webp"
-description: "Benchmarking Push Chat Message Architecture: What Changed? 💬 ⚡"
-text: "Push Chat has been a game-changer for  web3 messaging, offering a hassle-free experience for user to user, user to dApp, and group conversations. In essence, Push Chat makes messaging in web3 as seamless as it is in web2. One feature we’ve been working on extensively within Push Chat is change in storage and retreivals of Push chat messages to make them much more faster."
+image: './cover-image.webp'
+description: 'Benchmarking Push Chat Message Architecture: What Changed? 💬 ⚡'
+text: 'Push Chat has been a game-changer for  web3 messaging, offering a hassle-free experience for user to user, user to dApp, and group conversations. In essence, Push Chat makes messaging in web3 as seamless as it is in web2. One feature we’ve been working on extensively within Push Chat is change in storage and retreivals of Push chat messages to make them much more faster.'
 tags: [Push Protocol, Web3, Blockchain Technology, EthGlobal]
 ---
 

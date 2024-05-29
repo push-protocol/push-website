@@ -11,6 +11,7 @@ tags: [ Blockchain
 ,Defi
 ,Cryptocurrency ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Allies With Angle Protocol to Facilitate Push Notifications for Users](./cover-image.webp)
@@ -31,17 +32,16 @@ Angle can be used to issue any stablecoin on the blockchain. It has launched agE
 
 So, it goes without saying that for Angle Protocol to function smoothly, there needs to be a way for the protocol to communicate with its HA seamlessly. And, EPNS provides that way through decentralized push notifications.
 
-What Does the Partnership Entail
-================================
+# What Does the Partnership Entail
 
 Through our pilot partnership with Angle Protocol, we aim to build a proper medium for the protocol to be able to communicate with its HAs. Angle Protocol will now have an official channel on the EPNS platform that the users of the protocol, especially HAs can subscribe to.
 
 In doing so, they benefit from direct communication from the protocol without the need for external media.
 
-*   Whenever perpetual futures near liquidation HAs are warned to re-collateralize their positions.
-*   If their position is in danger of force-closing, HAs are informed beforehand.
-*   Standard liquidity providers are informed whenever a high yielding opportunity emerges and
-*   Lastly, users are informed as to how rewards are being distributed every week.
+- Whenever perpetual futures near liquidation HAs are warned to re-collateralize their positions.
+- If their position is in danger of force-closing, HAs are informed beforehand.
+- Standard liquidity providers are informed whenever a high yielding opportunity emerges and
+- Lastly, users are informed as to how rewards are being distributed every week.
 
 As Angle Protocol strives towards revolutionizing the stablecoin space, we’re pleased to be partnering with them on this journey and hope to become an integral part of their operation.
 

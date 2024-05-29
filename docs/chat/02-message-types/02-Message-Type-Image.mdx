@@ -16,8 +16,8 @@ Enables sending a single image as a messages to the recipient. You will need to 
   <title>Message Type - Image | Push Chat | Push Documentation</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
@@ -26,9 +26,9 @@ import TabItem from "@theme/TabItem";
 // userAlice.chat.send(recipient, message)
 // This section focuses on customization parameters for 'message' object
 const aliceMessagesBob = await userAlice.chat.send(recipient, {
-  type: "Image",
+  type: 'Image',
   content:
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAvklEQVR4AcXBsW2FMBiF0Y8r3GQb6jeBxRauYRpo4yGQkMd4gg==",
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAvklEQVR4AcXBsW2FMBiF0Y8r3GQb6jeBxRauYRpo4yGQkMd4gg==',
 });
 ```
 
@@ -43,11 +43,11 @@ Push Chat also supports Image URLs (including GIFs), see [Media Embed](/docs/cha
 
 When sending a message, you can customize the following params
 
-| Param         | Type                | Subtype  | Default | Remarks                                                                                                                                                                                              |
-| ------------- | ------------------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string`            | -        | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet address, chain agnostic wallet address, NFT addresses or even chatid which is useful in groups |
-| _`message`_   | `object`            | -        | -       | Configuration for message to be sent                                                                                                                                                                 |
-| -             | _`message.type`_    | `Image`  | `Text`  | Type of message Content                                                                                                                                                                              |
-| -             | _`message.content`_ | `string` | -       | Message Content                                                                                                                                                                                      |
+| Param         | Type                | Subtype  | Default | Remarks                                                                                                                                                                                                                                            |
+| ------------- | ------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`recipient`_ | `string`            | -        | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat') including wallet address, chain agnostic wallet address, NFT addresses or even chatid which is useful in groups |
+| _`message`_   | `object`            | -        | -       | Configuration for message to be sent                                                                                                                                                                                                               |
+| -             | _`message.type`_    | `Image`  | `Text`  | Type of message Content                                                                                                                                                                                                                            |
+| -             | _`message.content`_ | `string` | -       | Message Content                                                                                                                                                                                                                                    |
 
 > Note: Parameters _`in this style`_ are mandatory.

@@ -1,19 +1,24 @@
 ---
-
 slug: how-to-build-a-real-time-analytics-dashboard-for-blockchain-transactions-with-alchemy-and-push
 title: How to Build a Real-Time Analytics Dashboard for Blockchain Transactions with Alchemy and Push 📊
 authors: [push]
 image: './cover-image.webp'
-text: "This blog post delves into building a real-time analytics dashboard for blockchain transactions using Alchemy and Push Protocol. Real-time analytics are crucial for monitoring transaction performance, tracking transaction status, and gaining insights into the overall health of a blockchain network."
-tags: [ Analytics Engineering, Web3, Web3 Development,  Blockchain Development, Blockchain Technology]
-
+text: 'This blog post delves into building a real-time analytics dashboard for blockchain transactions using Alchemy and Push Protocol. Real-time analytics are crucial for monitoring transaction performance, tracking transaction status, and gaining insights into the overall health of a blockchain network.'
+tags:
+  [
+    Analytics Engineering,
+    Web3,
+    Web3 Development,
+    Blockchain Development,
+    Blockchain Technology,
+  ]
 ---
+
 ![Cover image of How to Build a Real-Time Analytics Dashboard for Blockchain Transactions with Alchemy and Push 📊](./cover-image.webp)
+
 <!--truncate-->
 
-
 <b>TL;DR:</b> This blog post delves into building a real-time analytics dashboard for blockchain transactions using Alchemy and Push Protocol. Real-time analytics are crucial for monitoring transaction performance, tracking transaction status, and gaining insights into the overall health of a blockchain network.
-
 
 By the end of this tutorial, you’ll have learned:
 
@@ -54,9 +59,9 @@ To build the backend for your real-time analytics dashboard, follow these steps:
 - Set up a frontend web application using a framework like React, Vue, or Angular.
 - Install and configure the necessary dependencies, including the Alchemy SDK
 
-```js 
+```js
 npm install ethers @alchemy/alchemy-web3
- 
+
 npm install ethers @pushprotocol/restapi @pushprotocol/socket
 ```
 
@@ -70,10 +75,10 @@ Here is a sample workflow to integrate Alchemy:
 - Replace your Ethereum node URL with your Alchemy API endpoint
 
 ```js
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 
-const alchemyApiKey = "your_alchemy_api_key";
-const provider = new ethers.providers.AlchemyProvider("mainnet", alchemyApiKey);
+const alchemyApiKey = 'your_alchemy_api_key';
+const provider = new ethers.providers.AlchemyProvider('mainnet', alchemyApiKey);
 ```
 
 Now, we can initialize Push Protocol. Follow the [official documentation](https://push.org/docs/) for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
@@ -81,17 +86,17 @@ Now, we can initialize Push Protocol. Follow the [official documentation](https:
 Here is a sample workflow to integrate Push Protocol:
 
 ```js
-import { PushRestApiClient } from "@pushprotocol/restapi";
-import { PushSocketClient } from "@pushprotocol/socket";
+import { PushRestApiClient } from '@pushprotocol/restapi';
+import { PushSocketClient } from '@pushprotocol/socket';
 
 const pushRestApiClient = new PushRestApiClient({
- applicationId: "your_application_id",
- applicationToken: "your_application_token",
+  applicationId: 'your_application_id',
+  applicationToken: 'your_application_token',
 });
 
 const pushSocketClient = new PushSocketClient({
- applicationId: "your_application_id",
- applicationToken: "your_application_token",
+  applicationId: 'your_application_id',
+  applicationToken: 'your_application_token',
 });
 ```
 
@@ -113,24 +118,24 @@ To quickly spin up a Next.js-based Web3-ready dApp with an integrated components
 Create a function that listens to new blocks and fetches transaction data:
 
 ```js
-const { Alchemy, Network } = require("alchemy-sdk");
+const { Alchemy, Network } = require('alchemy-sdk');
 
 const alchemyConfig = {
- apiKey: "your_alchemy_api_key",
- network: Network.ETH_MAINNET,
+  apiKey: 'your_alchemy_api_key',
+  network: Network.ETH_MAINNET,
 };
 
 const alchemy = new Alchemy(alchemyConfig);
 
 async function listenToNewBlocks() {
- alchemy.core.on("block", async (getBlockNumber) => {
-   const block = await alchemy.core.getBlockWithTransactions(getBlockNumber);
-   const transactions = block.transactions;
-   // Process the transactions and update the dashboard
-   updateDashboard(transactions);
-   // Emit a real-time event through Push Protocol for connected clients
-   await pushRestApiClient.emit("transactions", { transactions });
- });
+  alchemy.core.on('block', async (getBlockNumber) => {
+    const block = await alchemy.core.getBlockWithTransactions(getBlockNumber);
+    const transactions = block.transactions;
+    // Process the transactions and update the dashboard
+    updateDashboard(transactions);
+    // Emit a real-time event through Push Protocol for connected clients
+    await pushRestApiClient.emit('transactions', { transactions });
+  });
 }
 
 listenToNewBlocks(); // Invoke the function when the application starts
@@ -151,8 +156,8 @@ Create a function to update the dashboard UI with new transaction data:
 
 ```js
 function updateDashboard(transactions) {
- // Update the dashboard UI with new transaction data
- // This will depend on the frontend framework you're using
+  // Update the dashboard UI with new transaction data
+  // This will depend on the frontend framework you're using
 }
 ```
 
@@ -161,11 +166,11 @@ function updateDashboard(transactions) {
 For clients to receive real-time transaction updates, set up a listener for the Push Protocol events:
 
 ```js
-const transactionsChannel = pushSocketClient.channel("transactions");
+const transactionsChannel = pushSocketClient.channel('transactions');
 
-transactionsChannel.on("transactions", (data) => {
- const transactions = data.transactions;
- updateDashboard(transactions);
+transactionsChannel.on('transactions', (data) => {
+  const transactions = data.transactions;
+  updateDashboard(transactions);
 });
 ```
 
@@ -197,4 +202,3 @@ We encourage you to experiment with the technology and share your experiences wi
 [Alchemy](https://alchemy.com/?r=affiliate%3A13611c66-66d2-4fc0-84c2-fc7e0aed7244) provides the leading blockchain development platform powering millions of users for 99% of countries worldwide. Our mission is to provide developers with the fundamental building blocks they need to create the future of technology and lower the barrier to entry for developers to build blockchain applications.
 
 <b><i>Sign up for a <a href="https://alchemy.com/?r=affiliate%3A13611c66-66d2-4fc0-84c2-fc7e0aed7244">free account</a>. Check out our <a href="https://docs.alchemyapi.io/">documentation</a>. For the latest news, follow us on <a href="https://twitter.com/AlchemyPlatform">Twitter</a></i></b>
-

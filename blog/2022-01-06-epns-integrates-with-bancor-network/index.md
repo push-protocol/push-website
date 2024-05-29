@@ -11,12 +11,12 @@ tags: [ Ethereum
 ,Bancor
 ,Blockchain ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Integrates With Bancor Network to Facilitate Decentralized Push Notifications](./cover-image.webp)
 
 <!--truncate-->
-
 
 Crypto exchanges, both centralized and decentralized, are an integral part of the industry and have greatly contributed to its growth. However, the current model for trading cryptocurrencies on these exchanges has its own problems. For starters, the token has to be listed on the exchange and has to cross a certain trading volume to achieve liquidity. This creates a scenario where several small-cap cryptocurrencies have no liquidity.
 
@@ -34,26 +34,24 @@ While Bancor network has had remarkable success with its vision so far, the lack
 
 This is why we’ve integrated with Bancor Network to create a reliable communication channel for the protocol and its users.
 
-What Does the Integration Entail?
-=================================
+# What Does the Integration Entail?
 
 Through this integration, we aim to equip users of Bancor with decentralized push notifications. Bancor Network will now have an official channel on EPNS that users can subscribe to. By subscribing, users get notified whenever:
 
-*   liquidity mining begins or approaches closure
-*   there are any fee changes on the platform
-*   there are new governance proposals on Snapshot
-*   new tokens are listed on the platform
+- liquidity mining begins or approaches closure
+- there are any fee changes on the platform
+- there are new governance proposals on Snapshot
+- new tokens are listed on the platform
 
 This ensures that users are always kept informed about the latest happenings in the protocol and can improve their participation significantly.
 
 As Bancor Network continues to provide DeFi with revolutionary financial products, we’re pleased to integrate with the protocol on their journey and hope to become an integral part of the protocol.
 
-About Bancor Protocol
-=====================
+# About Bancor Protocol
 
 [Bancor](https://bancor.network/) is the only decentralized staking protocol that allows you to earn money with single-token exposure and full protection from impermanent loss. Launched in 2017, Bancor was the first DeFi protocol. Today, it generates millions in fees per month for depositors, offering up to 60% APR on tokens like ETH, WBTC, LINK, MATIC, AAVE & more. Bancor is owned by its community as a decentralized autonomous organization (Bancor DAO). More resources:
 
-*   Trade, stake and earn on [bancor.network](http://app.bancor.network)
-*   [How to Provide Liquidity on Bancor](https://blog.bancor.network/how-to-stake-liquidity-earn-fees-on-bancor-bff8369274a1)
-*   Learn more: [Bancor Safe Staking](https://earn.bancor.network/safe-staking/) & [Impermanent Loss](https://earn.bancor.network/impermanent-loss/)
-*   [Getting Started](https://docs.bancor.network/getting-started/resources) & [FAQs](https://docs.bancor.network/faqs)
+- Trade, stake and earn on [bancor.network](http://app.bancor.network)
+- [How to Provide Liquidity on Bancor](https://blog.bancor.network/how-to-stake-liquidity-earn-fees-on-bancor-bff8369274a1)
+- Learn more: [Bancor Safe Staking](https://earn.bancor.network/safe-staking/) & [Impermanent Loss](https://earn.bancor.network/impermanent-loss/)
+- [Getting Started](https://docs.bancor.network/getting-started/resources) & [FAQs](https://docs.bancor.network/faqs)

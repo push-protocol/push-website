@@ -3,30 +3,33 @@ const webpack = require('webpack');
 const fs = require('fs');
 const path = require('path');
 
-
 module.exports = function (context, options) {
   // Read the file
-  const filePath = path.join(context.siteDir, '/docs/roadmap/01-Push-Roadmap.mdx');
+  const filePath = path.join(
+    context.siteDir,
+    '/docs/roadmap/01-Push-Roadmap.mdx'
+  );
 
   // Get the last modified date of the file
   const stats = fs.statSync(filePath);
   const lastUpdated = stats.mtime;
-  
+
   return {
-    name: "custom-docusaurus-plugin",
+    name: 'custom-docusaurus-plugin',
     // eslint-disable-next-line
     configureWebpack(config, isServer, utils) {
       return {
         resolve: {
           alias: {},
           fallback: {
-            assert: require.resolve("assert"),
-            http: require.resolve("stream-http"),
-            https: require.resolve("https-browserify"),
-            stream: require.resolve("stream-browserify"),
-            url: require.resolve("url"),
-            zlib: require.resolve("browserify-zlib"),
-            crypto: require.resolve("crypto-browserify"),
+            assert: require.resolve('assert'),
+            http: require.resolve('stream-http'),
+            https: require.resolve('https-browserify'),
+            stream: require.resolve('stream-browserify'),
+            url: require.resolve('url'),
+            zlib: require.resolve('browserify-zlib'),
+            crypto: require.resolve('crypto-browserify'),
+            vm: require.resolve('vm-browserify'),
           },
         },
         module: {
@@ -40,9 +43,15 @@ module.exports = function (context, options) {
           ],
         },
         plugins: [
-          new webpack.DefinePlugin({ 
-            LAST_UPDATED: JSON.stringify(lastUpdated.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }))
-          })
+          new webpack.DefinePlugin({
+            LAST_UPDATED: JSON.stringify(
+              lastUpdated.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })
+            ),
+          }),
         ],
       };
     },

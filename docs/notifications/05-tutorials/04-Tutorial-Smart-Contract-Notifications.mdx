@@ -19,9 +19,9 @@ This tutorial explains how you can integrate notifications directly in your smar
 
 ## Prerequisites
 
-- Ensure you have created your channel - [Creating your channel](/docs/notifications/tutorials/create-your-channel/ "Guide to create your channel for sending notifications from Push protocol")
-- Ensure you know what are channel delegates - [Adding channel delegates](/docs/notifications/tutorials/create-your-channel/#adding-delegates-for-channel "Guide to adding delegates for your channel")
-- Ensure you know types of notifications to know what you want to send - [Types of notifications](/docs/notifications/build/types-of-notification/ "Guide explaining the types of notifications")
+- Ensure you have created your channel - [Creating your channel](/docs/notifications/tutorials/create-your-channel/ 'Guide to create your channel for sending notifications from Push protocol')
+- Ensure you know what are channel delegates - [Adding channel delegates](/docs/notifications/tutorials/create-your-channel/#adding-delegates-for-channel 'Guide to adding delegates for your channel')
+- Ensure you know types of notifications to know what you want to send - [Types of notifications](/docs/notifications/build/types-of-notification/ 'Guide explaining the types of notifications')
 
 ## What's going to happen
 
@@ -36,7 +36,7 @@ Push protocol also supports sending notifications to user wallets directly from 
 
 The best way to do it is by creating your channel first > tweaking your smart contract with notification logic and finally adding the deployed contract address as delegate to your channel.
 
-To learn more about how to import interface and the function call of send notification, please see [send notification (via smart contract)](/docs/notifications/build/send-notification-via-smart-contract/ "Smart contract intergace to send notification").
+To learn more about how to import interface and the function call of send notification, please see [send notification (via smart contract)](/docs/notifications/build/send-notification-via-smart-contract/ 'Smart contract intergace to send notification').
 
 ### Code
 
@@ -103,6 +103,6 @@ contract Push is ERC20 {
 
 ### Add delegate
 
-The only remaining step is to deploy your contract and then go to your channel and [add the smart contract address as delegate to your channel](/docs/notifications/tutorials/create-your-channel/#adding-delegates-for-channel "Add delegate to your channel") which will allow that smart contract address to send notification on behalf of your channel.
+The only remaining step is to deploy your contract and then go to your channel and [add the smart contract address as delegate to your channel](/docs/notifications/tutorials/create-your-channel/#adding-delegates-for-channel 'Add delegate to your channel') which will allow that smart contract address to send notification on behalf of your channel.
 
 That's it! Your channel should now send notification as soon as anyone transfer your tokens from one address to the other 🎉🎉🎉!

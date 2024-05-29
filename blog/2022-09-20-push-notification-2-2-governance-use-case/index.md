@@ -3,19 +3,19 @@ slug: an-introduction-to-push-notification-part-2-2-governance-use-cases
 title: 'An Introduction to Push Notification (Part 2.2): Governance Use Cases'
 authors: [push]
 image: './cover-image.webp'
-tags: [ Pn101, Push Notification, Web3, Dao, Governance]
-text: "Effective decentralized governance requires massive coordination efforts and requires adaptable communication methods. Many on-chain governance systems have low voter turnout, which is a result of many things, one being poor user experience."
+tags: [Pn101, Push Notification, Web3, Dao, Governance]
+text: 'Effective decentralized governance requires massive coordination efforts and requires adaptable communication methods. Many on-chain governance systems have low voter turnout, which is a result of many things, one being poor user experience.'
 ---
 
-
 ![Cover image of An Introduction to Push Notification (Part 2.2): Governance Use Cases](./cover-image.webp)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # “A proposal to decrease the unbounding period, is passing with 2% in favor with two days left to vote.”<br/>
 
 Effective decentralized governance requires massive coordination efforts and requires adaptable communication methods. Many on-chain governance systems have low voter turnout, which is a result of many things, one being poor user experience.
-
 
 What if you’re a core contributor to the DAO, trusted by the DAO to uphold specific responsibilities and keep the community informed? Updates to the DAO can be transmitted over a communication channel to tell community members about the latest updates and what to look out for directly on their accounts.
 
@@ -24,6 +24,7 @@ Web3 communities must start to limit their dependence on platforms like Discord 
 As a core contributor to a DAO, who the members trust to uphold specific responsibilities, you can keep members informed in real time. Some fallbacks can be implemented, as dapps can immediately notify users of potentially malicious behavior of a core contributor or representative of the DAO based on that individual’s on-chain events. Imagine how many incidents EPNS can prevent with a simple communication channel integration.
 
 ## A Communication Layer Empowers Decentralized Creativity
+
 We’ve heard it a few times — web3 needs push notifications; end users and developers need communication and a way to create awareness about important information: EPNS? We hope EPNS can serve as a public good for messaging, but a communication layer for web3 sparks more innovation and solves a significant user experience problem.
 
 A creator economy with poor user experience is unsustainable, and creators should not operate in isolation; they should be able to communicate with other creators and build an ecosystem where everyone can push important information directly to the creator’s interface.
@@ -31,11 +32,12 @@ A creator economy with poor user experience is unsustainable, and creators shoul
 Governance in web3 is not meant to operate on Discord, Telegram, Slack, or depend on social channels outside. In many ways, this seems counter-intuitive. Imagine if a project runs an ambassador program but only depends on Discord. The project can integrate EPNS and create program-specific channels for program members to push messages over, like an ambassador communication channel that allows ambassadors to curate communication efforts to end-users and other ambassadors. DAO updates can also benefit, as the EPNS communication layer addresses many coordination issues in generating awareness and supporting end-users.
 
 ## What Happened Around Me Today?
+
 Most of us may be surprised to learn about the amount of new policies (including policy changes) introduced in our governance systems. Beyond news outlets (including journalist activities), the reality of governance systems in the real world is that there isn’t a standard or format for notifying the general public about changes directly from the information source unless citizens manually look for them.
 
 Still, governance workers (like politicians) may keep their constituents up-to-date with push notifications via email, SMS, or even social media channels, but this depends on the politician and the medium they choose for communication. The news tends to focus on significant changes, but the risk is that they could be censoring information and likely have a bias. We are establishing a piece of software that addresses these pitfalls.
 
-What happened in web3? Well, DeFi solutions across web3 continue to integrate with EPNS to alleviate the friction with their end-users and fill the communication gap. An example of this is 
+What happened in web3? Well, DeFi solutions across web3 continue to integrate with EPNS to alleviate the friction with their end-users and fill the communication gap. An example of this is
 [Bancor](https://medium.com/u/2bd55d9e5fb5?source=post_page-----1ea1e0a58ce1--------------------------------), which we mentioned in [Part 2.1](https://medium.com/ethereum-push-notification-service/loan-update-high-utilization-or-low-liquidity-please-check-your-position-fe917fe7c193?postPublishedType=repub). DeFi proposals to the Bancor protocol can be game-changing, and users should have a mechanism to know about them!
 
 ![Communication Channel](./image-1.webp)
@@ -55,5 +57,3 @@ Stay up-to-date with EPNS through [Twitter](https://twitter.com/epnsproject), [T
 And stay tuned for the subsequent use case article on NFTs and the Metaverse!
 
 <i>By Danny Salman</i>
-
-

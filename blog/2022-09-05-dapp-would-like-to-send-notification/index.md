@@ -9,22 +9,25 @@ tags: [Push Notification, Web3, Blockchain, Blockchain Development, Pn101]
 ---
 
 ![Cover image of ‘My Dapp’ Would Like to Send You Push Notifications](./cover-image.webp)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # An Introduction to Push Notification: Part 1.2<br/>
 
 In [Part 1.1](https://medium.com/ethereum-push-notification-service/my-app-would-like-to-send-you-push-notifications-4b591a68f803), we introduced modern push technology, which consists of these primary components: an app publisher who publishes information by notifications, a client who is the receiver of notifications based on a subscription, and the push notification provider who acts as middleware between these two actors.
 
-
 Middleware is software that acts as an intermediary between two applications or services. Middleware also provides services that are not present in the operating system. The push notification service provider is an example of this, known as an operating system push notification service (OSPNS). For instance, the Apple Push Notification Service (APNS) lives on iPhone devices as an OSPNS middleware software.
 
 ## Taking the Push Notification Provider Away From the Notifications
+
 Web3 moves away from the traditional client-server model and alleviates today’s power concentration over the control and truth of information and data. Web3 attempts to take service providers away from services, where middleware becomes trustless software (but can still be trustful) that offers security guarantees and robust communication through decentralization. Web3 also attempts to reconfigure how we monetize things in society and redirect incentives to where they should go, users, participants, communities, and those generating value.
 
 Addressing the limitations of push technology while utilizing its features in the next iteration of the web requires an OSPNS-like piece of middleware. There needs to be a similar layer of abstraction and push technology primitives that allow notifications to create a web3-based OSPNS.
 
 ## Enter Web3 Push Notifications
+
 [The Ethereum Push Notification Service (EPNS)](https://epns.io/): a decentralized OSPNS for push notifications; the open communication layer for web3.
 
 ![Project Stacks](./image-1.webp)
@@ -59,5 +62,3 @@ This is what EPNS had the pleasure of doing in early 2021 — integrating with U
 The information required to notify users about different web3 events is complex and requires massive infrastructure efforts, which is another reason EPNS started. EPNS is also a demonstration of how to scale services and implement solutions in a modular way, as developers can easily build dapps with EPNS. Before diving into the communication layer itself, including how communication channels and messaging work with EPNS, how the publish/subscribe model fits into web3, and understanding EPNS under the hood, we will attempt to make the case by using web3 push notifications for different use cases and the need for a web3 communication layer in Part 2.
 
 <i>By Danny Salman</i>
-
-

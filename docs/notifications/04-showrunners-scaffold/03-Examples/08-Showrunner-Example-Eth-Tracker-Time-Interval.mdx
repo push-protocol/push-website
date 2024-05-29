@@ -10,7 +10,7 @@ image: "/assets/docs/previews/docs_slider_settings_with_eth_tracker_showrunners_
 
 # Slider Notification Settings in Showrunners
 
-This example is intended to get you understand slider based notification settings with a real-world application. For the example we are going to look at a scenario where users can choose a time interval and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"), [Showrunners Framework](https://github.com/push-protocol/push-showrunners-framework/tree/main "Push Showrunners Github"), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/ "Push Channel Settings Docs") and [Channel Settings Demo](https://github.com/push-protocol/push-showrunners-framework/tree/main/src/sample_showrunners/bank "Channel Settings Example Github") for better understanding!
+This example is intended to get you understand slider based notification settings with a real-world application. For the example we are going to look at a scenario where users can choose a time interval and showrunners framework will notify them as per their request. Checkout [Showrunners Docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ 'Push Showrunners Docs'), [Showrunners Framework](https://github.com/push-protocol/push-showrunners-framework/tree/main 'Push Showrunners Github'), [Channel Settings Docs](https://push.org/docs/notifications/build/create-channel-settings/ 'Push Channel Settings Docs') and [Channel Settings Demo](https://github.com/push-protocol/push-showrunners-framework/tree/main/src/sample_showrunners/bank 'Channel Settings Example Github') for better understanding!
 
 <head>
   <title>
@@ -18,20 +18,20 @@ This example is intended to get you understand slider based notification setting
   </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## What we gonna build?
 
 Imagine you are a crypto trader or a general crypto enthusiast. You want to be notified every once in a while about the price movements and activities in the market. But you either lose track of time or forget about it. To solve this exact problem, we will be looking into a slider type notification settings implementation where you as a user can specify the time interval after which you would like to get notified.
 
-We will choose the [Eth Tracker](https://github.com/push-protocol/push-showrunners-channels/tree/wallet-tracker/Staging_channels/ethTicker "Push Channel Eth Tracker") channel to demonstrate this example.
+We will choose the [Eth Tracker](https://github.com/push-protocol/push-showrunners-channels/tree/wallet-tracker/Staging_channels/ethTicker 'Push Channel Eth Tracker') channel to demonstrate this example.
 
 ## Creating Eth Tracker in Showrunners
 
 ### Step 1: Setup the Showrunners in your local machine
 
-For detailed, step-by-step guide visit the Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"). First we need to create a folder in `src/showrunners/<your_channel_name>`
+For detailed, step-by-step guide visit the Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ 'Push Showrunners Docs'). First we need to create a folder in `src/showrunners/<your_channel_name>`
 
 ### Step 2: Install Dependencies & start up
 
@@ -46,13 +46,13 @@ yarn run dev
 
 ### Step 3: Import the Push SDK
 
-After you have created a channel folder. Refer to Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ "Push Showrunners Docs"). Move to the [name]Channel.ts file and import the dependencies.
+After you have created a channel folder. Refer to Showrunners [docs](https://push.org/docs/notifications/showrunners-scaffold/get-started/ 'Push Showrunners Docs'). Move to the [name]Channel.ts file and import the dependencies.
 
 ```jsx
-import { PushAPI } from "@pushprotocol/restapi";
+import { PushAPI } from '@pushprotocol/restapi';
 ```
 
-#### [Channel File](https://github.com/push-protocol/push-showrunners-framework/blob/main/src/sample_showrunners/bank/bankChannel.ts "Eth Tracker Channel Github")
+#### [Channel File](https://github.com/push-protocol/push-showrunners-framework/blob/main/src/sample_showrunners/bank/bankChannel.ts 'Eth Tracker Channel Github')
 
 In order to send notification, we need to have the instance of the user channel. To get that, we need to add the below function in our 'Channel class'
 .
@@ -71,41 +71,41 @@ Let's get to building it.
 
 ### Fetch subscribers data
 
-To fetch a list of all users who have opted into receiving notifications along with their opted value from `userAlice`, you can use the `subscribers` method. You can read about this method in detail [here](https://push.org/docs/notifications/build/manage-channel/#get-channel-subscribers-api "Channel Settings Docs").
+To fetch a list of all users who have opted into receiving notifications along with their opted value from `userAlice`, you can use the `subscribers` method. You can read about this method in detail [here](https://push.org/docs/notifications/build/manage-channel/#get-channel-subscribers-api 'Channel Settings Docs').
 
- ```jsx
+```jsx
 
 const userData: any = await userAlice.channel.subscribers({
-    page: i,
-    limit: 10,
-    setting: true,
-  });
+   page: i,
+   limit: 10,
+   setting: true,
+ });
 
-// Output :   
+// Output :
 {
-  "itemcount": 5,
-  "subscribers": [
-    {
-      "subscriber": "0x279c00e16c638a752ea42ae5e09db3c3992f70ad",
-      "settings": "[{\"type\": 2, \"user\": 8, \"index\": 1, \"ticker\": 1, \"default\": 1, \"enabled\": true, \"lowerLimit\": 1, \"upperLimit\": 10, \"description\": \"Price Range\"}]"
-    },
-    {
-      "subscriber": "0x49403ae592c82fc3f861cd0b9738f7524fb1f38c",
-      "settings": "[{\"type\": 2, \"user\": 1, \"index\": 1, \"ticker\": 1, \"default\": 1, \"enabled\": true, \"lowerLimit\": 1, \"upperLimit\": 10, \"description\": \"Price Range\"}]"
-    },
-    {
-      "subscriber": "0x71ffa5771e8019787190d098586efe02026a3c8c",
-      "settings": "[{\"type\": 2, \"user\": 2, \"index\": 1, \"ticker\": 1, \"default\": 1, \"enabled\": true, \"lowerLimit\": 1, \"upperLimit\": 10, \"description\": \"Price Range\"}]"
-    },
-    {
-      "subscriber": "0x7a45f2e84055b0c79696c9533c97a4b21dee30d3",
-      "settings": "[{\"type\": 2, \"user\": 2, \"index\": 1, \"ticker\": 1, \"default\": 1, \"enabled\": true, \"lowerLimit\": 1, \"upperLimit\": 10, \"description\": \"Price Range\"}]"
-    },
-    {
-      "subscriber": "0xc1836ce1eb918cfc8e9acab71ce9c6e1ebe0dff0",
-      "settings": "[{\"type\": 2, \"user\": 7, \"index\": 1, \"ticker\": 1, \"default\": 1, \"enabled\": true, \"lowerLimit\": 1, \"upperLimit\": 10, \"description\": \"Price Range\"}]"
-    }
-  ]
+ "itemcount": 5,
+ "subscribers": [
+   {
+     "subscriber": "0x279c00e16c638a752ea42ae5e09db3c3992f70ad",
+     "settings": "[{\"type\": 2, \"user\": 8, \"index\": 1, \"ticker\": 1, \"default\": 1, \"enabled\": true, \"lowerLimit\": 1, \"upperLimit\": 10, \"description\": \"Price Range\"}]"
+   },
+   {
+     "subscriber": "0x49403ae592c82fc3f861cd0b9738f7524fb1f38c",
+     "settings": "[{\"type\": 2, \"user\": 1, \"index\": 1, \"ticker\": 1, \"default\": 1, \"enabled\": true, \"lowerLimit\": 1, \"upperLimit\": 10, \"description\": \"Price Range\"}]"
+   },
+   {
+     "subscriber": "0x71ffa5771e8019787190d098586efe02026a3c8c",
+     "settings": "[{\"type\": 2, \"user\": 2, \"index\": 1, \"ticker\": 1, \"default\": 1, \"enabled\": true, \"lowerLimit\": 1, \"upperLimit\": 10, \"description\": \"Price Range\"}]"
+   },
+   {
+     "subscriber": "0x7a45f2e84055b0c79696c9533c97a4b21dee30d3",
+     "settings": "[{\"type\": 2, \"user\": 2, \"index\": 1, \"ticker\": 1, \"default\": 1, \"enabled\": true, \"lowerLimit\": 1, \"upperLimit\": 10, \"description\": \"Price Range\"}]"
+   },
+   {
+     "subscriber": "0xc1836ce1eb918cfc8e9acab71ce9c6e1ebe0dff0",
+     "settings": "[{\"type\": 2, \"user\": 7, \"index\": 1, \"ticker\": 1, \"default\": 1, \"enabled\": true, \"lowerLimit\": 1, \"upperLimit\": 10, \"description\": \"Price Range\"}]"
+   }
+ ]
 }
 ```
 
@@ -182,14 +182,14 @@ Design your own payload with custom values in the when you want to trigger notif
 ```jsx
 const payload = {
   notification: {
-    title: "Title",
-    body: "Notif Body",
+    title: 'Title',
+    body: 'Notif Body',
   },
   payload: {
-    title: "Title",
-    body: "Payload body",
-    cta: "https://google.com/",
-    embed: "https://avatars.githubusercontent.com/u/64157541?s=200&v=4",
+    title: 'Title',
+    body: 'Payload body',
+    cta: 'https://google.com/',
+    embed: 'https://avatars.githubusercontent.com/u/64157541?s=200&v=4',
     // index of the notification the channel wants to trigger, in this for 1nd index which is for Boolean type
     category: 1, // Depending upon your use-case
   },

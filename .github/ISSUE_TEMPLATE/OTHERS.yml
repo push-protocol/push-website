@@ -1,12 +1,12 @@
 name: Other Issue
 description: Report a general issue.
-title: "[Issue]: issue title"
+title: '[Issue]: issue title'
 labels: [issue]
 
 body:
   - type: markdown
     attributes:
-      value: "## Before you continue, please search our open/closed issues to see if a similar issue has been reported."
+      value: '## Before you continue, please search our open/closed issues to see if a similar issue has been reported.'
 
   - type: checkboxes
     attributes:

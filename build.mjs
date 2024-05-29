@@ -1,14 +1,14 @@
-import chalk from "chalk";
-import fs from "fs";
-import Jimp from "jimp";
-import path from "path";
-import readline from "readline";
-import { fileURLToPath } from "url";
+import chalk from 'chalk';
+import fs from 'fs';
+import Jimp from 'jimp';
+import path from 'path';
+import readline from 'readline';
+import { fileURLToPath } from 'url';
 
 // Define the starting directory
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const docsDirectory = path.join(__dirname, "/docs");
-const ogPreviewDirectory = path.join(__dirname, "static/assets/docs/previews");
+const docsDirectory = path.join(__dirname, '/docs');
+const ogPreviewDirectory = path.join(__dirname, 'static/assets/docs/previews');
 const ogDirectory = __dirname;
 
 // Function to recursively read directories and files
@@ -24,7 +24,7 @@ function walkDirectory(currentDirPath, callback) {
 
       if (stat.isFile()) {
         // Check if the file is an .mdx file before executing the callback
-        if (path.extname(filePath) === ".mdx") {
+        if (path.extname(filePath) === '.mdx') {
           callback(filePath, stat);
         }
       } else if (stat.isDirectory()) {
@@ -46,7 +46,7 @@ function extractFrontMatter(content) {
   const frontMatter = {};
 
   while ((result = keyValueRegex.exec(match[0])) !== null) {
-    frontMatter[result[1]] = result[2].replace(/['"]/g, "").trim();
+    frontMatter[result[1]] = result[2].replace(/['"]/g, '').trim();
   }
 
   return frontMatter;
@@ -54,10 +54,10 @@ function extractFrontMatter(content) {
 
 async function checkFileContent(filePath) {
   // Read the file content
-  const content = fs.readFileSync(filePath, "utf8");
+  const content = fs.readFileSync(filePath, 'utf8');
 
   // Extract the front matter block
-  const frontMatterEndIndex = content.indexOf("---", 4); // Find the end of the front matter block
+  const frontMatterEndIndex = content.indexOf('---', 4); // Find the end of the front matter block
 
   if (frontMatterEndIndex === -1) {
     console.log(chalk.yellow(`No front matter found in file: ${filePath}`));
@@ -73,21 +73,21 @@ async function checkFileContent(filePath) {
   if (metadata && metadata.title && metadata.image) {
     // Transform title to expected image name format: lowercase with underscores
     const expectedImageName =
-      metadata.title.toLowerCase().split(" ").join("_") + ".webp"; // Assuming the extension is always .webp
+      metadata.title.toLowerCase().split(' ').join('_') + '.webp'; // Assuming the extension is always .webp
 
     // Extract the actual image file name from the path
     const actualImageName = metadata.image
-      .split("/")
+      .split('/')
       .pop()
-      .replace(/['"]+/g, "");
+      .replace(/['"]+/g, '');
 
     // Compare actual image file name with expected name
     if (actualImageName !== expectedImageName) {
       console.log(chalk.red(`Mismatch found in file: ${filePath}`));
       console.log(
         chalk.red(
-          `Expected image name: '${expectedImageName}', found: '${actualImageName}'`,
-        ),
+          `Expected image name: '${expectedImageName}', found: '${actualImageName}'`
+        )
       );
       await generateFilePreview(filePath); // Call your function here
     }
@@ -95,8 +95,8 @@ async function checkFileContent(filePath) {
     // Case where either 'image' or 'title' metadata is not found
     console.log(
       chalk.yellow(
-        `Required metadata (title or image) not found in file: ${filePath}`,
-      ),
+        `Required metadata (title or image) not found in file: ${filePath}`
+      )
     );
     await generateFilePreview(filePath); // Call your function here
   }
@@ -113,7 +113,7 @@ async function generateFilePreview(filePath) {
   console.log(chalk.blue(`Generating file preview for: ${filePath}`));
 
   // Read the MDX content
-  let content = fs.readFileSync(filePath, "utf8");
+  let content = fs.readFileSync(filePath, 'utf8');
 
   // Extract the front matter from the MDX content
   let title;
@@ -127,13 +127,13 @@ async function generateFilePreview(filePath) {
   const titleMatch = frontMatterMatch[0].match(titleRegex);
   if (!titleMatch) return;
 
-  const rawTitle = titleMatch[1].trim().replace(/['"]/g, ""); // Remove any single or double quotes
+  const rawTitle = titleMatch[1].trim().replace(/['"]/g, ''); // Remove any single or double quotes
   let rawTitleFormatted = rawTitle;
-  rawTitleFormatted = rawTitle.replaceAll("(", "");
-  rawTitleFormatted = rawTitleFormatted.replaceAll(")", "");
+  rawTitleFormatted = rawTitle.replaceAll('(', '');
+  rawTitleFormatted = rawTitleFormatted.replaceAll(')', '');
 
   // Infer id from title
-  const inferredId = rawTitleFormatted.toLowerCase().replace(/\s+/g, "-");
+  const inferredId = rawTitleFormatted.toLowerCase().replace(/\s+/g, '-');
 
   // Extract id value from the front matter
   const idRegex = /id:\s*(.*?)(\n|$)/;
@@ -142,13 +142,13 @@ async function generateFilePreview(filePath) {
   if (idMatch) {
     const id = idMatch[1]
       .trim()
-      .replace(/['"]/g, "")
-      .replace(inferredId, "")
-      .replace(/^-|-$/g, "")
-      .replace(/-/g, "_");
+      .replace(/['"]/g, '')
+      .replace(inferredId, '')
+      .replace(/^-|-$/g, '')
+      .replace(/-/g, '_');
     if (id) {
       // If there's extra content in 'id' after removing the inferred ID, prepend it to the title
-      title = id + "--" + rawTitle;
+      title = id + '--' + rawTitle;
     } else {
       title = rawTitle;
     }
@@ -157,9 +157,9 @@ async function generateFilePreview(filePath) {
   }
 
   // Construct image path
-  const imageName = `${title.toLowerCase().split(" ").join("_")}.png`;
-  const assetLocation = "/static/assets/docs/previews";
-  const assetDocLocation = "/assets/docs/previews";
+  const imageName = `${title.toLowerCase().split(' ').join('_')}.png`;
+  const assetLocation = '/static/assets/docs/previews';
+  const assetDocLocation = '/assets/docs/previews';
 
   const previewDirectory = ogDirectory + assetLocation;
   const imagePath = path.join(previewDirectory, imageName);
@@ -171,7 +171,7 @@ async function generateFilePreview(filePath) {
   }
 
   // Extract front matter
-  const frontMatterEndIndex = content.indexOf("---", 4);
+  const frontMatterEndIndex = content.indexOf('---', 4);
   const frontMatter = content.slice(0, frontMatterEndIndex);
 
   // Check if image tag exists
@@ -191,21 +191,21 @@ async function generateFilePreview(filePath) {
       content.slice(0, position),
       imageTag,
       content.slice(position),
-    ].join("");
+    ].join('');
     fs.writeFileSync(filePath, content);
   }
 }
 
 function wrapText(font, text, maxTextWidth) {
-  const words = text.split(" ");
+  const words = text.split(' ');
   let lines = [];
   let currentLine = words[0];
 
   for (let i = 1; i < words.length; i++) {
     const word = words[i];
-    const width = Jimp.measureText(font, currentLine + " " + word);
+    const width = Jimp.measureText(font, currentLine + ' ' + word);
     if (width < maxTextWidth) {
-      currentLine += " " + word;
+      currentLine += ' ' + word;
     } else {
       lines.push(currentLine);
       currentLine = word;
@@ -220,7 +220,7 @@ async function generatePNGImage(imagePath, title) {
   console.log(chalk.magenta(`Generating PNG image for: ${imagePath}`));
 
   const templatePreviewImagePath =
-    ogDirectory + "/static/assets/docs/templatepreview/docsPreviewThumnail.png";
+    ogDirectory + '/static/assets/docs/templatepreview/docsPreviewThumnail.png';
   const mainFont = Jimp.FONT_SANS_64_BLACK;
 
   const image = await Jimp.read(templatePreviewImagePath);
@@ -230,18 +230,18 @@ async function generatePNGImage(imagePath, title) {
   let mainTitle = title;
   let subTitle = null;
 
-  if (title.includes("--")) {
-    const parts = title.split("--", 2);
+  if (title.includes('--')) {
+    const parts = title.split('--', 2);
     subTitle = parts[0];
     mainTitle = parts[1];
   }
 
-  if (subTitle && subTitle.includes("_")) {
+  if (subTitle && subTitle.includes('_')) {
     // Convert # to : for the top left title
-    let formattedSubTitle = subTitle.replace(/_/g, ":");
-    formattedSubTitle = formattedSubTitle.replaceAll("::", ":");
-    formattedSubTitle = formattedSubTitle.replaceAll(":", "/");
-    formattedSubTitle = formattedSubTitle.replaceAll("/section", "");
+    let formattedSubTitle = subTitle.replace(/_/g, ':');
+    formattedSubTitle = formattedSubTitle.replaceAll('::', ':');
+    formattedSubTitle = formattedSubTitle.replaceAll(':', '/');
+    formattedSubTitle = formattedSubTitle.replaceAll('/section', '');
 
     // load font
     const subFont = Jimp.FONT_SANS_32_BLACK;
@@ -253,7 +253,7 @@ async function generatePNGImage(imagePath, title) {
       if (err) throw err;
     });
     overlayImage.print(loadedSubFont, 30, 30, formattedSubTitle);
-    overlayImage.color([{ apply: "xor", params: ["#cf3fad"] }]);
+    overlayImage.color([{ apply: 'xor', params: ['#cf3fad'] }]);
 
     // Print the subTitle (top left corner)
     image.blit(overlayImage, 0, 0);
@@ -262,13 +262,13 @@ async function generatePNGImage(imagePath, title) {
   let lines = wrapText(loadedMainFont, mainTitle, maxTextWidth);
   const totalHeight = Jimp.measureTextHeight(
     loadedMainFont,
-    lines.join("\n"),
-    maxTextWidth,
+    lines.join('\n'),
+    maxTextWidth
   );
 
   // Starting Y coordinate to make the block of text vertically centered
   const yStart = (image.bitmap.height - totalHeight) / 2;
-  const lineHeight = Jimp.measureTextHeight(loadedMainFont, "M"); // Approximating line height using letter "M"
+  const lineHeight = Jimp.measureTextHeight(loadedMainFont, 'M'); // Approximating line height using letter "M"
 
   let yOffset = 0;
 
@@ -280,12 +280,12 @@ async function generatePNGImage(imagePath, title) {
   }
 
   image.write(imagePath);
-  console.log("Image generated with title:", title);
+  console.log('Image generated with title:', title);
 }
 
 // Prep for deployment starts everything
 const prepForDeployment = async (appEnv) => {
-  console.log(chalk.green("Starting Custom Deployment Prebuild..."));
+  console.log(chalk.green('Starting Custom Deployment Prebuild...'));
 
   clearDirectory(ogPreviewDirectory);
 

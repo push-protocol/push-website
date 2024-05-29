@@ -49,7 +49,7 @@ export const ShowcaseList = {
           opacity: '0',
           class: 'showcaseItem',
         },
-      ]
+      ],
     },
     mid: {
       upper: [
@@ -91,7 +91,7 @@ export const ShowcaseList = {
           opacity: '1',
           class: 'showcaseItem',
         },
-      ]
+      ],
     },
     right: {
       upper: [
@@ -142,8 +142,8 @@ export const ShowcaseList = {
           opacity: '1',
           class: 'showcaseItem',
         },
-      ]
-    }
+      ],
+    },
   },
   bottom: {
     left: {
@@ -195,7 +195,7 @@ export const ShowcaseList = {
           opacity: '0',
           class: 'showcaseItem',
         },
-      ]
+      ],
     },
     mid: {
       upper: [
@@ -237,7 +237,7 @@ export const ShowcaseList = {
           opacity: '1',
           class: 'showcaseItem',
         },
-      ]
+      ],
     },
     right: {
       upper: [
@@ -288,8 +288,8 @@ export const ShowcaseList = {
           opacity: '0',
           class: 'showcaseItem',
         },
-      ]
-    }
+      ],
+    },
   },
   left: {
     left: {
@@ -314,7 +314,7 @@ export const ShowcaseList = {
           opacity: '0',
           class: 'showcaseItem',
         },
-      ]
+      ],
     },
     right: {
       upper: [
@@ -338,8 +338,8 @@ export const ShowcaseList = {
           opacity: '1',
           class: 'showcaseItem',
         },
-      ]
-    }
+      ],
+    },
   },
   right: {
     left: {
@@ -364,7 +364,7 @@ export const ShowcaseList = {
           opacity: '1',
           class: 'showcaseItem',
         },
-      ]
+      ],
     },
     right: {
       upper: [
@@ -388,10 +388,10 @@ export const ShowcaseList = {
           opacity: '1',
           class: 'showcaseItem',
         },
-      ]
-    }
-  }
-}
+      ],
+    },
+  },
+};
 
 export const ShowcaseResponsiveList = {
   top: [
@@ -509,8 +509,8 @@ export const ShowcaseResponsiveList = {
       height: '96px',
       class: '',
     },
-  ]
-}
+  ],
+};
 
 // Additional showcase list
 // [

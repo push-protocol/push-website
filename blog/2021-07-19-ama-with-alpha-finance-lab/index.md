@@ -11,6 +11,7 @@ tags: [ Ama
 ,Blockchain
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of AMA with Alpha Finance Lab](./cover-image.webp)
@@ -30,15 +31,15 @@ _Find the AMA transcript below:_
 
 **Host:** Dantes Stan
 
-**DANTES STAN**: Hi @tascha\_panpan.👋 Welcome to the EPNS Community! It is a pleasure to have you with us today.
+**DANTES STAN**: Hi @tascha_panpan.👋 Welcome to the EPNS Community! It is a pleasure to have you with us today.
 
 **TASCHA PANPAN**: Hi everyone! Glad to be here.
 
-**DANTES STAN**: Before we start, could you please introduce yourself and go over your background so everyone here gets to know you better @tascha\_panpan?
+**DANTES STAN**: Before we start, could you please introduce yourself and go over your background so everyone here gets to know you better @tascha_panpan?
 
 **TASCHA PANPAN**: Sure thing. I’m Co-Founder and CEO of Alpha Finance Lab. Previously, I was head of strategy at Band Protocol, product manager at Tencent, and originally an investment banker in traditional finance. Graduated from UC Berkeley, so go Bears!
 
-**DANTES STAN**: Impressive stuff @tascha\_panpan!!
+**DANTES STAN**: Impressive stuff @tascha_panpan!!
 
 **TASCHA PANPAN**: Done.
 
@@ -139,13 +140,13 @@ Additionally, if EPNS can notify any DeFi user when there is a spike in lending 
 
 Done.
 
-**DANTES STAN**: Amazing, Thank you for your answers @tascha\_panpan! We will now move to the last round which is a Live Q/A session.
+**DANTES STAN**: Amazing, Thank you for your answers @tascha_panpan! We will now move to the last round which is a Live Q/A session.
 
 Since we announced the ALPHA Finance Lab x EPNS AMA, the excitement in our community has really increased. It’s time to give them a chance to ask their questions. I can’t wait to see what they have in their fridge 😅
 
 Dear Community, get ready to shoot all your Questions! 🚀
 
-I will UNMUTE the group soon and @tascha\_panpan will pick and answer as many questions as possible but only participants with the BEST questions will be selected as winners at the end of the AMA.
+I will UNMUTE the group soon and @tascha_panpan will pick and answer as many questions as possible but only participants with the BEST questions will be selected as winners at the end of the AMA.
 
 Are you all ready?
 
@@ -161,17 +162,17 @@ Are you all ready?
 
 Our chat is on MUTE again. We have got the last set of Questions from community members.
 
-How’s the response @tascha\_panpan? haha
+How’s the response @tascha_panpan? haha
 
 **TASCHA PANPAN**: How many should I select to answer?
 
 **DANTES STAN**: You can pick and answer the BEST Questions, any number you want to Answer. 10 is fine 🙂
 
 > **_XPERIA_**_: Hi!_
-> 
+>
 > _What is Alpha Homora V1 and V2? How do they work and how will users get benefits of this features? What are the differences?_
-> 
-> _@tascha\_panpan_
+>
+> _@tascha_panpan_
 
 **TASCHA PANPAN**: I definitely cannot not answer the first question, impressive to be the first one sending from all the questions submitted here.
 
@@ -195,9 +196,9 @@ He’s worked in multiple areas and developed a number of tech before co-foundin
 
 **TASCHA PANPAN:** Assuming you have no ALPHA at all, you can earn ALPHA by doing 2 things.
 
-1) Lend ETH, USDT, USDC, or DAI on Alpha Homora V2: [https://homora-v2.alphafinance.io/.](https://homora-v2.alphafinance.io/) Apart from the lending interest rate, you will also get ALPHA.
+1. Lend ETH, USDT, USDC, or DAI on Alpha Homora V2: [https://homora-v2.alphafinance.io/.](https://homora-v2.alphafinance.io/) Apart from the lending interest rate, you will also get ALPHA.
 
-2) Leverage yield farm of more than 1x leverage on Alpha Homora V2.
+2. Leverage yield farm of more than 1x leverage on Alpha Homora V2.
 
 For more details on leverage yield farm and a step-by-step guide, you can check here: [https://alphafinancelab.gitbook.io/alpha-homora-v2/tbd-overview-of-alpha-homora-v2-dapp](https://alphafinancelab.gitbook.io/alpha-homora-v2/tbd-overview-of-alpha-homora-v2-dapp)
 
@@ -205,11 +206,11 @@ Once you have ALPHA, you can stake them on Alpha Tokenomics and that is where yo
 
 By staking ALPHA you will get
 
-1) ALPHA (this is not minted, but this is the protocol fees Alpha products have collected and we are distributing the fees to ALPHA stakers).
+1. ALPHA (this is not minted, but this is the protocol fees Alpha products have collected and we are distributing the fees to ALPHA stakers).
 
-2) Incubated projects tokens. Since we created the Alpha Launchpad incubator program, we make sure the incubated projects bring value to the ALPHA stakers by distributing a portion of their tokens to ALPHA stakers. For instance, Beta Finance, which is the first Alpha Launchpad incubated project, they are going to distribute a portion of BETA token when they launch to ALPHA stakers as well.
+2. Incubated projects tokens. Since we created the Alpha Launchpad incubator program, we make sure the incubated projects bring value to the ALPHA stakers by distributing a portion of their tokens to ALPHA stakers. For instance, Beta Finance, which is the first Alpha Launchpad incubated project, they are going to distribute a portion of BETA token when they launch to ALPHA stakers as well.
 
-3) Down the line, you will also earn incubated projects’ protocol fees (selected projects) as well.
+3. Down the line, you will also earn incubated projects’ protocol fees (selected projects) as well.
 
 All of these are earned by simply staking ALPHA.
 
@@ -239,15 +240,15 @@ More details about the Alpha Grant Program here: [https://alphafinancelab.gitboo
 
 **TASCHA PANPAN**: Yes, we have implemented a number of things on this front to ensure top security for all Alpha products.
 
-1) Multiple audits by top security audit firms
+1. Multiple audits by top security audit firms
 
-2) Continuous peer reviews by trusted and the most respected security researchers in the space
+2. Continuous peer reviews by trusted and the most respected security researchers in the space
 
-3) Continuous internal reviews
+3. Continuous internal reviews
 
-4) Internal monitoring tools
+4. Internal monitoring tools
 
-5) Active bug bounty program with Immunefi
+5. Active bug bounty program with Immunefi
 
 > **_HOA VAN_**_: I see your project Alpha developing many products! This is an advantage being able to meet most of the user’s needs! However, does developing multiple products make it difficult to manage? How do you guarantee the quality of all the products in Alpha?_
 
@@ -273,7 +274,7 @@ More details about the Alpha Grant Program here: [https://alphafinancelab.gitboo
 
 Done.
 
-**DANTES STAN**: Thank you for your insightful answers, @tascha\_panpan. We highly appreciate it and this ends the last round of our AMA. 💪
+**DANTES STAN**: Thank you for your insightful answers, @tascha_panpan. We highly appreciate it and this ends the last round of our AMA. 💪
 
 **TASCHA PANPAN**: Thank you Dantes and everyone in the EPNS community!
 
@@ -291,7 +292,7 @@ We will announce segment 3 winners within 4 days on our announcement channel. �
 
 Subscribe to @epnsprojectnews
 
-That’s it for our AMA guest. Let me thank @tascha\_panpan, Co-founder at Alpha Finance Labs for joining our chat group today and sharing insights on the project.
+That’s it for our AMA guest. Let me thank @tascha_panpan, Co-founder at Alpha Finance Labs for joining our chat group today and sharing insights on the project.
 
 On behalf of the entire EPNS team and community we wish you and your team great success.
 

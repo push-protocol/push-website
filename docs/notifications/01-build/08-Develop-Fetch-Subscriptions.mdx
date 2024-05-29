@@ -13,19 +13,20 @@ image: "/assets/docs/previews/docs_notifications_develop--fetch_subscriptions.pn
 These APIs are useful for fetching list of all channels subscribed by a user and their settings (if any).
 
 <head>
-  <title>{"Fetch Subscriptions | Push Notifications | Push Documentation"}
+  <title>
+    {`Fetch Subscriptions | Push Notifications | Push Documentation`}
   </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import Details from "@theme/Details";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AFocus,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 ## Fetch subscriptions API
 
@@ -49,7 +50,7 @@ const aliceSubscriptions = await userAlice.notification.subscriptions();
 | `options` | `object`          | -        | -       | An object containing additional options for subscriptions                                                                                                                                                        |
 | -         | `options.account` | `string` | -       | [Account supports a number of address format](/docs/notifications/important-concepts/#types-of-supported-wallet-address-account) including wallet addresses, chain agnostic wallet addresses, NFT addresses, etc |
 | -         | `options.page`    | `number` | -       | A number representing the page of results to retrieve.                                                                                                                                                           |
-| -         | `options.limit`   | `number` | -       | Represents the maximum number of subscriptions to retrieve per page                                                                                                                                               |
+| -         | `options.limit`   | `number` | -       | Represents the maximum number of subscriptions to retrieve per page                                                                                                                                              |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -58,15 +59,15 @@ const aliceSubscriptions = await userAlice.notification.subscriptions();
 ```typescript
 [
   {
-    channel: "0xD8634C39BBFd4033c0d3289C4515275102423681",
+    channel: '0xD8634C39BBFd4033c0d3289C4515275102423681',
     user_settings: null,
   },
   {
-    channel: "0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924",
+    channel: '0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924',
     user_settings: null,
   },
   {
-    channel: "0x087F5052fBcD7C02DD45fb9907C57F1EccC2bE25",
+    channel: '0x087F5052fBcD7C02DD45fb9907C57F1EccC2bE25',
     user_settings:
       '[{"type": 1, "user": false, "index": 1, "default": false, "description": "test1"}, {"type": 2, "user": 25, "index": 2, "default": 25, "enabled": 1, "lowerLimit": 23, "upperLimit": 35, "description": "test3"}, {"type": 2, "user": 64, "index": 3, "default": 56, "enabled": 1, "lowerLimit": 43, "upperLimit": 78, "description": "test5"}]',
   },

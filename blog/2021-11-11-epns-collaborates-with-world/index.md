@@ -11,6 +11,7 @@ tags: [ Ethereum
 ,Newsletter
 ,Blockchain ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Collaborates With World’s Fastest IoT Blockchain IoTeX](./cover-image.webp)
@@ -27,23 +28,21 @@ The IoTeX blockchain powers real devices, allowing for real world use cases in s
 
 The blockchain IoT market is forecast to grow at a CAGR of 45.1 percent to 2.4 billion USD between 2020 to 2026 as enterprises migrate to IoT blockchains for increased operational efficiency and security. As the blockchain IoT platform streamlines and decentralizes complex networks of devices, all stakeholders in the network will be highly dependent on notifications to optimize operations. These users rely on notification services to deliver important information, including:
 
-*   Customizable notifications based on user-defined thresholds for streaming data from Pebble Tracker, which captures real world data and sends it to IoTeX smart contracts.
-*   Daily notifications of rewards received from the IoTeX staking ecosystem (>10k unique stakers).
-*   Notifs any time a proposal starts/ends as part of the decentralized governance via snapshot (http://gov.iotex.io/) initiative.
+- Customizable notifications based on user-defined thresholds for streaming data from Pebble Tracker, which captures real world data and sends it to IoTeX smart contracts.
+- Daily notifications of rewards received from the IoTeX staking ecosystem (>10k unique stakers).
+- Notifs any time a proposal starts/ends as part of the decentralized governance via snapshot (http://gov.iotex.io/) initiative.
 
 Unfortunately, IoTeX users are currently reliant on email, Telegram, Twitter and other social media channels to receive alerts. A push notification service would allow all platform users to receive and take timely action on data while still protecting data privacy as smart contract users interact with internal and external data sources.
 
-**The EPNS Solution**
-=====================
+# **The EPNS Solution**
 
 The EPNS decentralized push notification service sends timely notifications through a single source of communication, the investor’s wallet. All notifications go directly to the user’s wallet where they can take immediate action. EPNS is the first native, on-chain notification solution to stream all crucial time-sensitive information to a user’s wallet. The partnership benefits to IoTeX users include:
 
-*   EPNS will send all data notifications directly to IoTeX user wallets.
-*   The EPNS and IoTeX teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of DeFi data users and markets.
-*   EPNS channels and users can customize their notification settings for different data notification requirements.
+- EPNS will send all data notifications directly to IoTeX user wallets.
+- The EPNS and IoTeX teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of DeFi data users and markets.
+- EPNS channels and users can customize their notification settings for different data notification requirements.
 
-**How EPNS Will Support IoTeX and IoT Blockchains**
-===================================================
+# **How EPNS Will Support IoTeX and IoT Blockchains**
 
 Under this pilot program, EPNS is building a dedicated channel for IoTeX (see the [EPNS litepaper](https://whitepaper.epns.io) for definitions of channels, services, and more). IoTeX users can subscribe to the IoTeX channel to receive customized notifications to their wallets. Through collaboration with the IoTeX team, we will gain insight into the push notification needs of users of IOT blockchain services and what they want from the EPNS protocol.
 
@@ -57,7 +56,6 @@ The long-term goal of the pilot program is to develop a notification system for 
 
 We are pleased to be collaborating with the IoTex IoT blockchain platform and anticipate EPNS push notifications becoming an indispensable tool in decentralized data markets.
 
-**About IoTeX**
-===============
+# **About IoTeX**
 
 Founded as an open source platform in 2017, IoTeX is building the Internet of Trusted Things, where all physical and virtual “things” — humans, machines, businesses, and DApps — can exchange information and value at global scale. Backed by a global team of 30+ research scientists and engineers, IoTeX combines blockchain, secure hardware, and decentralized identity innovations to empower intelligent IoT networks and machine economies. By serving as a decentralized trust fabric for IoT, IoTeX will empower the future decentralized economy by “connecting the physical and digital worlds, block by block”.

@@ -3,25 +3,28 @@ slug: socket-integrates-epns-to-send-users-important-updates-through-push-notifi
 title: 'Socket Integrates EPNS to Send Users Important Updates Through Push Notifications'
 authors: [push]
 image: './cover-image.png'
-text: "There has been a growing number of blockchains, each offering its own unique set of benefits. While some offer the utmost decentralization, others are carved out for scalability, and then some are exclusively meant to support NFTs. The growing number of blockchains and their categorization isn’t particularly a bad thing."
-tags: [ Announcements, Pushnotification, Web3, Ethereum, Epns]
+text: 'There has been a growing number of blockchains, each offering its own unique set of benefits. While some offer the utmost decentralization, others are carved out for scalability, and then some are exclusively meant to support NFTs. The growing number of blockchains and their categorization isn’t particularly a bad thing.'
+tags: [Announcements, Pushnotification, Web3, Ethereum, Epns]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Socket Integrates EPNS to Send Users Important Updates Through Push Notifications](./cover-image.png)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # Socket, the blockchain interoperability infrastructure platform, partners with EPNS to send decentralized push notifications to its users.
 
 There has been a <b>growing number of blockchains</b>, each offering its own unique set of benefits. While some offer the utmost decentralization, others are carved out for scalability, and then some are exclusively meant to support NFTs. The <b>growing number of blockchains</b> and their categorization isn’t particularly a bad thing.
-
 
 However, blockchains, by design, cannot communicate with or read data from sources outside their own ecosystem. This results in many high-potential but segregated blockchain ecosystems, each having its own isolated set of applications, platforms, and users.
 
 As a solution, we have projects working to address the lack of interoperability to help apps and users transfer data and value across different chains. One project that is leading the charge in interoperability is Socket. And we are thrilled to announce that EPNS is partnering with this innovative project to bring a decentralized push notification service to its users.
 
 ## Where Does EPNS Fit Into Socket’s Equation?
+
 Socket enables blockchain interoperability through its two key components:
 
 1. The Socket Liquidity Layer acts as a DEX aggregator and ensures users can easily transfer funds across blockchains as per their speed, fee, and security preferences.
@@ -37,10 +40,7 @@ It is a delight for us to be partnering with projects like Socket that are genui
 Stay tuned to keep updated on the most recent EPNS partnerships and developments around the decentralized push notification standards!
 
 ### About Socket
+
 [Socket](https://socket.tech/) is an interoperability protocol for secure & efficient data and asset transfers across chains. Socket is not a bridge or a cross-chain app — it is an infrastructure that allows developers to build these things easily. Developers can use Socket to build apps with interoperability as a core part of app infrastructure.
 
 [Website](http://socket.tech/) | [Bungee](http://bungee.exchange/) | [Twitter](https://twitter.com/SocketDotTech) | [Discord](https://t.co/Il4enrA7Lo)
-
-
-
-

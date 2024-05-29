@@ -11,14 +11,14 @@ tags: [Web3, NFT, Push Protocol, NFT Utility]
 import { ImageText, VideoContainer } from '@site/src/css/SharedStyling';
 
 ![Cover image of Introducing Push NFT Chat — Chats and Comms Tied to Your NFTs… Done Right ✅](./cover-image.webp)
+
 <!--truncate-->
 
-
 <!--customheaderpoint-->
+
 # Instantly integrate Push NFT Chat for pure NFT-to-NFT chat
 
 We are thrilled to announce the highly anticipated release of Push NFT Chat, the next leap in web3 messaging. For the 1.5 Million+ NFT wallets and NFT collections like Azuki, BAYC, CryptoPunks, a universe of new potential utility is now here for your collections 🌎
-
 
 As the team behind Push Protocol, we’ve been committed to pushing the boundaries of what is possible in web3 through decentralized communication. With our previous product, Push Chat, we successfully introduced native web3 instant chats using wallet addresses. Push Chat boasts a number of user-centric features like spam control, inbuilt notification modules, video and audio calls and [much more](https://push-protocol.medium.com/launching-the-future-of-web3-messaging-with-push-chat-push-group-chat-de4cb7a65231).
 
@@ -27,6 +27,7 @@ Today, we’re taking Push Chat innovation to an entirely new level with the lau
 How does Push NFT Chat specifically differ from Push Chat on a functional and security level? Read on to find out.
 
 ## Introducing Push NFT Chat
+
 Push NFT Chat enables chats to be tied to a specific NFT owned by you, instead of a chat owned by a wallet address. It operates just the way Push chat operates for wallets and <b>includes all features you can find in Push chat</b> but with three main differences:
 
 - It uses triple encryption to ensure your chats are truly tied to an NFT and not a wallet alias.
@@ -43,12 +44,15 @@ https://www.npmjs.com/package/@pushprotocol/restapi#for-chat
 <i>Developer Hint</i>: This example repo covers all functionalities that can be implemented from the SDK:
 
 https://github.com/push-protocol/push-sdk/tree/main/packages/examples/sdk-backend-node
+
 </blockquote>
 
 ## How does Push NFT Chat work?
+
 The message abilities and features of Push NFT Chat are still based on PGP keys that power wallet-to-wallet Push Chat and are encrypted and stored on Push Network to enable an E2EE universal inbox. However, there are different features that enable Push NFT Chat, tie communication to the NFT, and validate it.
 
 ### Encryption
+
 Push NFT Chat uses a different encryption mechanism to encrypt the PGP key. This is what makes it secure yet versatile to support NFT chats. Push NFT Chat uses three pass encryption and is done in the following way for a new user:
 
 - A secret key is randomly created for the user on client side, this is automated by SDK and invisible to the user though their are options available for a user to choose the secret key if they want.
@@ -62,6 +66,7 @@ This is enabled because of the three pass encryption which means your PGP keys c
 This creates an intuitive UX where user is not hassled by the experience while still gaining the crucial feature of truly connecting their chats and connections with the NFT.
 
 ## Address Format
+
 Apart from the way encryption is handled, the NFT chat uses a different address format for communication owing to them having access to various NFTs from the same wallet. The address format is <b>`nft:eip155:${nftChainId}:${nftContractAddress}:${nftTokenId}`.</b>
 
 <blockquote>
@@ -77,6 +82,7 @@ Each address format representing identifiers as follows:
 5. <b>`${'nftTokenId'}`</b> -> The token id of the particular NFT held by the wallet of the user, in this example, we have taken that as 44433
 
 ## Transferring the NFT
+
 The key pair is encrypted by a secret key selected by the NFT holder. When the NFT holder decides to transfer the NFT to another user, two possible scenarios can occur:
 
 - In the first scenario, the original owner can choose to send the new owner the secret key. This allows the new owner to decrypt all the chat messages associated with the NFT. This option ensures the continuity of the chat messages within the NFT.
@@ -92,6 +98,7 @@ These two options enable pure, native NFT chat that is truly tied to a user NFT 
 </blockquote>
 
 ## Guide for Getting Started With Push NFT Chat
+
 To integrate with Push NFT Chat, you can start by watching the live demo below.
 
 <VideoContainer>
@@ -103,6 +110,3 @@ Begin Building 👉 https://www.npmjs.com/package/@pushpr...
 Push SDK Repo 👉 https://github.com/ethereum-push-noti...
 
 If you need any help or support with integration, give us a shout out or tag us on [Discord](https://discord.gg/Ar8HkYNs).
-
-
-

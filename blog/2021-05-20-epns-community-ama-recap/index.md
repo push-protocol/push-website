@@ -12,6 +12,7 @@ tags: [ Announcements
 ,Community
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Community AMA Recap](./cover-image.webp)
@@ -118,12 +119,12 @@ Now, a service wanting to send notifications to their subscribers will create a 
 
 To understand why notifications are needed, just compare how our daily Web2 life is driven by notifications — your amazon delivery, bank account related info, payments, even Facetime calls are driven by notification. Now comparing it to Web3, there is no way by which Web3 services can communicate with their users about critical events:
 
-*   Loan liquidation on Alpha Homora, Compound, and other DeFi protocols.
-*   Your trade gets executed on a DEX, or if your Limit order was filled.
-*   New governance proposal is issued.
-*   New Limited Edition NFT is about to drop.
-*   Winning a PoolTogether lottery.
-*   New features and upgrades to a protocol
+- Loan liquidation on Alpha Homora, Compound, and other DeFi protocols.
+- Your trade gets executed on a DEX, or if your Limit order was filled.
+- New governance proposal is issued.
+- New Limited Edition NFT is about to drop.
+- Winning a PoolTogether lottery.
+- New features and upgrades to a protocol
 
 Done!
 
@@ -137,16 +138,16 @@ Richa: Sure! First off, we can’t thank the EPNS community enough for supportin
 
 The past 30 days have been superb. 🚀
 
-*   After the TGE, our **Polkastarter IDO** was a huge success and post which we listed on **Uniswap**, **Paraswap** and **WazirX** India.
-*   We announced our gratitude to early backers (48 NFTs) and community members (52 NFTs/ week) by announcing **ROCKSTAR NFT**s. Very happy to share that we have already given away the first two ROCKSTAR NFTs to our awesome community members.
-*   We successfully launched the **EPNS Liquidity** **Rewards Program**, offering a total of 5,510,000 $PUSH to be distributed along the program and ending on 15th March 2023.
-*   We released the **EPNS Roadmap 2021,** that we are working on to achieve. Also, on that note we’re **HIRING** for multiple roles at EPNS so if you are a curious developer (Reactjs, Nodejs, Solidity or Tech Lead) and like what we are doing, drop us a note at **support@epns.io** or send a DM to one of the admins here.
-*   Development on-going for Uniswap, Alpha Homora and a few secret channels 😉. Also, integrated .crypto and ENS support to EPNS mobile app
-*   Collaboration and Partnership with **Gitcoin** | **Polygon** | **Mask** **Network** | **PoolTogether** | **Alpha** **Homora** | **Biconomy** | **Frontier** | **bZx** | **Ceramic** **Network**
-*   Welcomed **Gitcoin Kernel** on our Advisory board
-*   Interviewed by BeInCrypto, CryptoKanoon, TheWolfDen Newsletter — Review of EPNS,TheDefiant — First look, Unstoppable domain podcast
-*   **Rockstars of Ethereum Y**outube series — Kevin Owocki, DeFi Dad episode
-*   Community-based AMA, Telegram and Youtube contest
+- After the TGE, our **Polkastarter IDO** was a huge success and post which we listed on **Uniswap**, **Paraswap** and **WazirX** India.
+- We announced our gratitude to early backers (48 NFTs) and community members (52 NFTs/ week) by announcing **ROCKSTAR NFT**s. Very happy to share that we have already given away the first two ROCKSTAR NFTs to our awesome community members.
+- We successfully launched the **EPNS Liquidity** **Rewards Program**, offering a total of 5,510,000 $PUSH to be distributed along the program and ending on 15th March 2023.
+- We released the **EPNS Roadmap 2021,** that we are working on to achieve. Also, on that note we’re **HIRING** for multiple roles at EPNS so if you are a curious developer (Reactjs, Nodejs, Solidity or Tech Lead) and like what we are doing, drop us a note at **support@epns.io** or send a DM to one of the admins here.
+- Development on-going for Uniswap, Alpha Homora and a few secret channels 😉. Also, integrated .crypto and ENS support to EPNS mobile app
+- Collaboration and Partnership with **Gitcoin** | **Polygon** | **Mask** **Network** | **PoolTogether** | **Alpha** **Homora** | **Biconomy** | **Frontier** | **bZx** | **Ceramic** **Network**
+- Welcomed **Gitcoin Kernel** on our Advisory board
+- Interviewed by BeInCrypto, CryptoKanoon, TheWolfDen Newsletter — Review of EPNS,TheDefiant — First look, Unstoppable domain podcast
+- **Rockstars of Ethereum Y**outube series — Kevin Owocki, DeFi Dad episode
+- Community-based AMA, Telegram and Youtube contest
 
 Done!
 
@@ -228,11 +229,11 @@ Now, How to receive the notifications?
 
 There are 2 options:
 
-1) From the top navigation menu, go to the “Feedbox” option.
+1. From the top navigation menu, go to the “Feedbox” option.
 
 In here users will be able to view all notifications sent to them from the different channels they are subscribed to.
 
-2) From the top navigation menu, go to the “Receive Notifs” option.
+2. From the top navigation menu, go to the “Receive Notifs” option.
 
 From here users can install the Mobile App of their preference: Android or iOs.
 
@@ -270,7 +271,7 @@ Done!
 
 A lot of stuff is in pipeline I must say :D
 
-**Jai: Second Question is from ethereal.one (@ethereal\_123) Congratulations**
+**Jai: Second Question is from ethereal.one (@ethereal_123) Congratulations**
 
 **What incentivizes services to offer EPNS on their platform? The incentives to the customer are clear: user-centricity, opportunity to earn and get notified, but why should a service integrate with EPNS?**
 
@@ -286,7 +287,7 @@ Jai: “It’s all UX and customer engagement/retention” 👏👏
 
 Thank you @RJlwl for answering it
 
-**Next Question is from Lucky Mbu (@lucky\_mbu)- Congratulations!**
+**Next Question is from Lucky Mbu (@lucky_mbu)- Congratulations!**
 
 **What are benefit to user from governance of EPNS’ system?**
 
@@ -390,7 +391,7 @@ Jaf: We are keeping in parallel different initiatives that will help with adopti
 
 \- working on Collaboration Programs with key players in the space
 
-*   Designing ways for the community to actively participate in the protocol.
+- Designing ways for the community to actively participate in the protocol.
 
 **SonGo Ku: Once the product is developed, one of the main challenges seems to be adoption. What are some of the plans to stimulate adoption and build out the ecosystem around EPNS?**
 
@@ -408,7 +409,7 @@ About your question: yes! its doable.
 
 We’ve had a great experience working with developers creating their own channels because they have their own ideas that they want to make a reality.
 
-**CMD\_GOD: What role does the community play in the EPNS financeio? What have you done and will do to attract people to join EPNS financeio and build a thriving community?**
+**CMD_GOD: What role does the community play in the EPNS financeio? What have you done and will do to attract people to join EPNS financeio and build a thriving community?**
 
 Jaf: That’s a great question, we constantly try to grow our community through initiatives and think the best way to strengthen the community is by asking them, do let us know if you have any ideas!
 
@@ -436,7 +437,7 @@ Richa: I think we over shot the AMA timeslot!
 
 Thank you all for asking such awesome questions. We are running out of time and have a lot of great questions, would have loved to answer them all 🙂
 
-Also, shout out to our ROCKSTAR admins @OfficiaL\_Jai96 @justnow09 @Vinayak\_3 @Dinesh\_Sha @extreme2323 for always helping and supporting the community, thank you guys!
+Also, shout out to our ROCKSTAR admins @OfficiaL_Jai96 @justnow09 @Vinayak_3 @Dinesh_Sha @extreme2323 for always helping and supporting the community, thank you guys!
 
 Jaf: Thank you for your amazing answers. We highly appreciate it @harshr @RJlwl and @JafCR and this ends the last round of our AMA.
 

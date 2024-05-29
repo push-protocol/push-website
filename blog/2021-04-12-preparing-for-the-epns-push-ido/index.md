@@ -12,6 +12,7 @@ tags: [ Token
 ,Polkastarter
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Preparing for the EPNS $PUSH IDO on Polkastarter](./cover-image.webp)
@@ -24,20 +25,17 @@ As a reminder, all whitelisted addresses can be found [here](https://docs.google
 
 Heading into the IDO, remember to see the [EPNS Telegram](https://t.me/epnsproject) for all official communications. No one from the EPNS team will ever DM you, and will never ask for your crypto!
 
-Polkastarter IDO Information
-============================
+# Polkastarter IDO Information
 
-**Token information**
----------------------
+## **Token information**
 
-*   833,333 $PUSH tokens (0.83% of total supply) will be offered through the Polkastarter IDO.
-*   Sale price: $0.12 per $PUSH
-*   Max Cap: The max cap per person is $250 in ETH
+- 833,333 $PUSH tokens (0.83% of total supply) will be offered through the Polkastarter IDO.
+- Sale price: $0.12 per $PUSH
+- Max Cap: The max cap per person is $250 in ETH
 
 > **Official token contract address:** [0xf418588522d5dd018b425E472991E52EBBeEEEEE](https://etherscan.io/address/0xf418588522d5dd018b425e472991e52ebbeeeeee)
 
-**Pools and Allocations**
--------------------------
+## **Pools and Allocations**
 
 2 pools: POLS Pool and Community (Standard) Pool.
 
@@ -51,16 +49,14 @@ POLS Pool allocation = **50%** (416,666 $PUSH). To participate in the POLS pool,
 
 It is heavily recommended to visit and bookmark [polkastarter.com](http://polkastarter.com) ahead of time.
 
-**Whitelist Shortlisted Participants**
---------------------------------------
+## **Whitelist Shortlisted Participants**
 
-*   All shortlisted whitelist participants have been sent notification from our official email account [polka@epns.io](mailto:polka@epns.io).
-*   To check whether you made the Whitelist and for KYC details, see our [whitelist announcement](https://medium.com/ethereum-push-notification-service/epns-push-polkastarer-ido-whitelist-results-f9f875099ad6).
-*   Only addresses that have passed KYC will be whitelisted.
-*   Note that there will be more KYC verified whitelisted wallet addresses than there are IDO subscription allocations. **Allocation will be secured on a first come, first served basis.**
+- All shortlisted whitelist participants have been sent notification from our official email account [polka@epns.io](mailto:polka@epns.io).
+- To check whether you made the Whitelist and for KYC details, see our [whitelist announcement](https://medium.com/ethereum-push-notification-service/epns-push-polkastarer-ido-whitelist-results-f9f875099ad6).
+- Only addresses that have passed KYC will be whitelisted.
+- Note that there will be more KYC verified whitelisted wallet addresses than there are IDO subscription allocations. **Allocation will be secured on a first come, first served basis.**
 
-**Token Sale Timeline**
------------------------
+## **Token Sale Timeline**
 
 Below is the timeline indicating the key events that will occur on the day of our launch on Polkastarter on Tuesday, April 13th 2021. All times stated are in UTC.
 
@@ -76,8 +72,7 @@ Below is the timeline indicating the key events that will occur on the day of ou
 
 Trading will begin on the Uniswap platform within 1.5 hrs hours of the Polkastarter IDO sale completion.
 
-**Safety During the IDO**
--------------------------
+## **Safety During the IDO**
 
 ⚠️ Do not fall for any scams, or interact with any other smart contracts.
 
@@ -107,11 +102,9 @@ Ethereum Push Notification Service (EPNS) is a decentralized notification protoc
 
 Stay in touch! [Website](https://epns.io/), [Twitter](https://twitter.com/epnsproject), [Telegram](https://t.me/epnsproject), [Medium](https://medium.com/ethereum-push-notification-service), [Whitepaper](https://whitepaper.epns.io/), [Litepaper](https://medium.com/ethereum-push-notification-service/ethereum-push-notification-service-litepaper-e7ca0a662862)
 
-Disclaimer
-==========
+# Disclaimer
 
-🚨 WARNING 🚨
-=============
+# 🚨 WARNING 🚨
 
 ❗**Beware of scammers and fake addresses**❗
 
@@ -133,6 +126,4 @@ Disclaimer
 
 **Telegram** **Announcement** **Channel** [https://t.me/epnsprojectnews](https://t.me/epnsprojectnews)
 
-🚨 WARNING 🚨
-=============
-
+# 🚨 WARNING 🚨

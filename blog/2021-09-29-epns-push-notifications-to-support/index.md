@@ -10,6 +10,7 @@ tags: [ Ethereum
 ,Easyfi
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Push Notifications to Support EasyFi Lending Platform for Digital Assets](./cover-image.webp)
@@ -30,32 +31,30 @@ Needless to say, timely and efficient communication tools are at the center of m
 
 An essential element that will play a part in improving services and user adoption is **_decentralized push notifications_**. DeFi lending platform users are highly dependent on notification services to facilitate lending services, including:
 
-*   Loan liquidation alerts
-*   Changes in interest rates
-*   Collateralization ratios and liquidation alerts
-*   Governance-related notifications, and more.
+- Loan liquidation alerts
+- Changes in interest rates
+- Collateralization ratios and liquidation alerts
+- Governance-related notifications, and more.
 
 A push notification service would hence remove the friction of the unknown and allow all platform users to receive and take timely action on important lending notifications while still protecting data privacy as users interact with internal and external data sources.
 
-The EPNS Solution
-=================
+# The EPNS Solution
 
 The EPNS decentralized push notification service sends timely notifications through a single source of communication, the investor’s wallet. All notifications go directly to the user’s wallet where they can take immediate action. EPNS is the first native, on-chain notification solution to stream all crucial time-sensitive information to a user’s wallet.
 
 The partnership benefits to EasyFi users include:
 
-*   EPNS will send all data notifications directly to EasyFi user wallets.
-*   The EPNS and EasyFi teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of lenders and borrowers.
-*   EPNS channels and users can customize their notification settings for different data notification requirements.
+- EPNS will send all data notifications directly to EasyFi user wallets.
+- The EPNS and EasyFi teams will adapt the highly customizable EPNS protocol to meet the various push notification needs of lenders and borrowers.
+- EPNS channels and users can customize their notification settings for different data notification requirements.
 
-How EPNS Will Support EasyFi
-============================
+# How EPNS Will Support EasyFi
 
 Under this pilot program,
 
-*   EPNS is building a dedicated channel for EasyFi (see our [litepaper](https://whitepaper.epns.io) for definitions of channels, services, and more).
-*   EasyFi users can subscribe to the EasyFi channel to receive customized notifications to their wallets.
-*   Through collaboration with the EasyFi team, we will gain insight into the push notification needs of users of lending platforms and what they want from the EPNS protocol.
+- EPNS is building a dedicated channel for EasyFi (see our [litepaper](https://whitepaper.epns.io) for definitions of channels, services, and more).
+- EasyFi users can subscribe to the EasyFi channel to receive customized notifications to their wallets.
+- Through collaboration with the EasyFi team, we will gain insight into the push notification needs of users of lending platforms and what they want from the EPNS protocol.
 
 Decentralized notifications will provide real-time data to one wallet so all users can act in a timely manner. Lenders and borrowers can identify the most attractive interest rates and fees across lending platforms. Meanwhile, all users can continue to operate within the private, secure ecosystem of EasyFi’s multi-chain lending ecosystem, without having to deal with integration pains across many different protocols.
 
@@ -63,8 +62,7 @@ Decentralized notifications will provide real-time data to one wallet so all use
 
 \[_Anshul Dhir, CoFounder & COO, EasyFi Network said — “As we move into high gear with full protocol launch and implementation of new products and services on EasyFi, we foresee a need to make engagement on our multichain protocol easier and intuitive for the user. Our collaboration with EPNS and the integration of push notifications on our protocol, will drive this commitment and improve overall engagement, with users taking their own decisions starting with which alert they want to receive!”_\]
 
-Looking Forward
-===============
+# Looking Forward
 
 We foresee many new EPNS notification channels being introduced for EasyFi in particular, and DeFi lending markets in general. Easy-to-configure push notifications will enable future EasyFi users to take advantage of all products and services on EasyFi App.
 
@@ -74,11 +72,8 @@ The long-term goal of the pilot program is to develop a notification system for 
 
 We are pleased to be partnering with EasyFi and anticipate EPNS push notifications becoming an indispensable tool in DeFi lending markets.
 
-About EasyFi
-============
+# About EasyFi
 
 EasyFi is a universal layer 2 lending protocol built for DeFi focused on scalability, composability, and adoption. It has been designed as an open and inclusive financial network infrastructure running on public networks to facilitate the end-to-end lending and borrowing of digital assets and related financial products. EasyFi is being built upon the ethos of permissionless networks and the automation of smart contracts.
 
 [Website](https://easyfi.network/) | [Twitter](https://twitter.com/EasyfiNetwork) | [Telegram](https://t.me/easyfiNetwork) | [Whitepaper](https://easyfi.network/easyfi-whitepaper.html) | [Blog](https://medium.com/easify-network) | [App](https://app.easyfi.network/)
-
-

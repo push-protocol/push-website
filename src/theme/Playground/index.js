@@ -7,7 +7,9 @@ import {
 } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useIsBrowser from '@docusaurus/useIsBrowser';
-import Spinner, { SPINNER_TYPE } from '@site/src/components/reusables/spinners/SpinnerUnit';
+import Spinner, {
+  SPINNER_TYPE,
+} from '@site/src/components/reusables/spinners/SpinnerUnit';
 import GLOBALS from '@site/src/config/globals';
 import { Button, ItemH, ItemV } from '@site/src/css/SharedStyling';
 import clsx from 'clsx';
@@ -15,13 +17,19 @@ import React, { useState } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import styles from './styles.module.css';
-function Header({children}) {
+function Header({ children }) {
   return <div className={clsx(styles.playgroundHeader)}>{children}</div>;
 }
 function LivePreviewLoader() {
   // Is it worth improving/translating?
   // eslint-disable-next-line @docusaurus/no-untranslated-text
-  return <Spinner size={42} color={GLOBALS.COLORS.PRIMARY_COLOR} type={SPINNER_TYPE.PROCESSING}/>;
+  return (
+    <Spinner
+      size={42}
+      color={GLOBALS.COLORS.PRIMARY_COLOR}
+      type={SPINNER_TYPE.PROCESSING}
+    />
+  );
 }
 function Preview() {
   // No SSR for the live preview
@@ -33,7 +41,8 @@ function Preview() {
           <ErrorBoundary
             fallback={(params) => (
               <ErrorBoundaryErrorMessageFallback {...params} />
-            )}>
+            )}
+          >
             <LivePreview />
           </ErrorBoundary>
           <LiveError />
@@ -47,8 +56,9 @@ function ResultWithHeader() {
     <>
       <Header>
         <Translate
-          id="theme.Playground.result"
-          description="The result label of the live codeblocks">
+          id='theme.Playground.result'
+          description='The result label of the live codeblocks'
+        >
           LIVE PREVIEW
         </Translate>
       </Header>
@@ -77,56 +87,56 @@ function EditorWithHeader({ minimized }) {
     <>
       <Header>
         <Button
-          onClick={() => {setMinimizedState(!minimizedState)}}
-          textTransform="uppercase"
-          background="transparent"
-          padding="0px"
-          width="100%"
-          display="flex"
-          hoverBackground="transparent"
-          borderRadius="0px"
+          onClick={() => {
+            setMinimizedState(!minimizedState);
+          }}
+          textTransform='uppercase'
+          background='transparent'
+          padding='0px'
+          width='100%'
+          display='flex'
+          hoverBackground='transparent'
+          borderRadius='0px'
         >
           <ItemH>
-            <ItemV flex="1" alignItems="flex-start">
+            <ItemV flex='1' alignItems='flex-start'>
               <Translate
-                id="theme.Playground.liveEditor"
-                description="The live editor label of the live codeblocks"
+                id='theme.Playground.liveEditor'
+                description='The live editor label of the live codeblocks'
               >
                 LIVE EDITOR
               </Translate>
             </ItemV>
-            { minimizedState ? <FiChevronDown /> : <FiChevronUp /> }
+            {minimizedState ? <FiChevronDown /> : <FiChevronUp />}
           </ItemH>
         </Button>
       </Header>
-      { !minimizedState && 
-        <ThemedLiveEditor />
-      }
+      {!minimizedState && <ThemedLiveEditor />}
     </>
   );
 }
-export default function Playground({children, transformCode, ...props}) {
+export default function Playground({ children, transformCode, ...props }) {
   const {
-    siteConfig: {themeConfig},
+    siteConfig: { themeConfig },
   } = useDocusaurusContext();
   const {
-    liveCodeBlock: {playgroundPosition},
+    liveCodeBlock: { playgroundPosition },
   } = themeConfig;
   const prismTheme = usePrismTheme();
   const noInline = props.metastring?.includes('noInline') ?? false;
-  
+
   // Look for customPropMinimized, customPropHidden
   let minimized = false;
 
   let pattern = /customPropMinimized="([^"]+)"/;
   let match = children.match(pattern);
   console.log(match, pattern);
-  
+
   if (match) {
     const customProp = match[1];
     if (customProp === 'true') {
       minimized = true;
-      
+
       // remove the first match
       children = children.replace(pattern, '');
     }
@@ -142,7 +152,7 @@ export default function Playground({children, transformCode, ...props}) {
     const customProp = match[1];
     if (customProp === 'true') {
       hidden = true;
-      
+
       // remove the first match
       children = children.replace(pattern, '');
     }
@@ -158,23 +168,16 @@ export default function Playground({children, transformCode, ...props}) {
         noInline={noInline}
         transformCode={transformCode ?? ((code) => `${code};`)}
         theme={prismTheme}
-        {...props}>
+        {...props}
+      >
         {playgroundPosition === 'top' ? (
           <>
             <ResultWithHeader />
-            {!hidden && 
-              <EditorWithHeader 
-                minimized={minimized}
-              />
-            }
+            {!hidden && <EditorWithHeader minimized={minimized} />}
           </>
         ) : (
           <>
-            {!hidden && 
-              <EditorWithHeader 
-                minimized={minimized}
-              />
-            }
+            {!hidden && <EditorWithHeader minimized={minimized} />}
             <ResultWithHeader />
           </>
         )}

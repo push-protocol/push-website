@@ -13,11 +13,11 @@ image: "/assets/docs/previews/docs_chat--quickstart.png"
 Everything you will need to get up and running in 2 mins or less!
 
 <head>
-  <title>Quickstart | Push Chat | Push Documentation</title>
+  <title>{`Quickstart | Push Chat | Push Documentation`}</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ### Installation
 
@@ -56,10 +56,10 @@ npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
 ```js
 // Import restapi for function calls
 // Import socket for listening for real time messages
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
 
 // Ethers or Viem, both are supported
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 ```
 
   </TabItem>
@@ -69,10 +69,10 @@ import { ethers } from "ethers";
 ```js
 // Import restapi for function calls
 // Import socket for listening for real time messages
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
 
 // Ethers or Viem, both are supported
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 ```
 
   </TabItem>
@@ -82,10 +82,10 @@ import { ethers } from "ethers";
 ```js
 // Import restapi for function calls
 // Import socket for listening for real time messages
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
 
 // Ethers or Viem, both are supported
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 ```
 
   </TabItem>
@@ -151,8 +151,8 @@ const toWalletAddress = ethers.Wallet.createRandom().address;
 
 // Send a message to Bob
 const aliceMessagesBob = await userAlice.chat.send(toWalletAddress, {
-  content: "Hello Bob!",
-  type: "Text",
+  content: 'Hello Bob!',
+  type: 'Text',
 });
 ```
 
@@ -166,8 +166,8 @@ const toWalletAddress = ethers.Wallet.createRandom().address;
 
 // Send a message to Bob
 const aliceMessagesBob = await userAlice.chat.send(toWalletAddress, {
-  content: "Hello Bob!",
-  type: "Text",
+  content: 'Hello Bob!',
+  type: 'Text',
 });
 ```
 
@@ -181,8 +181,8 @@ const bobWalletAddress = ethers.Wallet.createRandom().address;
 
 // Send a message to Bob
 const aliceMessagesBob = await userAlice.chat.send(bobWalletAddress, {
-  content: "Hello Bob!",
-  type: "Text",
+  content: 'Hello Bob!',
+  type: 'Text',
 });
 ```
 

@@ -7,19 +7,21 @@ text: "It’s another day at EthGlobal HackMoney hackathon and we are back with 
 While most of the dev project cycles start at smart contract and end at dApp, we have taken a different approach and instead are focusing on getting the EPNS mobile app and push notification server built out first."
 tags: [Ethereum ,Solidity ,Ethglobal ,Notifications ,Developer]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Hello World: BUIDLing a working EPNS Mobile app](./cover-image.webp)
+
 <!--truncate-->
 
 It’s another day at [EthGlobal HackMoney hackathon](https://www.ethglobal.co/) and we are back with more detail and further progress.
 
 While most of the dev project cycles start at smart contract and end at dApp, we have taken a different approach and instead are focusing on getting the EPNS mobile app and push notification server built out first.
 
-
 The reasons? We are quite happy with the app specs and don’t think that will change anytime soon while we wanted to think and iterate a bit more on smart contract so we choose this route. Without further ado, Let’s dive into how we are going to create the magic in the mobile app.
 
 ### Features
+
 The EPNS mobile app is built using react native and provides the following features:
 
 - App should be able to receive push notifications.
@@ -32,6 +34,7 @@ The EPNS mobile app is built using react native and provides the following featu
 <ImageText>We all get a notification, woohoo !!</ImageText>
 
 ### Tech Specs
+
 Mobile push notifications use [device tokens](https://help.pushwoosh.com/hc/en-us/articles/360000364923-What-is-a-Device-token-) for registration of the device and the push notification server then sends out mass or specific messages using these device tokens. For EPNS to work, we need to register these device tokens as well as the wallet to which they belong to.
 
 For the EPNS Service to work, the following modules need to be built:
@@ -77,6 +80,3 @@ Please feel free to share your support and amazing feedback. If you liked this a
 [EPNS Game theory](https://medium.com/@epnsdapp/epns-game-theory-explained-25425bbe4eae)
 
 Connect with us if you have any questions!
-
-
-

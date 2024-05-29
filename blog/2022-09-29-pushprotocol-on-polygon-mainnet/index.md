@@ -3,19 +3,20 @@ slug: push-protocol-launches-on-polygon-enabling-communication-for-thousands-of-
 title: Push Protocol Launches on Polygon, Enabling Communication for Thousands of Dapps
 authors: [push]
 image: './cover-image.webp'
-text: "Today, we’re thrilled to announce that Push Protocol, previously Ethereum Push Notification Service (EPNS), has launched on Polygon, enabling seamless, web3-native communication to the thousands of Polygon dApps and hundreds of thousands of active users."
-tags: [ Polygon, Web3, Communication, Ethereum, Announcements]
+text: 'Today, we’re thrilled to announce that Push Protocol, previously Ethereum Push Notification Service (EPNS), has launched on Polygon, enabling seamless, web3-native communication to the thousands of Polygon dApps and hundreds of thousands of active users.'
+tags: [Polygon, Web3, Communication, Ethereum, Announcements]
 ---
 
 ![Cover image of Push Protocol Launches on Polygon, Enabling Communication for Thousands of Dapps](./cover-image.webp)
+
 <!--truncate-->
 
 Today, we’re thrilled to announce that [Push Protocol](http://push.org/), previously Ethereum Push Notification Service (EPNS), has launched on Polygon, enabling seamless, web3-native communication to the thousands of Polygon dApps and hundreds of thousands of active users.
 
-
 The Push Protocol launch on Polygon’s mainnet means that Polygon app developers can immediately begin integrating Push into their apps, launching channels, and enabling notifications for users (start [here](https://docs.epns.io/developers/developer-guides/create-your-notif-channel/enabling-channel-on-other-chains/polygon-channel-setup)). Soon, Push Protocol will announce launch partners to allow users to begin subscribing to live channels, opting to receive notifications when certain on- or off-chain conditions are met.
 
 ## Polygon & Push
+
 Polygon, previously Matic Network, is a suite of layer 2 protocols backed by an ecosystem of next-generation apps. Polygon has a range of products that aim to solve the underlying challenges with traditional blockchain architectures, all while improving the user experience for end-users to support the mass adoption of web3 products and services. Push Protocol’s launch on Polygon will address the lack of communication between apps and users to support the Polygon ecosystem in improving the web3 user experience.
 
 More than 37,000 apps are built on Polygon, offering a tremendous opportunity to create custom communication channels and user-based messages that users, developers, and stakeholders will benefit from. As with other apps, developers can easily add a notification service to their Polygon-based app and enable app-to-wallet communication. Users on Polygon can use wallet-to-wallet communication for just about anything.
@@ -33,10 +34,9 @@ The recent rebrand from EPNS to Push signals two evolutions from the service: th
 <center><b>.  .  .</b></center>
 
 ### About Polygon
+
 [Polygon](https://polygon.technology/) is the leading blockchain development platform, offering scalable, affordable, secure, and sustainable blockchains for Web3. Its growing suite of products offers developers easy access to major scaling solutions including L2 (ZK Rollups and Optimistic Rollups), sidechains, hybrid, stand-alone, and enterprise chains, and data availability. Polygon’s scaling solutions have seen widespread adoption with 37,000+ decentralized applications hosted,1.94B+ total transactions processed, 164M+ unique user addresses, and $5B+ in assets secured. The network is home for some of the biggest Web3 projects such as Aave, Uniswap, OpenSea and well-known enterprises including Meta, Stripe, and Adobe. Polygon is carbon neutral with the goal of leading the Web3 ecosystem in becoming carbon negative.
 
 If you’re an Ethereum Developer, you’re already a Polygon developer! Leverage Polygon’s fast and secure txns for your dApp, get started [here](https://docs.polygon.technology/docs/develop/getting-started).
 
 [Website](https://polygon.technology/) | [Twitter](https://twitter.com/intent/user?screen_name=0xPolygon) | [Ecosystem Twitter](https://twitter.com/intent/user?screen_name=0xPolygonNews) | [Developer Twitter](https://twitter.com/intent/user?screen_name=0xPolygonDevs) | [Studios Twitter](https://twitter.com/intent/user?screen_name=polygonstudios) | [Telegram](https://t.me/polygonofficial) | [LinkedIn](https://www.linkedin.com/company/13449964/admin/) | [Reddit](https://www.reddit.com/r/0xpolygon/) | [Discord](https://discord.gg/XvpHAxZ) | [Instagram](https://www.instagram.com/0xpolygon/) | [Facebook](https://www.facebook.com/0xPolygon.Technology)
-
-

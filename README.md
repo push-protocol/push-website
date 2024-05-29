@@ -1,8 +1,9 @@
-
 # Overview
+
 This repo houses Push protocol's website, documentation and blogs. More info below on how to run the website or submit PRs for new documentation, blog or website pages.
 
 ## Index
+
 - [Installation](#installation)
 - [Local Development](#local-development)
 - [Serve Build](#serve-build)
@@ -88,9 +89,9 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 
 - All images need to follow modern standards (webp or aivf).
 
-- Create an `index.md` inside this folder struture and write you blog here. 
+- Create an `index.md` inside this folder struture and write you blog here.
 
-- Ensure you are aware of all the meta tags that you have to provide. Make sure you are aware of [all standards mentioned here](https://docusaurus.io/docs/blog#adding-posts "Docusaurus standards for writing blog") and include them in the blog.
+- Ensure you are aware of all the meta tags that you have to provide. Make sure you are aware of [all standards mentioned here](https://docusaurus.io/docs/blog#adding-posts 'Docusaurus standards for writing blog') and include them in the blog.
 
 - All authors should be included in `/blog/authors.yml` and author images should be placed in `/assets/blog/authors/`.
 
@@ -109,11 +110,15 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 - Once you are done with the article, raise a PR and a team member will review -> merge -> deploy the website with your newly added blogs.
 
 ### Useful commands
+
 #### Convert all pngs to webp (Mac Terminal)
-- Browse to that folder and run ``for file in *; do cwebp -q 80 "$file" -o "${file%.*}.webp"; done``
+
+- Browse to that folder and run `for file in *; do cwebp -q 80 "$file" -o "${file%.*}.webp"; done`
 
 ### Useful references
+
 https://theochu.com/docusaurus/styling/
 
 # Credits
+
 This website is built using [Docusaurus 2](https://docusaurus.io/). a modern static website generator.

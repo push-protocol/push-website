@@ -12,6 +12,7 @@ tags: [ Ama
 ,Blog
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of 🎙 AMA with Satoshi Club](./cover-image.webp)
@@ -38,7 +39,7 @@ Another AMA in Satoshi club! And our guests today — @harshr @RJlwl! Welcome!
 Hello guys! 😃
 
 **Harsh | EPNS**:  
-Thanks, @Cool\_as\_Ice Really excited to be here!
+Thanks, @Cool_as_Ice Really excited to be here!
 
 **Mary | Satoshi Club**:  
 Hello, Harsh👏 happy to see you here 👍
@@ -47,7 +48,7 @@ Hello, Harsh👏 happy to see you here 👍
 Good to have you here 😃How are you doing?
 
 **Richa | EPNS 📨 | won’t DM first:**  
-Hey Legendary Satoshi Community & @Cool\_as\_Ice, great to be here 👋
+Hey Legendary Satoshi Community & @Cool_as_Ice, great to be here 👋
 
 **D. | Satoshi Club:**  
 Hello! welcome! 🥳
@@ -186,9 +187,9 @@ Notification providers can become annoying sometimes with the way and rate at wh
 **Richa | EPNS 📨 | won’t DM first:**  
 Hahaha, yeah we understand the problem users face when it comes to unsolicited and spam notifications 😅. We actually thought a ton about it and there are a couple of ways by which we mitigate the issue (everything happens on protocol :)):
 
-1) Users have to opt in to receive notifications from the service first before they can start communicating. This ensures that users are always in control, if they unsubscribe, there is no way for a service to add to them.
+1. Users have to opt in to receive notifications from the service first before they can start communicating. This ensures that users are always in control, if they unsubscribe, there is no way for a service to add to them.
 
-2) To ensure that a service doesn’t turn malicious later on, we attach a Spam Score to them as well which is adjusted by both positive (higher number of subscribers, the passage of time, etc) and negative (unusual number of notifications, a higher number of unsubscribes, etc) actions. This score when it crosses a certain threshold activates the protocol throttle mechanism which is a way to penalize services a bit at first and if they don’t stop then making the throttling go high thereby ensuring that it’s always in the best interest of services to not spam their users.
+2. To ensure that a service doesn’t turn malicious later on, we attach a Spam Score to them as well which is adjusted by both positive (higher number of subscribers, the passage of time, etc) and negative (unusual number of notifications, a higher number of unsubscribes, etc) actions. This score when it crosses a certain threshold activates the protocol throttle mechanism which is a way to penalize services a bit at first and if they don’t stop then making the throttling go high thereby ensuring that it’s always in the best interest of services to not spam their users.
 
 We are also planning verified badges in the future to ensure that while everyone can create a channel and everyone can opt-in, there is a distinction between spammy channels and verified ones.
 
@@ -296,7 +297,7 @@ Yes.
 🚀🚀🚀
 
 **D. | Satoshi Club:**  
-Q5 from Telegram user @Antoni\_azx  
+Q5 from Telegram user @Antoni_azx  
 There’s a medium article called “Building the cities of the future with EPNS”, It’s about a fictional city and its citizens that interact with various processes and gives an idea of how EPNS could eventually impact our lives, will this all stay fictional? How are you planning to get these features in real life?
 
 **Richa | EPNS 📨 | won’t DM first:**  
@@ -457,8 +458,7 @@ We will be having other incentive protocols in the future and there is going to 
 **Richa | EPNS 📨 | won’t DM first:**  
 Sure! While we have Ethereum in the name, we actually are blockchain agnostic! It’s just that we would want to tackle the problem of DeFi first hence EPNS and why we are on Ethereum first! That, and besides the awesome support we have gotten from the community means that we have to solve this for them first and then get it to others 🙂
 
-Part 3 — Quiz Results
-=====================
+# Part 3 — Quiz Results
 
 As usual, for the third part, Satoshi Club Team asked the chat 4 questions about the crypto project. A link to a Quiz form was sent into the chat.
 

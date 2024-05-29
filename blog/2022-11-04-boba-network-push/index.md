@@ -1,30 +1,30 @@
 ---
-
 slug: push-protocol-allies-with-boba-network-to-enable-decentralized-communication
 title: Push Protocol Allies With Boba Network to Enable Decentralized Communication
 authors: [push]
 image: './cover-image.webp'
-text: "Boba, the Ethereum Layer-2 network joins forces with Push Protocol to achieve direct communication with users of the platform. As such, users of Boba Network can receive decentralized push notifications pertaining to asset bridging."
-tags: [ Web3, Announcements, Push Notification, Boba Network]
-
+text: 'Boba, the Ethereum Layer-2 network joins forces with Push Protocol to achieve direct communication with users of the platform. As such, users of Boba Network can receive decentralized push notifications pertaining to asset bridging.'
+tags: [Web3, Announcements, Push Notification, Boba Network]
 ---
 
-
 ![Cover image of Push Protocol Allies With Boba Network to Enable Decentralized Communication](./cover-image.webp)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # Push Protocol and Boba Network integrate to bring decentralized push notifications for users.<br/>
 
 Boba, the Ethereum Layer-2 network joins forces with Push Protocol to achieve direct communication with users of the platform. As such, users of Boba Network can receive decentralized push notifications pertaining to asset bridging.
 
-
 ## Boba Network: Ethereum Layer2 for the Masses
+
 Boba Network is touted to be the people’s layer-2 for Ethereum that prioritizes developers and users. At its core, it is an L2 Ethereum scaling and augmenting solution. It features extensible smart contracts that allow developers to build the next generation of DApps that invoke the web-scale infrastructure. Boba offers community-driven liquidity pools while facilitating fast exits and giving LPs incentivized yield farming opportunities.
 
 Moreover, the Boba Network allows faster transactions, hybrid computing, lower gas fees, and Ethereum-level security for users. Users can also seamlessly move digital assets, including NFTs from Ethereum L1 to L2. As such, this novel network can benefit from a decentralized communication channel that allows direct communication with its users to keep them updated about the various activities on the network. This is where the collaboration with Push Protocol comes into play.
 
 ## What Does the Integration Entail?
+
 Through our integration with Boba Network, we envision the creation of a decentralized communication channel that allows the platform to directly interact with its users. This channel will be housed on the Push platform and users of Boba Network can subscribe to it to receive decentralized push notifications on their devices. They can expect to receive notifications whenever:
 
 - Their assets are bridged into the Boba Chain
@@ -38,8 +38,7 @@ We’re pleased to collaborate with Boba Network on their journey and Stay tuned
 <center><b>.  .  .</b></center>
 
 ## About Boba Network
+
 Boba is a “Multichain “ L2 Ethereum scaling & augmenting solution built by the Enya team as core contributors to the OMG Foundation. It leverages Optimistic roll-up technology and allows developers to build the next generation of DApps and DeFi protocols.
 
 Stay in touch: [Website](https://boba.network/) and [docs](https://docs.boba.network/).
-
-

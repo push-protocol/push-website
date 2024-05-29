@@ -13,12 +13,12 @@ image: "/assets/docs/previews/docs_notifications_develop--get_started.png"
 Push Notification enables web3 native notification alerts between wallets. To do so, you will be using Push SDK API that will abstract away the complexity of authentication, encryption, signing, sending and receiving of notifications.
 
 <head>
-  <title>Start Building | Push Notifications | Push Documentation</title>
+  <title>{`Start Building | Push Notifications | Push Documentation`}</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import ReactPlayer from "react-player";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ReactPlayer from 'react-player';
 import {
   ModalContainer,
   ModalSmall,
@@ -26,7 +26,7 @@ import {
   ModalMidEqual,
   AFocus,
   AImp,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 ## Speed run
 
@@ -37,8 +37,8 @@ The following speed run is designed to give you a quick overview of usage and de
 
 ```js
 // Import Push SDK & Ethers
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
-import { ethers } from "ethers";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
@@ -50,24 +50,24 @@ const userAlice = await PushAPI.initialize(signer, {
 });
 
 // List inbox notifications
-const inboxNotifications = await userAlice.notification.list("INBOX");
+const inboxNotifications = await userAlice.notification.list('INBOX');
 
 // List spam notifications
-const spamNotifications = await userAlice.notification.list("SPAM");
+const spamNotifications = await userAlice.notification.list('SPAM');
 
 // Push channel address
-const pushChannelAdress = "0xB88460Bb2696CAb9D66013A05dFF29a28330689D";
+const pushChannelAdress = '0xB88460Bb2696CAb9D66013A05dFF29a28330689D';
 
 // Subscribe to push channel
 await userAlice.notification.subscribe(
-  `eip155:11155111:${pushChannelAdress}`, // channel address in CAIP format
+  `eip155:11155111:${pushChannelAdress}` // channel address in CAIP format
 );
 
 // Send notification, provided userAlice has a channel
-const response = await userAlice.channel.send(["*"], {
+const response = await userAlice.channel.send(['*'], {
   notification: {
-    title: "You awesome notification",
-    body: "from your amazing protocol",
+    title: 'You awesome notification',
+    body: 'from your amazing protocol',
   },
 });
 
@@ -105,34 +105,34 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-sdk", "_blank")
+    window.open('https://github.com/push-protocol/push-sdk', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/javascript.png").default}
+    src={require('/static/assets/docs/techstack/javascript.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/javascript@2x.png").default
+      require('/static/assets/docs/techstack/javascript@2x.png').default
     } 2x, ${
-      require("/static/assets/docs/techstack/javascript@3x.png").default
+      require('/static/assets/docs/techstack/javascript@3x.png').default
     } 3x`}
-    alt="Image representation of Javascript SDK of Push Protocol"
+    alt='Image representation of Javascript SDK of Push Protocol'
   />
   <ModalWrapper>
     <span>
       Javascript
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -141,32 +141,32 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-sdk", "_blank")
+    window.open('https://github.com/push-protocol/push-sdk', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/react.png").default}
+    src={require('/static/assets/docs/techstack/react.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/react@2x.png").default
-    } 2x, ${require("/static/assets/docs/techstack/react@3x.png").default} 3x`}
-    alt="Image representation of React SDK of Push Protocol"
+      require('/static/assets/docs/techstack/react@2x.png').default
+    } 2x, ${require('/static/assets/docs/techstack/react@3x.png').default} 3x`}
+    alt='Image representation of React SDK of Push Protocol'
   />
   <ModalWrapper>
     <span>
       React
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -175,34 +175,34 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-sdk", "_blank")
+    window.open('https://github.com/push-protocol/push-sdk', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/reactNative.png").default}
+    src={require('/static/assets/docs/techstack/reactNative.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/reactNative@2x.png").default
+      require('/static/assets/docs/techstack/reactNative@2x.png').default
     } 2x, ${
-      require("/static/assets/docs/techstack/reactNative@3x.png").default
+      require('/static/assets/docs/techstack/reactNative@3x.png').default
     } 3x`}
-    alt="Image representation of React Native SDK of Push Protocol"
+    alt='Image representation of React Native SDK of Push Protocol'
   />
   <ModalWrapper>
     <span>
       React Native
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -211,32 +211,32 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-restapi-dart", "_blank")
+    window.open('https://github.com/push-protocol/push-restapi-dart', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/dart.png").default}
+    src={require('/static/assets/docs/techstack/dart.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/dart@2x.png").default
-    } 2x, ${require("/static/assets/docs/techstack/dart@3x.png").default} 3x`}
-    alt="Image representation of Dart SDK of Push Protocol"
+      require('/static/assets/docs/techstack/dart@2x.png').default
+    } 2x, ${require('/static/assets/docs/techstack/dart@3x.png').default} 3x`}
+    alt='Image representation of Dart SDK of Push Protocol'
   />
   <ModalWrapper>
     <span>
       Dart
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -245,32 +245,32 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-kotlin-sdk", "_blank")
+    window.open('https://github.com/push-protocol/push-kotlin-sdk', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/kotlin.png").default}
+    src={require('/static/assets/docs/techstack/kotlin.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/kotlin@2x.png").default
-    } 2x, ${require("/static/assets/docs/techstack/kotlin@3x.png").default} 3x`}
-    alt="Image representation of Kotlin SDK of Push Protocol"
+      require('/static/assets/docs/techstack/kotlin@2x.png').default
+    } 2x, ${require('/static/assets/docs/techstack/kotlin@3x.png').default} 3x`}
+    alt='Image representation of Kotlin SDK of Push Protocol'
   />
   <ModalWrapper>
     <span>
       Kotlin
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -279,32 +279,32 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-swift-sdk", "_blank")
+    window.open('https://github.com/push-protocol/push-swift-sdk', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/swift.png").default}
+    src={require('/static/assets/docs/techstack/swift.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/swift@2x.png").default
-    } 2x, ${require("/static/assets/docs/techstack/swift@3x.png").default} 3x`}
-    alt="Image representation of Swift SDK of Push Protocol"
+      require('/static/assets/docs/techstack/swift@2x.png').default
+    } 2x, ${require('/static/assets/docs/techstack/swift@3x.png').default} 3x`}
+    alt='Image representation of Swift SDK of Push Protocol'
   />
   <ModalWrapper>
     <span>
       Swift
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -317,8 +317,8 @@ npm install @pushprotocol/restapi@latest ethers@^5.7
 
 <ReactPlayer
   controls
-  width="100%"
-  url="https://www.youtube.com/watch?v=R8nsAhyrvTI"
+  width='100%'
+  url='https://www.youtube.com/watch?v=R8nsAhyrvTI'
 />
 <br />
 
@@ -333,45 +333,45 @@ _`Prod Environment`_
 <ModalContainer>
 
 <ModalMidEqual
-  flexDirection="column"
-  maxWidth="200px"
+  flexDirection='column'
+  maxWidth='200px'
   onClick={() =>
     window.open(
-      "https://snaps.metamask.io/snap/npm/pushprotocol/snap/",
-      "_blank",
+      'https://snaps.metamask.io/snap/npm/pushprotocol/snap/',
+      '_blank'
     )
   }
 >
   <img
     src={
-      require("/static/assets/docs/notifications/integrations/metamask.png")
+      require('/static/assets/docs/notifications/integrations/metamask.png')
         .default
     }
     srcSet={`${
-      require("/static/assets/docs/notifications/integrations/metamask@2x.png")
+      require('/static/assets/docs/notifications/integrations/metamask@2x.png')
         .default
     } 2x, ${
-      require("/static/assets/docs/notifications/integrations/metamask@3x.png")
+      require('/static/assets/docs/notifications/integrations/metamask@3x.png')
         .default
     } 3x`}
-    alt="Image representation of Metamask x Push Snap"
+    alt='Image representation of Metamask x Push Snap'
   />
   <ModalWrapper>
     <span>
       Metamask Push Snap
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -379,44 +379,44 @@ _`Prod Environment`_
 </ModalMidEqual>
 
 <ModalMidEqual
-  flexDirection="column"
-  maxWidth="200px"
+  flexDirection='column'
+  maxWidth='200px'
   onClick={() =>
     window.open(
-      "https://apps.apple.com/us/app/push-epns/id1528614910",
-      "_blank",
+      'https://apps.apple.com/us/app/push-epns/id1528614910',
+      '_blank'
     )
   }
 >
   <img
     src={
-      require("/static/assets/docs/notifications/integrations/push.png").default
+      require('/static/assets/docs/notifications/integrations/push.png').default
     }
     srcSet={`${
-      require("/static/assets/docs/notifications/integrations/push@2x.png")
+      require('/static/assets/docs/notifications/integrations/push@2x.png')
         .default
     } 2x, ${
-      require("/static/assets/docs/notifications/integrations/push@3x.png")
+      require('/static/assets/docs/notifications/integrations/push@3x.png')
         .default
     } 3x`}
-    alt="Image representation of Push iOS app"
+    alt='Image representation of Push iOS app'
   />
   <ModalWrapper>
     <span>
       Push App (iOS)
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -424,44 +424,44 @@ _`Prod Environment`_
 </ModalMidEqual>
 
 <ModalMidEqual
-  flexDirection="column"
-  maxWidth="200px"
+  flexDirection='column'
+  maxWidth='200px'
   onClick={() =>
     window.open(
-      "https://play.google.com/store/apps/details?id=io.epns.epns",
-      "_blank",
+      'https://play.google.com/store/apps/details?id=io.epns.epns',
+      '_blank'
     )
   }
 >
   <img
     src={
-      require("/static/assets/docs/notifications/integrations/push.png").default
+      require('/static/assets/docs/notifications/integrations/push.png').default
     }
     srcSet={`${
-      require("/static/assets/docs/notifications/integrations/push@2x.png")
+      require('/static/assets/docs/notifications/integrations/push@2x.png')
         .default
     } 2x, ${
-      require("/static/assets/docs/notifications/integrations/push@3x.png")
+      require('/static/assets/docs/notifications/integrations/push@3x.png')
         .default
     } 3x`}
-    alt="Image representation of Push Android app"
+    alt='Image representation of Push Android app'
   />
   <ModalWrapper>
     <span>
       Push App (Android)
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -475,26 +475,26 @@ _`Staging Environment`_
 <ModalContainer>
 
 <ModalSmall
-  flexDirection="column"
-  maxWidth="200px"
-  onClick={() => window.open("https://staging.push.org/inbox", "_blank")}
+  flexDirection='column'
+  maxWidth='200px'
+  onClick={() => window.open('https://staging.push.org/inbox', '_blank')}
 >
   <ModalWrapper>
     <span>
       Push Staging dApp
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -502,12 +502,12 @@ _`Staging Environment`_
 </ModalSmall>
 
 <ModalSmall
-  flexDirection="column"
-  maxWidth="200px"
+  flexDirection='column'
+  maxWidth='200px'
   onClick={() =>
     window.open(
-      "https://chrome.google.com/webstore/detail/push-staging-protocol-alp/bjiennpmhdcandkpigcploafccldlakj",
-      "_blank",
+      'https://chrome.google.com/webstore/detail/push-staging-protocol-alp/bjiennpmhdcandkpigcploafccldlakj',
+      '_blank'
     )
   }
 >
@@ -515,18 +515,18 @@ _`Staging Environment`_
     <span>
       Push Browser Extension
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -534,12 +534,12 @@ _`Staging Environment`_
 </ModalSmall>
 
 <ModalSmall
-  flexDirection="column"
-  maxWidth="200px"
+  flexDirection='column'
+  maxWidth='200px'
   onClick={() =>
     window.open(
-      "https://play.google.com/store/apps/details?id=io.epns.epnsstaging&hl=en&gl=US",
-      "_blank",
+      'https://play.google.com/store/apps/details?id=io.epns.epnsstaging&hl=en&gl=US',
+      '_blank'
     )
   }
 >
@@ -547,18 +547,18 @@ _`Staging Environment`_
     <span>
       Push Staging App (Android)
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>

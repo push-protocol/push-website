@@ -19,18 +19,18 @@ Group chat is the latest exciting addition to Push Chat, for the first time ever
 - Ability to integrate in your UI (web / mobile) without users going to Discord, Telegram or breaking the UX
 
 <head>
-  <title>Create Group | Push Chat | Push Documentation</title>
+  <title>{`Create Group | Push Chat | Push Documentation`}</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import Details from "@theme/Details";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AImp,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 ## Create group API
 
@@ -55,8 +55,8 @@ const createdGroup = await userAlice.chat.group.create(name);
 | `options` | `object`              | -          | -       | Optional Configuration for creating group.                                                                                                                                                                                                                                     |
 | -         | `options.description` | `string`   | -       | A description of the group.                                                                                                                                                                                                                                                    |
 | -         | `options.image`       | `string`   | -       | Image for the group in [Base64](https://en.wikipedia.org/wiki/Base64) format                                                                                                                                                                                                   |
-| -         | `options.members`     | `string[]` | `[]`    | An array of member recipients. [Members supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat")                                                                                                                |
-| -         | `options.admins`      | `string[]` | -       | An array of admin recipients. [Admins supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat")                                                                                                                  |
+| -         | `options.members`     | `string[]` | `[]`    | An array of member recipients. [Members supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat')                                                                                                                |
+| -         | `options.admins`      | `string[]` | -       | An array of admin recipients. [Admins supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat')                                                                                                                  |
 | -         | `options.private`     | `boolean`  | `false` | Indicates if the group is private.                                                                                                                                                                                                                                             |
 | -         | `options.rules`       | `any[]`    | -       | Define conditions such as token gating, nft gating, custom endpoint for `joining` or `sending message` in a group. See [conditional group gating](/docs/chat/build/conditional-rules-for-group) to understand rule engine and how to fine tune conditional rules of your group |
 

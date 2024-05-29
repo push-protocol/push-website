@@ -16,8 +16,8 @@ Enables sending a image URLs or media URLs as a message. You can send GIFs, Twee
   <title>Message Type - Media Embed | Push Chat | Push Documentation</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
@@ -26,9 +26,9 @@ import TabItem from "@theme/TabItem";
 // userAlice.chat.send(recipient, message)
 // This section focuses on customization parameters for 'message' object
 const aliceMessagesBob = await userAlice.chat.send(recipient, {
-  type: "MediaEmbed",
+  type: 'MediaEmbed',
   content:
-    "https://media1.giphy.com/media/FtlUfrq3pVZXVNjoxf/giphy360p.mp4?cid=ecf05e47jk317254v9hbdjrknemduocie4pf54wtsir98xsx&ep=v1_videos_search&rid=giphy360p.mp4&ct=v",
+    'https://media1.giphy.com/media/FtlUfrq3pVZXVNjoxf/giphy360p.mp4?cid=ecf05e47jk317254v9hbdjrknemduocie4pf54wtsir98xsx&ep=v1_videos_search&rid=giphy360p.mp4&ct=v',
 });
 ```
 
@@ -41,11 +41,11 @@ const aliceMessagesBob = await userAlice.chat.send(recipient, {
 
 When sending a message, you can customize the following params
 
-| Param         | Type                | Subtype      | Default | Remarks                                                                                                                                                                                              |
-| ------------- | ------------------- | ------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string`            | -            | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet address, chain agnostic wallet address, NFT addresses or even chatid which is useful in groups |
-| _`message`_   | `object`            | -            | -       | Configuration for message to be sent                                                                                                                                                                 |
-| -             | _`message.type`_    | `MediaEmbed` | `Text`  | Type of message Content                                                                                                                                                                              |
-| -             | _`message.content`_ | `string`     | -       | Message Content                                                                                                                                                                                      |
+| Param         | Type                | Subtype      | Default | Remarks                                                                                                                                                                                                                                            |
+| ------------- | ------------------- | ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`recipient`_ | `string`            | -            | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat') including wallet address, chain agnostic wallet address, NFT addresses or even chatid which is useful in groups |
+| _`message`_   | `object`            | -            | -       | Configuration for message to be sent                                                                                                                                                                                                               |
+| -             | _`message.type`_    | `MediaEmbed` | `Text`  | Type of message Content                                                                                                                                                                                                                            |
+| -             | _`message.content`_ | `string`     | -       | Message Content                                                                                                                                                                                                                                    |
 
 > Note: Parameters _`in this style`_ are mandatory.

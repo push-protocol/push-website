@@ -3,20 +3,22 @@ slug: epns-push-notifications-are-never-boring
 title: 'EPNS push notifications are never boring'
 authors: [push]
 image: './cover-image.webp'
-text: "We are back, sharing our ETHGlobal Hack Money hackathon story. Can’t believe it’s already week -3!! It’s been an amazing learning experience so far. A big shout out to the ETHGlobal Team for always being there to help and organizing the best AMAs and office hours sessions. Getting feedback and ideas from the devs at Aavesome Compound, etc has made this learning process about DeFi landscape and tech amazingly fun."
-tags: [Ethereum ,Blockchain ,Ethglobal ,Blog ,Notifications]
+text: 'We are back, sharing our ETHGlobal Hack Money hackathon story. Can’t believe it’s already week -3!! It’s been an amazing learning experience so far. A big shout out to the ETHGlobal Team for always being there to help and organizing the best AMAs and office hours sessions. Getting feedback and ideas from the devs at Aavesome Compound, etc has made this learning process about DeFi landscape and tech amazingly fun.'
+tags: [Ethereum, Blockchain, Ethglobal, Blog, Notifications]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS push notifications are never boring](./cover-image.webp)
+
 <!--truncate-->
 
 We are back, sharing our [ETHGlobal](https://medium.com/u/3d1733b8e86a?source=post_page-----f5f5a1a2c477--------------------------------) Hack Money hackathon story. Can’t believe it’s already week -3!! It’s been an amazing learning experience so far. A big shout out to the [ETHGlobal Team](https://medium.com/u/8687f4bcbbed?source=post_page-----f5f5a1a2c477--------------------------------) for always being there to help and organizing the best AMAs and office hours sessions. Getting feedback and ideas from the devs at [Aavesome](https://medium.com/u/13bfa9f22920?source=post_page-----f5f5a1a2c477--------------------------------), Compound, etc has made this learning process about DeFi landscape and tech amazingly fun.
 
-
 To begin with, we never wanted to deliver plain notifications to the users. We mean they are cool but there are so many things you can do when you make notifications behave like your twitter feed. This led us to think a lot about the payloads, analogies and the way we want to present notifications… and that’s how we came up with… drumbeats… notification feed and different formats of notifications.
 
 ### Groups and secrets…and secret groups?!
+
 Let’s talk about the recipients of notifications first. Yes, there are two different target recipients: Groups and Secrets. Simply put, a channel owner or smart contract can send a broadcast to all recipients of their channel or can send encrypted messages (known as secret) to an individual person.
 
 #### Group Messages
@@ -34,6 +36,7 @@ Though in brief terms, the way we achieve this is by encrypting few parts of the
 For example, Aavesome can send its customer a message once the loan liquidation is complete.
 
 ### Message attributes
+
 Let’s talk message attributes aka how rich we can present user’s with the information.
 
 Messages are more useful (and more fun) when they are clickable, when you can interact with them and when they contain a number of great contexts. This was the approach we used to form different attributes for the message.
@@ -48,6 +51,7 @@ There are 4 message attributes.
 4. Image
 
 ### Use Cases
+
 Messages get delivered to users as feeds on their [EPNS mobile app](https://medium.com/@epnsdapp/hello-world-buidling-a-working-epns-mobile-app-e9dcb8f5ed66), just like your Twitter feed, with flexible opt-in/opt-out capability to give users full control over the notifications they want to receive.
 
 The cool thing about epns push notifications is that there are multiple ways of building messages to cater to different types of web3 users.
@@ -91,5 +95,3 @@ We think there are multiple ways in which epns push notifications can add value 
 <b>TLDR; try out the (almost complete) <a href='https://github.com/ethereum-push-notification-system/epns-mobile-app'>react native</a> app.</b>
 
 Next up, the dApp and the smart contract…Please feel free to share your support and amazing feedback.
-
-

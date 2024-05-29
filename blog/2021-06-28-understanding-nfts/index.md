@@ -12,6 +12,7 @@ tags: [ Nft
 ,Twitter
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Understanding NFTs and Why We Need Push Notifications on NFT Marketplaces](./cover-image.webp)
@@ -24,8 +25,7 @@ NFTs are now everywhere, from art to digital collectibles and real estate to gam
 
 So, what exactly are NFTs?
 
-What are NFTs?
-==============
+# What are NFTs?
 
 The term “fungible” is used to identify items that can easily replace or be replaced by other identical items without any change in value. Going by this, we can say fiat currencies such as the dollar or cryptos such as Bitcoin and Ether are fungible items or tokens.
 
@@ -37,8 +37,7 @@ Even your house is non-fungible. You may buy a new house or exchange your house 
 
 We can go further with examples of unique and rare items that are non-fungible. Music albums, in-game accessories, digital and real collectibles, and so on. And when we take these non-fungible items and represent their uniqueness through blockchain-based digital tokens pegged to the items, they become non-fungible tokens.
 
-What’s All the Hype Around NFTs?
-================================
+# What’s All the Hype Around NFTs?
 
 The fad around NFTs is fuelled by two distinct reasons. The first is the technical excellence they offer to the art, gaming, music, real estate, and so many other industries. The second is that many renowned artists, celebrities, tech entrepreneurs, and business owners have joined the NFT bandwagon. Let’s look into both.
 
@@ -56,8 +55,7 @@ The NFT of a digital art piece by Mike Winkelmann, famously known as Beeple, rec
 
 As you read this, [celebrities are creating NFTs](https://www.businessofbusiness.com/articles/nft-celebrity-non-fungible-tokens-crypto-grimes-paris-hilton/) of their own. [NBA already has NFTs](https://dappradar.com/flow/collectibles/nba-topshot) that bring basketball to the world of blockchain. And yet, it only feels like the start… a massive one.
 
-Bringing Push Notifications to NFT Marketplaces
-===============================================
+# Bringing Push Notifications to NFT Marketplaces
 
 There are two popular ways you can get your hands on NFTs — centralized and decentralized marketplaces. One of the most popular centralized marketplaces is Nifty Gateway. It makes the process easy by allowing you to use your credit card to purchase NFTs. But as with all things centralized, it is exposed to cyber threats, which is quite evident after the [recent hack of the platform](https://www.coindesk.com/nifty-gateway-nft-hack-lessons).
 

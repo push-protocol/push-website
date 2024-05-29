@@ -1,27 +1,26 @@
 ---
-
 slug: february-monthly-recap
 title: February Monthly Recap 🚀
 authors: [push]
 image: './cover-image.webp'
-text: "Welcome to our monthly update for February! What a month this was for Push. From our massive launch on BNBChain to releasing Push Delivery Nodes, Push Chat, and Push Group Chat. Needless to say, we’ve been busy."
-tags: [ Web3, Blockchain Technology, Newsletter ]
-
+text: 'Welcome to our monthly update for February! What a month this was for Push. From our massive launch on BNBChain to releasing Push Delivery Nodes, Push Chat, and Push Group Chat. Needless to say, we’ve been busy.'
+tags: [Web3, Blockchain Technology, Newsletter]
 ---
 
 ![Cover image of February Monthly Recap 🚀](./cover-image.webp)
+
 <!--truncate-->
 
 Welcome to our monthly update for February!
 
 What a month this was for Push. From our massive launch on BNBChain to releasing Push Delivery Nodes, Push Chat, and Push Group Chat. Needless to say, we’ve been busy.
 
-
 Here’s a look at everything that went on🤩
 
 <center><b>.   .   .</b></center>
 
 ## Development
+
 Our commitment to building a better web3 ecosystem through communication tools is unrelenting — and we made significant strides toward achieving this goal in this last month. We’re excited to share with you two significant developments.
 
 <b>First</b>, our launch on <a href="https://twitter.com/pushprotocol/status/1625812049379971073">BNB Chain</a>, which marked an important milestone in our journey of becoming the web3 communication layer. We couldn’t have been more thrilled to have eight fantastic collaborators join us in this launch. With these collaborations, we were able to bring our vision of a better user experience to life for the BNB ecosystem.<br/><br/>
@@ -47,6 +46,7 @@ In addition to these developments, we’ve seen a lot of exciting progress on th
 We’re super excited to bring more interesting features to you soon. Stay tuned with everything on [Push Discord](https://discord.com/invite/pushprotocol).
 
 ## Frens of Push
+
 As we continue making waves in web3, we’re thrilled to be connecting and integrating with more amazing projects.
 
 ![Ecosystem](./image-1.webp)
@@ -68,6 +68,7 @@ Finally, ICYMI, our frens [Phuture Finance](https://medium.com/push-protocol/pus
 #PoweredByPush
 
 ## Community and Governance
+
 Our community is at the heart of everything we do at Push, and we’re committed to building a strong and engaged community that shares our vision for the future of web3. This month witnessed a bunch of activities on this front:
 
 - Hosted an amazing Twitter Spaces discussing [‘The Web3 Building Blocks in 2023’](https://twitter.com/pushprotocol/status/1623368623073988608?s=20&t=LcdbhbBw0mCjejQ3Uer98w) joined by founders & core team members from Superfluid, The Graph & Coinshift.
@@ -83,6 +84,7 @@ We’re hosting exciting [workshops and panel discussions](https://twitter.com/p
 And as always, we’ve added a bunch of Rockstars to the #RockstarsOfPush fam for their amazing community contributions. Congratulations to all the awesome creators!
 
 ## Featured
+
 Here’s a look at all the media channels that have been talking about us lately, we had some high profile features that we’re very proud of.
 
 - [Coindesk](https://twitter.com/CoinDesk/status/1625818092789194752?s=20), [BNB Chain](https://twitter.com/pushprotocol/status/1626046206244712449?s=20), [BSC News](https://twitter.com/BSCNews/status/1625933518110101505?s=20), [Yahoo Finance](https://twitter.com/pushprotocol/status/1626526415419047936?s=20) featured Push’s BNB launch in their latest articles.
@@ -95,4 +97,3 @@ Here’s a look at all the media channels that have been talking about us lately
 As we wrap up another month of innovation and progress at Push, we’re excited to break new ground in the world of web3 communication. None of this would be possible without our incredible community, so we want to thank each one of you for your ongoing support and enthusiasm.
 
 Stay tuned for more updates and progress reports next month!
-

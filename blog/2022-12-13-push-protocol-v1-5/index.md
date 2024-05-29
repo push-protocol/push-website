@@ -3,18 +3,26 @@ slug: introducing-push-protocol-v1-5
 title: Introducing Push Protocol v1.5 🎊
 authors: [push]
 image: './cover-image.webp'
-text: "Push Protocol is elated to announce the successful completion of the security audit of our smart contracts v1.5 with Chainsafe."
-tags: [ Web3, Blockchain Technology, Blockhain Development, Push Notification, Communication Tools]
+text: 'Push Protocol is elated to announce the successful completion of the security audit of our smart contracts v1.5 with Chainsafe.'
+tags:
+  [
+    Web3,
+    Blockchain Technology,
+    Blockhain Development,
+    Push Notification,
+    Communication Tools,
+  ]
 ---
 
 ![Cover image of Introducing Push Protocol v1.5 🎊](./cover-image.webp)
+
 <!--truncate-->
 
 <!--customheaderpoint-->
+
 # We’re proud to announce ChainSafe has successfully completed its audit of Push Smart Contracts v1.5! Here’s what to expect from the update.<br/>
 
 Push Protocol is elated to announce the successful completion of the [security audit of our smart contracts v1.5](https://github.com/ChainSafe/audits/blob/main/EPNS/epns-protocol-11-2022.pdf) with Chainsafe.
-
 
 The completion of this audit was one of the most significant roadmap items for this year. We couldn’t be happier to share with you all that our version 1.5 of Core and Communicator smart contracts have been successfully audited by Chainsafe.
 
@@ -27,6 +35,7 @@ Let’s dive in!
 <center><b>.  .  .</b></center>
 
 ## 1) Enhancing the PUSH token utility through channel creation
+
 One of the most significant modifications in v1.5 of the Push smart contract can be found in the channel creation procedure. In v1 of the core contract design, channel creators were required to deposit DAI to launch a channel. In v1.5, the protocol removes the need to deposit DAI. <b>Instead, all channels will now be created using PUSH</b>.
 
 Additionally, v1.5 of Push smart contracts will also deprecate the use of AAVE, which was previously used to deposit DAI tokens and earn interests.
@@ -34,6 +43,7 @@ Additionally, v1.5 of Push smart contracts will also deprecate the use of AAVE, 
 All crucial transactions of core smart contracts like <i>channel creations, channel reactivation or deactivation, and channel details modifications</i> will require PUSH with the launch of v1.5.
 
 ## 2) Incentivizing the network with the PUSH Protocol Fee Pool
+
 Version 1.5 of Push smart contracts will introduce the concept of <b>Protocol Fee Pool</b>. So, what exactly is a Protocol Fee Pool?
 
 The protocol fee is a small fee amount deducted by the core smart contract for any imperative transaction like channel creation, channel reactivation, channel detail modification, and others.
@@ -49,6 +59,7 @@ The Protocol Fee Pool is going to play an imperative role in the incentivization
 Since the incentives will be directly tied to the protocol’s fee pool, this would mean that the more the protocol expands its boundaries, the better the incentives for users that they can claim from the contracts.
 
 ## 3) Enabling more flexibility and customization with time-bound channels
+
 With this new version of smart contracts, v1.5 will introduce another amazing feature that allows users to create time-bound channels.<b>Time-bound channels</b> are the ones that can be created for a specific duration of time and can easily be removed once the duration is over.
 
 Diving a bit deeper into this function: while the underlying channel creation procedure is similar, this feature allows users to pass an additional parameter — the date of expiry of the channel — to the already existing channel creation function. This is what indicates that a time-bound channel with a predefined expiration date is to be created. Once the channel’s duration is over, the channel creator can destroy the channel and get the staked tokens back.
@@ -56,6 +67,7 @@ Diving a bit deeper into this function: while the underlying channel creation pr
 Finally, the original creator can recreate the channel using the same address after destroying the previous time-bound channel. This was not possible till now with permanent channels.
 
 ## 4) Allowing for upgrades and adjustments with channel edit features
+
 V1.5 brings with it a much-awaited feature: the ability to modify your channel details! Descriptions, logo, information, etc.
 
 While editing channels is a simple feature, there were a specific set of reasons why this wasn’t made available until v1.5.
@@ -73,6 +85,7 @@ Editing channel details requires fees to be deposited. This fee shall keep incre
 Whenever a channel owner modifies any specific detail about their channel on the protocol, the channel shall appear with an additional note/warning in the dApp UI. This note will inform the rest of the users as well as subscribers about the channel’s old name or description.
 
 ## 5) Enabling notifications using The Graph subgraph
+
 Push has developed an in-house helper function specifically for The Graph protocol that allows you to read events from the subgraph and define notifications accordingly. Once defined, they will be stored on the Subgraph in a “long string” format.
 
 This function shall simply allow users to pass subGraph data, in the form of bytes, which is basically a combination of the Subgraph ID and Poll Interval. It emits out the event with the msg.sender and the bytes value.
@@ -80,6 +93,7 @@ This function shall simply allow users to pass subGraph data, in the form of byt
 The function shall only be accessible by the activated channels in the protocol.
 
 ## 6) Including of EIP-1271 in the Push Communicator contract
+
 Alright, now that we have talked about quite a few new features in the Push Core smart contracts, it’s time to discuss the Push Communicator smart contract.
 
 Although the communicator contract doesn’t have a lot of new features in this version, it has one major feature worth discussing. The v1.5 of Push Communicator smart contract implements <b>EIP-1271</b>.
@@ -101,5 +115,3 @@ A lot of development has gone into reaching this moment with Push v1.5. We’re 
 <b>Note:</b>
 
 The Push Core and Communicator smart contracts will be upgraded to version 1.5 by January 2023. All the above-mentioned modifications and new features will come into effect post the upgrade.
-
-

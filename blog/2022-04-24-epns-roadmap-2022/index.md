@@ -4,9 +4,10 @@ title: 'EPNS Roadmap 2022'
 authors: [push]
 image: './cover-image.webp'
 description: 'EPNS Roadmap 2022'
-text: "2021 was the year of enormous things in the crypto world. We witnessed DeFi taking over the world, NFTs driving adoption and landing mainstream spots, Metaverse coming to a room near you and so many more things!"
+text: '2021 was the year of enormous things in the crypto world. We witnessed DeFi taking over the world, NFTs driving adoption and landing mainstream spots, Metaverse coming to a room near you and so many more things!'
 tags: [Blockchain, Epnsproject, Web3, Crypto]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of EPNS Roadmap 2022](./cover-image.webp)
@@ -116,8 +117,8 @@ We started 2021 with a very specific plan of providing effective user interfaces
 - Browser Extension
 
 #### dApp (Decentralized Application)
-While most of the foundational features for the dApp were already developed in Q1 of 2021 itself, we have included some really interesting as well as significant features for both Channels and Users, as well. For instance:
 
+While most of the foundational features for the dApp were already developed in Q1 of 2021 itself, we have included some really interesting as well as significant features for both Channels and Users, as well. For instance:
 
 For Channel Owners:
 
@@ -137,7 +138,7 @@ Now that we have the basic and important features in place already, this year we
 
 - Redesigning of the dApp UI: To begin with, the [EPNS dApp](https://app.epns.io/) shall soon have a brand new UI design with a comparatively better experience for users. Since we already have started working on our new interface, we might have the new UI ready by Q1 of this year itself.
 - Notification settings for Users and Channels: One of the most significant features that shall be launched this year is the notification setting for both users and channels.
-When it comes to notifications, a specific channel might have different types of notifications. While some notifications deal with the Governance updates of that channel, others might be related to the loan liquidations. Now with Channel notification settings, the channel owner shall be able to provide specific notification options to its users depending on the different kinds of notification a channel might have to offer.
+  When it comes to notifications, a specific channel might have different types of notifications. While some notifications deal with the Governance updates of that channel, others might be related to the loan liquidations. Now with Channel notification settings, the channel owner shall be able to provide specific notification options to its users depending on the different kinds of notification a channel might have to offer.
 
 On the other hand, notification settings for users shall allow users to be capable of being selective in terms of the notifications that they receive. Users will be able to precisely select only those notification options from a channel that they are interested in.
 
@@ -147,6 +148,7 @@ In other words, a user only interested in the governance proposals of a particul
 - Search and Filteration of Notifications shall also be included in the dApp to simplify the process of searching for a particular notification.
 
 #### Mobile App
+
 Quite similarly to the dApp, our mobile apps have also come a long way now. While the early stages had only some of the initial important features on the apps, we have included quite a lot of significant features in the last year and modified our apps. Some of those features are as follows:
 
 - Channel Discovery feature was added, which allows users to look at all the channels associated with EPNS.
@@ -163,11 +165,12 @@ This year, we are planning to add the following features to the mobile app:
 - Provide richer notifications for channels.
 
 #### Browser Extension
+
 While we already have the Browser Extension in place and completely functional now, this year we are planning on providing a richer and better UI design for the EPNS extension to ensure its on-pair with all other front-end product capabilities where it makes sense.
 
 ### PUSH Nodes (Retrieval & Dispatch)
-![Fifth Image of Roadmap 2022](./image-5.webp)
 
+![Fifth Image of Roadmap 2022](./image-5.webp)
 
 Push Nodes can undoubtedly be stated as one of the most crucial components in our journey towards becoming a true reliable communication layer for the Web3 world.
 
@@ -182,7 +185,7 @@ Last year we included the following features in our Push Nodes:
 While some of the very significant features of the Push Nodes were already built last year, this year we are planning to make our Push Nodes more powerful and effective. Some of the critical features that we are planning for the year 2022 are as follows:
 
 - <b>Decentralization of Push Nodes</b>: While there is no denying the fact that our aim is to become a blockchain agnostic communication layer, we also understand that decentralization of our Push Nodes is unquestionably one of our top priorities. This is why we have tasked ourselves to decentralize the push nodes this year and achieve our goal of becoming a truly decentralized middleware solution.
-Decentralization of our push nodes is going to be a very imperative step towards becoming blockchain agnostic as this ensures higher scalability, stronger support for Layer 2 solutions as well enhanced performance, etc.
+  Decentralization of our push nodes is going to be a very imperative step towards becoming blockchain agnostic as this ensures higher scalability, stronger support for Layer 2 solutions as well enhanced performance, etc.
 
 Moreover, along with the decentralization of our nodes, we shall also be implementing an effectual incentive mechanism for our active participants.
 
@@ -217,4 +220,3 @@ Some of the crucial topics that we are planning to cover this year are as follow
 With these plans for the product’s roadmap 2022, we have started this year with utmost belief and commitment to our mission of providing an effective and reliable communication layer for the Web3 world.
 
 If you have any comments or questions please feel free to reach out to us on telegram or check out our website for more details: https://epns.io/
-

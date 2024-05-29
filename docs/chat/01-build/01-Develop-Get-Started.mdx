@@ -13,18 +13,18 @@ image: "/assets/docs/previews/docs_chat_develop--get_started.png"
 Push Chat enables web3 native messaging between wallets, groups, NFTs or even conditional (gated) groups. To do so, you will be using Push SDK API that will abstract away the complexity of authentication, encryption, signing, sending and receiving of messages.
 
 <head>
-  <title>Start Building | Push Chat | Push Documentation</title>
+  <title>{`Start Building | Push Chat | Push Documentation`}</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import ReactPlayer from "react-player";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ReactPlayer from 'react-player';
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AImp,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 ## Speed run
 
@@ -35,8 +35,8 @@ The following speed run is designed to give you a quick overview of usage and de
 
 ```js
 // Import Push SDK & Ethers
-import { PushAPI, CONSTANTS } from "@pushprotocol/restapi";
-import { ethers } from "ethers";
+import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
+import { ethers } from 'ethers';
 
 // Creating a random signer from a wallet, ideally this is the wallet you will connect
 const signer = ethers.Wallet.createRandom();
@@ -48,7 +48,7 @@ const userAlice = await PushAPI.initialize(signer, {
 });
 
 // This will be the wallet address of the recipient
-const bobWalletAddress = "0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666";
+const bobWalletAddress = '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666';
 
 // Send a message to Bob
 const aliceMessagesBob = await userAlice.chat.send(bobWalletAddress, {
@@ -91,33 +91,33 @@ npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-sdk", "_blank")
+    window.open('https://github.com/push-protocol/push-sdk', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/javascript.png").default}
+    src={require('/static/assets/docs/techstack/javascript.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/javascript@2x.png").default
+      require('/static/assets/docs/techstack/javascript@2x.png').default
     } 2x, ${
-      require("/static/assets/docs/techstack/javascript@3x.png").default
+      require('/static/assets/docs/techstack/javascript@3x.png').default
     } 3x`}
   />
   <ModalWrapper>
     <span>
       Javascript
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -128,31 +128,31 @@ npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-sdk", "_blank")
+    window.open('https://github.com/push-protocol/push-sdk', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/react.png").default}
+    src={require('/static/assets/docs/techstack/react.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/react@2x.png").default
-    } 2x, ${require("/static/assets/docs/techstack/react@3x.png").default} 3x`}
+      require('/static/assets/docs/techstack/react@2x.png').default
+    } 2x, ${require('/static/assets/docs/techstack/react@3x.png').default} 3x`}
   />
   <ModalWrapper>
     <span>
       React
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -163,33 +163,33 @@ npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-sdk", "_blank")
+    window.open('https://github.com/push-protocol/push-sdk', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/reactNative.png").default}
+    src={require('/static/assets/docs/techstack/reactNative.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/reactNative@2x.png").default
+      require('/static/assets/docs/techstack/reactNative@2x.png').default
     } 2x, ${
-      require("/static/assets/docs/techstack/reactNative@3x.png").default
+      require('/static/assets/docs/techstack/reactNative@3x.png').default
     } 3x`}
   />
   <ModalWrapper>
     <span>
       React Native
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -200,31 +200,31 @@ npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-restapi-dart", "_blank")
+    window.open('https://github.com/push-protocol/push-restapi-dart', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/dart.png").default}
+    src={require('/static/assets/docs/techstack/dart.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/dart@2x.png").default
-    } 2x, ${require("/static/assets/docs/techstack/dart@3x.png").default} 3x`}
+      require('/static/assets/docs/techstack/dart@2x.png').default
+    } 2x, ${require('/static/assets/docs/techstack/dart@3x.png').default} 3x`}
   />
   <ModalWrapper>
     <span>
       Dart
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -235,31 +235,31 @@ npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-kotlin-sdk", "_blank")
+    window.open('https://github.com/push-protocol/push-kotlin-sdk', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/kotlin.png").default}
+    src={require('/static/assets/docs/techstack/kotlin.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/kotlin@2x.png").default
-    } 2x, ${require("/static/assets/docs/techstack/kotlin@3x.png").default} 3x`}
+      require('/static/assets/docs/techstack/kotlin@2x.png').default
+    } 2x, ${require('/static/assets/docs/techstack/kotlin@3x.png').default} 3x`}
   />
   <ModalWrapper>
     <span>
       Kotlin
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -270,31 +270,31 @@ npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
 
 <ModalSmall
   onClick={() =>
-    window.open("https://github.com/push-protocol/push-swift-sdk", "_blank")
+    window.open('https://github.com/push-protocol/push-swift-sdk', '_blank')
   }
 >
   <img
-    src={require("/static/assets/docs/techstack/swift.png").default}
+    src={require('/static/assets/docs/techstack/swift.png').default}
     srcSet={`${
-      require("/static/assets/docs/techstack/swift@2x.png").default
-    } 2x, ${require("/static/assets/docs/techstack/swift@3x.png").default} 3x`}
+      require('/static/assets/docs/techstack/swift@2x.png').default
+    } 2x, ${require('/static/assets/docs/techstack/swift@3x.png').default} 3x`}
   />
   <ModalWrapper>
     <span>
       Swift
       <svg
-        width="20"
-        height="28"
-        viewBox="0 0 29 28"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
       >
         <path
-          d="m7.501 21.001 14-14M10.125 7.001H21.5v11.375"
-          stroke="#A0A3B1"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
         ></path>
       </svg>
     </span>
@@ -307,8 +307,8 @@ npm install @pushprotocol/restapi@latest @pushprotocol/socket@latest ethers@^5.7
 
 <ReactPlayer
   controls
-  width="100%"
-  url="https://youtu.be/R8nsAhyrvTI?si=9mWjoxGfOSf6k5-K&t=2621"
+  width='100%'
+  url='https://youtu.be/R8nsAhyrvTI?si=9mWjoxGfOSf6k5-K&t=2621'
 />
 <br />
 
@@ -340,10 +340,10 @@ function App(props) {
         Live chat with pushai.eth, connect your wallet and chat to get sassy
         response from PushAI.eth
       </h2>
-      <div style={{ height: "75vh", margin: "20px auto" }}>
+      <div style={{ height: '75vh', margin: '20px auto' }}>
         <ChatUIProvider>
           <ChatView
-            chatId="0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666"
+            chatId='0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666'
             limit={10}
             isConnected={true}
             onVerificationFail={() => setShowFaucet(true)}

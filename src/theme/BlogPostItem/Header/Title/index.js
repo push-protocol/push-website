@@ -4,26 +4,26 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from "react";
-import clsx from "clsx";
-import Link from "@docusaurus/Link";
-import { useBlogPost } from "@docusaurus/theme-common/internal";
-import styles from "./styles.module.css";
-import styled from "styled-components";
+import React from 'react';
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import { useBlogPost } from '@docusaurus/theme-common/internal';
+import styles from './styles.module.css';
+import styled from 'styled-components';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import { device } from '@site/src/config/globals';
 
 export default function BlogPostItemHeaderTitle({ className }) {
   const { metadata, isBlogPostPage } = useBlogPost();
   const { permalink, title } = metadata;
-  const TitleHeading = isBlogPostPage ? "h1" : "h2";
+  const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
   return (
-    <TitleHeading className={clsx(styles.title, className)} itemProp="headline">
+    <TitleHeading className={clsx(styles.title, className)} itemProp='headline'>
       {isBlogPostPage ? (
         <PostTitle>{title}</PostTitle>
       ) : (
-        <Link itemProp="url" to={permalink}>
+        <Link itemProp='url' to={permalink}>
           <LinkText>{title}</LinkText>
         </Link>
       )}

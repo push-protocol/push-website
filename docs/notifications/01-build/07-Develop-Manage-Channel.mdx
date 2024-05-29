@@ -13,18 +13,18 @@ image: "/assets/docs/previews/docs_notifications_develop--manage_channel.png"
 This section covers all APIs related to managing channel including adding settings, getting and updating channel info, etc.
 
 <head>
-  <title>Manage Channel | Push Notification | Push Documentation</title>
+  <title>{`Manage Channel | Push Notification | Push Documentation`}</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import Details from "@theme/Details";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AFocus,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 ## Get channel info API
 
@@ -91,7 +91,7 @@ A channel alias address is a link to other EVM / non-EVM chain address that acts
 // await userAlice.channel.alias.info({options?})
 const aliasInfo = await userAlice.channel.alias.info({
   alias: aliasAddress,
-  aliasChain: "POLYGON",
+  aliasChain: 'POLYGON',
 });
 ```
 
@@ -141,14 +141,14 @@ const channelSubscribers = await userAlice.channel.subscribers();
 
 ### Get channel subscribers parameters
 
-| Param     | Type              | Subtype  | Default             | Remarks                                                                                                                                                                                              |
-| --------- | ----------------- | -------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `options` | `object`          | -        | -                   | Configuration options for retrieving subscribers.                                                                                                                                                    |
-| -         | `options.channel` | `string` | Derived from signer | Channel address in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address). If no channel address is passed, then signer is used to derive the channel |
-| -         | `options.page`    | `number` | -                   | A number representing the page of results to retrieve.                                                                                                                                                           |
-| -         | `options.limit`   | `number` | -                   | Represents the maximum number of subscriptions to retrieve per page                                                                                                                                              |
-| -         | `options.setting` | `boolean`| false               | A boolean flag if when set to true, fetches user settings along with the subscriber                                                                                                                                               |
-| -         | `options.category`| `number` | -                   | Filters out subscribers that have enabled a specific category of notification settings                                                                                                                                              |
+| Param     | Type               | Subtype   | Default             | Remarks                                                                                                                                                                                              |
+| --------- | ------------------ | --------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `options` | `object`           | -         | -                   | Configuration options for retrieving subscribers.                                                                                                                                                    |
+| -         | `options.channel`  | `string`  | Derived from signer | Channel address in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address). If no channel address is passed, then signer is used to derive the channel |
+| -         | `options.page`     | `number`  | -                   | A number representing the page of results to retrieve.                                                                                                                                               |
+| -         | `options.limit`    | `number`  | -                   | Represents the maximum number of subscriptions to retrieve per page                                                                                                                                  |
+| -         | `options.setting`  | `boolean` | false               | A boolean flag if when set to true, fetches user settings along with the subscriber                                                                                                                  |
+| -         | `options.category` | `number`  | -                   | Filters out subscribers that have enabled a specific category of notification settings                                                                                                               |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -182,7 +182,7 @@ const channelSubscribers = await userAlice.channel.subscribers();
 
 ```typescript
 // userAlice.channel.search(query, {options?})
-const searchedChannels = await userAlice.channel.search("push");
+const searchedChannels = await userAlice.channel.search('push');
 ```
 
   </TabItem>
@@ -207,16 +207,16 @@ const searchedChannels = await userAlice.channel.search("push");
 [
   {
     id: 2,
-    channel: "0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924",
-    ipfshash: "QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74",
-    name: "Ethereum Push Notification Service",
-    info: "The channel provides useful information, notifications, etc to all the users of the EPNS platform. While not recommended, you can unsubcribe if you want to.",
-    url: "https://epns.io/",
-    icon: "https://gateway.ipfs.io/ipfs/bafybeihwgapkthxi6udojr7soqetk5xx22bdy56uupivcwkriaiqzwlyiu/QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74",
+    channel: '0x74415Bc4C4Bf4Baecc2DD372426F0a1D016Fa924',
+    ipfshash: 'QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74',
+    name: 'Ethereum Push Notification Service',
+    info: 'The channel provides useful information, notifications, etc to all the users of the EPNS platform. While not recommended, you can unsubcribe if you want to.',
+    url: 'https://epns.io/',
+    icon: 'https://gateway.ipfs.io/ipfs/bafybeihwgapkthxi6udojr7soqetk5xx22bdy56uupivcwkriaiqzwlyiu/QmSbRT16JVF922yAB26YxWFD6DmGsnSHm8VBrGUQnXTS74',
     processed: 1,
     attempts: 0,
-    alias_address: "NULL",
-    alias_blockchain_id: "NULL",
+    alias_address: 'NULL',
+    alias_blockchain_id: 'NULL',
     is_alias_verified: 0,
     blocked: 0,
     alias_verification_event: null,
@@ -224,23 +224,23 @@ const searchedChannels = await userAlice.channel.search("push");
     verified_status: 0,
     subgraph_details: null,
     counter: null,
-    timestamp: "2022-12-12T05:17:02.000Z",
+    timestamp: '2022-12-12T05:17:02.000Z',
     subgraph_attempts: 0,
     channel_settings: null,
     subscriber_count: 11,
   },
   {
     id: 96,
-    channel: "0x18C0Ab0809589c423Ac9eb42897258757b6b3d3d",
-    ipfshash: "QmYo8ABBk3tj3g6FRiLkoJNFRedm7JVk6iiVWTRdeEmRmy",
-    name: "test with push",
-    info: "test with push",
-    url: "https://push.org",
-    icon: "https://gateway.ipfs.io/ipfs/bafybeicsksoatvksk4xazftcehg6sodevkgzkzuuvoz3htzt7ejskbdu2y/QmYo8ABBk3tj3g6FRiLkoJNFRedm7JVk6iiVWTRdeEmRmy",
+    channel: '0x18C0Ab0809589c423Ac9eb42897258757b6b3d3d',
+    ipfshash: 'QmYo8ABBk3tj3g6FRiLkoJNFRedm7JVk6iiVWTRdeEmRmy',
+    name: 'test with push',
+    info: 'test with push',
+    url: 'https://push.org',
+    icon: 'https://gateway.ipfs.io/ipfs/bafybeicsksoatvksk4xazftcehg6sodevkgzkzuuvoz3htzt7ejskbdu2y/QmYo8ABBk3tj3g6FRiLkoJNFRedm7JVk6iiVWTRdeEmRmy',
     processed: 1,
     attempts: 0,
-    alias_address: "NULL",
-    alias_blockchain_id: "NULL",
+    alias_address: 'NULL',
+    alias_blockchain_id: 'NULL',
     is_alias_verified: 0,
     blocked: 0,
     alias_verification_event: null,
@@ -248,7 +248,7 @@ const searchedChannels = await userAlice.channel.search("push");
     verified_status: 0,
     subgraph_details: null,
     counter: null,
-    timestamp: "2023-01-10T04:42:26.000Z",
+    timestamp: '2023-01-10T04:42:26.000Z',
     subgraph_attempts: 0,
     channel_settings: null,
     subscriber_count: 0,
@@ -303,7 +303,7 @@ const updateChannelRes = await userAlice.channel.update({
 
 ```typescript
 {
-  transactionHash: "0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32";
+  transactionHash: '0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32';
 }
 ```
 
@@ -372,7 +372,7 @@ const verifyChannelRes = await userAlice.channel.verify(channel);
 
 ```typescript
 {
-  transactionHash: "0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32";
+  transactionHash: '0xf5056d382f209b5a7bcbf08d69c80dd13079467ba38413da8ca065a45f901a32';
 }
 ```
 

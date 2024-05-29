@@ -1,6 +1,6 @@
-import Link from "@docusaurus/Link";
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import Link from '@docusaurus/Link';
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 // Internal Components
 import {
@@ -12,18 +12,18 @@ import {
   ItemH,
   ItemV,
   Span,
-} from "@site/src/css/SharedStyling";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
-import BlogPostItem from "@theme/BlogPostItem";
-import BlogPostItemFooter from "@theme/BlogPostItem/Footer";
-import BlogPostItemHeader from "@theme/BlogPostItem/Header";
-import BlogPostItemHeaderInfo from "@theme/BlogPostItem/Header/Info";
-import { BiLink, BiShareAlt } from "react-icons/bi";
-import { BsLinkedin, BsTwitter, BsX, BsYoutube } from "react-icons/bs";
-import { FaDiscord, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+} from '@site/src/css/SharedStyling';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import BlogPostItem from '@theme/BlogPostItem';
+import BlogPostItemFooter from '@theme/BlogPostItem/Footer';
+import BlogPostItemHeader from '@theme/BlogPostItem/Header';
+import BlogPostItemHeaderInfo from '@theme/BlogPostItem/Header/Info';
+import { BiLink, BiShareAlt } from 'react-icons/bi';
+import { BsLinkedin, BsTwitter, BsX, BsYoutube } from 'react-icons/bs';
+import { FaDiscord, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 
 // Internal Configs
-import GLOBALS, { device } from "@site/src/config/globals";
+import GLOBALS, { device } from '@site/src/config/globals';
 
 const MorePosts = ({ allPosts, post }) => {
   const isMobile = useMediaQuery(device.tablet);
@@ -35,7 +35,7 @@ const MorePosts = ({ allPosts, post }) => {
 
     const sortArray = tagList?.map((item) => {
       const matchingTags = allOtherPosts?.filter((obj) =>
-        obj?.Preview?.metadata?.tags?.some((tag) => tag?.label === item?.label),
+        obj?.Preview?.metadata?.tags?.some((tag) => tag?.label === item?.label)
       );
 
       if (matchingTags && matchingTags.length > 0) {
@@ -57,33 +57,33 @@ const MorePosts = ({ allPosts, post }) => {
     <div>
       <MoreRow>
         <ResponsiveH2
-          size={isMobile ? "16px" : "24px"}
-          weight="500"
-          spacing="-0.02em"
-          lineHeight="110%"
-          color="#00000"
+          size={isMobile ? '16px' : '24px'}
+          weight='500'
+          spacing='-0.02em'
+          lineHeight='110%'
+          color='#00000'
         >
           More from Push Protocol
         </ResponsiveH2>
 
         <MoreButton
-          title="Developer Docs"
-          background="#D53A94"
-          radius="12px"
-          padding="14px 20px"
-          size="16px"
-          weight="500"
-          spacing="-0.03em"
-          lineHeight="26px"
-          display="flex"
-          flexDirection="row"
-          alignItems="center"
-          self={isMobile ? "stretch" : "self"}
+          title='Developer Docs'
+          background='#D53A94'
+          radius='12px'
+          padding='14px 20px'
+          size='16px'
+          weight='500'
+          spacing='-0.03em'
+          lineHeight='26px'
+          display='flex'
+          flexDirection='row'
+          alignItems='center'
+          self={isMobile ? 'stretch' : 'self'}
           onClick={() => {
-            window.open(`https://twitter.com/pushprotocol`, "_blank");
+            window.open(`https://twitter.com/pushprotocol`, '_blank');
           }}
         >
-          <BsTwitter size={23} color="#fff" style={{ marginRight: "10px" }} />
+          <BsTwitter size={23} color='#fff' style={{ marginRight: '10px' }} />
           Follow
         </MoreButton>
         {/* </Anchor> */}
@@ -98,14 +98,14 @@ const MorePosts = ({ allPosts, post }) => {
 
                 <TextView>
                   <BlogPostItemHeaderInfo morePosts={item?.Preview?.metadata} />
-                  <Link itemProp="url" to={item?.Preview?.metadata?.permalink}>
+                  <Link itemProp='url' to={item?.Preview?.metadata?.permalink}>
                     <LinkText>{item?.Preview?.frontMatter?.title}</LinkText>
                   </Link>
                   <TextSpan>{item?.Preview?.frontMatter?.text}</TextSpan>
                 </TextView>
                 <Link
                   to={item?.Preview?.metadata?.permalink}
-                  style={{ color: "#dd44b9" }}
+                  style={{ color: '#dd44b9' }}
                 >
                   Read More
                 </Link>
@@ -153,7 +153,7 @@ const GridItem = styled.div`
   gap: 33px;
   box-sizing: border-box;
   margin: ${(props) =>
-    props.marginTop ? "100px auto 0 auto" : "30px auto 100px auto"};
+    props.marginTop ? '100px auto 0 auto' : '30px auto 100px auto'};
 
   @media (max-width: 820px) {
     width: 100% !important;

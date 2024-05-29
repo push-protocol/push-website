@@ -12,6 +12,7 @@ tags: [ Announcements
 ,Partnerships
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Gitcoin Growing Open Source with Web3 Notifs](./cover-image.webp)
@@ -24,15 +25,14 @@ People working together freely and transparently motivated primarily because the
 
 [Gitcoin](https://gitcoin.co/) is the first name that comes to mind when thinking about bringing together open source communities. We at EPNS are delighted to announce that we are working together for a pilot program that will entail:
 
-*   Working closely with Gitcoin and developing core protocol v1 features according to their needs
-*   Exploring possible integration in their upcoming Gitcoin Grants rounds, as early as GR10
+- Working closely with Gitcoin and developing core protocol v1 features according to their needs
+- Exploring possible integration in their upcoming Gitcoin Grants rounds, as early as GR10
 
 The partnership greatly helps us in taking EPNS to new levels, while bringing new communication channels to Gitcoin to grow Open Source Software (OSS). Some ideas we have in mind include: better notification channels for interesting grants to fund during a Grants round, ways for grant owners to engage with their donors, and other mechanisms to connect funders and builders in Gitcoin’s ecosystem.
 
 As we have stated many times in the past we share very similar values with the Gitcoin team, and we are truly grateful to Gitcoin for all the support and guidance provided to us. It’s a privilege to have the opportunity to play a part on this mission of using the public markets for public goods.
 
-**About Gitcoin**
------------------
+## **About Gitcoin**
 
 Gitcoin is a community where builders can earn funding in Web 3 while creating open source decentralized applications, learning new technologies, and meeting like-minded developers.
 

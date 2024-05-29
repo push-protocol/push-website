@@ -11,6 +11,7 @@ tags: [ Ama
 ,Blockchain
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Ruler Protocol innovating the DeFi space with EPNS](./cover-image.webp)
@@ -27,17 +28,15 @@ In this context, we are thrilled to announce our pilot collaboration with Ruler 
 
 For our pilot program, we will be working with Ruler to bring:
 
-*   Reminders for Ruler Protocol users about their loans at least 24 hours before loan expiry.
-*   Notifications when minting rcTokens or rrTokens.
-*   Notifications when mint ratio goes down significantly
-*   Other complex automated notifications.
+- Reminders for Ruler Protocol users about their loans at least 24 hours before loan expiry.
+- Notifications when minting rcTokens or rrTokens.
+- Notifications when mint ratio goes down significantly
+- Other complex automated notifications.
 
 We are delighted to be able to work with Ruler Protocol and take one more step towards decentralizing the communication layer of DeFi and Web3.
 
-**About Ruler Protocol**
-------------------------
+## **About Ruler Protocol**
 
 Ruler is a peer-to-peer DeFi borrowing and lending platform, offering loans that are free of liquidation risk.
 
 You can stay in touch with Ruler Protocol on [Twitter](https://twitter.com/RulerProtocol) and [Discord](https://discord.com/invite/XcAQKg2YGP).
-

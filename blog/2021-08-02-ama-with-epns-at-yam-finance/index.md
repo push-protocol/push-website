@@ -10,6 +10,7 @@ tags: [ Epnsproject
 ,Ama
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of AMA with EPNS at Yam Finance](./cover-image.webp)
@@ -78,7 +79,7 @@ But that’s just the start and that’s the coolest part. We are looking at Lau
 **HARSH**: Alpha Drop
 
 > **ZETALEAK**: Woah! What a journey! And you guys are just getting started. 🚀
-> 
+>
 > Can you touch upon the EPNS ecosystem briefly and how everything works?
 
 **HARSH**: Thanks Guys!
@@ -99,9 +100,9 @@ As for the logic of notifications, we took the stance that services are sending 
 ![First Image of AMA with EPNS at Yam Finance](./image-1.webp)
 
 > **ZETALEAK**: Thanks for sharing. EPNS is leading the charge on this vital piece of infrastructure!
-> 
+>
 > Final question and then we will open this channel for community questions!
-> 
+>
 > What is your long-term vision for the EPNS project?
 
 **HARSH**: Easy, Become the Communication Layer for Ethereum, L2s and then finally for other blockchains as well! We are lucky to be in the right place at the right time to create this which hopefully will make the Web3 even easier to embrace and hop on!

@@ -11,6 +11,7 @@ tags: [ Blockchain
 ,Defi
 ,Partnerships ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS Allies With Bridge Mutual to Enable Decentralized Notifications for Users](./cover-image.webp)
@@ -29,14 +30,13 @@ Apart from buying coverage, users of this platform can also provide coverage by 
 
 However, the lack of a proper communication medium between users and the protocol creates friction, and users have to manually check if their premiums have expired or when new claims are made. This could cause users to miss out on deadlines and risk losing coverage. Through our partnership with Bridge Mutual, we aim to address this very issue.
 
-What Does the Collaboration Entail
-==================================
+# What Does the Collaboration Entail
 
 EPNS and Bridge Mutual will be working in collaboration to build a reliable communication medium for users of the platform. Bridge Mutual will have a dedicated channel on EPNS that users of the platform could subscribe to. Users can opt to receive whenever
 
-*   A new insurance claim is made on the platform.
-*   Their coverage premium expires.
-*   The withdrawal request matures for coverage pool passes and BMI staking passes and users have 48 hours to withdraw the request.
+- A new insurance claim is made on the platform.
+- Their coverage premium expires.
+- The withdrawal request matures for coverage pool passes and BMI staking passes and users have 48 hours to withdraw the request.
 
 As Bridge Mutual works towards making DeFi a safe space for users and investors, we’re pleased to be partnering with them on this journey and hope to become an integral part of their operation.
 

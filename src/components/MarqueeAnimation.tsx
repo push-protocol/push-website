@@ -19,28 +19,27 @@ type Props = {
 };
 
 function MarqueeAnimation(props: Props) {
-
   const {
     speed = 100,
     gap = 0,
     gradient = false,
     gradientWidth = 64,
     direction = 'left',
-    pause = false
+    pause = false,
   } = props;
 
   return (
     <MarqueeContainer>
-    <AnimationWrapper
-      speed={speed}
-      gap={gap}
-      gradient={gradient}
-      gradientWidth={gradientWidth}
-      direction={direction}
-      pauseOnClick={pause}
-    >
-      {props.children}
-    </AnimationWrapper>
+      <AnimationWrapper
+        speed={speed}
+        gap={gap}
+        gradient={gradient}
+        gradientWidth={gradientWidth}
+        direction={direction}
+        pauseOnClick={pause}
+      >
+        {props.children}
+      </AnimationWrapper>
     </MarqueeContainer>
   );
 }

@@ -15,13 +15,15 @@ Effortless Messaging Integration: Add a Complete Chat Interface to Your Dapp wit
 If you want to easily add a chat feature to your application without dealing with complex API calls, this is the solution for you. With the Chat View component, you get everything you need for a chat interface, including the chat profile, input box, and message list, all in one simple package. Say goodbye to the hassle of integrating individual components or making API calls. Just input your chat ID and customize it as needed – it's that easy!
 
 <head>
-  <title>ChatView | UI Components (@pushprotocol/uiweb) | Push Chat | Push
-    Documentation</title>
+  <title>
+    {`ChatView | UI Components (@pushprotocol/uiweb) | Push Chat | Push
+    Documentation`}
+  </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import { ModalContainer } from "@site/src/css/SharedStyling";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { ModalContainer } from '@site/src/css/SharedStyling';
 
 ## Usage
 
@@ -49,7 +51,7 @@ export default ChatViewTest;
 <ModalContainer>
   <img
     src={
-      require("/static/assets/docs/chat/ui-components/advanced/integrate-advanced-chatview-component/chat-view.png")
+      require('/static/assets/docs/chat/ui-components/advanced/integrate-advanced-chatview-component/chat-view.png')
         .default
     }
   />
@@ -80,9 +82,9 @@ export default ChatViewTest;
 | `verificationFailModalPosition`   | `ModalBackgroundType` | -       | Default value is `"GLOBAL"`, decides the access gating verification fail modal position, it can be either relative to immediate parent(RELATIVE) or the entire screen(GLOBAL), possible values are `"RELATIVE"` &#124 `"GLOBAL"` |
 | _`chatFilterList`_                | `Array<string>`       | -       | Array of cid's of messages that needs to be excluded from chatViewList                                                                                                                                                           |
 | `limit`                           | `number`              | -       | Number of messages fetched in each paginated api call,default value is 10                                                                                                                                                        |
-| `chatProfileRightHelperComponent` | `React.ReactNode`     | -       | Custom React component that will be displayed on the right side of chat profile header                                                                                                                                                     |
-| `chatProfileLeftHelperComponent` | `React.ReactNode`     | -       | Custom React component that will be displayed on the left side of chat profile header                                                                                                                                                     |
-| `welcomeComponent` | `React.ReactNode`     | -       | Custom React component that will be displayed if chatId is not passed on. This is the welcome screen of the chat View component                                                                                                                                                    |
+| `chatProfileRightHelperComponent` | `React.ReactNode`     | -       | Custom React component that will be displayed on the right side of chat profile header                                                                                                                                           |
+| `chatProfileLeftHelperComponent`  | `React.ReactNode`     | -       | Custom React component that will be displayed on the left side of chat profile header                                                                                                                                            |
+| `welcomeComponent`                | `React.ReactNode`     | -       | Custom React component that will be displayed if chatId is not passed on. This is the welcome screen of the chat View component                                                                                                  |
 
 > Note: Refer [ChatUIProvider](/docs/chat/ui-components/Advanced/ChatUIProvider/) for details on its paramters.
 
@@ -99,10 +101,10 @@ function App(props) {
         Live chat with pushai.eth, connect your wallet and chat to get sassy
         response from PushAI.eth
       </h2>
-      <div style={{ height: "75vh", margin: "20px auto" }}>
+      <div style={{ height: '75vh', margin: '20px auto' }}>
         <ChatUIProvider>
           <ChatView
-            chatId="0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666"
+            chatId='0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666'
             limit={10}
             isConnected={true}
             autoConnect={false}

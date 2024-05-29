@@ -4,7 +4,7 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import React from "react";
+import React from 'react';
 
 // External Packages
 import styled, { css, keyframes } from 'styled-components';
@@ -36,27 +36,27 @@ export const SPINNER_TYPE = {
   ERROR: 3,
   COMPLETED: 4,
   WHITELIST: 5,
-}
+};
 
 // Create Spinner
-export default function Spinner({ size = 42, color =  GLOBALS.COLORS.PRIMARY_COLOR, type = SPINNER_TYPE.PROCESSING }: SpinnerPropsI) {
+export default function Spinner({
+  size = 42,
+  color = GLOBALS.COLORS.PRIMARY_COLOR,
+  type = SPINNER_TYPE.PROCESSING,
+}: SpinnerPropsI) {
   return (
-    <SpinLoader flex="initial" alignSelf="center" color={color} width={`${size}px`} completed={type == SPINNER_TYPE.PROCESSING ? false : true}>
-      {type == SPINNER_TYPE.PROCESSING && 
-        <SpinnerSVG />
-      }
-      {type == SPINNER_TYPE.ERROR && 
-        <ErrorSVG />
-      }
-      {type == SPINNER_TYPE.WARNING && 
-        <WarningSVG />
-      }
-      {type == SPINNER_TYPE.COMPLETED && 
-        <CheckmarkSVG />
-      }
-      {type == SPINNER_TYPE.WHITELIST && 
-        <WhitelistSVG />
-      }
+    <SpinLoader
+      flex='initial'
+      alignSelf='center'
+      color={color}
+      width={`${size}px`}
+      completed={type == SPINNER_TYPE.PROCESSING ? false : true}
+    >
+      {type == SPINNER_TYPE.PROCESSING && <SpinnerSVG />}
+      {type == SPINNER_TYPE.ERROR && <ErrorSVG />}
+      {type == SPINNER_TYPE.WARNING && <WarningSVG />}
+      {type == SPINNER_TYPE.COMPLETED && <CheckmarkSVG />}
+      {type == SPINNER_TYPE.WHITELIST && <WhitelistSVG />}
     </SpinLoader>
   );
 }
@@ -66,12 +66,14 @@ const spinAnimation = keyframes`
   to { transform:rotate(360deg); }
 `;
 
-const SpinLoader = styled(ItemV)<{completed: boolean}>`
-  color: ${props => props.color};
-  ${props => !props.completed && css`
-    animation-name: ${spinAnimation};
-    animation-duration: 2500ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  `}
+const SpinLoader = styled(ItemV)<{ completed: boolean }>`
+  color: ${(props) => props.color};
+  ${(props) =>
+    !props.completed &&
+    css`
+      animation-name: ${spinAnimation};
+      animation-duration: 2500ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    `}
 `;

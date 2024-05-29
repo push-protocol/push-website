@@ -25,7 +25,7 @@ import SpaceImage from '@site/static/assets/website/spaces/space-image.webp';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
-import { PageMeta } from "@site/src/config/pageMeta";
+import { PageMeta } from '@site/src/config/pageMeta';
 
 const MESSAGES = {
   SUCCESS: 'Thanks for subscribing!',
@@ -90,43 +90,65 @@ const Spaces = () => {
   };
 
   return (
-    <Layout title={PageMeta.SPACES.pageTitle} description={PageMeta.SPACES.pageDescription} showNavbar='website'>
-       <Head>
+    <Layout
+      title={PageMeta.SPACES.pageTitle}
+      description={PageMeta.SPACES.pageDescription}
+      showNavbar='website'
+    >
+      <Head>
         {/* <!-- Facebook Meta Tags --> */}
-        <meta property="og:url" content="https://push.org/spaces" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Push | Spaces" />
-        <meta property="og:description" content="Explore the spaces feature in the Push dapp, where you can join live audio conversations, connect with experts, and engage with a diverse community. Dive into real-time discussions and expand your horizons on Push Spaces." />
-        <meta property="og:image" content={useBaseUrl(require("/static/assets/previews/spacespreview.png").default, { absolute: true})} />
+        <meta property='og:url' content='https://push.org/spaces' />
+        <meta property='og:type' content='website' />
+        <meta property='og:title' content='Push | Spaces' />
+        <meta
+          property='og:description'
+          content='Explore the spaces feature in the Push dapp, where you can join live audio conversations, connect with experts, and engage with a diverse community. Dive into real-time discussions and expand your horizons on Push Spaces.'
+        />
+        <meta
+          property='og:image'
+          content={useBaseUrl(
+            require('/static/assets/previews/spacespreview.png').default,
+            { absolute: true }
+          )}
+        />
 
         {/* <!-- Twitter Meta Tags --> */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@pushprotocol" />
-        <meta name="twitter:title" content="Push | Spaces" />
-        <meta name="twitter:description" content="Explore the spaces feature in the Push dapp, where you can join live audio conversations, connect with experts, and engage with a diverse community. Dive into real-time discussions and expand your horizons on Push Spaces."  />
-        <meta property="twitter:image" content={useBaseUrl(require("/static/assets/previews/spacespreview.png").default, { absolute: true})} />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='@pushprotocol' />
+        <meta name='twitter:title' content='Push | Spaces' />
+        <meta
+          name='twitter:description'
+          content='Explore the spaces feature in the Push dapp, where you can join live audio conversations, connect with experts, and engage with a diverse community. Dive into real-time discussions and expand your horizons on Push Spaces.'
+        />
+        <meta
+          property='twitter:image'
+          content={useBaseUrl(
+            require('/static/assets/previews/spacespreview.png').default,
+            { absolute: true }
+          )}
+        />
 
-
-        <script type="application/ld+json">
+        <script type='application/ld+json'>
           {JSON.stringify({
-            "@context": "https://schema.org/",
-            "@type": "Organization",
-            "name": "Push Protocol",
-            "description": "The Communication Protocol of Web3",
-            "url": "https://push.org",
-            "logo": "/assets/website/favicon.ico",
-            "sameAs": [
-              "https://twitter.com/pushprotocol",
-              "https://www.linkedin.com/company/push-protocol/mycompany/"
-            ]
+            '@context': 'https://schema.org/',
+            '@type': 'Organization',
+            name: 'Push Protocol',
+            description: 'The Communication Protocol of Web3',
+            url: 'https://push.org',
+            logo: '/assets/website/favicon.ico',
+            sameAs: [
+              'https://twitter.com/pushprotocol',
+              'https://www.linkedin.com/company/push-protocol/mycompany/',
+            ],
           })}
         </script>
-        </Head>
-        
+      </Head>
+
       <SpaceWrapper>
         <ItemV>
           <SpaceText>
-            Unlock new {isMobile && <br></br>} dimensions in your <br></br> web3 journey.
+            Unlock new {isMobile && <br></br>} dimensions in your <br></br> web3
+            journey.
           </SpaceText>
 
           <SpaceSubText>Join the conversation on Push Spaces</SpaceSubText>
@@ -144,29 +166,29 @@ const Spaces = () => {
           </Box>
 
           <SpaceImageHolder isMobile={isMobile}>
-            {!isMobile &&
+            {!isMobile && (
               <MemberImage
-                className="figureSvg"
+                className='figureSvg'
                 src={SpaceImage}
                 srcSet={SpaceImage}
                 alt={'Space Image'}
-                title="Space Image"
-                width="100%"
-                height="100%"
+                title='Space Image'
+                width='100%'
+                height='100%'
               />
-            }
+            )}
 
-            {isMobile &&
+            {isMobile && (
               <MemberImage
-                className="figureSvg"
+                className='figureSvg'
                 src={MobileSpaceImage}
                 srcSet={MobileSpaceImage}
                 alt={'Space Image'}
-                title="Space Image"
-                width="100%"
-                height="100%"
+                title='Space Image'
+                width='100%'
+                height='100%'
               />
-            }
+            )}
           </SpaceImageHolder>
         </ItemV>
       </SpaceWrapper>
@@ -177,7 +199,8 @@ const Spaces = () => {
 const SpaceWrapper = styled(ItemV)`
   min-height: 100vh;
   width: 100vw;
-  background-image: url(${(props) => (props.isMobile ? MobileSpaceBg : SpaceBg)});
+  background-image: url(${(props) =>
+    props.isMobile ? MobileSpaceBg : SpaceBg});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -282,5 +305,3 @@ const MaskInput = styled.div`
 `;
 
 export default Spaces;
-
-

@@ -11,6 +11,7 @@ tags: [ Partnerships
 ,Defi
 ,FAQ ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS and Atlantis World Collaborate To Build a Communication Layer for the Social Metaverse](./cover-image.webp)
@@ -31,8 +32,7 @@ Moreover, when compared to other metaverse projects that require sophisticated h
 
 On this journey of creating immersive user experiences, the role of push notifications is invaluable. It is through push notifications that users can stay updated with the happenings of the Metaverse and promptly engage with protocols. And through our collaboration with Atlantis World, we aim to make this possible.
 
-What Does the Collaboration Entail
-==================================
+# What Does the Collaboration Entail
 
 By teaming up with Atlantis World, we at EPNS are working towards building an ultimate communication layer for the social metaverse that is about to unfold. The utilities of such a communication layer are practically endless. It creates a two-way interaction channel and allows users to actively engage with the metaverse.
 

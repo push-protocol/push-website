@@ -4,20 +4,19 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
-import { useLocation } from "@docusaurus/router";
-
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useLocation } from '@docusaurus/router';
 
 // External Components
-import { gsap } from "gsap";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useTranslation } from "react-i18next";
-import styled from "styled-components";
+import { gsap } from 'gsap';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslation } from 'react-i18next';
+import styled from 'styled-components';
 
 // Internal Components
-import { Alert } from "@site/src/components/Alert";
+import { Alert } from '@site/src/components/Alert';
 import {
   A,
   Button,
@@ -30,18 +29,18 @@ import {
   LinkTo,
   Section,
   Span,
-} from "@site/src/css/SharedStyling";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
+} from '@site/src/css/SharedStyling';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
-import { AiOutlineClose } from "react-icons/ai";
-import { BsChevronDown } from "react-icons/bs";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from 'react-icons/ai';
+import { BsChevronDown } from 'react-icons/bs';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 // Internal Configs
-import { SupportedLanguagesList } from "@site/src/config/SupportedLanguagesList";
-import GLOBALS, { device, structure } from "@site/src/config/globals";
-import { HeaderList } from "../config/HeaderList";
+import { SupportedLanguagesList } from '@site/src/config/SupportedLanguagesList';
+import GLOBALS, { device, structure } from '@site/src/config/globals';
+import { HeaderList } from '../config/HeaderList';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -50,7 +49,7 @@ gsap.registerPlugin(ScrollToPlugin);
 let lastScrollY = 0;
 const SCROLL_DELTA = 5;
 
-if (typeof window !== "undefined") {
+if (typeof window !== 'undefined') {
   lastScrollY = window.scrollY;
 }
 
@@ -78,7 +77,7 @@ function Header() {
 
   const showMobileMenu = isMobile && isMobileMenuOpen;
 
-  const headerClass = `${scrollDirection === "scrollDown" ? "hide" : "show"}`;
+  const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
@@ -86,7 +85,7 @@ function Header() {
 
   const onMobileHeaderMenuClick = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    menuIndex: number,
+    menuIndex: number
   ) => {
     e.preventDefault();
 
@@ -101,14 +100,14 @@ function Header() {
 
   useEffect(() => {
     if (isMobileMenuOpen && isMobile) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = '';
     }
 
     return () => {
       // Cleanup: Reset overflow when the component unmounts
-      document.body.style.overflow = "";
+      document.body.style.overflow = '';
     };
   }, [isMobileMenuOpen, isMobile]);
 
@@ -117,11 +116,11 @@ function Header() {
     const updateScrollDirection = () => {
       let scrollY = 0;
 
-      if (typeof window !== "undefined") {
+      if (typeof window !== 'undefined') {
         scrollY = window.scrollY;
       }
 
-      let direction = scrollY > lastScrollY ? "scrollDown" : "scrollUp";
+      let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
 
       if (
         direction !== scrollDirection &&
@@ -130,7 +129,7 @@ function Header() {
       ) {
         // check if isMobileMenuOpen then override
         if (isMobileMenuOpen) {
-          direction = "scrollUp";
+          direction = 'scrollUp';
         }
 
         setScrollDirection(direction);
@@ -140,10 +139,10 @@ function Header() {
     };
 
     // add event listener
-    window.addEventListener("scroll", updateScrollDirection, { passive: true });
+    window.addEventListener('scroll', updateScrollDirection, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", updateScrollDirection); // clean up
+      window.removeEventListener('scroll', updateScrollDirection); // clean up
     };
   }, []);
 
@@ -152,10 +151,10 @@ function Header() {
       e.stopPropagation();
 
       if (href) {
-        if (target && target !== "_blank") {
-          if (target === "_self") {
+        if (target && target !== '_blank') {
+          if (target === '_self') {
             // check if url is external
-            if (href.includes("http")) {
+            if (href.includes('http')) {
               window.location.href = href;
             } else {
               history.push(href);
@@ -163,7 +162,7 @@ function Header() {
           }
         } else {
           // check if url is internal and if so append the base url
-          if (href.includes("http")) {
+          if (href.includes('http')) {
             window.open(href, target);
           } else {
             window.open(`${window.location.origin}${href}`, target);
@@ -176,17 +175,16 @@ function Header() {
         //   duration: 0.75,
         //   scrollTo: { y: `#${id}` },
         // });
-        if(location.pathname !== "/" && id){
-              history.push('/')
-              setTimeout(() => {
-                document.getElementById(id).scrollIntoView({behavior: "smooth"});
-              }, 1500);
+        if (location.pathname !== '/' && id) {
+          history.push('/');
+          setTimeout(() => {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+          }, 1500);
         }
 
-        if(location.pathname === "/"){
-                document.getElementById(id).scrollIntoView({behavior: "smooth"});
+        if (location.pathname === '/') {
+          document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
-      
       } else return;
     };
 
@@ -197,7 +195,7 @@ function Header() {
             key={index}
             src={
               require(
-                `@site/static/assets/website/header/${item.srcrefoff}.png`,
+                `@site/static/assets/website/header/${item.srcrefoff}.png`
               ).default
             }
             srcSet={`${require(`@site/static/assets/website/header/${item.srcrefoff}@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/${item.srcrefoff}@3x.png`).default} 3x`}
@@ -207,31 +205,31 @@ function Header() {
           />
         )}
 
-        <ItemH flexDirection="column" alignItems="flex-start" gap="4px">
+        <ItemH flexDirection='column' alignItems='flex-start' gap='4px'>
           <H2
-            fontSize="16px"
-            fontFamily="FK Grotesk Neue"
-            color="#FFF"
-            lineHeight="130%"
-            letterSpacing="normal"
-            fontWeight="500"
+            fontSize='16px'
+            fontFamily='FK Grotesk Neue'
+            color='#FFF'
+            lineHeight='130%'
+            letterSpacing='normal'
+            fontWeight='500'
           >
             {t(item.title)}
 
             {item.tagitem && (
-              <TagItem style={{ marginLeft: "10px" }}>
+              <TagItem style={{ marginLeft: '10px' }}>
                 {item.tagitem.text}
               </TagItem>
             )}
           </H2>
 
           <H3
-            fontSize="14px"
-            fontFamily="FK Grotesk Neue"
-            color="#BBBCD0"
-            lineHeight="130%"
-            letterSpacing="normal"
-            fontWeight="400"
+            fontSize='14px'
+            fontFamily='FK Grotesk Neue'
+            color='#BBBCD0'
+            lineHeight='130%'
+            letterSpacing='normal'
+            fontWeight='400'
           >
             {t(item.subtitle)}
           </H3>
@@ -240,15 +238,15 @@ function Header() {
     );
   };
 
-  const textIds = ["text0", "text1", "text2", "text3", "text4"];
+  const textIds = ['text0', 'text1', 'text2', 'text3', 'text4'];
 
   const handleMouseEnter = (e, activeId) => {
     textIds.forEach((id) => {
       if (id !== activeId) {
         const element = document.getElementById(id);
         if (element) {
-          element.style.color = "#6C6C6C";
-          element.style.transitionDuration = "1s";
+          element.style.color = '#6C6C6C';
+          element.style.transitionDuration = '1s';
         }
       }
     });
@@ -258,8 +256,8 @@ function Header() {
     textIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) {
-        element.style.color = "#fff";
-        element.style.transitionDuration = "1s";
+        element.style.color = '#fff';
+        element.style.transitionDuration = '1s';
       }
     });
   };
@@ -277,57 +275,57 @@ function Header() {
 
       {/* HEADER SECTION */}
       <Section onClick={(e) => e.stopPropagation()}>
-        <Content className="vertfluid" overflow="visible">
+        <Content className='vertfluid' overflow='visible'>
           {/* Header Content Begins */}
           <HeaderItemH
-            alignSelf="stretch"
+            alignSelf='stretch'
             padding={GLOBALS.ADJUSTMENTS.PADDING.SMALL}
             borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.MID}
           >
             <HeaderBlurV
-              position="absolute"
-              top="0"
-              right="0"
-              bottom="0"
-              left="0"
-              overflow="hidden"
+              position='absolute'
+              top='0'
+              right='0'
+              bottom='0'
+              left='0'
+              overflow='hidden'
               borderRadius={GLOBALS.ADJUSTMENTS.RADIUS.MID}
-              className={"headerblur"}
+              className={'headerblur'}
             />
 
-            <MenuTop flex="initial" showMobileMenu={showMobileMenu}>
-              <PushLogoBlackContainer className="headerlogo" flex="initial">
-                <LinkTo to="/" aria-label="Push">
+            <MenuTop flex='initial' showMobileMenu={showMobileMenu}>
+              <PushLogoBlackContainer className='headerlogo' flex='initial'>
+                <LinkTo to='/' aria-label='Push'>
                   <Image
                     src={
                       require(
-                        `@site/static/assets/website/segments/PushLogoTextBlack.webp`,
+                        `@site/static/assets/website/segments/PushLogoTextBlack.webp`
                       ).default
                     }
                     srcSet={`${require(`@site/static/assets/website/segments/PushLogoTextBlack@2x.webp`).default} 2x, ${require(`@site/static/assets/website/segments/PushLogoTextBlack@3x.webp`).default} 3x`}
                     alt={`Push Logo`}
-                    width="auto"
-                    height="auto"
+                    width='auto'
+                    height='auto'
                   />
                 </LinkTo>
               </PushLogoBlackContainer>
-              <PushLogoWhiteContainer className="headerlogo" flex="initial">
+              <PushLogoWhiteContainer className='headerlogo' flex='initial'>
                 <LinkTo
-                  to="/"
-                  aria-label="Push"
-                  hoverBackground="transparent"
-                  padding="0"
+                  to='/'
+                  aria-label='Push'
+                  hoverBackground='transparent'
+                  padding='0'
                 >
                   <Image
                     src={
                       require(
-                        `@site/static/assets/website/header/Push-Logo.png`,
+                        `@site/static/assets/website/header/Push-Logo.png`
                       ).default
                     }
                     srcSet={`${require(`@site/static/assets/website/header/Push-Logo@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/Push-Logo@3x.png`).default} 3x`}
                     alt={`Push Logo`}
-                    width="auto"
-                    height={isMobile ? "40px" : "auto"}
+                    width='auto'
+                    height={isMobile ? '40px' : 'auto'}
                   />
                 </LinkTo>
               </PushLogoWhiteContainer>
@@ -343,8 +341,8 @@ function Header() {
                     }
                     srcSet={`${require(`@site/static/assets/website/header/bars@2x.png`).default} 2x, ${require(`@site/static/assets/website/header/bars@3x.png`).default} 3x`}
                     alt={`Bars Icon`}
-                    width="auto"
-                    height="28px"
+                    width='auto'
+                    height='28px'
                     onClick={toggleMobileMenu}
                   />
                 )}
@@ -354,33 +352,33 @@ function Header() {
             <HeaderWrapper>
               <HeaderNavItemV showMobileMenu={isMobileMenuOpen}>
                 <NavigationMenu
-                  role="menu"
-                  className="navigationMenu"
+                  role='menu'
+                  className='navigationMenu'
                   showMobileMenu={isMobileMenuOpen}
                 >
                   <NavigationMenuItem>
                     <NavigationMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 0)}
                       expanded={mobileMenuMap[0]}
-                      onMouseEnter={(e) => handleMouseEnter(e, "text0")}
+                      onMouseEnter={(e) => handleMouseEnter(e, 'text0')}
                       onMouseLeave={(e) => handleMouseLeave(e)}
-                      id="text0"
+                      id='text0'
                     >
                       <Span
-                        fontSize="18px"
-                        fontWeight="500"
-                        letterSpacing="-0.03em"
-                        lineHeight="142%"
-                        padding="16px"
-                        color="inherit"
+                        fontSize='18px'
+                        fontWeight='500'
+                        letterSpacing='-0.03em'
+                        lineHeight='142%'
+                        padding='16px'
+                        color='inherit'
                       >
-                        {t("header.products.title")}
+                        {t('header.products.title')}
                       </Span>
-                      <BsChevronDown size={12} className="chevronIcon" />
+                      <BsChevronDown size={12} className='chevronIcon' />
                     </NavigationMenuHeader>
 
                     <NavigationMenuContent
-                      className="menuContent"
+                      className='menuContent'
                       expanded={mobileMenuMap[0]}
                     >
                       {HeaderList.products.map((item, index) => (
@@ -393,26 +391,26 @@ function Header() {
                     <NavigationMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 1)}
                       expanded={mobileMenuMap[1]}
-                      onMouseEnter={(e) => handleMouseEnter(e, "text1")}
+                      onMouseEnter={(e) => handleMouseEnter(e, 'text1')}
                       onMouseLeave={(e) => handleMouseLeave(e)}
-                      id="text1"
+                      id='text1'
                     >
                       <Span
-                        fontSize="18px"
-                        fontWeight="500"
-                        letterSpacing="-0.03em"
-                        lineHeight="142%"
-                        padding="16px"
-                        color="inherit"
+                        fontSize='18px'
+                        fontWeight='500'
+                        letterSpacing='-0.03em'
+                        lineHeight='142%'
+                        padding='16px'
+                        color='inherit'
                       >
-                        {t("header.developers.title")}
+                        {t('header.developers.title')}
                       </Span>
 
-                      <BsChevronDown size={12} className="chevronIcon" />
+                      <BsChevronDown size={12} className='chevronIcon' />
                     </NavigationMenuHeader>
 
                     <NavigationMenuContent
-                      className="menuContent"
+                      className='menuContent'
                       expanded={mobileMenuMap[1]}
                     >
                       <HeaderDiv>
@@ -442,27 +440,27 @@ function Header() {
                     <NavigationMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 2)}
                       expanded={mobileMenuMap[2]}
-                      onMouseEnter={(e) => handleMouseEnter(e, "text2")}
+                      onMouseEnter={(e) => handleMouseEnter(e, 'text2')}
                       onMouseLeave={(e) => handleMouseLeave(e)}
-                      id="text2"
+                      id='text2'
                     >
                       <Span
-                        fontSize="18px"
-                        fontWeight="500"
-                        letterSpacing="-0.03em"
-                        lineHeight="142%"
-                        padding="16px"
-                        color="inherit"
+                        fontSize='18px'
+                        fontWeight='500'
+                        letterSpacing='-0.03em'
+                        lineHeight='142%'
+                        padding='16px'
+                        color='inherit'
                       >
-                        {t("header.community.title")}
+                        {t('header.community.title')}
                       </Span>
-                      <BsChevronDown size={12} className="chevronIcon" />
+                      <BsChevronDown size={12} className='chevronIcon' />
                     </NavigationMenuHeader>
 
                     <NavigationMenuContent
-                      className="menuContent"
+                      className='menuContent'
                       expanded={mobileMenuMap[2]}
-                      onMouseEnter={(e) => handleMouseEnter(e, "text1")}
+                      onMouseEnter={(e) => handleMouseEnter(e, 'text1')}
                       onMouseLeave={(e) => handleMouseLeave(e)}
                     >
                       {HeaderList.community.map((item, index) => (
@@ -475,25 +473,25 @@ function Header() {
                     <NavigationMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 3)}
                       expanded={mobileMenuMap[3]}
-                      onMouseEnter={(e) => handleMouseEnter(e, "text3")}
+                      onMouseEnter={(e) => handleMouseEnter(e, 'text3')}
                       onMouseLeave={(e) => handleMouseLeave(e)}
-                      id="text3"
+                      id='text3'
                     >
                       <Span
-                        fontSize="18px"
-                        fontWeight="500"
-                        letterSpacing="-0.03em"
-                        lineHeight="142%"
-                        padding="16px"
+                        fontSize='18px'
+                        fontWeight='500'
+                        letterSpacing='-0.03em'
+                        lineHeight='142%'
+                        padding='16px'
                       >
-                        {t("header.resources.title")}
+                        {t('header.resources.title')}
                       </Span>
 
-                      <BsChevronDown size={12} className="chevronIcon" />
+                      <BsChevronDown size={12} className='chevronIcon' />
                     </NavigationMenuHeader>
 
                     <NavigationMenuContent
-                      className="menuContent"
+                      className='menuContent'
                       expanded={mobileMenuMap[3]}
                     >
                       {HeaderList.resources.map((item, index) => (
@@ -504,99 +502,99 @@ function Header() {
                 </NavigationMenu>
               </HeaderNavItemV>
 
-              <HeaderFocusItems flex="initial">
+              <HeaderFocusItems flex='initial'>
                 <LanguageItem showMobileMenu={showMobileMenu}>
                   <LanguageMenuItem>
                     <LanguageMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 4)}
                       expanded={mobileMenuMap[4]}
-                      onMouseEnter={(e) => handleMouseEnter(e, "text4")}
+                      onMouseEnter={(e) => handleMouseEnter(e, 'text4')}
                       onMouseLeave={(e) => handleMouseLeave(e)}
-                      id="text4"
+                      id='text4'
                     >
                       <H2
-                        fontSize="16px"
-                        fontFamily="FK Grotesk Neue"
-                        lineHeight="130%"
-                        letterSpacing="normal"
-                        fontWeight="500"
+                        fontSize='16px'
+                        fontFamily='FK Grotesk Neue'
+                        lineHeight='130%'
+                        letterSpacing='normal'
+                        fontWeight='500'
                       >
                         {isMobile &&
                           i18n &&
                           SupportedLanguagesList.filter(
-                            (item) => item.id === i18n.language,
+                            (item) => item.id === i18n.language
                           ).map((item, index) => <div>{item?.language}</div>)}
                       </H2>
 
                       <Span
-                        fontSize="18px"
-                        fontWeight="500"
-                        letterSpacing="-0.03em"
-                        lineHeight="142%"
-                        padding="16px 0px"
+                        fontSize='18px'
+                        fontWeight='500'
+                        letterSpacing='-0.03em'
+                        lineHeight='142%'
+                        padding='16px 0px'
                       >
                         <Image
                           src={
                             require(
-                              `@site/static/assets/website/languages/eng.png`,
+                              `@site/static/assets/website/languages/eng.png`
                             ).default
                           }
                           srcSet={`${require(`@site/static/assets/website/languages/eng@2x.png`).default} 2x, ${require(`@site/static/assets/website/languages/eng@3x.png`).default} 3x`}
-                          alt={"Language Header Icon"}
+                          alt={'Language Header Icon'}
                           height={24}
                           width={24}
-                          borderRadius="100%"
+                          borderRadius='100%'
                         />
                       </Span>
-                      <BsChevronDown size={12} className="chevronIcon" />
+                      <BsChevronDown size={12} className='chevronIcon' />
                     </LanguageMenuHeader>
 
                     <LanguageMenuContent
-                      className="menuContent"
+                      className='menuContent'
                       expanded={mobileMenuMap[4]}
                     >
                       {SupportedLanguagesList.map((item, index) => {
                         return (
                           <LanguageButton
                             key={index}
-                            href="#"
+                            href='#'
                             title={t(item.translatedtitle)}
-                            background="transparent"
-                            hoverbackground="#fff"
-                            color="#fff"
-                            padding="8px 14px"
-                            display="flex"
-                            borderRadius="0"
-                            justifyContent="flex-start"
+                            background='transparent'
+                            hoverbackground='#fff'
+                            color='#fff'
+                            padding='8px 14px'
+                            display='flex'
+                            borderRadius='0'
+                            justifyContent='flex-start'
                             onClick={() => i18n.changeLanguage(item.id)}
                           >
                             <ItemH
-                              justifyContent="flex-start"
-                              flexWrap="nowrap"
-                              padding="0px"
+                              justifyContent='flex-start'
+                              flexWrap='nowrap'
+                              padding='0px'
                             >
                               <Image
                                 key={index}
                                 src={
                                   require(
-                                    `@site/static/assets/website/languages/${item.srcref}.png`,
+                                    `@site/static/assets/website/languages/${item.srcref}.png`
                                   ).default
                                 }
                                 srcSet={`${require(`@site/static/assets/website/languages/${item.srcref}@2x.png`).default} 2x, ${require(`@site/static/assets/website/languages/${item.srcref}@3x.png`).default} 3x`}
                                 alt={`${item?.alt}`}
                                 height={24}
                                 width={24}
-                                borderRadius="100%"
+                                borderRadius='100%'
                               />
                               <H3
-                                fontSize="14px"
-                                fontWeight="500"
-                                lineHeight="130%"
-                                letterSpacing="normal"
-                                alignSelf="flex-start"
-                                padding="8px 30px 8px 10px !important"
-                                color="#FFF !important"
-                                fontFamily="FK Grotesk Neue"
+                                fontSize='14px'
+                                fontWeight='500'
+                                lineHeight='130%'
+                                letterSpacing='normal'
+                                alignSelf='flex-start'
+                                padding='8px 30px 8px 10px !important'
+                                color='#FFF !important'
+                                fontFamily='FK Grotesk Neue'
                               >
                                 {t(item.translatedtitle)}
                               </H3>
@@ -610,20 +608,20 @@ function Header() {
 
                 <DappLauncher
                   showMobileMenu={showMobileMenu}
-                  className="launchDappBtn"
-                  href="https://app.push.org/"
-                  target="_blank"
-                  title={t("header.app-button.alt-title")}
-                  background="#DD44B9"
-                  borderRadius="12px"
-                  fontSize="15px"
-                  fontWeight="500"
-                  letterSpacing="-0.03em"
-                  lineHeight="normal"
-                  width="100%"
+                  className='launchDappBtn'
+                  href='https://app.push.org/'
+                  target='_blank'
+                  title={t('header.app-button.alt-title')}
+                  background='#DD44B9'
+                  borderRadius='12px'
+                  fontSize='15px'
+                  fontWeight='500'
+                  letterSpacing='-0.03em'
+                  lineHeight='normal'
+                  width='100%'
                   // margin="0px 8px 0px 0px"
                 >
-                  {t("header.app-button.title")}
+                  {t('header.app-button.title')}
                 </DappLauncher>
               </HeaderFocusItems>
             </HeaderWrapper>
@@ -649,7 +647,7 @@ const LanguageItem = styled.div`
   margin: 0px 24px 0px 0px;
 
   @media ${device.laptopM} {
-    display: ${(props) => (props.showMobileMenu ? "flex" : "none")};
+    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
     margin: 0px;
     flex: 1;
     width: 100%;
@@ -704,14 +702,14 @@ const HeaderNavItemV = styled(ItemV)`
     margin: ${(props) =>
       props.showMobileMenu
         ? `${GLOBALS.HEADER.OUTER_PADDING.TABLET.TOP + GLOBALS.HEADER.OUTER_PADDING.TABLET.BOTTOM + 20}px 0 20px 0`
-        : "0"};
+        : '0'};
   }
 
   @media ${device.laptopM} {
     margin: ${(props) =>
       props.showMobileMenu
         ? `${GLOBALS.HEADER.OUTER_PADDING.MOBILE.TOP + GLOBALS.HEADER.OUTER_PADDING.MOBILE.BOTTOM + 20}px 0 20px 0`
-        : "0"};
+        : '0'};
   }
 `;
 
@@ -730,7 +728,7 @@ const PushLogoBlackContainer = styled(ItemV)`
 `;
 
 const StyledHeader = styled.header`
-  font-family: "Strawford";
+  font-family: 'Strawford';
 
   /* padding: 0px 160px; */
   position: fixed;
@@ -833,7 +831,7 @@ const MenuTop = styled(ItemV)`
   }
 
   @media ${device.laptopM} {
-    position: ${(props) => (props.showMobileMenu ? "fixed" : "relative")};
+    position: ${(props) => (props.showMobileMenu ? 'fixed' : 'relative')};
     height: auto;
     top: ${(props) =>
       props.showMobileMenu
@@ -847,11 +845,11 @@ const MenuTop = styled(ItemV)`
     width: ${(props) =>
       props.showMobileMenu
         ? `calc(100% - ${structure.PADDING.TABLET.LEFT + structure.PADDING.TABLET.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.TABLET.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.TABLET.LEFT + GLOBALS.HEADER.OUTER_PADDING.TABLET.RIGHT + GLOBALS.HEADER.OUTER_PADDING.TABLET.LEFT - ADJUST_FOR_BLUR * 2}px)`
-        : "100%"};
+        : '100%'};
     padding: ${(props) =>
       props.showMobileMenu
         ? `${GLOBALS.HEADER.OUTER_PADDING.TABLET.TOP - ADJUST_FOR_BLUR}px ${GLOBALS.HEADER.OUTER_PADDING.TABLET.RIGHT - ADJUST_FOR_BLUR}px ${GLOBALS.HEADER.OUTER_PADDING.TABLET.BOTTOM}px ${GLOBALS.HEADER.OUTER_PADDING.TABLET.LEFT - ADJUST_FOR_BLUR}px`
-        : "0px"};
+        : '0px'};
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(4px);
@@ -869,11 +867,11 @@ const MenuTop = styled(ItemV)`
     width: ${(props) =>
       props.showMobileMenu
         ? `calc(100% - ${structure.PADDING.MOBILE.LEFT + structure.PADDING.MOBILE.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.MOBILE.RIGHT + GLOBALS.HEADER.OUTER_MARGIN.MOBILE.LEFT + GLOBALS.HEADER.OUTER_PADDING.MOBILE.RIGHT + GLOBALS.HEADER.OUTER_PADDING.MOBILE.LEFT - ADJUST_FOR_BLUR * 2}px)`
-        : "100%"};
+        : '100%'};
     padding: ${(props) =>
       props.showMobileMenu
         ? `${GLOBALS.HEADER.OUTER_PADDING.MOBILE.TOP - ADJUST_FOR_BLUR}px ${GLOBALS.HEADER.OUTER_PADDING.MOBILE.RIGHT - ADJUST_FOR_BLUR}px ${GLOBALS.HEADER.OUTER_PADDING.MOBILE.BOTTOM}px ${GLOBALS.HEADER.OUTER_PADDING.MOBILE.LEFT - ADJUST_FOR_BLUR}px`
-        : "0px"};
+        : '0px'};
   }
 `;
 
@@ -892,7 +890,7 @@ const NavigationMenu = styled.ul`
     flex-direction: column;
     flex: 0 0 75%;
     align-self: stretch;
-    display: ${(props) => (props.showMobileMenu ? "flex" : "none")};
+    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
   }
 `;
 
@@ -909,7 +907,7 @@ const NavigationMenuItem = styled.li`
   }
 
   & span {
-    font-family: "FK Grotesk Neue";
+    font-family: 'FK Grotesk Neue';
 
     padding: 4px;
     font-weight: 500;
@@ -986,7 +984,7 @@ const LanguageMenuItem = styled.li`
   padding-left: 16px;
 
   & span {
-    font-family: "Strawford";
+    font-family: 'Strawford';
     padding: 4px;
     font-weight: 500;
     font-size: 18px;
@@ -995,7 +993,7 @@ const LanguageMenuItem = styled.li`
 
   // &:hover {
   // & span {
-  //   color: ${(props) => (props.expanded ? "#dd44b9" : "")};
+  //   color: ${(props) => (props.expanded ? '#dd44b9' : '')};
   // }
 
   & .chevronIcon {
@@ -1003,7 +1001,7 @@ const LanguageMenuItem = styled.li`
   }
 
   // & .menuContent {
-  //   display: ${(props) => (props.expanded ? "block" : "none")};
+  //   display: ${(props) => (props.expanded ? 'block' : 'none')};
   // }
   // }
 
@@ -1060,7 +1058,7 @@ const NavigationMenuHeader = styled.div`
       width: 16px;
       height: 16px;
       transform: ${(props) =>
-        props.expanded ? "rotate(180deg)" : "none  !important"};
+        props.expanded ? 'rotate(180deg)' : 'none  !important'};
     }
   }
 `;
@@ -1113,7 +1111,7 @@ const LanguageMenuHeader = styled.div`
       width: 16px;
       height: 16px;
       transform: ${(props) =>
-        props.expanded ? "rotate(180deg)" : "none  !important"};
+        props.expanded ? 'rotate(180deg)' : 'none  !important'};
     }
   }
 
@@ -1130,7 +1128,7 @@ const LanguageMenuHeader = styled.div`
 const NavigationMenuContent = styled.ul`
   list-style: none;
 
-  font-family: "Strawford", "Manrope", sans-serif;
+  font-family: 'Strawford', 'Manrope', sans-serif;
   display: none;
   position: absolute;
 
@@ -1160,7 +1158,7 @@ const NavigationMenuContent = styled.ul`
     position: relative;
     clip-path: inset(0 round 24px);
 
-    display: ${(props) => (props.expanded ? "flex" : "none !important")};
+    display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
     & a {
       justify-content: flex-start;
     }
@@ -1188,7 +1186,7 @@ const HeaderFocusItems = styled(ItemH)`
 const LanguageMenuContent = styled.div`
   list-style: none;
 
-  font-family: "Strawford", "Manrope", sans-serif;
+  font-family: 'Strawford', 'Manrope', sans-serif;
   display: none;
   position: absolute;
 
@@ -1223,7 +1221,7 @@ const LanguageMenuContent = styled.div`
     margin: 8px 0 0 0;
     padding: 2px 12px 2px 12px;
 
-    display: ${(props) => (props.expanded ? "flex" : "none !important")};
+    display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
 
     & a {
       justify-content: flex-start;
@@ -1313,9 +1311,9 @@ const DappLauncher = styled(A)`
 
   @media ${device.laptopM} {
     align-self: stretch;
-    display: ${(props) => (props.showMobileMenu ? "flex" : "none")};
+    display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
     flex: 0 1 100%;
-    margin-top: ${(props) => props.showMobileMenu && "32px"};
+    margin-top: ${(props) => props.showMobileMenu && '32px'};
   }
 `;
 

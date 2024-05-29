@@ -2,20 +2,20 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
-import React from "react";
+import React from 'react';
 
 // External Components
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // Internal Components
-import { Button, Image, ItemH, ItemV } from "@site/src/css/SharedStyling";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
+import { Button, Image, ItemH, ItemV } from '@site/src/css/SharedStyling';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
-import { brbPartnersList } from "@site/src/config/BRBPartnersList";
+import { brbPartnersList } from '@site/src/config/BRBPartnersList';
 
 // Internal Configs
-import { device } from "@site/src/config/globals";
+import { device } from '@site/src/config/globals';
 
 export const Partners = ({
   sectionRef,
@@ -28,19 +28,19 @@ export const Partners = ({
       <PartnersList>
         {brbPartnersList.map((partnerRow, i) => {
           return (
-            <PartnerContent key={i} gap="0px 164px">
+            <PartnerContent key={i} gap='0px 164px'>
               {partnerRow.map((item, index) => {
                 return (
                   <PartnerItem key={index}>
                     <PartnerItemContent
-                      maxHeight="65px"
-                      height="65px"
-                      margin="27px"
+                      maxHeight='65px'
+                      height='65px'
+                      margin='27px'
                     >
                       <PartnersButton
-                        padding="0px"
-                        borderRadius="0px"
-                        background="transparent"
+                        padding='0px'
+                        borderRadius='0px'
+                        background='transparent'
                         title={`${item?.title}`}
                         disabled={item?.link ? false : true}
                         onClick={() => {
@@ -54,13 +54,13 @@ export const Partners = ({
                         <PartnersLogo
                           src={
                             require(
-                              `@site/static/assets/website/brb/partners/${item.srcref}.webp`,
+                              `@site/static/assets/website/brb/partners/${item.srcref}.webp`
                             ).default
                           }
                           srcSet={`${require(`@site/static/assets/website/brb/partners/${item.srcref}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/brb/partners/${item.srcref}@3x.webp`).default} 3x`}
                           alt={`${item?.alt}`}
                           style={{
-                            scale: `${item?.srcref === "chainsafe" ? "1.2" : "1"}`,
+                            scale: `${item?.srcref === 'chainsafe' ? '1.2' : '1'}`,
                           }}
                         />
                       </PartnersButton>
@@ -97,7 +97,7 @@ const PartnersContainer = styled.div`
 const Header = styled.h3`
   font-size: 46px;
   font-weight: 400;
-  font-family: "Glancyr", sans-serif;
+  font-family: 'Glancyr', sans-serif;
   color: #fff;
   margin: 0px 0px 60px;
   @media (max-width: 768px) {
@@ -142,7 +142,7 @@ const PartnerItemContent = styled(ItemH)`
 `;
 
 const PartnersButton = styled(Button)`
-  cursor: ${(props) => (props.disabled ? "default !important" : "pointer")};
+  cursor: ${(props) => (props.disabled ? 'default !important' : 'pointer')};
   &:before {
     content: none;
   }

@@ -13,7 +13,10 @@ import styled from 'styled-components';
 
 // Internal Components
 import { ItemH, Span } from '@site/src/css/SharedStyling';
-import { getNotificationsCount, getSubscribersCount } from '@site/src/utils/AnalyticsStats';
+import {
+  getNotificationsCount,
+  getSubscribersCount,
+} from '@site/src/utils/AnalyticsStats';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
@@ -77,12 +80,12 @@ function AnalyticsStats() {
       <Oval
         height={80}
         width={80}
-        color="#FFFFFF"
+        color='#FFFFFF'
         wrapperStyle={{}}
-        wrapperClass=""
+        wrapperClass=''
         visible={true}
-        ariaLabel="oval-loading"
-        secondaryColor="#8e317a80"
+        ariaLabel='oval-loading'
+        secondaryColor='#8e317a80'
         strokeWidth={2}
         strokeWidthSecondary={2}
       />
@@ -143,7 +146,7 @@ function AnalyticsStats() {
 }
 
 const AnalyticsStatCardList = styled.div`
-  background: #0D0D0F;
+  background: #0d0d0f;
 
   flex: 1;
   // background: linear-gradient(
@@ -154,12 +157,12 @@ const AnalyticsStatCardList = styled.div`
   //   rgba(18, 19, 21, 0.5) 102.97%
   // );
   // backdrop-filter: blur(30px);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 32px;
   display: flex;
   align-items: center;
   gap: 18px;
-  
+
   justify-content: space-between;
   width: 100%;
   padding: 30px 50px;
@@ -190,11 +193,11 @@ const AnalyticsStatCard = styled(ItemH)`
   gap: 18px;
   align-items: center;
   justify-content: center;
-  
+
   @media ${device.laptop} {
     row-gap: 16px;
   }
-  
+
   @media ${device.tablet} {
     flex-direction: column;
     row-gap: 8px;
@@ -207,8 +210,7 @@ const AnalyticsStatCard = styled(ItemH)`
     // max-width: 113px;
     // min-width: 113px;
   }
-
-`
+`;
 
 const KPIFigure = styled(Span)`
   font-weight: 500;
@@ -216,7 +218,6 @@ const KPIFigure = styled(Span)`
   line-height: 110%;
   letter-spacing: normal;
   color: #ffffff;
-
 
   @media ${device.mobileL} {
     text-align: left;

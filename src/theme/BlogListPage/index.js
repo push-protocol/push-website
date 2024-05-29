@@ -8,23 +8,23 @@ import {
   HtmlClassNameProvider,
   PageMetadata,
   ThemeClassNames,
-} from "@docusaurus/theme-common";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import { Section, Span } from "@site/src/css/SharedStyling";
-import useMediaQuery from "@site/src/hooks/useMediaQuery";
-import BlogLayout from "@theme/BlogLayout";
-import BlogListPaginator from "@theme/BlogListPaginator";
-import BlogPostItems from "@theme/BlogPostItems";
-import SearchMetadata from "@theme/SearchMetadata";
-import clsx from "clsx";
-import React, { useContext, useEffect, useState } from "react";
-import styled from "styled-components";
-import { PageMeta } from "@site/src/config/pageMeta";
-import { useLocation } from "@docusaurus/router";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+} from '@docusaurus/theme-common';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { Section, Span } from '@site/src/css/SharedStyling';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import BlogLayout from '@theme/BlogLayout';
+import BlogListPaginator from '@theme/BlogListPaginator';
+import BlogPostItems from '@theme/BlogPostItems';
+import SearchMetadata from '@theme/SearchMetadata';
+import clsx from 'clsx';
+import React, { useContext, useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { PageMeta } from '@site/src/config/pageMeta';
+import { useLocation } from '@docusaurus/router';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // Internal Configs
-import GLOBALS, { device } from "@site/src/config/globals";
+import GLOBALS, { device } from '@site/src/config/globals';
 
 function BlogListPageMetadata(props) {
   const { metadata } = props;
@@ -35,16 +35,16 @@ function BlogListPageMetadata(props) {
   const location = useLocation();
   const pathname = location.pathname;
 
-  const isBlogOnlyMode = permalink === "/";
+  const isBlogOnlyMode = permalink === '/';
   const isBlogMainPage =
-    pathname.includes("/page/") || pathname == "/blog/" || pathname == "/blog";
+    pathname.includes('/page/') || pathname == '/blog/' || pathname == '/blog';
   const title = isBlogOnlyMode ? siteTitle : blogTitle;
   return (
     <>
       {!isBlogMainPage && (
         <PageMetadata title={title} description={blogDescription} />
       )}
-      <SearchMetadata tag="blog_posts_list" />
+      <SearchMetadata tag='blog_posts_list' />
     </>
   );
 }
@@ -55,7 +55,7 @@ function BlogListPageContent(props) {
     <>
       <ListItem>
         <ListSpan>
-          {metadata.page == 1 ? "Recent Updates" : `Page ${metadata.page}`}
+          {metadata.page == 1 ? 'Recent Updates' : `Page ${metadata.page}`}
         </ListSpan>
         {metadata.page == 1 && (
           <BlogPostItems items={items.slice(0, 4)} list={true} />
@@ -76,7 +76,7 @@ export default function BlogListPage(props) {
     <HtmlClassNameProvider
       className={clsx(
         ThemeClassNames.wrapper.blogPages,
-        ThemeClassNames.page.blogListPage,
+        ThemeClassNames.page.blogListPage
       )}
     >
       <BlogLayout>
@@ -94,7 +94,7 @@ const GridItem = styled.div`
   gap: 33px;
   box-sizing: border-box;
   margin: ${(props) =>
-    props.marginTop ? "100px auto 0 auto" : "30px auto 0 auto"};
+    props.marginTop ? '100px auto 0 auto' : '30px auto 0 auto'};
 
   @media (max-width: 1200px) {
     width: 100% !important;

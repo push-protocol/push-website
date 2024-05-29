@@ -4,20 +4,21 @@ title: 'Announcing Decentralize with PUSH Contest'
 authors: [push]
 image: './cover-image.webp'
 description: 'Announcing Decentralize with PUSH Contest'
-text: "Calling all Web3 enthusiasts and decentralization dreamers! Push Protocol, the pioneering force behind decentralized notifications and chat, is thrilled to announce their exciting new contest"
+text: 'Calling all Web3 enthusiasts and decentralization dreamers! Push Protocol, the pioneering force behind decentralized notifications and chat, is thrilled to announce their exciting new contest'
 tags: [Push Protocol, Web3, Blockchain Technology]
 ---
+
 ![Cover Image of Announcing Decentralize with PUSH Contest](./cover-image.webp)
 
 <!--truncate-->
 
-Calling all Web3 enthusiasts and decentralization dreamers! Push Protocol, the pioneering force behind decentralized notifications and chat, is thrilled to announce their exciting new contest - [Decentralize with PUSH](https://galxe.com/JDGNdt7oWLFDeUUUVgdNmb/campaign/GCsdpt4Jjk). 
+Calling all Web3 enthusiasts and decentralization dreamers! Push Protocol, the pioneering force behind decentralized notifications and chat, is thrilled to announce their exciting new contest - [Decentralize with PUSH](https://galxe.com/JDGNdt7oWLFDeUUUVgdNmb/campaign/GCsdpt4Jjk).
 
 Dive into the heart of Web3 and stand a chance to win exclusive NFTs, gain access to an exclusive community, and be eligible for future airdrops and prizes!
 
 ### The Quest:
 
-Complete a series of engaging tasks on [Galxe](https://galxe.com/JDGNdt7oWLFDeUUUVgdNmb/campaign/GCsdpt4Jjk) designed to introduce you to the power and potential of Push Protocol. 
+Complete a series of engaging tasks on [Galxe](https://galxe.com/JDGNdt7oWLFDeUUUVgdNmb/campaign/GCsdpt4Jjk) designed to introduce you to the power and potential of Push Protocol.
 
 From learning about decentralized notifications to exploring PUSH, each step will equip you with valuable knowledge and insights into the future of communication.
 
@@ -30,6 +31,7 @@ The top 2,500 participants will receive a Push Alpha Access Pass NFT, allowing t
 ### Why Participate?
 
 This [contest](https://galxe.com/JDGNdt7oWLFDeUUUVgdNmb/campaign/GCsdpt4Jjk) serves as your entryway into the dynamic realm of decentralized notifications. Here's what's in store for you:
+
 - <b>Access Exclusive Community:</b> Join the vibrant Push Alpha Community, connect with kindred spirits, and contribute to shaping the future.
 - <b>Acquire Rewarding NFTs:</b> Secure your stake in the Push Protocol ecosystem with exclusive NFTs offering valuable perks.
 - <b>Prepare for Potential Airdrops and Prizes:</b> Stay ahead of the curve and position yourself with a chance to win enticing rewards as Push unveils its forthcoming features.

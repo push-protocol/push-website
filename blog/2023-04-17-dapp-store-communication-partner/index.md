@@ -1,25 +1,24 @@
 ---
-
 slug: push-protocol-selected-as-communication-partner-for-d-app-store-kit
 title: Push Protocol Selected as Communication Partner for dApp Store Kit! 🔔💜
 authors: [push]
 image: './cover-image.webp'
-text: "Push Protocol is thrilled to announce that we have been selected as the communication solutions partner for dApp Store Kit!"
-tags: [ Polygon Network, Web3, Partnerships, Polygon]
-
+text: 'Push Protocol is thrilled to announce that we have been selected as the communication solutions partner for dApp Store Kit!'
+tags: [Polygon Network, Web3, Partnerships, Polygon]
 ---
 
 ![Cover image of Push Protocol Selected as Communication Partner for dApp Store Kit! 🔔💜](./cover-image.webp)
+
 <!--truncate-->
 
 Push Protocol is thrilled to announce that we have been selected as the communication solutions partner for dApp Store Kit!
-
 
 For Push, this means integrations from hundreds of potential new dApp store fronts that are planning to build with the dApp Store Kit and exposure to the millions of Polygon users who will interact with these dApps.
 
 We are extremely excited to be playing a critical role in dApp Store Kit stack and are looking forward to the integrations to come!
 
 ## Breaking down: What is the dApp Store Kit?
+
 dApp Store Kit allows anyone to build a dApp store in web3. Simple. More than that though, the Store Kit enables any dApp store to list every Polygon and EVM dApp, set their own rules for monetization/distribution/curation/governance, brand it as they see fit, and more.
 
 dApp Store Kit stack solves the problem of how Web3 dApps are discovered on mobile devices. For the longest time this has been dominated by centralized stores like Apple and Google. But now, the dApp Store Kit provides an enhanced web3 native alternative that addresses the shortcomings of its web2 counterparts by making dApp store building composable, permissionless, and interoperable.
@@ -53,4 +52,3 @@ We are excited about this new integration and the potential it brings to the wor
 Learn more about dApp Store Kit using Push on our [Discord](https://discord.gg/pushprotocol)
 
 Learn how to integrate Push into your dApp: [Push developer docs](/docs/)
-

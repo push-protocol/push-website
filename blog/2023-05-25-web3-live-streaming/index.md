@@ -11,11 +11,10 @@ tags: [ Frensofpush, Partnerships, Web3, Blockchain Technology]
 ---
 
 ![Cover image of Enhancing Web3 Livestreaming | Push x Graviton🧲](./cover-image.webp)
+
 <!--truncate-->
 
-
 This week we’re extremely excited to announce our latest Frens of Push, [Graviton](https://graviton.xyz/about)🧲🎉
-
 
 Graviton provides pathways and tools for creators to grow without limitations imposed by centralized platforms.
 
@@ -68,4 +67,3 @@ Thank you :)
 Graviton is on a mission to build a decentralized and empowering creator economy. With transparency and sustainability as their core principles, Graviton provides pathways and tools for creators to grow without limitations imposed by centralized platforms. Founded by a team of blockchain veterans and artists, Graviton is committed to creating a world where content creators and patrons have the freedom to reach their full potential.
 
 Find more about Graviton: [Twitter](https://twitter.com/Graviton_XYZ), [Discord](https://discord.com/invite/nfu), [Github](https://github.com/GravitonINC), [Medium](https://medium.com/graviton-xyz)
-

@@ -243,7 +243,7 @@ schedule.scheduleJob({ start: startTime, rule: dailyRule }, async function () {
     channel.logInfo(`🐣 Cron Task Completed -- ${taskName}`);
   } catch (err) {
     logger.error(
-      `[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`,
+      `[${new Date(Date.now())}] ❌ Cron Task Failed -- ${taskName}`
     );
     logger.error(`[${new Date(Date.now())}] Error Object: %o`, err);
   }

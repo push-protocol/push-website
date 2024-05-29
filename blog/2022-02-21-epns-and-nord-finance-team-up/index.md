@@ -11,6 +11,7 @@ tags: [ Newsletter
 ,Ethereum
 ,Blockchain]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover image of EPNS and Nord Finance Team Up to Push Notifications for the Emergent DeFi Ecosystem](./cover-image.webp)
@@ -35,21 +36,19 @@ Given the innovative nature and the sheer number of possibilities on Nord Financ
 
 “Nord Finance is just the platform that the growing DeFi industry was in need of,” says the team at EPNS. “The innovative financial products combined with the platform’s interoperability make it suitable for both beginner and veteran investors entering DeFi. In this regard, we believe that EPNS can add to the existing user experience on this platform by allowing users to stay on top of their investments, loans, and new opportunities.”
 
-What Does the Collaboration Entail
-==================================
+# What Does the Collaboration Entail
 
 This collaboration with Nord Finance entails building a direct communication medium between the protocol and its users. Nord Finance will have an official channel on the EPNS platform through which users can receive push notifications whenever,
 
-*   New farming opportunities or liquidity pools are available for investors.
-*   The loan repayment period approaches
-*   On-boarding period for token claiming ends.
+- New farming opportunities or liquidity pools are available for investors.
+- The loan repayment period approaches
+- On-boarding period for token claiming ends.
 
 This saves users the hassle of manually checking for new updates every single time. EPNS has a mobile application, decentralized application, and a chrome extension to ensure that users do not miss out on these notifications no matter what device they’re on.
 
 Speaking of the partnership the team at Nord Finance says, “to say that EPNS has redefined communication in DeFi would be an understatement. It is a platform that is single-handedly bringing the whole of web3 closer together. We’re extremely thrilled to have them on board and we believe that EPNS will help us better communicate with our users and improve their overall experience on the platform.”
 
-**About Nord Finance**
-======================
+# **About Nord Finance**
 
 Nord Finance, a blockchain agnostic platform, is an advanced decentralized financial ecosystem that focuses on simplifying decentralized finance products for users by highlighting traditional finance’s key attributes. Deployed on the Ethereum Network, it integrates multi-chain interoperability, thus proposing a plethora of financial primitives, which constitute savings, advisory, loans against assets, investment/funds management, and swaps.
 
@@ -57,8 +56,8 @@ At Nord Finance, we are building a one-stop advanced decentralized financial eco
 
 Connect with us…
 
-*   Join our [Telegram](https://t.me/NordFinance)
-*   Join our [Telegram Announcement](https://t.me/NordFinance_Ann)
-*   Follow our [Twitter](https://twitter.com/Nord_Finance?s=09)
-*   Visit our [Website](https://nordfinance.io/)
-*   Mail us at contact@nordfinance.io
+- Join our [Telegram](https://t.me/NordFinance)
+- Join our [Telegram Announcement](https://t.me/NordFinance_Ann)
+- Follow our [Twitter](https://twitter.com/Nord_Finance?s=09)
+- Visit our [Website](https://nordfinance.io/)
+- Mail us at contact@nordfinance.io

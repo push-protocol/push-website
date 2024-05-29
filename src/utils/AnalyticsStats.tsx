@@ -28,7 +28,6 @@ export const getSubscribersCount = async () => {
   return totalSubscribers;
 };
 
-
 // get notifications count
 export const getNotificationsCount = async () => {
   let totalNotifications = 0;
@@ -40,10 +39,8 @@ export const getNotificationsCount = async () => {
     chain: 'All',
   });
 
-  const notificationAnalyticsData =
-    notificationResponse?.notificationAnalytics;
+  const notificationAnalyticsData = notificationResponse?.notificationAnalytics;
   for (let i = 0; i < notificationAnalyticsData?.length; i++) {
-
     for (const key in notificationAnalyticsData[i]) {
       if (key === 'date') {
         continue;

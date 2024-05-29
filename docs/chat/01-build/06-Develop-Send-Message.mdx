@@ -15,18 +15,18 @@ Push Chat doesn't require a user to be on the network for you to send message ðŸ
 Every chat message sent from Push is completely E2EE. The only exception to this is when a message is sent to the user that is not yet on the Push network. Push leaves it up to the developers to decide on how they want this to be: Send non-encrypted message, empty nudge or only send message to onboarded user (which will always be E2EE).
 
 <head>
-  <title>Send message | Push Chat | Push Documentation</title>
+  <title>{`Send message | Push Chat | Push Documentation`}</title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import Details from "@theme/Details";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
 import {
   ModalContainer,
   ModalSmall,
   ModalWrapper,
   AImp,
-} from "@site/src/css/SharedStyling";
+} from '@site/src/css/SharedStyling';
 
 ## Send message API
 
@@ -38,8 +38,8 @@ import {
 // recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
 // message - Can be modified to send various types of messages like Images, Reactions, etc
 const aliceMessagesBob = await userAlice.chat.send(bobAccount, {
-  type: "Text",
-  content: "Hello Bob!",
+  type: 'Text',
+  content: 'Hello Bob!',
 });
 ```
 
@@ -53,16 +53,16 @@ See <AImp href='/chat/message-types/'>Message Types</AImp> to understand how `me
 
 When sending a message, you can customize the following params
 
-| Param         | Type                | Subtype                                    | Default | Remarks                                                                                                                                                                                                   |
-| ------------- | ------------------- | ------------------------------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string`            | -                                          | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ "Supported wallet standards for Push Chat") including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
-| _`message`_   | `object`            | -                                          | -       | Configuration for message to be sent                                                                                                                                                                      |
-| -             | _`message.type`_    | `Text`, `Image`, `File`, `MediaEmbed`, etc | `Text`  | Type of message, see [Message Types](/docs/chat/message-types) for passing specific parameters based on message type                                                                                      |
-| -             | _`message.content`_ | `string`                                   | -       | Message Content                                                                                                                                                                                           |
+| Param         | Type                | Subtype                                    | Default | Remarks                                                                                                                                                                                                                                                 |
+| ------------- | ------------------- | ------------------------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`recipient`_ | `string`            | -                                          | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat') including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
+| _`message`_   | `object`            | -                                          | -       | Configuration for message to be sent                                                                                                                                                                                                                    |
+| -             | _`message.type`_    | `Text`, `Image`, `File`, `MediaEmbed`, etc | `Text`  | Type of message, see [Message Types](/docs/chat/message-types) for passing specific parameters based on message type                                                                                                                                    |
+| -             | _`message.content`_ | `string`                                   | -       | Message Content                                                                                                                                                                                                                                         |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<Details summary="Expected response">200 OK</Details>
+<Details summary='Expected response'>200 OK</Details>
 
 ## Sending images, payments, reactions, etc
 

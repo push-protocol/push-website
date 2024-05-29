@@ -1,21 +1,19 @@
 ---
-
 slug: push-eth-denver-full-itinerary
 title: Push @ETHDenver Full Itinerary 🌄
 authors: [push]
 image: './cover-image.webp'
-text: "ETHDenver is just around the corner and the Push team is going to be there! We’re extremely excited to be joining the largest Ethereum-based conference of the year and can’t wait to meet all of you, our amazing community members in person."
-tags: [ Web3, Blockchain Technology, Announcements, Ethdenver, Ethdenver 2023 ]
-
+text: 'ETHDenver is just around the corner and the Push team is going to be there! We’re extremely excited to be joining the largest Ethereum-based conference of the year and can’t wait to meet all of you, our amazing community members in person.'
+tags: [Web3, Blockchain Technology, Announcements, Ethdenver, Ethdenver 2023]
 ---
 
 ![Cover image of Push @ETHDenver Full Itinerary 🌄](./cover-image.webp)
+
 <!--truncate-->
 
 ETHDenver is just around the corner and the Push team is going to be there!
 
 We’re extremely excited to be joining the largest Ethereum-based conference of the year and can’t wait to meet all of you, our amazing community members in person.
-
 
 We’ll be having a busy week attending several panel discussions and workshops, so if you’re going to be at ETHDenver this year and want to learn more about Push communication tools or meet the creators themselves — here’s where you can find us:
 
@@ -42,6 +40,7 @@ TBD
 - <b>Filecoin Hacker Base @ ETHDenver —</b> Workshop on Why web3 communication matters <b>(Time is TBD)</b>
 
 ## Opt-in to our ETHDenver channel, there might be some alpha and merch for you! 👀
+
 If you’re looking to get access to exclusive merch, event tickets, and stay updated on all things happening at ETHDenver this year, you can opt-in to our ETHDenver notifications channel.
 
 🔔👉 https://app.push.org/#/channels?channel=0x8DaFfe9d1b5aDB33F53aDDC183C6b91F9cb30bc7
@@ -49,6 +48,7 @@ If you’re looking to get access to exclusive merch, event tickets, and stay up
 Who knows…we might even share some big news and alpha coming out from Push with you…
 
 ![Ethdenver Hoodie](./image-1.webp)
+
 <center>Opt-in to learn how you can earn some awesome Push hoodies.</center>
 
 ## Come meet the team!
@@ -72,5 +72,5 @@ If you need help getting in touch, you can also always refer to our community ch
 We look forward to having an amazing week at ETHDenver and we can’t wait to meet everyone!
 
 ![Push Crew](./image-2.webp)
-<center>Hello from the Push Crew!</center>
 
+<center>Hello from the Push Crew!</center>

@@ -12,18 +12,18 @@ tags: [ Nft
 ,Community
 ]
 ---
+
 import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of The First NFT Collection from EPNS!](./cover-image.webp)
 
 <!--truncate-->
 
-
 Just because we’re a notification protocol doesn’t mean we can’t have a little fun. 🙃 We at EPNS are huge fans of the NFT space and the emerging creator economy. We have seen DeFi lower the barriers for opportunity-creation within the financial world, and are thrilled to be witnessing a similar wave of adoption among creators and artists.
 
 So, we decided to throw our hat in the ring by supporting artists, celebrating our origins, and giving back to the community along the way. And just in time for the $PUSH token sale and the EPNS mainnet launch! 🙌
 
-_🎨_ Today, we’re excited to unveil our NFT collection **$ROCKSTARS of EPNS_._**  The collection is a series of 100 illustrations by commissioned Indian artists. 🇮🇳 The NFT will be released in two phases: the initial gratitude drop, and the following weekly drop.
+_🎨_ Today, we’re excited to unveil our NFT collection **$ROCKSTARS of EPNS*.*** The collection is a series of 100 illustrations by commissioned Indian artists. 🇮🇳 The NFT will be released in two phases: the initial gratitude drop, and the following weekly drop.
 
 ![First Image of The First NFT Collection from EPNS!](./image-1.webp)
 
@@ -34,4 +34,3 @@ _🎨_ Today, we’re excited to unveil our NFT collection **$ROCKSTARS of EPNS_
 To our community — thank you! We’re excited to have arrived at this moment. We cannot wait to launch EPNS on the Ethereum mainnet soon and start delivering decentralized notifications for all.
 
 So how can you throw your hat in the ring? We’d love to hear from you; feedback about the protocol, the applications, support online, participation in community channels, and more!
-

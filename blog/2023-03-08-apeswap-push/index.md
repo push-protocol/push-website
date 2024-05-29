@@ -1,25 +1,24 @@
 ---
-
 slug: going-bananas-push-protocol-partners-with-ape-swap-for-seamless-web3-communication
 title: 'Going Bananas: Push Protocol Partners with ApeSwap for Seamless web3 Communication!🐵'
 authors: [push]
 image: './cover-image.webp'
-text: "Are you ready to take your DeFi experience to the next level? We are thrilled to announce that Push Protocol is teaming up with ApeSwap, one of the most popular DEXes and Yield Farming platforms on BNB Chain, Polygon, ETH and Telos."
-tags: [ Web3, Blockchain Technology, Announcements, Crypto, BNB ]
-
+text: 'Are you ready to take your DeFi experience to the next level? We are thrilled to announce that Push Protocol is teaming up with ApeSwap, one of the most popular DEXes and Yield Farming platforms on BNB Chain, Polygon, ETH and Telos.'
+tags: [Web3, Blockchain Technology, Announcements, Crypto, BNB]
 ---
 
 ![Cover image of Going Bananas: Push Protocol Partners with ApeSwap for Seamless web3 Communication!🐵](./cover-image.webp)
+
 <!--truncate-->
 
 Are you ready to take your DeFi experience to the next level? We are thrilled to announce that Push Protocol is teaming up with ApeSwap, one of the most popular DEXes and Yield Farming platforms on BNB Chain, Polygon, ETH and Telos.
-
 
 ApeSwap is a rapidly growing DeFi platform that has gained a significant following on BNB Chain. With over $67 million in TVL, ApeSwap is redefining DeFi for a more sustainable future. To achieve this goal, the platform is focused on Sustainable Liquidity Mining through ApeSwap’s Treasury Bills, but also is well known for their DEX, liquidity pools, staking, and farming.
 
 From crypto newbies to Defi veterans, ApeSwap is dedicated to providing accessibility to DeFi tools to web3 users across the board.
 
 ## Push x Apeswap
+
 At the core of any successful DeFi platform is trust, and this is something that both Push protocol and ApeSwap highly value. To enable such trust, a direct and secure communication stream between ApeSwap and its users is a must. This is precisely where Push comes in!
 
 <blockquote><i>“Our values push the ApeSwap DAO forward. They determine who we partner with and how we build for a brighter future. Through accessibility, transparency, & security we strive to be the best protocol for our Ape family.” — Diddy, Social Media Director</i></blockquote>
@@ -45,4 +44,3 @@ We are excited to explore other use cases and solutions that can add more value 
 ApeSwap is a DeFi platform on BNB Chain, Polygon, Telos, and Ethereum. It offers DeFi tools like token swaps, Treasury Bills, staking, farming, liquidity pools, and more. It is overseen by the ApeSwap DAO and is committed to its mission to “provide accessible financial opportunities for the (crypto) masses through transparency, security, and support”.
 
 Find out more about ApeSwap: [Website](https://apeswap.finance/), [Twitter](https://twitter.com/ape_swap), [Discord](https://discord.com/invite/ApeSwap), [Telegram](https://t.me/ape_swap), [Instagram](https://www.instagram.com/apeswap.finance/), [Docs](https://apeswap.gitbook.io/apeswap-finance/welcome/master), [Github](https://github.com/ApeSwapFinance/)
-
