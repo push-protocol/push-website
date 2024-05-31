@@ -2,11 +2,50 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://push.org/blog</id>
     <title>Push | The Communication Protocol of Web3 Blog</title>
-    <updated>2024-05-27T00:00:00.000Z</updated>
+    <updated>2024-05-31T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://push.org/blog"/>
     <subtitle>Push | The Communication Protocol of Web3 Blog</subtitle>
     <icon>https://push.org/assets/website/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[ Estate Protocol: Leading Tokenized Real Estate Marketplace on Arbitrum Joins Frens Of Push ]]></title>
+        <id>https://push.org/blog/estate-protocol-joins-frens-of-push</id>
+        <link href="https://push.org/blog/estate-protocol-joins-frens-of-push"/>
+        <updated>2024-05-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Estate Protocol: Leading Tokenized Real Estate Marketplace on Arbitrum Joins Frens Of Push ]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Estate Protocol: Leading Tokenized Real Estate Marketplace on Arbitrum Joins Frens Of Push  " src="https://push.org/assets/images/cover-image-cc23b21fe8da0b1f3d07d552ae867a77.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>We're back with Frens of Push, offering a deep dive into the top protocols and Push ecosystem partners. This week, Estate Protocol is joining us, the leading tokenized real estate marketplace on the Arbitrum blockchain.</p>
+<p><a href="https://www.estateprotocol.com/" target="_blank" rel="noopener noreferrer">Estate Protocol</a> is bridging the gap between the tangible world of real estate and the boundless possibilities of the digital world by tokenizing real-world real estate, transforming properties into fractionalized digital assets through blockchain technology, ensuring security, transparency, and efficiency.</p>
+<p>By way of this collaboration, Push assists Estate Protocol in notifying users directly on their wallets. Users can subscribe to receive notifications about new property listings, rent collection updates, and other important news. This integration ensures that users are always informed about the latest developments and opportunities within the platform, enhancing their overall experience.</p>
+<p>In this episode of “Frens of Push”, Parv Prabhakar, CEO of Estate Protocol, joins us to talk about how the collaboration between Push Protocol and Estate Protocol can potentially disrupt real estate investing.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="hi-parv-whats-your-story-how-did-you-become-involved-in-building-in-the-blockchain-space-what-are-you-working-on-now">Hi Parv, what’s your story? How did you become involved in building in the blockchain space? What are you working on now?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#hi-parv-whats-your-story-how-did-you-become-involved-in-building-in-the-blockchain-space-what-are-you-working-on-now" class="hash-link" aria-label="Direct link to Hi Parv, what’s your story? How did you become involved in building in the blockchain space? What are you working on now?" title="Direct link to Hi Parv, what’s your story? How did you become involved in building in the blockchain space? What are you working on now?">​</a></h3>
+<p>I have a research and crypto background.  I’ve been using digital currency in some form since I was 12 years old and was playing zynga poker on facebook selling chips for real money.</p>
+<p>I got into crypto shortly after, buying my first bitcoin on local bitcoins. I then got deeper and deeper into the tech and the finance side of it, developing arbitrage strategies. Did that across platforms and payment methods for a couple of years, and then started traveling the world and discovered cross-country strategies. Did a 300x during the 2021 bull run with delta neutral bets.</p>
+<p>I was also into writing at this time, and this Dutch art collective asked me to write an essay going into NFTs in detail about 3 years ago, during the research for it it hit me that this technology is perfect for digitizing ownership in real estate. So I started researching about how to make it happen alongside my job as a guest writer for India’s biggest crypto exchange WazirX, wrote the white paper for Estate Protocol, got some peers to review and advice, and then quit the job to build this full time. The business evolved way past using NFTs too.</p>
+<p>The time with Estate Protocol since then has been incredible. We tokenized the first properties in Dubai, and are working on many new innovations in the space.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="tell-us-about-estate-protocol--whats-it-about-and-what-problem-does-it-solve">Tell us about Estate Protocol — what’s it about and what problem does it solve?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#tell-us-about-estate-protocol--whats-it-about-and-what-problem-does-it-solve" class="hash-link" aria-label="Direct link to Tell us about Estate Protocol — what’s it about and what problem does it solve?" title="Direct link to Tell us about Estate Protocol — what’s it about and what problem does it solve?">​</a></h3>
+<p>Estate Protocol is changing the global real estate market by leveraging blockchain and UK trust law to tokenize assets, and stablecoins to facilitate seamless cross-border transactions. We tokenize the world’s most in demand real estate, fractionalize the ownership, and make it a part of DeFi in a compliant manner. We would soon enable lending/borrowing, and bring large REITs on the platform.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="whats-the-2024-plan-for-estate-protocol-and-its-ecosystem">What’s the 2024 plan for Estate Protocol and its ecosystem?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#whats-the-2024-plan-for-estate-protocol-and-its-ecosystem" class="hash-link" aria-label="Direct link to What’s the 2024 plan for Estate Protocol and its ecosystem?" title="Direct link to What’s the 2024 plan for Estate Protocol and its ecosystem?">​</a></h3>
+<p>We are working on bringing the world’s best real estate on chain. As crypto natives, we would also be making it compatible with DeFi as far as possible. There are also some exciting partnerships currently being worked on!</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-is-the-estate-protocol-using-pushs-web3-communication-layer">How is the Estate Protocol using Push’s web3 communication layer?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#how-is-the-estate-protocol-using-pushs-web3-communication-layer" class="hash-link" aria-label="Direct link to How is the Estate Protocol using Push’s web3 communication layer?" title="Direct link to How is the Estate Protocol using Push’s web3 communication layer?">​</a></h3>
+<p>Estate Protocol utilizes Push’s web3 communication layer to notify our users directly on their wallets. Users can <a href="https://app.push.org/channels/0x2A43cB483361FB5b3a09Bd11c24CbEE5cf1BE7Ca" target="_blank" rel="noopener noreferrer">subscribe</a> to receive notifications about new property listings, rent collection updates, and other important news. This integration ensures that our users are always informed about the latest developments and opportunities within our platform, enhancing their overall experience.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-would-you-describe-your-experience-using-push-what-benefits-have-you-seen">How would you describe your experience using Push? What benefits have you seen?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#how-would-you-describe-your-experience-using-push-what-benefits-have-you-seen" class="hash-link" aria-label="Direct link to How would you describe your experience using Push? What benefits have you seen?" title="Direct link to How would you describe your experience using Push? What benefits have you seen?">​</a></h3>
+<p>Our experience with Push has been positive. While it’s early days since our integration, we anticipate significant improvements in user engagement and satisfaction. The ability to send timely and relevant updates directly to users’ wallets is a powerful tool, and we expect to see increased interaction and responsiveness from our community as a result.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-cool-use-cases-do-you-see-push-being-used-for-in-the-future">What cool use cases do you see Push being used for in the future?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#what-cool-use-cases-do-you-see-push-being-used-for-in-the-future" class="hash-link" aria-label="Direct link to What cool use cases do you see Push being used for in the future?" title="Direct link to What cool use cases do you see Push being used for in the future?">​</a></h3>
+<p>In the future, we plan to leverage Push’s chat feature to facilitate communication among investors in specific properties. This will enable token holders to discuss potential investments, share insights, and engage in general discussions related to real estate. By fostering a collaborative community, we believe this feature will add significant value to our platform and enhance the investment experience for our users.</p>
+<p>Thanks, Parv for the awesome conversation. Looking forward to revolutionizing web3 communication together with Estate Protocol!</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="about-estate-protocol">About Estate Protocol:<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#about-estate-protocol" class="hash-link" aria-label="Direct link to About Estate Protocol:" title="Direct link to About Estate Protocol:">​</a></h3>
+<p>Estate Protocol tokenizes real real estate and bridges the gap between real-world assets and the digital world through blockchain. Through Estate Protocol, people from anywhere in the world can invest in fractionalized properties in stable economies. The company enables people to buy and earn by owning a piece of prime real estate in economically stable countries by tokenizing real-world assets with the power of blockchain technology.</p>
+<p>Find more about Estate Protocol: <a href="https://www.estateprotocol.com/" target="_blank" rel="noopener noreferrer">Website</a>, <a href="https://docs.estateprotocol.com/whitepaper" target="_blank" rel="noopener noreferrer">Whitepaper</a>, <a href="https://x.com/EstateProtocol" target="_blank" rel="noopener noreferrer">Twitter</a>, <a href="https://t.me/estateprotocol" target="_blank" rel="noopener noreferrer">Telegram</a>, <a href="https://www.youtube.com/@EstateProtocol" target="_blank" rel="noopener noreferrer">YouTube</a>, and <a href="https://www.estateprotocol.com/blog/" target="_blank" rel="noopener noreferrer">Blog</a>.</p>
+<p>“Frens of Push” is our weekly content series to spotlight outstanding projects building with Push. If you want to be featured, reach out to us on <a href="https://twitter.com/pushprotocol/" target="_blank" rel="noopener noreferrer">X</a>, and you could be our next Fren in the series.</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Announcing Push Channel of the Week 🏆]]></title>
         <id>https://push.org/blog/push-channel-of-the-week</id>
@@ -318,52 +357,6 @@ Let us know about your favorite channel on <a href="https://discord.com/invite/p
         <category label="Blockchain Technology" term="Blockchain Technology"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats]]></title>
-        <id>https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi</id>
-        <link href="https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi"/>
-        <updated>2024-05-10T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats Blog " src="https://push.org/assets/images/cover-image-f9f5895933518cea811176b969e8d1bf.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>The NFT and DeFi landscapes are hotbeds of innovation but building a loyal and engaged community around your project can be a challenge. Traditional communication methods often fall short, leaving users scattered across different platforms and lacking a true sense of belonging.</p>
-<p>Enter <strong>Push Protocol Group Chat</strong>, a revolutionary tool that empowers NFT brands and DeFi protocols to cultivate thriving communities through secure, token-gated experiences.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benefits-of-token-gated-chats">Benefits of Token-Gated Chats<a href="https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi#benefits-of-token-gated-chats" class="hash-link" aria-label="Direct link to Benefits of Token-Gated Chats" title="Direct link to Benefits of Token-Gated Chats">​</a></h3>
-<ul>
-<li>
-<p><strong>Enhanced Engagement:</strong>&nbsp;Exclusive access creates a sense of value and incentivizes deeper participation within the community.</p>
-</li>
-<li>
-<p><strong>Stronger Brand Loyalty:</strong>&nbsp;Token-gated chats foster a sense of belonging and exclusivity, strengthening the bond between users and your project.</p>
-</li>
-<li>
-<p><strong>Targeted Communication:</strong>&nbsp;Connect directly with your most engaged user base, ensuring your message reaches the right audience.</p>
-</li>
-</ul>
-<p><strong>Unstoppable Domains: Powering Communities with Human-Readable Addresses:</strong></p>
-<p>Push Protocol seamlessly integrates with <a href="https://unstoppabledomains.com/" target="_blank" rel="noopener noreferrer">Unstoppable Domains (UD)</a>. This allows users to join group chats using their UD (e.g., yourname.nft) instead of complex wallet addresses. This enhances user experience and makes it easier for new members to join the conversation.</p>
-<p><strong>Taking it a Step Further: Gated Roles with Guild.xyz:</strong></p>
-<p>Push Protocol's partnership with <a href="https://guild.xyz/explorer" target="_blank" rel="noopener noreferrer">Guild.xyz</a> unlocks even more possibilities for community management. You can now leverage Guild roles to create additional access tiers within your token-gated chat.</p>
-<p>Imagine offering exclusive channels within your main chat, accessible only to users with specific Guild roles (e.g., early adopters, high-volume traders). This allows you to tailor the chat experience to different user segments and cater to their unique needs.</p>
-<p><strong>Examples in Action:</strong></p>
-<ul>
-<li>A limited-edition NFT collection can create a token-gated chat where holders can discuss upcoming collaborations and access exclusive artwork previews.</li>
-</ul>
-<p>Similar to the <a href="https://twitter.com/pushprotocol/status/1777929898784444842?utm_source=google&amp;utm_medium=twitter&amp;utm_campaign=amplify_upgrade" target="_blank" rel="noopener noreferrer">Pudgy Penguin's Unstopabble Domains token gated group chat</a> powered by Push Protocol, where only Pudgy Penguin Hodlers can join and communicate with each other and share their sense of community pride!</p>
-<ul>
-<li>A DeFi platform like <a href="https://curve.fi/#/ethereum/pools" target="_blank" rel="noopener noreferrer">Curve</a> can offer a tiered chat system, with basic access for all token holders and a dedicated channel for high-level stakers to discuss governance proposals and advanced strategies.</li>
-</ul>
-<p>Push Protocol empowers NFT brands and DeFi protocols to build vibrant, engaged communities that drive long-term success. By fostering a sense of exclusivity, targeted communication, and deeper connections, Push Protocol unlocks the true potential of Web3 communities.</p>
-<p><strong>Ready to build a thriving community around your project?</strong></p>
-<p><strong>Explore Push Protocol Group Chat today and unlock the power of secure, token-gated communication!</strong></p>
-<p>To know more about how Push Protocol can your elevate your project's UX by delivering seamless notifications to your userbase, <a href="https://push.org/blog/revolutionising-communication-for-defi-and-nft-with-push/?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=amplify_upgrade" target="_blank" rel="noopener noreferrer">read here</a>👈.</p>]]></content>
-        <author>
-            <name>Push Protocol</name>
-            <uri>https://twitter.com/pushprotocol</uri>
-        </author>
-        <category label="Push Protocol" term="Push Protocol"/>
-        <category label="Web3" term="Web3"/>
-        <category label="Blockchain Technology" term="Blockchain Technology"/>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[ QuickSwap: Leading Asset Exchange on Polygon Joins Frens Of Push ]]></title>
         <id>https://push.org/blog/quickswap-joins-frens-of-push</id>
         <link href="https://push.org/blog/quickswap-joins-frens-of-push"/>
@@ -413,6 +406,52 @@ Let us know about your favorite channel on <a href="https://discord.com/invite/p
         <category label="Blockchain Technology" term="Blockchain Technology"/>
         <category label="QuickSwap" term="QuickSwap"/>
         <category label="frensofpush" term="frensofpush"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats]]></title>
+        <id>https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi</id>
+        <link href="https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi"/>
+        <updated>2024-05-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of How Push Protocol Helps Build Thriving NFT and DeFi Communities Using Push Group Chats Blog " src="https://push.org/assets/images/cover-image-f9f5895933518cea811176b969e8d1bf.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>The NFT and DeFi landscapes are hotbeds of innovation but building a loyal and engaged community around your project can be a challenge. Traditional communication methods often fall short, leaving users scattered across different platforms and lacking a true sense of belonging.</p>
+<p>Enter <strong>Push Protocol Group Chat</strong>, a revolutionary tool that empowers NFT brands and DeFi protocols to cultivate thriving communities through secure, token-gated experiences.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benefits-of-token-gated-chats">Benefits of Token-Gated Chats<a href="https://push.org/blog/how-push-protocol-helps-build-thriving-nft-and-defi#benefits-of-token-gated-chats" class="hash-link" aria-label="Direct link to Benefits of Token-Gated Chats" title="Direct link to Benefits of Token-Gated Chats">​</a></h3>
+<ul>
+<li>
+<p><strong>Enhanced Engagement:</strong>&nbsp;Exclusive access creates a sense of value and incentivizes deeper participation within the community.</p>
+</li>
+<li>
+<p><strong>Stronger Brand Loyalty:</strong>&nbsp;Token-gated chats foster a sense of belonging and exclusivity, strengthening the bond between users and your project.</p>
+</li>
+<li>
+<p><strong>Targeted Communication:</strong>&nbsp;Connect directly with your most engaged user base, ensuring your message reaches the right audience.</p>
+</li>
+</ul>
+<p><strong>Unstoppable Domains: Powering Communities with Human-Readable Addresses:</strong></p>
+<p>Push Protocol seamlessly integrates with <a href="https://unstoppabledomains.com/" target="_blank" rel="noopener noreferrer">Unstoppable Domains (UD)</a>. This allows users to join group chats using their UD (e.g., yourname.nft) instead of complex wallet addresses. This enhances user experience and makes it easier for new members to join the conversation.</p>
+<p><strong>Taking it a Step Further: Gated Roles with Guild.xyz:</strong></p>
+<p>Push Protocol's partnership with <a href="https://guild.xyz/explorer" target="_blank" rel="noopener noreferrer">Guild.xyz</a> unlocks even more possibilities for community management. You can now leverage Guild roles to create additional access tiers within your token-gated chat.</p>
+<p>Imagine offering exclusive channels within your main chat, accessible only to users with specific Guild roles (e.g., early adopters, high-volume traders). This allows you to tailor the chat experience to different user segments and cater to their unique needs.</p>
+<p><strong>Examples in Action:</strong></p>
+<ul>
+<li>A limited-edition NFT collection can create a token-gated chat where holders can discuss upcoming collaborations and access exclusive artwork previews.</li>
+</ul>
+<p>Similar to the <a href="https://twitter.com/pushprotocol/status/1777929898784444842?utm_source=google&amp;utm_medium=twitter&amp;utm_campaign=amplify_upgrade" target="_blank" rel="noopener noreferrer">Pudgy Penguin's Unstopabble Domains token gated group chat</a> powered by Push Protocol, where only Pudgy Penguin Hodlers can join and communicate with each other and share their sense of community pride!</p>
+<ul>
+<li>A DeFi platform like <a href="https://curve.fi/#/ethereum/pools" target="_blank" rel="noopener noreferrer">Curve</a> can offer a tiered chat system, with basic access for all token holders and a dedicated channel for high-level stakers to discuss governance proposals and advanced strategies.</li>
+</ul>
+<p>Push Protocol empowers NFT brands and DeFi protocols to build vibrant, engaged communities that drive long-term success. By fostering a sense of exclusivity, targeted communication, and deeper connections, Push Protocol unlocks the true potential of Web3 communities.</p>
+<p><strong>Ready to build a thriving community around your project?</strong></p>
+<p><strong>Explore Push Protocol Group Chat today and unlock the power of secure, token-gated communication!</strong></p>
+<p>To know more about how Push Protocol can your elevate your project's UX by delivering seamless notifications to your userbase, <a href="https://push.org/blog/revolutionising-communication-for-defi-and-nft-with-push/?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=amplify_upgrade" target="_blank" rel="noopener noreferrer">read here</a>👈.</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[ Revolutionising Communication for DeFi and NFT Brands with Push! ]]></title>
@@ -575,37 +614,5 @@ Having a trustless and decentralized network requires a mechanism to ensure that
         <category label="Web3" term="Web3"/>
         <category label="Blockchain Technology" term="Blockchain Technology"/>
         <category label="BRB" term="BRB"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Monthly Recap March 🎉]]></title>
-        <id>https://push.org/blog/monthly-recap-march-2024</id>
-        <link href="https://push.org/blog/monthly-recap-march-2024"/>
-        <updated>2024-04-12T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Monthly Recap March 🎉]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Monthly Recap March  🎉" src="https://push.org/assets/images/cover-image-ed990a83f5cd87f9d453eeb2377fe67e.webp" width="1600" height="840" class="img_ev3q"></p>
-<p>March was a productive month for us at the Push Ecosystem. We achieved some significant milestones that we’re excited to share with you.</p>
-<p>We sent out over 4 million notifications and reached 174,000 subscribers. But our journey doesn’t stop here. Let’s dive into the exciting updates for March from the Push Ecosystem:</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="partnership-updates">Partnership Updates<a href="https://push.org/blog/monthly-recap-march-2024#partnership-updates" class="hash-link" aria-label="Direct link to Partnership Updates" title="Direct link to Partnership Updates">​</a></h3>
-<p>We’ve seen a surge in clients integrating our notifications and messaging services. Some of our notable partners include <a href="https://get-verso.com/" target="_blank" rel="noopener noreferrer">Verso Wallet</a>, <a href="https://www.dexynth.com/" target="_blank" rel="noopener noreferrer">DEXYNTH</a>, <a href="https://outposts.io/" target="_blank" rel="noopener noreferrer">Outposts</a>, <a href="https://twitter.com/bitgetglobal" target="_blank" rel="noopener noreferrer">Bitget</a>, <a href="https://alphax.finance/" target="_blank" rel="noopener noreferrer">AlphaX</a>, <a href="https://arbitrum.foundation/" target="_blank" rel="noopener noreferrer">Arbitrum</a>, <a href="https://roseon.world/" target="_blank" rel="noopener noreferrer">RoseonX</a>, and many more. They’ve all integrated Push notifications and chat into their platforms.</p>
-<p>In addition, we partnered with the <a href="https://learnweb3.io/" target="_blank" rel="noopener noreferrer">LearnWeb3IO</a> hackathon to support future builders.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="product-enhancements">Product Enhancements<a href="https://push.org/blog/monthly-recap-march-2024#product-enhancements" class="hash-link" aria-label="Direct link to Product Enhancements" title="Direct link to Product Enhancements">​</a></h3>
-<p>We introduced the Push <a href="https://app.push.org/?/snap" target="_blank" rel="noopener noreferrer">MetaMask Snooze Snap</a>, which allows users to snooze notifications for up to 72 hours. This feature helps users manage their notifications at their own pace.We introduced a 'guest' mode on our dApp, making it easier than ever to explore Push without connecting your wallet</p>
-<p>We also benchmarked our <a href="https://push.org/blog/benchmarking-push-chat-message/" target="_blank" rel="noopener noreferrer">Push Chat Architecture</a> to make Push Chat work more efficiently. We launched the <a href="https://www.notion.so/Push-x-Berachain-Spaces-Creative-Changes-5756710613b74055baa39ba4d534fe33?pvs=21" target="_blank" rel="noopener noreferrer">Price Tracker Channel</a> to help users get notified directly when their chosen cryptocurrency hits their desired price target.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="community-engagement">Community Engagement<a href="https://push.org/blog/monthly-recap-march-2024#community-engagement" class="hash-link" aria-label="Direct link to Community Engagement" title="Direct link to Community Engagement">​</a></h3>
-<p>We’ve been actively engaging with our vibrant community through various initiatives. We hosted a demo session for Push Nodes and awarded Push Alpha access NFT to over 700 users.</p>
-<p>Our “Decentralize with Push Campaign” led to the acquisition of more than 4,200 new users. We also unveiled <a href="https://push.org/blog/push-tokenomics-v2-engine/" target="_blank" rel="noopener noreferrer">Tokenomics V2</a> for the $PUSH token.</p>
-<p>To celebrate the listing of the $PUSH token on the Bitget Global exchange, we ran a quest campaign. We also announced the ultra-rare role “Push Chad” for our community.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ecosystem-highlights">Ecosystem Highlights<a href="https://push.org/blog/monthly-recap-march-2024#ecosystem-highlights" class="hash-link" aria-label="Direct link to Ecosystem Highlights" title="Direct link to Ecosystem Highlights">​</a></h3>
-<p>In March, we featured ETH Gas Price Tracker, <a href="https://cryptojobslist.com/" target="_blank" rel="noopener noreferrer">CryptoJobsList</a>, <a href="https://aave.com/" target="_blank" rel="noopener noreferrer">Aave</a>, and <a href="https://www.bankless.com/" target="_blank" rel="noopener noreferrer">Bankless</a> as the Push Channel of the Week.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="dao">DAO<a href="https://push.org/blog/monthly-recap-march-2024#dao" class="hash-link" aria-label="Direct link to DAO" title="Direct link to DAO">​</a></h3>
-<p>We launched the Push Grants V3 initiative to support builders in the Push Ecosystem. We also welcomed <a href="https://twitter.com/ExpatCrypto3" target="_blank" rel="noopener noreferrer">Ian</a> as our new DAO Relations Lead and <a href="https://twitter.com/carlaupgrade" target="_blank" rel="noopener noreferrer">Carla</a> as our Community DAO Relations role for push_dao.</p>
-<p>We’re excited about the progress we’ve made and look forward to what the future holds for the Push Ecosystem. Stay tuned for more updates!</p>]]></content>
-        <author>
-            <name>Push Protocol</name>
-            <uri>https://twitter.com/pushprotocol</uri>
-        </author>
-        <category label="Push Protocol" term="Push Protocol"/>
-        <category label="Web3" term="Web3"/>
-        <category label="Blockchain Technology" term="Blockchain Technology"/>
     </entry>
 </feed>
