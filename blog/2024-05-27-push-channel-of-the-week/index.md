@@ -43,7 +43,7 @@ You can even customize your notification preferences by adjusting the ranges ðŸŽ
 - Price alert notification frequencyâš¡
 
 ### How to Opt-In to the Price Tracker Channel?
-![ Price Tracker channel](./image18.webp)
+![ Price Tracker channel](./image20.webp)
 
 Visit the [Price Tracker Channel Profile Page](https://app.push.org/channels/0x48De2669db5C2da4bf36C29ef9CFd62057B4b6C8?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), where you will see recent notifications sent by the channel. Click on '**Opt In**' and choose the crytpo and tokens you wish to receive updates from and specify the price change and alert frequency and Sign the Gasless message to succesfully opt-in!
 
