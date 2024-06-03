@@ -264,13 +264,15 @@ export const BootcampMainComponent = () => {
               background='#E64DE9'
               border='1px solid #FC6DFF'
               fontSize='18px'
-              padding='16px 32px'
+              padding='16px 50px 22px 50px !important'
               fontWeight='400'
               onClick={() =>
-                openLink('https://zv9atndluia.typeform.com/to/ToIpDLT2')
+                openLink(
+                  'https://github.com/orgs/push-protocol/discussions/categories/brb-bootcamp'
+                )
               }
             >
-              Apply Now
+              Join Discussion
             </ButtonItem>
             <ButtonBar
               borderRadius='24px'
@@ -284,6 +286,16 @@ export const BootcampMainComponent = () => {
               Learn More
             </ButtonBar>
           </NavButtons>
+
+          <LiveText
+            color='#fff'
+            fontSize={isMobile ? '18px' : '20px'}
+            fontFamily='Glancyr, sans-serif'
+            textAlign='center'
+            fontWeight='400'
+          >
+            &#183; LIVE
+          </LiveText>
         </ItemTop>
       </BootcampBG>
 
@@ -326,8 +338,8 @@ export const BootcampMainComponent = () => {
             lineHeight='normal'
           >
             Join us to learn how to build multidimensional projects in
-            instructor-led sessions. {!isMobile && <br />} Registration for the
-            2024 cohort is open from April 30th
+            instructor-led sessions. {!isMobile && <br />} BRB bootcamp is LIVE
+            now
           </H3>
 
           <ItemH
@@ -466,7 +478,7 @@ export const BootcampMainComponent = () => {
                 fontWeight='400'
                 margin={!isLaptop ? '0 auto 0 0' : '0 auto'}
               >
-                Ready to Join?
+                Follow and share about BRB bootcamp with #BRBBootcamp on X
               </H2>
 
               <H3
@@ -490,11 +502,9 @@ export const BootcampMainComponent = () => {
               padding='16px 32px'
               fontWeight='400'
               width={isMobile && '250px !important'}
-              onClick={() =>
-                openLink('https://zv9atndluia.typeform.com/to/ToIpDLT2')
-              }
+              onClick={() => openLink('https://x.com/pushbuilders')}
             >
-              Apply Now
+              Follow us
             </ButtonItem>
           </ItemH>
         </Content>
@@ -688,7 +698,7 @@ const ButtonItem = styled(Button)`
   font-family: Glancyr, sans-serif;
   letter-spacing: 0.03em;
   line-height: 18px;
-  padding: 16px 64px 22px 64px;
+  padding: 16px 54px 22px 54px;
   border-radius: 24px;
 
   &:hover {
@@ -1168,4 +1178,17 @@ const AccordionGrid = styled.div`
     max-width: 100%;
     min-width: 100%;
   }
+`;
+
+const LiveText = styled(H2)`
+  background: red;
+  width: min-content;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  margin: 12px auto 0 auto;
+  padding: 0px 6px 5px 4px;
+  border-radius: 5px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
 `;
