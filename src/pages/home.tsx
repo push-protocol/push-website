@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-/* eslint-disable react/prop-types */
 /* eslint-disable */
 
 // React + Web3 Essentials
@@ -26,6 +25,7 @@ import ImageHolder from '@site/src/components/ImageHolder';
 import { MailingSignup } from '@site/src/components/MailingSignup/MailingSignup';
 import NewMarqueeAnimation from '@site/src/components/NewMarqueeAnimation';
 import Accordion from '@site/src/components/Accordion';
+import InfoBar from '@site/src/components/InfoBar';
 import { General, Notifs } from '@site/src/config/HomepageFAQ';
 import {
   A,
@@ -156,21 +156,11 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               <Spline scene='https://prod.spline.design/vhrszmXNdAbcAHQW/scene.splinecode' />
             </HeroAnimation>
             <HeroPrimary flex='initial' justifyContent='flex-start'>
-              <HeroItem
-                maxWidth='50%'
-                alignItems='flex-start'
-              >
-                <HeroButton
-                  onClick={() => {
-                    window.open(alertLink, '_blank');
-                  }}
-                >
-                  <StarColoredIcon />
-                  <H2 fontWeight='400' fontFamily='FK Grotesk Neue'>
-                    Push Metamask Snap is now Live! Get Started
-                  </H2>
-                  <BsArrowRight />
-                </HeroButton>
+              <HeroItem maxWidth='50%' alignItems='flex-start'>
+                <InfoBar
+                  text='Push Metamask Snap is now Live! Get Started'
+                  url={alertLink}
+                />
 
                 <HeroBody>
                   <H1
@@ -227,9 +217,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
         {/* SHOWCASE SECTION */}
         <ShowcaseSection id='showcase'>
-          <Content
-            alignSelf='center'
-          >
+          <Content alignSelf='center'>
             <ShowcasePartners />
           </Content>
         </ShowcaseSection>
@@ -586,10 +574,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               </NewMarqueeAnimation>
             </MarqueeAnimationContainer>
 
-            <MarqueeAnimationContainer
-              flex='1'
-              alignItems='stretch'
-            >
+            <MarqueeAnimationContainer flex='1' alignItems='stretch'>
               <NewMarqueeAnimation
                 speed={-2}
                 gradientWidth={8}
@@ -861,51 +846,6 @@ const HeroItem = styled(ItemV)`
 
   @media ${device.tablet} {
     margin: 0 auto;
-  }
-`;
-
-const HeroButton = styled(Button)`
-  font-family: FK Grotesk Neue;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  gap: 8px;
-
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-
-  @media ${device.mobileM} {
-    gap: 4px;
-  }
-
-  @media ${device.mobileS} {
-    gap: 2px;
-    padding: 12px 6px;
-    width: calc(100vw - 32px);
-    box-sizing: border-box;
-  }
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  h2 {
-    color: #fff;
-    font-size: 14px;
-    line-height: 142%;
-    letter-spacing: normal;
-
-    @media ${device.mobileL} {
-      font-size: 12px;
-    }
-
-    @media ${device.mobileM} {
-      font-size: 11px;
-    }
   }
 `;
 

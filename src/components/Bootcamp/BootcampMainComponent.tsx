@@ -25,6 +25,7 @@ import Accordion from '../Accordion';
 import BootcampCurriculum from './BootcampCurriculum';
 import { bootcampFaq } from '@site/src/config/BootcampFaq';
 import { bootcampCards } from '@site/src/config/BootcampCard';
+import InfoBar from '@site/src/components/InfoBar';
 
 // Import Assets
 import Discord from '@site/static/assets/website/brb/Discord-BRB.svg';
@@ -240,7 +241,14 @@ export const BootcampMainComponent = () => {
         </StyledHeader>
 
         <ItemTop>
-          <ItemV id='new' margin={isMobile ? '5em 0 0 0' : '0 0 0 0'}>
+          <ItemH margin='0px auto 0 auto'>
+            <InfoBar
+              text='BRB Bootcamp is now Live! Get Started'
+              url='https://github.com/orgs/push-protocol/discussions/categories/brb-bootcamp'
+            />
+          </ItemH>
+
+          <ItemV id='new' margin={isMobile ? '5em 0 0 0' : '24px 0 0 0'}>
             <MemberImage
               className='pushMissingSvg'
               src={
@@ -286,16 +294,6 @@ export const BootcampMainComponent = () => {
               Learn More
             </ButtonBar>
           </NavButtons>
-
-          <LiveText
-            color='#fff'
-            fontSize={isMobile ? '18px' : '20px'}
-            fontFamily='Glancyr, sans-serif'
-            textAlign='center'
-            fontWeight='400'
-          >
-            &#183; LIVE
-          </LiveText>
         </ItemTop>
       </BootcampBG>
 
@@ -327,20 +325,6 @@ export const BootcampMainComponent = () => {
           >
             Ready, Set, Grow
           </H2>
-
-          <H3
-            color='#FFF'
-            fontSize={isMobile ? '14px' : '20px'}
-            fontFamily='Glancyr, sans-serif'
-            textAlign='center'
-            fontWeight='300'
-            margin='8px 0 0 0'
-            lineHeight='normal'
-          >
-            Join us to learn how to build multidimensional projects in
-            instructor-led sessions. {!isMobile && <br />} BRB bootcamp is LIVE
-            now
-          </H3>
 
           <ItemH
             flexDirection={isMobile && 'column'}
@@ -474,24 +458,12 @@ export const BootcampMainComponent = () => {
                 color='#FFF'
                 fontSize={isMobile ? '32px' : '46px'}
                 fontFamily='Glancyr, sans-serif'
-                // textAlign="left"
                 fontWeight='400'
                 margin={!isLaptop ? '0 auto 0 0' : '0 auto'}
+                textAlign={isTablet && 'center'}
               >
-                Follow and share about BRB bootcamp with #BRBBootcamp on X
+                Follow and share about BRB Bootcamp with #BRBBootcamp on X
               </H2>
-
-              <H3
-                color='#FFF'
-                fontSize={isMobile ? '14px' : '20px'}
-                fontFamily='Glancyr, sans-serif'
-                textAlign={isLaptop && 'center'}
-                fontWeight='300'
-                margin={!isLaptop ? '8px 0 0 0' : '12px auto 0 auto'}
-              >
-                Apply now to be one of the 80. Dive into a journey of learning,
-                connecting, and rewarding experiences.
-              </H3>
             </ItemV>
 
             <ButtonItem
@@ -1178,17 +1150,4 @@ const AccordionGrid = styled.div`
     max-width: 100%;
     min-width: 100%;
   }
-`;
-
-const LiveText = styled(H2)`
-  background: red;
-  width: min-content;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: clip;
-  margin: 12px auto 0 auto;
-  padding: 0px 6px 5px 4px;
-  border-radius: 5px;
-  line-height: 20px;
-  letter-spacing: 0.05em;
 `;

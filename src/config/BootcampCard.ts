@@ -6,9 +6,9 @@ export const bootcampCards = [
     href: 'leadership',
   },
   {
-    title: '80 Seats, Infinite Possibilities',
+    title: 'Limited Seats, Infinite Possibilities',
     subtitle:
-      'With only 80 seats, experience unparalleled quality, one-on-one peer interactions, and direct conversations with founders.',
+      'With only limited seats, experience unparalleled quality, one-on-one peer interactions, and direct conversations with founders.',
     href: 'people',
   },
   {
