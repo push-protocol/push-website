@@ -1,10 +1,10 @@
 export const bootcampFaq = [
   {
     title: 'What is BRB Bootcamp?',
-    content: `BRB bootcamp is an initiative following our successful "Billion Reasons to Build" (BRB) program. It's designed to offer an immersive learning experience in technology, marketing, and design basics under the P.U.S.H. philosophy: Play, Unleash, Succeed, Hack.`,
+    content: `BRB Bootcamp is an initiative following our successful "Billion Reasons to Build" (BRB) program. It's designed to offer an immersive learning experience in technology, marketing, and design basics under the P.U.S.H. philosophy: Play, Unleash, Succeed, Hack.`,
   },
   {
-    title: 'How many students will be admitted to the BRB bootcamp?',
+    title: 'How many students will be admitted to the BRB Bootcamp?',
     content: `We're committed to maintaining a high-quality learning experience, hence limiting our cohort to 80-100 students per session. This allows for a personalized approach and maximizes impact.`,
   },
   {
