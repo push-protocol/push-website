@@ -6,6 +6,7 @@ export const PushChatTheme = {
     searchInput: '99px',
     modal: '16px',
     modalInnerComponents: '12px',
+    chatBubbleBorderRadius: '12px',
   },
 
   backgroundColor: {

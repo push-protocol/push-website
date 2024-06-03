@@ -59,6 +59,7 @@ const ReactLiveScope = {
   ),
   // Continue using the BrowserOnly component for UI components
   SupportChat: createBrowserOnlyLibComponentUIWeb('SupportChat'),
+  ChatWidget: createBrowserOnlyLibComponentUIWeb('ChatWidget'),
   NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
   ChatUIProvider: createBrowserOnlyLibComponentUIWeb('ChatUIProvider'),
   ChatView: createBrowserOnlyLibComponentUIWeb('ChatView'),
@@ -71,6 +72,7 @@ const ReactLiveScope = {
   ChatPreview: createBrowserOnlyLibComponentUIWeb('ChatPreview'),
   ChatPreviewList: createBrowserOnlyLibComponentUIWeb('ChatPreviewList'),
   darkChatTheme: createBrowserOnlyLibComponentUIWeb('darkChatTheme'),
+  lightChatTheme: createBrowserOnlyLibComponentUIWeb('lightChatTheme'),
   NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
   SubscriptionManager: createBrowserOnlyLibComponentUIWeb(
     'SubscriptionManager'
