@@ -2,12 +2,12 @@
 slug: push-protocol-on-arbitrum-blockchain
 title: " The Next Frontier For Multi-Chain Communication on Arbitrum! "
 authors: [push]
-image: "./cover-image.mov"
+image: "./cover-img.mov"
 description: "Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum #PushOnArb "
 text: "Bringing with us our full suite of web3-native communication tools: Push Notifications, Chat, Custom Gated Group Chat to enhance the user experience on Arbitrum."
 tags: [Push Protocol, Web3, Arbitrum, Blockchain Technology]
 ---
-![Cover Image of Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum Blockchain](./cover-image.mov)
+![Cover Image of Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum Blockchain](./cover-img.mov)
 
 <!--truncate-->
 To all the builders and 1.6M active wallets on [Arbitrum](https://arbitrum.io/), get ready – because we've arrived!
