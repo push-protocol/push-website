@@ -7,7 +7,7 @@ description: "Push Protocol Supporting Real-Time Notifications and Messaging on 
 text: "Bringing with us our full suite of web3-native communication tools: Push Notifications, Chat, Custom Gated Group Chat to enhance the user experience on Arbitrum."
 tags: [Push Protocol, Web3, Arbitrum, Blockchain Technology]
 ---
-![Cover Image of Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum Blockchain  ](./cover-image.webp)
+![Cover Image of Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum Blockchain  ](./cover-image.mov)
 <!--truncate-->
 To all the builders and 1.6M active wallets on [Arbitrum](https://arbitrum.io/), get ready – because we've arrived!
 Bringing with us our full suite of web3-native communication tools: [Push Notifications](https://push.org/docs/notifications/), [Chat](https://push.org/docs/chat/), [Custom Gated Group Chat](https://push.org/docs/chat/build/create-group/) to enhance the user experience on Arbitrum.
