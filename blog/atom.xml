@@ -2,11 +2,50 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://push.org/blog</id>
     <title>Push | The Communication Protocol of Web3 Blog</title>
-    <updated>2024-05-31T00:00:00.000Z</updated>
+    <updated>2024-06-05T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://push.org/blog"/>
     <subtitle>Push | The Communication Protocol of Web3 Blog</subtitle>
     <icon>https://push.org/assets/website/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[ The Next Frontier For Multi-Chain Communication on Arbitrum! ]]></title>
+        <id>https://push.org/blog/push-protocol-on-arbitrum-blockchain</id>
+        <link href="https://push.org/blog/push-protocol-on-arbitrum-blockchain"/>
+        <updated>2024-06-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum #PushOnArb ]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum Blockchain" src="https://push.org/assets/images/cover-image-7cd32c3c9b02c33a8cc0184cce586a67.gif" width="1152" height="648" class="img_ev3q"></p>
+<p>To all the builders and 1.6M active wallets on <a href="https://arbitrum.io/" target="_blank" rel="noopener noreferrer">Arbitrum</a>, get ready – because we've arrived!</p>
+<p>Bringing with us our full suite of web3-native communication tools: <a href="https://push.org/docs/notifications/" target="_blank" rel="noopener noreferrer">Push Notifications</a>, <a href="https://push.org/docs/chat/" target="_blank" rel="noopener noreferrer">Chat</a>, <a href="https://push.org/docs/chat/build/create-group/" target="_blank" rel="noopener noreferrer">Custom Gated Group Chat</a> to enhance the user experience on Arbitrum.</p>
+<p>We're absolutely thrilled to be leading a new era of decentralized communication within one of the fastest-growing blockchains in web3 and can’t wait to see the all-new usability, multi-communication interoperability, and dApp user-experience enhancements that are already on the way. Leveraging the power of Arbitrum's scalable, fast, and secure Layer 2 solutions, Push notifications enable real-time alerts for various blockchain activities such as transaction confirmations, governance proposals, DeFi updates, and NFT drops.</p>
+<p>So what else is there to know and get excited about? Let’s dive in.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="arbitrum-x-push-protocol---revolutionizing-decentralized-interaction">Arbitrum x Push Protocol - Revolutionizing Decentralized Interaction<a href="https://push.org/blog/push-protocol-on-arbitrum-blockchain#arbitrum-x-push-protocol---revolutionizing-decentralized-interaction" class="hash-link" aria-label="Direct link to Arbitrum x Push Protocol - Revolutionizing Decentralized Interaction" title="Direct link to Arbitrum x Push Protocol - Revolutionizing Decentralized Interaction">​</a></h3>
+<p>Since our mainnet launch in January 2022, Push has emerged as the go-to communication layer for over 700+ of the world's leading dApps on <a href="https://ethereum.org/" target="_blank" rel="noopener noreferrer">Ethereum</a>, <a href="https://polygon.technology/" target="_blank" rel="noopener noreferrer">Polygon</a>, <a href="https://www.bnbchain.org/" target="_blank" rel="noopener noreferrer">BNB Chain</a>, <a href="https://polygon.technology/polygon-zkevm" target="_blank" rel="noopener noreferrer">Polygon zkEVM</a>, <a href="https://linea.build/" target="_blank" rel="noopener noreferrer">Linea</a> and other blockchains.</p>
+<p>Now, we’re expanding our privacy-centric communication product suite to the leading Layer 2 scaling solution on Ethereum, Arbitrum. With over <a href="https://www.ccn.com/news/crypto/ethereum-l2-arbitrum-base/#:~:text=It%20boasts%20a%20market%20share,a%20TVL%20of%20%247.93b." target="_blank" rel="noopener noreferrer">45.1% of the Ethereum Layer-2</a> market share and a TVL of over $15.42 Billion – Arbitrum provides some of the best tools for building scalable dApps on Ethereum and has an incredibly active user-base (with 971M in total DeFi transactions across 1.6M active wallets as of June 2024).</p>
+<p>As such, what makes this integration so exciting is the potential utility and enhancement possibilities. Leveraging Push Notifications, Chat, and Video, we look forward to integrating with leading Arbitrum dApps to enhance how dApps and users interact.</p>
+<p>The best part of our integration: multi-chain communication. As we continue to expand our blockchain integrations, we open the door to better interoperability between users on different chains. This enhanced user-experience means fewer compromises in the way of interaction and engagement for users, and as a result, better adoption and user-stickiness. All this utility is driven by the communication infrastructure of Push Protocol.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-x-arbitrum-what-to-expect">Push x Arbitrum: What to Expect<a href="https://push.org/blog/push-protocol-on-arbitrum-blockchain#push-x-arbitrum-what-to-expect" class="hash-link" aria-label="Direct link to Push x Arbitrum: What to Expect" title="Direct link to Push x Arbitrum: What to Expect">​</a></h3>
+<p>With the arrival of Push Protocol communication protocol, dApps and protocols on Arbitrum can begin building with web3-native notifications, chat, video, and spaces functionality. Here’s what you can build with each of these communication tools:</p>
+<ol>
+<li>🔔<b>Push Notifications</b>: Send and receive updates from your favorite Arbitrum dApps directly into your wallet – enabling DeFi, News, NFT projects to share updates and alerts faster.</li>
+<li>💬<b>Push Chat + Group Chat</b>: Enable wallet-to-wallet and wallet-to-dApp instant chat functionality – opening the door to social media platforms, customer service tools, and other social interaction enhancements.</li>
+<li>📹<b>Push Video and Space</b>: Face-to-face video chat directly on blockchain – introducing all-new interactivity on social dApps and live-streaming.</li>
+</ol>
+<p>Excitingly, we’ve deployed the most up to date smart contracts of Push, <a href="https://push.org/blog/push-v2-is-live-new-rewards-utility-and-functionality/" target="_blank" rel="noopener noreferrer">Push V2</a>, on Arbitrum. Carrying over all the developments we’ve launched so far, Customized Profiles, settings for <a href="https://push.org/blog/introducing-notification-settings/" target="_blank" rel="noopener noreferrer">Notification Channels</a>, and notification integration with <a href="https://push.org/blog/deep-dive-into-push-snaps-features-and-getting-started-all-the-technical-specifications-and-getting-started-tips-you-need/" target="_blank" rel="noopener noreferrer">MetaMask</a>.</p>
+<p>For builders – all new ways to engage your users and provide a stickier, more personalized user-experience are here. Get started here: <a href="https://push.org/docs/" target="_blank" rel="noopener noreferrer">https://push.org/docs/</a></p>
+<p>For users – can start receiving native Arbitrum notifications <a href="https://app.push.org/channels" target="_blank" rel="noopener noreferrer">https://app.push.org/channels</a></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="looking-ahead">Looking Ahead<a href="https://push.org/blog/push-protocol-on-arbitrum-blockchain#looking-ahead" class="hash-link" aria-label="Direct link to Looking Ahead" title="Direct link to Looking Ahead">​</a></h3>
+<p>As we spread our wings into the Arbitrum ecosystem, we stay true to our commitment to building the leading multi-chain communication protocol of web3. We’ll be showcasing our launch partners in the coming days, stay tuned.</p>
+<p>Members of the Arbitrum community and Push Protocol fam, expect many integrations to come.</p>
+<p>#PoweredbyPush</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Arbitrum" term="Arbitrum"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[ Estate Protocol: Leading Tokenized Real Estate Marketplace on Arbitrum Joins Frens Of Push ]]></title>
         <id>https://push.org/blog/estate-protocol-joins-frens-of-push</id>
@@ -574,45 +613,5 @@ Having a trustless and decentralized network requires a mechanism to ensure that
         <category label="Push Protocol" term="Push Protocol"/>
         <category label="Web3" term="Web3"/>
         <category label="Blockchain Technology" term="Blockchain Technology"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Billion Reasons to Build Bootcamp: Covering Every Dimension of the Web3 Ecosystem]]></title>
-        <id>https://push.org/blog/billion-reason-to-build-bootcamp-covering-every-dimension-of-the-web3-ecosystem</id>
-        <link href="https://push.org/blog/billion-reason-to-build-bootcamp-covering-every-dimension-of-the-web3-ecosystem"/>
-        <updated>2024-05-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Billion Reasons to Build Bootcamp: Covering Every Dimension of the Web3 Ecosystem]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Billion Reasons to Build Bootcamp: Covering Every Dimension of the Web3 Ecosystem" src="https://push.org/assets/images/cover-image-8caac70bf9bb100efe7e3115a687bdc9.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>(BRB Bootcamp is the go-to place to learn every aspect of the web3 ecosystem from fundamentals to shipping your first project)</p>
-<p>BRB was initiated with a vision to solve the <a href="https://twitter.com/pushprotocol/status/1694711099336347979" target="_blank" rel="noopener noreferrer">1 HARD problem</a> with the first step taken in 2023 by traveling to 18 cities where amazing minds come together to learn and build with a chance to win over $50,000 in prizes!</p>
-<p>Now, we are back with a bigger step "<a href="https://twitter.com/pushprotocol/status/1785312909649707485" target="_blank" rel="noopener noreferrer">Billion Reasons to Build (BRB) Bootcamp</a>" a global virtual program designed to cover every aspect of the Web3 ecosystem, far beyond technology alone 💯"</p>
-<p>With an extensive <a href="https://github.com/orgs/push-protocol/discussions/52" target="_blank" rel="noopener noreferrer">6-week curriculum</a> we will be covering smart contracts, UI/UX in web3, building blocks of a startup, and many more. <strong>It’s not just a general web3 bootcamp, but a power-packed combo of tutorial lectures, hands-on sessions, assignments, projects, and some special rewards✨</strong></p>
-<p>For more details, visit - <strong><a href="https://push.org/bootcamp/" target="_blank" rel="noopener noreferrer">BRB Bootcamp Website</a></strong></p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="who-can-apply-for-it"><strong>Who Can Apply for It?</strong><a href="https://push.org/blog/billion-reason-to-build-bootcamp-covering-every-dimension-of-the-web3-ecosystem#who-can-apply-for-it" class="hash-link" aria-label="Direct link to who-can-apply-for-it" title="Direct link to who-can-apply-for-it">​</a></h2>
-<ul>
-<li>This bootcamp is open to <strong>everyone</strong>: seasoned developers, students, professionals eyeing the web3 space, or anyone simply curious about web3.</li>
-<li>Our goal is to make web3 knowledge <strong>accessible and understandable</strong> to all, regardless of background or prior knowledge. It's about <strong>moving forward together</strong>.</li>
-</ul>
-<p>For a <strong>comprehensive dive into our 6-week curriculum</strong>, covering everything from smart contracts to startup building blocks, visit our <strong><a href="https://www.notion.so/BRB-Bootcamp-2024-d98ebc82d2b247b5839a903c05c7a920?pvs=21" target="_blank" rel="noopener noreferrer">BRB Bootcamp 2024 Notion Page</a></strong>.</p>
-<p><img loading="lazy" alt="First Image of Billion Reasons to Build Bootcamp: Covering Every Dimension of the Web3 Ecosystem" src="https://push.org/assets/images/image-1-d80b1b47fa66b92bbb5c73f7d49f4bbc.webp" width="1600" height="900" class="img_ev3q"></p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-can-i-become-a-part-of-this">How can I become a part of this?<a href="https://push.org/blog/billion-reason-to-build-bootcamp-covering-every-dimension-of-the-web3-ecosystem#how-can-i-become-a-part-of-this" class="hash-link" aria-label="Direct link to How can I become a part of this?" title="Direct link to How can I become a part of this?">​</a></h2>
-<p>To make this bootcamp a quality-oriented program only 80 students from applications worldwide will get this opportunity.</p>
-<p>No matter what background, experience, and skills you have this bootcamp is for you if you are interested in tech, marketing, or design and are willing to engage actively with our curriculum.</p>
-<p>The selection for the Bootcamp will be completely dependent on</p>
-<p>Registrations will start from 30th April 2024 and will end by 17th May!</p>
-<p>To be a part of it you can apply through ⬇️</p>
-<p>Application Link - <a href="https://bit.ly/brbbootcamp" target="_blank" rel="noopener noreferrer">https://bit.ly/brbbootcamp</a></p>
-<p>After this, our team will shortlist the top 80 people who will become a part of this learning journey with us.</p>
-<p>Check out the <a href="https://github.com/orgs/push-protocol/discussions/categories/brb-bootcamp" target="_blank" rel="noopener noreferrer">BRB Bootcamp Discussion</a> GitHub page to get all the updates and announcements for the Bootcamp.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-builders-more-things-to-know">Push Builders: More things to know!<a href="https://push.org/blog/billion-reason-to-build-bootcamp-covering-every-dimension-of-the-web3-ecosystem#push-builders-more-things-to-know" class="hash-link" aria-label="Direct link to Push Builders: More things to know!" title="Direct link to Push Builders: More things to know!">​</a></h2>
-<p>For the latest on development, hackathons, and exclusive insights, follow Push Builders on X <a href="https://twitter.com/pushbuilders" target="_blank" rel="noopener noreferrer">@pushbuilders</a> &amp; <a href="https://twitter.com/pushprotocol" target="_blank" rel="noopener noreferrer">@pushprotocol</a>. It's your gateway to all things BRB Bootcamp.</p>
-<p>Join our <a href="https://discord.gg/uhSRbPVE" target="_blank" rel="noopener noreferrer">BRB Bootcamp Discord channel</a> to get any support from the team! Let's drive the future of Web3 together.</p>]]></content>
-        <author>
-            <name>Push Protocol</name>
-            <uri>https://twitter.com/pushprotocol</uri>
-        </author>
-        <category label="Push Protocol" term="Push Protocol"/>
-        <category label="Web3" term="Web3"/>
-        <category label="Blockchain Technology" term="Blockchain Technology"/>
-        <category label="BRB" term="BRB"/>
     </entry>
 </feed>
