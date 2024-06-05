@@ -2,12 +2,12 @@
 slug: push-protocol-on-arbitrum-blockchain
 title: " The Next Frontier For Multi-Chain Communication on Arbitrum! "
 authors: [push]
-image: "./cover-img.mov"
+image: "./cover-image.gif"
 description: "Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum #PushOnArb "
 text: "Bringing with us our full suite of web3-native communication tools: Push Notifications, Chat, Custom Gated Group Chat to enhance the user experience on Arbitrum."
 tags: [Push Protocol, Web3, Arbitrum, Blockchain Technology]
 ---
-![Cover Image of Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum Blockchain](./cover-img.mov)
+![Cover Image of Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum Blockchain](./cover-image.gif)
 
 <!--truncate-->
 To all the builders and 1.6M active wallets on [Arbitrum](https://arbitrum.io/), get ready – because we've arrived!
@@ -32,9 +32,9 @@ The best part of our integration: multi-chain communication. As we continue to e
 
 With the arrival of Push Protocol communication protocol, dApps and protocols on Arbitrum can begin building with web3-native notifications, chat, video, and spaces functionality. Here’s what you can build with each of these communication tools:
 
-1. :bell:Push Notifications: Send and receive updates from your favorite Arbitrum dApps directly into your wallet – enabling DeFi, News, NFT projects to share updates and alerts faster.
-2. :speech_balloon:Push Chat + Group Chat: Enable wallet-to-wallet and wallet-to-dApp instant chat functionality – opening the door to social media platforms, customer service tools, and other social interaction enhancements.
-3. :video_camera:Push Video and Space: Face-to-face video chat directly on blockchain – introducing all-new interactivity on social dApps and live-streaming.
+1. 🔔Push Notifications: Send and receive updates from your favorite Arbitrum dApps directly into your wallet – enabling DeFi, News, NFT projects to share updates and alerts faster.
+2. 💬Push Chat + Group Chat: Enable wallet-to-wallet and wallet-to-dApp instant chat functionality – opening the door to social media platforms, customer service tools, and other social interaction enhancements.
+3. 📹Push Video and Space: Face-to-face video chat directly on blockchain – introducing all-new interactivity on social dApps and live-streaming.
 
 Excitingly, we’ve deployed the most up to date smart contracts of Push, [Push V2](https://push.org/blog/push-v2-is-live-new-rewards-utility-and-functionality/), on Arbitrum. Carrying over all the developments we’ve launched so far, Customized Profiles, settings for [Notification Channels](https://push.org/blog/introducing-notification-settings/), and notification integration with [MetaMask](https://push.org/blog/deep-dive-into-push-snaps-features-and-getting-started-all-the-technical-specifications-and-getting-started-tips-you-need/).
 
