@@ -14,11 +14,41 @@ tags: [Push Protocol, Web3, Blockchain Technology]
 
 Push Fam, It's time to recognize some of the most impactful channels trusted by our subscribers globally. With that, we're thrilled to announce - **Push Channel of the Week!🏆**.
 
-With more than **175,000** active subscribers and **70 Million** notifications delivered, the Push Channel of the Week initiative is designed to acknowledge the trust users place in our diverse range of channels by spotlighting the most active, engaging, impactful, and consistent channel.
+With more than **230,000** active subscribers and **82 Million** notifications delivered, the Push Channel of the Week initiative is designed to acknowledge the trust users place in our diverse range of channels by spotlighting the most active, engaging, impactful, and consistent channel.
 
 Every week, the Push team meticulously evaluates over **500+** channels to identify one that stands out the most.
 The initiative also honors our partner channels for their dedication to consistently delivering valuable, real-time notifications to users ensuring a smooth on-chain communication experience.
 
+## Week 13: PWN Notifications
+### Push x Price Tracker : Track price moments of multiple cryptos and tokens at once!
+
+![Banner Celebrating Price Tracker as June - week 1 channel of week](./image19.webp)
+
+### What is Price Tracker?
+
+The Price Tracker tracks the highs 📈and lows 📉of major cryptos like BTC,ETH SOL, MATIC, etc and tokens like $LINK and [**_`$PUSH`_**](https://coinmarketcap.com/currencies/epns/ '$PUSH at Coinmarketcap.com')  so that you don’t have to😉
+
+
+### What notifications does the Price Tracker channel power?
+
+The channel powers periodic token price update notifications which include :
+
+- Price data💲
+- Hourly, Daily and Monthly Price Action shift in **%**📉📈
+
+You can even customize your notification preferences by adjusting the ranges 🎚 for:
+
+
+- Price range Threshold in **%**
+- Price alert notification frequency⚡
+
+### How to Opt-In to the Price Tracker Channel?
+![ Price Tracker channel](./image20.webp)
+
+Visit the [Price Tracker Channel Profile Page](https://app.push.org/channels/0x48De2669db5C2da4bf36C29ef9CFd62057B4b6C8?utm_source=google&utm_medium=blog&utm_campaign=channel_of_week), where you will see recent notifications sent by the channel. Click on '**Opt In**' and choose the crytpo and tokens you wish to receive updates from and specify the price change and alert frequency and Sign the Gasless message to succesfully opt-in!
+
+Want support for more tokens?
+Reach out to us on [Push Discord](https://discord.com/invite/pushprotocol).
 
 
 ## Week 12: PWN Notifications
@@ -30,7 +60,7 @@ The initiative also honors our partner channels for their dedication to consiste
 
 [PWN](https://pwn.xyz/#howItWorks) is a peer-to-peer lending protocol which enables quick crypto loans against a multitude of collateral types, including NFTs, ERC-20 Tokens, Vault Tokens, LP Positions or a bundle of all them!
 
-
+ 
 ### What notifications does the PWN Notifications channel power?
 
 The “PWN Notifications” channel acts as your personal loan reminder ⏰ by providing regular Push notifications about your loan due date straight to your wallet🔔.
