@@ -12,7 +12,8 @@ tags: [Push Protocol, Web3, NFT, Blockchain Technology]
 
 <!--truncate-->
 
-The time has finally come!
+
+The time has finally come🚀
 The Gates to the **Push Alpha Community** are now Open!
 
 Do you hold or (or aspire to hold) the precious Push Alpha Access NFT?
@@ -21,11 +22,15 @@ And wish to join the Alpha Access Community?
 
 Look no further, this article will help you with everything you need to know about the Push Alpha Community and how to join it  using  your Alpha Access NFT Pass.
 
+
+
 ## What is the Push Alpha Community?
 
 Instituted at Push Chat, the [Push Alpha Community group chat](https://app.push.org/chat/chatid:37799f9cb3ffd83eff4d2dc18913a3d9607f9c787a4374a7b3259bda28242cd6?utm_source=google&utm_medium=blog&utm_campaign=alpha_nft_chat) is an exclusive gathering of Alpha Access Pass Holders.
 
 This gated community is the primary hub for all exclusive communications between Alpha Pass Holders. Whether there are special alpha-only events, campaigns, airdrops, partner surprises, or meetups, the Alpha Community Chat is where everything brews.
+
+
 
 ## What does the community offer?
 
@@ -39,9 +44,12 @@ The Alpha community chat acts as the base camp to announce:
 
 **These are just some of the early unlocks, Alpha Community members can expect more surprises coming their way soon!**
 
+
 ## Eligibility
 
 To unlock the doors of the Push Alpha Community, you’ll need one key 🗝- the coveted Push Alpha Access NFT🌟
+
+![Push Alpha Access NFT](./image1.gif)
 
 The  NFTs were awarded to the winners of various campaigns, including:
 
@@ -60,13 +68,13 @@ Winners of the Decentralize With Push and Communicate with Galxe Campaign who ha
 
 Once you have claimed the Alpha Access NFT, follow the following steps to join the community.
 
-1. **Head over to [Push Alpha Community Chat (CLICK HERE)](https://app.push.org/chat/chatid:37799f9cb3ffd83eff4d2dc18913a3d9607f9c787a4374a7b3259bda28242cd6?utm_source=google&utm_medium=twitter&utm_campaign=alpha_nft_chat) and connect the wallet containing your Push Alpha Access Pass.**
+**1.Head over to [Push Alpha Community Chat (CLICK HERE)](https://app.push.org/chat/chatid:37799f9cb3ffd83eff4d2dc18913a3d9607f9c787a4374a7b3259bda28242cd6?utm_source=google&utm_medium=twitter&utm_campaign=alpha_nft_chat) and connect the wallet containing your Push Alpha Access Pass.**
 
-[Step 1 - Connect Wallet](./image2.webp)
+![Step 1 - Connect Wallet](./image2.webp)
 
 **2.Unlock your profile:**
 
-[Step 2 - Unlock Profile](./image3.webp)
+![Step 2 - Unlock Profile](./image3.webp)
 
 The first step is to verify and unlock your profile on PushChat.
 
@@ -75,13 +83,13 @@ Selecting 'Remember me' will save your Push Profile keys locally on your device.
 
 **3.Verify access and Join the Group**
 
-[Step 3 - Verify and Join](./image4.webp)
+![Step 3 - Verify and Join](./image4.webp)
 
 Note that the entire process right from joining the group to sending messages is completely gasless!
 
 **4.Time to Chat!!**
 
-[Step 4 - Verify and Join](./image5.webp)
+![Step 4 - Verify and Join](./image5.webp)
 
 That’s it, now you’re a member of the Push Alpha Community!
 Stay tuned on Push Chat for more communications.
