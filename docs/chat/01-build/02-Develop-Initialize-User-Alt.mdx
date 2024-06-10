@@ -37,7 +37,7 @@ const userAlice = await PushAPI.initialize(signer, {
   env: CONSTANTS.ENV.STAGING,
 
   // Optional, Remember me feature
-  // if you want to have stored the user's decryptedPGPPrivateKey, you can pass it here to avoid asking the user to sign the message to initialise Push API everytime
+  // if you have stored the user's decryptedPGPPrivateKey, you can pass it here to avoid asking the user to sign the message to initialise Push API everytime
   decryptedPGPPrivateKey,
 });
 
