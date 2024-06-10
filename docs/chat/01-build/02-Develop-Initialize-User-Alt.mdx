@@ -5,7 +5,7 @@ hide_title: true
 slug: ./initialize-user
 displayed_sidebar: pushChatSidebar
 sidebar_position: 2
-image: "/assets/docs/previews/docs_chat_develop--initialize_user.png"
+image: '/assets/docs/previews/docs_chat_develop--initialize_user.png'
 ---
 
 # Initialize user overview
@@ -22,6 +22,8 @@ import Details from '@theme/Details';
 
 ## Initialize user API
 
+The `PushAPI.initialize` method triggers a signature request, prompting the user to sign a message to initialize the PushAPI. This signature request can be bypassed by supplying the user's `decryptedPGPPrivateKey` in the options object. The `decryptedPGPPrivateKey` for a user can be found in the Push Profile Object, which is returned by `PushAPI.initialize`.
+
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
@@ -33,6 +35,10 @@ import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
 // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
 const userAlice = await PushAPI.initialize(signer, {
   env: CONSTANTS.ENV.STAGING,
+
+  // Optional, Remember me feature
+  // if you want to have stored the user's decryptedPGPPrivateKey, you can pass it here to avoid asking the user to sign the message to initialise Push API everytime
+  decryptedPGPPrivateKey,
 });
 
 // Check for errors in userAlice's initialization and handle them if any
