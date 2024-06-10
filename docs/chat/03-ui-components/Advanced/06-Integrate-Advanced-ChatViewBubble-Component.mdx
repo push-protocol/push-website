@@ -14,7 +14,9 @@ Simplify Development: Instantly Integrate Pre-built Chat Bubble UI for Your Dapp
 
 ChatViewBubble serves as the fundamental building block for a chat view, allowing users to showcase individual chat messages while formatting them based on the provided payload. This essential component facilitates the presentation and customization of single chat messages with ease.
 
-The ChatViewBubble is a powerful component that automatically embeds Push Frames and supports both the Open Frames Specification and Farcaster Frames Spec right out of the box. As a developer, if you're aiming to enhance your Chat Application without any additional effort, this component provides a fully frame-supported client straight out of the box.
+The ChatViewBubble is a robust component that automatically embeds Push Frames, supporting both the Open Frames Specification and Farcaster Frames Spec right out of the box. By using the ChatViewBubble Component, your client/app will be fully compatible with any Frames.
+
+When a message contains a web link, the ChatViewBubble Component identifies it and verifies whether it's a media or frames URL. If valid, it embeds the media or frames directly into the chat bubble. When the URL is a frames URL, it automatically renders the frames in the chat bubble, making them easily interactable by your users from within your client/app.
 
 <head>
   <title>
@@ -43,9 +45,9 @@ const ChatViewBubbleTest = () => {
     fromDID: "eip155:0xAC5d2aE3b4307D8F4304C0292D11de8968eB9DFd",
     toDID: "b8e068e02fe12d7136bc2f24408835573f30c6fbf0b65ea26ab4c7055a2c85f1",
     messageObj: {
-      content: "heyyy",
+      content: "lets play a game https://cyo-adventure.vercel.app/",
     },
-    messageContent: "heyyy",
+    messageContent: "lets play a game https://cyo-adventure.vercel.app/",
     messageType: "Text",
     timestamp: 1695170770877,
     encType: "PlainText",
@@ -78,6 +80,12 @@ export default ChatViewBubbleTest;
         .default
     }
   />
+  <img
+    src={
+      require('/static/assets/docs/chat/ui-components/advanced/integrate-advanced-chatviewbubble-component/chatViewBubbleWithFrames.png')
+        .default
+    }
+  />
 </ModalContainer>
 
   </TabItem>
@@ -97,7 +105,7 @@ export default ChatViewBubbleTest;
 
 ### Live playground
 
-```jsx live
+````jsx live
 customPropMinimized = 'true';
 
 // DO NOT FORGET TO IMPORT LIBRARIES
@@ -138,4 +146,6 @@ function App(props) {
     </>
   );
 }
-```
+```import { Component } from 'react';
+
+````
