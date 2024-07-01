@@ -103,8 +103,6 @@ As Push Protocol enables wallet to wallet token gated group chatting, depending 
 
 
 
-
-
 **Overcoming seed phrase scares using MPC:**
 
 The unstoppable lite wallet features advanced multi-party computation (MPC) technology provided by Fireblocks to improve safety for the self-custody wallet. Users are able to manage their wallet using an email address and password, instead of worrying about seed phrases. There is also a way to recover the wallet if the user forgets their password, adding another layer of safety.
@@ -125,7 +123,7 @@ Push powers the necessary middleware and infrastructure for [Wherever](https://w
 
 On a parallel front, As users continue to become mature and conscious about on-chain security, the demand for hardware wallets will be ever-increasing. Push can also be integrated with companion Apps of Hardware Wallets like [KeepKay](https://www.keepkey.com/), ensuring user’s with mission critical application updates independant of any wallet type.
 
-
+ShapeShift has remained the second most subscribed channel for over a year, with a total subscriber count of more than **28,000** with a growth of more than **306%** as compared to previous year.
 <!-- shapeshift subscriber count -->
 ![Shapeshift subscriber statistics](./image5.webp)
 
