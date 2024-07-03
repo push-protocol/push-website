@@ -45,35 +45,16 @@ Lets take a thorough look at how our partner wallets are adopting Push to become
 <!-- Interoperable Communications Image -->
 ![Push enables interoperable communications](./image1.webp)
 
-1. Push Metamask Snap
-2. Unstoppable Lite Wallet
+
+
+1. Unstoppable Lite Wallet
+2. Push Metamask Snap
 3. Shapeshift Governance Wallet
 4. Verso Wallet
 
 
-### 1.Metamask Snap:
 
-MetaMask Snaps are independent feature plugins developed by third-party developers to enhance wallet experiences in areas such as communication, interoperability, security, account management, and more, for various web3 protocols and applications.
-
-The Push MetaMask Snap allows users to receive real-time notification alerts from their favourite Web3 applications directly within their MetaMask wallet.
-
-**Push X Metamask: Unlocking a Super App experience:**
-
-<!-- metamsk snap screenshot -->
-![Push Metamask Snap](./image2.webp)
-
-Metamask being a widely popular wallet and often the first choice for many new web3 users, was crucial to integrate with Push’s capabilities. The launch of the snap functionality provided an opportunity to offer a communication experience akin to web2 applications.
-
-The [Push Metamask Snap](https://snaps.metamask.io/snap/npm/pushprotocol/snap/?utm_source=google&utm_medium=blog&utm_campaign=case_study_supper_app) was launched in September 2023 and continues to see steady growth with over **1.7k downloads.**
-
-The Push  Snap is positioned at a crucial intersection in a user’s DApp interaction journey through their wallet. 
-
-Instead of frequently visiting a DApp to check the status of domain expiry or loan health indexes, Push Snap eliminates these kinds of unproductive user travels. 
-
-Using Push Snap, every mission-critical alert is delivered directly to the wallet as a Push Notification, providing an experience similar to a typical Web2 mobile app.
-
-
-### 2.Unstoppable Domains Lite Wallet
+### 1.Unstoppable Domains Lite Wallet
 
 Unstoppable Domain Wallets are cryptocurrency addresses used to store users’ web3 domains in addition to tokens and digital collectables.
 An Unstoppable Wallet with a valid domain acts as a web3 social identifier for enabling domain-to-domain in-app messaging!
@@ -81,7 +62,8 @@ An Unstoppable Wallet with a valid domain acts as a web3 social identifier for e
 **Push x UD: Empowering wallet-to-wallet messaging with ease!**
 
 <!-- unstoppable lite wallet screen shot -->
-![Unstoppable Domains Lite Wallet](./image3.webp)
+<!-- ![Unstoppable Domains Lite Wallet](./image3.webp) -->
+<img src="./image3.webp" alt="Unstoppable Domains Lite Wallet" width="353" height="662" />
 
 Push is proud to enable the next frontier of inter-domain communication by powering notifications and messaging support for over **3.58 million** UD users across more than **300 group chats**.
 
@@ -107,6 +89,32 @@ As Push Protocol enables wallet to wallet token gated group chatting, depending 
 
 The unstoppable lite wallet features advanced multi-party computation (MPC) technology provided by Fireblocks to improve safety for the self-custody wallet. Users are able to manage their wallet using an email address and password, instead of worrying about seed phrases. There is also a way to recover the wallet if the user forgets their password, adding another layer of safety.
 
+### 2.Metamask Snap:
+
+MetaMask Snaps are independent feature plugins developed by third-party developers to enhance wallet experiences in areas such as communication, interoperability, security, account management, and more, for various web3 protocols and applications.
+
+The Push MetaMask Snap allows users to receive real-time notification alerts from their favourite Web3 applications directly within their MetaMask wallet.
+
+**Push X Metamask: Unlocking a Super App experience:**
+
+<!-- metamsk snap screenshot -->
+<!-- ![Push Metamask Snap](./image2.webp) -->
+<img src="./image2.webp" alt="Push Metamask Snap" width="353" height="662" />
+
+
+
+
+
+
+Metamask being a widely popular wallet and often the first choice for many new web3 users, was crucial to integrate with Push’s capabilities. The launch of the snap functionality provided an opportunity to offer a communication experience akin to web2 applications.
+
+The [Push Metamask Snap](https://snaps.metamask.io/snap/npm/pushprotocol/snap/?utm_source=google&utm_medium=blog&utm_campaign=case_study_supper_app) was launched in September 2023 and continues to see steady growth with over **1.7k downloads.**
+
+The Push  Snap is positioned at a crucial intersection in a user’s DApp interaction journey through their wallet. 
+
+Instead of frequently visiting a DApp to check the status of domain expiry or loan health indexes, Push Snap eliminates these kinds of unproductive user travels. 
+
+Using Push Snap, every mission-critical alert is delivered directly to the wallet as a Push Notification, providing an experience similar to a typical Web2 mobile app.
 
 ### 3.ShapeShift Wallet
 
@@ -115,7 +123,9 @@ The unstoppable lite wallet features advanced multi-party computation (MPC) tech
 **Push x ShapeShift  Wallet : Powering Communication**
 
 <!-- shapeshift wallet screenshot -->
-![Shapeshift Wallet](./image4.webp)
+<!-- ![Shapeshift Wallet](./image4.webp) -->
+<img src="./image4.webp" alt="Shapeshift Wallet" width="353" height="662" />
+
 
 Push powers the communication middleware for enabling Push notifications for product updates, governance updates and token transfers. 
 
@@ -138,9 +148,10 @@ Verso bridges Web2 audiences to Web3 by enabling in-wallet crypto purchases usin
 
 The Push x Verso integration enables users to search for and opt-into any channel and receive notifications directly into the wallet. Ensuring the fact that the communications across all subscribed channels can be managed and organized easily in one place with ease!
 
-### Push is the missing piece for building the next Super Wallet App:
+### Push is the missing piece for building the next Super Wallet App🧩:
 
 ![Push is the missing piece of web3 wallets](./image6.webp)
+
 
 As Web3 continues to mature, user experience will be the key differentiator for wallets vying to become the go-to **"Super App”**. And Push is determined to onboard a Billion Users to web3 by filling in the void between current and expected communication experiences.
 
