@@ -1,5 +1,5 @@
 ---
-slug: 'How Wallets Use Push To Become a Super App'
+slug: 'how-wallets-use-push-to-become-a-super-app'
 title: 'Case Study: How Wallets Use Push To Become a Super App?'
 authors: [push]
 image: './cover-image.webp'
