@@ -8,6 +8,8 @@ text: "Learn how web3 wallets are adopting Push to become a Super App"
 tags: [Push Protocol, Web3, Wallets, Adoption]
 ---
 
+import { Image } from '@site/src/css/SharedStyling';
+
 ![Cover image of Case Study - How Wallets use Push to become a Super App](./cover-image.webp)
 
 <!--truncate-->
@@ -63,7 +65,8 @@ An Unstoppable Wallet with a valid domain acts as a web3 social identifier for e
 
 <!-- unstoppable lite wallet screen shot -->
 <!-- ![Unstoppable Domains Lite Wallet](./image3.webp) -->
-<img src="./image3.webp" alt="Unstoppable Domains Lite Wallet" width="353" height="662" />
+<Image src={require('./image3.webp').default} alt="Unstoppable Domains Lite Wallet" width="353" height="100%" />
+
 
 Push is proud to enable the next frontier of inter-domain communication by powering notifications and messaging support for over **3.58 million** UD users across more than **300 group chats**.
 
@@ -99,7 +102,8 @@ The Push MetaMask Snap allows users to receive real-time notification alerts fro
 
 <!-- metamsk snap screenshot -->
 <!-- ![Push Metamask Snap](./image2.webp) -->
-<img src="./image2.webp" alt="Push Metamask Snap" width="353" height="662" />
+<Image src={require('./image2.webp').default} alt="Push Metamask Snap" width="353" height="100%" />
+
 
 
 
@@ -124,7 +128,9 @@ Using Push Snap, every mission-critical alert is delivered directly to the walle
 
 <!-- shapeshift wallet screenshot -->
 <!-- ![Shapeshift Wallet](./image4.webp) -->
-<img src="./image4.webp" alt="Shapeshift Wallet" width="353" height="662" />
+<Image src={require('./image4.webp').default} alt="Shapeshift Wallet" width="353" height="100%" />
+
+
 
 
 Push powers the communication middleware for enabling Push notifications for product updates, governance updates and token transfers. 
