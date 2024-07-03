@@ -31,26 +31,16 @@
 <p>Lets take a thorough look at how our partner wallets are adopting Push to become a Super App.</p>
 <p><img loading="lazy" alt="Push enables interoperable communications" src="https://push.org/assets/images/image1-773c84f6611fb60de497f032b88e6813.webp" width="2226" height="1248" class="img_ev3q"></p>
 <ol>
-<li>Push Metamask Snap</li>
 <li>Unstoppable Lite Wallet</li>
+<li>Push Metamask Snap</li>
 <li>Shapeshift Governance Wallet</li>
 <li>Verso Wallet</li>
 </ol>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1metamask-snap">1.Metamask Snap:<a href="https://push.org/blog/how-wallets-use-push-to-become-a-super-app#1metamask-snap" class="hash-link" aria-label="Direct link to 1.Metamask Snap:" title="Direct link to 1.Metamask Snap:">​</a></h3>
-<p>MetaMask Snaps are independent feature plugins developed by third-party developers to enhance wallet experiences in areas such as communication, interoperability, security, account management, and more, for various web3 protocols and applications.</p>
-<p>The Push MetaMask Snap allows users to receive real-time notification alerts from their favourite Web3 applications directly within their MetaMask wallet.</p>
-<p><strong>Push X Metamask: Unlocking a Super App experience:</strong></p>
-<p><img loading="lazy" alt="Push Metamask Snap" src="https://push.org/assets/images/image2-f60761f4c646a36f18c1ab5328f9657d.webp" width="598" height="1002" class="img_ev3q"></p>
-<p>Metamask being a widely popular wallet and often the first choice for many new web3 users, was crucial to integrate with Push’s capabilities. The launch of the snap functionality provided an opportunity to offer a communication experience akin to web2 applications.</p>
-<p>The <a href="https://snaps.metamask.io/snap/npm/pushprotocol/snap/?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=case_study_supper_app" target="_blank" rel="noopener noreferrer">Push Metamask Snap</a> was launched in September 2023 and continues to see steady growth with over <strong>1.7k downloads.</strong></p>
-<p>The Push  Snap is positioned at a crucial intersection in a user’s DApp interaction journey through their wallet.</p>
-<p>Instead of frequently visiting a DApp to check the status of domain expiry or loan health indexes, Push Snap eliminates these kinds of unproductive user travels.</p>
-<p>Using Push Snap, every mission-critical alert is delivered directly to the wallet as a Push Notification, providing an experience similar to a typical Web2 mobile app.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2unstoppable-domains-lite-wallet">2.Unstoppable Domains Lite Wallet<a href="https://push.org/blog/how-wallets-use-push-to-become-a-super-app#2unstoppable-domains-lite-wallet" class="hash-link" aria-label="Direct link to 2.Unstoppable Domains Lite Wallet" title="Direct link to 2.Unstoppable Domains Lite Wallet">​</a></h3>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1unstoppable-domains-lite-wallet">1.Unstoppable Domains Lite Wallet<a href="https://push.org/blog/how-wallets-use-push-to-become-a-super-app#1unstoppable-domains-lite-wallet" class="hash-link" aria-label="Direct link to 1.Unstoppable Domains Lite Wallet" title="Direct link to 1.Unstoppable Domains Lite Wallet">​</a></h3>
 <p>Unstoppable Domain Wallets are cryptocurrency addresses used to store users’ web3 domains in addition to tokens and digital collectables.
 An Unstoppable Wallet with a valid domain acts as a web3 social identifier for enabling domain-to-domain in-app messaging!</p>
 <p><strong>Push x UD: Empowering wallet-to-wallet messaging with ease!</strong></p>
-<p><img loading="lazy" alt="Unstoppable Domains Lite Wallet" src="https://push.org/assets/images/image3-d7830c6dc6f987f1db382732689dafa6.webp" width="456" height="1000" class="img_ev3q"></p>
+<img src="https://push.org/blog/image3.webp" alt="Unstoppable Domains Lite Wallet" width="353" height="662">
 <p>Push is proud to enable the next frontier of inter-domain communication by powering notifications and messaging support for over <strong>3.58 million</strong> UD users across more than <strong>300 group chats</strong>.</p>
 <p><strong>What type of users primarily use Unstoppable Lite Wallet?</strong></p>
 <p>The primary user of Unstoppable Lite Wallet are people with domains. The self-custody wallet is designed specifically for domainers, so they can manage and interact with their domains directly from the wallet in addition to traditional crypto tokens. This is a use case that has not been addressed by other wallets.</p>
@@ -61,10 +51,20 @@ An Unstoppable Wallet with a valid domain acts as a web3 social identifier for e
 <p>As Push Protocol enables wallet to wallet token gated group chatting, depending on domains and badges, users have access to various conditionally gated group chats where they can engage with others.</p>
 <p><strong>Overcoming seed phrase scares using MPC:</strong></p>
 <p>The unstoppable lite wallet features advanced multi-party computation (MPC) technology provided by Fireblocks to improve safety for the self-custody wallet. Users are able to manage their wallet using an email address and password, instead of worrying about seed phrases. There is also a way to recover the wallet if the user forgets their password, adding another layer of safety.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2metamask-snap">2.Metamask Snap:<a href="https://push.org/blog/how-wallets-use-push-to-become-a-super-app#2metamask-snap" class="hash-link" aria-label="Direct link to 2.Metamask Snap:" title="Direct link to 2.Metamask Snap:">​</a></h3>
+<p>MetaMask Snaps are independent feature plugins developed by third-party developers to enhance wallet experiences in areas such as communication, interoperability, security, account management, and more, for various web3 protocols and applications.</p>
+<p>The Push MetaMask Snap allows users to receive real-time notification alerts from their favourite Web3 applications directly within their MetaMask wallet.</p>
+<p><strong>Push X Metamask: Unlocking a Super App experience:</strong></p>
+<img src="https://push.org/blog/image2.webp" alt="Push Metamask Snap" width="353" height="662">
+<p>Metamask being a widely popular wallet and often the first choice for many new web3 users, was crucial to integrate with Push’s capabilities. The launch of the snap functionality provided an opportunity to offer a communication experience akin to web2 applications.</p>
+<p>The <a href="https://snaps.metamask.io/snap/npm/pushprotocol/snap/?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=case_study_supper_app" target="_blank" rel="noopener noreferrer">Push Metamask Snap</a> was launched in September 2023 and continues to see steady growth with over <strong>1.7k downloads.</strong></p>
+<p>The Push  Snap is positioned at a crucial intersection in a user’s DApp interaction journey through their wallet.</p>
+<p>Instead of frequently visiting a DApp to check the status of domain expiry or loan health indexes, Push Snap eliminates these kinds of unproductive user travels.</p>
+<p>Using Push Snap, every mission-critical alert is delivered directly to the wallet as a Push Notification, providing an experience similar to a typical Web2 mobile app.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3shapeshift-wallet">3.ShapeShift Wallet<a href="https://push.org/blog/how-wallets-use-push-to-become-a-super-app#3shapeshift-wallet" class="hash-link" aria-label="Direct link to 3.ShapeShift Wallet" title="Direct link to 3.ShapeShift Wallet">​</a></h3>
 <p><a href="https://app.shapeshift.com/" target="_blank" rel="noopener noreferrer">Shapeshift</a> is an open-source multi-chain platform, offering various DeFi services. The Shapeshift wallet is a community-governed, private, non-custodial wallet that supports multiple chains and assists users in managing their portfolio and DeFi positions.</p>
 <p><strong>Push x ShapeShift  Wallet : Powering Communication</strong></p>
-<p><img loading="lazy" alt="Shapeshift Wallet" src="https://push.org/assets/images/image4-f8a14125752aa82d79fb9a87197d767f.webp" width="488" height="1052" class="img_ev3q"></p>
+<img src="https://push.org/blog/image4.webp" alt="Shapeshift Wallet" width="353" height="662">
 <p>Push powers the communication middleware for enabling Push notifications for product updates, governance updates and token transfers.</p>
 <p>Push powers the necessary middleware and infrastructure for <a href="https://www.wherever.im/" target="_blank" rel="noopener noreferrer">Wherever</a>, a third-party communications service to show notifications in wallet and platform frontend as well as share with the user’s telegram and email.</p>
 <p>On a parallel front, As users continue to become mature and conscious about on-chain security, the demand for hardware wallets will be ever-increasing. Push can also be integrated with companion Apps of Hardware Wallets like <a href="https://www.keepkey.com/" target="_blank" rel="noopener noreferrer">KeepKay</a>, ensuring user’s with mission critical application updates independant of any wallet type.</p>
@@ -75,7 +75,7 @@ An Unstoppable Wallet with a valid domain acts as a web3 social identifier for e
 <p>Verso bridges Web2 audiences to Web3 by enabling in-wallet crypto purchases using credit cards or bank transfers. Verso also facilitates the purchase of gift cards with crypto and provides crypto reward cashback.</p>
 <p><strong>Push x Verso Wallet : Manage all your notifications in one place</strong></p>
 <p>The Push x Verso integration enables users to search for and opt-into any channel and receive notifications directly into the wallet. Ensuring the fact that the communications across all subscribed channels can be managed and organized easily in one place with ease!</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-is-the-missing-piece-for-building-the-next-super-wallet-app">Push is the missing piece for building the next Super Wallet App:<a href="https://push.org/blog/how-wallets-use-push-to-become-a-super-app#push-is-the-missing-piece-for-building-the-next-super-wallet-app" class="hash-link" aria-label="Direct link to Push is the missing piece for building the next Super Wallet App:" title="Direct link to Push is the missing piece for building the next Super Wallet App:">​</a></h3>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-is-the-missing-piece-for-building-the-next-super-wallet-app">Push is the missing piece for building the next Super Wallet App🧩:<a href="https://push.org/blog/how-wallets-use-push-to-become-a-super-app#push-is-the-missing-piece-for-building-the-next-super-wallet-app" class="hash-link" aria-label="Direct link to Push is the missing piece for building the next Super Wallet App🧩:" title="Direct link to Push is the missing piece for building the next Super Wallet App🧩:">​</a></h3>
 <p><img loading="lazy" alt="Push is the missing piece of web3 wallets" src="https://push.org/assets/images/image6-860c53b95f95e25190d5deb0a270a422.webp" width="1200" height="1200" class="img_ev3q"></p>
 <p>As Web3 continues to mature, user experience will be the key differentiator for wallets vying to become the go-to <strong>"Super App”</strong>. And Push is determined to onboard a Billion Users to web3 by filling in the void between current and expected communication experiences.</p>
 <p>With <a href="https://push.org/blog/explaining-push-nodes/" target="_blank" rel="noopener noreferrer">Push Nodes</a> launching soon, the Protocol will take its biggest leap in its journey to become a completely decentralized communication layer of web3.</p>]]></content>
