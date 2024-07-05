@@ -22,13 +22,13 @@ To illustrate the journey, lets imagine a community dedicated to a captivating N
 Building a strong online community takes more than just setting up a group chat. 
 Before diving in to the group creation process, let's explore some key considerations to form a solid foundation of your community.
 
-### 1.Define your community's purpose: 
+### 1.Define your community's purpose 
 
 Members join and leave the communities, but what remains constant is the community's  purpose.
 Find out what common interests will unite your members?  
 For Example : The 'Charcoal Cats🐱' community is cult camp of charcoal cat NFT lovers. The access to the chat is restricted to only those wallets who hold 'Charcoal Cats' NFT/s.
 
-### 2.Choose your community type:
+### 2.Choose your community type
     
 Do you prefer a community which is more welcoming, open & visible to all (i.e Public Group Chats) or rather prefer to form a exclusive community which is only visible to the individuals who are invited, are a part of the community or satisfy the criteria to join it.
     
@@ -42,13 +42,13 @@ With respect to our  example, lets  keep the Charcoal Cats a private community w
 Groupchats that do not impose any pre-requsite condition before joining the group can be termed as **open groupchats**.
 For instance, media oriented groupchats can be joined by anyone directly.
 
-**Conditionally Gated Chats:**
+**Conditionally Gated Chats**
 
 Group chats that impose one or multiple conditions for users and allows only those users who satisfy these conditions are termed as **conditionally gated chats**.
 
 **Conditions are a series of criterias that can be applied for both, joining the group as well as for chatting in the group.**
 
-### Tailoring Access with "Any" or "All" Settings:
+### Tailoring Access with "Any" or "All" Settings
 
 Push Protocol gives you further control by letting you define how users meet the set criteria. You can choose between:
 
@@ -71,7 +71,7 @@ Push Chat provides the following settings to configure your gated chat group:
 
 So, are you ready to build your dream community?  Let's get started!  We'll walk you through the creation process using our example of : the 'Charcoal Cats🐱' NFT Gated community groupchat.
 
-## Time to build our very first group chat:
+## Time to build our very first group chat
 
 **Step 0 : Visit [Push DApp](https://app.push.org/welcome?utm_source=google&utm_medium=blog&utm_campaign=create_group_chat) and Connect Wallet:**
 

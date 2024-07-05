@@ -88,17 +88,17 @@ As Push Protocol enables wallet to wallet token gated group chatting, depending 
 
 
 
-**Overcoming seed phrase scares using MPC:**
+**Overcoming seed phrase scares using MPC**
 
 The unstoppable lite wallet features advanced multi-party computation (MPC) technology provided by Fireblocks to improve safety for the self-custody wallet. Users are able to manage their wallet using an email address and password, instead of worrying about seed phrases. There is also a way to recover the wallet if the user forgets their password, adding another layer of safety.
 
-### 2.Metamask Snap:
+### 2.Metamask Snap
 
 MetaMask Snaps are independent feature plugins developed by third-party developers to enhance wallet experiences in areas such as communication, interoperability, security, account management, and more, for various web3 protocols and applications.
 
 The Push MetaMask Snap allows users to receive real-time notification alerts from their favourite Web3 applications directly within their MetaMask wallet.
 
-**Push X Metamask: Unlocking a Super App experience:**
+**Push X Metamask: Unlocking a Super App experience**
 
 <!-- metamsk snap screenshot -->
 <!-- ![Push Metamask Snap](./image2.webp) -->
