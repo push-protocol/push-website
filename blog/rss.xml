@@ -4,10 +4,100 @@
         <title>Push | The Communication Protocol of Web3 Blog</title>
         <link>https://push.org/blog</link>
         <description>Push | The Communication Protocol of Web3 Blog</description>
-        <lastBuildDate>Thu, 04 Jul 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 11 Jul 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Interoperable communications: Moving across an open web with Push]]></title>
+            <link>https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push</link>
+            <guid>https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push</guid>
+            <pubDate>Thu, 11 Jul 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Moving across an open web with Push]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover image of Case Study - Moving across an open web with Push" src="https://push.org/assets/images/cover-image-c9dfc8a9752992a8c97ecf5c76e0095e.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>With every passing day, the blockchain industry continues to become more mature and inch closer towards achieving the operational level comfort that today’s web2 world offers.</p>
+<p>In this pursuit, we’re witnessing a period of massive experimentation in on-chain infrastructure design.</p>
+<p>A natural trend observed in the EVM space is vertical growth through Rollups, Layer 2, and Layer 3 networks. The common goal of this design shift is to achieve scalability and, as a result, a higher degree of interoperability.</p>
+<p>But as the web3 dev community continues to take bigger strides in achieving transactional interoperability, app-to-user, app-to-app, and user-to-user communication are still at nascent steps.</p>
+<p>Push is working towards diminishing this divide between transactional and communication interoperability by building a robust, secure fabric that weaves multiple chains and services together by forming the <strong>“Universal Layer2 Of Communication”</strong>.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="fragmented-ecosystem">Fragmented Ecosystem<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#fragmented-ecosystem" class="hash-link" aria-label="Direct link to Fragmented Ecosystem" title="Direct link to Fragmented Ecosystem">​</a></h2>
+<p>Web3 operates on a multitude of blockchains, each with its own protocols, standards, and its own unique set of rules. This creates independent and isolated silos of information, making it difficult for users, services and applications built on separate chains to interact and communicate with each other unanimously.</p>
+<p>Push continues to form a communication blanket over the fragmented ecosystem and provide its communication services to multiple EVM and non-EVM based chains. At present, Push supports over 7 networks including:</p>
+<ul>
+<li>Ethereum</li>
+<li>Polyogn</li>
+<li>Polygon zkEVM</li>
+<li>Arbitrum</li>
+<li>Binance Smart Chain (BNB)</li>
+<li>Fuse</li>
+<li>Cyber</li>
+</ul>
+<p><strong>The Communicator contracts (Push Comm V2) serve as a middleware for listening to inbound communications</strong>&nbsp;and events from the Client Application’s smart contract. Thus, shouldering the responsibility of on-chain communication across contracts deployed on multiple chains (EVM and non-EVM).</p>
+<p>Notifications can not always be triggered as a result of an on-chain event. Many notifications, especially the ones that are more inclined towards driving engagement can be considered off-chain. Push ensures that any frontend, service, backend or smart contract can easily send communication payloads across the diverse participants and devices ( App, Wallet, Extension, Frontends and more).</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="data-availability-no-communication-da-layer">Data Availability (no communication DA layer)<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#data-availability-no-communication-da-layer" class="hash-link" aria-label="Direct link to Data Availability (no communication DA layer)" title="Direct link to Data Availability (no communication DA layer)">​</a></h2>
+<p>Traditionally, Data Availability (DA) ensures that the data needed to validate a block is accessible to the majority of network participants. However, in the context of interoperable communications within Web3, we need a broader concept: “<strong>Communication DA”</strong>.</p>
+<p><strong>What's the problem?</strong>
+From an end user's perspective, app notifications and other forms of read-write communications (messaging, groupchats, videocalls) should be accessible regardless of the platform, service, hardware and underlying chain they use.  Previously, there was no standardized middleware mechanism to link communication across platforms and chains.</p>
+<p>Push solves this problem. Being an open network, Push enables any frontend, service, or backend to securely tap into the Push network and extract the necessary communication payloads in a platform-agnostic manner.</p>
+<p>Simply put, <strong>your communication travels with your web3 identity: your wallet.</strong></p>
+<p><img loading="lazy" alt="Push Delivery Nodes" src="https://push.org/assets/images/image1-7aaf4b71343d3f54e055b4a4a9e86577.webp" width="1400" height="1124" class="img_ev3q"></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benefits-to-protocols-and-dapps">Benefits to Protocols and DApps<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#benefits-to-protocols-and-dapps" class="hash-link" aria-label="Direct link to Benefits to Protocols and DApps" title="Direct link to Benefits to Protocols and DApps">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-communications-web-3-wallets">1. Communications 🤝&nbsp;Web 3 Wallets<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#1-communications-web-3-wallets" class="hash-link" aria-label="Direct link to 1. Communications 🤝&nbsp;Web 3 Wallets" title="Direct link to 1. Communications 🤝&nbsp;Web 3 Wallets">​</a></h3>
+<p>In a typical web3 user journey, A user’s wallet , is the first element that unlocks transactional interoperability by  allowing users to seamlessly transfer assets and interact with dApps regardless of their underlying set of rules.</p>
+<p>Push Protocol extends the scope of this interoperability by  enabling cross-chain communication in form of notifications and messaging for Dapps, wallets, and services by tying it to the wallet addresses in an open, cryptographically encrypted and gasless manner.</p>
+<p>Notifications from various protocols and services are accessible regardless of the chains they originate from. All subscribed channel notifications are synchronized and displayed in one place within your Push-compatible wallet.</p>
+<p><img loading="lazy" alt="Receive notifications from web3 DApps straight to your wallet" src="https://push.org/assets/images/image2-e91f9e7a072801d8e0f392418a09bf31.webp" width="2000" height="1947" class="img_ev3q"></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="interoperable-communication-tied-to-web3-wallets--secret-to-unlock-massive-distribution">Interoperable Communication tied to web3 wallets = Secret to unlock massive distribution:<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#interoperable-communication-tied-to-web3-wallets--secret-to-unlock-massive-distribution" class="hash-link" aria-label="Direct link to Interoperable Communication tied to web3 wallets = Secret to unlock massive distribution:" title="Direct link to Interoperable Communication tied to web3 wallets = Secret to unlock massive distribution:">​</a></h3>
+<p>According to <a href="https://dappradar.com/blog/state-of-the-dapp-industry-q1-2024" target="_blank" rel="noopener noreferrer">DApp Radar</a>, Q1 2024 saw a remarkable surge in daily active wallet users (dUAW), reaching an average of 7 million daily active wallets—a 77% increase compared to the previous year.</p>
+<p>The numbers clearly show that the entry into web3 starts from a wallet. With more than 120 wallet apps in market, Push presents an opportunity to revolutionise their UX by reaching to these wallet addresses. And essentially pave the way to <strong>onboard the first Billion users into web3</strong>.</p>
+<p>Protocols, services, and DApps can tap into a highly scalable  distribution stream with the help of Push. Push ties all application-specific communication to the user's wallet address, ensuring zero user friction and exponentially growing the client protocol's distribution.</p>
+<p><img loading="lazy" alt="Unlock Interoperable Communications with Push" src="https://push.org/assets/images/image3-773c84f6611fb60de497f032b88e6813.webp" width="2226" height="1248" class="img_ev3q"></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="communication-drives-collaboration-and-engagement">Communication drives collaboration and engagement:<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#communication-drives-collaboration-and-engagement" class="hash-link" aria-label="Direct link to Communication drives collaboration and engagement:" title="Direct link to Communication drives collaboration and engagement:">​</a></h3>
+<p>Notifications delivered directly to users' wallets enhance a DApp's brand recall by keeping it at the forefront of users' minds. Users can interact with these notifications, enabling them to visit the DApp and view updates promptly.</p>
+<p>When more applications can reach out to their user’s wallet, across multiple networks it opens new avenues for engagement, customer retention and brand building.</p>
+<p><img loading="lazy" alt="DApp Looker Integrating Push Notifications in platform frontend" src="https://push.org/assets/images/image4-3b874b5f437a7d75ff5ca0f95b3075da.webp" width="1600" height="900" class="img_ev3q"></p>
+<p><a href="https://dapplooker.com/" target="_blank" rel="noopener noreferrer">DappLooker</a>: A no-code data analytics platform provides product and subscription related notifications. Users can enable / disable the notifications as per their wish via the platform.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benefits-to-user">Benefits to User<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#benefits-to-user" class="hash-link" aria-label="Direct link to Benefits to User" title="Direct link to Benefits to User">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-wallet-address-a-universal-pass-for-web3-communication">1. Wallet Address: A Universal Pass for Web3 Communication<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#1-wallet-address-a-universal-pass-for-web3-communication" class="hash-link" aria-label="Direct link to 1. Wallet Address: A Universal Pass for Web3 Communication" title="Direct link to 1. Wallet Address: A Universal Pass for Web3 Communication">​</a></h3>
+<p>The utility of a wallet address extends beyond simply being a social identifier or a key for facilitating transactions.  It also acts as a hub for collecting, presenting and managing mission-critical communications.</p>
+<img src="https://push.org/assets/images/image5-5d9ae0c85a4ebb07d13db37c10eb5910.webp" alt="Push Metamask Snap" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 efFBTI">
+<p>The <a href="https://snaps.metamask.io/snap/npm/pushprotocol/snap/?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=case_study_open_web" target="_blank" rel="noopener noreferrer">Push MetaMask Snap</a> allows users to receive real-time notification alerts from their favourite web3 applications directly within their MetaMask wallet.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-no-personal-information-needed">2. No personal information needed:<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#2-no-personal-information-needed" class="hash-link" aria-label="Direct link to 2. No personal information needed:" title="Direct link to 2. No personal information needed:">​</a></h3>
+<p>Push fascilitates Native Integration with Wallet Addresses enabling communication between wallet addresses without needing personal information like email, social handles or cellular contact info.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3security-and-decentralized-communication">3.Security and Decentralized Communication:<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#3security-and-decentralized-communication" class="hash-link" aria-label="Direct link to 3.Security and Decentralized Communication:" title="Direct link to 3.Security and Decentralized Communication:">​</a></h3>
+<p>With respect to communications, decentralization can be broken down into:</p>
+<ol>
+<li>Immutability of communication payloads/messages</li>
+<li>Inability to censor content.</li>
+</ol>
+<p>Push maintains immutability and censorship resistance  by encrypting mission critical communication payloads and messaging chats ensuring highest standards of communication security.</p>
+<p>Push powers wallet to wallet group chat with conditional gating form over <strong>3.8 Million users</strong> of <a href="https://unstoppabledomains.com/" target="_blank" rel="noopener noreferrer">Unstoppable Domains</a> with over 300 groups made sofar.</p>
+<p><img loading="lazy" alt="Unstoppable Domains Chat and Notifications support integrated in platform frontend" src="https://push.org/assets/images/image6-0789530906cab11e27c1ff862999af20.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>With the onset of <a href="https://push.org/blog/explaining-push-nodes/?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=case_study_open_web" target="_blank" rel="noopener noreferrer">Push Network</a> in Q4, the network will achieve its largest step in achieving complete network decentralization. Which in turn will activate slashing mechanisms to deter any nodes from censorship activities.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="communication-follows-where-wallet-connects">Communication Follows where wallet connects<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#communication-follows-where-wallet-connects" class="hash-link" aria-label="Direct link to Communication Follows where wallet connects" title="Direct link to Communication Follows where wallet connects">​</a></h2>
+<p>Across multiple genres including, Gaming, DeFI, Governance and Wallets, Push enables multiple ways for the DApps to tap into the the protocol’s Communication DA Layer (i.e Push Network) and extract notifications in a platform agnostic manner.</p>
+<p>For instance, <a href="https://decentraland.org/" target="_blank" rel="noopener noreferrer">Decentraland</a> users can choose to opt into and receive notifications into the platform frontend as well as receive the notifications directly into their Metamask Snap wallet.</p>
+<p><img loading="lazy" alt="Decentraland notification support integrated in platform frontend" src="https://push.org/assets/images/image7-d216fa7195718c94c9fdf1f3c46fef3c.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>To receive updates when of a new governance proposal from Shapeshift DAO, you can either choose to receive notifications directly in your <a href="https://shapeshift.com/wallets" target="_blank" rel="noopener noreferrer">Shapeshift</a> wallet or perhaps any other wallet that integrates Push’s open-source SDK.</p>
+<img src="https://push.org/assets/images/image8-f8a14125752aa82d79fb9a87197d767f.webp" alt="Shapeshift Wallet" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 efFBTI">
+<p>Additionally, users can experience updates from the following applications powered by Push, according to their convenience:</p>
+<ul>
+<li><strong><a href="https://app.push.org/welcome?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=case_study_open_web" target="_blank" rel="noopener noreferrer">Push DApp</a></strong></li>
+<li><strong><a href="https://chromewebstore.google.com/detail/push-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=case_study_open_web" target="_blank" rel="noopener noreferrer">Push Browser Extension</a></strong></li>
+<li><strong><a href="https://play.google.com/store/apps/details?id=io.epns.epns&amp;hl=en_IN?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=case_study_open_web" target="_blank" rel="noopener noreferrer">Push Android App</a></strong></li>
+<li><strong><a href="https://apps.apple.com/us/app/push-epns/id1528614910?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=case_study_open_web" target="_blank" rel="noopener noreferrer">Push iOS App</a></strong></li>
+</ul>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="moving-across-an-open-web-with-push">Moving across an Open Web with Push<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#moving-across-an-open-web-with-push" class="hash-link" aria-label="Direct link to Moving across an Open Web with Push" title="Direct link to Moving across an Open Web with Push">​</a></h2>
+<p>We believe communications is a public good and a bare necessity for a frictionless digital life.
+This also means that the means to provide communications and access them should not be limited to one or atmost two mediums.</p>
+<p>Push invented the communication network for web3 with a similar vision of enabling communication experiences unconstrained by chains.</p>
+<p><strong>A user of chain 'X' should not only be able to communicate with other users and services on that chain but also with users and services on chain 'Y' seamlessly, without added friction.</strong></p>
+<p>This is how Push is pushing towards forming a universal communication network of web3 encompassing all networks ensuring you, as a user can move across the open web along with your communications with ease.</p>]]></content:encoded>
+            <category>Push Protocol</category>
+            <category>Web3</category>
+            <category>Wallets</category>
+            <category>Adoption</category>
+        </item>
         <item>
             <title><![CDATA[How to create your community on Push Chat?]]></title>
             <link>https://push.org/blog/how-to-create-your-community-on-push-chat</link>
@@ -613,44 +703,6 @@ Let us know about your favorite channel on <a href="https://discord.com/invite/p
             <category>Push Protocol</category>
             <category>Web3</category>
             <category>Blockchain Technology</category>
-        </item>
-        <item>
-            <title><![CDATA[Roseon - Leading AI-Powered Exchange Joins Frens Of Push]]></title>
-            <link>https://push.org/blog/roseon-joins-frens-of-push</link>
-            <guid>https://push.org/blog/roseon-joins-frens-of-push</guid>
-            <pubDate>Thu, 16 May 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Roseon - Leading AI-Powered Exchange Joins Frens Of Push]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Roseon - Leading AI-Powered Exchange Joins Frens Of Push  " src="https://push.org/assets/images/cover-image-f43e64038e2aa7af918d0786b0b08ae5.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>Welcome back to "Frens of Push”- a deep dive into the top protocols and Push ecosystem partners. This week, we're joined by Roseon, a leading AI-powered cryptocurrency exchange.</p>
-<p>Roseon is the ultimate crypto ecosystem prioritizing user experience and gamification. It includes RoseonX, an AI-driven exchange with a modular architecture, and DeFi SuperApp, a one-stop mobile crypto app. With over 330K+ users and a global reach of 750K, it aims to boost crypto adoption and optimize investments.</p>
-<p>By way of this collaboration, Push helps Roseon keep its users in the loop by sending important updates like order executions &amp; liquidation directly to their wallets, <a href="http://app.push.org/channels/0xcBEBcCCF0B846C686D68c4D9EDA95fb17a7eedaE" target="_blank" rel="noopener noreferrer">RoseonX Notification Channel</a>. Roseon is also working on adding Push notifications to RoseonX, so users can get updates right on the platform.</p>
-<p>In this episode of “Frens of Push”, Elle - Marketing Executive at Roseon joins us to talk about how the collaboration between Push and Roseon has the potential to change the way we communicate in web3.</p>
-<p><strong>1. Hi Elle, what’s your story? How did you become involved in building in the blockchain space? What are you working on now?</strong></p>
-<p>Hello everyone, this is Elle, and I work as Marketing Exec at Roseon. My fascination with blockchain and cryptography sparked in 2021, and it truly felt like stepping into a whole new world. Fast forward to today, and I’m thrilled to be part of the incredible team at Roseon. Who would've thought that my curiosity would lead me here? Life works in mysterious ways, doesn't it?</p>
-<p><strong>2. Tell us about Roseon Exchange — what’s it about and what problem does Roseon solve?</strong></p>
-<p>RoseonX is an AI-powered exchange with Modular Architecture. So, to give you the full story, it all started with the goal of bridging the gap between CeFi and DeFi, making crypto easily accessible. Our first mobile crypto app, RoseonApp, boasts over 300,000 registered users, with a peak of 20,000 daily active users. We were proud to be ranked among the Top 9 stars in BNB Chain Web3 Stars Accelerator Vietnam.</p>
-<p>Fueled by our visionary spirit, we made a strategic decision to pivot and delve into the development of our second product, RoseonX - initially a Gamified Derivatives DEX. Our approach embraces gamification, injecting a fresh level of engagement, fun, and excitement into crypto earning, trading, and DeFi in general. More recently, our whitepaper has evolved with the integration of AI, Copy Trading, and the Strategy Vault, transforming RoseonX into an AI Powered Exchange with Modular Architecture. This leap is geared towards enhancing the overall user experience in trading and other DeFi activities. Coupled with a friendly UI/UX, our aim is to drive mass adoption of our platform.</p>
-<p>We're thrilled about the direction RoseonX is taking, and we're excited to bring this innovative approach to the world of crypto and DeFi.</p>
-<p><strong>3. What’s the 2024 plan for Roseon Exchange and its ecosystem?</strong></p>
-<p>Our primary aim is to bring our new roadmap to life, complete with the AI Layer, Copy Trade, Strategy Vault, and more, as well as the official release of RoseonX.</p>
-<p><strong>4. How is the Roseon Exchange using Push’s web3 communication layer?</strong></p>
-<p>At present, RoseonX users stay informed about updates through the Push feature by opting into <a href="http://app.push.org/channels/0xcBEBcCCF0B846C686D68c4D9EDA95fb17a7eedaE" target="_blank" rel="noopener noreferrer">RoseonX channels</a>. We're also in the process of integrating Push directly into RoseonX, allowing users to receive notifications right within our DEX.</p>
-<p><strong>5. How would you describe your experience using Push? What benefits have you seen?</strong></p>
-<p>We've had community members share how the Push feature has been really helpful for them, as it keeps them directly informed through their MetaMask wallet.</p>
-<p><strong>6. What cool use cases do you see Push being used for in the future?</strong></p>
-<p>I'm genuinely excited about the Push chat between wallets. It's such a cool feature, especially with all the functionalities like group chat, video calls, spaces, and streaming. This feature has the potential to bring a whole new level of interaction and convenience to users, and I can't wait to see it in action.</p>
-<hr>
-<p>Thanks, Elle for the awesome conversation. Looking forward to revolutionizing web3 communication together with Roseon!</p>
-<p>Opt-in <a href="http://app.push.org/channels/0xcBEBcCCF0B846C686D68c4D9EDA95fb17a7eedaE" target="_blank" rel="noopener noreferrer">here</a> to get all the important updates from Roseon straightaway to your wallet 🔔👇</p>
-<p><strong>About RoseonX:</strong></p>
-<p>RoseonX is an AI-powered exchange with a modular architecture, providing multi-chain capabilities and AI tools like AI Trading Agent and AI Liquidity Agent. It caters to all traders with features like Copy Trade, Strategy Vault for arbitrage, One-click trading, and Account Abstraction. It also offers a gamified learning experience and a rewarding point system. Join RoseonX for an engaging trading future.</p>
-<p><a href="https://dex.roseon.world/#/trade" target="_blank" rel="noopener noreferrer">RoseonX</a> | <a href="https://roseon.gitbook.io/roseon-whitepaper/whitepaper/master" target="_blank" rel="noopener noreferrer">Whitepaper</a> | <a href="https://twitter.com/RoseonExchange" target="_blank" rel="noopener noreferrer">Twitter</a> | <a href="https://t.me/Roseon" target="_blank" rel="noopener noreferrer">Telegram</a> | <a href="http://app.push.org/channels/0xcBEBcCCF0B846C686D68c4D9EDA95fb17a7eedaE" target="_blank" rel="noopener noreferrer">RoseonX Notification Channel</a></p>
-<p>“Frens of Push” is our weekly content series to spotlight outstanding projects building with Push. If you want to be featured, reach out to us on&nbsp;<a href="https://twitter.com/pushprotocol/" target="_blank" rel="noopener noreferrer">X</a>, and you could be our next Fren in the series.</p>]]></content:encoded>
-            <category>Push Protocol</category>
-            <category>Web3</category>
-            <category>Blockchain Technology</category>
-            <category>Roseon</category>
-            <category>frensofpush</category>
         </item>
     </channel>
 </rss>
