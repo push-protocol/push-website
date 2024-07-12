@@ -50,7 +50,7 @@ Notifications can not always be triggered as a result of an on-chain event. Many
 Traditionally, Data Availability (DA) ensures that the data needed to validate a block is accessible to the majority of network participants. However, in the context of interoperable communications within Web3, we need a broader concept: “**Communication DA”**.
 
 **What's the problem?** 
-From an end user's perspective, app notifications and other forms of read-write communications (messaging, groupchats, videocalls) should be accessible regardless of the platform, service, hardware and underlying chain they use.  Previously**, there was no standardized middleware mechanism** to link communication across platforms and chains.
+From an end user's perspective, app notifications and other forms of read-write communications (messaging, groupchats, videocalls) should be accessible regardless of the platform, service, hardware and underlying chain they use.  Previously, there was no standardized middleware mechanism to link communication across platforms and chains.
 
 Push solves this problem. Being an open network, Push enables any frontend, service, or backend to securely tap into the Push network and extract the necessary communication payloads in a platform-agnostic manner. 
 
@@ -92,7 +92,7 @@ When more applications can reach out to their user’s wallet, across multiple n
 ![DApp Looker Integrating Push Notifications in platform frontend](./image4.webp)
 <!-- DApp Looker image -->
 
-[DappLooker](https://dapplooker.com/): A no-code data analytics platform provides product and subscription related notifications. User’s can enable / disable the notifications as per their wish via the platform.
+[DappLooker](https://dapplooker.com/): A no-code data analytics platform provides product and subscription related notifications. Users can enable / disable the notifications as per their wish via the platform.
 
 
 ## Benefits to User
@@ -118,7 +118,7 @@ With respect to communications, decentralization can be broken down into:
 
 Push maintains immutability and censorship resistance  by encrypting mission critical communication payloads and messaging chats ensuring highest standards of communication security.
 
-Push powers wallet to wallet group chat with conditional gating form over 3.8 Million users of [Unstoppable Domains](https://unstoppabledomains.com/) with over 300 groups made sofar.
+Push powers wallet to wallet group chat with conditional gating form over **3.8 Million users** of [Unstoppable Domains](https://unstoppabledomains.com/) with over 300 groups made sofar.
 
 <!-- UD chat image -->
 ![Unstoppable Domains Chat and Notifications support integrated in platform frontend](./image6.webp)
@@ -152,7 +152,7 @@ This also means that the means to provide communications and access them should 
 
 Push invented the communication network for web3 with a similar vision of enabling communication experiences unconstrained by chains. 
 
-A user of chain 'X' should not only be able to communicate with other users and services on that chain but also with users and services on chain 'Y' seamlessly, without added friction
+**A user of chain 'X' should not only be able to communicate with other users and services on that chain but also with users and services on chain 'Y' seamlessly, without added friction.**
 
 This is how Push is pushing towards forming a universal communication network of web3 encompassing all networks ensuring you, as a user can move across the open web along with your communications with ease.
 
