@@ -2,11 +2,87 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://push.org/blog</id>
     <title>Push | The Communication Protocol of Web3 Blog</title>
-    <updated>2024-07-11T00:00:00.000Z</updated>
+    <updated>2024-07-17T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://push.org/blog"/>
     <subtitle>Push | The Communication Protocol of Web3 Blog</subtitle>
     <icon>https://push.org/assets/website/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Push Protocol Monthly Updates: A Look Back at June]]></title>
+        <id>https://push.org/blog/monthly-updates-june-2024</id>
+        <link href="https://push.org/blog/monthly-updates-june-2024"/>
+        <updated>2024-07-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Push Protocol Monthly Updates: A Look Back at June]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Push Protocol Monthly Updates: A Look Back at June" src="https://push.org/assets/images/cover-image-efd54013a8526607c2293a9e5fc87709.webp" width="1600" height="840" class="img_ev3q"></p>
+<p>June has been a monumental month for Push Protocol, marked by significant achievements and advancements that further strengthen our position in the Web3 ecosystem. More than <strong>8.6 Million Notifications</strong> were sent with a cumulative <strong>238k subscribers</strong> reached ending the month on a high note. We are excited to share the highlights:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="product-updates">Product Updates:<a href="https://push.org/blog/monthly-updates-june-2024#product-updates" class="hash-link" aria-label="Direct link to Product Updates:" title="Direct link to Product Updates:">​</a></h3>
+<p>Our <a href="https://push.org/" target="_blank" rel="noopener noreferrer">website</a> has undergone a revamp, featuring:</p>
+<ul>
+<li>New resources and tutorials for the <a href="https://push.org/bootcamp/" target="_blank" rel="noopener noreferrer">BRB Bootcamp</a></li>
+<li>Performance optimizations and security enhancements</li>
+<li>Improved blog section with new categories and enhanced search capabilities</li>
+</ul>
+<p>Our <a href="https://app.push.org/welcome" target="_blank" rel="noopener noreferrer">DApp</a> has seen significant upgrades, including:</p>
+<ul>
+<li>A new dashboard page</li>
+<li>Updates to the Push Alpha Access NFT Claims page</li>
+<li>The upcoming release of the reward points feature</li>
+<li>Development of a new design system</li>
+<li>Priority bug fixes</li>
+</ul>
+<p>Our <a href="https://github.com/push-protocol/push-sdk" target="_blank" rel="noopener noreferrer">SDK</a> now also supports the base chain growing our support for 7 chains including Ethereum, Polygon, BNB, Arbitrum, Polygon zkEVM, Fuse, and Cuber. The Push SDK now also includes the Space ID package for .arb and .bnb domains, along with priority bug fixes.</p>
+<p>Advancing our mobile app, we completed the development and review phase of the new version of the mobile app, currently in the testing phase, after which the new version will be rolled out.</p>
+<p>On the backend, we have:</p>
+<ul>
+<li>Launched on Base and Linea chain</li>
+<li>Made Channel Pre cache live till stage from the backend side.</li>
+<li>Enabled support for multiple aliases from the backend side</li>
+<li>Made Channel Tags live from push nodes and the SDK</li>
+<li>Migrated Dev and Stage from AWS to GCP</li>
+<li>Are working on SDK for Nodes.</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="partnership-updates">Partnership Updates:<a href="https://push.org/blog/monthly-updates-june-2024#partnership-updates" class="hash-link" aria-label="Direct link to Partnership Updates:" title="Direct link to Partnership Updates:">​</a></h3>
+<p>We're thrilled to announce new partnerships with amazing projects:</p>
+<ol>
+<li>We went live on the <a href="https://push.org/blog/push-protocol-on-arbitrum-blockchain/" target="_blank" rel="noopener noreferrer">Arbitrum Blockchain</a> partnering with <a href="https://app.push.org/channels/0xAeF69730D3210B151036C04434c2b1E551e20928" target="_blank" rel="noopener noreferrer">Cryptex</a>, <a href="https://app.push.org/channels/0x67243d6c3c3bDc2F59D2f74ba1949a02973a529d" target="_blank" rel="noopener noreferrer">Grant Ships</a>, <a href="https://app.push.org/channels/0x2A43cB483361FB5b3a09Bd11c24CbEE5cf1BE7Ca" target="_blank" rel="noopener noreferrer">Estate Protocol</a>, <a href="https://app.push.org/channels/0xf995b8145F6d17AECf0d0Fb54435Dd4D6B3060e5" target="_blank" rel="noopener noreferrer">ANDAO</a> and <a href="https://app.push.org/channels/0xcBEBcCCF0B846C686D68c4D9EDA95fb17a7eedaE" target="_blank" rel="noopener noreferrer">Roseon</a> enabling notifications for the users.</li>
+<li>We welcomed <a href="https://app.push.org/channels/0xD79771c38e4AfFCeAc05a61ffEB566d2CAF7Dc6A" target="_blank" rel="noopener noreferrer">Vurse</a>, and <a href="https://app.push.org/channels/0x518a3A3e11f9f86A4509374559Adf0313B687A38" target="_blank" rel="noopener noreferrer">MetaCRM</a> integrating Push Notifications.</li>
+<li>Further, we partnered with <a href="https://x.com/pushprotocol/status/1806327421664133423" target="_blank" rel="noopener noreferrer">RetroBridge</a> and <a href="https://x.com/pushprotocol/status/1804220237929419071" target="_blank" rel="noopener noreferrer">Uquid</a> listing the Push DApp on the RetroBridge Dapp Explorer and Uquid DApp Center.</li>
+<li>We also partnered with <a href="https://x.com/pushprotocol/status/1804114717222281521" target="_blank" rel="noopener noreferrer">Space ID Protocol</a>, integrating their Web3 Name SDK to introduce the usability of .bnb and .arb which can be used on Push dApp &amp; Push Chat.</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="community-engagement">Community Engagement:<a href="https://push.org/blog/monthly-updates-june-2024#community-engagement" class="hash-link" aria-label="Direct link to Community Engagement:" title="Direct link to Community Engagement:">​</a></h3>
+<p>In our continuous effort to keep the community engaged and excited, we’ve rolled out a series of thrilling initiatives including:</p>
+<ol>
+<li>We announced the winners of the #CommunicateWithPUSH Galxe Contest which resulted in 1000+ Push Alpha NFT mints in June.</li>
+<li>Further, we opened the gates to the <a href="https://app.push.org/chat/chatid:37799f9cb3ffd83eff4d2dc18913a3d9607f9c787a4374a7b3259bda28242cd6" target="_blank" rel="noopener noreferrer">Push Alpha Community Chat</a> for 573 Push Alpha Access NFT Holders.</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ecosystem-highlights">Ecosystem Highlights:<a href="https://push.org/blog/monthly-updates-june-2024#ecosystem-highlights" class="hash-link" aria-label="Direct link to Ecosystem Highlights:" title="Direct link to Ecosystem Highlights:">​</a></h3>
+<p>Push Protocol’s founder Harsh Rajat joined as a guest on multiple podcasts including:</p>
+<ol>
+<li><a href="https://x.com/pushprotocol/status/1801565106783871325" target="_blank" rel="noopener noreferrer">The Web3 Gamer</a> Podcast hosted by Matthew</li>
+<li><a href="https://x.com/pushprotocol/status/1805253308501614931" target="_blank" rel="noopener noreferrer">Web3 CMO Stories</a> hosted by Joeri Bilast</li>
+<li><a href="https://x.com/pushprotocol/status/1800437383738929643" target="_blank" rel="noopener noreferrer">Web3 Thought and Action</a> by Akshat</li>
+<li>and <a href="https://x.com/pushprotocol/status/1804541946779615403" target="_blank" rel="noopener noreferrer">Ethereum Cat Herders</a> Project Demo sharing about his entrepreneurial journey, Push Protocol, and the developments.</li>
+</ol>
+<p>Our DAO Lead <a href="https://x.com/ExpatCrypto3" target="_blank" rel="noopener noreferrer">Ian LeViness</a> joined in for a <a href="https://x.com/pushprotocol/status/1798602250278875235" target="_blank" rel="noopener noreferrer">DeFi 101 Space</a> hosted by Rivo to discuss The Impact of Ethereum ETF Approval on the DeFi Ecosystem and <a href="https://x.com/pushprotocol/status/1801201370684436684" target="_blank" rel="noopener noreferrer">DAO Spring</a> for an X space on Finding Product/Community Market Fit for your DAO. We also had <a href="https://x.com/PushProtocol_IN/status/1802801933830566022" target="_blank" rel="noopener noreferrer">Push India Ambassadors</a> sharing inspiring stories and insights from their participation in the Push Ambassador program.</p>
+<p>We were proud to feature <a href="https://app.push.org/channels/0x7F41abf7fDb9E4A6373EC3BAB3Df814b5CCceCC3" target="_blank" rel="noopener noreferrer">Bancor</a>, <a href="https://app.push.org/channels/0x361Cb6BE977d0113A33914A8f952Ced95747F793" target="_blank" rel="noopener noreferrer">Fabwelt</a>, <a href="https://app.push.org/channels/0xbc7797319B3eD4246c7078CC4e8B28Ea2C6872D0" target="_blank" rel="noopener noreferrer">Dhive</a>, and <a href="https://app.push.org/channels/0x48De2669db5C2da4bf36C29ef9CFd62057B4b6C8" target="_blank" rel="noopener noreferrer">Price Tracker</a> Channels for the #PushChannelOfTheWeek in June 🔔</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-dao-updates">Push DAO Updates:<a href="https://push.org/blog/monthly-updates-june-2024#push-dao-updates" class="hash-link" aria-label="Direct link to Push DAO Updates:" title="Direct link to Push DAO Updates:">​</a></h3>
+<ol>
+<li>We launched the most awaited <a href="https://mirror.xyz/0x1fdac7887A701609bcFb9188f5912EC59bDb33BE/-n9pgSJ2FZz75yPoEa-0a5mcg-SsHAiz6R8YdyrsO5I" target="_blank" rel="noopener noreferrer">Push Grants Program V3</a> powered by CharmVerse to empower early-stage &amp; established projects building compelling social, gaming, &amp; mobile apps.</li>
+<li>Further, we also introduced the <a href="https://mirror.xyz/0x1fdac7887A701609bcFb9188f5912EC59bDb33BE/N8ZFxd1xU4pr1EeFR-0BJ9V01oYSUnie-ld21mzahBg" target="_blank" rel="noopener noreferrer">Push DAO BD SubDAO Program</a> offering an opportunity to engage in BD activities for Push Protocol and win rewards of $500-$1500 on successfully integrating with DAOs, DeFi protocol, dApps, and other projects with Push Notifications/Chat.</li>
+<li>The <a href="https://mirror.xyz/0x1fdac7887A701609bcFb9188f5912EC59bDb33BE/-n9pgSJ2FZz75yPoEa-0a5mcg-SsHAiz6R8YdyrsO5I" target="_blank" rel="noopener noreferrer">Push Grants program</a> is now under community control via Push DAO.</li>
+<li>Our council members <a href="https://gov.push.org/u/christiandike/summary" target="_blank" rel="noopener noreferrer">Christian Dike</a> and <a href="https://gov.push.org/u/sixtykeys/summary" target="_blank" rel="noopener noreferrer">SixtyKeys</a> represented Push at Lagos Blockchain Week and  Zuzalu event in Zanzibar, respectively.</li>
+<li>Our Council member Carla secured a partnership with <a href="https://www.ethereumuruguay.org/" target="_blank" rel="noopener noreferrer">Ethereum Uruguay</a> for their upcoming buildathon.</li>
+<li>The first grantee Si3 started receiving funding, and DAO ambassadors began contributing to the ecosystem's growth.</li>
+</ol>
+<p>Stay tuned for more updates as we continue to push the boundaries of the Web3 ecosystem.</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Interoperable communications: Moving across an open web with Push]]></title>
         <id>https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push</id>
@@ -699,42 +775,6 @@ You are all set!</p>
 and receive immediate on-chain updates directly linked to your chosen wallet address.</p>
 <p>Stay tuned for the next winner! 👀
 Let us know about your favorite channel on <a href="https://discord.com/invite/pushprotocol" target="_blank" rel="noopener noreferrer">Push Protocol Discord</a></p>]]></content>
-        <author>
-            <name>Push Protocol</name>
-            <uri>https://twitter.com/pushprotocol</uri>
-        </author>
-        <category label="Push Protocol" term="Push Protocol"/>
-        <category label="Web3" term="Web3"/>
-        <category label="Blockchain Technology" term="Blockchain Technology"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Push Protocol Monthly Updates: A Look Back at April]]></title>
-        <id>https://push.org/blog/april-recap-blog-2024</id>
-        <link href="https://push.org/blog/april-recap-blog-2024"/>
-        <updated>2024-05-18T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Push Protocol Monthly Updates: A Look Back at April]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image for April Month Protocol updates for year 2024" src="https://push.org/assets/images/cover-image-73ee01077d5f1540f53f716312e0a341.webp" width="1600" height="840" class="img_ev3q"></p>
-<p>April was a month of significant progress for the <a href="https://push.org/frens" target="_blank" rel="noopener noreferrer">Push Ecosystem</a>. We reached new milestones and launched exciting initiatives. We sent out more than <strong>6 Million</strong> notifications in April reaching a cumulative <strong>74 Million notifications</strong> since the launch and 177K subscribers. The Push journey continues to gain momentum. Here’s a recap of what happened:</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="product-updates">Product Updates:<a href="https://push.org/blog/april-recap-blog-2024#product-updates" class="hash-link" aria-label="Direct link to Product Updates:" title="Direct link to Product Updates:">​</a></h2>
-<p>We've made significant strides in our development journey. We successfully deployed our <a href="https://www.npmjs.com/package/@pushprotocol/react-native-sdk" target="_blank" rel="noopener noreferrer">React Native SDK</a> on NPM, simplifying the process for developers to access it. We've also rolled out improved notification settings on app stores, allowing for a more customized user experience.</p>
-<p>In our SDK, we introduced a new <strong>ChatWidget</strong> component and broadened our blockchain support to include <strong>Berachain</strong> and <strong>Polygon Amoy</strong>.</p>
-<p>Our website has been enhanced with a fresh landing page for the <a href="https://push.org/bootcamp/" target="_blank" rel="noopener noreferrer">Billion Reasons to Build (BRB) Bootcamp</a>, and we've enhanced the footer for smoother navigation.</p>
-<p>We're steadily advancing with new blockchain integrations that are currently under review. We've streamlined our channel addition process by separating it from IPFS, among other improvements. We're in the process of developing support for SCW wallets on our Push SDK.</p>
-<p>Our research on the Cross Chain Feature, which enables Ethereum and Layer 2 requests, has been completed and its development is underway. The <strong>Push Governance</strong> contract has been redesigned to align with the updated OpenZeppelin governance structure. We've managed to reduce the Smart Contract size by 30% and optimize gas fees for key functions like channel creation.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="partnership-updates">Partnership Updates<a href="https://push.org/blog/april-recap-blog-2024#partnership-updates" class="hash-link" aria-label="Direct link to Partnership Updates" title="Direct link to Partnership Updates">​</a></h2>
-<p>We're thrilled to announce new partnerships with amazing projects including <a href="https://twitter.com/vurse_official/status/1782414484700533169" target="_blank" rel="noopener noreferrer">Vurse</a>, <a href="https://www.rivo.xyz/" target="_blank" rel="noopener noreferrer">Rivo</a>, <a href="https://twitter.com/pushprotocol/status/1778091601597960326" target="_blank" rel="noopener noreferrer">Estate Protocol</a>, and <a href="https://twitter.com/pushprotocol/status/1780266671783194989" target="_blank" rel="noopener noreferrer">Pistachio Fi</a> to integrate notifications and messaging. We also partnered with <a href="https://twitter.com/DoraHacks/status/1783170660346544309" target="_blank" rel="noopener noreferrer">Dora Hacks</a> for the Data Economy Hackathon.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="billion-reasons-to-build-brb">Billion Reasons to Build (BRB):<a href="https://push.org/blog/april-recap-blog-2024#billion-reasons-to-build-brb" class="hash-link" aria-label="Direct link to Billion Reasons to Build (BRB):" title="Direct link to Billion Reasons to Build (BRB):">​</a></h2>
-<p><img loading="lazy" alt="Banner for Billion Reasons to Build" src="https://push.org/assets/images/image1-358b6918b20c34665aa81929c4316452.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>We took a big step forward in our <a href="https://push.org/brb/" target="_blank" rel="noopener noreferrer">BRB journey</a> by launching the BRB Bootcamp. This <a href="https://github.com/orgs/push-protocol/discussions/52" target="_blank" rel="noopener noreferrer">6-week virtual program</a> is designed to jumpstart your journey as a Web3 builder. You can register <a href="https://zv9atndluia.typeform.com/to/ToIpDLT2?typeform-source=push.org" target="_blank" rel="noopener noreferrer">here</a> (limited seats available).</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="community-engagement">Community Engagement:<a href="https://push.org/blog/april-recap-blog-2024#community-engagement" class="hash-link" aria-label="Direct link to Community Engagement:" title="Direct link to Community Engagement:">​</a></h2>
-<p>April was all about building a strong and vibrant community. We hosted a Push Video Contest asking the community to share their experience with Push Protocol. Rewarded the ultra-rare first <strong>“Push Chad"</strong> role. We held an <strong>AMA</strong> with <a href="https://www.berachain.com/" target="_blank" rel="noopener noreferrer">Berachain</a> - a modular EVM-compatible L1 blockchain. Partnered with <a href="http://cookie3.com/" target="_blank" rel="noopener noreferrer">cookie3.com</a> for <strong>"The Great Bake Off"</strong> campaign.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ecosystem-highlights">Ecosystem Highlights:<a href="https://push.org/blog/april-recap-blog-2024#ecosystem-highlights" class="hash-link" aria-label="Direct link to Ecosystem Highlights:" title="Direct link to Ecosystem Highlights:">​</a></h2>
-<p>In April 2024, we featured <a href="https://ens.domains/" target="_blank" rel="noopener noreferrer">ENS Domains</a>, <a href="https://cryptocurrencyjobs.co/" target="_blank" rel="noopener noreferrer">Cryptocurrency Jobs</a>, <a href="https://www.coindesk.com/" target="_blank" rel="noopener noreferrer">CoinDesk</a>, <a href="https://aave.com/" target="_blank" rel="noopener noreferrer">Aave</a>, and <a href="https://app.push.org/channels/0x03EAAAa48ea78d1E66eA3458364d553AD981871E" target="_blank" rel="noopener noreferrer">BTC Tracker</a> as the #PushChannelOfTheWeek.</p>
-<p>Our team was invited to speak at various side events during <a href="https://www.token2049.com/" target="_blank" rel="noopener noreferrer">Token2049</a>, including Tribe Connect by <a href="https://buidl.so/" target="_blank" rel="noopener noreferrer">Buidlers Tribe</a>, Block Vision by <a href="https://www.nordek.io/" target="_blank" rel="noopener noreferrer">Nordek</a>, Hadron Founders Club by <a href="https://hadronfc.com/" target="_blank" rel="noopener noreferrer">Hadron Founders Club</a> &amp; <a href="https://polygon.technology/" target="_blank" rel="noopener noreferrer">Polygon</a>, DataCon 2024 by <a href="https://dapplooker.com/" target="_blank" rel="noopener noreferrer">dapplooker</a>, DeSoc Unleashed Dubai Edition by <a href="https://mask.io/" target="_blank" rel="noopener noreferrer">Mask Network</a> &amp; <a href="https://tako.so/" target="_blank" rel="noopener noreferrer">Tako Protocol</a>, and Builder Day Dubai by <a href="https://consensys.io/" target="_blank" rel="noopener noreferrer">Consensys</a>.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="dao-updates">DAO Updates:<a href="https://push.org/blog/april-recap-blog-2024#dao-updates" class="hash-link" aria-label="Direct link to DAO Updates:" title="Direct link to DAO Updates:">​</a></h2>
-<p>We had the pleasure of hosting <a href="https://twitter.com/FactorDAO" target="_blank" rel="noopener noreferrer">FactorDAO</a> for an exclusive X space for <strong>DAO to DAO Talk</strong>. In our ambassador program, we welcomed two new members for Push Protocol in the Spanish Ambassadors community and opened up five additional spots for the Push Protocol Indian Ambassadors community. We've also submitted a proposal "<a href="https://forum.devcon.org/t/billion-reasons-to-build-bangkok-sea-web3-builders/3482?u=richa_joshi" target="_blank" rel="noopener noreferrer">Billion Reasons to Build, Bangkok</a>" to host a builder-centric event at <a href="https://devcon.org/en/" target="_blank" rel="noopener noreferrer">Devcon 2024</a>, aimed at celebrating, engaging, and supporting developers.</p>
-<p>In other exciting news, we managed to pass three key votes for the BD subDAO, Grants subDAO, and the DAO Council. This significant achievement has paved the way for the launch of our subDAOs on the first of June. With this, we are thrilled to introduce the community-led Push Grants V3. This new initiative opens up a world of opportunities for grantees to contribute and vote, marking an exciting new phase for Push Grants V3. Our Push DAO V2 Proposal caught the attention of the <a href="https://messari.io/" target="_blank" rel="noopener noreferrer">Messari</a> and was featured there. Check out the <a href="https://gov.push.org/" target="_blank" rel="noopener noreferrer">Push Governance Forum</a> to stay updated with all the activities in <strong>PushDAO</strong>.</p>
-<p>Stay tuned for more updates as we continue to push the boundaries of the Web3 ecosystem!</p>]]></content>
         <author>
             <name>Push Protocol</name>
             <uri>https://twitter.com/pushprotocol</uri>
