@@ -28,3 +28,4 @@ Claiming your Push Alpha AccessNFT is a simple process. Here's what you need to 
 1. Head over to the Push Protocol Galxe claim page: https://app.push.org/claim/galxe
 2. Connect your crypto wallet associated with your Galxe account and switch the network to Polygon Mainnet.
 3. Follow the on-screen instructions to complete the claim process.
+4. Once claimed, join the [Push Alpha Community](https://app.push.org/chat/chatid:37799f9cb3ffd83eff4d2dc18913a3d9607f9c787a4374a7b3[…]rce=google&amp;utm_medium=blog&amp;utm_campaign=alpha_nft_chat) - A VIP Community of Alpha Access Pass Holders. The community is the base camp for all updates related to drops and other privilaged activites for Alpha NFT holders!
