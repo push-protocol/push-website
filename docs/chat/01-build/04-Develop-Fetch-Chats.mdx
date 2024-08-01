@@ -5,7 +5,7 @@ hide_title: true
 slug: ./fetch-chats
 displayed_sidebar: pushChatSidebar
 sidebar_position: 3
-image: "/assets/docs/previews/docs_chat_develop--fetch_chats.png"
+image: '/assets/docs/previews/docs_chat_develop--fetch_chats.png'
 ---
 
 # Fetch chats overview
@@ -270,7 +270,7 @@ const aliceChatHistoryWithBob = await userAlice.chat.history(bobAddress);
 | Param         | Type                | Subtype            | Default | Remarks                                                                                                                         |
 | ------------- | ------------------- | ------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | _`recipient`_ | `string`            | -                  | -       | Target DID ( For Group Chats target is chatId, for 1 To 1 chat target is Push DID )                                             |
-| `options`     | `object` w          | -                  | -       | Optional Configuration for fetching chat history                                                                                |
+| `options`     | `object`            | -                  | -       | Optional Configuration for fetching chat history                                                                                |
 | -             | `options.reference` | `string` or `null` | -       | Refers to message refernce hash from where the previous messages are fetched. If null, messages are fetched from latest message |
 | -             | `options.limit`     | `number`           | 10      | No. of messages to be loaded                                                                                                    |
 
@@ -354,5 +354,100 @@ const aliceChatHistoryWithBob = await userAlice.chat.history(bobAddress);
 | `timestamp`       | `number` | timestamp of the message                    |
 | `encType`         | `string` | encryption type                             |
 | `encryptedSecret` | `string` | encrypted secret                            |
+
+</Details>
+
+## Fetch chat message info
+
+Useful to fetch information about a specific message in a chat.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// userAlice.chat.message(target, {options?})
+// pass message hash in options to get info of a specific message
+// otherwise, it will return the info of the latest message
+const messageInfo = await userAlice.chat.message(bobAddress);
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### Fetch chat history parameters
+
+| Param      | Type                | Subtype            | Default | Remarks                                                                                                                                                                                                                                                 |
+| ---------- | ------------------- | ------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`target`_ | `string`            | -                  | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat') including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
+| `options`  | `object`            | -                  | -       | Optional Configuration                                                                                                                                                                                                                                  |
+| -          | `options.reference` | `string` or `null` | -       | Refers to message refernce hash from where the previous messages are fetched. If null, latest message info is returned. Message hash is found as a property named `cid` in the chat history Response.                                                   |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+{
+  link: 'previous:v2:01522f173b6869b390f4c9d73518208bfbe47dd9a38de3e1d0944da2638faf99',
+  toDID: 'eip155:0x1A3cDE21e27CA9a2670C2c647550D39a72d9637C',
+  encType: 'pgp',
+  fromDID: 'eip155:0xBb25f8c84e4fD060e65582f99B1e938eC0aDD4fa',
+  sigType: 'pgpv3',
+  toCAIP10: 'eip155:0x1A3cDE21e27CA9a2670C2c647550D39a72d9637C',
+  signature: '-----BEGIN PGP SIGNATURE-----\n' +
+    '\n' +
+    'wsBzBAEBCAAnBYJmq6AfCZAVeY6O6XZ+khYhBP0Yy3JyavvU5IzW9BV5jo7p\n' +
+    'dn6SAAC7egf9EZ4k1oF657PZqxq8Zc6zekITTxuAHtjD0+0DiyQNc6+Sd/fF\n' +
+    '0kNGQMKzu3mPYH3IecMPE5trhdGi7B0SSk5/wEbLOhr8xHH/7r8XUkZXuYVS\n' +
+    'HqXTvhpV2Q8IEAxisNSFPW+qNCB2NXAZWvl0Emej3rbNYFemk47Q4a4A3eyv\n' +
+    'y29YdEu14R1S/m5Rb4V2veLx/9zDB2iVQBjY9vmjd3HH3gwSiZZStmxdOZrH\n' +
+    'QbqQ+9zKMwztQYCvwn5L/eJN4zRjdwU0eu91uWZS18JDpO2vVPoM8D4wQDy6\n' +
+    'ZXhsJbfHI0Byrx+w1YgFChRQa3ynC+8lvgfb5T4Sb9XClvPzzWZtEA==\n' +
+    '=eVQy\n' +
+    '-----END PGP SIGNATURE-----\n',
+  timestamp: 1722523679717,
+  fromCAIP10: 'eip155:0xBb25f8c84e4fD060e65582f99B1e938eC0aDD4fa',
+  messageObj: {
+    content: '👍',
+    reference: 'v2:7a470f25759fab8b042867dca9297a24327ba67986a414bf8b3bf17536ff5016'
+  },
+  sessionKey: null,
+  messageType: 'Reaction',
+  messageContent: '👍',
+  encryptedSecret: '-----BEGIN PGP MESSAGE-----\n' +
+    '\n' +
+    'wcBMA8rg9D0qql9zAQf+K+4dtpe+YUpW4OE865xGUZNnXtN9D3rVjWeKqA1p\n' +
+    '//8OJArxQKCFof11lEUodkXlWoflgmNHvGDZNagz5MpCMoRXWxE/UMxFljru\n' +
+    '9oymBwV0kWcRXxlKvrJc3J+F3JL++NRi4a12sFCgBk4C61UxZqFEKqUsPIUb\n' +
+    'p2vobpKweSTOUGHBBYNMVawCbSS4EP3/ZjMjEh/PgQMGZY2lHpUbOUhqemmz\n' +
+    'BQ/AA/+kN9NH1YbSfIiptGki4utCmFzNldLHJAisOOdw70DmbqSehTM0otso\n' +
+    'GpgWhE7nHfXAoEOf0UWtTSwWp1w2m/c79dRHQn5lTYSzrrIvDzgY4JxR7TmS\n' +
+    '5MHATAO6ymsTnUIvBQEIALVOplGKnPclv9CDutCYbEc4XB/nuZm3JTGD4a5R\n' +
+    'zP8AmfCQrpShsl7SpJZjYFAAGQfa80rQrl7JbhqzmEzSOflsIpMXlr80E9VM\n' +
+    'CMeLzcDMn9thWJvvfyn8pHtK4epteVYwcYZIUPR8ZlXXnk4EmZqxM3SAz/56\n' +
+    'fxlfh8sn0GacPT12zh8a0XnGADQHuTEifiP2c2PFc9JxWZv/9EOjdnueQDQR\n' +
+    'iINyuSdxa61VeCSf5F6Z3Aiww9Xjse9ZqD8yXm5Tf3krauVklwhGjaS4hZLg\n' +
+    'CrablHIJ/0utISYcXRDJ5+tyPfO3i0SzZ4/0I1Pz1PchKRaZa7ee8qTGHAtC\n' +
+    'Do7SQAGbHpudlSqBRGnCoOczYvokwk16daZHNIo51+bUrFvyUG/FG5TolyDZ\n' +
+    '9bYvHtwtU9g0YnhtrNUSNkafgJZ/xcU=\n' +
+    '=FTvz\n' +
+    '-----END PGP MESSAGE-----\n',
+  verificationProof: 'pgpv3:-----BEGIN PGP SIGNATURE-----\n' +
+    '\n' +
+    'wsBzBAEBCAAnBYJmq6AfCZAVeY6O6XZ+khYhBP0Yy3JyavvU5IzW9BV5jo7p\n' +
+    'dn6SAADlMAf/d+YMxpjRfo2ebssMpr9box9gA7AB7e6DjEGr4la+5lRys2v/\n' +
+    'jM5WJ10HL9in7jTBd1Tl9nHLT92/5WbsmLLI4ePMTGjTb4aFAOHPXcP97rNv\n' +
+    '1CukL7vsMrRzEMf6+C4QHSoE/0brRRxIFE35PRz840XvIkGMDpFY86x1wNnw\n' +
+    'bER1eDk8yJv7t9l9AOrwj6Bo5vLmNW0piVImQjLvovnjY/JYt0rw7k5XoLzd\n' +
+    'yk3ucbBYIf9BlbJVcqiJwHD0DMQf4eqUeFyuer14f1HL8LrL88UxybQVAekv\n' +
+    'CxHUQbcE7eGAvrWPUHYXXhmpZKE6jYp7B7sDYABLElwFl2M2pB4r8g==\n' +
+    '=e4xM\n' +
+    '-----END PGP SIGNATURE-----\n',
+  cid: 'v2:01522f173b6869b390f4c9d73518208bfbe47dd9a38de3e1d0944da2638faf99',
+  listType: 'CHATS'
+}
+```
 
 </Details>
