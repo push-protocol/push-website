@@ -5,7 +5,7 @@ hide_title: true
 slug: ./reaction
 displayed_sidebar: pushChatSidebar
 sidebar_position: 5
-image: "/assets/docs/previews/docs_chat_message_type--reaction.png"
+image: '/assets/docs/previews/docs_chat_message_type--reaction.png'
 ---
 
 # Message type - Reaction
@@ -27,9 +27,9 @@ import TabItem from '@theme/TabItem';
 // This section focuses on customization parameters for 'message' object
 const aliceMessagesBob = await userAlice.chat.send(recipient, {
   type: 'Reaction',
-  content: '👍', // content can be eliminated
-  action: 'ThumbsUp', // can be "ThumbsUp", "ThumbsDown", "Heart", "Clap", "Laugh", "Sad", etc
-  reference: 'bafyreia2okco5ocdxmoxon72erviypaht74u3dqunf3vydu237ybju4kw4', // pass in the reference to the message hash that this reaction is intended for
+  content: '👍', // reaction
+  reference:
+    'v2:7a470f25759fab8b042867dca9297a24327ba67986a414bf8b3bf17536ff5016', // pass in the reference to the message hash that this reaction is intended for, hash of the message can be found in the message object as cid property
 });
 ```
 
@@ -42,13 +42,12 @@ const aliceMessagesBob = await userAlice.chat.send(recipient, {
 
 When sending a message, you can customize the following params
 
-| Param         | Type                  | Subtype                                                                         | Default | Remarks                                                                                                                                                                                                                                            |
-| ------------- | --------------------- | ------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string`              | -                                                                               | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat') including wallet address, chain agnostic wallet address, NFT addresses or even chatid which is useful in groups |
-| _`message`_   | `object`              | -                                                                               | -       | Configuration for message to be sent                                                                                                                                                                                                               |
-| -             | _`message.type`_      | `Meta`                                                                          | `Text`  | Type of message Content                                                                                                                                                                                                                            |
-| -             | _`message.content`_   | `string`                                                                        | -       | Emoji Symbol - 👍, 👎, ❤️, 👏, 😄, 😢                                                                                                                                                                                                              |
-| -             | _`options.action`_    | `string`, choose from `ThumbsUp`, `ThumbsDown`, `Heart`, `Clap`, `Laugh`, `Sad` | -       | Action that is getting applied in the Meta message action                                                                                                                                                                                          |
-| -             | _`options.reference`_ | `{ affected : string[]: arbitrary?: { [key: string]: any } }`                   | -       | Pass in the reference to the message hash that this reaction is intended for                                                                                                                                                                       |
+| Param         | Type                  | Subtype  | Default | Remarks                                                                                                                                                                                                                                            |
+| ------------- | --------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`recipient`_ | `string`              | -        | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat') including wallet address, chain agnostic wallet address, NFT addresses or even chatid which is useful in groups |
+| _`message`_   | `object`              | -        | -       | Configuration for message to be sent                                                                                                                                                                                                               |
+| -             | _`message.type`_      | `Meta`   | `Text`  | Type of message Content                                                                                                                                                                                                                            |
+| -             | _`message.content`_   | `string` | -       | Emoji Symbol - 👍, 👎, ❤️, 👏, 😄, 😢                                                                                                                                                                                                              |
+| -             | _`options.reference`_ | `string` | -       | Pass in the reference to the message hash that this reaction is intended for , hash of the message can be found in the message object as cid property                                                                                              |
 
 > Note: Parameters _`in this style`_ are mandatory.
