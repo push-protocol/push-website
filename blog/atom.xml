@@ -2,11 +2,67 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://push.org/blog</id>
     <title>Push | The Communication Protocol of Web3 Blog</title>
-    <updated>2024-07-30T00:00:00.000Z</updated>
+    <updated>2024-08-09T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://push.org/blog"/>
     <subtitle>Push | The Communication Protocol of Web3 Blog</subtitle>
     <icon>https://push.org/assets/website/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Push Protocol x Wormhole AMA for the Cross Chain Request Feature in Push V3]]></title>
+        <id>https://push.org/blog/ama-with-wormhole-for-cross-chain-requests-pre-pip</id>
+        <link href="https://push.org/blog/ama-with-wormhole-for-cross-chain-requests-pre-pip"/>
+        <updated>2024-08-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Push Protocol x Wormhole AMA for the Cross Chain Request Feature in Push V3]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Push Protocol x Wormhole AMA for the Cross Chain Request Feature in Push V3" src="https://push.org/assets/images/cover-image-87165fed06701e8b218562674f1dacdf.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>Last week, we debuted Pre-PIP 3 (Push Improvement Proposal) for <a href="https://push.org/blog/cross-chain-requests-pre-pip/" target="_blank" rel="noopener noreferrer">Cross Chain Requests</a> on the <a href="https://gov.push.org/t/pre-pip-3-cross-chain-request-feature-in-push-smart-contracts-v3/1794" target="_blank" rel="noopener noreferrer">Push DAO forum</a> and invited the <a href="https://wormhole.com/" target="_blank" rel="noopener noreferrer">Wormhole</a> team to chat about it, since their tech is a major part of this upgrade.</p>
+<p>Here’s a 3-minute recap for those who couldn’t join in:</p>
+<p>We kicked off the <a href="https://x.com/pushprotocol/status/1819017203284578483" target="_blank" rel="noopener noreferrer">spaces</a> with a bit of alpha on Push’s V3 Smart Contracts and what else is coming up from our side as the 2024 rolls on:</p>
+<ol>
+<li><strong>Launch of On-Chain Governance</strong>: The V3 contracts will introduce on-chain governance, allowing the community to govern smart contract execution.</li>
+<li><strong>Optimized Contracts:</strong> Push’s V3 contracts will be more efficient. They’ll be capable of handling requests from any chain, which will then be relayed to the Ethereum-based Push core contracts for validations and state changes.</li>
+<li><strong>Upgraded Incentivized Chats:</strong> Users will be able to initiate and receive paid chats from any chain to any chain, as long as both are supported by the framework.</li>
+<li><strong>Cross-Chain Requests (CCR):</strong> This feature allows users to perform actions like creating channels or requests on any blockchain, rather than just on Ethereum. This move is essential for Push to reach a broader audience across different blockchains, including Layer 2 (L2), Layer 3 (L3), and app-specific chains, without increasing friction in the user’s experience with our tech.</li>
+<li>A new hub for builders: All of this will enable a new hub for builders to experiment and widen the boundaries of innovation with web3-based consumer apps.</li>
+</ol>
+<p>We then moved on to Wormhole’s views on the significance of the integration of Push’s smart contracts with their tech:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-push-x-wormhole">Why Push x Wormhole?<a href="https://push.org/blog/ama-with-wormhole-for-cross-chain-requests-pre-pip#why-push-x-wormhole" class="hash-link" aria-label="Direct link to Why Push x Wormhole?" title="Direct link to Why Push x Wormhole?">​</a></h3>
+<p>The integration centers on making the $PUSH token natively fungible across all of the connected chains that Push wants, while enabling native-messaging of all sorts on all involved. We came up with this new multi-chain framework, the Native Token Transfer framework, to enable seamless token transfers across different chains without the need for liquidity pools or complex bridging mechanisms. We both agree that the industry needs to involve into one that is truly interoperable. This is a major step in that direction.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-is-pre-pip-3ccr-important">Why is Pre-PIP 3/CCR important?<a href="https://push.org/blog/ama-with-wormhole-for-cross-chain-requests-pre-pip#why-is-pre-pip-3ccr-important" class="hash-link" aria-label="Direct link to Why is Pre-PIP 3/CCR important?" title="Direct link to Why is Pre-PIP 3/CCR important?">​</a></h3>
+<p>The proposal includes detailed research and considerations, focusing on minimal changes to the existing architecture, a security-first approach, and how the technical aspects of Wormhole will enable CCR. This includes the deployment of manager and transceiver contracts on different chains and how these contracts interact with Push’s existing infrastructure.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-did-push-choose-wormhole-for-this-integration">Why did Push choose Wormhole for this integration?<a href="https://push.org/blog/ama-with-wormhole-for-cross-chain-requests-pre-pip#why-did-push-choose-wormhole-for-this-integration" class="hash-link" aria-label="Direct link to Why did Push choose Wormhole for this integration?" title="Direct link to Why did Push choose Wormhole for this integration?">​</a></h3>
+<ol>
+<li><strong>Native Token Transfer (NTT) Framework:</strong> This framework allows for seamless token transfers across different chains without the need for liquidity pools or complex bridging mechanisms.</li>
+<li><strong>Security:</strong> Wormhole’s framework is battle-tested and includes additional security measures like rate limiting.</li>
+<li><strong>Future-Proofing:</strong> The NTT framework allows Push to maintain governance control over its tokens across multiple chains, which is crucial for its ecosystem and the evolution of its DAO.</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="overview-of-the-wormhole-transceiver-and-security-framework">Overview of the Wormhole Transceiver and Security Framework:<a href="https://push.org/blog/ama-with-wormhole-for-cross-chain-requests-pre-pip#overview-of-the-wormhole-transceiver-and-security-framework" class="hash-link" aria-label="Direct link to Overview of the Wormhole Transceiver and Security Framework:" title="Direct link to Overview of the Wormhole Transceiver and Security Framework:">​</a></h3>
+<ol>
+<li><strong>Wormhole Transceiver:</strong> This utilizes the general message passing layer of Wormhole, which relies on a security model with 19 independent "guardians" who verify messages. At least 13 of the 19 guardians must agree to validate a message, making the system highly secure.</li>
+<li><strong>Flexibility and Future-Proofing: Wormhole’s</strong> system allows for the adding of other transceivers or message verification protocols, such as off-chain processes or ZK transceivers for enhanced security.</li>
+<li><strong>Overall Security and Reliability:</strong> Wormhole has processed over a billion messages while maintaining consistently high security and resilience across its network. The platform already provably supports the future of secure message and token transfers across chains.</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-protocol-and-wormhole-integration">Push Protocol and Wormhole Integration:<a href="https://push.org/blog/ama-with-wormhole-for-cross-chain-requests-pre-pip#push-protocol-and-wormhole-integration" class="hash-link" aria-label="Direct link to Push Protocol and Wormhole Integration:" title="Direct link to Push Protocol and Wormhole Integration:">​</a></h3>
+<ol>
+<li><strong>Security-First Approach:</strong> Push Protocol has always and continues to prioritize security, ensuring that the deployment of tokens and messages on multiple chains is always protected and that protection always increases.</li>
+<li><strong>Cross-Chain Request (CCR):</strong> With CCR live, users will be able to execute actions (e.g., creating channels) across different chains without leaving their native chain or bridging tokens. The integration with Wormhole makes this process more seamless and efficient.</li>
+<li><strong>User Experience:</strong> Post-CCR’s launch, actions like channel creation will become more straightforward, with users able to operate across chains without the hassle of managing tokens or gas fees on multiple networks to get to their intended destination.</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-greater-implications-of-ccr-for-developers-and-builders">The Greater Implications of CCR for Developers and Builders:<a href="https://push.org/blog/ama-with-wormhole-for-cross-chain-requests-pre-pip#the-greater-implications-of-ccr-for-developers-and-builders" class="hash-link" aria-label="Direct link to The Greater Implications of CCR for Developers and Builders:" title="Direct link to The Greater Implications of CCR for Developers and Builders:">​</a></h3>
+<ol>
+<li><strong>Unified API and Multi-Chain Notifications:</strong> Developers can build once and notify everywhere, simplifying cross-chain interactions and enhancing user engagement. This reduces development complexity and improves resource management.</li>
+<li><strong>Enhanced Functionality and Interoperability:</strong> The integration allows for smart contracts on one chain to trigger notifications on another, improving the overall functionality of decentralized applications (dApps).</li>
+<li><strong>Security Enhancements:</strong> Wormhole’s security features, like rate-limiting, access control, and defense mechanisms, ensure that cross-chain communications remain verifiably secure.</li>
+</ol>
+<p>The integration of Push Protocol's Cross-Chain Requests (CCR) with Wormhole represents a pivotal advancement in decentralized technology. This advancement strengthens Push’s security, raises its scalability, and broadens its reach across multiple blockchains, paving the way for a more connected and user-friendly Web3 experience for all. As Push continues to innovate, its partnership with Wormhole ensures that it remains on the forefront.</p>
+<p>To any of you who are looking to build the future of consumer applications, reach out to our team across our networks, and we’ll help you get started as CCR takes off!</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Introducing Pre-PIP 3 (Push Improvement Proposal) for Cross-Chain Requests:]]></title>
         <id>https://push.org/blog/cross-chain-requests-pre-pip</id>
@@ -583,45 +639,6 @@ Stay tuned on Push Chat for more communications.</p>
         <category label="Push Protocol" term="Push Protocol"/>
         <category label="Web3" term="Web3"/>
         <category label="Arbitrum" term="Arbitrum"/>
-        <category label="Blockchain Technology" term="Blockchain Technology"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ Estate Protocol: Leading Tokenized Real Estate Marketplace on Arbitrum Joins Frens Of Push ]]></title>
-        <id>https://push.org/blog/estate-protocol-joins-frens-of-push</id>
-        <link href="https://push.org/blog/estate-protocol-joins-frens-of-push"/>
-        <updated>2024-05-31T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Estate Protocol: Leading Tokenized Real Estate Marketplace on Arbitrum Joins Frens Of Push ]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Estate Protocol: Leading Tokenized Real Estate Marketplace on Arbitrum Joins Frens Of Push  " src="https://push.org/assets/images/cover-image-cc23b21fe8da0b1f3d07d552ae867a77.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>We're back with Frens of Push, offering a deep dive into the top protocols and Push ecosystem partners. This week, Estate Protocol is joining us, the leading tokenized real estate marketplace on the Arbitrum blockchain.</p>
-<p><a href="https://www.estateprotocol.com/" target="_blank" rel="noopener noreferrer">Estate Protocol</a> is bridging the gap between the tangible world of real estate and the boundless possibilities of the digital world by tokenizing real-world real estate, transforming properties into fractionalized digital assets through blockchain technology, ensuring security, transparency, and efficiency.</p>
-<p>By way of this collaboration, Push assists Estate Protocol in notifying users directly on their wallets. Users can subscribe to receive notifications about new property listings, rent collection updates, and other important news. This integration ensures that users are always informed about the latest developments and opportunities within the platform, enhancing their overall experience.</p>
-<p>In this episode of “Frens of Push”, Parv Prabhakar, CEO of Estate Protocol, joins us to talk about how the collaboration between Push Protocol and Estate Protocol can potentially disrupt real estate investing.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="hi-parv-whats-your-story-how-did-you-become-involved-in-building-in-the-blockchain-space-what-are-you-working-on-now">Hi Parv, what’s your story? How did you become involved in building in the blockchain space? What are you working on now?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#hi-parv-whats-your-story-how-did-you-become-involved-in-building-in-the-blockchain-space-what-are-you-working-on-now" class="hash-link" aria-label="Direct link to Hi Parv, what’s your story? How did you become involved in building in the blockchain space? What are you working on now?" title="Direct link to Hi Parv, what’s your story? How did you become involved in building in the blockchain space? What are you working on now?">​</a></h3>
-<p>I have a research and crypto background.  I’ve been using digital currency in some form since I was 12 years old and was playing zynga poker on facebook selling chips for real money.</p>
-<p>I got into crypto shortly after, buying my first bitcoin on local bitcoins. I then got deeper and deeper into the tech and the finance side of it, developing arbitrage strategies. Did that across platforms and payment methods for a couple of years, and then started traveling the world and discovered cross-country strategies. Did a 300x during the 2021 bull run with delta neutral bets.</p>
-<p>I was also into writing at this time, and this Dutch art collective asked me to write an essay going into NFTs in detail about 3 years ago, during the research for it it hit me that this technology is perfect for digitizing ownership in real estate. So I started researching about how to make it happen alongside my job as a guest writer for India’s biggest crypto exchange WazirX, wrote the white paper for Estate Protocol, got some peers to review and advice, and then quit the job to build this full time. The business evolved way past using NFTs too.</p>
-<p>The time with Estate Protocol since then has been incredible. We tokenized the first properties in Dubai, and are working on many new innovations in the space.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="tell-us-about-estate-protocol--whats-it-about-and-what-problem-does-it-solve">Tell us about Estate Protocol — what’s it about and what problem does it solve?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#tell-us-about-estate-protocol--whats-it-about-and-what-problem-does-it-solve" class="hash-link" aria-label="Direct link to Tell us about Estate Protocol — what’s it about and what problem does it solve?" title="Direct link to Tell us about Estate Protocol — what’s it about and what problem does it solve?">​</a></h3>
-<p>Estate Protocol is changing the global real estate market by leveraging blockchain and UK trust law to tokenize assets, and stablecoins to facilitate seamless cross-border transactions. We tokenize the world’s most in demand real estate, fractionalize the ownership, and make it a part of DeFi in a compliant manner. We would soon enable lending/borrowing, and bring large REITs on the platform.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="whats-the-2024-plan-for-estate-protocol-and-its-ecosystem">What’s the 2024 plan for Estate Protocol and its ecosystem?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#whats-the-2024-plan-for-estate-protocol-and-its-ecosystem" class="hash-link" aria-label="Direct link to What’s the 2024 plan for Estate Protocol and its ecosystem?" title="Direct link to What’s the 2024 plan for Estate Protocol and its ecosystem?">​</a></h3>
-<p>We are working on bringing the world’s best real estate on chain. As crypto natives, we would also be making it compatible with DeFi as far as possible. There are also some exciting partnerships currently being worked on!</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-is-the-estate-protocol-using-pushs-web3-communication-layer">How is the Estate Protocol using Push’s web3 communication layer?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#how-is-the-estate-protocol-using-pushs-web3-communication-layer" class="hash-link" aria-label="Direct link to How is the Estate Protocol using Push’s web3 communication layer?" title="Direct link to How is the Estate Protocol using Push’s web3 communication layer?">​</a></h3>
-<p>Estate Protocol utilizes Push’s web3 communication layer to notify our users directly on their wallets. Users can <a href="https://app.push.org/channels/0x2A43cB483361FB5b3a09Bd11c24CbEE5cf1BE7Ca" target="_blank" rel="noopener noreferrer">subscribe</a> to receive notifications about new property listings, rent collection updates, and other important news. This integration ensures that our users are always informed about the latest developments and opportunities within our platform, enhancing their overall experience.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-would-you-describe-your-experience-using-push-what-benefits-have-you-seen">How would you describe your experience using Push? What benefits have you seen?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#how-would-you-describe-your-experience-using-push-what-benefits-have-you-seen" class="hash-link" aria-label="Direct link to How would you describe your experience using Push? What benefits have you seen?" title="Direct link to How would you describe your experience using Push? What benefits have you seen?">​</a></h3>
-<p>Our experience with Push has been positive. While it’s early days since our integration, we anticipate significant improvements in user engagement and satisfaction. The ability to send timely and relevant updates directly to users’ wallets is a powerful tool, and we expect to see increased interaction and responsiveness from our community as a result.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-cool-use-cases-do-you-see-push-being-used-for-in-the-future">What cool use cases do you see Push being used for in the future?<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#what-cool-use-cases-do-you-see-push-being-used-for-in-the-future" class="hash-link" aria-label="Direct link to What cool use cases do you see Push being used for in the future?" title="Direct link to What cool use cases do you see Push being used for in the future?">​</a></h3>
-<p>In the future, we plan to leverage Push’s chat feature to facilitate communication among investors in specific properties. This will enable token holders to discuss potential investments, share insights, and engage in general discussions related to real estate. By fostering a collaborative community, we believe this feature will add significant value to our platform and enhance the investment experience for our users.</p>
-<p>Thanks, Parv for the awesome conversation. Looking forward to revolutionizing web3 communication together with Estate Protocol!</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="about-estate-protocol">About Estate Protocol:<a href="https://push.org/blog/estate-protocol-joins-frens-of-push#about-estate-protocol" class="hash-link" aria-label="Direct link to About Estate Protocol:" title="Direct link to About Estate Protocol:">​</a></h3>
-<p>Estate Protocol tokenizes real real estate and bridges the gap between real-world assets and the digital world through blockchain. Through Estate Protocol, people from anywhere in the world can invest in fractionalized properties in stable economies. The company enables people to buy and earn by owning a piece of prime real estate in economically stable countries by tokenizing real-world assets with the power of blockchain technology.</p>
-<p>Find more about Estate Protocol: <a href="https://www.estateprotocol.com/" target="_blank" rel="noopener noreferrer">Website</a>, <a href="https://docs.estateprotocol.com/whitepaper" target="_blank" rel="noopener noreferrer">Whitepaper</a>, <a href="https://x.com/EstateProtocol" target="_blank" rel="noopener noreferrer">Twitter</a>, <a href="https://t.me/estateprotocol" target="_blank" rel="noopener noreferrer">Telegram</a>, <a href="https://www.youtube.com/@EstateProtocol" target="_blank" rel="noopener noreferrer">YouTube</a>, and <a href="https://www.estateprotocol.com/blog/" target="_blank" rel="noopener noreferrer">Blog</a>.</p>
-<p>“Frens of Push” is our weekly content series to spotlight outstanding projects building with Push. If you want to be featured, reach out to us on <a href="https://twitter.com/pushprotocol/" target="_blank" rel="noopener noreferrer">X</a>, and you could be our next Fren in the series.</p>]]></content>
-        <author>
-            <name>Push Protocol</name>
-            <uri>https://twitter.com/pushprotocol</uri>
-        </author>
-        <category label="Push Protocol" term="Push Protocol"/>
-        <category label="Web3" term="Web3"/>
         <category label="Blockchain Technology" term="Blockchain Technology"/>
     </entry>
 </feed>
