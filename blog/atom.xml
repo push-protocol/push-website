@@ -2,11 +2,41 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://push.org/blog</id>
     <title>Push | The Communication Protocol of Web3 Blog</title>
-    <updated>2024-08-09T00:00:00.000Z</updated>
+    <updated>2024-08-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://push.org/blog"/>
     <subtitle>Push | The Communication Protocol of Web3 Blog</subtitle>
     <icon>https://push.org/assets/website/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Now anyone can write for Push]]></title>
+        <id>https://push.org/blog/now-anyone-can-write-for-push-protocol</id>
+        <link href="https://push.org/blog/now-anyone-can-write-for-push-protocol"/>
+        <updated>2024-08-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Now anyone can write for Push]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Now anyone can write for Push" src="https://push.org/assets/images/cover-image-1610fcb762ae65c4cbe377b08bb20d4c.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>GM Push Fam,</p>
+<p>As we go further down our collective path of decentralization, hand-in-hand with our community, we’re opening up more and more of the ecosystem to be directly led by everyone involved.</p>
+<p>To reach our goal of providing the future of comms and beyond for all, in a truly trustless environment, we need to double-down on championing the opinions of all involved in our ecosystem.</p>
+<p>We need to be not just collective tech for change, but a collective voice for change.</p>
+<p>That’s why today, we’re taking the next step towards Push being a truly collectively run ecosystem.</p>
+<p>We’re opening the doors of our blog to everyone in the greater Push ecosystem.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="who-qualifies"><strong>Who qualifies?</strong><a href="https://push.org/blog/now-anyone-can-write-for-push-protocol#who-qualifies" class="hash-link" aria-label="Direct link to who-qualifies" title="Direct link to who-qualifies">​</a></h3>
+<p>Everyone.</p>
+<p>Whether you represent a Push channel, a technical partner, a DAO contributor, a grantee, or something else entirely, this is your time.</p>
+<p>Publish an opinion piece with us on one of the themes we’re looking for a the time, and reach our greater community of over 120,000 strong, while contributing to what the collective Push voice becomes.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-kinds-of-posts-are-we-looking-for">What kinds of posts are we looking for?<a href="https://push.org/blog/now-anyone-can-write-for-push-protocol#what-kinds-of-posts-are-we-looking-for" class="hash-link" aria-label="Direct link to What kinds of posts are we looking for?" title="Direct link to What kinds of posts are we looking for?">​</a></h3>
+<p>Currently, we’re accepting ideas related to consumer crypto and improving coordination as well as UX in our industry, with more calls for articles to be added over time to the Push DAO Forum!</p>
+<p>Make sure <a href="https://gov.push.org/" target="_blank" rel="noopener noreferrer">you’re signed up there</a> to view the full process and guidelines for guest posting, including where to submit your drafts, what format to submit them in, who to submit them to, and more!</p>
+<p>Let’s inspire builders and widen the boundaries of innovation, together, both in-code, and in-text!</p>
+<p>Our team’s already curating the first few pieces to be published. Let us review yours.</p>]]></content>
+        <author>
+            <name>Push Protocol</name>
+            <uri>https://twitter.com/pushprotocol</uri>
+        </author>
+        <category label="Push Protocol" term="Push Protocol"/>
+        <category label="Web3" term="Web3"/>
+        <category label="Blockchain Technology" term="Blockchain Technology"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Push Protocol x Wormhole AMA for the Cross Chain Request Feature in Push V3]]></title>
         <id>https://push.org/blog/ama-with-wormhole-for-cross-chain-requests-pre-pip</id>
@@ -600,45 +630,6 @@ Stay tuned on Push Chat for more communications.</p>
         <category label="Push Protocol" term="Push Protocol"/>
         <category label="Web3" term="Web3"/>
         <category label="NFT" term="NFT"/>
-        <category label="Blockchain Technology" term="Blockchain Technology"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ The Next Frontier For Multi-Chain Communication on Arbitrum! ]]></title>
-        <id>https://push.org/blog/push-protocol-on-arbitrum-blockchain</id>
-        <link href="https://push.org/blog/push-protocol-on-arbitrum-blockchain"/>
-        <updated>2024-06-05T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum #PushOnArb ]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Push Protocol Supporting Real-Time Notifications and Messaging on Arbitrum Blockchain" src="https://push.org/assets/images/cover-image-e729e1e3219fc6978a6230071b0662e7.gif" width="1920" height="1080" class="img_ev3q"></p>
-<p>To all the builders and 1.6M active wallets on <a href="https://arbitrum.io/" target="_blank" rel="noopener noreferrer">Arbitrum</a>, get ready – because we've arrived!</p>
-<p>Bringing with us our full suite of web3-native communication tools: <a href="https://push.org/docs/notifications/" target="_blank" rel="noopener noreferrer">Push Notifications</a>, <a href="https://push.org/docs/chat/" target="_blank" rel="noopener noreferrer">Chat</a>, <a href="https://push.org/docs/chat/build/create-group/" target="_blank" rel="noopener noreferrer">Custom Gated Group Chat</a> to enhance the user experience on Arbitrum.</p>
-<p>We're absolutely thrilled to be leading a new era of decentralized communication within one of the fastest-growing blockchains in web3 and can’t wait to see the all-new usability, multi-communication interoperability, and dApp user-experience enhancements that are already on the way. Leveraging the power of Arbitrum's scalable, fast, and secure Layer 2 solutions, Push notifications enable real-time alerts for various blockchain activities such as transaction confirmations, governance proposals, DeFi updates, and NFT drops.</p>
-<p>So what else is there to know and get excited about? Let’s dive in.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="arbitrum-x-push-protocol---revolutionizing-decentralized-interaction">Arbitrum x Push Protocol - Revolutionizing Decentralized Interaction<a href="https://push.org/blog/push-protocol-on-arbitrum-blockchain#arbitrum-x-push-protocol---revolutionizing-decentralized-interaction" class="hash-link" aria-label="Direct link to Arbitrum x Push Protocol - Revolutionizing Decentralized Interaction" title="Direct link to Arbitrum x Push Protocol - Revolutionizing Decentralized Interaction">​</a></h3>
-<p>Since our mainnet launch in January 2022, Push has emerged as the go-to communication layer for over 700+ of the world's leading dApps on <a href="https://ethereum.org/" target="_blank" rel="noopener noreferrer">Ethereum</a>, <a href="https://polygon.technology/" target="_blank" rel="noopener noreferrer">Polygon</a>, <a href="https://www.bnbchain.org/" target="_blank" rel="noopener noreferrer">BNB Chain</a>, <a href="https://polygon.technology/polygon-zkevm" target="_blank" rel="noopener noreferrer">Polygon zkEVM</a>, <a href="https://linea.build/" target="_blank" rel="noopener noreferrer">Linea</a> and other blockchains.</p>
-<p>Now, we’re expanding our privacy-centric communication product suite to the leading Layer 2 scaling solution on Ethereum, Arbitrum. With over <a href="https://www.ccn.com/news/crypto/ethereum-l2-arbitrum-base/#:~:text=It%20boasts%20a%20market%20share,a%20TVL%20of%20%247.93b." target="_blank" rel="noopener noreferrer">45.1% of the Ethereum Layer-2</a> market share and a TVL of over $15.42 Billion – Arbitrum provides some of the best tools for building scalable dApps on Ethereum and has an incredibly active user-base (with 971M in total DeFi transactions across 1.6M active wallets as of June 2024).</p>
-<p>As such, what makes this integration so exciting is the potential utility and enhancement possibilities. Leveraging Push Notifications, Chat, and Video, we look forward to integrating with leading Arbitrum dApps to enhance how dApps and users interact.</p>
-<p>The best part of our integration: multi-chain communication. As we continue to expand our blockchain integrations, we open the door to better interoperability between users on different chains. This enhanced user-experience means fewer compromises in the way of interaction and engagement for users, and as a result, better adoption and user-stickiness. All this utility is driven by the communication infrastructure of Push Protocol.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-x-arbitrum-what-to-expect">Push x Arbitrum: What to Expect<a href="https://push.org/blog/push-protocol-on-arbitrum-blockchain#push-x-arbitrum-what-to-expect" class="hash-link" aria-label="Direct link to Push x Arbitrum: What to Expect" title="Direct link to Push x Arbitrum: What to Expect">​</a></h3>
-<p>With the arrival of Push Protocol communication protocol, dApps and protocols on Arbitrum can begin building with web3-native notifications, chat, video, and spaces functionality. Here’s what you can build with each of these communication tools:</p>
-<ol>
-<li>🔔<b>Push Notifications</b>: Send and receive updates from your favorite Arbitrum dApps directly into your wallet – enabling DeFi, News, NFT projects to share updates and alerts faster.</li>
-<li>💬<b>Push Chat + Group Chat</b>: Enable wallet-to-wallet and wallet-to-dApp instant chat functionality – opening the door to social media platforms, customer service tools, and other social interaction enhancements.</li>
-<li>📹<b>Push Video and Space</b>: Face-to-face video chat directly on blockchain – introducing all-new interactivity on social dApps and live-streaming.</li>
-</ol>
-<p>Excitingly, we’ve deployed the most up to date smart contracts of Push, <a href="https://push.org/blog/push-v2-is-live-new-rewards-utility-and-functionality/" target="_blank" rel="noopener noreferrer">Push V2</a>, on Arbitrum. Carrying over all the developments we’ve launched so far, Customized Profiles, settings for <a href="https://push.org/blog/introducing-notification-settings/" target="_blank" rel="noopener noreferrer">Notification Channels</a>, and notification integration with <a href="https://push.org/blog/deep-dive-into-push-snaps-features-and-getting-started-all-the-technical-specifications-and-getting-started-tips-you-need/" target="_blank" rel="noopener noreferrer">MetaMask</a>.</p>
-<p>For builders – all new ways to engage your users and provide a stickier, more personalized user-experience are here. Get started here: <a href="https://push.org/docs/" target="_blank" rel="noopener noreferrer">https://push.org/docs/</a></p>
-<p>For users – can start receiving native Arbitrum notifications <a href="https://app.push.org/channels" target="_blank" rel="noopener noreferrer">https://app.push.org/channels</a></p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="looking-ahead">Looking Ahead<a href="https://push.org/blog/push-protocol-on-arbitrum-blockchain#looking-ahead" class="hash-link" aria-label="Direct link to Looking Ahead" title="Direct link to Looking Ahead">​</a></h3>
-<p>As we spread our wings into the Arbitrum ecosystem, we stay true to our commitment to building the leading multi-chain communication protocol of web3. We’ll be showcasing our launch partners in the coming days, stay tuned.</p>
-<p>Members of the Arbitrum community and Push Protocol fam, expect many integrations to come.</p>
-<p>#PoweredbyPush</p>]]></content>
-        <author>
-            <name>Push Protocol</name>
-            <uri>https://twitter.com/pushprotocol</uri>
-        </author>
-        <category label="Push Protocol" term="Push Protocol"/>
-        <category label="Web3" term="Web3"/>
-        <category label="Arbitrum" term="Arbitrum"/>
         <category label="Blockchain Technology" term="Blockchain Technology"/>
     </entry>
 </feed>
