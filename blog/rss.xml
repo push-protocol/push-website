@@ -4,10 +4,82 @@
         <title>Push | The Communication Protocol of Web3 Blog</title>
         <link>https://push.org/blog</link>
         <description>Push | The Communication Protocol of Web3 Blog</description>
-        <lastBuildDate>Tue, 20 Aug 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 23 Aug 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Push Protocol Monthly Updates: A Look Back at July]]></title>
+            <link>https://push.org/blog/push-protocol-july-updates</link>
+            <guid>https://push.org/blog/push-protocol-july-updates</guid>
+            <pubDate>Fri, 23 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Push Protocol Monthly Updates: A Look Back at July]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Push Protocol Monthly Updates: A Look Back at July" src="https://push.org/assets/images/cover-image-e56fa1d0193551b5f9e87ee825b18077.webp" width="1600" height="840" class="img_ev3q"></p>
+<p>July was a monumental month for Push Protocol as we hit the huge milestone of <a href="https://x.com/pushprotocol/status/1824491148229898313" target="_blank" rel="noopener noreferrer"><strong>100 Million</strong></a> Push Notifications. More than 8.91 Million Notifications were sent with a cumulative 241k subscribers reached ending the month on a high note marking significant progress in protocol user engagement, development, and community growth.</p>
+<p>With all of this in mind, we are excited to share the highlights:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="product-updates">Product Updates:<a href="https://push.org/blog/push-protocol-july-updates#product-updates" class="hash-link" aria-label="Direct link to Product Updates:" title="Direct link to Product Updates:">​</a></h3>
+<p>Our <a href="https://push.org/" target="_blank" rel="noopener noreferrer">website</a> has undergone a revamp, as we:</p>
+<ul>
+<li>Updated the <a href="https://push.org/docs/" target="_blank" rel="noopener noreferrer">developer docs</a> and <a href="https://push.org/docs/roadmap/" target="_blank" rel="noopener noreferrer">2024 live roadmap</a>.</li>
+<li>Performed various bug fixes for better UX.</li>
+<li>Uploaded several new <a href="https://push.org/blog/" target="_blank" rel="noopener noreferrer">articles</a> focused on developer engagement and protocol growth announcements.</li>
+</ul>
+<p>Our <a href="https://app.push.org/" target="_blank" rel="noopener noreferrer">DApp</a> has seen significant upgrades, including:</p>
+<ul>
+<li>The debut of a new channel creation flow pipeline. Testing has been initiated for it.</li>
+<li>The protocol and staking analytics overview features being released in the dashboard UI.</li>
+<li>The update of the Development Design System with more components.</li>
+<li>The update of the Font Family throughout the platform.</li>
+<li>The beginning of work on the new Push Points Program.</li>
+<li>The completion of all scheduled priority bug fixes.</li>
+<li>We also enhanced the <a href="https://github.com/push-protocol/push-sdk" target="_blank" rel="noopener noreferrer">Push SDK</a> by optimizing the code as per the new design system and added support for the ERC1155 Gated Chat Groups.</li>
+</ul>
+<p>On the backend, we are:</p>
+<ul>
+<li>Working on improving the response format for our API calls.</li>
+<li>Working on a workflow automation tool that allows Push channels to automate their notification logic without writing a single line of code.</li>
+<li>Working on developing a custom delivery node that delivers notifications to different platforms like Discord/Telegram/email.</li>
+<li>Developing a pricing model for Push channels to leverage the custom delivery node’s capabilities.</li>
+</ul>
+<p>On the Smart Contracts side, we have:</p>
+<ul>
+<li>Added additional functional support that enables the update of channel profiles  from any chain.</li>
+<li>Completed the setup of an extensive mainnet testing framework for the CCR feature.</li>
+<li>Completed the optimizations for additional CCR-related features.</li>
+<li>Extended the optimization phase of development to include the gas optimization of the current Core and Comm contracts.</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="partnership-updates">Partnership Updates:<a href="https://push.org/blog/push-protocol-july-updates#partnership-updates" class="hash-link" aria-label="Direct link to Partnership Updates:" title="Direct link to Partnership Updates:">​</a></h3>
+<p>We're thrilled to announce new partnerships:</p>
+<ol>
+<li>We welcomed <a href="https://app.push.org/channels/0xACF193302115b3e1b5E72402657ca3A2A21BeD87" target="_blank" rel="noopener noreferrer">Rivera</a> -  a liquidity management platform for transforming concentrated positions into DeFi-composable yield tokens who is integrating Push Notifications to enable weekly epoch rewards, APY changes, and more notification alerts for its users.</li>
+<li>We partnered with <a href="https://x.com/pushprotocol/status/1810185041793966136" target="_blank" rel="noopener noreferrer">ETH Uruguay</a> to co-sponsor the Buildathon event, offering bounties for developing projects using Push’s communication services.</li>
+<li>Push Protocol’s long-term partner Unstoppable Domains launched Group Chat powered by Push Protocol for the Crypto ‘<a href="https://x.com/sandy_carter/status/1809736115861221675" target="_blank" rel="noopener noreferrer">Whale</a>’ group and new gated group chats, powered by Push for <a href="https://x.com/pushprotocol/status/1816376657915044173" target="_blank" rel="noopener noreferrer">Stepn</a>, <a href="https://x.com/pushprotocol/status/1815356125178728512" target="_blank" rel="noopener noreferrer">Raiin</a>, and <a href="https://x.com/pushprotocol/status/1819715311253307611" target="_blank" rel="noopener noreferrer">.ubu</a> domain holders.</li>
+</ol>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ecosystem-highlights">Ecosystem Highlights:<a href="https://push.org/blog/push-protocol-july-updates#ecosystem-highlights" class="hash-link" aria-label="Direct link to Ecosystem Highlights:" title="Direct link to Ecosystem Highlights:">​</a></h3>
+<ul>
+<li>Push Protocol’s Founder Harsh Rajat joined the <a href="https://www.youtube.com/watch?v=-AMYb7UWHQk" target="_blank" rel="noopener noreferrer"><strong>Digital Duniya Podcast</strong></a> to talk in-depth about the inception of Push Protocol and entrepreneurial tips for early founders, especially from India.</li>
+<li>With Push’s expansion to <a href="https://arbitrum.io/" target="_blank" rel="noopener noreferrer">Arbitrum</a>, we conducted an exclusive <a href="https://x.com/i/spaces/1eaKbaEbBekxX" target="_blank" rel="noopener noreferrer">AMA Twitter Space</a> with Arbitrum ecosystem partners  including <a href="https://www.inferium.io/" target="_blank" rel="noopener noreferrer">Inferium</a>, <a href="https://www.logx.trade/" target="_blank" rel="noopener noreferrer">LogX</a>, and <a href="https://factor.fi/" target="_blank" rel="noopener noreferrer">Factor</a>, moderated by our DAO Lead.</li>
+<li>We successfully conducted the second iteration of our <a href="https://push.org/brb/" target="_blank" rel="noopener noreferrer">Billion Reasons to Build (BRB) Bootcamp</a>, this time on a global scale via an online medium. Over six weeks, the <a href="https://x.com/pushbuilders/status/1812855006619423049" target="_blank" rel="noopener noreferrer">bootcamp</a> attracted 70 participants, featured 10 masterclass lectures, and garnered 60,000+ impressions on social media.</li>
+<li>Further, we hosted Wormhole for a <a href="https://x.com/i/spaces/1djxXrbEezOGZ" target="_blank" rel="noopener noreferrer">Push X Space</a> to discuss how Push will enable not just cross-chain but all-chain communications. Zaryab and Ian joined from our side, with Os from Wormhole’s ecosystem participating as well.</li>
+<li>Push was also invited as a guest at the <a href="https://x.com/i/spaces/1yoKMwPwyalJQ" target="_blank" rel="noopener noreferrer">Koala Wallet’s AMA X Space</a>.</li>
+<li>We are thrilled to share that <a href="https://app.push.org/channels/0xe56f1D3EDFFF1f25855aEF744caFE7991c224FFF" target="_blank" rel="noopener noreferrer">Coindesk</a> - the leading crypto news platform crossed 10k subscribers for its channel on Push.</li>
+<li>We were proud to feature <a href="https://app.push.org/channels/0x7239B1896ad2b6A9D3aA6C4B12D8993E78fb67Dc" target="_blank" rel="noopener noreferrer">DappLooker</a>, <a href="https://app.push.org/channels/0x094A1ef2F50F36956a90E410Ffc143362340865c" target="_blank" rel="noopener noreferrer">Simplified Privacy</a>, <a href="https://app.push.org/channels/0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be" target="_blank" rel="noopener noreferrer">ShapeShift</a>, and <a href="https://app.push.org/channels/0x67243d6c3c3bDc2F59D2f74ba1949a02973a529d" target="_blank" rel="noopener noreferrer">Grantships</a> for the #PushChannelOfTheWeek in July 🔔</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-governance-and-community-updates">Push Governance and Community Updates:<a href="https://push.org/blog/push-protocol-july-updates#push-governance-and-community-updates" class="hash-link" aria-label="Direct link to Push Governance and Community Updates:" title="Direct link to Push Governance and Community Updates:">​</a></h3>
+<ul>
+<li>The Push Grants Programs V3 received 19 grant applications. <a href="https://dhive.io/" target="_blank" rel="noopener noreferrer">Dhive</a> - A governance data hub platform and <a href="https://www.si3.space/" target="_blank" rel="noopener noreferrer">Si3</a> - a decentralized media-tech platform became the first official new grantees under the Push Grants V3 Program, which is community-run for the first time in history.</li>
+<li>Our DAO Council member, SixtyKeys landed speaking slots at <a href="https://ethsafari.xyz/" target="_blank" rel="noopener noreferrer">ETH Safari</a> happening this year.</li>
+<li>We onboarded 20 new members to <a href="https://gov.push.org/" target="_blank" rel="noopener noreferrer">Push DAO</a>.</li>
+<li>The Push Alpha Community on Push Chat grew its user base to 500+ participants becoming the largest conditionally gated community on Push DApp.</li>
+<li>Push Protocol received a notable mention in <a href="https://www.cryptomarketmap.org/" target="_blank" rel="noopener noreferrer">Electric Capital’s Crypto Market Map</a>.</li>
+<li>The third iteration of the Push India Ambassador’s program has been formally initiated.</li>
+<li>We also had a booth set up at <a href="https://x.com/pushprotocol/status/1811046959353880785" target="_blank" rel="noopener noreferrer">ETH CC Brussels</a> at the Metamask Building Onchain event, featuring <a href="https://snaps.metamask.io/snap/npm/pushprotocol/snap/" target="_blank" rel="noopener noreferrer">Push Metamask Snap</a>.</li>
+</ul>
+<p>Stay tuned for more updates as we continue to push the boundaries of the Web3 ecosystem.</p>]]></content:encoded>
+            <category>Push Protocol</category>
+            <category>Web3</category>
+            <category>Blockchain Technology</category>
+        </item>
         <item>
             <title><![CDATA[Now anyone can write for Push]]></title>
             <link>https://push.org/blog/now-anyone-can-write-for-push-protocol</link>
@@ -536,61 +608,6 @@ An Unstoppable Wallet with a valid domain acts as a web3 social identifier for e
 <p>Stay tuned for more updates as we continue to push the boundaries of the Web3 ecosystem.</p>]]></content:encoded>
             <category>Push Protocol</category>
             <category>Web3</category>
-            <category>Blockchain Technology</category>
-        </item>
-        <item>
-            <title><![CDATA[How to join the Push Alpha Community?]]></title>
-            <link>https://push.org/blog/how-to-join-the-push-alpha-community</link>
-            <guid>https://push.org/blog/how-to-join-the-push-alpha-community</guid>
-            <pubDate>Thu, 06 Jun 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[How to join the Push Alpha Community?]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover image of how to oin alpha community banner!🏆" src="https://push.org/assets/images/cover-image-ba4438bcbb71cca7a6fdacd0f5abecb0.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>The time has finally come🚀
-The Gates to the <strong>Push Alpha Community</strong> are now Open!</p>
-<p>Do you hold or (or aspire to hold) the precious Push Alpha Access NFT?</p>
-<p>And wish to join the Alpha Access Community?</p>
-<p>Look no further, this article will help you with everything you need to know about the Push Alpha Community and how to join it  using  your Alpha Access NFT Pass.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-the-push-alpha-community">What is the Push Alpha Community?<a href="https://push.org/blog/how-to-join-the-push-alpha-community#what-is-the-push-alpha-community" class="hash-link" aria-label="Direct link to What is the Push Alpha Community?" title="Direct link to What is the Push Alpha Community?">​</a></h2>
-<p>Instituted at Push Chat, the <a href="https://app.push.org/chat/chatid:37799f9cb3ffd83eff4d2dc18913a3d9607f9c787a4374a7b3259bda28242cd6?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=alpha_nft_chat" target="_blank" rel="noopener noreferrer">Push Alpha Community group chat</a> is an exclusive gathering of Alpha Access Pass Holders.</p>
-<p>This gated community is the primary hub for all exclusive communications between Alpha Pass Holders. Whether there are special alpha-only events, campaigns, airdrops, partner surprises, or meetups, the Alpha Community Chat is where everything brews.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-does-the-community-offer">What does the community offer?<a href="https://push.org/blog/how-to-join-the-push-alpha-community#what-does-the-community-offer" class="hash-link" aria-label="Direct link to What does the community offer?" title="Direct link to What does the community offer?">​</a></h2>
-<p>The Alpha community chat acts as the base camp to announce:</p>
-<p>🪂<strong>Exciting Drop Updates:</strong> Be the first to know about upcoming project and partner airdrops and claim your rewards.</p>
-<p>💎<strong>Privileged Early Feature Try-outs</strong>: Get incentivized and gain exclusive access to try new features before they are released to the public.</p>
-<p>⏰<strong>Early news on upcoming contests:</strong> Stay ahead with early announcements about upcoming contests and competitions.</p>
-<p><strong>These are just some of the early unlocks, Alpha Community members can expect more surprises coming their way soon!</strong></p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="eligibility">Eligibility<a href="https://push.org/blog/how-to-join-the-push-alpha-community#eligibility" class="hash-link" aria-label="Direct link to Eligibility" title="Direct link to Eligibility">​</a></h2>
-<p>To unlock the doors of the Push Alpha Community, you’ll need one key 🗝- the coveted Push Alpha Access NFT🌟</p>
-<p><img loading="lazy" alt="Push Alpha Access NFT" src="https://push.org/assets/images/image1-ee075a78f01abc355ec13f7144784b58.gif" width="600" height="600" class="img_ev3q"></p>
-<p>The  NFTs were awarded to the winners of various campaigns, including:</p>
-<ul>
-<li><a href="https://bit.ly/4anuEL5" target="_blank" rel="noopener noreferrer">Communicate with Galxe Campaign</a> (Currently Active)</li>
-<li><a href="https://app.galxe.com/PushProtocol/campaign/GCsdpt4Jjk" target="_blank" rel="noopener noreferrer">Decentralize With Push</a></li>
-<li>Other partnered campaigns.</li>
-</ul>
-<p>To check if you are eligible for minting the Alpha Access Pass, follow the instructions specified in the “<a href="https://push.org/blog/how-to-claim-push-alpha-access-nft/?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=aplha_nft_chat" target="_blank" rel="noopener noreferrer">How to claim Push Alpha Access NFT?</a>”blog post.</p>
-<p><strong>Galxe Campaign Winners: Claim Your Prize</strong> 👇</p>
-<p>Winners of the Decentralize With Push and Communicate with Galxe Campaign who have not yet claimed their prize can visit the <a href="https://app.push.org/claim/galxe?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=alpha_nft_chat" target="_blank" rel="noopener noreferrer">NFT Claim DApp</a> to check their eligibility and mint the Alpha Access Pass for free.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-to-join-the-alpha-community">How to join the Alpha Community?<a href="https://push.org/blog/how-to-join-the-push-alpha-community#how-to-join-the-alpha-community" class="hash-link" aria-label="Direct link to How to join the Alpha Community?" title="Direct link to How to join the Alpha Community?">​</a></h2>
-<p>Once you have claimed the Alpha Access NFT, follow the following steps to join the community.</p>
-<p><strong>1.Head over to <a href="https://app.push.org/chat/chatid:37799f9cb3ffd83eff4d2dc18913a3d9607f9c787a4374a7b3259bda28242cd6?utm_source=google&amp;utm_medium=twitter&amp;utm_campaign=alpha_nft_chat" target="_blank" rel="noopener noreferrer">Push Alpha Community Chat (CLICK HERE)</a> and connect the wallet containing your Push Alpha Access Pass.</strong></p>
-<p><img loading="lazy" alt="Step 1 - Connect Wallet" src="https://push.org/assets/images/image2-acbe152e1e0dd956eceb3a0f31ccfe32.webp" width="1600" height="900" class="img_ev3q"></p>
-<p><strong>2.Unlock your profile:</strong></p>
-<p><img loading="lazy" alt="Step 2 - Unlock Profile" src="https://push.org/assets/images/image3-3a369370ebfefbd68a98e75aa8bc68e9.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>The first step is to verify and unlock your profile on PushChat.</p>
-<p>You can check the “Remember me” option for avoiding the profile unlock process everytime.
-Selecting 'Remember me' will save your Push Profile keys locally on your device.</p>
-<p><strong>3.Verify access and Join the Group</strong></p>
-<p><img loading="lazy" alt="Step 3 - Verify and Join" src="https://push.org/assets/images/image4-3c0364401e12f13bc562bc8494dbc97f.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>Note that the entire process right from joining the group to sending messages is completely gasless!</p>
-<p><strong>4.Time to Chat!!</strong></p>
-<p><img loading="lazy" alt="Step 4 - Verify and Join" src="https://push.org/assets/images/image5-7aaac3f932117d8e2d419b3f40a2be14.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>That’s it, now you’re a member of the Push Alpha Community!
-Stay tuned on Push Chat for more communications.</p>
-<p>If you encounter any issue while claiming the NFT or joining the group, we’d be happy to answer your queries on  <a href="https://discord.com/invite/pushprotocol" target="_blank" rel="noopener noreferrer">Push Discord</a>.</p>]]></content:encoded>
-            <category>Push Protocol</category>
-            <category>Web3</category>
-            <category>NFT</category>
             <category>Blockchain Technology</category>
         </item>
     </channel>
