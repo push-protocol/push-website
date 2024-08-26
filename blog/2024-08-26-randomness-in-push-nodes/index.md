@@ -141,5 +141,3 @@ The generation is performed as follows:
     
     This multi-level randomness ensures that at every step, the network is secure, and fair, while continuing to operate in a completely decentralized fashion.
     
-
----
