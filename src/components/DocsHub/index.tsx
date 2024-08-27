@@ -482,7 +482,7 @@ const TechDocIcon = styled(ItemV)`
     filter: ${(props) => (props.docutheme === 'dark' ? 'invert(100%)' : '')};
 
     height: 44px;
-    width: 44px;
+    width: auto;
     margin: 0 0 1rem 0;
   }
 `;
@@ -627,6 +627,8 @@ const TechDocCardList = styled(ItemH)`
   gap: 32px;
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
 `;
 
 const TechDocCard = styled(ItemV)`

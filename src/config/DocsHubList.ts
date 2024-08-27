@@ -186,6 +186,15 @@ await aliceVideoCall.request([recipient]);
     description:
       'Roadmap of Push Protocol and all the exciting things to come.',
   },
+  {
+    title: 'Push Reward Points',
+    srcref: 'rewards',
+    alt: 'Logo representing reward points of Push Protocol',
+    link: '/docs/rewards',
+    target: '_self',
+    description:
+      'Reward Points Program for contributors. Complete activities and earn points.',
+  },
 ];
 
 export const SdkItemsList: ISdkListItem[] = [
