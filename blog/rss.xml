@@ -4,10 +4,118 @@
         <title>Push | The Communication Protocol of Web3 Blog</title>
         <link>https://push.org/blog</link>
         <description>Push | The Communication Protocol of Web3 Blog</description>
-        <lastBuildDate>Mon, 26 Aug 2024 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 30 Aug 2024 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Cold Start Solutions: Scaling Consumer Crypto]]></title>
+            <link>https://push.org/blog/cold-start-solutions-scaling-consumer-crypto</link>
+            <guid>https://push.org/blog/cold-start-solutions-scaling-consumer-crypto</guid>
+            <pubDate>Fri, 30 Aug 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cold Start Solutions: Scaling Consumer Crypto]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Cold Start Solutions: Scaling Consumer Crypto" src="https://push.org/assets/images/cover-image-d6b3f4c7b0a309b6fa28467819b2461d.webp" width="1920" height="1080" class="img_ev3q"></p>
+<p>We’ve gone from wen moon to wen widespread adoption? We, as builders, stick around in this wild, wonderful space we call home because we envision a more transparent, fairer, and overall better internet.</p>
+<p>We want social networks that we’re never actually locked into. We want user-run apps. We envision a world in which we truly own what we share online, whether that’s our messages, our photos, or simply, our data.</p>
+<p>Ownership of the internet by the collective rather than the few is and always will be a key part of what we’re all doing here. Still, why do 95% of consumers know what crypto is but only 22% actively use anything that constitutes a “crypto application?” How do we reach an age in which Dapps are just apps and in which web3 is just “the internet?”</p>
+<p>How do we unify the world under one banner?</p>
+<p>To even begin to answer any of these questions, we need to both understand why we haven’t quite crossed the chasm. We’ve redefined what the financial system and, the internet as a whole can be, but we haven’t gotten the greater global population to buy in.</p>
+<p>By looking at how different projects, networks, and platforms, both in and outside of crypto, have overcome the "cold start problem," you can piece together a playbook to set your Dapp up to cross the chasm to widespread adoption.</p>
+<p>For our purposes, we’ll be examining all cases under the umbrella of platforms, since almost every popular app, Dapp, or network today has turned out to be one.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-the-cold-start-problem-and-why-should-anyone-care">What is the Cold Start Problem and why should anyone care?<a href="https://push.org/blog/cold-start-solutions-scaling-consumer-crypto#what-is-the-cold-start-problem-and-why-should-anyone-care" class="hash-link" aria-label="Direct link to What is the Cold Start Problem and why should anyone care?" title="Direct link to What is the Cold Start Problem and why should anyone care?">​</a></h3>
+<p>You’ve built an app. You believe it’s the next place where everyone will gather to connect and share content online. It’s going to be the next member of the “billion users club.”</p>
+<p>Everything’s in place technically and yet, there’s one problem. You don’t have any users and you don’t have anything for them to share.</p>
+<p>If you’ve built an Airbnb without listings and users, a YouTube without videos, or a social network without content and users, then you’ve faced the cold start problem. Trying to figure out how to set the right baseline of producers(or just content) and consumers to set your app(or platform) up for success means solving the cold start problem.</p>
+<p>In the context of web3, a cold start refers to launching a Dapp that has no user base yet. Alternatively, it can be defined as determining how to attract an initial user base that will engage with the Dapp in the exact ways needed to scale it from 0 to a wide audience.</p>
+<p>Knowing how to address the cold start problem requires understanding how others have already done so and there’s no better place to begin than with some of web2’s most explosive successes.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="zoom-its-easy-and-it-just-works">Zoom: It’s easy and it just works<a href="https://push.org/blog/cold-start-solutions-scaling-consumer-crypto#zoom-its-easy-and-it-just-works" class="hash-link" aria-label="Direct link to Zoom: It’s easy and it just works" title="Direct link to Zoom: It’s easy and it just works">​</a></h3>
+<p>There’s something to be said for a product that’s dedicated to being as reliable as possible and as easy as possible to use. When Zoom rose to prominence during the pandemic, some claimed that its meteoric growth was simply due to luck and timing.</p>
+<p>This, however, is only half of the truth.</p>
+<p>They had both the right timing and the right product.</p>
+<p>On the surface, Zoom appeared to be just another videoconferencing option, but two key actors prepared it to become the giant it is today. First, it was and continues to be dedicated to making every aspect of the user experience radically simple. You could and can still join a meeting just by clicking a link. Everything from reacting to a speaker to sending a message to changing your background, to integrating your planned meetings with your calendar was made as easy as possible to do.</p>
+<p>During a time when we were more desperate than ever to connect with people, it became the most reliable option. The fact that it continued to run nearly seamlessly for up to 100 users per meeting via the free tier and 300+ on the higher tiers only added to its popularity.</p>
+<p>Perhaps you’ll find Zoom’s example to be inspiring and perhaps not. Admittedly, Zoom has now also faced its share of issues. Even so, web3 builders can still learn from its team’s dedication to facilitating seamless onboarding and making the product “just work” above all else.</p>
+<p><strong>Key takeaways from Zoom’s example:</strong></p>
+<ul>
+<li>Reducing the number of signatures required for sign-up to your Dapp</li>
+<li>Simplifying the process of initiating transactions</li>
+<li>Integrating solutions similar to <a href="https://push.org/blog/cross-chain-requests-pre-pip/" target="_blank" rel="noopener noreferrer">Push’s Cross Chain Requests</a> to take the hassle of bridging and related actions away from the end-user</li>
+<li>Stripping away complexity that could cause performance issues in the early days and focusing on the core functionalities that are explicitly needed</li>
+<li>Beta testing, through multiple iterations in a gamified fashion with points or even tokens to ensure your MVP just works</li>
+<li>Releasing your MVP once it’s clear it will run without major issues</li>
+<li>Adding new features with direct user input through community calls, surveys, and other direct methods like the governance process, as your Dapp’s user base grows</li>
+</ul>
+<p>With a list such as the above, you’ll be off to a good start. Still, having a killer product is only one piece of the puzzle. Solving the cold start problem also means having the right mix of users in place, or, as Alexis Ohanian puts it, “the minimum viable community,” from day one.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="bank-of-america-and-bitcoin-atomic-networks-lead-to-hyperscaling">Bank of America and Bitcoin: Atomic Networks Lead to Hyperscaling<a href="https://push.org/blog/cold-start-solutions-scaling-consumer-crypto#bank-of-america-and-bitcoin-atomic-networks-lead-to-hyperscaling" class="hash-link" aria-label="Direct link to Bank of America and Bitcoin: Atomic Networks Lead to Hyperscaling" title="Direct link to Bank of America and Bitcoin: Atomic Networks Lead to Hyperscaling">​</a></h3>
+<p>To define “minimum viable community,” and why it matters, let’s begin by considering the invention of the consumer credit card. On September 18, 1958, Bank of America mailed the first credit cards to 60,000 residents of Fresno, California. These cards were pre-loaded with $300-$500 of credit and required no application process.</p>
+<p>In one day, 60,000 cardholders came into being. This resulted in 300 Fresno-based merchants signing up to support Bank of America’s new network. In just over a year, that network grew to 2 million cardholders and 20,000 merchants.</p>
+<p>Bank of America’s gamble worked because it wasn’t a gamble. Their first cardholders weren’t randomly selected. At the time of the launch, 45% of Fresno residents had some sort of relationship with the bank, making Fresno the ideal spot for the first atomic network for their new credit card.</p>
+<p>With their experience with Fresno in hand, the bank was able to repeat the same success repeatedly leading to their meteoric rise to prominence in the nascent space of consumer credit.</p>
+<p>This is an atomic network, a unique, intentional matching of consumers and producers that just works and can be repeated to scale a networked product.</p>
+<p>All successful platforms started in this manner. Still, the atomic network is only one part of the battle. Without a killer product to drive to it, your chances of scaling are virtually non-existent.</p>
+<p>Take Bitcoin, for example.</p>
+<p>In 2009, when it launched, it already had pre-set users. The cypherpunk community. These individuals believed in widespread financial freedom, the right to privacy, and every other aspect of what is still the wind beneath the wings of the crypto industry. With the cypherpunks as its first atomic network, Bitcoin launched and continued to scale without a central authority.</p>
+<p><strong>Key takeaways from Bank of America and Bitcoin itself:</strong></p>
+<ul>
+<li>Starting with a specific area or online community where people need what you're offering</li>
+<li>Zeroing in on that using similar approaches to how Bank of America built out its credit network and how Bitcoin built out its initial atomic network for future scale</li>
+<li>Making sure your product addresses a need expressed in the values of the group or groups involved</li>
+<li>Determining through your initial connection with that group or groups what features address a real need for them</li>
+<li>Launching with a small set of features that directly address what this initial atomic network or MVC needs</li>
+<li>Iterating and expanding based on user feedback and direct usage patterns that arise in your MVC</li>
+<li>Using your initial atomic network or MVC as a model for growth into new markets and leveraging the same messaging and overall values that attracted your pioneers</li>
+</ul>
+<p>Killer products with the right atomic networks can set a Dapp up for explosive growth but you won’t gain and retain your initial atomic network without solving for the power users first.</p>
+<p>Whether we’re speaking about a web2 app like Zoom or Bitcoin, the digital gold itself, the principle remains the same.</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="wikipedia-ethereum-and-daos-solve-for-the-core-contributors-first">Wikipedia, Ethereum, and DAOs: Solve for the Core Contributors First<a href="https://push.org/blog/cold-start-solutions-scaling-consumer-crypto#wikipedia-ethereum-and-daos-solve-for-the-core-contributors-first" class="hash-link" aria-label="Direct link to Wikipedia, Ethereum, and DAOs: Solve for the Core Contributors First" title="Direct link to Wikipedia, Ethereum, and DAOs: Solve for the Core Contributors First">​</a></h3>
+<p>Last but not least, let’s say you have a killer, easy-to-use product and a potential atomic network, but you’re struggling with attracting your first creators.</p>
+<p>“Creator,” in this context, may be considered synonymous with “producer.”  Youtubers, Bitcoin miners, developers, or even Wikipedia editors, it’s all the same in this respect. In today’s day and age where we’re trending more and more towards every app involving a two-sided exchange, it’s never been more crucial to attract and retain the right creators from the get-go.</p>
+<p>For instance, Wikipedia is largely maintained by 0.02% of its users, who create and edit articles for free. They do so both because they deeply connect with Wikipedia’s vision of “free access to all human knowledge,” and because of the relative prestige their work gains them within their community.</p>
+<p>In short, they join the effort and stay with it because they need to see the vision realized. DAOs work in the same manner. So do many crypto projects, including Ethereum itself which has consistently been able to attract and retain builders from all over the world due to its commitment to being the world computer that anyone can build on.</p>
+<p>The vision rules. The core contributors create the environment for ideal collaboration which scales the network to new heights.</p>
+<p>Wikipedia found its core contributors through sharing its vision across communities that were most likely to resonate with it, like Nupedia, and Slashdot. DAOs tend to publish manifestos, constitutions, or similar documents from day one to do the same. Ethereum used its early technical papers and its ICO, together with memorable appearances at industry events, as jump-off points.</p>
+<p>In all of these cases, the founding teams led with incredible attention to detail related to who their initial target market was.</p>
+<p>Still, creating an environment that incentivizes consistent growth is incredibly difficult.</p>
+<p>Some Dapps will choose to start by surveying their core community and creating a shared vision and set of values as a collective. Some will do so via a delegation representing the whole community. Others won’t need decentralized governance of any kind until the later stages of their development.</p>
+<p>While there’s no one-size-fits-all approach to attracting and keeping the first producers or “core contributors” to your Dapp’s growth, there are principles that tend to work across the board.</p>
+<p>The below is an attempt at mapping out the steps of that effort.</p>
+<p><strong>Key takeaways from Wikipedia, Ethereum, and DAOs:</strong></p>
+<ul>
+<li>Creating an impactful vision and using successful vision-driven projects as jump-offs or inspirations for doing so</li>
+<li>Aligning your project's vision with the values of your most active users</li>
+<li>Publishing a manifesto or a similar document indicating what you stand for and why people should care about what you are doing</li>
+<li>Creating an environment that fosters collaboration and innovation</li>
+<li>Implementing governance structures and incentives that encourage long-term commitment</li>
+<li>Ensuring that any change or new effort you put into place is a value add for your core contributors</li>
+<li>Making paths to further growth clear to every community member, whether that’s how an ambassador rises to core status or something else entirely</li>
+<li>Opening up growth paths to anyone and having them stewarded by your initial core members</li>
+<li>Iterating with community sentiment and realizing that no aspect of your community, even your initial vision, is set in stone forever</li>
+</ul>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-consumer-crypto-playbook-a-starting-point">The Consumer Crypto Playbook: A Starting Point<a href="https://push.org/blog/cold-start-solutions-scaling-consumer-crypto#the-consumer-crypto-playbook-a-starting-point" class="hash-link" aria-label="Direct link to The Consumer Crypto Playbook: A Starting Point" title="Direct link to The Consumer Crypto Playbook: A Starting Point">​</a></h3>
+<p>We’re at a tipping point.</p>
+<p>Both in and outside of the crypto space, almost all popular apps are platforms. Some sort of supplier is meeting some sort of demand. The rise of Bitcoin, Ethereum, and the industry we hold dear today shifted everything further towards this point. Today, crypto-based applications are starting to break through to the mainstream, but we haven’t yet had our breakout moment.</p>
+<p>For now, we’re still sitting on the edge of the chasm towards widespread consumer usage.</p>
+<p>To make our way across, we need the right playbook for scaling Dapps which focuses on simplicity reigning across the user experience, growth beginning and consistently centering on the atomic network, and the hard side being solved from the earliest days.</p>
+<p>Our discussion here today is an in-roads. How you address the cold start problem is highly context-specific to what your Dapp’s niche is. With all of the above takeaways at your fingertips, you have the foundation for an early-growth playbook that gets you off to a solid start.</p>
+<p>As you think about any of the areas that we’ve covered here, consider the following questions to help guide you even further:</p>
+<ul>
+<li>How can you abstract away complexity from your networked product to make the user experience as easy as possible from day one?</li>
+<li>What's the deep purpose of the network you're launching?</li>
+<li>Why should people care about that purpose?</li>
+<li>Who are the groups in which you’ll find those people who will become your minimum viable community?</li>
+<li>Where do those groups gather, online or offline?</li>
+<li>How can you most effectively reach them in a way that won’t turn them off from what you’re offering?</li>
+<li>Once you’ve got your minimum viable community, what will keep them involved?</li>
+<li>What incentives will you offer to show in practice that you’re dedicated to your earliest users?</li>
+<li>How will you take in community feedback and how will you show you’re using it in practice?</li>
+<li>How will your product be led over time?</li>
+<li>Will you DAOify or simply decentralize a part of your product?</li>
+</ul>
+<p>We, at Push, envision a world in which the on-chain experience is seamless and Universal Apps negate the need to understand the complexity of switching between chains. For that to happen, we need all hands working together towards the same goal. If you’re a builder who is focused on the nascent area of consumer crypto, consider reaching out to us on our socials and even <a href="https://app.charmverse.io/push-dao/proposals" target="_blank" rel="noopener noreferrer">applying for our grants program</a>, where we’re already shepherding the pioneers towards a future that champions the everyday user.</p>]]></content:encoded>
+            <category>Push Protocol</category>
+            <category>Web3</category>
+            <category>Blockchain Technology</category>
+        </item>
         <item>
             <title><![CDATA[The Role of Randomness in Push Nodes]]></title>
             <link>https://push.org/blog/the-role-of-randomness-in-push-nodes</link>
@@ -422,7 +530,7 @@ From an end user's perspective, app notifications and other forms of read-write 
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benefits-to-user">Benefits to User<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#benefits-to-user" class="hash-link" aria-label="Direct link to Benefits to User" title="Direct link to Benefits to User">​</a></h2>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-wallet-address-a-universal-pass-for-web3-communication">1. Wallet Address: A Universal Pass for Web3 Communication<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#1-wallet-address-a-universal-pass-for-web3-communication" class="hash-link" aria-label="Direct link to 1. Wallet Address: A Universal Pass for Web3 Communication" title="Direct link to 1. Wallet Address: A Universal Pass for Web3 Communication">​</a></h3>
 <p>The utility of a wallet address extends beyond simply being a social identifier or a key for facilitating transactions.  It also acts as a hub for collecting, presenting and managing mission-critical communications.</p>
-<img src="https://push.org/assets/images/image5-5d9ae0c85a4ebb07d13db37c10eb5910.webp" alt="Push Metamask Snap" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 efFBTI">
+<img src="https://push.org/assets/images/image5-5d9ae0c85a4ebb07d13db37c10eb5910.webp" alt="Push Metamask Snap" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 jnRAYS">
 <p>The <a href="https://snaps.metamask.io/snap/npm/pushprotocol/snap/?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=case_study_open_web" target="_blank" rel="noopener noreferrer">Push MetaMask Snap</a> allows users to receive real-time notification alerts from their favourite web3 applications directly within their MetaMask wallet.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-no-personal-information-needed">2. No personal information needed:<a href="https://push.org/blog/interoperable-communications-moving-across-an-open-web-with-push#2-no-personal-information-needed" class="hash-link" aria-label="Direct link to 2. No personal information needed:" title="Direct link to 2. No personal information needed:">​</a></h3>
 <p>Push fascilitates Native Integration with Wallet Addresses enabling communication between wallet addresses without needing personal information like email, social handles or cellular contact info.</p>
@@ -441,7 +549,7 @@ From an end user's perspective, app notifications and other forms of read-write 
 <p>For instance, <a href="https://decentraland.org/" target="_blank" rel="noopener noreferrer">Decentraland</a> users can choose to opt into and receive notifications into the platform frontend as well as receive the notifications directly into their Metamask Snap wallet.</p>
 <p><img loading="lazy" alt="Decentraland notification support integrated in platform frontend" src="https://push.org/assets/images/image7-d216fa7195718c94c9fdf1f3c46fef3c.webp" width="1600" height="900" class="img_ev3q"></p>
 <p>To receive updates when of a new governance proposal from Shapeshift DAO, you can either choose to receive notifications directly in your <a href="https://shapeshift.com/wallets" target="_blank" rel="noopener noreferrer">Shapeshift</a> wallet or perhaps any other wallet that integrates Push’s open-source SDK.</p>
-<img src="https://push.org/assets/images/image8-f8a14125752aa82d79fb9a87197d767f.webp" alt="Shapeshift Wallet" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 efFBTI">
+<img src="https://push.org/assets/images/image8-f8a14125752aa82d79fb9a87197d767f.webp" alt="Shapeshift Wallet" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 jnRAYS">
 <p>Additionally, users can experience updates from the following applications powered by Push, according to their convenience:</p>
 <ul>
 <li><strong><a href="https://app.push.org/welcome?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=case_study_open_web" target="_blank" rel="noopener noreferrer">Push DApp</a></strong></li>
@@ -561,7 +669,7 @@ We’ll be super happy to answer them on our <a href="https://discord.com/invite
 <p>Unstoppable Domain Wallets are cryptocurrency addresses used to store users’ web3 domains in addition to tokens and digital collectables.
 An Unstoppable Wallet with a valid domain acts as a web3 social identifier for enabling domain-to-domain in-app messaging!</p>
 <p><strong>Push x UD: Empowering wallet-to-wallet messaging with ease!</strong></p>
-<img src="https://push.org/assets/images/image3-d7830c6dc6f987f1db382732689dafa6.webp" alt="Unstoppable Domains Lite Wallet" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 efFBTI">
+<img src="https://push.org/assets/images/image3-d7830c6dc6f987f1db382732689dafa6.webp" alt="Unstoppable Domains Lite Wallet" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 jnRAYS">
 <p>Push is proud to enable the next frontier of inter-domain communication by powering notifications and messaging support for over <strong>3.58 million</strong> UD users across more than <strong>300 group chats</strong>.</p>
 <p><strong>What type of users primarily use Unstoppable Lite Wallet?</strong></p>
 <p>The primary user of Unstoppable Lite Wallet are people with domains. The self-custody wallet is designed specifically for domainers, so they can manage and interact with their domains directly from the wallet in addition to traditional crypto tokens. This is a use case that has not been addressed by other wallets.</p>
@@ -576,7 +684,7 @@ An Unstoppable Wallet with a valid domain acts as a web3 social identifier for e
 <p>MetaMask Snaps are independent feature plugins developed by third-party developers to enhance wallet experiences in areas such as communication, interoperability, security, account management, and more, for various web3 protocols and applications.</p>
 <p>The Push MetaMask Snap allows users to receive real-time notification alerts from their favourite Web3 applications directly within their MetaMask wallet.</p>
 <p><strong>Push X Metamask: Unlocking a Super App experience</strong></p>
-<img src="https://push.org/assets/images/image2-5d9ae0c85a4ebb07d13db37c10eb5910.webp" alt="Push Metamask Snap" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 efFBTI">
+<img src="https://push.org/assets/images/image2-5d9ae0c85a4ebb07d13db37c10eb5910.webp" alt="Push Metamask Snap" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 jnRAYS">
 <p>Metamask being a widely popular wallet and often the first choice for many new web3 users, was crucial to integrate with Push’s capabilities. The launch of the snap functionality provided an opportunity to offer a communication experience akin to web2 applications.</p>
 <p>The <a href="https://snaps.metamask.io/snap/npm/pushprotocol/snap/?utm_source=google&amp;utm_medium=blog&amp;utm_campaign=case_study_supper_app" target="_blank" rel="noopener noreferrer">Push Metamask Snap</a> was launched in September 2023 and continues to see steady growth with over <strong>1.7k downloads.</strong></p>
 <p>The Push  Snap is positioned at a crucial intersection in a user’s DApp interaction journey through their wallet.</p>
@@ -585,7 +693,7 @@ An Unstoppable Wallet with a valid domain acts as a web3 social identifier for e
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3shapeshift-wallet">3.ShapeShift Wallet<a href="https://push.org/blog/how-wallets-use-push-to-become-a-super-app#3shapeshift-wallet" class="hash-link" aria-label="Direct link to 3.ShapeShift Wallet" title="Direct link to 3.ShapeShift Wallet">​</a></h3>
 <p><a href="https://app.shapeshift.com/" target="_blank" rel="noopener noreferrer">Shapeshift</a> is an open-source multi-chain platform, offering various DeFi services. The Shapeshift wallet is a community-governed, private, non-custodial wallet that supports multiple chains and assists users in managing their portfolio and DeFi positions.</p>
 <p><strong>Push x ShapeShift  Wallet : Powering Communication</strong></p>
-<img src="https://push.org/assets/images/image4-f8a14125752aa82d79fb9a87197d767f.webp" alt="Shapeshift Wallet" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 efFBTI">
+<img src="https://push.org/assets/images/image4-f8a14125752aa82d79fb9a87197d767f.webp" alt="Shapeshift Wallet" width="353" height="100%" class="SharedStyling__Image-sc-1enui31-9 jnRAYS">
 <p>Push powers the communication middleware for enabling Push notifications for product updates, governance updates and token transfers.</p>
 <p>Push powers the necessary middleware and infrastructure for <a href="https://www.wherever.im/" target="_blank" rel="noopener noreferrer">Wherever</a>, a third-party communications service to show notifications in wallet and platform frontend as well as share with the user’s telegram and email.</p>
 <p>On a parallel front, As users continue to become mature and conscious about on-chain security, the demand for hardware wallets will be ever-increasing. Push can also be integrated with companion Apps of Hardware Wallets like <a href="https://www.keepkey.com/" target="_blank" rel="noopener noreferrer">KeepKay</a>, ensuring user’s with mission critical application updates independant of any wallet type.</p>
@@ -604,33 +712,6 @@ An Unstoppable Wallet with a valid domain acts as a web3 social identifier for e
             <category>Web3</category>
             <category>Wallets</category>
             <category>Adoption</category>
-        </item>
-        <item>
-            <title><![CDATA[How to claim Push Alpha Access NFT]]></title>
-            <link>https://push.org/blog/how-to-claim-push-alpha-access-nft</link>
-            <guid>https://push.org/blog/how-to-claim-push-alpha-access-nft</guid>
-            <pubDate>Fri, 21 Jun 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[How to claim Push Alpha Access NFT]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of How to claim Push Alpha Access NFT" src="https://push.org/assets/images/cover-image-9fad828d8323cbb920c74dd535603336.webp" width="2422" height="1076" class="img_ev3q"></p>
-<p>Calling all Push Protocol enthusiasts! The wait is over! You can now claim your exclusive Push Alpha Access NFT. This NFT grants you access to a range of exciting benefits within the Push ecosystem, so don't miss out!</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-a-push-alpha-accessnft">What is a Push Alpha AccessNFT?<a href="https://push.org/blog/how-to-claim-push-alpha-access-nft#what-is-a-push-alpha-accessnft" class="hash-link" aria-label="Direct link to What is a Push Alpha AccessNFT?" title="Direct link to What is a Push Alpha AccessNFT?">​</a></h3>
-<p>The Push Alpha AccessNFT is a special non-fungible token (NFT) that serves as your key to the future of Push Protocol. Owning this NFT grants you access to:</p>
-<ul>
-<li><b>Access Exclusive Community</b>: Join the vibrant Push Alpha Community, connect with kindred spirits, and contribute to shaping the future.</li>
-<li><b>Prepare for Potential Airdrops and Prizes</b>: Stay ahead of the curve and position yourself with a chance to win enticing rewards as Push unveils its forthcoming features.</li>
-</ul>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-to-claim-your-push-alpha-access-nft">How to Claim Your Push Alpha Access NFT<a href="https://push.org/blog/how-to-claim-push-alpha-access-nft#how-to-claim-your-push-alpha-access-nft" class="hash-link" aria-label="Direct link to How to Claim Your Push Alpha Access NFT" title="Direct link to How to Claim Your Push Alpha Access NFT">​</a></h3>
-<p>Claiming your Push Alpha AccessNFT is a simple process. Here's what you need to do:</p>
-<ol>
-<li>Head over to the Push Protocol Galxe claim page: <a href="https://app.push.org/claim/galxe" target="_blank" rel="noopener noreferrer">https://app.push.org/claim/galxe</a></li>
-<li>Connect your crypto wallet associated with your Galxe account and switch the network to Polygon Mainnet.</li>
-<li>Follow the on-screen instructions to complete the claim process.</li>
-<li>Once claimed, join the <a href="https://app.push.org/chat/chatid:37799f9cb3ffd83eff4d2dc18913a3d9607f9c787a4374a7b3%5B%E2%80%A6%5Drce=google&amp;utm_medium=blog&amp;utm_campaign=alpha_nft_chat" target="_blank" rel="noopener noreferrer">Push Alpha Community</a> - A VIP Community of Alpha Access Pass Holders. The community is the base camp for all updates related to drops and other privilaged activites for Alpha NFT holders!</li>
-</ol>]]></content:encoded>
-            <category>Push Protocol</category>
-            <category>Web3</category>
-            <category>Blockchain Technology</category>
-            <category>NFT</category>
         </item>
     </channel>
 </rss>
