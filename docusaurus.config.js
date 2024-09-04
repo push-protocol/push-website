@@ -5,7 +5,7 @@ const lightCodeTheme = require('prism-react-renderer').themes.dracula;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
 // Determine if we're in production or preview mode
-const isProd = process.env.DEPLOY_ENV === 'prod';
+const isProd = process.env.REACT_APP_PREVIEW_BASE === undefined;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -18,7 +18,7 @@ const config = {
   // Set the baseUrl depending on the environment
   baseUrl: isProd
     ? '/'
-    : `/push-website/pr-preview/${process.env.REACT_APP_PR_PREVIEW_BASE}/`,
+    : `/push-website/pr-preview/${process.env.REACT_APP_PREVIEW_BASE}/`,
   trailingSlash: true,
 
   // GitHub pages deployment config.
