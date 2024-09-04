@@ -5,9 +5,7 @@ import path from 'path';
 import readline from 'readline';
 import { parse } from 'envfile';
 import { fileURLToPath } from 'url';
-import pkg from './basePath.js';
-
-const { getPreviewBasePath } = pkg;
+import { getPreviewBasePath } from './basePath.js';
 
 const envPresets = {
   prod: {
