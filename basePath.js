@@ -1,4 +1,4 @@
-export const getPreviewBasePath = () => {
+export function getPreviewBasePath() {
   if (typeof process !== 'undefined' && process.env) {
     // Node.js environment (e.g., during the build process)
     return process.env.REACT_APP_PR_PREVIEW_BASE
@@ -6,4 +6,4 @@ export const getPreviewBasePath = () => {
       : '';
   }
   return '';
-};
+}
