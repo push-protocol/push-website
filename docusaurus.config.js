@@ -4,17 +4,21 @@
 const lightCodeTheme = require('prism-react-renderer').themes.dracula;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
+// Determine if we're in production or preview mode
+const isProd = process.env.DEPLOY_ENV === 'prod';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Push | The Communication Protocol of Web3',
   tagline: 'One place to learn about everything Push Protocol!',
   favicon: '/assets/website/favicon.ico',
 
-  // Set the production url of your site here
-  url: 'https://push.org/',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  // Set the production url or preview url of your site here
+  url: isProd ? 'https://push.org/' : 'https://push-protocol.github.io',
+  // Set the baseUrl depending on the environment
+  baseUrl: isProd
+    ? '/'
+    : `/push-website/pr-preview/${process.env.REACT_APP_PR_PREVIEW_BASE}/`,
   trailingSlash: true,
 
   // GitHub pages deployment config.

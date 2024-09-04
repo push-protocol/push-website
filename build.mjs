@@ -7,8 +7,6 @@ import { parse } from 'envfile';
 import { fileURLToPath } from 'url';
 import { getPreviewBasePath } from './basePath.js';
 
-console.log(getPreviewBasePath);
-
 const envPresets = {
   prod: {
     REACT_APP_DEPLOY_ENV: 'PROD',
