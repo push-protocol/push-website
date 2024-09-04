@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[16229],{253181:s=>{s.exports=JSON.parse('{"label":"Polygon","permalink":"/blog/tags/polygon","allTagsPath":"/blog/tags","count":5,"unlisted":false}')}}]);
