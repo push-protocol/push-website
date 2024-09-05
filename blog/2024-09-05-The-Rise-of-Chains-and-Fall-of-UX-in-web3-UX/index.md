@@ -194,4 +194,4 @@ The rise of multi-chain environments has undoubtedly brought about significant a
 
 By focusing on creating unified experiences, leveraging cross-chain interoperability solutions, and simplifying user interfaces, web3 apps can overcome the challenges of a multi-chain world and hopefully drive mass adoption of web3 technology.
 
-To achieve mainstream adoption, it's now imperative that web3 finds ways to streamline these experiences, making it easier for average users to navigate the complex landscape of multiple chains and protocols.
+To achieve mainstream adoption, it's now imperative that web3 finds ways to streamline these experiences, making it easier for average users to navigate the complex landscape of multiple chains and protocols. 
