@@ -31,13 +31,17 @@ jobs:
         run: |
           yarn install
           yarn build:pr:preview
-      - name: Deploy preview
-        uses: rossjrw/pr-preview-action@v1.4.7
+      # - name: Deploy preview
+      - name: Build, Deploy to GitHub Pages and Deploy PR Preview
+        uses: chvmvd/build-deploy-and-preview-action@v1.2.0
         with:
-          source-dir: ./build/
+          type: docusaurus
+        # uses: rossjrw/pr-preview-action@v1.4.7
+        # with:
+        #   source-dir: ./build/
 
-      - uses: rossjrw/pr-preview-action@v1.4.7
-        if: github.event.action == 'closed' && !github.event.pull_request.merged
-        with:
-          source-dir: ./build/
-          action: remove
+      # - uses: rossjrw/pr-preview-action@v1.4.7
+      #   if: github.event.action == 'closed' && !github.event.pull_request.merged
+      #   with:
+      #     source-dir: ./build/
+      #     action: remove
