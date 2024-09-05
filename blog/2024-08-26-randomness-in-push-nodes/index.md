@@ -5,7 +5,7 @@ authors: [push]
 image: './cover-image.webp'
 description: 'The Role of Randomness in Push Nodes'
 text: "One important aspect of decentralized networks is that they don’t have any central authority that governs their working mechanism."
-tags: [Push Protocol, Web3, Blockchain Technology]
+tags: [Products]
 ---
 
 ![Cover Image of The Role of Randomness in Push Nodes ](./cover-image.webp)

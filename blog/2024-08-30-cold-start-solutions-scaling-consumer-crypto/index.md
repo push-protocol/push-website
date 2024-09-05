@@ -5,7 +5,7 @@ authors: [push]
 image: './cover-image.webp'
 description: 'Cold Start Solutions: Scaling Consumer Crypto'
 text: "We’ve gone from wen moon to wen widespread adoption? We, as builders, stick around in this wild, wonderful space we call home because we envision a more transparent, fairer, and overall better internet."
-tags: [Push Protocol, Web3, Blockchain Technology]
+tags: [Consumer crypto, insights]
 ---
 
 ![Cover Image of Cold Start Solutions: Scaling Consumer Crypto](./cover-image.webp)
