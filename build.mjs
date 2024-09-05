@@ -460,7 +460,7 @@ const prepForDeployment = async (appEnv) => {
     process.exit(1);
   }
 
-  await changeENV(appEnv);
+  // await changeENV(appEnv);
 
   clearDirectory(ogPreviewDirectory);
 
