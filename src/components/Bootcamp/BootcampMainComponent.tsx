@@ -38,7 +38,6 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
-// import BRBOnline from "./BRBOnline";
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -243,7 +242,7 @@ export const BootcampMainComponent = () => {
         <ItemTop>
           <ItemH margin='0px auto 0 auto'>
             <InfoBar
-              text='BRB Bootcamp is now Live! Get Started'
+              text='BRB Bootcamp has concluded. Thank you for joining us!'
               url='https://github.com/orgs/push-protocol/discussions/categories/brb-bootcamp'
             />
           </ItemH>
@@ -261,7 +260,7 @@ export const BootcampMainComponent = () => {
           </ItemV>
 
           <NavText id='elems0'>
-            An 6-week virtual program designed to teach participants about smart
+            6-week virtual program designed to teach participants about smart
             contracts, Web3 UX, building a startup, and other aspects of the
             Web3 ecosystem.
           </NavText>
