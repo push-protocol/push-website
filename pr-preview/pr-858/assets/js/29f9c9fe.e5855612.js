@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[23880],{684574:e=>{e.exports=JSON.parse('{"label":"Web3notifs","permalink":"/undefined/blog/tags/web-3-notifs","allTagsPath":"/undefined/blog/tags","count":1,"unlisted":false}')}}]);

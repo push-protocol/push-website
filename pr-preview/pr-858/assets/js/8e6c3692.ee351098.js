@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[54793],{223999:e=>{e.exports=JSON.parse('{"label":"QuickSwap","permalink":"/undefined/blog/tags/quick-swap","allTagsPath":"/undefined/blog/tags","count":1,"unlisted":false}')}}]);

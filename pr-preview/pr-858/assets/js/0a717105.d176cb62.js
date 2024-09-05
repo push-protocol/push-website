@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[96179],{302493:e=>{e.exports=JSON.parse('{"label":"Roseon","permalink":"/undefined/blog/tags/roseon","allTagsPath":"/undefined/blog/tags","count":1,"unlisted":false}')}}]);

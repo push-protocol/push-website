@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[93712],{611128:e=>{e.exports=JSON.parse('{"permalink":"/undefined/blog/tags/defi/page/3","page":3,"postsPerPage":10,"totalPages":5,"totalCount":45,"previousPage":"/undefined/blog/tags/defi/page/2","nextPage":"/undefined/blog/tags/defi/page/4","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

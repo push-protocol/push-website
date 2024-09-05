@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[35186],{690807:e=>{e.exports=JSON.parse('{"label":"Insurance","permalink":"/undefined/blog/tags/insurance","allTagsPath":"/undefined/blog/tags","count":1,"unlisted":false}')}}]);
