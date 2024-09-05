@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[26265],{602749:e=>{e.exports=JSON.parse('{"permalink":"/undefined/blog/tags/frensofpush/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":17,"previousPage":"/undefined/blog/tags/frensofpush","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[47472],{823918:e=>{e.exports=JSON.parse('{"label":"Gas Fees","permalink":"/undefined/blog/tags/gas-fees","allTagsPath":"/undefined/blog/tags","count":1,"unlisted":false}')}}]);
