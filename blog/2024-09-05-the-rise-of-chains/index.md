@@ -113,7 +113,7 @@ Web3 has come as far as it has today by collaborating to solve the major problem
 
 Fortunately, some teams and protocols have some of the best minds in the industry, already working on solving this problem.
 
-One of the major roadmap items of Ethereum, for instance, is its plans to fix the fragmented ecosystem with [***Universal Synchronous Composability](https://ethcc.io/archive/universal-synchronous-composability),*** which undoubtedly would be a massive step towards solving the fragmented world we have today as well as towards providing a better UX for users.
+One of the major roadmap items of Ethereum, for instance, is its plans to fix the fragmented ecosystem with [***Universal Synchronous Composability***](https://ethcc.io/archive/universal-synchronous-composability), which undoubtedly would be a massive step towards solving the fragmented world we have today as well as towards providing a better UX for users.
 
 Frameworks like [CAKE](https://frontier.tech/the-cake-framework) by Frontier Research as well as protocols like Socket, Particle Network, etc., are all building solutions to provide an abstracted user experience for web3 users where they no longer have to bother about the underlying chains, *which in itself resolves more than half of web3 users’ UX issues.* 
 
@@ -178,9 +178,9 @@ In particular, maintaining an excellent UX in web3 app with such a fragmented ec
 
 We faced a similar challenge as well.
 
-Push has built a communication & notification layer for all EVM ( *and soon, Non-EVM )* chains. This means our dapp supports multiple chains which leads to a fragmented experience where user have to frequently switch between chains to perform various actions.
+Push has built a communication & notification layer for all EVM (*and soon, Non-EVM*) chains. This means our dapp supports multiple chains which leads to a fragmented experience where user have to frequently switch between chains to perform various actions.
 
-A major improvement to resolve this was recently proposed in the PRE-PIP 3 of Push Governance, i.e.,  **[Cross Chain Requests.**](https://gov.push.org/t/pre-pip-3-cross-chain-request-feature-in-push-smart-contracts-v3/1794) 
+A major improvement to resolve this was recently proposed in the PRE-PIP 3 of Push Governance, i.e., [**Cross Chain Requests.**](https://gov.push.org/t/pre-pip-3-cross-chain-request-feature-in-push-smart-contracts-v3/1794) 
 
 **Cross Chain Requests ( CCR)** feature shall be one of the most significant features of Push Smart Contracts as it will enable users to perform important actions like c*hannel creation, creation of Incentivized Chat requests, or any arbitrary request* from the chain of their choice.
 
