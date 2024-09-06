@@ -180,7 +180,7 @@ We faced a similar challenge as well.
 
 Push has built a communication & notification layer for all EVM (*and soon, Non-EVM*) chains. This means our dapp supports multiple chains which leads to a fragmented experience where user have to frequently switch between chains to perform various actions.
 
-A major improvement to resolve this was recently proposed in the PRE-PIP 3 of Push Governance, i.e., [**Cross Chain Requests.**](https://gov.push.org/t/pre-pip-3-cross-chain-request-feature-in-push-smart-contracts-v3/1794) 
+A major improvement to resolve this was recently proposed in the PRE-PIP 3 of Push Governance, i.e., [***Cross Chain Requests.***](https://gov.push.org/t/pre-pip-3-cross-chain-request-feature-in-push-smart-contracts-v3/1794) 
 
 **Cross Chain Requests ( CCR)** feature shall be one of the most significant features of Push Smart Contracts as it will enable users to perform important actions like c*hannel creation, creation of Incentivized Chat requests, or any arbitrary request* from the chain of their choice.
 
