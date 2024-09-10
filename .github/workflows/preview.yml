@@ -18,6 +18,7 @@ jobs:
           echo "REACT_APP_PREVIEW_BASE=pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
           echo "REACT_APP_DEPLOY_ENV=PREVIEW" >> $GITHUB_ENV
           echo "REACT_APP_PUBLIC_URL=https://push-protocol.github.io/" >> $GITHUB_ENV
+          echo "GITHUB_PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
           echo "ESLINT_NO_DEV_ERRORS=true" >> $GITHUB_ENV
           echo "TSC_COMPILE_ON_ERROR=true" >> $GITHUB_ENV
           echo "DISABLE_ESLINT_PLUGIN=true" >> $GITHUB_ENV
