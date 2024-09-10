@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[86911],{535927:e=>{e.exports=JSON.parse('{"label":"Proposal","permalink":"/undefined/blog/tags/proposal","allTagsPath":"/undefined/blog/tags","count":1,"unlisted":false}')}}]);

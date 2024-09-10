@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[38138],{197269:e=>{e.exports=JSON.parse('{"label":"Healthcare","permalink":"/undefined/blog/tags/healthcare","allTagsPath":"/undefined/blog/tags","count":1,"unlisted":false}')}}]);
