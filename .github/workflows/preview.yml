@@ -32,15 +32,32 @@ jobs:
         run: |
           yarn install
           yarn build:pr:preview
-          
-      - name: Deploy preview
-        uses: rossjrw/pr-preview-action@v1.4.7
-        with:
-          source-dir: ./build/
-          umbrella-dir: pr-preview
 
-      - uses: rossjrw/pr-preview-action@v1.4.7
-        if: github.event.action == 'closed' && !github.event.pull_request.merged
+      - name: Deploy preview to gh-pages
+        if: github.event.action != 'closed'
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          source-dir: ./build/
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
+
+      - name: Remove preview after PR close
+        if: github.event.action == 'closed' && !github.event.pull_request.merged
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
           action: remove
+          
+      # - name: Deploy preview
+      #   uses: rossjrw/pr-preview-action@v1.4.7
+      #   with:
+      #     source-dir: ./build/
+      #     umbrella-dir: pr-preview
+
+      # - uses: rossjrw/pr-preview-action@v1.4.7
+      #   if: github.event.action == 'closed' && !github.event.pull_request.merged
+      #   with:
+      #     source-dir: ./build/
+      #     action: remove
