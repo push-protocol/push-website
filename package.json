@@ -8,6 +8,7 @@
     "swizzle": "docusaurus swizzle",
     "build:pr:preview": "node build.mjs preview && NODE_OPTIONS=--max-old-space-size=8192 yarn build",
     "deploy": "node build.mjs prod && docusaurus deploy",
+    "predeploy": "node build.mjs prod && gh-pages -d build -r git@github.com:push-protocol/push-website-prod-deployment.git",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
