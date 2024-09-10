@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[97198],{988297:s=>{s.exports=JSON.parse('{"label":"Pn101","permalink":"/blog/tags/pn-101","allTagsPath":"/blog/tags","count":6,"unlisted":false}')}}]);

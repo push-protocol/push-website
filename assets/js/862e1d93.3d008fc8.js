@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[11265],{566398:e=>{e.exports=JSON.parse('{"label":"Japanese","permalink":"/blog/tags/japanese","allTagsPath":"/blog/tags","count":1,"unlisted":false}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[21995],{613326:e=>{e.exports=JSON.parse('{"label":"DNS","permalink":"/push-website/pr-preview/858/blog/tags/dns","allTagsPath":"/push-website/pr-preview/858/blog/tags","count":1,"unlisted":false}')}}]);
