@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[13367],{154928:e=>{e.exports=JSON.parse('{"label":"Token Gated","permalink":"/push-website/pr-858/blog/tags/token-gated","allTagsPath":"/push-website/pr-858/blog/tags","count":1,"unlisted":false}')}}]);

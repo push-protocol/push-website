@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[39871],{913840:e=>{e.exports=JSON.parse('{"label":"Stable Coin","permalink":"/undefined/blog/tags/stable-coin","allTagsPath":"/undefined/blog/tags","count":1,"unlisted":false}')}}]);

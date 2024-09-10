@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[62090],{630935:e=>{e.exports=JSON.parse('{"permalink":"/undefined/blog/tags/gitcoin/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":11,"previousPage":"/undefined/blog/tags/gitcoin","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

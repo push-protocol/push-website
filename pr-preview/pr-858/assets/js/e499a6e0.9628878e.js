@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[2520],{606639:e=>{e.exports=JSON.parse('{"label":"Quiz","permalink":"/undefined/blog/tags/quiz","allTagsPath":"/undefined/blog/tags","count":1,"unlisted":false}')}}]);

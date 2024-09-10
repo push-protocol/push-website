@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[49286],{560688:e=>{e.exports=JSON.parse('{"label":"Metaverse","permalink":"/undefined/blog/tags/metaverse","allTagsPath":"/undefined/blog/tags","count":4,"unlisted":false}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[84791],{873092:s=>{s.exports=JSON.parse('{"label":"Collaboration","permalink":"/push-website/pr-858/blog/tags/collaboration","allTagsPath":"/push-website/pr-858/blog/tags","count":3,"unlisted":false}')}}]);

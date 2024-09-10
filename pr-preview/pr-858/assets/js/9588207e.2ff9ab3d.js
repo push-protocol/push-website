@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[40927],{959769:s=>{s.exports=JSON.parse('{"label":"Aragon","permalink":"/push-website/pr-858/blog/tags/aragon","allTagsPath":"/push-website/pr-858/blog/tags","count":1,"unlisted":false}')}}]);

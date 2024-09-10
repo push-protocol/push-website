@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[17883],{952432:s=>{s.exports=JSON.parse('{"label":"frensofpush","permalink":"/push-website/pr-858/blog/tags/frensofpush","allTagsPath":"/push-website/pr-858/blog/tags","count":17,"unlisted":false}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[12001],{354783:e=>{e.exports=JSON.parse('{"permalink":"/undefined/blog/tags/partnerships/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":17,"previousPage":"/undefined/blog/tags/partnerships","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

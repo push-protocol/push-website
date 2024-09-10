@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[27808],{722596:e=>{e.exports=JSON.parse('{"label":"Reputation System","permalink":"/push-website/pr-858/blog/tags/reputation-system","allTagsPath":"/push-website/pr-858/blog/tags","count":1,"unlisted":false}')}}]);

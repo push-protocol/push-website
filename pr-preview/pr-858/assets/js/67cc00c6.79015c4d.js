@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[91183],{143069:e=>{e.exports=JSON.parse('{"label":"Tokenization","permalink":"/push-website/pr-858/blog/tags/tokenization","allTagsPath":"/push-website/pr-858/blog/tags","count":1,"unlisted":false}')}}]);
