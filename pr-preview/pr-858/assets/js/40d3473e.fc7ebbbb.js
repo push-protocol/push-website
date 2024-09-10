@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[64871],{321411:s=>{s.exports=JSON.parse('{"label":"Metamask","permalink":"/push-website/pr-858/blog/tags/metamask","allTagsPath":"/push-website/pr-858/blog/tags","count":2,"unlisted":false}')}}]);

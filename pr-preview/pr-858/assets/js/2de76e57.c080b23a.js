@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[76858],{16773:s=>{s.exports=JSON.parse('{"label":"Bancor","permalink":"/push-website/pr-858/blog/tags/bancor","allTagsPath":"/push-website/pr-858/blog/tags","count":1,"unlisted":false}')}}]);

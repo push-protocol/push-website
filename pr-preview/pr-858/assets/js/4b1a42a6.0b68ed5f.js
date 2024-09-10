@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[50240],{176265:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-858/blog/tags/pushprotocol","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
