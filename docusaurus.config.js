@@ -12,11 +12,13 @@ const config = {
 
   // Set the production url of your site here
   url: process.env.GITHUB_ACTIONS
-    ? `https://push-protocol.github.io/push-website/pr-preview/pr-${process.env.GITHUB_PR_NUMBER}/`
+    ? `https://push-protocol.github.io`
     : 'https://push.org/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: process.env.GITHUB_ACTIONS
+    ? `/push-website/pr-preview/pr-${process.env.GITHUB_PR_NUMBER}/`
+    : '/',
   trailingSlash: true,
 
   // GitHub pages deployment config.
