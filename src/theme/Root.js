@@ -9,11 +9,14 @@ import i18nInitialize from '@site/src/utils/i18n';
 import Footer from '@site/src/segments/Footer';
 import ServerStyle from '@site/src/theme/ServerStyle';
 import CookieComponent from '../components/CookieComponent';
+import { getPreviewBasePath } from '../../basePath';
 
 // Initialize Internalization
 i18nInitialize();
 
 export default function Root({ children }) {
+  const previewBasePath = getPreviewBasePath();
+
   // superimposed conditions
   const superimposedConditions = [
     {
@@ -60,12 +63,12 @@ export default function Root({ children }) {
   }
 
   // check if location path exists
-  function locationPathExists(pathname, condition, comingfrom = null) {
+  function locationPathExists(pathname, condition) {
     let result = false;
     pathname = pathname.toUpperCase();
 
     // Define location
-    const location = useLocation();
+    const location = previewBasePath || useLocation();
 
     const str = location.pathname.toUpperCase();
     const modstr =
