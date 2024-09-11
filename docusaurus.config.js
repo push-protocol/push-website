@@ -137,11 +137,14 @@ const config = {
     ],
   ],
 
-  scripts: [
-    // This is the inline script that you need for SPA on GitHub Pages
+  headTags: [
     {
-      content: `
-        (function (l) {
+      tagName: 'script',
+      attributes: {
+        type: 'text/javascript',
+      },
+      innerHTML: `
+       (function (l) {
           if (l.search[1] === '/') {
             var decoded = l.search
               .slice(1)
@@ -154,8 +157,6 @@ const config = {
           }
         })(window.location);
       `,
-      type: 'text/javascript',
-      async: true,
     },
   ],
 
