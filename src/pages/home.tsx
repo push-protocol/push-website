@@ -141,8 +141,6 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             ],
           })}
         </script>
-
-        <script type='text/javascript'></script>
       </Head>
 
       <HomeWrapper>
