@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[45817],{434116:s=>{s.exports=JSON.parse('{"label":"Crosschain","permalink":"/push-website/pr-preview/858/blog/tags/crosschain","allTagsPath":"/push-website/pr-preview/858/blog/tags","count":1,"unlisted":false}')}}]);
