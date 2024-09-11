@@ -1,5 +1,6 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+import { getPreviewBasePath } from './basePath';
 
 const lightCodeTheme = require('prism-react-renderer').themes.dracula;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
@@ -16,9 +17,7 @@ const config = {
     : 'https://push.org/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.GITHUB_ACTIONS
-    ? `/push-website/pr-preview/pr-${process.env.GITHUB_PR_NUMBER}/`
-    : '/',
+  baseUrl: process.env.GITHUB_ACTIONS ? getPreviewBasePath() : '/',
   trailingSlash: true,
 
   // GitHub pages deployment config.
@@ -136,6 +135,28 @@ const config = {
         },
       },
     ],
+  ],
+
+  scripts: [
+    // This is the inline script that you need for SPA on GitHub Pages
+    {
+      content: `
+        (function (l) {
+          if (l.search[1] === '/') {
+            var decoded = l.search
+              .slice(1)
+              .split('&')
+              .map(function (s) {
+                return s.replace(/~and~/g, '&');
+              })
+              .join('?');
+            window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+          }
+        })(window.location);
+      `,
+      type: 'text/javascript',
+      async: true,
+    },
   ],
 
   themeConfig:
