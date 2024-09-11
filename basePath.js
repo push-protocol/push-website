@@ -13,5 +13,3 @@ export function getPreviewBasePath() {
   }
   return '';
 }
-
-module.exports = { getPreviewBasePath };
