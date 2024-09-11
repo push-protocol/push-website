@@ -3,7 +3,6 @@
 
 const lightCodeTheme = require('prism-react-renderer').themes.dracula;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
-const { getPreviewBasePath } = require('./basePath.js');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -17,7 +16,9 @@ const config = {
     : 'https://push.org/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.GITHUB_ACTIONS ? getPreviewBasePath() : '/',
+  baseUrl: process.env.GITHUB_ACTIONS
+    ? `/push-website/pr-preview/${process.env.REACT_APP_PREVIEW_BASE}`
+    : '/',
   trailingSlash: true,
 
   // GitHub pages deployment config.
