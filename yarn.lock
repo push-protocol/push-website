@@ -2948,9 +2948,9 @@
     usehooks-ts "2.9.1"
 
 "@livekit/components-styles@^1.0.6":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@livekit/components-styles/-/components-styles-1.1.0.tgz#d3759ff40be32dfdd8c8261f9201961ff9025ad6"
-  integrity sha512-qTyRDLcRh+1KyhMqOrNu9MziqUf4qtlW3zBPkRoHfYZKgP3dEVU/D3UfHOEfGI6a/8nm15mET2IBfPoKFg/u/w==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@livekit/components-styles/-/components-styles-1.1.1.tgz#54c78c299a8c95503f381dcc8a7025d17695bff8"
+  integrity sha512-lCug8KtF/uaBMqG3nq0puytTibglmQKQICnDTnRqNZpNyOJLJ4texBmfIV/eV/EYI/7SKxC/xJmiGrXFdES09Q==
 
 "@livepeer/core-react@^1.9.2":
   version "1.9.2"
