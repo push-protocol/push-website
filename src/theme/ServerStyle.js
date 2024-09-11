@@ -13,6 +13,7 @@ import { ServerStyleSheet } from 'styled-components';
 import Footer from '@site/src/segments/Footer';
 import Header from '@site/src/segments/Header';
 import { CookiesProvider } from 'react-cookie';
+import { getPreviewBasePath } from '../../basePath';
 
 function ServerStyle({ from: children }) {
   let style = null;
@@ -20,12 +21,13 @@ function ServerStyle({ from: children }) {
   const location = useLocation();
   const context = useDocusaurusContext();
   const sheet = new ServerStyleSheet();
+  const previewBasePath = getPreviewBasePath();
 
   try {
     renderToString(
       sheet.collectStyles(
         <HelmetProvider>
-          <StaticRouter location={location}>
+          <StaticRouter location={previewBasePath || location}>
             <CookiesProvider>
               <DocusaurusContext.Provider value={context}>
                 <Header />
