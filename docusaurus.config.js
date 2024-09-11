@@ -1,9 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
-import { getPreviewBasePath } from './basePath';
 
 const lightCodeTheme = require('prism-react-renderer').themes.dracula;
 const darkCodeTheme = require('prism-react-renderer').themes.dracula;
+const { getPreviewBasePath } = require('./basePath.js');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {

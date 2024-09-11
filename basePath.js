@@ -1,5 +1,5 @@
 // basePath.js
-export function getPreviewBasePath() {
+function getPreviewBasePath() {
   if (typeof import.meta !== 'undefined' && import.meta.env) {
     // react environment
     return import.meta.env.REACT_APP_PREVIEW_BASE
@@ -13,3 +13,5 @@ export function getPreviewBasePath() {
   }
   return '';
 }
+
+module.exports = { getPreviewBasePath };
