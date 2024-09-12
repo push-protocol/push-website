@@ -5,15 +5,17 @@ push:
   image_url: /assets/blog/authors/authorpush.png
 harsh:
   name: Harsh Rajat
-  # title: Site Admin
   url: https://twitter.com/harshrajat
   image_url: /assets/blog/authors/authorharsh.png
 richa:
   name: Richa Joshi
-  # title: Site Admin
   url: https://twitter.com/Riijo
   image_url: /assets/blog/authors/authorricha.png
 zaryab:
   name: Zaryab Afser
   url: https://x.com/zaryab_eth
   image_url: /assets/blog/authors/authorzaryab.png
+ian:
+  name: Ian LeViness
+  url: https://x.com/ExpatCrypto3
+  image_url: /assets/blog/authors/authorian.png
