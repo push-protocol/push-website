@@ -1,7 +1,7 @@
 ---
 slug: the-rise-of-chains-and-fall-of-ux-in-web3-ux
 title: 'The Rise of Chains and Fall of UX in Web3 UX'
-authors: [push]
+authors: [Zaryab]
 image: './cover-image.webp'
 description: 'The Rise of Chains and Fall of UX in Web3 UX'
 text: "It has been around 9 years since Ethereum was born. It's been 9 years since Ethereum first launched, marking the beginning of a revolutionary era in blockchain technology."
