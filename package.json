@@ -6,7 +6,7 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "deploy": "node build.mjs && docusaurus deploy",
+    "deploy": "node build.mjs prod && NODE_OPTIONS=--max-old-space-size=8192 docusaurus build && echo 'push.org' > ./build/CNAME & gh-pages -d build -r git@github.com:push-protocol/push-website-prod-deployment.git",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
