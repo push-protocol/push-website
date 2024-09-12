@@ -1,7 +1,7 @@
 ---
 slug: cold-start-solutions-scaling-consumer-crypto
 title: 'Cold Start Solutions: Scaling Consumer Crypto'
-authors: [Ian]
+authors: [ian]
 image: './cover-image.webp'
 description: 'Cold Start Solutions: Scaling Consumer Crypto'
 text: "We’ve gone from wen moon to wen widespread adoption? We, as builders, stick around in this wild, wonderful space we call home because we envision a more transparent, fairer, and overall better internet."
