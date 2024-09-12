@@ -6,7 +6,6 @@
  */
 import Link from '@docusaurus/Link';
 import BlogPostItemHeaderInfo from '@theme/BlogPostItem/Header/Info';
-import clsx from 'clsx';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -16,7 +15,7 @@ function MaybeLink(props) {
   }
   return <>{props.children}</>;
 }
-export default function BlogPostItemHeaderAuthor({ author, className }) {
+export default function BlogPostItemHeaderAuthor({ author, index }) {
   const { name, title, url, imageURL, email } = author;
   const link = url || (email && `mailto:${email}`) || undefined;
   return (
@@ -29,12 +28,7 @@ export default function BlogPostItemHeaderAuthor({ author, className }) {
 
       <AvatarItem>
         {name && (
-          <div
-            // className="avatar__intro"
-            itemProp='author'
-            itemScope
-            itemType='https://schema.org/Person'
-          >
+          <div itemProp='author' itemScope itemType='https://schema.org/Person'>
             <div className='avatar__name'>
               <MaybeLink href={link} itemProp='url'>
                 <span itemProp='name'>{name}</span>
@@ -48,7 +42,7 @@ export default function BlogPostItemHeaderAuthor({ author, className }) {
           </div>
         )}
 
-        <BlogPostItemHeaderInfo />
+        {index === 0 && <BlogPostItemHeaderInfo />}
       </AvatarItem>
     </AvatarDiv>
   );

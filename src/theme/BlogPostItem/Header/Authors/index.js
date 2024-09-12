@@ -37,6 +37,7 @@ export default function BlogPostItemHeaderAuthors({ className }) {
           key={idx}
         >
           <BlogPostItemHeaderAuthor
+            index={idx}
             author={{
               ...author,
               // Handle author images using relative paths
