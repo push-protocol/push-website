@@ -6,8 +6,6 @@
  */
 import React from 'react';
 import clsx from 'clsx';
-import { translate } from '@docusaurus/Translate';
-import { usePluralForm } from '@docusaurus/theme-common';
 import { useBlogPost } from '@docusaurus/theme-common/internal';
 import styles from './styles.module.css';
 // import moment from "moment";
@@ -25,7 +23,6 @@ export default function BlogPostItemHeaderInfo({ className, morePosts }) {
     const blogFormattedDate = morePosts.formattedDate;
     const blogReadingTime = morePosts.readingTime;
 
-    // const { date, formattedDate, readingTime } = morePosts;
     return (
       <div
         className={clsx(
