@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-/* eslint-disable react/prop-types */
 /* eslint-disable */
 
 // React + Web3 Essentials
@@ -157,7 +156,7 @@ function Header() {
             if (href.includes('http')) {
               window.location.href = href;
             } else {
-              history.push(href);
+              history.push(useBaseUrl(href)); // Use useBaseUrl for internal links
             }
           }
         } else {
@@ -165,16 +164,12 @@ function Header() {
           if (href.includes('http')) {
             window.open(href, target);
           } else {
-            window.open(`${window.location.origin}${href}`, target);
+            window.open(`${window.location.origin}${useBaseUrl(href)}`, target); // Use useBaseUrl here
           }
         }
       } else if (id) {
         if (showMobileMenu) toggleMobileMenu();
 
-        // gsap.to(window, {
-        //   duration: 0.75,
-        //   scrollTo: { y: `#${id}` },
-        // });
         if (location.pathname !== '/' && id) {
           history.push('/');
           setTimeout(() => {
@@ -187,6 +182,48 @@ function Header() {
         }
       } else return;
     };
+
+    // const HeaderSpace = ({ item, index }) => {
+    //   const openLink = async (e, href, id, target) => {
+    //     e.stopPropagation();
+
+    //     if (href) {
+    //       if (target && target !== '_blank') {
+    //         if (target === '_self') {
+    //           // check if url is external
+    //           if (href.includes('http')) {
+    //             window.location.href = href;
+    //           } else {
+    //             history.push(href);
+    //           }
+    //         }
+    //       } else {
+    //         // check if url is internal and if so append the base url
+    //         if (href.includes('http')) {
+    //           window.open(href, target);
+    //         } else {
+    //           window.open(`${window.location.origin}${href}`, target);
+    //         }
+    //       }
+    //     } else if (id) {
+    //       if (showMobileMenu) toggleMobileMenu();
+
+    //       // gsap.to(window, {
+    //       //   duration: 0.75,
+    //       //   scrollTo: { y: `#${id}` },
+    //       // });
+    //       if (location.pathname !== '/' && id) {
+    //         history.push('/');
+    //         setTimeout(() => {
+    //           document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    //         }, 1500);
+    //       }
+
+    //       if (location.pathname === '/') {
+    //         document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    //       }
+    //     } else return;
+    //   };
 
     return (
       <HeaderItem onClick={(e) => openLink(e, item.href, item.id, item.target)}>
