@@ -25,13 +25,23 @@ jobs:
           echo "GENERATE_SOURCEMAP=true" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v3
-
+      - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with: 
+                node-version: 18.x
+                cache: yarn
       - name: Install and Build
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
 
         run: |
           yarn install --frozen-lockfile --non-interactive
           yarn build:pr:preview
+
+      - name: Start Development Server
+        if: github.event.action == 'opened' || github.event.action == 'reopened' || github.event.action == 'synchronize'
+        run: |
+          yarn install --frozen-lockfile --non-interactive
+          docusaurus start 
           
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1.4.7
