@@ -11,7 +11,7 @@ on:
 concurrency: preview-${{ github.ref }}
 jobs:
   deploy-preview:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Set up environment variables
         run: |
@@ -24,28 +24,41 @@ jobs:
           echo "DISABLE_ESLINT_PLUGIN=true" >> $GITHUB_ENV
           echo "GENERATE_SOURCEMAP=true" >> $GITHUB_ENV
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with: 
           node-version: 18.x
-          cache: npm
+          cache: yarn
+
       - name: Install and Build
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
 
         run: |
-          npm install  --legacy-peer-deps
-          npm ci --no-audit --no-fund --legacy-peer-deps
-          npm run build:pr:preview
+          yarn install --frozen-lockfile
+          yarn build
 
-      - name: Deploy preview
-        uses: rossjrw/pr-preview-action@v1.4.7
-        with:
-          source-dir: ./build/
-          umbrella-dir: pr-preview
+           - name: Deploy to GitHub Pages
 
-      - uses: rossjrw/pr-preview-action@v1.4.7
-        if: github.event.action == 'closed' && !github.event.pull_request.merged
+           
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          source-dir: ./build/
-          action: remove
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Build output to publish to the `gh-pages` branch:
+          publish_dir: /pr-preview/${{ github.event.pull_request.number }}
+          # user_name: github-actions[bot]
+          # user_email: 41898282+github-actions[bot]@users.noreply.github.com
+
+      # - name: Deploy preview
+      #   uses: rossjrw/pr-preview-action@v1.4.7
+      #   with:
+      #     source-dir: ./build/
+      #     umbrella-dir: pr-preview
+
+      # - uses: rossjrw/pr-preview-action@v1.4.7
+      #   if: github.event.action == 'closed' && !github.event.pull_request.merged
+      #   with:
+      #     source-dir: ./build/
+      #     action: remove
