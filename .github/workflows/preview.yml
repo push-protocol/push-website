@@ -29,13 +29,13 @@ jobs:
         uses: actions/setup-node@v3
         with: 
           node-version: 18.x
-          cache: yarn
+          cache: npm
       - name: Install and Build
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
 
         run: |
-          yarn install --frozen-lockfile --non-interactive
-          yarn build:pr:preview
+          npm ci --no-audit --no-fund
+          npm run build:pr:preview
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1.4.7
