@@ -34,7 +34,7 @@ jobs:
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
 
         run: |
-          npm ci --no-audit --no-fund
+          npm ci --no-audit --no-fund --legacy-peer-deps
           npm run build:pr:preview
 
       - name: Deploy preview
