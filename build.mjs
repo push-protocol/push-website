@@ -18,11 +18,28 @@ const envPresets = {
   },
 };
 
+const isPreview = process.env.REACT_APP_DEPLOY_ENV === 'PREVIEW';
+
+// Define the starting directory
+// const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// const docsDirectory = path.join(__dirname, '/docs');
+// const ogPreviewDirectory = path.join(__dirname, 'static/assets/docs/previews');
+// const ogDirectory = __dirname;
+
 // Define the starting directory
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const docsDirectory = path.join(__dirname, '/docs');
-const ogPreviewDirectory = path.join(__dirname, 'static/assets/docs/previews');
-const ogDirectory = __dirname;
+const docsDirectory = isPreview
+  ? path.join(__dirname, `pr-preview/pr-${process.env.GITHUB_PR_NUMBER}/docs`)
+  : path.join(__dirname, '/docs');
+const ogPreviewDirectory = isPreview
+  ? path.join(
+      __dirname,
+      `pr-preview/pr-${process.env.GITHUB_PR_NUMBER}/static/assets/docs/previews`
+    )
+  : path.join(__dirname, 'static/assets/docs/previews');
+const ogDirectory = isPreview
+  ? path.join(__dirname, `pr-preview/pr-${process.env.GITHUB_PR_NUMBER}`)
+  : __dirname;
 
 // Function to recursively read directories and files
 function walkDirectory(currentDirPath, callback) {
@@ -460,7 +477,7 @@ const prepForDeployment = async (appEnv) => {
     process.exit(1);
   }
 
-  // await changeENV(appEnv);
+  await changeENV(appEnv);
 
   clearDirectory(ogPreviewDirectory);
 

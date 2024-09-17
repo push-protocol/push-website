@@ -37,7 +37,7 @@ jobs:
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
         run: |
           yarn install --frozen-lockfile
-          yarn build
+          yarn build:pr:preview
 
       
       - name: Deploy to GitHub Pages
@@ -46,5 +46,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir:  ./build 
           destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
-          user_name: github-actions[bot]
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          # user_name: github-actions[bot]
+          # user_email: 41898282+github-actions[bot]@users.noreply.github.com
