@@ -45,6 +45,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir:  ./build 
-          destination_dir: /pr-preview/pr-${{ github.event.pull_request.number }}
+          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
           user_name: github-actions[bot]
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
