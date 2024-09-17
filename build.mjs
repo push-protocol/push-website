@@ -34,7 +34,7 @@ const docsDirectory = isPreview
 const ogPreviewDirectory = isPreview
   ? path.join(
       __dirname,
-      `pr-preview/pr-${process.env.GITHUB_PR_NUMBER}/static/assets/docs/previews`
+      `pr-preview/pr-${process.env.GITHUB_PR_NUMBER}/assets/docs/previews`
     )
   : path.join(__dirname, 'static/assets/docs/previews');
 const ogDirectory = isPreview
