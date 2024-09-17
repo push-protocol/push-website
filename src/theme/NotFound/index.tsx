@@ -32,7 +32,6 @@ export default function Index(): JSX.Element {
         }
       >
         <NotFoundContent />
-        <div>koko</div>
       </Layout>
     </>
   );
