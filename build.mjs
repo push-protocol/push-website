@@ -31,12 +31,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const docsDirectory = isPreview
   ? path.join(__dirname, `pr-preview/pr-${process.env.GITHUB_PR_NUMBER}/docs`)
   : path.join(__dirname, '/docs');
-const ogPreviewDirectory = isPreview
-  ? path.join(
-      __dirname,
-      `pr-preview/pr-${process.env.GITHUB_PR_NUMBER}/assets/docs/previews`
-    )
-  : path.join(__dirname, 'static/assets/docs/previews');
+const ogPreviewDirectory = path.join(__dirname, 'static/assets/docs/previews');
 const ogDirectory = isPreview
   ? path.join(__dirname, `pr-preview/pr-${process.env.GITHUB_PR_NUMBER}`)
   : __dirname;
