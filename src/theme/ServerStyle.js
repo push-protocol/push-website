@@ -25,7 +25,9 @@ function ServerStyle({ from: children }) {
     renderToString(
       sheet.collectStyles(
         <HelmetProvider>
-          <StaticRouter location={location}>
+          <StaticRouter
+            location={`/push-website/pr-preview/pr-858` || location}
+          >
             <CookiesProvider>
               <DocusaurusContext.Provider value={context}>
                 <Header />
