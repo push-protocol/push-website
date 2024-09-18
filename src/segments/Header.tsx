@@ -6,7 +6,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from '@docusaurus/router';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // External Components
 import { gsap } from 'gsap';
@@ -31,6 +30,7 @@ import {
   Span,
 } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import { getPublicAssetPath } from '../utils/useRouteHelper';
 
 // Import Assets
 import { AiOutlineClose } from 'react-icons/ai';
@@ -157,7 +157,8 @@ function Header() {
             if (href.includes('http')) {
               window.location.href = href;
             } else {
-              history.push(useBaseUrl(href)); // Use useBaseUrl for internal links
+              console.log(getPublicAssetPath(href), 'lolo');
+              history.push(getPublicAssetPath(href)); // Use getPublicAssetPath for internal links
             }
           }
         } else {
@@ -165,7 +166,10 @@ function Header() {
           if (href.includes('http')) {
             window.open(href, target);
           } else {
-            window.open(`${window.location.origin}${useBaseUrl(href)}`, target); // Use useBaseUrl here
+            window.open(
+              `${window.location.origin}${getPublicAssetPath(href)}`,
+              target
+            ); // Use getPublicAssetPath here
           }
         }
       } else if (id) {
