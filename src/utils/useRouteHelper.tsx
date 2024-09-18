@@ -1,4 +1,4 @@
-import { getPreviewBasePath } from '@site/basePath';
-
 export const getPublicAssetPath = (path: string) =>
-  getPreviewBasePath() ? `${getPreviewBasePath()}/${path}` : `${path}`;
+  process.env.GITHUB_ACTIONS
+    ? `/push-website/pr-preview/${process.env.REACT_APP_PREVIEW_BASE}/${path}`
+    : `${path}`;
