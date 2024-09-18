@@ -1,0 +1,11 @@
+"use strict";
+(self["webpackChunkpush_website"] = self["webpackChunkpush_website"] || []).push([[78949],{
+
+/***/ 641296:
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/push-website/pr-preview/pr-858/blog/tags/push-notification","page":1,"postsPerPage":10,"totalPages":5,"totalCount":41,"nextPage":"/push-website/pr-preview/pr-858/blog/tags/push-notification/page/2","blogDescription":"Blog","blogTitle":"Blog"}');
+
+/***/ })
+
+}]);

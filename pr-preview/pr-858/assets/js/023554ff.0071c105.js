@@ -1,0 +1,11 @@
+"use strict";
+(self["webpackChunkpush_website"] = self["webpackChunkpush_website"] || []).push([[75906],{
+
+/***/ 845713:
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"label":"frensofpush","permalink":"/push-website/pr-preview/pr-858/blog/tags/frensofpush","allTagsPath":"/push-website/pr-preview/pr-858/blog/tags","count":17,"unlisted":false}');
+
+/***/ })
+
+}]);

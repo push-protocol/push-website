@@ -1,0 +1,11 @@
+"use strict";
+(self["webpackChunkpush_website"] = self["webpackChunkpush_website"] || []).push([[15018],{
+
+/***/ 54461:
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/push-website/pr-preview/pr-858/blog/tags/web-3/page/3","page":3,"postsPerPage":10,"totalPages":17,"totalCount":169,"previousPage":"/push-website/pr-preview/pr-858/blog/tags/web-3/page/2","nextPage":"/push-website/pr-preview/pr-858/blog/tags/web-3/page/4","blogDescription":"Blog","blogTitle":"Blog"}');
+
+/***/ })
+
+}]);

@@ -1,0 +1,11 @@
+"use strict";
+(self["webpackChunkpush_website"] = self["webpackChunkpush_website"] || []).push([[72974],{
+
+/***/ 897657:
+/***/ ((module) => {
+
+module.exports = /*#__PURE__*/JSON.parse('{"permalink":"/push-website/pr-preview/pr-858/blog/tags/announcements/page/5","page":5,"postsPerPage":10,"totalPages":7,"totalCount":67,"previousPage":"/push-website/pr-preview/pr-858/blog/tags/announcements/page/4","nextPage":"/push-website/pr-preview/pr-858/blog/tags/announcements/page/6","blogDescription":"Blog","blogTitle":"Blog"}');
+
+/***/ })
+
+}]);
