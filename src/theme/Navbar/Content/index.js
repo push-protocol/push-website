@@ -6,7 +6,7 @@
  */
 
 // React + Web3 Essentials
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { ErrorCauseBoundary, useThemeConfig } from '@docusaurus/theme-common';
@@ -14,18 +14,13 @@ import {
   splitNavbarItems,
   useNavbarMobileSidebar,
 } from '@docusaurus/theme-common/internal';
-import GLOBALS, { device } from '@site/src/config/globals';
+import { device } from '@site/src/config/globals';
 import {
-  A,
-  Button,
-  Content,
   H2,
   H3,
   Image,
   ItemH,
-  ItemV,
   LinkTo,
-  Section,
   Span,
 } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
@@ -86,24 +81,20 @@ function NavbarContentLayout({ left, right }) {
 export default function NavbarContent() {
   // for navigation
   const history = useHistory();
-  const theme = useThemeConfig();
   const location = useLocation();
-  const pathname = location.pathname;
+  const pathname = location?.pathname;
 
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
-  const [leftItems, rightItems] = splitNavbarItems(items);
+  const [rightItems] = splitNavbarItems(items);
   const searchBarItem = items.find((item) => item.type === 'search');
 
   const isLaptopM = useMediaQuery(device.laptopM);
-  const isLaptop = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
-  const [scrollDirection, setScrollDirection] = useState(null);
-  // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
   // Internationalization
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const showMobileMenu = isLaptopM && isMobileMenuOpen;
 
@@ -212,7 +203,7 @@ export default function NavbarContent() {
     });
   };
 
-  const handleMouseLeave = (e) => {
+  const handleMouseLeave = () => {
     textIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) {

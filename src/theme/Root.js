@@ -48,7 +48,7 @@ export default function Root({ children }) {
     let result = '';
     for (var i = 0; i < conditions.length; i++) {
       const item = conditions[i];
-      const pathname = isPreview + item.pathname;
+      const pathname = isPreview + item?.pathname;
 
       if (locationPathExists(pathname, item.condition)) {
         result = item.classname;
@@ -69,12 +69,12 @@ export default function Root({ children }) {
   // check if location path exists
   function locationPathExists(pathname, condition) {
     let result = false;
-    pathname = pathname.toUpperCase();
+    pathname = pathname?.toUpperCase();
 
     // Define location
     const location = useLocation();
 
-    const str = location.pathname.toUpperCase();
+    const str = location?.pathname.toUpperCase();
     const modstr =
       str != null && str.length >= pathname.length
         ? str.substring(0, pathname.length)

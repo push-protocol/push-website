@@ -17,7 +17,7 @@ export default function BlogLayout(props) {
   const { sidebar, toc, children } = props;
 
   const location = useLocation();
-  const pathname = location.pathname;
+  const pathname = location?.pathname;
 
   const isBlogMainPage =
     pathname.includes('/page/') || pathname == '/blog/' || pathname == '/blog';

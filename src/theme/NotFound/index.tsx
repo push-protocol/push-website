@@ -14,7 +14,7 @@ import { useLocation } from '@docusaurus/router';
 
 export default function Index(): JSX.Element {
   const location = useLocation();
-  const pathname = location.pathname;
+  const pathname = location?.pathname;
 
   const title = translate({
     id: 'theme.NotFound.title',

@@ -175,14 +175,14 @@ function Header() {
       } else if (id) {
         if (showMobileMenu) toggleMobileMenu();
 
-        if (location.pathname !== '/' && id) {
+        if (location?.pathname !== '/' && id) {
           history.push('/');
           setTimeout(() => {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
           }, 1500);
         }
 
-        if (location.pathname === '/') {
+        if (location?.pathname === '/') {
           document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
       } else return;
