@@ -42,6 +42,7 @@ import { SupportedLanguagesList } from '@site/src/config/SupportedLanguagesList'
 import GLOBALS, { device, structure } from '@site/src/config/globals';
 import { HeaderList } from '../config/HeaderList';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -68,6 +69,8 @@ function Header() {
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   const [scrollDirection, setScrollDirection] = useState(null);
   const location = useLocation();
+  const { siteConfig } = useDocusaurusContext();
+  const baseUrl = siteConfig?.baseUrl.slice(0, -1);
   // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
   // for navigation
@@ -158,7 +161,7 @@ function Header() {
             if (href.includes('http')) {
               window.location.href = href;
             } else {
-              history.push(useBaseUrl(href)); // Use getPublicAssetPath for internal links
+              history.push(baseUrl + href);
             }
           }
         } else {
@@ -166,7 +169,7 @@ function Header() {
           if (href.includes('http')) {
             window.open(href, target);
           } else {
-            window.open(`${window.location.origin}${useBaseUrl(href)}`, target); // Use getPublicAssetPath here
+            window.open(`${window.location.origin}${baseUrl + href}`, target);
           }
         }
       } else if (id) {
@@ -176,7 +179,7 @@ function Header() {
           // history.push('/');
           setTimeout(() => {
             document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-          }, 1500);
+          }, 500);
         }
 
         if (location?.pathname === '/') {
