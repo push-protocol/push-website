@@ -80,7 +80,7 @@ export default function BlogLayout(props) {
       )}
 
       {toc ? (
-        <BlogItem className=''>
+        <BlogItem className='blog-section'>
           <TOC className=''></TOC>
           <main
             className='mainItem'
@@ -92,7 +92,7 @@ export default function BlogLayout(props) {
           <TOC className=''>{toc}</TOC>
         </BlogItem>
       ) : (
-        <div className='container'>
+        <div className='container blog-section'>
           <BlogSidebar sidebar={sidebar} />
           <main
             className='mainItem'

@@ -1,6 +1,7 @@
 // React + Web3 Essentials
 import { useLocation } from '@docusaurus/router';
 import React from 'react';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // External Components
 import i18nInitialize from '@site/src/utils/i18n';
@@ -104,9 +105,9 @@ export default function Root({ children }) {
       {/* Main react children */}
       {children}
 
-      {excludeDefaultConfigAt('/BRB') &&
-        excludeDefaultConfigAt('/DOCS') &&
-        excludeDefaultConfigAt('/BOOTCAMP') && (
+      {excludeDefaultConfigAt(useBaseUrl('/BRB')) &&
+        excludeDefaultConfigAt(useBaseUrl('/DOCS')) &&
+        excludeDefaultConfigAt(useBaseUrl('/BOOTCAMP')) && (
           <>
             <Footer />
             <CookieComponent />
