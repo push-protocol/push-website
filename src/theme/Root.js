@@ -63,7 +63,6 @@ export default function Root({ children }) {
   // enable disable default config
   function excludeDefaultConfigAt(pathname, condition) {
     const fullPathname = isPreview + pathname;
-    console.log(fullPathname, pathname, isPreview, siteConfig);
     return !locationPathExists(fullPathname, condition);
   }
 
