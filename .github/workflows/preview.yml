@@ -50,12 +50,14 @@ jobs:
         with:
           path: build
 
-      
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Deploy preview
+        uses: rossjrw/pr-preview-action@v1.4.7
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir:  ./build 
-          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
-          # user_name: github-actions[bot]
-          # user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          source-dir: ./build/
+          umbrella-dir: pr-preview
+
+      - uses: rossjrw/pr-preview-action@v1.4.7
+        if: github.event.action == 'closed' && !github.event.pull_request.merged
+        with:
+          source-dir: ./build/
+          action: remove

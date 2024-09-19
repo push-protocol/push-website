@@ -15,6 +15,10 @@ import CookieComponent from '../components/CookieComponent';
 i18nInitialize();
 
 export default function Root({ children }) {
+  // Define location
+  const location = useLocation();
+  const baseUrl = useBaseUrl(); // Add the base URL to the pathname
+
   // superimposed conditions
   const superimposedConditions = [
     {
@@ -51,22 +55,19 @@ export default function Root({ children }) {
       }
     }
 
-    // return result
     return result;
   }
 
-  // enable disable default config
+  // Enable/disable default config using the baseUrl
   function excludeDefaultConfigAt(pathname, condition) {
-    return !locationPathExists(pathname, condition);
+    const fullPathname = baseUrl + pathname; // Add the base URL to the pathname
+    return !locationPathExists(fullPathname, condition);
   }
 
   // check if location path exists
   function locationPathExists(pathname, condition) {
     let result = false;
     pathname = pathname.toUpperCase();
-
-    // Define location
-    const location = useLocation();
 
     const str = location.pathname.toUpperCase();
     const modstr =
@@ -105,9 +106,9 @@ export default function Root({ children }) {
       {/* Main react children */}
       {children}
 
-      {excludeDefaultConfigAt(useBaseUrl('/BRB')) &&
-        excludeDefaultConfigAt(useBaseUrl('/DOCS')) &&
-        excludeDefaultConfigAt(useBaseUrl('/BOOTCAMP')) && (
+      {excludeDefaultConfigAt('/BRB') &&
+        excludeDefaultConfigAt('/DOCS') &&
+        excludeDefaultConfigAt('/BOOTCAMP') && (
           <>
             <Footer />
             <CookieComponent />
