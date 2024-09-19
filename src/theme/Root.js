@@ -61,6 +61,8 @@ export default function Root({ children }) {
   // Enable/disable default config using the baseUrl
   function excludeDefaultConfigAt(pathname, condition) {
     const fullPathname = baseUrl + pathname; // Add the base URL to the pathname
+    console.log(pathname, fullPathname, 'pathname');
+
     return !locationPathExists(fullPathname, condition);
   }
 
