@@ -1,7 +1,7 @@
 // React + Web3 Essentials
 import { useLocation } from '@docusaurus/router';
 import React from 'react';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+// import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // External Components
 import i18nInitialize from '@site/src/utils/i18n';
@@ -17,7 +17,7 @@ i18nInitialize();
 export default function Root({ children }) {
   // Define location
   const location = useLocation();
-  const baseUrl = useBaseUrl(); // Add the base URL to the pathname
+  // const baseUrl = useBaseUrl(); // Add the base URL to the pathname
 
   // superimposed conditions
   const superimposedConditions = [
@@ -60,10 +60,8 @@ export default function Root({ children }) {
 
   // Enable/disable default config using the baseUrl
   function excludeDefaultConfigAt(pathname, condition) {
-    const fullPathname = baseUrl + pathname; // Add the base URL to the pathname
-    console.log(pathname, fullPathname, 'pathname');
-
-    return !locationPathExists(fullPathname, condition);
+    // const fullPathname = baseUrl + pathname; // Add the base URL to the pathname
+    return !locationPathExists(pathname, condition);
   }
 
   // check if location path exists
