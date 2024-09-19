@@ -4,6 +4,7 @@ import React from 'react';
 
 // External Components
 import i18nInitialize from '@site/src/utils/i18n';
+import styled from 'styled-components';
 
 // Internal Components
 import Footer from '@site/src/segments/Footer';
@@ -105,11 +106,11 @@ export default function Root({ children }) {
   }
 
   return (
-    <div className={returnAdditionalClasses(superimposedConditions)}>
+    <PageContainer className={returnAdditionalClasses(superimposedConditions)}>
       <ServerStyle from={children} />
 
       {/* Main react children */}
-      {children}
+      <Content>{children}</Content>
 
       {excludeDefaultConfigAt('/BRB') &&
         excludeDefaultConfigAt('/DOCS') &&
@@ -119,6 +120,17 @@ export default function Root({ children }) {
             <CookieComponent />
           </>
         )}
-    </div>
+    </PageContainer>
   );
 }
+
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+// The main content should take up all remaining space
+const Content = styled.div`
+  flex: 1;
+`;

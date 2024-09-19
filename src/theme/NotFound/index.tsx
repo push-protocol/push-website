@@ -5,7 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+// External Components
 import React from 'react';
+
+// Internal Components
 import { translate } from '@docusaurus/Translate';
 import { PageMetadata } from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
@@ -15,6 +18,7 @@ import { useLocation } from '@docusaurus/router';
 export default function Index(): JSX.Element {
   const location = useLocation();
   const pathname = location?.pathname;
+
 
   const title = translate({
     id: 'theme.NotFound.title',
