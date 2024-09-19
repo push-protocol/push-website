@@ -10,6 +10,7 @@ import { gsap } from 'gsap';
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // Internal Components
 import {
@@ -337,7 +338,7 @@ function PartnerChannels() {
           </Span>
 
           <A
-            href='/frens'
+            href={useBaseUrl('/frens')}
             title={t('home.partners-section.partner-channels-button-alt')}
             background='#DD44B9'
             // hoverColor="#fff"

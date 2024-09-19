@@ -1,28 +1,14 @@
 // External Components
 import styled from 'styled-components';
 // Internal Components
-import {
-  A,
-  Button,
-  Content,
-  H2,
-  H3,
-  HeroHeader,
-  ItemH,
-  ItemV,
-  LI,
-  P,
-  Section,
-  Span,
-  UL,
-  ULV2,
-} from '@site/src/css/SharedStyling';
+import { A, ItemH, LI, Span, UL } from '@site/src/css/SharedStyling';
 
 // Import Assets
 import ImageFAQ from '@site/static/assets/website/faq/faq-projects.webp';
 
 // Internal Configs
-import GLOBALS, { device } from '@site/src/config/globals';
+import { device } from '@site/src/config/globals';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export const General = [
   {
@@ -384,7 +370,7 @@ export const Chat = [
         <Span>
           Yes, Push Chat is end-to-end encrypted. The encryption is based on PGP
           Keys. Read more about{' '}
-          <AMod href='/docs/chat' target={'_blank'}>
+          <AMod href={useBaseUrl('/docs/chat')} target={'_blank'}>
             how it works here.
           </AMod>
         </Span>
@@ -443,7 +429,10 @@ export const IntegratingPush = [
         </Span>
         <Span>
           The{' '}
-          <AMod href='/docs/notifications/quickstart/' target={'_blank'}>
+          <AMod
+            href={useBaseUrl('/docs/notifications/quickstart/')}
+            target={'_blank'}
+          >
             Push JS SDK
           </AMod>{' '}
           is a major component that makes the integration seamless. A few
@@ -465,20 +454,24 @@ export const IntegratingPush = [
         <Span>
           Other ways of integrating Push notifications are via{' '}
           <AMod
-            href='/docs/notifications/build/send-notification-via-smart-contract/'
+            href={useBaseUrl(
+              '/docs/notifications/build/send-notification-via-smart-contract/'
+            )}
             target={'_blank'}
           >
             smart contracts
           </AMod>
           ,{' '}
           <AMod
-            href='/docs/notifications/tutorials/send-notification-via-subgraph'
+            href={useBaseUrl(
+              '/docs/notifications/tutorials/send-notification-via-subgraph'
+            )}
             target={'_blank'}
           >
             subgraphs
           </AMod>
           , and{' '}
-          <AMod href='/docs/notifications' target={'_blank'}>
+          <AMod href={useBaseUrl('/docs/notifications')} target={'_blank'}>
             more as outlined here!
           </AMod>
         </Span>
@@ -508,7 +501,7 @@ export const IntegratingPush = [
       <Answer>
         <Span>
           Push Chat integration -{' '}
-          <AMod href='/docs/chat' target={'_blank'}>
+          <AMod href={useBaseUrl('/docs/chat')} target={'_blank'}>
             Docs
           </AMod>
           ,
@@ -519,7 +512,7 @@ export const IntegratingPush = [
             Github
           </AMod>{' '}
           Push Notifications -{' '}
-          <AMod href='/docs/notifications' target={'_blank'}>
+          <AMod href={useBaseUrl('/docs/notifications')} target={'_blank'}>
             Docs
           </AMod>
           ,
@@ -715,8 +708,6 @@ const AMod = styled(A)`
     text-decoration: underline;
   }
 `;
-
-const ULFaq = styled(UL)``;
 
 const LIFaq = styled(LI)`
   color: #bbbcd0;

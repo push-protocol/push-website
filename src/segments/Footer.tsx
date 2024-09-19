@@ -31,6 +31,7 @@ import useMediaQuery from '@site/src/hooks/useMediaQuery';
 // Internal Configs
 import { device } from '@site/src/config/globals';
 import { HeaderList } from '@site/src/config/HeaderList';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function Footer() {
   // Internationalization
@@ -94,7 +95,7 @@ function Footer() {
                 <FooterLinkItem>
                   <LinkTo
                     className='pushLogo'
-                    to='/'
+                    to={useBaseUrl('/')}
                     title='Push'
                     onClick={scrollToTop}
                     justifyContent={isMobile ? 'center' : 'flex-start'}
@@ -245,7 +246,7 @@ function Footer() {
             >
               <FooterAnchorSecondary
                 as={LinkTo}
-                to='/privacy'
+                to={useBaseUrl('/privacy')}
                 title={t('footer.links-section.subscribe-column.faq-link')}
                 onClick={scrollToTop}
               >
@@ -254,7 +255,7 @@ function Footer() {
 
               <FooterAnchorSecondary
                 as={LinkTo}
-                to='/tos'
+                to={useBaseUrl('/tos')}
                 title={t('footer.links-section.subscribe-column.faq-link')}
                 onClick={scrollToTop}
               >

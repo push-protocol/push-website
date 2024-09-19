@@ -41,6 +41,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { SupportedLanguagesList } from '@site/src/config/SupportedLanguagesList';
 import GLOBALS, { device, structure } from '@site/src/config/globals';
 import { HeaderList } from '../config/HeaderList';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -157,8 +158,7 @@ function Header() {
             if (href.includes('http')) {
               window.location.href = href;
             } else {
-              console.log(getPublicAssetPath(href), 'lolo');
-              history.push(getPublicAssetPath(href)); // Use getPublicAssetPath for internal links
+              history.push(useBaseUrl(href)); // Use getPublicAssetPath for internal links
             }
           }
         } else {
@@ -166,24 +166,21 @@ function Header() {
           if (href.includes('http')) {
             window.open(href, target);
           } else {
-            window.open(
-              `${window.location.origin}${getPublicAssetPath(href)}`,
-              target
-            ); // Use getPublicAssetPath here
+            window.open(`${window.location.origin}${useBaseUrl(href)}`, target); // Use getPublicAssetPath here
           }
         }
       } else if (id) {
         if (showMobileMenu) toggleMobileMenu();
 
         if (location?.pathname !== '/' && id) {
-          history.push('/');
+          // history.push('/');
           setTimeout(() => {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
           }, 1500);
         }
 
         if (location?.pathname === '/') {
-          document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
         }
       } else return;
     };
@@ -337,7 +334,7 @@ function Header() {
 
             <MenuTop flex='initial' showMobileMenu={showMobileMenu}>
               <PushLogoBlackContainer className='headerlogo' flex='initial'>
-                <LinkTo to='/' aria-label='Push'>
+                <LinkTo to={useBaseUrl('/')} aria-label='Push'>
                   <Image
                     src={
                       require(
@@ -353,7 +350,7 @@ function Header() {
               </PushLogoBlackContainer>
               <PushLogoWhiteContainer className='headerlogo' flex='initial'>
                 <LinkTo
-                  to='/'
+                  to={useBaseUrl('/')}
                   aria-label='Push'
                   hoverBackground='transparent'
                   padding='0'
