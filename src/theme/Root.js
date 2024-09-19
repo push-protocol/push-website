@@ -1,7 +1,6 @@
 // React + Web3 Essentials
 import { useLocation } from '@docusaurus/router';
 import React from 'react';
-// import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // External Components
 import i18nInitialize from '@site/src/utils/i18n';
@@ -10,12 +9,13 @@ import i18nInitialize from '@site/src/utils/i18n';
 import Footer from '@site/src/segments/Footer';
 import ServerStyle from '@site/src/theme/ServerStyle';
 import CookieComponent from '../components/CookieComponent';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // Initialize Internalization
 i18nInitialize();
 
 export default function Root({ children }) {
-  // const baseUrl = useBaseUrl(); // Add the base URL to the pathname
+  const { siteConfig } = useDocusaurusContext();
 
   // superimposed conditions
   const superimposedConditions = [
@@ -41,25 +41,30 @@ export default function Root({ children }) {
     },
   ];
 
+  const isPreview = siteConfig?.baseUrl.slice(0, -1);
+
   // return superimposed class names if conditions are met
   function returnAdditionalClasses(conditions) {
     let result = '';
     for (var i = 0; i < conditions.length; i++) {
       const item = conditions[i];
+      const pathname = isPreview + item.pathname;
 
-      if (locationPathExists(item.pathname, item.condition)) {
+      if (locationPathExists(pathname, item.condition)) {
         result = item.classname;
         break;
       }
     }
 
+    // return result
     return result;
   }
 
-  // Enable/disable default config using the baseUrl
+  // enable disable default config
   function excludeDefaultConfigAt(pathname, condition) {
-    // const fullPathname = baseUrl + pathname; // Add the base URL to the pathname
-    return !locationPathExists(pathname, condition);
+    const fullPathname = isPreview + pathname;
+    console.log(fullPathname, pathname, isPreview, siteConfig);
+    return !locationPathExists(fullPathname, condition);
   }
 
   // check if location path exists
