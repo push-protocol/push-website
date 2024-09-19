@@ -12,16 +12,19 @@ import type { Props } from '@theme/NotFound/Content';
 import Heading from '@theme/Heading';
 import { Content, Section } from '@site/src/css/SharedStyling';
 import { useLocation } from '@docusaurus/router';
+import styled from 'styled-components';
 
 // Internal Components
 import Footer from '@site/src/segments/Footer';
 
 export default function NotFoundContent({ className }: Props): JSX.Element {
   const location = useLocation();
-  const pathname = location.pathname;
+
+  // Determine if the pathname starts with '/docs'
+  const isDocsPage = location.pathname.startsWith('/docs');
 
   return (
-    <>
+    <PageContainer isDocsPage={isDocsPage!}>
       <Section>
         <Content>
           <main className={clsx('container margin-vert--xl', className)}>
@@ -58,7 +61,13 @@ export default function NotFoundContent({ className }: Props): JSX.Element {
         </Content>
       </Section>
 
-      {location.pathname.startsWith('/docs') && <Footer />}
-    </>
+      {isDocsPage && <Footer />}
+    </PageContainer>
   );
 }
+
+const PageContainer = styled.div<{ isDocsPage?: boolean }>`
+  display: flex;
+  flex-direction: column;
+  ${({ isDocsPage }) => isDocsPage && 'min-height: 100vh;'};
+`;

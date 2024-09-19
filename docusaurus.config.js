@@ -149,7 +149,7 @@ const config = {
           alt: 'Push Logo',
           src: '/assets/website/docshub/PushLogoBlack@3x.png',
           srcDark: '/assets/website/docshub/PushLogo@3x.png',
-          href: '/docs',
+          href: '/',
         },
         items: [
           {
