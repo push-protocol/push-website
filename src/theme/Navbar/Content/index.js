@@ -36,6 +36,7 @@ import styled from 'styled-components';
 import { HeaderList } from '../../../config/HeaderList';
 import styles from './styles.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const defaultMobileMenuState = {
   0: false,
@@ -84,10 +85,15 @@ export default function NavbarContent() {
   const history = useHistory();
   const location = useLocation();
   const pathname = location?.pathname;
+  const { siteConfig } = useDocusaurusContext();
+  const baseURL = siteConfig?.baseUrl.slice(0, -1) || '';
 
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
-  const [rightItems] = splitNavbarItems(items);
+
+  // eslint has to disabled for this line cause the leftItems is required
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [leftItems, rightItems] = splitNavbarItems(items);
   const searchBarItem = items.find((item) => item.type === 'search');
 
   const isLaptopM = useMediaQuery(device.laptopM);
@@ -126,7 +132,7 @@ export default function NavbarContent() {
             if (href.includes('http')) {
               window.location.href = href;
             } else {
-              history.push(href);
+              history.push(baseURL + href);
             }
           }
         } else {
@@ -134,7 +140,7 @@ export default function NavbarContent() {
           if (href.includes('http')) {
             window.open(href, target);
           } else {
-            window.open(`${window.location.origin}${href}`, target);
+            window.open(`${window.location.origin}${baseURL + href}`, target);
           }
         }
       } else if (id) {
@@ -225,7 +231,7 @@ export default function NavbarContent() {
 
           {/* Change Header from docs to blog if required */}
           {!isLaptopM &&
-            (pathname.startsWith('/docs') ? (
+            (pathname.startsWith(baseURL + '/docs') ? (
               <NavItem to={useBaseUrl('/docs')} aria-label='Push Docs'>
                 Docs
               </NavItem>

@@ -14,11 +14,14 @@ import { PageMetadata } from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
 import NotFoundContent from '@theme/NotFound/Content';
 import { useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function Index(): JSX.Element {
   const location = useLocation();
   const pathname = location?.pathname;
+  const { siteConfig } = useDocusaurusContext();
 
+  const baseURL = siteConfig?.baseUrl.slice(0, -1);
 
   const title = translate({
     id: 'theme.NotFound.title',
@@ -30,7 +33,8 @@ export default function Index(): JSX.Element {
 
       <Layout
         showNavbar={
-          !pathname.startsWith('/docs') && !pathname.startsWith('/blog')
+          !pathname.startsWith(baseURL + '/docs') &&
+          !pathname.startsWith(baseURL + '/blog')
             ? 'website'
             : 'docusaurus'
         }

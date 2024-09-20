@@ -42,14 +42,14 @@ export default function Root({ children }) {
     },
   ];
 
-  const isPreview = siteConfig?.baseUrl.slice(0, -1);
+  const baseURL = siteConfig?.baseUrl.slice(0, -1);
 
   // return superimposed class names if conditions are met
   function returnAdditionalClasses(conditions) {
     let result = '';
     for (var i = 0; i < conditions.length; i++) {
       const item = conditions[i];
-      const pathname = isPreview + item?.pathname;
+      const pathname = baseURL + item?.pathname;
 
       if (locationPathExists(pathname, item.condition)) {
         result = item.classname;
@@ -63,7 +63,7 @@ export default function Root({ children }) {
 
   // enable disable default config
   function excludeDefaultConfigAt(pathname, condition) {
-    const fullPathname = isPreview + pathname;
+    const fullPathname = baseURL + pathname;
     return !locationPathExists(fullPathname, condition);
   }
 

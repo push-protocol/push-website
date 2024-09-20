@@ -10,6 +10,7 @@ import { useLocation } from '@docusaurus/router';
 import { useTranslation } from 'react-i18next';
 import { BsTwitterX } from 'react-icons/bs';
 import styled from 'styled-components';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // Internal Components
 import {
@@ -38,6 +39,8 @@ function Footer() {
   const { t } = useTranslation();
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
+  const { siteConfig } = useDocusaurusContext();
+  const baseURL = siteConfig?.baseUrl.slice(0, -1) || '';
 
   // for navigation
   const history = useHistory();
@@ -57,7 +60,7 @@ function Footer() {
           if (href.includes('http')) {
             window.location.href = href;
           } else {
-            history.push(href);
+            history.push(baseURL + href);
           }
           scrollToTop();
         }
@@ -66,20 +69,20 @@ function Footer() {
         if (href.includes('http')) {
           window.open(href, target);
         } else {
-          window.open(`${window.location.origin}${href}`, target);
+          window.open(`${window.location.origin}${baseURL + href}`, target);
         }
         // scrollToTop();
       }
     } else if (id) {
-      if (location?.pathname !== '/' && id) {
-        history.push('/');
+      if (location?.pathname !== baseURL + '/' && id) {
+        history.push(baseURL + '/');
         setTimeout(() => {
-          document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }, 1500);
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
       }
 
-      if (location?.pathname === '/') {
-        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      if (location?.pathname === baseURL + '/') {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
       }
     } else return;
   };
