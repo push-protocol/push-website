@@ -83,10 +83,7 @@ function TechDocItem({
   const { siteConfig } = useDocusaurusContext();
   const baseUrl = siteConfig?.baseUrl.slice(0, -1);
 
-  const handleOpenLink = ({ e, link }: { e: any; link: string }) => {
-    e.preventDefault();
-    console.log(baseUrl, 'baseUrl');
-
+  const handleOpenLink = (e, link: { e: any; link: string }) => {
     // Check if link is an absolute URL (starts with http or https)
     const isAbsoluteUrl = /^https?:\/\//i.test(link);
 
