@@ -145,12 +145,17 @@ const config = {
         type: 'text/javascript',
       },
       innerHTML: `
-         var isPrPreview = window.location.pathname.includes('/pr-preview/');
-         var pathSegmentsToKeep = isPrPreview ? 3 : 0;
-
-        var l = window.location;
-        l.replace(
-          l.protocol +
+        // Single Page Apps for GitHub Pages
+        // MIT License
+        // https://github.com/rafgraph/spa-github-pages
+        if (!window.location.search.includes('?redirected=true')) {
+          var isPrPreview = window.location.pathname.includes('/pr-preview/');
+          var pathSegmentsToKeep = isPrPreview ? 3 : 0;
+          
+          var l = window.location;
+          
+          var newUrl =
+            l.protocol +
             '//' +
             l.hostname +
             (l.port ? ':' + l.port : '') +
@@ -158,11 +163,16 @@ const config = {
               .split('/')
               .slice(0, 1 + pathSegmentsToKeep)
               .join('/') +
-            '/?/' +
+            '/?redirected=true&/' +
             l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
             (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-            l.hash
-          );
+            l.hash;
+
+          // Redirect only if the new URL is different from the current one
+          if (l.href !== newUrl) {
+            l.replace(newUrl);
+          }
+        }
       `,
     },
   ],
