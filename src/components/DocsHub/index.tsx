@@ -88,20 +88,11 @@ function TechDocItem({
       <TechDocContent
         onClick={(e) => {
           e.preventDefault();
-
-          // Check if baseUrl is defined
-          if (baseUrl) {
-            const fullLink = baseUrl + link;
-            // Navigate to the constructed fullLink
-            target === '_self'
-              ? (window.location.href = fullLink)
-              : window.open(fullLink, target);
-          } else {
-            // Navigate to the link without the base URL
-            target === '_self'
-              ? (window.location.href = link)
-              : window.open(link, target);
-          }
+          const fullLink = baseUrl + link;
+          console.log(baseUrl, 'baseurl');
+          target === '_self'
+            ? (window.location.href = fullLink)
+            : window.open(fullLink, target);
         }}
         hoverBackground='transparent'
       >
