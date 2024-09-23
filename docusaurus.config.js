@@ -145,35 +145,16 @@ const config = {
         type: 'text/javascript',
       },
       innerHTML: `
-           (function (l) {
-          // Check if the URL has already been redirected
-          if (!l.search.includes('?redirected=true')) {
-            var isPrPreview = l.pathname.includes('/pr-preview/');
-            var pathSegmentsToKeep = isPrPreview ? 3 : 0;
-
-            // Construct new path by preserving pathSegmentsToKeep
-            var newPath = l.pathname
-              .split('/')
-              .slice(0, 1 + pathSegmentsToKeep)
-              .join('/');
-
-            // Extract the remaining path after pathSegmentsToKeep
-            var remainingPath = l.pathname
-              .split('/')
-              .slice(1 + pathSegmentsToKeep)
-              .join('/')
-              .replace(/&/g, '~and~'); // Replace \`&\` to prevent conflicts
-
-            // Preserve any existing query parameters
-            var searchPart = l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '';
-
-            // Construct the new URL with the new path, query, and hash
-            var newUrl = \`\${l.protocol}//\${l.hostname}\${l.port ? ':' + l.port : ''}\${newPath}/?redirected=true&/\${remainingPath}\${searchPart}\${l.hash}\`;
-
-            // Redirect only if the new URL is different from the current one
-            if (l.href !== newUrl) {
-              l.replace(newUrl);
-            }
+       (function (l) {
+          if (l.search[1] === '/') {
+            var decoded = l.search
+              .slice(1)
+              .split('&')
+              .map(function (s) {
+                return s.replace(/~and~/g, '&');
+              })
+              .join('?');
+            window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
           }
         })(window.location);
       `,
