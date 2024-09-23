@@ -83,32 +83,31 @@ function TechDocItem({
   const { siteConfig } = useDocusaurusContext();
   const baseUrl = siteConfig?.baseUrl.slice(0, -1);
 
+  const handleOpenLink = ({ e, link }: { e: any; link: string }) => {
+    e.preventDefault();
+    console.log(baseUrl, 'baseUrl');
+
+    // Check if link is an absolute URL (starts with http or https)
+    const isAbsoluteUrl = /^https?:\/\//i.test(link);
+
+    // If the link is not an absolute URL and baseUrl is defined, prepend the baseUrl
+    const fullLink = isAbsoluteUrl ? link : baseUrl ? baseUrl + link : link;
+    console.log(
+      fullLink,
+      isAbsoluteUrl ? 'absolute link' : 'full link with baseUrl'
+    );
+
+    // Navigate to the constructed fullLink or the absolute link
+    target === '_self'
+      ? (window.location.href = fullLink)
+      : window.open(fullLink, target);
+  };
+
   return (
     <TechDocCard>
       {/* <Link to={link} target='_blank'> */}
       <TechDocContent
-        onClick={(e) => {
-          e.preventDefault();
-          console.log(baseUrl, 'baseUrl');
-
-          // Check if baseUrl is defined
-          if (baseUrl) {
-            const fullLink = baseUrl + link;
-            console.log(fullLink, 'full link with baseurl');
-
-            // Navigate to the constructed fullLink
-            target === '_self'
-              ? (window.location.href = fullLink)
-              : window.open(fullLink, target);
-          } else {
-            console.log(link, 'link without baseurl');
-
-            // Navigate to the link without the base URL
-            target === '_self'
-              ? (window.location.href = link)
-              : window.open(link, target);
-          }
-        }}
+        onClick={(e) => handleOpenLink(e, link)}
         hoverBackground='transparent'
       >
         <ItemV alignSelf='stretch' margin='0px 8%'>
