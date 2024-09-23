@@ -203,14 +203,18 @@ export const Notifs = [
         <Span>
           Learn more about{' '}
           <AMod
-            href='/docs/notifications/build/integrating-notifications/'
+            href={useBaseUrl(
+              '/docs/notifications/build/integrating-notifications/'
+            )}
             target={'_blank'}
           >
             integrating Push Notification in your dApp
           </AMod>{' '}
           /{' '}
           <AMod
-            href='/docs/notifications/tutorials/integrate-notifications-via-delivery-node/'
+            href={useBaseUrl(
+              '/docs/notifications/tutorials/integrate-notifications-via-delivery-node/'
+            )}
             target={'_blank'}
           >
             Push Notification in your crypto wallet.
@@ -300,7 +304,9 @@ export const Notifs = [
           Yes, any protocol that wants to send notifications will need to
           activate themselves on Push protocol, read{' '}
           <AMod
-            href='/docs/notifications/tutorials/create-your-channel/'
+            href={useBaseUrl(
+              '/docs/notifications/tutorials/create-your-channel/'
+            )}
             target={'_blank'}
           >
             How to create channel

@@ -3,12 +3,10 @@ import React from 'react';
 
 // External Components
 import styled from 'styled-components';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // Internal Components
-import { Button, H2, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
-
-// Import Assets
-import BlogPostItemHeaderInfo from '@theme/BlogPostItem/Header/Info';
+import { Button, H2, ItemH, Span } from '@site/src/css/SharedStyling';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
@@ -22,7 +20,6 @@ import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 const RecentBlogPosts = ({ recentPosts = [] }) => {
   const isTablet = useMediaQuery(device.laptop);
-  const isMobile = useMediaQuery(device.mobileL);
   return (
     <BlogPostList>
       {/* <BlogPostCardContainer> */}
@@ -94,7 +91,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
             className={`item-${index}`}
             onClick={() => {
               window.open(
-                `/blog/${postItem.metadata.frontMatter.slug}`,
+                `${useBaseUrl}/blog/${postItem.metadata.frontMatter.slug}`,
                 '_self'
               );
             }}

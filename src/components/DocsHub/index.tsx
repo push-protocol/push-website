@@ -80,6 +80,7 @@ function TechDocItem({
   docutheme,
 }: ITechDocItem) {
   const [content, setContent] = useState<number>(0);
+  const baseUrl = useBaseUrl();
 
   return (
     <TechDocCard>
@@ -87,9 +88,20 @@ function TechDocItem({
       <TechDocContent
         onClick={(e) => {
           e.preventDefault();
-          target === '_self'
-            ? (window.location.href = link)
-            : window.open(link, target);
+
+          // Check if baseUrl is defined
+          if (baseUrl) {
+            const fullLink = baseUrl + link;
+            // Navigate to the constructed fullLink
+            target === '_self'
+              ? (window.location.href = fullLink)
+              : window.open(fullLink, target);
+          } else {
+            // Navigate to the link without the base URL
+            target === '_self'
+              ? (window.location.href = link)
+              : window.open(link, target);
+          }
         }}
         hoverBackground='transparent'
       >
