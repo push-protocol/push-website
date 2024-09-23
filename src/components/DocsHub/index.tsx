@@ -8,7 +8,6 @@ import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import { useLocation } from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import CodeBlock from '@theme/CodeBlock';
@@ -52,6 +51,7 @@ import {
 } from '@site/src/config/DocsHubList';
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from '@site/src/config/pageMeta';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   return (
@@ -80,7 +80,8 @@ function TechDocItem({
   docutheme,
 }: ITechDocItem) {
   const [content, setContent] = useState<number>(0);
-  const baseUrl = useBaseUrl();
+  const { siteConfig } = useDocusaurusContext();
+  const baseUrl = siteConfig?.baseUrl.slice(0, -1);
 
   return (
     <TechDocCard>
@@ -88,11 +89,25 @@ function TechDocItem({
       <TechDocContent
         onClick={(e) => {
           e.preventDefault();
-          const fullLink = baseUrl + link;
-          console.log(baseUrl, 'baseurl');
-          target === '_self'
-            ? (window.location.href = fullLink)
-            : window.open(fullLink, target);
+          console.log(baseUrl, 'baseUrl');
+
+          // Check if baseUrl is defined
+          if (baseUrl) {
+            const fullLink = baseUrl + link;
+            console.log(fullLink, 'full link with baseurl');
+
+            // Navigate to the constructed fullLink
+            target === '_self'
+              ? (window.location.href = fullLink)
+              : window.open(fullLink, target);
+          } else {
+            console.log(link, 'link without baseurl');
+
+            // Navigate to the link without the base URL
+            target === '_self'
+              ? (window.location.href = link)
+              : window.open(link, target);
+          }
         }}
         hoverBackground='transparent'
       >

@@ -3,7 +3,7 @@ import React from 'react';
 
 // External Components
 import styled from 'styled-components';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // Internal Components
 import { Button, H2, ItemH, Span } from '@site/src/css/SharedStyling';
@@ -20,6 +20,9 @@ import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 const RecentBlogPosts = ({ recentPosts = [] }) => {
   const isTablet = useMediaQuery(device.laptop);
+  const { siteConfig } = useDocusaurusContext();
+  const baseUrl = siteConfig?.baseUrl.slice(0, -1);
+
   return (
     <BlogPostList>
       {/* <BlogPostCardContainer> */}
@@ -32,7 +35,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
             className='item-3'
             onClick={() => {
               window.open(
-                `/blog/${postItem.metadata.frontMatter.slug}`,
+                `${baseUrl}/blog/${postItem.metadata.frontMatter.slug}`,
                 '_self'
               );
             }}
@@ -91,7 +94,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
             className={`item-${index}`}
             onClick={() => {
               window.open(
-                `${useBaseUrl}/blog/${postItem.metadata.frontMatter.slug}`,
+                `${baseUrl}/blog/${postItem.metadata.frontMatter.slug}`,
                 '_self'
               );
             }}
