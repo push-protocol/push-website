@@ -63,7 +63,6 @@ import {
 import { OthersFeaturesList } from '@site/src/config/HomeOthersFeaturesList';
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from '@site/src/config/pageMeta';
-import { getPublicAssetPath } from '../utils/useRouteHelper';
 
 export default function Home({ homePageBlogMetadata, recentPosts }) {
   // Internationalization
