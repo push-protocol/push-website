@@ -2,7 +2,7 @@
 slug: push-group-chats-for-guilds
 title: 'Introducing Push Group Chats for Guilds!'
 authors: [push]
-image: './cover-image.webp'
+image: './cover-image.gif'
 description: 'Introducing Push Group Chats for Guilds!'
 text: "We're excited to announce that Guild-Gated Group Chats are now available on Push."
 tags: [Announcements, Updates]
