@@ -30,4 +30,4 @@ Guild serves as the foundation for platform-agnostic access management to on-cha
 
 [Here](https://push.org/docs/chat/build/conditional-rules-for-group/#guild-gated-group-example) are some examples of how you can create gated group chats for guilds at guild.xyz using GUILD type-in criteria.
 
-Got any questions? Ping our team on [discord](discord.gg/pushprotocol) and we'd be happy to help you.
+Got any questions? Ping our team on [discord](https://discord.gg/pushprotocol) and we'd be happy to help you.
