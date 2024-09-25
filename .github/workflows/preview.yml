@@ -19,6 +19,7 @@ jobs:
           echo "REACT_APP_DEPLOY_ENV=PREVIEW" >> $GITHUB_ENV
           echo "REACT_APP_PUBLIC_URL=https://push-protocol.github.io" >> $GITHUB_ENV
           echo "GITHUB_PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+          echo "REACT_APP_BASE_URL=/push-website/pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v4
         with:
