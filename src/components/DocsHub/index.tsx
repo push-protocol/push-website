@@ -52,6 +52,7 @@ import {
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from '@site/src/config/pageMeta';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   return (
@@ -80,8 +81,7 @@ function TechDocItem({
   docutheme,
 }: ITechDocItem) {
   const [content, setContent] = useState<number>(0);
-  const { siteConfig } = useDocusaurusContext();
-  const baseUrl = siteConfig?.baseUrl.slice(0, -1);
+  const baseUrl = useSiteBaseUrl();
 
   const handleOpenLink = (e, link: { e: any; link: string }) => {
     // Check if link is an absolute URL (starts with http or https)
@@ -186,7 +186,6 @@ function TechDocItem({
 }
 
 export default function HomepageFeatures(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
   const { colorMode, setColorMode } = useColorMode();
 
   return (

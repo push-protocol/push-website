@@ -36,7 +36,7 @@ import styled from 'styled-components';
 import { HeaderList } from '../../../config/HeaderList';
 import styles from './styles.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 const defaultMobileMenuState = {
   0: false,
@@ -85,8 +85,7 @@ export default function NavbarContent() {
   const history = useHistory();
   const location = useLocation();
   const pathname = location?.pathname;
-  const { siteConfig } = useDocusaurusContext();
-  const baseURL = siteConfig?.baseUrl.slice(0, -1) || '';
+  const baseURL = useSiteBaseUrl() || '';
 
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();

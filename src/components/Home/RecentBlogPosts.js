@@ -3,7 +3,6 @@ import React from 'react';
 
 // External Components
 import styled from 'styled-components';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // Internal Components
 import { Button, H2, ItemH, Span } from '@site/src/css/SharedStyling';
@@ -17,11 +16,11 @@ import {
   Spacer,
 } from '@site/src/components/reusables/date.tsx';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 const RecentBlogPosts = ({ recentPosts = [] }) => {
   const isTablet = useMediaQuery(device.laptop);
-  const { siteConfig } = useDocusaurusContext();
-  const baseUrl = siteConfig?.baseUrl.slice(0, -1);
+  const baseUrl = useSiteBaseUrl();
 
   return (
     <BlogPostList>

@@ -10,7 +10,6 @@ import { useLocation } from '@docusaurus/router';
 import { useTranslation } from 'react-i18next';
 import { BsTwitterX } from 'react-icons/bs';
 import styled from 'styled-components';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 // Internal Components
 import {
@@ -33,14 +32,14 @@ import useMediaQuery from '@site/src/hooks/useMediaQuery';
 import { device } from '@site/src/config/globals';
 import { HeaderList } from '@site/src/config/HeaderList';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 
 function Footer() {
   // Internationalization
   const { t } = useTranslation();
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
-  const { siteConfig } = useDocusaurusContext();
-  const baseURL = siteConfig?.baseUrl.slice(0, -1) || '';
+  const baseURL = useSiteBaseUrl() || '';
 
   // for navigation
   const history = useHistory();

@@ -41,7 +41,7 @@ import { SupportedLanguagesList } from '@site/src/config/SupportedLanguagesList'
 import GLOBALS, { device, structure } from '@site/src/config/globals';
 import { HeaderList } from '../config/HeaderList';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -68,8 +68,7 @@ function Header() {
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   const [scrollDirection, setScrollDirection] = useState(null);
   const location = useLocation();
-  const { siteConfig } = useDocusaurusContext();
-  const baseURL = siteConfig?.baseUrl.slice(0, -1) || '';
+  const baseURL = useSiteBaseUrl() || '';
   // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
   // for navigation

@@ -16,12 +16,11 @@ import styled from 'styled-components';
 
 // Internal Components
 import Footer from '../../../segments/Footer';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 export default function NotFoundContent({ className }: Props): JSX.Element {
   const location = useLocation();
-  const { siteConfig } = useDocusaurusContext();
-  const baseURL = siteConfig?.baseUrl.slice(0, -1);
+  const baseURL = useSiteBaseUrl();
 
   // Determine if the pathname starts with '/docs'
   const isDocsPage = location?.pathname.startsWith(baseURL + '/docs');
