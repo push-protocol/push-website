@@ -12,7 +12,7 @@ const config = {
 
   // Set the production url of your site here
   url: process.env.GITHUB_ACTIONS
-    ? `https://push-protocol.github.io`
+    ? `${process.env.REACT_APP_PUBLIC_URL}`
     : 'https://push.org/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
