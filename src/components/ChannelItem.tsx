@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-/* eslint-disable react/prop-types */
 /* eslint-disable */
 
 // React + Web3 Essentials
@@ -231,7 +230,7 @@ const ChannelType = styled.div`
   width: fit-content;
   height: fit-content;
   padding: 7px 14px;
-  margin-top: auto;
+  margin-top: 7px;
 
   display: flex;
   align-items: center;
