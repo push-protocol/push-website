@@ -79,11 +79,13 @@ async function blogPluginExtended(...pluginArgs) {
 
       actions.addRoute({
         // Add route for the home page
-        path: '/',
+        path: process.env.GITHUB_ACTIONS
+          ? `${process.env.REACT_APP_BASE_URL}`
+          : '/',
         exact: true,
 
         // The component to use for the "Home" page route
-        component: '@site/src/pages/home.tsx',
+        component: '../src/pages/home.tsx',
 
         // These are the props that will be passed to our "Home" page component
         modules: {

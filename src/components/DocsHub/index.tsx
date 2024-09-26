@@ -8,7 +8,6 @@ import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import { useLocation } from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import CodeBlock from '@theme/CodeBlock';
@@ -52,6 +51,8 @@ import {
 } from '@site/src/config/DocsHubList';
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from '@site/src/config/pageMeta';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   return (
@@ -80,17 +81,30 @@ function TechDocItem({
   docutheme,
 }: ITechDocItem) {
   const [content, setContent] = useState<number>(0);
+  const baseUrl = useSiteBaseUrl();
+
+  const handleOpenLink = (e, link: { e: any; link: string }) => {
+    // Check if link is an absolute URL (starts with http or https)
+    const isAbsoluteUrl = /^https?:\/\//i.test(link);
+
+    // If the link is not an absolute URL and baseUrl is defined, prepend the baseUrl
+    const fullLink = isAbsoluteUrl ? link : baseUrl ? baseUrl + link : link;
+    console.log(
+      fullLink,
+      isAbsoluteUrl ? 'absolute link' : 'full link with baseUrl'
+    );
+
+    // Navigate to the constructed fullLink or the absolute link
+    target === '_self'
+      ? (window.location.href = fullLink)
+      : window.open(fullLink, target);
+  };
 
   return (
     <TechDocCard>
       {/* <Link to={link} target='_blank'> */}
       <TechDocContent
-        onClick={(e) => {
-          e.preventDefault();
-          target === '_self'
-            ? (window.location.href = link)
-            : window.open(link, target);
-        }}
+        onClick={(e) => handleOpenLink(e, link)}
         hoverBackground='transparent'
       >
         <ItemV alignSelf='stretch' margin='0px 8%'>
@@ -172,7 +186,6 @@ function TechDocItem({
 }
 
 export default function HomepageFeatures(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
   const { colorMode, setColorMode } = useColorMode();
 
   return (

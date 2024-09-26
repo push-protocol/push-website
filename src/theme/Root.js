@@ -10,6 +10,7 @@ import styled from 'styled-components';
 import Footer from '@site/src/segments/Footer';
 import ServerStyle from '@site/src/theme/ServerStyle';
 import CookieComponent from '../components/CookieComponent';
+import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 
 // Initialize Internalization
 i18nInitialize();
@@ -39,13 +40,16 @@ export default function Root({ children }) {
     },
   ];
 
+  const baseURL = useSiteBaseUrl();
+
   // return superimposed class names if conditions are met
   function returnAdditionalClasses(conditions) {
     let result = '';
     for (var i = 0; i < conditions.length; i++) {
       const item = conditions[i];
+      const pathname = baseURL + item?.pathname;
 
-      if (locationPathExists(item.pathname, item.condition)) {
+      if (locationPathExists(pathname, item.condition)) {
         result = item.classname;
         break;
       }
@@ -57,18 +61,19 @@ export default function Root({ children }) {
 
   // enable disable default config
   function excludeDefaultConfigAt(pathname, condition) {
-    return !locationPathExists(pathname, condition);
+    const fullPathname = baseURL + pathname;
+    return !locationPathExists(fullPathname, condition);
   }
 
   // check if location path exists
   function locationPathExists(pathname, condition) {
     let result = false;
-    pathname = pathname.toUpperCase();
+    pathname = pathname?.toUpperCase();
 
     // Define location
     const location = useLocation();
 
-    const str = location.pathname.toUpperCase();
+    const str = location?.pathname.toUpperCase();
     const modstr =
       str != null && str.length >= pathname.length
         ? str.substring(0, pathname.length)

@@ -10,18 +10,20 @@ import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import type { Props } from '@theme/NotFound/Content';
 import Heading from '@theme/Heading';
-import { Content, Section } from '@site/src/css/SharedStyling';
+import { Content, Section } from '../../../css/SharedStyling';
 import { useLocation } from '@docusaurus/router';
 import styled from 'styled-components';
 
 // Internal Components
-import Footer from '@site/src/segments/Footer';
+import Footer from '../../../segments/Footer';
+import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 export default function NotFoundContent({ className }: Props): JSX.Element {
   const location = useLocation();
+  const baseURL = useSiteBaseUrl();
 
   // Determine if the pathname starts with '/docs'
-  const isDocsPage = location.pathname.startsWith('/docs');
+  const isDocsPage = location?.pathname.startsWith(baseURL + '/docs');
 
   return (
     <PageContainer isDocsPage={isDocsPage!}>

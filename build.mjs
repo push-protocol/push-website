@@ -3,7 +3,20 @@ import fs from 'fs';
 import Jimp from 'jimp';
 import path from 'path';
 import readline from 'readline';
+import { parse } from 'envfile';
 import { fileURLToPath } from 'url';
+import { getPreviewBasePath } from './basePath.js';
+
+const envPresets = {
+  prod: {
+    REACT_APP_DEPLOY_ENV: 'PROD',
+    REACT_APP_PUBLIC_URL: 'https://push.org/',
+  },
+  preview: {
+    REACT_APP_DEPLOY_ENV: 'PREVIEW',
+    REACT_APP_PUBLIC_URL: `${process.env.REACT_APP_BASE_URL}${getPreviewBasePath()}`,
+  },
+};
 
 // Define the starting directory
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -283,9 +296,171 @@ async function generatePNGImage(imagePath, title) {
   console.log('Image generated with title:', title);
 }
 
+const changeENV = async (appEnv) => {
+  console.log(chalk.green.dim('  -- Generating custom .env file...'));
+
+  // set up file modified flag
+  let fileModified = false;
+
+  // Load environment files
+  const envpath = `./.env`;
+  const envsamplepath = `./.env.sample`;
+
+  if (!fs.existsSync(envpath)) {
+    console.log(chalk.red('  -- Checking for ENV File... Not Found, creating'));
+    fs.writeFileSync(envpath, fs.readFileSync(envsamplepath, 'utf8'));
+  } else {
+    console.log(chalk.green.dim('  -- Checking for ENV File... Found'));
+  }
+
+  // Now Load the environment
+  const envData = fs.readFileSync(envpath, 'utf8');
+  const envObject = parse(envData);
+
+  const envSampleData = fs.readFileSync(envsamplepath, 'utf8');
+  const envSampleObject = parse(envSampleData);
+
+  const readIntSampleENV = readline.createInterface({
+    input: fs.createReadStream(envsamplepath),
+    output: false,
+  });
+  let realENVContents = '';
+
+  console.log(chalk.green.dim('  -- Verifying and building ENV File...'));
+
+  // load custom env preset
+  const customENVPreset = envPresets[appEnv];
+  let envParamOverridden = false;
+
+  // check to see if env param should be overwritten and / or are empty
+  for await (const line of readIntSampleENV) {
+    let moddedLine = line;
+
+    // Check if line is comment or environment variable
+    if (
+      moddedLine.startsWith('#') ||
+      moddedLine.startsWith('\n') ||
+      moddedLine.trim().length == 0
+    ) {
+      // do nothing, just include it in the line
+      // console.log("----");
+    } else {
+      // This is an environtment variable, first segregate the comment if any and the variable info
+      const delimiter = '#';
+
+      const index = moddedLine.indexOf('#');
+      const splits =
+        index == -1
+          ? [moddedLine.slice(0, index), '']
+          : [
+              moddedLine.slice(0, index),
+              ' ' + delimiter + moddedLine.slice(index + 1),
+            ];
+
+      const envVar = splits[0].split('=')[0]; //  Get environment variable by splitting the sample and then taking first seperation
+      const comment = splits[1];
+
+      // Check if envVar exists in real env, if not ask for val
+      // console.log(envObject[`${envVar}`]);
+
+      // check if envVar is in preset, if so override those values
+      envParamOverridden = false;
+      for (const [key, value] of Object.entries(customENVPreset)) {
+        if (!envParamOverridden && key === envVar) {
+          moddedLine = `${envVar}=${value}${comment}`;
+          console.log(chalk.dim(`   -- ENV MODIFIED: ${moddedLine}`));
+          fileModified = true;
+          envParamOverridden = true;
+        }
+      }
+
+      // Check and replace envVar value if it doesn't match
+      if (
+        !envParamOverridden &&
+        (!envObject[`${envVar}`] || envObject[`${envVar}`].trim() == '')
+      ) {
+        // env key doesn't exist, ask for input
+        console.log(
+          chalk.bgBlack.white(`  Enter ENV Variable Value --> ${envVar}`)
+        );
+
+        var value = '';
+
+        while (value.trim().length == 0) {
+          const rl = readline.createInterface({
+            input: process.stdin,
+            output: null,
+          });
+          value = await doSyncPrompt(rl, `${envSampleObject[envVar]} >`);
+
+          if (value.trim().length == 0) {
+            console.log(
+              chalk.bgRed.black("  Incorrect Entry, Field can't be empty")
+            );
+          }
+        }
+
+        console.log(chalk.bgBlack.white(`  [Saved] ${envVar}=${value}`));
+        moddedLine = `${envVar}=${value}${comment}`;
+
+        fileModified = true;
+      } else if (!envParamOverridden) {
+        // Value exists so just replicate
+        moddedLine = `${envVar}=${envObject[envVar]}${comment}`;
+      }
+    }
+
+    // if (envParamOverridden) {
+    //   console.log(chalk.blue(moddedLine));
+    // }
+
+    // finally append the line
+    realENVContents = `${realENVContents}\n${moddedLine}`;
+  }
+
+  if (fileModified) {
+    console.log(chalk.green.dim('  -- Modified ENV file generated, saving'));
+    fs.writeFileSync(envpath, realENVContents, { flag: 'w' });
+    console.log(chalk.green.bold(' -- -- -- --  -- -- -- --  -- -- -- --'));
+    console.log(chalk.green.bold(' CONTENT OF .ENV FILE CHANGED '));
+    console.log(chalk.green.bold(' DONT FORGET TO CHANGE .ENV FILE BACK '));
+    console.log(chalk.green.bold(' -- -- -- --  -- -- -- --  -- -- -- --'));
+    console.log(chalk.green.dim('👍 ENV modified for build deployment'));
+  } else {
+    console.log(chalk.green.dim('  -- ENV file verified!'));
+  }
+};
+
+// Leverages Node.js' awesome async/await functionality
+async function doSyncPrompt(rl, message) {
+  var promptInput = await readLineAsync(rl, message);
+  rl.close();
+
+  return promptInput;
+}
+
+function readLineAsync(rl, message) {
+  return new Promise((resolve, reject) => {
+    rl.question(message, (answer) => {
+      resolve(answer.trim());
+    });
+  });
+}
+
 // Prep for deployment starts everything
 const prepForDeployment = async (appEnv) => {
   console.log(chalk.green('Starting Custom Deployment Prebuild...'));
+
+  if (appEnv !== 'prod' && appEnv !== 'preview') {
+    console.log(
+      chalk.red(
+        'App Environment not set correctly... can only be prod or preview. Please check and retry'
+      )
+    );
+    process.exit(1);
+  }
+
+  await changeENV(appEnv);
 
   clearDirectory(ogPreviewDirectory);
 

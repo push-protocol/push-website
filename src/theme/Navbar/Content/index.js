@@ -6,7 +6,7 @@
  */
 
 // React + Web3 Essentials
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { ErrorCauseBoundary, useThemeConfig } from '@docusaurus/theme-common';
@@ -14,18 +14,13 @@ import {
   splitNavbarItems,
   useNavbarMobileSidebar,
 } from '@docusaurus/theme-common/internal';
-import GLOBALS, { device } from '@site/src/config/globals';
+import { device } from '@site/src/config/globals';
 import {
-  A,
-  Button,
-  Content,
   H2,
   H3,
   Image,
   ItemH,
-  ItemV,
   LinkTo,
-  Section,
   Span,
 } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
@@ -40,6 +35,8 @@ import { BsChevronDown } from 'react-icons/bs';
 import styled from 'styled-components';
 import { HeaderList } from '../../../config/HeaderList';
 import styles from './styles.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 const defaultMobileMenuState = {
   0: false,
@@ -86,24 +83,24 @@ function NavbarContentLayout({ left, right }) {
 export default function NavbarContent() {
   // for navigation
   const history = useHistory();
-  const theme = useThemeConfig();
   const location = useLocation();
-  const pathname = location.pathname;
+  const pathname = location?.pathname;
+  const baseURL = useSiteBaseUrl() || '';
 
   const mobileSidebar = useNavbarMobileSidebar();
   const items = useNavbarItems();
+
+  // eslint has to disabled for this line cause the leftItems is required
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [leftItems, rightItems] = splitNavbarItems(items);
   const searchBarItem = items.find((item) => item.type === 'search');
 
   const isLaptopM = useMediaQuery(device.laptopM);
-  const isLaptop = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
-  const [scrollDirection, setScrollDirection] = useState(null);
-  // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
   // Internationalization
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const showMobileMenu = isLaptopM && isMobileMenuOpen;
 
@@ -134,7 +131,7 @@ export default function NavbarContent() {
             if (href.includes('http')) {
               window.location.href = href;
             } else {
-              history.push(href);
+              history.push(baseURL + href);
             }
           }
         } else {
@@ -142,7 +139,7 @@ export default function NavbarContent() {
           if (href.includes('http')) {
             window.open(href, target);
           } else {
-            window.open(`${window.location.origin}${href}`, target);
+            window.open(`${window.location.origin}${baseURL + href}`, target);
           }
         }
       } else if (id) {
@@ -212,7 +209,7 @@ export default function NavbarContent() {
     });
   };
 
-  const handleMouseLeave = (e) => {
+  const handleMouseLeave = () => {
     textIds.forEach((id) => {
       const element = document.getElementById(id);
       if (element) {
@@ -233,12 +230,12 @@ export default function NavbarContent() {
 
           {/* Change Header from docs to blog if required */}
           {!isLaptopM &&
-            (pathname.startsWith('/docs') ? (
-              <NavItem to='/docs' aria-label='Push Docs'>
+            (pathname.startsWith(baseURL + '/docs') ? (
+              <NavItem to={useBaseUrl('/docs')} aria-label='Push Docs'>
                 Docs
               </NavItem>
             ) : (
-              <NavItem to='/blog' aria-label='Push Blog'>
+              <NavItem to={useBaseUrl('/blog')} aria-label='Push Blog'>
                 Blog
               </NavItem>
             ))}

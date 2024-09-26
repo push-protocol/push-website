@@ -8,7 +8,7 @@ import { useLocation } from '@docusaurus/router';
 
 // External Components
 import { useTranslation } from 'react-i18next';
-import { BsArrowUpRight, BsTwitterX } from 'react-icons/bs';
+import { BsTwitterX } from 'react-icons/bs';
 import styled from 'styled-components';
 
 // Internal Components
@@ -22,29 +22,24 @@ import {
   Section,
   Span,
 } from '@site/src/css/SharedStyling';
-import FooterFollowusFigure from '@site/static/assets/website/footer/footerfollowus.svg';
-import FooterJoinusFigure from '@site/static/assets/website/footer/footerjoinus.svg';
-import AppStoreSVG from '@site/static/assets/website/footer/appstore.svg';
-import GooglePlaySVG from '@site/static/assets/website/footer/googleplay.svg';
-import PushBellSVG from '@site/static/assets/website/footer/pushBell.svg';
-import AndroidSVG from '@site/static/assets/website/shared/android.svg';
-import AppleSVG from '@site/static/assets/website/shared/apple.svg';
 import DiscordSVG from '@site/static/assets/website/shared/discord.svg';
 import GithubSVG from '@site/static/assets/website/shared/github.svg';
 import TelegramSVG from '@site/static/assets/website/shared/telegram.svg';
-import TwitterSVG from '@site/static/assets/website/shared/twitter-icon.svg';
 import { MailingSignup } from '../components/MailingSignup/MailingSignup';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
 import { HeaderList } from '@site/src/config/HeaderList';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 
 function Footer() {
   // Internationalization
   const { t } = useTranslation();
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
+  const baseURL = useSiteBaseUrl() || '';
 
   // for navigation
   const history = useHistory();
@@ -64,7 +59,7 @@ function Footer() {
           if (href.includes('http')) {
             window.location.href = href;
           } else {
-            history.push(href);
+            history.push(baseURL + href);
           }
           scrollToTop();
         }
@@ -73,20 +68,20 @@ function Footer() {
         if (href.includes('http')) {
           window.open(href, target);
         } else {
-          window.open(`${window.location.origin}${href}`, target);
+          window.open(`${window.location.origin}${baseURL + href}`, target);
         }
         // scrollToTop();
       }
     } else if (id) {
-      if (location.pathname !== '/' && id) {
-        history.push('/');
+      if (location?.pathname !== baseURL + '/' && id) {
+        history.push(baseURL + '/');
         setTimeout(() => {
-          document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-        }, 1500);
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
       }
 
-      if (location.pathname === '/') {
-        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      if (location?.pathname === baseURL + '/') {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
       }
     } else return;
   };
@@ -102,7 +97,7 @@ function Footer() {
                 <FooterLinkItem>
                   <LinkTo
                     className='pushLogo'
-                    to='/'
+                    to={useBaseUrl('/')}
                     title='Push'
                     onClick={scrollToTop}
                     justifyContent={isMobile ? 'center' : 'flex-start'}
@@ -152,7 +147,7 @@ function Footer() {
                     {t('header.products.title')}
                   </Span>
 
-                  {HeaderList.products.map((item, index) => (
+                  {HeaderList.products.map((item) => (
                     <FooterAnchorSecondary
                       as={'div'}
                       title={t(item.title)}
@@ -177,7 +172,7 @@ function Footer() {
                     {t('header.developers.title')}
                   </Span>
 
-                  {HeaderList.developers.map((item, index) => (
+                  {HeaderList.developers.map((item) => (
                     <FooterAnchorSecondary
                       as={'div'}
                       title={t(item.title)}
@@ -202,7 +197,7 @@ function Footer() {
                     {t('header.community.title')}
                   </Span>
 
-                  {HeaderList.community.map((item, index) => (
+                  {HeaderList.community.map((item) => (
                     <FooterAnchorSecondary
                       as={'div'}
                       title={t(item.title)}
@@ -227,7 +222,7 @@ function Footer() {
                     {t('header.resources.title')}
                   </Span>
 
-                  {HeaderList.resources.map((item, index) => (
+                  {HeaderList.resources.map((item) => (
                     <FooterAnchorSecondary
                       as={'div'}
                       title={t(item.title)}
@@ -253,7 +248,7 @@ function Footer() {
             >
               <FooterAnchorSecondary
                 as={LinkTo}
-                to='/privacy'
+                to={useBaseUrl('/privacy')}
                 title={t('footer.links-section.subscribe-column.faq-link')}
                 onClick={scrollToTop}
               >
@@ -262,7 +257,7 @@ function Footer() {
 
               <FooterAnchorSecondary
                 as={LinkTo}
-                to='/tos'
+                to={useBaseUrl('/tos')}
                 title={t('footer.links-section.subscribe-column.faq-link')}
                 onClick={scrollToTop}
               >
@@ -379,49 +374,6 @@ const FooterSection = styled(Section)`
   // flex-direction: column;
 `;
 
-const FooterContent = styled(Content)`
-  // padding-bottom: 20px;
-`;
-
-const InfoCard = styled(ItemV)`
-  border-radius: 32px;
-  background: #2a2a39;
-  padding: 48px 30px 48px 40px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  column-gap: 32px;
-  box-sizing: border-box;
-
-  & svg.figureSvg {
-    width: 72px;
-    height: 72px;
-  }
-
-  @media ${device.tablet} {
-    flex-direction: column;
-    row-gap: 16px;
-
-    & svg.figureSvg {
-    }
-  }
-`;
-
-const InfoDetails = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 calc(100% - 116px);
-
-  @media ${device.tablet} {
-    align-items: center;
-
-    & span {
-      text-align: center;
-    }
-  }
-`;
-
 const FooterContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -505,29 +457,6 @@ const SocialLinks = styled(ItemH)`
   @media ${device.mobileL} {
     flex-direction: column-reverse;
     gap: 24px;
-  }
-`;
-
-const FooterAnchorPrimary = styled(A)`
-  color: #dd44b9;
-  border-radius: 16px;
-  padding: 14px 0;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 142%;
-  justify-content: flex-start;
-  background: transparent;
-  border-radius: 0;
-
-  &:hover & {
-    filter: transparent;
-  }
-  &:before {
-    background: transparent;
-  }
-  &:after {
-    background: transparent;
   }
 `;
 

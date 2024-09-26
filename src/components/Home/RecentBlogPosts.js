@@ -5,10 +5,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Internal Components
-import { Button, H2, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
-
-// Import Assets
-import BlogPostItemHeaderInfo from '@theme/BlogPostItem/Header/Info';
+import { Button, H2, ItemH, Span } from '@site/src/css/SharedStyling';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
@@ -19,10 +16,12 @@ import {
   Spacer,
 } from '@site/src/components/reusables/date.tsx';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 const RecentBlogPosts = ({ recentPosts = [] }) => {
   const isTablet = useMediaQuery(device.laptop);
-  const isMobile = useMediaQuery(device.mobileL);
+  const baseUrl = useSiteBaseUrl();
+
   return (
     <BlogPostList>
       {/* <BlogPostCardContainer> */}
@@ -35,7 +34,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
             className='item-3'
             onClick={() => {
               window.open(
-                `/blog/${postItem.metadata.frontMatter.slug}`,
+                `${baseUrl}/blog/${postItem.metadata.frontMatter.slug}`,
                 '_self'
               );
             }}
@@ -94,7 +93,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
             className={`item-${index}`}
             onClick={() => {
               window.open(
-                `/blog/${postItem.metadata.frontMatter.slug}`,
+                `${baseUrl}/blog/${postItem.metadata.frontMatter.slug}`,
                 '_self'
               );
             }}

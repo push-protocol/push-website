@@ -212,7 +212,7 @@ function Privacy() {
                   relationship with us and should be read in conjunction with
                   such{' '}
                   <A
-                    href='./terms'
+                    href={useBaseUrl('./tos')}
                     target='_blank'
                     display=' inline'
                     color='#e1087f'
