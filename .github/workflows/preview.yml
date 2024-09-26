@@ -33,7 +33,7 @@ jobs:
       - name: Install and Build
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
         run: |
-          yarn install --frozen-lockfile
+          yarn install
           yarn build:pr:preview
 
       # Configure GitHub Pages for deployment

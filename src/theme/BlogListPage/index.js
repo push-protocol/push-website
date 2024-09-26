@@ -52,14 +52,14 @@ function BlogListPageContent(props) {
     <>
       <ListItem>
         <ListSpan>
-          {metadata.page == 1 ? 'Recent Updates' : `Page ${metadata.page}`}
+          {metadata.page == 1 ? 'Recent Updates' : `Page ${metadata?.page}`}
         </ListSpan>
         {metadata.page == 1 && (
           <BlogPostItems items={items.slice(0, 4)} list={true} />
         )}
       </ListItem>
       <GridItem marginTop={metadata.page == 1 ? true : false}>
-        <BlogPostItems items={items.slice(metadata.page == 1 ? 4 : 0, 11)} />
+        <BlogPostItems items={items.slice(metadata?.page == 1 ? 4 : 0, 11)} />
       </GridItem>
       <PaginatorDiv>
         <BlogListPaginator metadata={metadata} />

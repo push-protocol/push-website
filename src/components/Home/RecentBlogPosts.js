@@ -34,11 +34,11 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
             className='item-3'
             onClick={() => {
               window.open(
-                `${baseUrl}/blog/${postItem.metadata.frontMatter.slug}`,
+                `${baseUrl}/blog/${postItem?.metadata.frontMatter.slug}`,
                 '_self'
               );
             }}
-            alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
+            alt={`Read blog post - ${postItem?.metadata.frontMatter.title}`}
           >
             <postItem.Preview loading='lazy' />
 
@@ -51,8 +51,8 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 display={isTablet && 'none'}
               >
                 <Date
-                  date={postItem.Preview.metadata.date}
-                  formattedDate={postItem.Preview.metadata.formattedDate}
+                  date={postItem?.Preview?.metadata.date}
+                  formattedDate={postItem?.Preview?.metadata.formattedDate}
                   mr={'3px'}
                 />
                 {typeof postItem.Preview.metadata.readingTime !==
@@ -60,7 +60,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                   <>
                     <Spacer />
                     <ReadingTime
-                      readingTime={postItem.Preview.metadata.readingTime}
+                      readingTime={postItem?.Preview?.metadata.readingTime}
                     />
                   </>
                 )}
@@ -74,10 +74,10 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 fontFamily='FK Grotesk Neue'
                 letterSpacing='normal'
               >
-                {postItem.metadata.title}
+                {postItem?.metadata.title}
               </H2>
 
-              <TextSpan>{postItem.metadata.frontMatter.text}</TextSpan>
+              <TextSpan>{postItem?.metadata.frontMatter.text}</TextSpan>
             </BodyItem>
           </BlogPostCardPrimary>
         );
@@ -93,11 +93,11 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
             className={`item-${index}`}
             onClick={() => {
               window.open(
-                `${baseUrl}/blog/${postItem.metadata.frontMatter.slug}`,
+                `${baseUrl}/blog/${postItem?.metadata.frontMatter.slug}`,
                 '_self'
               );
             }}
-            alt={`Read blog post - ${postItem.metadata.frontMatter.title}`}
+            alt={`Read blog post - ${postItem?.metadata.frontMatter.title}`}
           >
             <postItem.Preview loading='lazy' />
             <TitleItem>
@@ -110,7 +110,7 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 fontFamily='FK Grotesk Neue'
                 letterSpacing='normal'
               >
-                {postItem.metadata.title}
+                {postItem?.metadata.title}
               </H2>
             </TitleItem>
           </BlogPostCardSecondary>
