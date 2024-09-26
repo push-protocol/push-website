@@ -2,7 +2,7 @@
 slug: what-is-consumer-crypto-and-why-does-it-matter
 title: 'What is consumer crypto and why does it matter?'
 authors: [ian]
-image: './cover-image.gif'
+image: './cover-image.webp'
 description: ' What is consumer crypto and why does it matter?'
 text: "Bitcoin showed us that a decentralized monetary system can work in practice. Ethereum did the same for applications of all shapes and sizes."
 tags: [consumer Crypto, Insights]
