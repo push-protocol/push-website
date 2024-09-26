@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[99237],{739080:e=>{e.exports=JSON.parse('{"label":"Year In Review","permalink":"/push-website/pr-preview/pr-884/blog/tags/year-in-review","allTagsPath":"/push-website/pr-preview/pr-884/blog/tags","count":2,"unlisted":false}')}}]);
