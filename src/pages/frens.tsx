@@ -481,17 +481,15 @@ const FrensText = () => {
 
             <ChannelsSection>
               {channels?.map((item, i) => (
-                // <FadeInAnimation wrapperElement="div" delay={0.25} >
                 <Channels key={item.ipfshash}>
-                  {isMobile ? (
-                    <ChannelItem channelProp={item} />
-                  ) : (
+                  {isMobile && <ChannelItem channelProp={item} />}
+
+                  {!isMobile && (
                     <Tilt options={options} className='box'>
                       <ChannelItem channelProp={item} delay={0.25} />
                     </Tilt>
                   )}
                 </Channels>
-                // </FadeInAnimation>
               ))}
             </ChannelsSection>
 

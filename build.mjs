@@ -14,7 +14,7 @@ const envPresets = {
   },
   preview: {
     REACT_APP_DEPLOY_ENV: 'PREVIEW',
-    REACT_APP_PUBLIC_URL: `${process.env.REACT_APP_BASE_URL}${getPreviewBasePath()}`,
+    REACT_APP_PUBLIC_URL: `${process.env.REACT_APP_PUBLIC_URL}${getPreviewBasePath()}`,
   },
 };
 
