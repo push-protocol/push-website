@@ -6,15 +6,12 @@ import React, { useState } from 'react';
 
 // External Components
 import styled from 'styled-components';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 // import { ChatUIProvider } from '@pushprotocol/uiweb';
 
 // Internal Components
-import {
-  PushChatTheme,
-  darkChatTheme,
-} from '@site/src/components/BRB/PushChatTheme';
+import { PushChatTheme } from '@site/src/components/BRB/PushChatTheme';
 import { Modal } from '@site/src/components/Modal';
-import ChatBubbleComponent from '@site/src/components/PushChat/PushChatBubbleComponent';
 import { TokenFaucet } from '@site/src/components/TokenFaucet';
 import Spinner, {
   SPINNER_TYPE,
@@ -29,11 +26,9 @@ import {
   Span,
 } from '@site/src/css/SharedStyling';
 import { useDisableBodyScroll } from '@site/src/hooks/useDisabledBodyScroll';
-import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
 import PlaygroundBg from '@site/static/assets/website/brb/PlaygroundBg.png';
-import Brand from '@site/static/assets/website/brb/others/brand-header.svg';
 import TokenGated from '@site/static/assets/website/brb/others/token-gated.svg';
 import WhiteArrow from '@site/static/assets/website/brb/others/white-arrow.svg';
 
@@ -43,14 +38,13 @@ import GLOBALS, { device } from '@site/src/config/globals';
 
 export const ChatComponent = () => {
   const [showFaucet, setShowFaucet] = useState<boolean>(false);
-  const isMobile = useMediaQuery(device.mobileL);
 
   useDisableBodyScroll({ open: showFaucet });
   return (
     <Container>
       <Header>
         Join the conversation
-        <BrandA href='/docs/chat' target='_blank'>
+        <BrandA href={useBaseUrl('/docs/chat')} target='_blank'>
           <Image
             src={
               require(

@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-/* eslint-disable react/prop-types */
 /* eslint-disable */
 
 // React + Web3 Essentials
@@ -41,6 +40,8 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { SupportedLanguagesList } from '@site/src/config/SupportedLanguagesList';
 import GLOBALS, { device, structure } from '@site/src/config/globals';
 import { HeaderList } from '../config/HeaderList';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -67,6 +68,7 @@ function Header() {
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   const [scrollDirection, setScrollDirection] = useState(null);
   const location = useLocation();
+  const baseURL = useSiteBaseUrl() || '';
   // const [isAlertVisible, setIsAlertVisible] = useState(true);
 
   // for navigation
@@ -157,7 +159,7 @@ function Header() {
             if (href.includes('http')) {
               window.location.href = href;
             } else {
-              history.push(href);
+              history.push(baseURL + href);
             }
           }
         } else {
@@ -165,25 +167,21 @@ function Header() {
           if (href.includes('http')) {
             window.open(href, target);
           } else {
-            window.open(`${window.location.origin}${href}`, target);
+            window.open(`${window.location.origin}${baseURL + href}`, target);
           }
         }
       } else if (id) {
         if (showMobileMenu) toggleMobileMenu();
 
-        // gsap.to(window, {
-        //   duration: 0.75,
-        //   scrollTo: { y: `#${id}` },
-        // });
-        if (location.pathname !== '/' && id) {
-          history.push('/');
+        if (location?.pathname !== baseURL + '/' && id) {
+          history.push(baseURL + '/');
           setTimeout(() => {
-            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-          }, 1500);
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+          }, 200);
         }
 
-        if (location.pathname === '/') {
-          document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        if (location?.pathname === baseURL + '/') {
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
         }
       } else return;
     };
@@ -295,7 +293,7 @@ function Header() {
 
             <MenuTop flex='initial' showMobileMenu={showMobileMenu}>
               <PushLogoBlackContainer className='headerlogo' flex='initial'>
-                <LinkTo to='/' aria-label='Push'>
+                <LinkTo to={useBaseUrl('/')} aria-label='Push'>
                   <Image
                     src={
                       require(
@@ -311,7 +309,7 @@ function Header() {
               </PushLogoBlackContainer>
               <PushLogoWhiteContainer className='headerlogo' flex='initial'>
                 <LinkTo
-                  to='/'
+                  to={useBaseUrl('/')}
                   aria-label='Push'
                   hoverBackground='transparent'
                   padding='0'

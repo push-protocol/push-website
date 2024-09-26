@@ -189,7 +189,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
 
                 <HeroCTA gap='18px'>
                   <A
-                    href='/docs'
+                    href={useBaseUrl('/docs')}
                     title={t('home.hero.alt-start-button')}
                     background={GLOBALS.COLORS.HIGHLIGHT}
                     color={GLOBALS.COLORS.FONT_LIGHT}
@@ -432,7 +432,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               </ItemV>
             </ItemH>
             <SlideLink
-              href={`https://push.org/docs/tokenomics/deepdive/$push/`}
+              href={useBaseUrl(`/docs/tokenomics/deepdive/$push/`)}
               title={'new'}
               target='_blank'
               padding='0px 0px'
@@ -470,7 +470,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
               {!isMobile && (
                 <ItemH justifyContent='flex-end'>
                   <SlideLink
-                    href='/blog'
+                    href={useBaseUrl('/blog')}
                     title='Explore all articles'
                     hoverBackground='transparent'
                     hover='transparent'
@@ -693,7 +693,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 </AccordionGrid>
 
                 <SlideLink
-                  href={'/faq'}
+                  href={useBaseUrl('/faq')}
                   title={'new'}
                   target='_blank'
                   padding='0px 0px'
@@ -745,7 +745,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
                 </H3>
 
                 <FaqLink
-                  href='/docs'
+                  href={useBaseUrl('/docs')}
                   title='Explore docs'
                   fontSize='16px'
                   margin='48px 0 0 0'

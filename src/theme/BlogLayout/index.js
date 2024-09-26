@@ -17,7 +17,7 @@ export default function BlogLayout(props) {
   const { sidebar, toc, children } = props;
 
   const location = useLocation();
-  const pathname = location.pathname;
+  const pathname = location?.pathname;
 
   const isBlogMainPage =
     pathname.includes('/page/') || pathname == '/blog/' || pathname == '/blog';
@@ -80,7 +80,7 @@ export default function BlogLayout(props) {
       )}
 
       {toc ? (
-        <BlogItem className=''>
+        <BlogItem className='blog-section'>
           <TOC className=''></TOC>
           <main
             className='mainItem'
@@ -92,7 +92,7 @@ export default function BlogLayout(props) {
           <TOC className=''>{toc}</TOC>
         </BlogItem>
       ) : (
-        <div className='container'>
+        <div className='container blog-section'>
           <BlogSidebar sidebar={sidebar} />
           <main
             className='mainItem'

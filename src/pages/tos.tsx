@@ -214,7 +214,7 @@ function TermsOfService() {
                   these Terms, (2) consent to the collection, use, disclosure
                   and other handling of information as described in our{' '}
                   <A
-                    href='./privacy'
+                    href={useBaseUrl('./privacy')}
                     target='_blank'
                     display=' inline'
                     color='#e1087f'

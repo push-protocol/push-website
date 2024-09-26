@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 // External Components
 import ReactPlayer from 'react-player';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import styled from 'styled-components';
 
 // Internal Components
@@ -465,7 +466,7 @@ const Glassy = ({ item }) => {
                 if (object.type === 'styled-link') {
                   return (
                     <SlideLink
-                      href={object.href}
+                      href={useBaseUrl(object.href)}
                       title={'new'}
                       target='_blank'
                       padding='0px 0px'
@@ -498,7 +499,7 @@ const Glassy = ({ item }) => {
                         fontWeight='500'
                         fontSize='16px'
                         fontFamily='FK Grotesk Neue'
-                        href={object.buttonlink}
+                        href={useBaseUrl(object.buttonlink)}
                         title={t(object.buttontitle)}
                       >
                         {t(object.buttontext)}

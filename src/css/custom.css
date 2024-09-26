@@ -838,7 +838,8 @@ li {
 /* ------------------ */
 .PushBlog
   .img_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module,
-.PushBlog img {
+.PushBlog img, 
+.blog-section img {
   border-radius: 32px;
 }
 

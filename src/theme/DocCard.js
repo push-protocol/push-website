@@ -6,7 +6,6 @@
  */
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
-import isInternalUrl from '@docusaurus/isInternalUrl';
 import {
   // findFirstCategoryLink,
   useDocById,
@@ -14,10 +13,11 @@ import {
 import clsx from 'clsx';
 import React from 'react';
 import styles from './styles.module.css';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 function CardContainer({ href, children }) {
   return (
     <Link
-      href={href}
+      href={useBaseUrl(href)}
       className={clsx('card padding--lg', styles.cardContainer)}
     >
       {children}
@@ -26,7 +26,7 @@ function CardContainer({ href, children }) {
 }
 function CardLayout({ href, icon, title, description }) {
   return (
-    <CardContainer href={href}>
+    <CardContainer href={useBaseUrl(href)}>
       <h2 className={clsx('text--truncate', styles.cardTitle)} title={title}>
         {icon} {title}
       </h2>
@@ -42,14 +42,8 @@ function CardLayout({ href, icon, title, description }) {
   );
 }
 function CardCategory({ item }) {
-  // const href = findFirstCategoryLink(item);
-  // // Unexpected: categories that don't have a link have been filtered upfront
-  // if (!href) {
-  //   return null;
-  // }
   return (
     <CardLayout
-      // href={href}
       icon='🗃️'
       title={item.label}
       description={
@@ -68,7 +62,6 @@ function CardCategory({ item }) {
   );
 }
 function CardLink({ item }) {
-  // const icon = isInternalUrl(item.href) ? '📄️' : '🔗';
   const doc = useDocById(item.docId ?? undefined);
   return (
     <CardLayout

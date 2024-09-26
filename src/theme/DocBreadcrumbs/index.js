@@ -61,7 +61,7 @@ export default function DocBreadcrumbs() {
   let breadcrumbs = useSidebarBreadcrumbs();
 
   // override breadcrumps to add product as well
-  let locationpath = useLocation().pathname;
+  let locationpath = useLocation()?.pathname;
   // remove /docs/ from path
   locationpath = locationpath.replace('/docs/', '');
   // split path into array

@@ -4,24 +4,21 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
+import React from 'react';
 import {
   HtmlClassNameProvider,
   PageMetadata,
   ThemeClassNames,
 } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { Section, Span } from '@site/src/css/SharedStyling';
-import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import { Span } from '@site/src/css/SharedStyling';
 import BlogLayout from '@theme/BlogLayout';
 import BlogListPaginator from '@theme/BlogListPaginator';
 import BlogPostItems from '@theme/BlogPostItems';
 import SearchMetadata from '@theme/SearchMetadata';
 import clsx from 'clsx';
-import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { PageMeta } from '@site/src/config/pageMeta';
 import { useLocation } from '@docusaurus/router';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
@@ -33,7 +30,7 @@ function BlogListPageMetadata(props) {
   } = useDocusaurusContext();
   const { blogDescription, blogTitle, permalink } = metadata;
   const location = useLocation();
-  const pathname = location.pathname;
+  const pathname = location?.pathname;
 
   const isBlogOnlyMode = permalink === '/';
   const isBlogMainPage =
@@ -49,7 +46,7 @@ function BlogListPageMetadata(props) {
   );
 }
 function BlogListPageContent(props) {
-  const { metadata, items, sidebar } = props;
+  const { metadata, items } = props;
 
   return (
     <>
@@ -71,7 +68,6 @@ function BlogListPageContent(props) {
   );
 }
 export default function BlogListPage(props) {
-  const isSwiper = useMediaQuery(`(max-width: 1199px)`);
   return (
     <HtmlClassNameProvider
       className={clsx(
