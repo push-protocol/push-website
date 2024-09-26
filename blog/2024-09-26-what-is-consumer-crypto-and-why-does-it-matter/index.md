@@ -5,7 +5,7 @@ authors: [ian]
 image: './cover-image.webp'
 description: ' What is consumer crypto and why does it matter?'
 text: "Bitcoin showed us that a decentralized monetary system can work in practice. Ethereum did the same for applications of all shapes and sizes."
-tags: [consumer Crypto, Insights]
+tags: [Consumer Crypto, Insights]
 ---
 
 ![Cover Image of What is consumer crypto and why does it matter?](./cover-image.webp)
@@ -34,11 +34,11 @@ There’s never been a better time than now to sift through the viewpoints and f
 
 In this post, we aim to:
 
-• Establish a clear definition of consumer crypto
+***• Establish a clear definition of consumer crypto***
 
-• Explore the key reasons for its importance
+***• Explore the key reasons for its importance***
 
-• Comment on its future trajectory
+***• Comment on its future trajectory***
 
 # Defining consumer crypto
 
@@ -50,7 +50,7 @@ Consumer crypto isn’t solely about web3 apps becoming household names.
 
 It also refers to every layer of the stack being hyper-focused on providing novel experiences powered by the blockchain, smart contracts, tokenization, and everything in between. Zooming in, it could then be said that consumer crypto is the niche of the greater crypto industry that’s focused on building the future of all apps and services, powered by blockchain tech. 
 
-Even so, that’s still not quite it. 
+However, that’s still not quite it. 
 
 There’s something more that needs to be included because to scale all things crypto or more accurately, all things web3, to the masses, we need improvements to every level of the industry’s aggregated UX.
 
@@ -62,7 +62,7 @@ This measure of how often users keep coming back to an app is called “stickine
 
 Think about why Slack is sticky, even for Web3 teams. 
 
-Once you pass a certain threshold of all-time messages sent, it becomes the standard for communication in your workplace. It doesn’t matter, in most cases, how many alternatives pop up. All of your historical conversations and all the documents you’ve ever shared are stored in your team’s Slack. It’s sticky because, at a certain point, it becomes the single source of truth, the one place you keep coming back to, to coordinate all of your team’s efforts. 
+Once you pass a certain threshold of all-time messages sent, it becomes the standard for communication in your workplace. It doesn’t matter, in most cases, how many alternatives pop up. Your historical conversations and all the documents you’ve ever shared are stored in your team’s Slack.
 
 What about Google Meet?
 
@@ -70,7 +70,7 @@ It’s a sticky progressive web app because it seamlessly integrates with your c
 
 People keep coming back because, above all else, it’s intuitive to use and it doesn’t lock anyone out. 
 
-Consumer crypto, as a whole, aims to build out sticky apps that scale far beyond the web3 niche. All in all, the key goal is for them to be just as intuitive to use as their legacy counterparts and more attractive due to the new, on-chain-enabled features they champion.
+Consumer crypto, as a whole, is a vision to build out sticky apps that scale far beyond the web3 niche. All in all, the key goal is for them to be just as intuitive to use as their legacy counterparts and more attractive due to the new, on-chain-enabled features they champion.
 
 To narrow down what this means, let's consider the rise of DeFi. 
 
@@ -80,7 +80,7 @@ As institutions like Blackrock continue to buy in, that’s only becoming cleare
 
 While both DeFi and consumer crypto are niches within the same industry, they have considerably different target markets. DeFi aims to provide the future financial system, piece by piece, to institutions, traders, and individuals. 
 
-Consumer crypto is the web3 niche that focuses on giving the world sticky, chain-abstracted, user-governed apps that become the future of first, how people spend their free time online, and later, how people get things done that they need to get done, online. 
+Consumer Crypto is the vision of developing intuitive, sticky, and user-governed applications that leverage blockchain technology to deliver seamless, chain-abstracted experiences. These applications extend beyond financial services, enabling any user to engage with a diverse range of web3 applications for various purposes, fostering widespread adoption, and enhancing everyday digital interactions.
 
 Below, we dig into why that needs to be done, and how we, as builders, can do it. 
 
@@ -94,15 +94,17 @@ Once we achieve this, it will become clear why consumer crypto is essential and 
 
 From approval signatures to bridging, to holding multiple tokens just for gas fees on different networks, to managing multiple wallets, [and beyond](https://push.org/blog/the-rise-of-chains-and-fall-of-ux-in-web3-ux/), web3 apps are rife with complexity. Changing the status quo requires unifying the user experience regardless of all these intricacies. 
 
-A commitment to learning from web2’s successes and failures is a good start. Chain abstraction across the board, [as we describe in a past post here](https://push.org/blog/the-rise-of-chains-and-fall-of-ux-in-web3-ux/), takes us further. 
+A commitment to learning from web2’s successes and failures is a good start. 
 
-Spinning up an account on a web3 app needs to be as easy if not easier than doing so on something like Facebook.  Simplicity needs to reign across the board in our approach to UX and we need to commit to benchmarking to leading legacy apps that are household names to ensure this happens. Moreover, and crucially, putting all of the innovations that make this industry great on the back end does not mean hiding them. Key features like instant transfers without bridging, perpetual guaranteed royalties, on-chain wallet-to-wallet messaging, decentralized identity and governance, portable social graphs, and the radical transparency that sparked this movement must be integrated in ways that enhance rather than take away from the average user's experience. Until all of this is achieved, onboarding will continue to be a major barrier to widespread adoption and the advent of an age in which on-chain apps supplant off-chain apps.
+Chain abstraction across the board, [as we describe in a past post here](https://push.org/blog/the-rise-of-chains-and-fall-of-ux-in-web3-ux/), takes us further. 
+
+Spinning up an account on a web3 app must be as easy if not easier than doing so on something like Facebook.  Simplicity needs to reign across the board in our approach to UX and we need to commit to benchmarking to leading legacy apps that are household names to ensure this happens. Moreover, putting all of the innovations that make this industry great on the back end does not mean hiding them. 
+
+Until all of this is achieved, onboarding will continue to be a major barrier to widespread adoption and the advent of an age in which on-chain apps supplant off-chain apps. 
 
 **Long-Term Retention**
 
-The easier onboarding is, the more likely it is that an app will be able to retain users over the long term. Even so, this is only a piece of the puzzle concerning keeping users around. 
-
-Raising retention is a multi-sided problem. 
+Raising retention is a multi-sided problem. To retain users over the long-term, we must ensure better and seamless UX.
 
 With web2’s common approaches to it and the unique features that web3 has in mind, it becomes easier to solve. 
 
@@ -110,9 +112,9 @@ Think about the apps you have on your phone. What reminds you to check them? Pus
 
 When your phone’s locked and you receive a push notification saying that you got a new message from a friend on an app, you check that app. It’s a reflex, in most cases. The same principle applies to web3. If you’re a trader and you get a push notification in your wallet that says the asset you’re tracking has reached the price you’re looking for, you’ll head to your account and trade that asset. Delegates for a DAO who receive the same sort of notification that a vote has begun will head to Snapshot or wherever that vote is being held to participate. The same goes for fans of a particular NFT artist who receive a ping that a new drop is live or fans of a podcaster who see that a new episode is live. 
 
-As long as they’re not so frequent as to be perceived as intrusive, push notifications are still key to keeping people engaged, even on-chain. 
+Push notifications are still key to keeping people engaged, even on-chain. 
 
-Beyond push notifications, numerous other methods for increasing user retention exist, both predating web3 and emerging from it. The initial rise of NFTs has already shown the power of royalties, guaranteed in perpetuity, by smart contracts. Most legacy marketplaces and social media platforms offer only negligible profit-sharing, if any. 
+Beyond push notifications, numerous other methods for enhancing user retention exist, both predating web3 and emerging from it. The initial rise of NFTs has already shown the power of royalties, guaranteed in perpetuity, by smart contracts. Most legacy marketplaces and social media platforms offer only negligible profit-sharing, if any. 
 
 It’s the call for change we’ve seen since the earliest days of social media. Give us apps that prioritize the users, including creators, first, above all else. 
 
@@ -130,33 +132,31 @@ Token-based incentives such as higher statuses and higher rewards based on longe
 
 However, none of the above matters if we, as an industry, can't demonstrate a stronger commitment to a broader range of use cases for our apps. Currently, the majority of existing web3 apps are DeFi-focused.
 
-Consumer crypto aims to change that by providing intuitive, fun, sticky apps that rival those that are today’s leaders in the social media, gaming, and marketplace niches. Chain abstraction, [cross-chain requests](https://push.org/blog/cross-chain-requests-pre-pip/), and [related solutions](https://push.org/blog/the-rise-of-chains-and-fall-of-ux-in-web3-ux/) are making it easier than ever for that to happen.  As previously mentioned, through recent hackathons, we’re already able to see consumer apps leading the charge.
+Consumer crypto aims to change that by providing intuitive, fun, sticky apps that rival those that are today’s leaders in the social media, gaming, and marketplace niches. Chain abstraction, [cross-chain requests](https://push.org/blog/cross-chain-requests-pre-pip/), and [related solutions](https://push.org/blog/the-rise-of-chains-and-fall-of-ux-in-web3-ux/) are making it easier than ever for that to happen.  
 
-Even so, funding remains a barrier, with the bulk of allocations from both VCs and grants programs going towards DeFi and Infra-related use cases. 
+As previously mentioned, through recent hackathons, we’re already able to see consumer apps leading the charge.
 
-Consumer crypto matters because it’s the movement through which web3 happens. 
+Consumer crypto matters because it’s the movement through which web3 expands its boundaries to the next billion users. 
 
 It’s the only way that we finally cross the chasm to being the standard-bearers for all online interaction instead of a tech-heavy alternative. 
 
-Once everyone in our industry shows commitment to that in practice, consumer crypto will become the dominant driving force for the industry’s move to expand crypto beyond finance and achieve widespread adoption. Until then, most of the industry’s consumer apps will be bootstrapped and scale more slowly than those with large initial injections of capital and support behind them.  
+Once everyone in our industry shows commitment to that in practice, consumer crypto will become the dominant driving force for the industry’s move to expand crypto beyond finance and achieve widespread adoption. 
 
 # What’s the future of consumer crypto?
 
 Since Bitcoin's inception, we've advocated for a financial system and a world that levels the playing field more than ever before. Our apps need to strike a balance—easy to use, yet demonstrating these principles in action. We need more engaging, participatory, on-chain economies, of all shapes and sizes, embedded within enjoyable user interfaces. 
 
-This doesn’t require reinventing the wheel. Our next break-out moment may come from a team saying, “How can we make a better Instagram with features and functionalities unique to this industry?”
+This doesn’t require reinventing the wheel. Our next break-out moment may come from a team saying, *“How can we make a better Instagram with features and functionalities unique to this industry?”*
 
 That app would likely also be DAOified because you can’t have consumer crypto without governance by the people, for the people. Decentralized Governance, as an overarching model for our future social apps, aligns perfectly with the broader vision of consumer crypto, as it ensures apps evolve in a more participatory fashion than ever before. Web3-app users can have a direct say in how the app they’re using evolves as well as how it approaches key questions like compensation for creators, which is technically not possible in traditional web3 apps, where all control lies in the hands of the few. 
 
-Consumer crypto is the next Schelling point for our industry. 
+Consumer crypto is the next **Schelling** point for our industry. 
 
 It's the driving force propelling us toward a future where web3 becomes the standard for all global consumers' online interactions. To travel further down that road, let’s start by building things on-chain that people beyond our sphere, legitimately want to use. Let’s also commit to making crypto easier to use than ever. 
 
 With that, we might reach an age in which a web3 app is just an app and a protocol is just a structure behind it. 
 
-One in which multiple signs, bridging, 
-
-An age of seamless interaction, on-chain.
+An age of seamless interaction, on-chain,  where users no longer have to bother about the underlying chain behind their favorite applications.
 
 Here at Push, we’re all aligned and focused on this vision. 
 
