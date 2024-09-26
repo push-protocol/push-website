@@ -80,7 +80,7 @@ async function blogPluginExtended(...pluginArgs) {
       actions.addRoute({
         // Add route for the home page
         path: process.env.GITHUB_ACTIONS
-          ? `${process.env.REACT_APP_BASE_URL}`
+          ? `/push-website/pr-preview/${process.env.REACT_APP_PREVIEW_BASE}`
           : '/',
         exact: true,
 
