@@ -5,7 +5,7 @@ authors: [ian]
 image: './cover-image.webp'
 description: ' What is consumer crypto and why does it matter?'
 text: "Bitcoin showed us that a decentralized monetary system can work in practice. Ethereum did the same for applications of all shapes and sizes."
-tags: [consumer Crypto, Insights]
+tags: [Consumer Crypto, Insights]
 ---
 
 ![Cover Image of What is consumer crypto and why does it matter?](./cover-image.webp)
