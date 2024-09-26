@@ -1,0 +1,22 @@
+<svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg" alt="Logo for Angle Labs">
+<title>Angle Labs</title>
+<rect width="102" height="102" rx="32" fill="#202332"/>
+<g clip-path="url(#clip0_4859_5269)">
+<path d="M25.5149 64.5266L50.9736 38.5945L76.4325 64.5266L63.7029 77.4929L50.9735 64.5268L38.2442 77.4927L25.5149 64.5266Z" fill="#FAF1E7" stroke="#131620" stroke-linejoin="round"/>
+<path d="M50.9737 64.5262L38.2442 77.494L35.6983 71.0727L50.9737 55.5134V64.5262Z" fill="#131620" stroke="#131620" stroke-linejoin="round"/>
+<path d="M25.5131 64.5235L38.2439 77.49L35.6982 71.0727L20.4228 55.5134L25.5131 64.5235ZM50.9735 64.5262L63.703 77.494L66.2487 71.0727L50.9735 55.5134V64.5262Z" fill="#FAF1E7" stroke="#131620" stroke-linejoin="round"/>
+<path d="M76.434 64.5235L63.7031 77.49L66.249 71.0727L81.5243 55.5134L76.434 64.5235Z" fill="#131620" stroke="#131620" stroke-linejoin="round"/>
+<path d="M20.4233 55.5123L50.9737 24.3937L81.5244 55.5123L66.2489 71.0717L50.9737 55.5124L35.6986 71.0716L20.4233 55.5123Z" fill="url(#paint0_linear_4859_5269)" stroke="#131620" stroke-linejoin="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_4859_5269" x1="20.4238" y1="47.7324" x2="81.5245" y2="47.7324" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FAF1E7"/>
+<stop offset="0.26" stop-color="#FDCEAA"/>
+<stop offset="0.612" stop-color="#F4837D"/>
+<stop offset="1" stop-color="#B9AAFD"/>
+</linearGradient>
+<clipPath id="clip0_4859_5269">
+<rect width="62" height="54" fill="white" transform="translate(20 24)"/>
+</clipPath>
+</defs>
+</svg>
