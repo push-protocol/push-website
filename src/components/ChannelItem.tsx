@@ -74,6 +74,7 @@ export const Tilt = (props) => {
 const ChannelItem = ({ channelProp }, delay) => {
   const [channelObject, setChannelObject] = React.useState({});
   const [loading, setLoading] = React.useState(true);
+  const imageBaseUrl = 'https://backend.epns.io';
 
   React.useEffect(() => {
     if (!channelProp) return;
@@ -95,7 +96,13 @@ const ChannelItem = ({ channelProp }, delay) => {
           <ChannelLogo>
             {loading && <Skeleton height={100} width={100} borderRadius={20} />}
             {!loading && channelObject.icon && (
-              <ChannelLogoImg src={`${channelObject.icon}`} />
+              <ChannelLogoImg
+                src={
+                  channelObject.icon.startsWith(imageBaseUrl)
+                    ? channelObject.icon
+                    : `${imageBaseUrl}/apis/v1/channels/icon/${channelObject.channel}`
+                }
+              />
             )}
             {!loading && channelObject.imageFile && (
               <MemberImage
