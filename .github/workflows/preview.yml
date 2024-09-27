@@ -36,15 +36,10 @@ jobs:
           yarn install
           yarn build:pr:preview
 
-      # Configure GitHub Pages for deployment
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      # Upload build artifacts for review
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: build
+      - name: Debug event values
+        run: |
+          echo "Action: ${{ github.event.action }}"
+          echo "Merged: ${{ github.event.pull_request.merged }}"
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1.4.7
