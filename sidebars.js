@@ -435,6 +435,12 @@ const sidebars = {
       ],
     },
   ],
+  pushRewardsSidebar: [
+    {
+      type: 'doc',
+      id: 'rewards/docs-reward-points',
+    },
+  ],
 };
 
 module.exports = sidebars;
