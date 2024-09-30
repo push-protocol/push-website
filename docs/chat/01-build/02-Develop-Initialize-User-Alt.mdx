@@ -5,7 +5,7 @@ hide_title: true
 slug: ./initialize-user
 displayed_sidebar: pushChatSidebar
 sidebar_position: 2
-image: "/assets/docs/previews/docs_chat_develop--initialize_user.png"
+image: '/assets/docs/previews/docs_chat_develop--initialize_user.png'
 ---
 
 # Initialize user overview
@@ -22,6 +22,10 @@ import Details from '@theme/Details';
 
 ## Initialize user API
 
+:::tip
+The `PushAPI.initialize` method triggers a signature request, prompting the user to sign a message to initialize the PushAPI. This signature request can be bypassed by supplying the user's `decryptedPGPPrivateKey` in the options object. The `decryptedPGPPrivateKey` for a user can be found in the Push Profile Object, which is returned by `PushAPI.initialize`.
+:::
+
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
@@ -33,6 +37,10 @@ import { PushAPI, CONSTANTS } from '@pushprotocol/restapi';
 // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
 const userAlice = await PushAPI.initialize(signer, {
   env: CONSTANTS.ENV.STAGING,
+
+  // Optional, Remember me feature
+  // if you have stored the user's decryptedPGPPrivateKey, you can pass it here to avoid asking the user to sign the message to initialise Push API everytime
+  decryptedPGPPrivateKey,
 });
 
 // Check for errors in userAlice's initialization and handle them if any
@@ -79,17 +87,18 @@ Read about [supported wallet standards](/docs/chat/supported-wallet-standards) t
 
 When initializing your user, you can customize the process using several parameters. Here's a breakdown:
 
-| Param      | Type                     | Sub-Type                               | Default       | Remarks                                                                                                                                                       |
-| ---------- | ------------------------ | -------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`signer`_ | `SignerType`             | -                                      | -             | Ethers or Viem Signer. Pass **null** and provide `account` to enable **read only mode**                                                                       |
-| `options`  | `PushAPIInitializeProps` | -                                      | -             | Optional configuration properties for initializing the PushAPI.                                                                                               |
-| -          | `options.env`            | `ENV`                                  | `staging`     | API env - 'prod' or 'staging'.                                                                                                                                |
-| -          | `options.progressHook`   | `(progress: ProgressHookType) => void` | -             | A callback function to receive progress updates during initialization. Expand **Progress Hook Type and Response** dropdown below to learn more                |
-| -          | `options.account`        | `string`                               | -             | The [account](/docs/chat/supported-wallet-standards 'Push Chat support wallet standards') to associate user with. If not provided, it is derived from signer. |
-| -          | `options.version`        | `string`                               | `ENC_TYPE_V3` | The [encryption version](/docs/chat/concepts/encryption-version-in-push-chat) to use for the PushAPI.                                                         |
-| -          | `options.versionMeta`    | `{ NFTPGP_V1 ?: password: string }`    | -             | Metadata related to the encryption version, including a password if needed.                                                                                   |
-| -          | `options.autoUpgrade`    | `boolean`                              | `true`        | If `true`, upgrades encryption keys to latest encryption version.                                                                                             |
-| -          | `options.origin`         | `string`                               | -             | Specify origin or source while creating a Push Profile.                                                                                                       |
+| Param      | Type                             | Sub-Type                               | Default       | Remarks                                                                                                                                                       |
+| ---------- | -------------------------------- | -------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`signer`_ | `SignerType`                     | -                                      | -             | Ethers or Viem Signer. Pass **null** and provide `account` to enable **read only mode**                                                                       |
+| `options`  | `PushAPIInitializeProps`         | -                                      | -             | Optional configuration properties for initializing the PushAPI.                                                                                               |
+| -          | `options.env`                    | `ENV`                                  | `staging`     | API env - 'prod' or 'staging'.                                                                                                                                |
+| -          | `options.progressHook`           | `(progress: ProgressHookType) => void` | -             | A callback function to receive progress updates during initialization. Expand **Progress Hook Type and Response** dropdown below to learn more                |
+| -          | `options.account`                | `string`                               | -             | The [account](/docs/chat/supported-wallet-standards 'Push Chat support wallet standards') to associate user with. If not provided, it is derived from signer. |
+| -          | `options.version`                | `string`                               | `ENC_TYPE_V3` | The [encryption version](/docs/chat/concepts/encryption-version-in-push-chat) to use for the PushAPI.                                                         |
+| -          | `options.versionMeta`            | `{ NFTPGP_V1 ?: password: string }`    | -             | Metadata related to the encryption version, including a password if needed.                                                                                   |
+| -          | `options.autoUpgrade`            | `boolean`                              | `true`        | If `true`, upgrades encryption keys to latest encryption version.                                                                                             |
+| -          | `options.origin`                 | `string`                               | -             | Specify origin or source while creating a Push Profile.                                                                                                       |
+| -          | `options.decryptedPGPPrivateKey` | `string`                               | -             | The decrypted private key of the user if available.                                                                                                           |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -233,6 +242,12 @@ interface PushAPIInitializeProps {
    * If left empty, it'll use the account associated with your signer.
    */
   account?: string;
+
+  /**
+   * The decrypted private key of the user if available.
+   * If provided, Initialize method won't trigger a signature reqeust to enable Push Profile.
+   */
+  decryptedPGPPrivateKey?: string;
 
   /**
    * Specifies the encryption version for the PushAPI.
