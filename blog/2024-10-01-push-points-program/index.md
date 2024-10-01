@@ -12,11 +12,11 @@ tags: [Push Points, Rewards, Announcements]
 
 <!--truncate-->
 
-Push is excited to announce Phase 1 of Push Points Program aimed at giving back to the community and devs who have supported Push every step of the way and helped us reach greater heights. Push changed the game with the invention of Notifications and a communication layer for blockchains. Push is set to disrupt the web3 space with an upcoming evolution for the future of consumers on the blockchain. We’re working on something super exciting and want to bring you along for the ride. 
+Push is excited to announce Phase 1 of [Push Points Program](https://app.push.org/points?utm_source=push_blog&utm_medium=referral&utm_campaign=Push+Points&utm_content=blog_post) aimed at giving back to the community and devs who have supported Push every step of the way and helped us reach greater heights. Push changed the game with the invention of Notifications and a communication layer for blockchains. Push is set to disrupt the web3 space with an upcoming evolution for the future of consumers on the blockchain. We’re working on something super exciting and want to bring you along for the ride. 
 
 ## Earn Rewards for Activities (On and Offchain)
 
-Push is committed to building the decentralized communication layer for web3. By participating in the points program, you can directly contribute to our growth and empower our vision. 
+Push is committed to building the decentralized communication layer for web3. By participating in the points program, you can directly contribute to our growth and empower our vision.
 
 We have designed the points program from the ground up to incentivize users by rewarding points for a variety of activities done using your favorite protocol, Push. Activities include but are not limited to participating on our socials, performing tasks on Push, staking and much more. Activities are shaped in a way where loyal users who interact with Push will be rewarded and have a fair chance of climbing the leaderboard.
 
@@ -39,7 +39,7 @@ Once the first two steps are done, you have successfully registered for Push Poi
 
 ## Daily Check-in
 
-Users can also check-in daily [here](https://app.push.org/points/activity?utm_source=Google&utm_medium=X&utm_campaign=Push+Points) to claim points. Check-in for 7 days to earn bonus points.
+Users can also check-in daily [here](https://app.push.org/points/activity?utm_source=push_blog&utm_medium=referral&utm_campaign=Push+Points&utm_content=blog_post) to claim points. Check-in for 7 days to earn bonus points.
 
 !![Daily Check-in](cover-image1.webp) 
 
