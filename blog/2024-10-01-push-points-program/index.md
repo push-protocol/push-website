@@ -64,4 +64,4 @@ Phase 1 will last for 16 weeks with a big bang announcement following a reveal o
 
 Points may also be forfeited due to farming by unfair means or failure to meet the stated eligibility criteria.
 
-For more questions join [Push Discord](discord.gg/pushprotocol). Our team would be glad to help you.
+For more questions join [Push Discord](https://discord.com/invite/pushprotocol). Our team would be glad to help you.
