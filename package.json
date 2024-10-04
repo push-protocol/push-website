@@ -83,6 +83,7 @@
     "swiper": "^11.0.3",
     "url": "^0.11.3",
     "vanilla-tilt": "^1.8.0",
+    "viem": "^2.21.18",
     "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
