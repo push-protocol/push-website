@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[35440],{192592:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-885/blog/tags/quadraticfunding","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
