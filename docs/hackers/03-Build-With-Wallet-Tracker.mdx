@@ -31,7 +31,12 @@ Wallet Tracker currently exists as two projects, each enhancing your experience 
 <ModalLarge
   flexDirection='column'
   maxWidth='200px'
-  onClick={() => window.open('https://app.push.org/channels/0x0f0aE1ceEBc4b5aB14A47202eD6A52D3ef698b5B', '_blank')}
+  onClick={() =>
+    window.open(
+      'https://app.push.org/channels/0x0f0aE1ceEBc4b5aB14A47202eD6A52D3ef698b5B',
+      '_blank'
+    )
+  }
 >
   <div>
     <img
@@ -50,7 +55,9 @@ Wallet Tracker currently exists as two projects, each enhancing your experience 
     </span>
     <span>
       <p>
-        The channel serves as your comprehensive portfolio tracker, offering updates on wallet transactions, performance, crypto events, and staking APR rates.
+        The channel serves as your comprehensive portfolio tracker, offering
+        updates on wallet transactions, performance, crypto events, and staking
+        APR rates.
       </p>
     </span>
   </ModalWrapper>
@@ -59,7 +66,12 @@ Wallet Tracker currently exists as two projects, each enhancing your experience 
 <ModalLarge
   flexDirection='column'
   maxWidth='200px'
-  onClick={() => window.open('https://app.push.org/chat/0x171ee5794a4e81F0acCfAbf0CA9554b738be7968', '_blank')}
+  onClick={() =>
+    window.open(
+      'https://app.push.org/chat/0x171ee5794a4e81F0acCfAbf0CA9554b738be7968',
+      '_blank'
+    )
+  }
 >
   <div>
     <img
@@ -78,7 +90,9 @@ Wallet Tracker currently exists as two projects, each enhancing your experience 
     </span>
     <span>
       <p>
-        This chatbot integrates the functionalities of the channel into an interactive experience, supporting real-time interactions and providing quick access to your portfolio data.
+        This chatbot integrates the functionalities of the channel into an
+        interactive experience, supporting real-time interactions and providing
+        quick access to your portfolio data.
       </p>
     </span>
   </ModalWrapper>
@@ -86,17 +100,146 @@ Wallet Tracker currently exists as two projects, each enhancing your experience 
 
 </ModalContainer>
 
+## Features
+
+<hr
+  style={{
+    height: '2px',
+    backgroundColor: '#FF69B4',
+    border: 'none',
+    margin: '20px 0',
+  }}
+/>
+
+### Wallet Tracker Channel
+
+The channel serves as your comprehensive portfolio tracker, offering a variety of features designed to keep you informed and up-to-date.
+
+<div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '20px' }}>
+  <div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
+    <h4>1. Wallet Transactions Update</h4>
+    <p>Stay informed with real-time updates on your wallet transactions.</p>
+    <img src="/assets/docs/hackers/build-with-wallet-tracker/transactionUpdates.png" alt="Wallet Transactions Update" style={{ width: '100%', height: 'auto', borderRadius: '8px' }}/>
+  </div>
+
+{' '}
+<div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
+  <h4>2. Biweekly Performance Update</h4>
+  <p>
+    Receive regular updates on your portfolio's performance every two weeks.
+  </p>
+  <img
+    src='/assets/docs/hackers/build-with-wallet-tracker/performance.png'
+    alt='Biweekly Performance Update'
+    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+  />
+</div>
+
+{' '}
+<div style={{ flex: '1 0 45%', padding: '10px' }}>
+  <h4>3. Crypto Calendar for Web3 Events</h4>
+  <p>Keep track of important web3 events with our dedicated crypto calendar.</p>
+  <img
+    src='/assets/docs/hackers/build-with-wallet-tracker/calendar.png'
+    alt='Crypto Calendar'
+    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+  />
+</div>
+
+  <div style={{ flex: '1 0 45%', padding: '10px' }}>
+    <h4>4. Push and Uniswap V2 LP Staking APR Rates</h4>
+    <p>Access the latest APR rates for Push and Uniswap V2 LP staking.</p>
+    <img src="/assets/docs/hackers/build-with-wallet-tracker/apr.png" alt="APR Rates" style={{ width: '100%', height: 'auto', borderRadius: '8px' }}/>
+  </div>
+</div>
+
+### Wallet Tracker Chat
+
+The chatbot integrates all the functionalities of the channel into an interactive experience. Key features include:
+
+<div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '20px' }}>
+  <div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
+    <h4>1. Check User's Wallet Worth and Token Holdings</h4>
+    <p>Easily check the worth of your wallet and your token holdings. Use <code>/portfolio [wallet address] [chain]</code> to get your current token holding and asset valuation on the specified chain. Chain options include "eth", "pol", "bsc", "arb", "polzk". If not specified, you'll get the portfolio across all 5 chains.</p>
+    <img src="/assets/docs/hackers/build-with-wallet-tracker/wtc-portfolio.png" alt="Wallet Worth and Token Holdings" style={{ width: '100%', height: 'auto', borderRadius: '8px' }}/>
+  </div>
+
+{' '}
+<div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
+  <h4>2. Check Out Crypto Events</h4>
+  <p>
+    Stay updated with upcoming crypto events. Use{' '}
+    <code>/calendar [number of days]</code> to get crypto events organized by
+    your favorite tokens within the specified number of days.
+  </p>
+  <img
+    src='/assets/docs/hackers/build-with-wallet-tracker/wtc-calendar.png'
+    alt='Crypto Events'
+    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+  />
+</div>
+
+{' '}
+<div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
+  <h4>3. Wallet Performance</h4>
+  <p>
+    Monitor the performance of your wallet. Use{' '}
+    <code>/performance [your wallet address] [no of days] [chain]</code> to get
+    your wallet performance across the given days.
+  </p>
+  <img
+    src='/assets/docs/hackers/build-with-wallet-tracker/wtc-performance.png'
+    alt='Wallet Performance'
+    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+  />
+</div>
+
+  <div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
+    <h4>4. NFTs Portfolio</h4>
+    <p>View your NFTs portfolio. Use <code>/topnfts [your wallet address] [chain]</code> to get the top recent NFTs in your wallet.</p>
+    <img src="/assets/docs/hackers/build-with-wallet-tracker/wtc-nft.png" alt="NFTs Portfolio" style={{ width: '100%', height: 'auto', borderRadius: '8px' }}/>
+  </div>
+</div>
+### Additional features
+- **ENS and Unstoppable Domain Support:** Get support for Ethereum Name Service (ENS) and Unstoppable Domains.
+- **Multi-Chain Support for Wallet:** Enjoy support for multiple blockchain networks.
+
 ## Contribute
 
 We welcome contributions to the Wallet Tracker projects. Whether you're fixing bugs, adding new features, or improving documentation, your input is valuable. Join our community on Discord, contribute on GitHub, and help us make Wallet Tracker even better.
 
 <ModalContainer>
-<ModalSmall
-  onClick={() => window.open('https://github.com/push-protocol', '_blank')}
+  <ModalSmall
+    onClick={() => window.open('https://github.com/push-protocol', '_blank')}
+  >
+    <ModalWrapper>
+      <span>
+        GitHub
+        <svg
+          width='20'
+          height='28'
+          viewBox='0 0 29 28'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+            stroke='#A0A3B1'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+          ></path>
+        </svg>
+      </span>
+    </ModalWrapper>
+  </ModalSmall>
+
+  <ModalSmall
+  onClick={() => window.open('https://discord.gg/pushprotocol', '_blank')}
 >
   <ModalWrapper>
     <span>
-      GitHub
+      Discord
       <svg
         width='20'
         height='28'
@@ -115,4 +258,7 @@ We welcome contributions to the Wallet Tracker projects. Whether you're fixing b
     </span>
   </ModalWrapper>
 </ModalSmall>
+
 </ModalContainer>
+
+
