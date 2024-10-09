@@ -80,7 +80,6 @@ Inside graphql/config.js,  update the endpoint with the graphql route of your no
 
 ```
 endpoint: 'http://localhost:8080/graphql'
-
 ```
 
 **Add private key**
@@ -99,21 +98,18 @@ From inside your cron-job folder, use the following input:
 
 ```
 npm start
-
 ```
 
 Then, you can start the simple-node DApp inside its directory with the below command:
 
 ```
 cartesi build
-
 ```
 
 To fully initiate testing, follow the above up with the below:
 
 ```
 cartesi run
-
 ```
 
 **Send test inputs**
@@ -122,7 +118,6 @@ On another terminal window, type:
 
 ```
 cartesi send generic
-
 ```
 
 Then, send a string encoding as follows:
