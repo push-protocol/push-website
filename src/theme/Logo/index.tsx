@@ -7,12 +7,12 @@
 
 import React, { useMemo } from 'react';
 import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useThemeConfig, type NavbarLogo } from '@docusaurus/theme-common';
 import ThemedImage from '@theme/ThemedImage';
 import type { Props } from '@theme/Logo';
 import { useLocation } from '@docusaurus/router';
+import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 function LogoThemedImage({
   logo,
@@ -54,7 +54,7 @@ export default function Logo(props: Props): JSX.Element {
   const {
     navbar: { title: navbarTitle, logo },
   } = useThemeConfig();
-  const baseURL = useBaseUrl() || '';
+  const baseURL = useSiteBaseUrl() || '';
   const location = useLocation();
   const pathname = location?.pathname;
 
