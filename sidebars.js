@@ -296,6 +296,10 @@ const sidebars = {
       id: 'hackers/docs-hackers-cheat-sheet',
     },
     {
+      type: 'doc',
+      id: 'hackers/docs-build-with-wallet-tracker',
+    },
+    {
       type: 'category',
       label: 'Push SDK',
       link: {
