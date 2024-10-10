@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[25936],{434963:e=>{e.exports=JSON.parse('{"label":"First Principles Thinking","permalink":"/push-website/pr-preview/pr-898/blog/tags/first-principles-thinking","allTagsPath":"/push-website/pr-preview/pr-898/blog/tags","count":1,"unlisted":false}')}}]);
