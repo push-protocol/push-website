@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[65704],{958361:e=>{e.exports=JSON.parse('{"label":"Infrastructure","permalink":"/push-website/pr-preview/pr-895/blog/tags/infrastructure","allTagsPath":"/push-website/pr-preview/pr-895/blog/tags","count":1,"unlisted":false}')}}]);
