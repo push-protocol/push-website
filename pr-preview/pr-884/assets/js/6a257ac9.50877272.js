@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[68399],{57339:e=>{e.exports=JSON.parse('{"label":"Rockstar","permalink":"/push-website/pr-preview/pr-884/blog/tags/rockstar","allTagsPath":"/push-website/pr-preview/pr-884/blog/tags","count":3,"unlisted":false}')}}]);

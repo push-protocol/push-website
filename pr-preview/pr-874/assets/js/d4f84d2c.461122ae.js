@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[75648],{84036:e=>{e.exports=JSON.parse('{"label":"Social Media","permalink":"/push-website/pr-preview/pr-874/blog/tags/social-media","allTagsPath":"/push-website/pr-preview/pr-874/blog/tags","count":1,"unlisted":false}')}}]);

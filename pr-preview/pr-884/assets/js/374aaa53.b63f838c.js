@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[26122],{889195:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-884/blog/tags/polygon","page":1,"postsPerPage":10,"totalPages":1,"totalCount":5,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
