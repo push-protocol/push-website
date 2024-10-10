@@ -79,9 +79,6 @@ export default function Logo(props: Props): JSX.Element {
     }
   }, [pathname]);
 
-  // Log to verify the value of logoLink
-  console.log('logoLink:', logoLink);
-
   return (
     <Link
       to={logoLink}

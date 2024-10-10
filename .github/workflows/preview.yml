@@ -22,6 +22,8 @@ jobs:
           echo "REACT_APP_BASE_URL=/push-website/pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
