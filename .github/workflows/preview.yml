@@ -13,6 +13,15 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
+      - name: Check disk usage
+        run: df -h
+
+      # Clean up temporary files to free space before the build
+      - name: Clean up temporary files
+        run: |
+          sudo rm -rf /tmp/*
+          sudo rm -rf /home/runner/work/_temp/*
+
       - name: Set up environment variables
         run: |
           echo "REACT_APP_PREVIEW_BASE=pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
