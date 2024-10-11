@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[63926],{624744:e=>{e.exports=JSON.parse('{"label":"NFT","permalink":"/push-website/pr-preview/pr-898/blog/tags/nft","allTagsPath":"/push-website/pr-preview/pr-898/blog/tags","count":24,"unlisted":false}')}}]);
