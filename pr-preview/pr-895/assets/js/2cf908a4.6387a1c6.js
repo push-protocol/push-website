@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[5854],{167452:e=>{e.exports=JSON.parse('{"label":"Mmorpg","permalink":"/push-website/pr-preview/pr-895/blog/tags/mmorpg","allTagsPath":"/push-website/pr-preview/pr-895/blog/tags","count":1,"unlisted":false}')}}]);
