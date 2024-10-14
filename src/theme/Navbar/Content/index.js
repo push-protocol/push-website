@@ -134,7 +134,7 @@ export default function NavbarContent() {
             }
           }
         } else {
-          // check if url is internal and if so append the base url
+          // check if url is internal and if so append the base urll
           if (href.includes('http')) {
             window.open(href, target);
           } else {
