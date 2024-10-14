@@ -35,7 +35,6 @@ import { BsChevronDown } from 'react-icons/bs';
 import styled from 'styled-components';
 import { HeaderList } from '../../../config/HeaderList';
 import styles from './styles.module.css';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 const defaultMobileMenuState = {
@@ -226,16 +225,15 @@ export default function NavbarContent() {
         <>
           {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
           <NavbarLogo />
-          {/* <NavbarItems items={leftItems} /> */}
 
           {/* Change Header from docs to blog if required */}
           {!isLaptopM &&
-            (pathname.startsWith(baseURL + '/docs') ? (
-              <NavItem to={useBaseUrl('/docs')} aria-label='Push Docs'>
+            (pathname?.startsWith(baseURL + '/docs') ? (
+              <NavItem to={baseURL + '/docs'} aria-label='Push Docs'>
                 Docs
               </NavItem>
             ) : (
-              <NavItem to={useBaseUrl('/blog')} aria-label='Push Blog'>
+              <NavItem to={baseURL + '/blog'} aria-label='Push Blog'>
                 Blog
               </NavItem>
             ))}

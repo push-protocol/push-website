@@ -242,8 +242,7 @@
   .row,
 .docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module main .container .row {
   display: flex;
-  margin: 0px;
-  flex-direction: column;
+  margin-left: 5px;
 }
 
 .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
@@ -261,10 +260,6 @@
   display: none;
 }
 
-.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module .theme-doc-footer,
-.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module .pagination-nav {
-  display: none;
-}
 
 .docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module .theme-doc-sidebar-container li li {
   margin-right: 10px;
