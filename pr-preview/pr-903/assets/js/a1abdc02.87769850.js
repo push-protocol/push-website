@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[76653],{112485:e=>{e.exports=JSON.parse('{"label":"Gaming","permalink":"/push-website/pr-preview/pr-903/blog/tags/gaming","allTagsPath":"/push-website/pr-preview/pr-903/blog/tags","count":4,"unlisted":false}')}}]);

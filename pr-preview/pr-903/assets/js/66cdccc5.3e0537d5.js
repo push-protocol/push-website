@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[85828],{390164:e=>{e.exports=JSON.parse('{"label":"Video","permalink":"/push-website/pr-preview/pr-903/blog/tags/video","allTagsPath":"/push-website/pr-preview/pr-903/blog/tags","count":1,"unlisted":false}')}}]);

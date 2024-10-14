@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[13232],{14917:e=>{e.exports=JSON.parse('{"label":"Digital Art","permalink":"/push-website/pr-preview/pr-903/blog/tags/digital-art","allTagsPath":"/push-website/pr-preview/pr-903/blog/tags","count":2,"unlisted":false}')}}]);
