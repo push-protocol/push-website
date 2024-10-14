@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[97211],{36318:s=>{s.exports=JSON.parse('{"label":"Gnosis","permalink":"/push-website/pr-preview/pr-905/blog/tags/gnosis","allTagsPath":"/push-website/pr-preview/pr-905/blog/tags","count":1,"unlisted":false}')}}]);
