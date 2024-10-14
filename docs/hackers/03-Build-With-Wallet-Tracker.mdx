@@ -12,7 +12,12 @@ import {
   ModalSmall,
   ModalWrapper,
   ModalLarge,
+  FeaturesContainer,  // Importing new components
+  FeatureItem,
+  FeatureImage
 } from '@site/src/css/SharedStyling';
+
+
 
 # Build with Wallet Tracker
 
@@ -115,91 +120,102 @@ Wallet Tracker currently exists as two projects, each enhancing your experience 
 
 The channel serves as your comprehensive portfolio tracker, offering a variety of features designed to keep you informed and up-to-date.
 
-<div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '20px' }}>
-  <div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
-    <h4>1. Wallet Transactions Update</h4>
-    <p>Stay informed with real-time updates on your wallet transactions.</p>
-    <img src="/assets/docs/hackers/build-with-wallet-tracker/transactionUpdates.png" alt="Wallet Transactions Update" style={{ width: '100%', height: 'auto', borderRadius: '8px' }}/>
-  </div>
+<FeaturesContainer>
 
-{' '}
-<div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
+<FeatureItem>
+  <h4>1. Wallet Transactions Update</h4>
+  <p>Stay informed with real-time updates on your wallet transactions.</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/transactionUpdates.png" alt="Wallet Transactions Update"/>
+</FeatureItem>
+
+<FeatureItem>
   <h4>2. Biweekly Performance Update</h4>
-  <p>
-    Receive regular updates on your portfolio's performance every two weeks.
-  </p>
-  <img
-    src='/assets/docs/hackers/build-with-wallet-tracker/performance.png'
-    alt='Biweekly Performance Update'
-    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-  />
-</div>
+  <p>Receive regular updates on your portfolio's performance every two weeks.</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/performance.png" alt="Biweekly Performance Update"/>
+</FeatureItem>
 
-{' '}
-<div style={{ flex: '1 0 45%', padding: '10px' }}>
+<FeatureItem>
   <h4>3. Crypto Calendar for Web3 Events</h4>
   <p>Keep track of important web3 events with our dedicated crypto calendar.</p>
-  <img
-    src='/assets/docs/hackers/build-with-wallet-tracker/calendar.png'
-    alt='Crypto Calendar'
-    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-  />
-</div>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/calendar.png" alt="Crypto Calendar"/>
+</FeatureItem>
 
-  <div style={{ flex: '1 0 45%', padding: '10px' }}>
-    <h4>4. Push and Uniswap V2 LP Staking APR Rates</h4>
-    <p>Access the latest APR rates for Push and Uniswap V2 LP staking.</p>
-    <img src="/assets/docs/hackers/build-with-wallet-tracker/apr.png" alt="APR Rates" style={{ width: '100%', height: 'auto', borderRadius: '8px' }}/>
-  </div>
-</div>
+<FeatureItem>
+  <h4>4. Push and Uniswap V2 LP Staking APR Rates</h4>
+  <p>Access the latest APR rates for Push and Uniswap V2 LP staking.</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/apr.png" alt="APR Rates"/>
+</FeatureItem>
+
+<FeatureItem>
+  <h4>5. Active Token Approvals</h4>
+  <p>Stay informed about your active token approvals to maintain control over your asset security.</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/approvals.png" alt="APR Rates"/>
+</FeatureItem>
+
+<FeatureItem>
+  <h4>6. DAO Proposals</h4>
+  <p>Stay updated on proposals related to your held tokens to engage in governance effectively..</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/dao.png" alt="DAO Proposals"/>
+</FeatureItem>
+
+<FeatureItem>
+  <h4>7. Recent Crypto Hacks</h4>
+  <p>Stay informed about recent crypto hacks to protect your assets and take necessary precautions.</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/hack-news.png" alt="Hack News"/>
+</FeatureItem>
+
+<FeatureItem>
+  <h4>8. Yield Opportunities: Stay informed about yield opportunities for tokens you hold to maximize your earnings and optimize your investments.</h4>
+  <p>Stay informed about yield opportunities for tokens you hold to maximize your earnings and optimize your investments.</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/yield.png" alt="Yield"/>
+</FeatureItem>
+
+</FeaturesContainer>
 
 ### Wallet Tracker Chat
 
 The chatbot integrates all the functionalities of the channel into an interactive experience. Key features include:
 
-<div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '20px' }}>
-  <div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
-    <h4>1. Check User's Wallet Worth and Token Holdings</h4>
-    <p>Easily check the worth of your wallet and your token holdings. Use <code>/portfolio [wallet address] [chain]</code> to get your current token holding and asset valuation on the specified chain. Chain options include "eth", "pol", "bsc", "arb", "polzk". If not specified, you'll get the portfolio across all 5 chains.</p>
-    <img src="/assets/docs/hackers/build-with-wallet-tracker/wtc-portfolio.png" alt="Wallet Worth and Token Holdings" style={{ width: '100%', height: 'auto', borderRadius: '8px' }}/>
-  </div>
+<FeaturesContainer>
 
-{' '}
-<div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
+<FeatureItem>
+  <h4>1. Check User's Wallet Worth and Token Holdings</h4>
+  <p>Easily check the worth of your wallet and your token holdings. Use `/portfolio [wallet address] [chain]` to get your current token holding and asset valuation on the specified chain.</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/wtc-portfolio.png" alt="Wallet Worth and Token Holdings"/>
+</FeatureItem>
+
+<FeatureItem>
   <h4>2. Check Out Crypto Events</h4>
-  <p>
-    Stay updated with upcoming crypto events. Use{' '}
-    <code>/calendar [number of days]</code> to get crypto events organized by
-    your favorite tokens within the specified number of days.
-  </p>
-  <img
-    src='/assets/docs/hackers/build-with-wallet-tracker/wtc-calendar.png'
-    alt='Crypto Events'
-    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-  />
-</div>
+  <p>Stay updated with upcoming crypto events. Use `/calendar [number of days]` to get crypto events organized by your favorite tokens within the specified number of days.</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/wtc-calendar.png" alt="Crypto Events"/>
+</FeatureItem>
 
-{' '}
-<div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
+<FeatureItem>
   <h4>3. Wallet Performance</h4>
-  <p>
-    Monitor the performance of your wallet. Use{' '}
-    <code>/performance [your wallet address] [no of days] [chain]</code> to get
-    your wallet performance across the given days.
-  </p>
-  <img
-    src='/assets/docs/hackers/build-with-wallet-tracker/wtc-performance.png'
-    alt='Wallet Performance'
-    style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
-  />
-</div>
+  <p>Monitor the performance of your wallet. Use `/performance [your wallet address] [no of days] [chain]` to get your wallet performance across the given days.</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/wtc-performance.png" alt="Wallet Performance"/>
+</FeatureItem>
 
-  <div style={{ flex: '1 0 45%', marginBottom: '20px', padding: '10px' }}>
-    <h4>4. NFTs Portfolio</h4>
-    <p>View your NFTs portfolio. Use <code>/topnfts [your wallet address] [chain]</code> to get the top recent NFTs in your wallet.</p>
-    <img src="/assets/docs/hackers/build-with-wallet-tracker/wtc-nft.png" alt="NFTs Portfolio" style={{ width: '100%', height: 'auto', borderRadius: '8px' }}/>
-  </div>
-</div>
+<FeatureItem>
+  <h4>4. NFTs Portfolio</h4>
+  <p>View your NFTs portfolio. Use `/topnfts [your wallet address] [chain]` to get the top recent NFTs in your wallet.</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/wtc-nft.png" alt="NFTs Portfolio"/>
+</FeatureItem>
+
+<FeatureItem>
+  <h4>5. Token Approvals: View your NFTs portfolio. Use `/topnfts [your wallet address] [chain]` to get the top recent NFTs in your wallet.</h4>
+  <p>View your NFTs portfolio. /topnfts [your wallet address] [chain] : Get the top recent NFTs in your wallet.</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/wtc-approvals.png" alt="Token Approvals"/>
+</FeatureItem>
+
+<FeatureItem>
+  <h4>6. Top Yields</h4>
+  <p>Yield Opportunities for tokens you Hold. Use `/topyields [your wallet address] [chain]` to get the Yield Opportunities for tokens you Hold</p>
+  <img src="/assets/docs/hackers/build-with-wallet-tracker/wtc-yield.png" alt="Top Yields"/>
+</FeatureItem>
+
+</FeaturesContainer>
+
 ### Additional features
 - **ENS and Unstoppable Domain Support:** Get support for Ethereum Name Service (ENS) and Unstoppable Domains.
 - **Multi-Chain Support for Wallet:** Enjoy support for multiple blockchain networks.
