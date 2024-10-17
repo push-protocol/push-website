@@ -778,3 +778,32 @@ export const VideoContainer = styled.div`
     border: none;
   }
 `;
+
+// Features
+export const FeaturesContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+export const FeatureItem = styled.div`
+  flex: 1 0 45%; // Takes roughly half the width of the container
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+
+  @media (max-width: 768px) {
+    flex-basis: 100%; // Full width on smaller screens
+  }
+`;
+
+export const FeatureImage = styled.img`
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+`;
