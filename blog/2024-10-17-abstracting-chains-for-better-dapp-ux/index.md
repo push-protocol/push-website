@@ -1,9 +1,9 @@
 ---
 slug: 'abstracting-chains-for-better-dapp-ux'
-title: 'Abstracting away Chains for a better DApp UX'
+title: 'Abstracting Away Chains For a Better DApp UX'
 authors: [push]
 image: './cover-image.webp'
-description: 'Push Protocol Monthly Updates - September'
+description: 'Abstracting Away Chains For a Better DApp UX'
 text: "Learn key concepts of Chain Abstraction, its impact on DApp UX, and how Push leverages it to drive User Adoption across the Web3 ecosystem."
 tags: [Products, Web3 UX]
 ---
