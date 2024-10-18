@@ -1,10 +1,10 @@
 ---
 slug: why-onchain-push-notifications-matter'
 title: 'Why Do On-Chain Push Notifications Matter?'
-authors: [push]
+authors: [push, sixty]
 image: './cover-image.webp'
 description: 'Why Do On-Chain Push Notifications Matter?'
-text: "Discover why on-chain push notifications are a necessity for improving your on-chain experience."
+text: "Discover why on-chain push notifications are a necessity for improving your daily on-chain experience."
 tags: [Products]
 ---
 
