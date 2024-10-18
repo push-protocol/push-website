@@ -1,5 +1,5 @@
 ---
-slug: why-onchain-push-notifications-matter'
+slug: 'why-onchain-push-notifications-matter'
 title: 'Why Do On-Chain Push Notifications Matter?'
 authors: [push, sixty]
 image: './cover-image.webp'
