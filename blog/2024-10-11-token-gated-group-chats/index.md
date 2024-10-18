@@ -1,7 +1,7 @@
 ---
 slug: token-gated-group-chats
 title: 'Token-Gated Group Chats'
-authors: [ian]
+authors: [ian, sixty]
 image: './cover-image.webp'
 description: 'Token-Gated Group Chats'
 text: 'Token-gated group chats are web3 native communication spaces where access is restricted based on the ownership of specific blockchain assets such as tokens or NFTs (non-fungible tokens).'
