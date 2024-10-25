@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[27155],{759333:e=>{e.exports=JSON.parse('{"label":"AI","permalink":"/push-website/pr-preview/pr-914/blog/tags/ai","allTagsPath":"/push-website/pr-preview/pr-914/blog/tags","count":1,"unlisted":false}')}}]);
