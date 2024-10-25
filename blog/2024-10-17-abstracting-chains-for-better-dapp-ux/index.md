@@ -194,7 +194,7 @@ CCR allows Push Protocol to scale its operations across multiple chains without 
 
 This scalability ensures that Push Protocol can accommodate a growing user base and diverse application needs, driving sustained growth and adoption.
 
-## Conclusion
+## Chain Abstraction: Where We're Headed
 
 
 **Chain Abstraction** stands as a transformative force in the Web3 ecosystem, promising to elevate dApp UX to unprecedented levels of seamlessness and accessibility. 
