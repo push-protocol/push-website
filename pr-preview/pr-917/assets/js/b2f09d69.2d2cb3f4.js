@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[1153],{825879:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-917/blog/tags/eth-global","page":1,"postsPerPage":10,"totalPages":1,"totalCount":7,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
