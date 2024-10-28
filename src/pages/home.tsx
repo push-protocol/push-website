@@ -78,7 +78,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
   };
 
   const noNavbar = false;
-  const alertLink = `https://snaps.metamask.io/snap/npm/pushprotocol/snap/`;
+  const alertLink = `https://app.push.org/points/`;
 
   return (
     <Layout
@@ -158,7 +158,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             <HeroPrimary flex='initial' justifyContent='flex-start'>
               <HeroItem maxWidth='50%' alignItems='flex-start'>
                 <InfoBar
-                  text='Push Metamask Snap is now Live! Get Started'
+                  text='Push Points Program is now Live! Get Started'
                   url={alertLink}
                 />
 
