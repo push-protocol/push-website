@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[80631],{163066:e=>{e.exports=JSON.parse('{"label":"Quadraticfunding","permalink":"/push-website/pr-preview/pr-903/blog/tags/quadraticfunding","allTagsPath":"/push-website/pr-preview/pr-903/blog/tags","count":1,"unlisted":false}')}}]);
