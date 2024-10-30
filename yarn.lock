@@ -7,7 +7,7 @@
   resolved "https://registry.yarnpkg.com/@adraffy/ens-normalize/-/ens-normalize-1.10.0.tgz#d2a39395c587e092d77cbbc80acf956a54f38bf7"
   integrity sha512-nA9XHtlAkYfJxY7bce8DcN7eKxWWCWkU+1GR9d+U6MbNpfwQp8TI7vqOsBsMcHoT4mBu2kypKoSKnghEzOOq5Q==
 
-"@adraffy/ens-normalize@1.11.0":
+"@adraffy/ens-normalize@1.11.0", "@adraffy/ens-normalize@^1.10.0":
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/@adraffy/ens-normalize/-/ens-normalize-1.11.0.tgz#42cc67c5baa407ac25059fcd7d405cc5ecdb0c33"
   integrity sha512-/3DDPKHqqIqxUULp8yP4zODUY1i+2xvVWsv8A79xGWdCAG+8sb0hRh0Rk2QyOJUnnbyPUAZYcpBuRe3nS2OIUg==
@@ -1750,6 +1750,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@ensdomains/ens-validation@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@ensdomains/ens-validation/-/ens-validation-0.1.0.tgz#9ebfe66016fbf069a6ebca70c043714f6f02fbe6"
+  integrity sha512-rbDh2K6GfqXvBcJUISaTTYEt3f079WA4ohTE5Lh4/8EaaPAk/9vk3EisMUQV2UVxeFIZQEEyRCIOmRTpqN0W7A==
+
 "@esbuild/aix-ppc64@0.19.12":
   version "0.19.12"
   resolved "https://registry.yarnpkg.com/@esbuild/aix-ppc64/-/aix-ppc64-0.19.12.tgz#d1bc06aedb6936b3b6d313bf809a5a40387d2b7f"
@@ -3361,16 +3366,17 @@
     socket.io-client "^4.5.2"
     tslib "^2.3.0"
 
-"@pushprotocol/uiweb@1.3.6":
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-1.3.6.tgz#7292d961a5131674354da4dc0248fe80c75db222"
-  integrity sha512-+ekqzBZnLSlo0uL5Vr2AlY0bpbDCmCXhEeEq/CZcq+14VwV4pY73m59XTClDlu9A4t/Y7crEDsvhWBq/EHLmHA==
+"@pushprotocol/uiweb@1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@pushprotocol/uiweb/-/uiweb-1.7.1.tgz#344658fcc32ed1e694c7017e83860729cb9897d3"
+  integrity sha512-zB+aKy0J5XBLZbHhYW+x4R3bu0x3x6tMaFJho4QUXFlpDs0fLZDWPaWCDtKnenzB5FGmAVsG0dvS+HHBzVCX/Q==
   dependencies:
     "@livekit/components-react" "^1.2.2"
     "@livekit/components-styles" "^1.0.6"
     "@livepeer/react" "^2.6.0"
     "@pushprotocol/socket" "^0.5.0"
     "@unstoppabledomains/resolution" "^8.5.0"
+    "@web3-name-sdk/core" "^0.2.0"
     "@web3-onboard/coinbase" "^2.2.5"
     "@web3-onboard/core" "^2.21.1"
     "@web3-onboard/injected-wallets" "^2.10.5"
@@ -5143,6 +5149,14 @@
   dependencies:
     "@walletconnect/window-getters" "^1.0.1"
     tslib "1.14.1"
+
+"@web3-name-sdk/core@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@web3-name-sdk/core/-/core-0.2.0.tgz#4f75731caa275cfda64ec58a485cbcc516fbdb0c"
+  integrity sha512-A4lqoCTqJwoixTOuPfoX7fR+P/nZ1+aAg3YPa2Y3UxHJnQoAHGc81lBnoCifg0d1TGaR/c701utsT+Od4CQyQQ==
+  dependencies:
+    "@adraffy/ens-normalize" "^1.10.0"
+    "@ensdomains/ens-validation" "^0.1.0"
 
 "@web3-onboard/coinbase@^2.2.5":
   version "2.4.1"
