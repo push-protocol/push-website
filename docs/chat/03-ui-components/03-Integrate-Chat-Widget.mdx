@@ -5,13 +5,10 @@ hide_title: true
 slug: ./integrate-chat-widget
 displayed_sidebar: pushChatSidebar
 sidebar_position: 3
-image: "/assets/docs/previews/docs_chat_ui_components--integrate_chat_widget.png"
+image: '/assets/docs/previews/docs_chat_ui_components--integrate_chat_widget.png'
 ---
 
 # Integrate Chat Widget V2
-
-
-
 
 Introducing the ChatWidget: a compact yet comprehensive chat experience condensed into widget form , allowing users to initiate conversations with any wallet or group seamlessly.
 
@@ -20,11 +17,13 @@ With its integration into the ChatUIProvider, using the Chat Widget component is
 ![Chat Widget using Push Chat protocol](/assets/docs/chat/ui-components/integrate-chat-widget/chat-widget-preview.png)
 
 <head>
-  <title>Integrate Chat Widget V2 | UI Components | Push Chat | Push Documentation</title>
+  <title>
+    Integrate Chat Widget V2 | UI Components | Push Chat | Push Documentation
+  </title>
 </head>
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 ## Installation
 
@@ -98,30 +97,30 @@ Import the SDK package in the component file where you want to render the chat w
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
-  ```typescript
-  import { ChatWidget, ChatUIProvider } from "@pushprotocol/uiweb";
+```typescript
+import { ChatWidget, ChatUIProvider } from "@pushprotocol/uiweb";
 
-  // Push Chat is interoperable and you can receive it on any of the supported platforms
-  // We recommend https://app.push.org/chat or https://staging.push.org/chat or Push mobile app 
-  // https://app.push.org/#receive-notifications
-   <ChatUIProvider>
-     <ChatWidget
-    chatId="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d"
-  />
-    </ChatUIProvider>
-  
-  ```
+// Push Chat is interoperable and you can receive it on any of the supported platforms
+// We recommend https://app.push.org/chat or https://staging.push.org/chat or Push mobile app
+// https://app.push.org/#receive-notifications
+ <ChatUIProvider>
+   <ChatWidget
+  chatId="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d"
+/>
+  </ChatUIProvider>
+
+```
 
   </TabItem>
 </Tabs>
 
 ### Customization parameters
 
-| Prop            | Type          | Default      | Remarks |
-|-----------------|---------------|--------------|---------|
-| _ `chatId`_  | `string`    | `-`          | recipient's address or chatId  |
-| `modalTitle`    | `string`      | `'Chat with us!'` | Modal header title. |
-| `welcomeComponent`    | `React.ReactNode`      | - | Custom React component that will be displayed if wallet is not connected. This is the welcome screen of the chat widget component.                                                                                                     |
+| Prop               | Type              | Default           | Remarks                                                                                                                            |
+| ------------------ | ----------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| _ `chatId`_        | `string`          | `-`               | recipient's address or chatId                                                                                                      |
+| `modalTitle`       | `string`          | `'Chat with us!'` | Modal header title.                                                                                                                |
+| `welcomeComponent` | `React.ReactNode` | -                 | Custom React component that will be displayed if wallet is not connected. This is the welcome screen of the chat widget component. |
 
 > Note: Parameters _`in this style`_ are mandatory.
 > Note: Refer [ChatUIProvider](/docs/chat/ui-components/Advanced/ChatUIProvider/) for details on its paramters.
@@ -133,21 +132,21 @@ You can also customize the chat according to your preference —
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
-  ```typescript
-  import React from 'react';
-  import { ChatWidget, ChatUIProvider  } from '@pushprotocol/uiweb';
+```typescript
+import React from 'react';
+import { ChatWidget, ChatUIProvider  } from '@pushprotocol/uiweb';
 
-  
-    return (
-      <ChatUIProvider>
-     <ChatWidget
-    chatId="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d" //chatId or recipient's address
-     welcomeComponent={<div style={{display: "flex",flexDirection:'column',border:'1px solid black',overflow:'auto',height:'100%',width:'100%'}}>
-            <p>Welcome</p>
-            </div}
-  />
-    </ChatUIProvider>
-    );
+
+  return (
+    <ChatUIProvider>
+   <ChatWidget
+  chatId="0xd9c1CCAcD4B8a745e191b62BA3fcaD87229CB26d" //chatId or recipient's address
+   welcomeComponent={<div style={{display: "flex",flexDirection:'column',border:'1px solid black',overflow:'auto',height:'100%',width:'100%'}}>
+          <p>Welcome</p>
+          </div}
+/>
+  </ChatUIProvider>
+  );
 
 ```
 
@@ -156,8 +155,7 @@ You can also customize the chat according to your preference —
 
 ## Live Playground
 
-```jsx live
-customPropMinimized="true"
+```jsx live customPropMinimized="true"
 
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
@@ -186,7 +184,7 @@ const customisedChatWidgetTheme: IChatTheme = {
       </label>
 
       <p />
-     
+
 
       <ChatUIProvider theme={customisedChatWidgetTheme}>
      <ChatWidget

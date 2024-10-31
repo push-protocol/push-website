@@ -221,14 +221,14 @@
   /* background-color: ; */
 }
 
-.docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module  {
+/* .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module  {
   width: 100%;
-}
+} */
 
-.docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module,
+/* .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module,
 .docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module main {
   max-width: 100%;
-}
+} */
 
 
 .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
@@ -239,7 +239,7 @@
   margin-left: 5px;
 }
 
-.docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
+/* .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
   .container
   .row
   .col,
@@ -247,7 +247,7 @@
   padding: 0;
   max-width: initial !important;
   width: 100%;
-}
+} */
 
 .skipToContent_node_modules-\@docusaurus-theme-classic-lib-theme-SkipToContent-styles-module,
 .skipToContent_fXgn {
