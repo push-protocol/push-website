@@ -1,5 +1,5 @@
 ---
-slug: why-push-chat-is-different-from-traditional-chat-platforms'
+slug: why-push-chat-is-different-from-traditional-chat-platforms
 title: 'Why Push Chat is Different from Traditional Chat Platforms '
 authors: [sixty]
 image: './cover-image.webp'
