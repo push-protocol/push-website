@@ -5,7 +5,7 @@ authors: [sixty]
 image: './cover-image.webp'
 description: 'Why Push Chat is Different from Traditional Chat Platforms?'
 text: "Learn about the key USPs that position Push Chat as the go-to messaging tool for Web3."
-tags: [Products]
+tags: [Technical, Push Tech]
 ---
 
 ![Cover image of Why Push Chat is Different from Traditional Chat Platforms](./cover-image.webp)
