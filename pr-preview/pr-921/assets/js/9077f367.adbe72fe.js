@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[63894],{953040:e=>{e.exports=JSON.parse('{"label":"Kucoin","permalink":"/push-website/pr-preview/pr-921/blog/tags/kucoin","allTagsPath":"/push-website/pr-preview/pr-921/blog/tags","count":1,"unlisted":false}')}}]);
