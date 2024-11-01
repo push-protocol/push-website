@@ -1,7 +1,7 @@
 ---
 slug: why-push-chat-is-different-from-traditional-chat-platforms'
 title: 'Why Push Chat is Different from Traditional Chat Platforms '
-authors: [Sixty]
+authors: [sixty]
 image: './cover-image.webp'
 description: 'Why Push Chat is Different from Traditional Chat Platforms?'
 text: "Learn about the key USPs that position Push Chat as the go-to messaging tool for Web3."
