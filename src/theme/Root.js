@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // React + Web3 Essentials
 import { useLocation } from '@docusaurus/router';
-import React from 'react';
+import React, { useState } from 'react';
 
 // External Components
 import i18nInitialize from '@site/src/utils/i18n';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 // Internal Components
 import Footer from '@site/src/segments/Footer';
@@ -13,15 +14,19 @@ import CookieComponent from '../components/CookieComponent';
 import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 import { useRewardsNotification } from '../hooks/useRewardsNotification';
 import { blocksColors, getBlocksCSSVariables, Notification } from '../blocks';
+import { themeDark, themeLight } from '../config/Themization';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useThemeConfig, useColorMode } from '@docusaurus/theme-common';
 
 // Initialize Internalization
 i18nInitialize();
 
 const GlobalStyle = createGlobalStyle`
   body {
-    // background: ${(props) => props.theme.header.bg} !important;
+    background: ${(props) => props.theme.header.bg} !important;
     padding-right: 0 !important;
   }
+
   :root{
 
     /* deprecated */
@@ -79,7 +84,7 @@ const GlobalStyle = createGlobalStyle`
       --font-family: 'FK Grotesk Neu';
 
     /* New blocks theme css variables*/
-    // ${(props) => getBlocksCSSVariables(props.theme.blocksTheme)}
+    ${(props) => getBlocksCSSVariables(props.theme.blocksTheme)}
   }
 
 `;
@@ -109,6 +114,8 @@ export default function Root({ children }) {
     },
   ];
 
+  const { siteConfig } = useDocusaurusContext();
+  // const { useColorMode } = useThemeConfig();
   const baseURL = useSiteBaseUrl();
   useRewardsNotification();
 
@@ -173,25 +180,39 @@ export default function Root({ children }) {
     return result;
   }
 
+  // Initialize Theme
+  const [darkMode, setDarkMode] = useState(true);
+  // console.log(siteConfig);
+  // const toggleDarkMode = () => {
+  // const newTheme = !darkMode ? 'dark' : 'light';
+  // updateOnboardTheme(newTheme);
+  // document.documentElement.setAttribute('theme', newTheme);
+  // setDarkMode(!darkMode);
+  // };
+
   return (
-    <PageContainer className={returnAdditionalClasses(superimposedConditions)}>
-      <ServerStyle from={children} />
+    <ThemeProvider theme={darkMode ? themeDark : themeLight}>
+      <PageContainer
+        className={returnAdditionalClasses(superimposedConditions)}
+      >
+        <ServerStyle from={children} />
 
-      {/* Main react children */}
-      <Content>{children}</Content>
+        {/* Main react children */}
+        <Content>{children}</Content>
 
-      <GlobalStyle />
-      <Notification />
+        <GlobalStyle />
+        <Notification />
 
-      {excludeDefaultConfigAt('/BRB') &&
-        excludeDefaultConfigAt('/DOCS') &&
-        excludeDefaultConfigAt('/BOOTCAMP') && (
-          <>
-            <Footer />
-            <CookieComponent />
-          </>
-        )}
-    </PageContainer>
+        {excludeDefaultConfigAt('/BRB') &&
+          excludeDefaultConfigAt('/DOCS') &&
+          excludeDefaultConfigAt('/BOOTCAMP') && (
+            <>
+              <Footer />
+              <CookieComponent />
+            </>
+          )}
+      </PageContainer>
+    </ThemeProvider>
   );
 }
 
