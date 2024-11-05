@@ -125,15 +125,15 @@ function App(props) {
         {signer ? 'Disconnect wallet' : 'Connect Wallet'}
       </button>
 
-      <div
-        style={{
-          maxHeight: '75vh',
-          margin: '20px auto',
-          position: 'relative',
-        }}
+     {signer && (<div
+            style={{
+        maxHeight: "75vh",
+        margin: "20px auto",
+        position: "relative",
+      }}
       >
         <UserProfile />
-      </div>
+      </div>)}
     </ChatUIProvider>
   );
 }
