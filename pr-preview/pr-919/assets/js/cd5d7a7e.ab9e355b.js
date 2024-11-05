@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[9069],{572322:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-919/blog/tags/blockchain-technologies","page":1,"postsPerPage":10,"totalPages":1,"totalCount":7,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
