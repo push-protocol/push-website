@@ -16,16 +16,12 @@ import { useRewardsNotification } from '../hooks/useRewardsNotification';
 import { blocksColors, getBlocksCSSVariables, Notification } from '../blocks';
 import { themeDark, themeLight } from '../config/Themization';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { useThemeConfig, useColorMode } from '@docusaurus/theme-common';
 
 // Initialize Internalization
 i18nInitialize();
 
 const GlobalStyle = createGlobalStyle`
-  body {
-    background: ${(props) => props.theme.header.bg} !important;
-    padding-right: 0 !important;
-  }
+  
 
   :root{
 
@@ -81,7 +77,7 @@ const GlobalStyle = createGlobalStyle`
       .join('')}
       
     /* Font Family */
-      --font-family: 'FK Grotesk Neu';
+      --font-family: 'FK Grotesk Neue' !important;
 
     /* New blocks theme css variables*/
     ${(props) => getBlocksCSSVariables(props.theme.blocksTheme)}
@@ -115,7 +111,7 @@ export default function Root({ children }) {
   ];
 
   const { siteConfig } = useDocusaurusContext();
-  // const { useColorMode } = useThemeConfig();
+  // const { isDarkTheme } = useColorMode();
   const baseURL = useSiteBaseUrl();
   useRewardsNotification();
 
@@ -182,16 +178,9 @@ export default function Root({ children }) {
 
   // Initialize Theme
   const [darkMode, setDarkMode] = useState(true);
-  // console.log(siteConfig);
-  // const toggleDarkMode = () => {
-  // const newTheme = !darkMode ? 'dark' : 'light';
-  // updateOnboardTheme(newTheme);
-  // document.documentElement.setAttribute('theme', newTheme);
-  // setDarkMode(!darkMode);
-  // };
 
   return (
-    <ThemeProvider theme={darkMode ? themeDark : themeLight}>
+    <ThemeProvider theme={themeLight}>
       <PageContainer
         className={returnAdditionalClasses(superimposedConditions)}
       >

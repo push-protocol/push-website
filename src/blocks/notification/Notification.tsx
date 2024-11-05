@@ -18,7 +18,6 @@ const NotificationContainer = styled.div`
   width: 397px;
   cursor: pointer;
   box-sizing: border-box;
-  border: var(--border-sm) solid var(--components-in-app-notification-stroke-bg);
   overflow: hidden;
   @media${deviceMediaQ.mobileL} {
     width: -webkit-fill-available;
