@@ -5,7 +5,7 @@ hide_title: true
 slug: ./userprofile-component
 displayed_sidebar: pushChatSidebar
 sidebar_position: 7
-image: "/assets/docs/previews/docs_chat_ui_components_advanced--userprofile_component.png"
+image: '/assets/docs/previews/docs_chat_ui_components_advanced--userprofile_component.png'
 ---
 
 # UserProfile
@@ -73,12 +73,11 @@ export default UserProfileTest;
 
 ### Push UserProfile Component live playground
 
-```jsx live
-customPropMinimized = 'true';
-
+```jsx live 
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
-// import { ChatUIProvider, UserProfile,MODAL_POSITION_TYPE } from @pushprotocol/uiweb;
+// import { ChatUIProvider, UserProfile } from @pushprotocol/uiweb;
+
 function App(props) {
   const [signer, setSigner] = useState(null);
   const connectWallet = async () => {
@@ -98,6 +97,7 @@ function App(props) {
   const disconnectWallet = async () => {
     setSigner(null);
   };
+
   const buttonStyle = {
     padding: '10px 20px',
     backgroundColor: '#dd44b9',
@@ -107,15 +107,16 @@ function App(props) {
     cursor: 'pointer',
     marginTop: '20px',
   };
+
   return (
-    <>
-      <h2></h2>
+    <ChatUIProvider signer={signer}>
       <label>
         For this demo, You will need Metamask (or equivalent browser injected
         wallet), you will also need to sign a transaction to see the
         notifications. Connect wallet for better usage of the UserProfile
         component.
       </label>
+
       <p />
       <button
         style={buttonStyle}
@@ -124,18 +125,16 @@ function App(props) {
         {signer ? 'Disconnect wallet' : 'Connect Wallet'}
       </button>
 
-      <ChatUIProvider signer={signer}>
-        <div
-          style={{
-            maxHeight: '75vh',
-            margin: '20px auto',
-            position: 'relative',
-          }}
-        >
-          <UserProfile />
-        </div>
-      </ChatUIProvider>
-    </>
+     {signer && (<div
+            style={{
+        maxHeight: "75vh",
+        margin: "20px auto",
+        position: "relative",
+      }}
+      >
+        <UserProfile />
+      </div>)}
+    </ChatUIProvider>
   );
 }
 ```
