@@ -109,10 +109,13 @@ const CloseButton = styled.div`
 // Custom Hook
 export const useRewardsNotification = () => {
   const [hasMounted, setHasMounted] = useState(false);
+
   const location = useLocation();
   const baseURL = useSiteBaseUrl();
+  const pathname = baseURL + '/';
 
-  const isHomePage = location?.pathname === baseURL + '/';
+  const isHomePage = location?.pathname === pathname;
+  console.log(pathname, location?.pathname, isHomePage);
 
   const showNotification = () => {
     const toastId = toast.custom(
