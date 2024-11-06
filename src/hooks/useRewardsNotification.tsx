@@ -2,6 +2,7 @@
 import React, { useEffect, useState, FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import { toast, Toaster } from 'sonner';
+import { useLocation } from 'react-router-dom';
 
 // Internal Components
 import { Image } from '../../src/css/SharedStyling';
@@ -38,7 +39,6 @@ const NotificationContainer = styled.div`
   width: 397px;
   cursor: pointer;
   box-sizing: border-box;
-  //   border: 1px solid #eaebf2;
   font-family: FK Grotesk Neue;
   overflow: hidden;
 
@@ -108,6 +108,8 @@ const CloseButton = styled.div`
 // Custom Hook
 export const useRewardsNotification = () => {
   const [hasMounted, setHasMounted] = useState(false);
+  const location = useLocation();
+  const isHomePage = location?.pathname === '/';
 
   const showNotification = () => {
     const toastId = toast.custom(
@@ -151,7 +153,7 @@ export const useRewardsNotification = () => {
       const notificationAlreadyShown =
         localStorage.getItem('notificationShown') === 'true';
 
-      if (!notificationAlreadyShown && !hasMounted) {
+      if (!notificationAlreadyShown && isHomePage && !hasMounted) {
         showNotification();
         setHasMounted(true);
       } else {
@@ -159,7 +161,7 @@ export const useRewardsNotification = () => {
         setHasMounted(false);
       }
     }
-  }, []);
+  }, [isHomePage]);
 };
 
 export const Notification = () => {
