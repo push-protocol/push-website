@@ -11,6 +11,10 @@ import Footer from '@site/src/segments/Footer';
 import ServerStyle from '@site/src/theme/ServerStyle';
 import CookieComponent from '../components/CookieComponent';
 import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
+import {
+  Notification,
+  useRewardsNotification,
+} from '../hooks/useRewardsNotification';
 
 // Initialize Internalization
 i18nInitialize();
@@ -41,6 +45,7 @@ export default function Root({ children }) {
   ];
 
   const baseURL = useSiteBaseUrl();
+  useRewardsNotification();
 
   // return superimposed class names if conditions are met
   function returnAdditionalClasses(conditions) {
@@ -109,6 +114,7 @@ export default function Root({ children }) {
 
       {/* Main react children */}
       <Content>{children}</Content>
+      <Notification />
 
       {excludeDefaultConfigAt('/BRB') &&
         excludeDefaultConfigAt('/DOCS') &&
