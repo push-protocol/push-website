@@ -115,7 +115,6 @@ export const useRewardsNotification = () => {
   const pathname = baseURL + '/';
 
   const isHomePage = location?.pathname === pathname;
-  console.log(pathname, location?.pathname, isHomePage);
 
   const showNotification = () => {
     const toastId = toast.custom(
