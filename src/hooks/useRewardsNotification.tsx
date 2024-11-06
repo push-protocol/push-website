@@ -109,9 +109,6 @@ const CloseButton = styled.div`
 export const useRewardsNotification = () => {
   const [hasMounted, setHasMounted] = useState(false);
 
-  const notificationAlreadyShown =
-    localStorage.getItem('notificationShown') === 'true';
-
   const showNotification = () => {
     const toastId = toast.custom(
       () => (
@@ -149,12 +146,18 @@ export const useRewardsNotification = () => {
   };
 
   useEffect(() => {
-    if (!notificationAlreadyShown && !hasMounted) {
-      showNotification();
-      setHasMounted(true);
-    } else {
-      toast.dismiss();
-      setHasMounted(false);
+    // Ensure this code only runs in the browser
+    if (typeof window !== 'undefined') {
+      const notificationAlreadyShown =
+        localStorage.getItem('notificationShown') === 'true';
+
+      if (!notificationAlreadyShown && !hasMounted) {
+        showNotification();
+        setHasMounted(true);
+      } else {
+        toast.dismiss();
+        setHasMounted(false);
+      }
     }
   }, []);
 };
