@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[76736],{160997:e=>{e.exports=JSON.parse('{"label":"Open Source","permalink":"/push-website/pr-preview/pr-924/blog/tags/open-source","allTagsPath":"/push-website/pr-preview/pr-924/blog/tags","count":2,"unlisted":false}')}}]);
