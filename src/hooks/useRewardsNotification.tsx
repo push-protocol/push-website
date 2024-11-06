@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 // Internal Components
 import { Image } from '../../src/css/SharedStyling';
 import CrossSVG from '../../static/assets/website/illustrations/Cross.svg';
+import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 
 type NotificationProps = {
   image?: ReactNode;
@@ -109,7 +110,9 @@ const CloseButton = styled.div`
 export const useRewardsNotification = () => {
   const [hasMounted, setHasMounted] = useState(false);
   const location = useLocation();
-  const isHomePage = location?.pathname === '/';
+  const baseURL = useSiteBaseUrl();
+
+  const isHomePage = location?.pathname === baseURL + '/';
 
   const showNotification = () => {
     const toastId = toast.custom(
