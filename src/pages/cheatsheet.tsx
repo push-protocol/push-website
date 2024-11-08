@@ -18,14 +18,11 @@ import { PageMeta } from '@site/src/config/pageMeta';
 
 function CheatSheet() {
   const url =
-    'https://drive.google.com/file/d/1orVVzeco8CVAWzN_RlQtkaMc18ysJSAG/view?usp=sharing';
+    'https://drive.google.com/file/d/1FBlUvoLJ4RoExUihwu-YqRtWfnDUxsuW/view?usp=sharing';
   const redirectURL = () => {
     window.location.replace(url);
   };
 
-  // useEffect(() => {
-  //   redirectURL();
-  // }, []);
   return (
     <Layout
       title={PageMeta.CHEAT.pageTitle}
