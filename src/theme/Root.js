@@ -45,6 +45,10 @@ export default function Root({ children }) {
   ];
 
   const baseURL = useSiteBaseUrl();
+  const excludePaths = ['/BRB', '/DOCS', '/BOOTCAMP', '/CHAIN'];
+  const shouldRenderFooter = excludePaths.every((path) =>
+    excludeDefaultConfigAt(path)
+  );
   useRewardsNotification();
 
   // return superimposed class names if conditions are met
@@ -116,14 +120,12 @@ export default function Root({ children }) {
       <Content>{children}</Content>
       <Notification />
 
-      {excludeDefaultConfigAt('/BRB') &&
-        excludeDefaultConfigAt('/DOCS') &&
-        excludeDefaultConfigAt('/BOOTCAMP') && (
-          <>
-            <Footer />
-            <CookieComponent />
-          </>
-        )}
+      {shouldRenderFooter && (
+        <>
+          <Footer />
+          <CookieComponent />
+        </>
+      )}
     </PageContainer>
   );
 }

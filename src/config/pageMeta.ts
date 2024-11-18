@@ -57,4 +57,8 @@ export const PageMeta = {
     pageDescription:
       'BRB Bootcamp is the go-to place to learn every aspect of the web3 ecosystem from fundamentals to shipping your first project',
   },
+  CHAIN: {
+    pageTitle: 'Push Chain',
+    pageDescription: 'Push Chain',
+  },
 };
