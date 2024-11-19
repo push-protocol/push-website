@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 
 import styled from 'styled-components';
 import { gsap } from 'gsap';
@@ -27,7 +27,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
-const ChainHeader = () => {
+const ChainHeader: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState('technology');
@@ -136,6 +136,7 @@ const ChainHeader = () => {
                   background='#D548EC'
                   fontFamily='N27'
                   fontWeight='500'
+                  fontSize='18px'
                   flex={isMobileMenuOpen && '1'}
                   onClick={() => {
                     if (isMobileMenuOpen) toggleMobileMenu();

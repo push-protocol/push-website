@@ -4,17 +4,20 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { device } from '../../../src/config/globals';
-
 import { ItemV } from '../../../src/css/SharedStyling';
 import ChainHeader from './ChainHeader';
+import ChainHeroSection from './ChainHeroSection';
+import ChainMarqueeSection from './ChainMarqueeSection';
 
 const Chain = () => {
   return (
     <ChainWrapper>
       {/* Header */}
-      <div>Header</div>
       <ChainHeader />
+
+      <ChainHeroSection />
+
+      <ChainMarqueeSection />
 
       {/* Footer */}
       <div>Footer</div>
@@ -31,17 +34,7 @@ const ChainWrapper = styled(ItemV)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  //   min-height: 1000vh;
   background: #e8eff8;
   font-family: N27, sans-serif;
-
-  & .pushMissingSvg {
-    width: 900px;
-    @media ${device.tablet} {
-      width: 50%;
-    }
-    @media ${device.mobileL} {
-      width: 248px;
-    }
-  }
 `;
