@@ -71,6 +71,7 @@ const ChainFeaturesContainer = styled.div`
   display: flex;
   padding: 172px 0px 224px 0px;
   flex-direction: column;
+  width: -webkit-fill-available;
 
   .inverted-divider {
     transform: rotate(180deg);
