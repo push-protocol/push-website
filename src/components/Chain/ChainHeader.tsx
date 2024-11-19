@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import styled from 'styled-components';
 import { gsap } from 'gsap';
@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import GLOBALS, { device, structure } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
+import { useScrollDirection } from '../../hooks/useScrollDirection';
 
 import {
   Button,
@@ -17,67 +18,19 @@ import {
   Section,
   Span,
 } from '../../../src/css/SharedStyling';
-// import ImageHolder from '@site/src/components/ImageHolder';
 import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
+import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
+import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 import { AiOutlineClose } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
-// import Discord from '@site/static/assets/website/brb/Discord-BRB.svg';
-// import X from '@site/static/assets/website/brb/X-BRB.svg';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
-let lastScrollY = 0;
-const SCROLL_DELTA = 5;
-
-if (typeof window !== 'undefined') {
-  lastScrollY = window.scrollY;
-}
-
-function useScrollDirection(mobileMenuActive) {
-  const [scrollDirection, setScrollDirection] = useState(null);
-
-  useEffect(() => {
-    const updateScrollDirection = () => {
-      let scrollY = 0;
-
-      if (typeof window !== 'undefined') {
-        scrollY = window.scrollY;
-      }
-      let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
-
-      if (
-        direction !== scrollDirection &&
-        (scrollY - lastScrollY > SCROLL_DELTA ||
-          scrollY - lastScrollY < -SCROLL_DELTA)
-      ) {
-        // check if isMobileMenuOpen then override
-        if (mobileMenuActive) {
-          direction = 'scrollUp';
-        }
-
-        setScrollDirection(direction);
-      }
-
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-    };
-
-    // add event listener
-    window.addEventListener('scroll', updateScrollDirection, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', updateScrollDirection); // clean up
-    };
-  }, [scrollDirection, mobileMenuActive]);
-
-  return [scrollDirection];
-}
-
 const ChainHeader = () => {
-  //   const d = new Date();
-  //   const year = d.getFullYear();
   const isMobile = useMediaQuery(device.mobileL);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState('technology');
   const [scrollDirection] = useScrollDirection(isMobileMenuOpen);
 
   const toggleMobileMenu = () => {
@@ -88,6 +41,7 @@ const ChainHeader = () => {
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
 
   const handleSectionNavigation = (id) => {
+    setActiveItem(id);
     if (showMobileMenu) toggleMobileMenu();
 
     gsap.to(window, {
@@ -100,34 +54,38 @@ const ChainHeader = () => {
     window.open(link, '_blank');
   };
 
-  //   const elem0 = useRef(null);
-
   const openHomePage = () => {
     window.open('/', '_self');
   };
 
+  // Dummy data for navigation items
+  const navItems = [
+    { id: 'technology', label: 'Technology' },
+    { id: 'knowledge', label: 'Knowledge Base' },
+    { id: 'roadmap', label: 'Roadmap' },
+    { id: 'faq', label: 'F.A.Q' },
+  ];
+
   return (
     <StyledHeader
       showMobileMenu={showMobileMenu}
+      isMobileMenuOpen={isMobileMenuOpen}
       className={`header ${headerClass}`}
     >
       <Section>
-        <Content alignSelf='center' className='contentBox'>
+        <HeaderContent
+          className='contentBox'
+          isMobileMenuOpen={isMobileMenuOpen}
+        >
           <NavList isMobileMenuOpen={isMobileMenuOpen}>
-            <MenuTop flex='initial'>
+            <MenuTop padding={isMobileMenuOpen && '16px'} flex='initial'>
               <PushLogoBlackContainer className='headerlogo' flex='initial'>
                 <PushLogo
                   style={{ margin: '0px 9px 0px 4px' }}
                   onClick={openHomePage}
                 />
 
-                <Span
-                  fontSize='24px'
-                  fontWeight='400'
-                  style={{ fontFamily: 'Glancyr' }}
-                >
-                  CHAIN
-                </Span>
+                {isMobileMenuOpen ? <ChainLogoDark /> : <ChainLogo />}
               </PushLogoBlackContainer>
 
               <MobileMenuToggleIcon>
@@ -140,7 +98,7 @@ const ChainHeader = () => {
                 ) : (
                   <GiHamburgerMenu
                     size={28}
-                    color='#fff'
+                    color='#000'
                     onClick={toggleMobileMenu}
                   />
                 )}
@@ -153,45 +111,18 @@ const ChainHeader = () => {
                 className='navigationMenu'
                 showMobileMenu={isMobileMenuOpen}
               >
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation('bounties')}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize='18px'>Bounties</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation('schedule')}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize='18px'>Schedule</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation('online')}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize='18px'>BRB Online</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation('playground')}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize='18px'>BRB Chat</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem
-                  onClick={() => handleSectionNavigation('support')}
-                >
-                  <NavigationMenuHeader>
-                    <Span fontSize='18px'>Support</Span>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
+                {navItems.map((item) => (
+                  <NavigationMenuItem
+                    key={item.id}
+                    isActive={activeItem === item.id}
+                    onClick={() => handleSectionNavigation(item.id)}
+                    showMobileMenu={isMobileMenuOpen}
+                  >
+                    <NavigationMenuHeader isActive={activeItem === item.id}>
+                      <Span fontSize='18px'>{item.label}</Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+                ))}
               </NavigationMenu>
             </HeaderNavItemV>
 
@@ -201,20 +132,22 @@ const ChainHeader = () => {
                 className='navigationMenu'
                 showMobileMenu={isMobileMenuOpen}
               >
-                <NavigationMenuItem
+                <Button
+                  background='#D548EC'
+                  fontFamily='N27'
+                  fontWeight='500'
+                  flex={isMobileMenuOpen && '1'}
                   onClick={() => {
                     if (isMobileMenuOpen) toggleMobileMenu();
                     openLink('https://twitter.com/pushprotocol');
                   }}
                 >
-                  <NavigationMenuHeader>
-                    <Button background='#D548EC'>Start Building</Button>
-                  </NavigationMenuHeader>
-                </NavigationMenuItem>
+                  Start Building
+                </Button>
               </IconMenu>
             </HeaderFocusItems>
           </NavList>
-        </Content>
+        </HeaderContent>
       </Section>
     </StyledHeader>
   );
@@ -222,53 +155,50 @@ const ChainHeader = () => {
 
 export default ChainHeader;
 
+const HeaderContent = styled(Content)`
+  height: ${(props) => (!props.isMobileMenuOpen ? '64px' : 'auto')};
+  align-self: ${(props) => (props.isMobileMenuOpen ? 'flex-start' : 'stretch')};
+`;
+
 const NavList = styled.div`
   position: relative;
   width: 100%;
-  height: ${(props) => (!props.isMobileMenuOpen ? '78px' : 'auto')};
-  max-height: ${(props) => (!props.isMobileMenuOpen ? '78px' : 'auto')};
+  height: ${(props) => (!props.isMobileMenuOpen ? '64px' : '100%')};
+  max-height: ${(props) => (!props.isMobileMenuOpen ? '64px' : '100%')};
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-
-  border-radius: 55px;
-  border: 1px solid #2a2a39;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(12px);
+  flex: 1;
   padding: 0px 23px;
-  margin: 23px auto 0 auto;
+  margin: 0px auto 0 auto;
 
   @media ${device.laptop} {
     flex-direction: column;
     width: 100%;
-    padding: 14px 10px 14px 20px;
-    margin: 10px auto;
+    padding: 14px 0px 14px 0px;
+    margin: 0px auto;
     box-sizing: border-box;
     align-items: center;
     border-radius: ${(props) => (props.isMobileMenuOpen ? '32px' : '55px')};
+    min-height: ${(props) => (props.isMobileMenuOpen ? '100vh' : '100%')};
+    justify-content: ${(props) =>
+      props.isMobileMenuOpen ? 'flex-start' : 'space-between'};
   }
 `;
 
 const StyledHeader = styled.header`
-  font-family: 'Strawford', sans-serif;
-
-  /* padding: 0px 160px; */
-
+  font-family: N27, sans-serif;
   position: fixed;
-  top: 0;
+  top: ${(props) => (props.showMobileMenu ? '0px' : '23px')};
   left: 0;
   right: 0;
-  height: 78px;
+  height: ${(props) => (props.isMobileMenuOpen ? '100vh' : '64px')};
 
   /* color: #ffffff;
   background: #121315; */
   opacity: 1;
   z-index: 99999 !important;
-
-  border-bottom-left-radius: 32px;
-  border-bottom-right-radius: 32px;
-
   transition: top 0.3s ease-in-out;
 
   &.hide {
@@ -311,6 +241,9 @@ const StyledHeader = styled.header`
 
   @media ${device.laptop} {
     flex-direction: column;
+    top: 0px;
+    background-color: ${(props) =>
+      props.isMobileMenuOpen ? '#000' : 'transparent'};
 
     &.hide {
       top: -100%;
@@ -339,9 +272,6 @@ const PushLogoBlackContainer = styled(ItemV)`
   align-items: center;
   height: 100%;
   color: #fff;
-  font-size: 24.207px;
-  font-style: normal;
-  font-weight: 400;
 `;
 
 const MobileMenuToggleIcon = styled.span`
@@ -350,17 +280,21 @@ const MobileMenuToggleIcon = styled.span`
   @media ${device.laptop} {
     display: flex;
     cursor: pointer;
-    margin-right: 20px;
   }
 `;
 
 const HeaderNavItemV = styled(ItemV)`
-  border: 1px solid red;
-  margin: 0px ${GLOBALS.ADJUSTMENTS.PADDING.SMALL} 0
-    ${GLOBALS.ADJUSTMENTS.PADDING.SMALL};
+  border-radius: 24px;
+  background: #000;
+  width: fit-content;
+  flex: 0;
+  padding: 8px;
 
   @media ${device.laptop} {
-    margin: ${(props) => (props.showMobileMenu ? '30px 20px 20px 20px' : '0')};
+    margin: ${(props) => (props.showMobileMenu ? '24px 0px 0px 0px' : '0')};
+    width: ${(props) => (props.showMobileMenu ? '100%' : 'fit-content')};
+    padding: ${(props) => (props.showMobileMenu ? '0px' : '8px')};
+    flex: 0;
   }
 `;
 
@@ -369,9 +303,11 @@ const HeaderFocusItems = styled(ItemH)`
   flex-wrap: nowrap;
 
   @media ${device.laptop} {
-    flex-direction: collumn;
+    flex-direction: column;
     align-self: flex-start;
     flex-wrap: wrap;
+    margin: auto 0 0 0;
+    width: 100%;
   }
 `;
 
@@ -379,10 +315,9 @@ const NavigationMenu = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-
+  flex: 1;
   display: flex;
-
-  gap: 36px;
+  gap: 8px;
 
   z-index: 999;
 
@@ -406,7 +341,7 @@ const IconMenu = styled.ul`
   @media ${device.laptop} {
     flex-direction: row;
     flex: 1;
-    margin: 10px 20px 20px 20px;
+    margin: 0 0 auto 0;
     align-self: stretch;
     display: ${(props) => (props.showMobileMenu ? 'flex' : 'none')};
   }
@@ -417,24 +352,33 @@ const IconMenu = styled.ul`
  */
 const NavigationMenuItem = styled.li`
   position: relative;
-  font-family: Glancyr, sans-serif;
-  // Styles for the flags
-  .flag-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
-  }
+  font-family: N27, sans-serif;
+  border-radius: 16px;
+  background: #fff;
+  padding: ${(props) => (props.showMobileMenu ? '16px' : '0px 24px')};
+  display: flex;
+  flex-direction: column;
+  align-items: ${(props) => (props.showMobileMenu ? 'flex-start' : 'center')};
+  background: ${(props) => (props.isActive ? '#FFF' : 'transparent')};
+  transition: background 0.3s;
 
   & span {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 142%;
-    color: var(--ifm-color-primary-inverse);
+    color: ${(props) => (props.isActive ? '#000' : '#FFF')};
+    font-family: N27;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
   }
 
   &:hover {
     & span {
-      color: #dd44b9;
       transition-duration: 0.7s;
     }
 
@@ -446,12 +390,19 @@ const NavigationMenuItem = styled.li`
       display: block;
     }
   }
+
+  @media ${device.laptop} {
+    & span {
+      font-size: 16px;
+    }
+  }
 `;
 
 const NavigationMenuHeader = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin: auto 0;
 
   &:hover {
     cursor: pointer;
@@ -463,7 +414,7 @@ const NavigationMenuHeader = styled.div`
   }
 
   & span {
-    color: #fff;
+    color: ${(props) => (props.isActive ? '#000' : '#FFF')};
   }
 
   @media ${device.laptop} {
