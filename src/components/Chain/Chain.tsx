@@ -8,6 +8,7 @@ import { ItemV } from '../../../src/css/SharedStyling';
 import ChainHeader from './ChainHeader';
 import ChainHeroSection from './ChainHeroSection';
 import ChainMarqueeSection from './ChainMarqueeSection';
+import ChainFooter from './ChainFooter';
 
 const Chain = () => {
   return (
@@ -20,7 +21,7 @@ const Chain = () => {
       <ChainMarqueeSection />
 
       {/* Footer */}
-      <div>Footer</div>
+      <ChainFooter />
     </ChainWrapper>
   );
 };
@@ -28,13 +29,12 @@ const Chain = () => {
 export default Chain;
 
 const ChainWrapper = styled(ItemV)`
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  //   min-height: 1000vh;
   background: #e8eff8;
   font-family: N27, sans-serif;
 `;

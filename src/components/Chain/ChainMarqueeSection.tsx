@@ -46,6 +46,7 @@ const ChainMarqueeSection: FC = () => {
 export default ChainMarqueeSection;
 
 const MarqueeItem = styled(ItemV)`
+  width: 100%;
   //   transform: rotate(-5.346deg);
   //   transform-origin: center;
 `;
