@@ -12,9 +12,12 @@ import ChainHeader from './ChainHeader';
 const Chain = () => {
   return (
     <ChainWrapper>
+      {/* Header */}
+      <div>Header</div>
       <ChainHeader />
 
-      <div>Koko</div>
+      {/* Footer */}
+      <div>Footer</div>
     </ChainWrapper>
   );
 };
@@ -28,9 +31,8 @@ const ChainWrapper = styled(ItemV)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background: #e8eff8;
-  font-family: Glancyr, sans-serif;
+  font-family: N27, sans-serif;
 
   & .pushMissingSvg {
     width: 900px;
