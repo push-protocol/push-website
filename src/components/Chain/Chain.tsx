@@ -9,6 +9,7 @@ import ChainHeader from './ChainHeader';
 import ChainHeroSection from './ChainHeroSection';
 import ChainMarqueeSection from './ChainMarqueeSection';
 import ChainFooter from './ChainFooter';
+import ChainBottomComponent from './ChainBottomComponent';
 
 const Chain = () => {
   return (
@@ -19,6 +20,8 @@ const Chain = () => {
       <ChainHeroSection />
 
       <ChainMarqueeSection />
+
+      <ChainBottomComponent />
 
       {/* Footer */}
       <ChainFooter />
