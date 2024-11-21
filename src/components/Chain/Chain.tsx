@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React from 'react';
+import { ChainFeaturesSection } from './ChainFeaturesSection';
 
 import styled from 'styled-components';
 
@@ -20,6 +21,8 @@ const Chain = () => {
       <ChainHeroSection />
 
       <ChainMarqueeSection />
+      
+      <ChainFeaturesSection />
 
       <ChainBottomComponent />
 
