@@ -5,18 +5,29 @@ import { ChainFeaturesSection } from './ChainFeaturesSection';
 
 import styled from 'styled-components';
 
-import { device } from '../../../src/config/globals';
-
 import { ItemV } from '../../../src/css/SharedStyling';
+import ChainHeader from './ChainHeader';
+import ChainHeroSection from './ChainHeroSection';
+import ChainMarqueeSection from './ChainMarqueeSection';
+import ChainFooter from './ChainFooter';
+import ChainBottomComponent from './ChainBottomComponent';
 
 const Chain = () => {
   return (
     <ChainWrapper>
       {/* Header */}
-      <div>Header</div>
+      <ChainHeader />
+
+      <ChainHeroSection />
+
+      <ChainMarqueeSection />
+      
       <ChainFeaturesSection />
+
+      <ChainBottomComponent />
+
       {/* Footer */}
-      <div>Footer</div>
+      <ChainFooter />
     </ChainWrapper>
   );
 };
@@ -24,7 +35,7 @@ const Chain = () => {
 export default Chain;
 
 const ChainWrapper = styled(ItemV)`
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -32,14 +43,4 @@ const ChainWrapper = styled(ItemV)`
   align-items: center;
   background: #e8eff8;
   font-family: N27, sans-serif;
-
-  & .pushMissingSvg {
-    width: 900px;
-    @media ${device.tablet} {
-      width: 50%;
-    }
-    @media ${device.mobileL} {
-      width: 248px;
-    }
-  }
 `;
