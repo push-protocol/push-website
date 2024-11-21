@@ -21,7 +21,7 @@ const Chain = () => {
       <ChainHeroSection />
 
       <ChainMarqueeSection />
-      
+
       <ChainFeaturesSection />
 
       <ChainBottomComponent />
