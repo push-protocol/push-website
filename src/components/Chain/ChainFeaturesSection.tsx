@@ -160,13 +160,8 @@ const ChainFeaturesContainer = styled.div`
   display: flex;
   padding: 172px 0px 224px 0px;
   flex-direction: column;
-  width: 1200px;
-  margin: 213px auto 0 auto;
 
-  @media (max-width: 1248px) {
-    width: 100%;
-    padding: 0 24px;
-  }
+  width: -webkit-fill-available;
 
   .inverted-divider {
     transform: rotate(180deg);
