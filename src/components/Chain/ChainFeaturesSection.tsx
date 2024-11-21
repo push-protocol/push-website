@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-types */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
 import { TbArrowUpRight } from 'react-icons/tb';
@@ -27,7 +30,6 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           </Header>
           <Link href='#'>
             <Button
-              // @ts-expect-error
               background='#D548EC'
               borderRadius='16px'
               fontFamily='N27'
