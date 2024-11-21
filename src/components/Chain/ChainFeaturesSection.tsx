@@ -437,7 +437,7 @@ const KnowledgeBaseIcon = styled(TbArrowUpRight)`
 `;
 
 const KnowledgeBaseIconMobile = styled(TbArrowUpRight)`
-  diplay: none;
+  display: none;
   @media (max-width: 425px) {
     display: flex;
   }
