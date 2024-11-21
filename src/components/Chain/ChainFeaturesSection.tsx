@@ -45,8 +45,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
             <FinalityContainer>
               <FeatureTextHeading>
                 Instant
-                <br />
-                Finality
+                <span className='breakpoint'> Finality</span>
               </FeatureTextHeading>
             </FinalityContainer>
             <FeatureContainerSegregator>
@@ -86,8 +85,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                 <AnyChainContainer>
                   <FeatureTextSubHeading style={{ color: 'white' }}>
                     Any Chain
-                    <br />
-                    Transactions
+                    <span className='breakpoint'>Transactions</span>
                   </FeatureTextSubHeading>
                 </AnyChainContainer>
               </FeatureContainerSecondSegregator>
@@ -101,7 +99,9 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                 style={{ alignSelf: 'flex-end' }}
               />
               <KnowledgeBaseTextContainer>
-                <FeatureTextHeading style={{ color: '#000000' }}>
+                <FeatureTextHeading
+                  style={{ color: '#000000', whiteSpace: 'break-spaces' }}
+                >
                   Explore the
                   <br />
                   Knowledge Base
@@ -163,6 +163,10 @@ const ChainFeaturesContainer = styled.div`
 
   .inverted-divider {
     transform: rotate(180deg);
+  }
+
+  .breakpoint {
+    display: block;
   }
 `;
 
@@ -235,8 +239,15 @@ const FeatureTextHeading = styled.span`
   line-height: 100%; /* 52px */
   letter-spacing: -1.04px;
 
+  display: inline;
+  white-space: nowrap;
+
   @media (max-width: 425px) {
     font-size: 28px;
+
+    .breakpoint {
+      display: inline;
+    }
   }
 `;
 
@@ -249,8 +260,15 @@ const FeatureTextSubHeading = styled.span`
   line-height: 100%; /* 36px */
   letter-spacing: -0.72px;
 
+  display: inline;
+  white-space: nowrap;
+
   @media (max-width: 425px) {
     font-size: 24px;
+
+    .breakpoint {
+      display: inline;
+    }
   }
 `;
 
