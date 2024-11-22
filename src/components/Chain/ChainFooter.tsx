@@ -74,116 +74,144 @@ function ChainFooter() {
   };
 
   return (
-    <StyledFooter>
-      <FooterSection id='footer'>
-        <Content alignSelf='center'>
-          {/* footer links */}
-          <ItemH flex='1' margin='0px 0 0 0'>
-            <FooterContainer>
-              <FooterColumn>
-                <FooterLinkItem>
-                  <LinkTo
-                    className='pushLogo'
-                    to={useBaseUrl('/')}
-                    title='Push'
-                    onClick={scrollToTop}
-                    justifyContent={isMobile ? 'center' : 'flex-start'}
-                    padding='0px 0px'
-                  >
-                    <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
-                  </LinkTo>
+    <ChainFooterContainer>
+      <DividerImg
+        src={
+          require(`@site/static/assets/website/chain/chainFeaturesDivider.png`)
+            .default
+        }
+        srcSet={`${
+          require('/static/assets/website/chain/chainFeaturesDivider@2x.png')
+            .default
+        } 2x, ${require('/static/assets/website/chain/chainFeaturesDivider@3x.png').default} 3x`}
+        alt={`Chain Features Divider`}
+        width='-webkit-fill-available'
+        height='auto'
+        loading='lazy'
+      />
+      <StyledFooter>
+        <FooterSection id='footer'>
+          <Content alignSelf='center'>
+            {/* footer links */}
+            <ItemH flex='1' margin='0px 0 0 0'>
+              <FooterContainer>
+                <FooterColumn>
+                  <FooterLinkItem>
+                    <LinkTo
+                      className='pushLogo'
+                      to={useBaseUrl('/')}
+                      title='Push'
+                      onClick={scrollToTop}
+                      justifyContent={isMobile ? 'center' : 'flex-start'}
+                      padding='0px 0px'
+                    >
+                      <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
+                    </LinkTo>
 
-                  <Span fontWeight='500' fontSize='16px' lineHeight='142%'>
-                    Build Universal Apps
-                  </Span>
-                </FooterLinkItem>
-              </FooterColumn>
+                    <Span fontWeight='500' fontSize='16px' lineHeight='142%'>
+                      Build Universal Apps
+                    </Span>
+                  </FooterLinkItem>
+                </FooterColumn>
 
-              <FooterColumns>
-                {['developers', 'community', 'resources'].map((key) => (
-                  <FooterColumn key={key}>
-                    <FooterLinks>
-                      <Span
-                        fontWeight='700'
-                        fontSize='18px'
-                        lineHeight='140%'
-                        letterSpacing='-0.36px'
-                        textTransform='uppercase'
-                        margin='0 0 8px 0'
-                      >
-                        {t(`header.${key}.title`)}
-                      </Span>
-                      {HeaderList[key]?.map((item) => (
-                        <FooterAnchorSecondary
-                          as='div'
-                          key={item.title}
-                          title={t(item.title)}
-                          onClick={(e) =>
-                            handleNavigation(e, item.href, item.id, item.target)
-                          }
+                <FooterColumns>
+                  {['developers', 'community', 'resources'].map((key) => (
+                    <FooterColumn key={key}>
+                      <FooterLinks>
+                        <Span
+                          fontWeight='700'
+                          fontSize='18px'
+                          lineHeight='140%'
+                          letterSpacing='-0.36px'
+                          textTransform='uppercase'
+                          margin='0 0 8px 0'
                         >
-                          {t(item.title)}
-                        </FooterAnchorSecondary>
-                      ))}
-                    </FooterLinks>
-                  </FooterColumn>
-                ))}
-              </FooterColumns>
-            </FooterContainer>
-          </ItemH>
-
-          {/* Social Icon Links */}
-          <SocialLinks>
-            <ItemV
-              flexDirection={isTablet ? 'column' : 'row'}
-              gap={isMobile ? '24px' : '16px'}
-              justifyContent='flex-start'
-            >
-              <ItemH flex='0' gap='16px' className='pushLinks'>
-                <FooterAnchorIcon
-                  href='https://twitter.com/pushprotocol'
-                  title='Push Twitter'
-                  target='_blank'
-                >
-                  <BsTwitterX size={30} />
-                </FooterAnchorIcon>
-
-                <FooterAnchorIcon
-                  href='https://github.com/push-protocol/'
-                  title='Push Github'
-                  target='_blank'
-                >
-                  <GithubSVG width={30} height={30} />
-                </FooterAnchorIcon>
-
-                <FooterAnchorIcon
-                  href='https://discord.gg/pushprotocol'
-                  title='Push Discord'
-                  target='_blank'
-                >
-                  <DiscordSVG width={30} height={30} />
-                </FooterAnchorIcon>
-              </ItemH>
-            </ItemV>
-
-            <ItemH justifyContent='flex-end' className='pushLinks' gap='12px'>
-              {tosPrivacyLinks.map(({ href, text }) => (
-                <FooterAnchorSecondary
-                  as={LinkTo}
-                  key={href}
-                  to={useBaseUrl(href)}
-                  onClick={() => document.documentElement.scrollTo(0, 0)}
-                >
-                  {t(text)}
-                </FooterAnchorSecondary>
-              ))}
+                          {t(`header.${key}.title`)}
+                        </Span>
+                        {HeaderList[key]?.map((item) => (
+                          <FooterAnchorSecondary
+                            as='div'
+                            key={item.title}
+                            title={t(item.title)}
+                            onClick={(e) =>
+                              handleNavigation(
+                                e,
+                                item.href,
+                                item.id,
+                                item.target
+                              )
+                            }
+                          >
+                            {t(item.title)}
+                          </FooterAnchorSecondary>
+                        ))}
+                      </FooterLinks>
+                    </FooterColumn>
+                  ))}
+                </FooterColumns>
+              </FooterContainer>
             </ItemH>
-          </SocialLinks>
-        </Content>
-      </FooterSection>
-    </StyledFooter>
+
+            {/* Social Icon Links */}
+            <SocialLinks>
+              <ItemV
+                flexDirection={isTablet ? 'column' : 'row'}
+                gap={isMobile ? '24px' : '16px'}
+                justifyContent='flex-start'
+              >
+                <ItemH flex='0' gap='16px' className='pushLinks'>
+                  <FooterAnchorIcon
+                    href='https://twitter.com/pushprotocol'
+                    title='Push Twitter'
+                    target='_blank'
+                  >
+                    <BsTwitterX size={30} />
+                  </FooterAnchorIcon>
+
+                  <FooterAnchorIcon
+                    href='https://github.com/push-protocol/'
+                    title='Push Github'
+                    target='_blank'
+                  >
+                    <GithubSVG width={30} height={30} />
+                  </FooterAnchorIcon>
+
+                  <FooterAnchorIcon
+                    href='https://discord.gg/pushprotocol'
+                    title='Push Discord'
+                    target='_blank'
+                  >
+                    <DiscordSVG width={30} height={30} />
+                  </FooterAnchorIcon>
+                </ItemH>
+              </ItemV>
+
+              <ItemH justifyContent='flex-end' className='pushLinks' gap='12px'>
+                {tosPrivacyLinks.map(({ href, text }) => (
+                  <FooterAnchorSecondary
+                    as={LinkTo}
+                    key={href}
+                    to={useBaseUrl(href)}
+                    onClick={() => document.documentElement.scrollTo(0, 0)}
+                  >
+                    {t(text)}
+                  </FooterAnchorSecondary>
+                ))}
+              </ItemH>
+            </SocialLinks>
+          </Content>
+        </FooterSection>
+      </StyledFooter>
+    </ChainFooterContainer>
   );
 }
+
+const ChainFooterContainer = styled.div`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+`;
 
 const StyledFooter = styled.footer`
   font-family: N27;
@@ -191,6 +219,11 @@ const StyledFooter = styled.footer`
   position: relative;
   background: #000;
   width: 100%;
+  margin: -4px auto;
+`;
+
+const DividerImg = styled.img`
+  width: -webkit-fill-available;
 `;
 
 const FooterSection = styled(Section)``;

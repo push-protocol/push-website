@@ -12,20 +12,24 @@ import ChainMarqueeSection from './ChainMarqueeSection';
 import ChainFooter from './ChainFooter';
 import ChainBottomComponent from './ChainBottomComponent';
 
+import { device } from '../../../src/config/globals';
+
 const Chain = () => {
   return (
     <ChainWrapper>
       {/* Header */}
       <ChainHeader />
-
-      <ChainHeroSection />
+      <ChainInnerWrapper>
+        <ChainHeroSection />
+      </ChainInnerWrapper>
 
       <ChainMarqueeSection />
 
       <ChainFeaturesSection />
 
-      <ChainBottomComponent />
-
+      <ChainInnerWrapper>
+        <ChainBottomComponent />
+      </ChainInnerWrapper>
       {/* Footer */}
       <ChainFooter />
     </ChainWrapper>
@@ -43,4 +47,22 @@ const ChainWrapper = styled(ItemV)`
   align-items: center;
   background: #e8eff8;
   font-family: N27, sans-serif;
+`;
+
+const ChainInnerWrapper = styled(ItemV)`
+  width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 1248px) {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  @media ${device.tablet} {
+    padding: 0 24px;
+  }
+
+  @media ${device.mobileL} {
+    padding: 0 16px;
+  }
 `;

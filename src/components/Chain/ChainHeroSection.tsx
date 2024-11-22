@@ -139,21 +139,10 @@ const ChainHeroSection: FC = () => {
 export default ChainHeroSection;
 
 const ChainHeroSectionWrapper = styled.div`
-  width: 1200px;
   margin: 213px auto 0 auto;
-
-  @media (max-width: 1248px) {
-    width: 100%;
-    padding: 0 24px;
-  }
-
-  @media ${device.tablet} {
-    padding: 0 24px;
-  }
 
   @media ${device.mobileL} {
     margin: 103px auto 0 auto;
-    padding: 0 16px;
   }
 `;
 

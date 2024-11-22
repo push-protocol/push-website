@@ -18,133 +18,143 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           require(`@site/static/assets/website/chain/chainFeaturesDivider.png`)
             .default
         }
+        srcSet={`${
+          require('/static/assets/website/chain/chainFeaturesDivider@2x.png')
+            .default
+        } 2x, ${require('/static/assets/website/chain/chainFeaturesDivider@3x.png').default} 3x`}
         alt={`Chain Features Divider`}
+        width='-webkit-fill-available'
+        height='auto'
         loading='lazy'
       />
-
-      <InnerContainer>
-        <HeaderContainer>
-          <Header>
-            Craft seamless, consumer <br /> focused experiences across <br />
-            any chain
-          </Header>
-          <Link href='#'>
-            <Button
-              background='#D548EC'
-              borderRadius='16px'
-              fontFamily='N27'
-              fontSize='18px'
-              fontWeight='500'
-              display='flex'
-              gap='12px'
-            >
-              Read Whitepaper
-              <TbArrowUpRight size={24} />
-            </Button>
-          </Link>
-        </HeaderContainer>
-        <FeatureContainer>
-          <FeatureSubContainer>
-            <FinalityContainer>
-              <FeatureTextHeading>
-                Instant
-                <span className='breakpoint'> Finality</span>
-              </FeatureTextHeading>
-            </FinalityContainer>
-            <FeatureContainerSegregator>
-              <OnboardingContainer>
-                <FeatureTextSubHeading>
-                  Seamless, Instant
-                  <br />
-                  Onboarding
-                </FeatureTextSubHeading>
-              </OnboardingContainer>
-              <FeatureContainerSecondSegregator>
-                <TxFeeContainer>
-                  <FeatureTextSubHeading style={{ color: 'white' }}>
-                    Cheap
+      <ChainFeaturesWrapper>
+        <InnerContainer>
+          <HeaderContainer>
+            <Header>
+              Craft seamless, consumer <br /> focused experiences across <br />
+              any chain
+            </Header>
+            <Link href='#'>
+              <Button
+                background='#D548EC'
+                borderRadius='16px'
+                fontFamily='N27'
+                fontSize='18px'
+                fontWeight='500'
+                display='flex'
+                gap='12px'
+              >
+                Read Whitepaper
+                <TbArrowUpRight size={24} />
+              </Button>
+            </Link>
+          </HeaderContainer>
+          <FeatureContainer>
+            <FeatureSubContainer>
+              <FinalityContainer>
+                <FeatureTextHeading>
+                  Instant
+                  <span className='breakpoint'> Finality</span>
+                </FeatureTextHeading>
+              </FinalityContainer>
+              <FeatureContainerSegregator>
+                <OnboardingContainer>
+                  <FeatureTextSubHeading>
+                    Seamless, Instant
                     <br />
-                    Storage &<br />
-                    Tx Fee
+                    Onboarding
                   </FeatureTextSubHeading>
-                </TxFeeContainer>
-                <StorageAndScalableContainerMobile>
-                  <TxFeeContainerMobile>
+                </OnboardingContainer>
+                <FeatureContainerSecondSegregator>
+                  <TxFeeContainer>
                     <FeatureTextSubHeading style={{ color: 'white' }}>
                       Cheap
                       <br />
                       Storage &<br />
                       Tx Fee
                     </FeatureTextSubHeading>
-                  </TxFeeContainerMobile>
-                  <ScalableContainerMobile>
-                    <FeatureTextSubHeading>
-                      Infinitely
-                      <br />
-                      Scalable
+                  </TxFeeContainer>
+                  <StorageAndScalableContainerMobile>
+                    <TxFeeContainerMobile>
+                      <FeatureTextSubHeading style={{ color: 'white' }}>
+                        Cheap
+                        <br />
+                        Storage &<br />
+                        Tx Fee
+                      </FeatureTextSubHeading>
+                    </TxFeeContainerMobile>
+                    <ScalableContainerMobile>
+                      <FeatureTextSubHeading>
+                        Infinitely
+                        <br />
+                        Scalable
+                      </FeatureTextSubHeading>
+                    </ScalableContainerMobile>
+                  </StorageAndScalableContainerMobile>
+                  <AnyChainContainer>
+                    <FeatureTextSubHeading style={{ color: 'white' }}>
+                      Any Chain
+                      <span className='breakpoint'>Transactions</span>
                     </FeatureTextSubHeading>
-                  </ScalableContainerMobile>
-                </StorageAndScalableContainerMobile>
-                <AnyChainContainer>
-                  <FeatureTextSubHeading style={{ color: 'white' }}>
-                    Any Chain
-                    <span className='breakpoint'>Transactions</span>
-                  </FeatureTextSubHeading>
-                </AnyChainContainer>
-              </FeatureContainerSecondSegregator>
-            </FeatureContainerSegregator>
-          </FeatureSubContainer>
-          <FeatureSubContainer>
-            <KnowledgeBaseContainer>
-              <KnowledgeBaseIcon size={56} style={{ alignSelf: 'flex-end' }} />
-              <KnowledgeBaseIconMobile
-                size={24}
-                style={{ alignSelf: 'flex-end' }}
-              />
-              <KnowledgeBaseTextContainer>
-                <FeatureTextHeading
-                  style={{ color: '#000000', whiteSpace: 'break-spaces' }}
-                >
-                  Explore the
-                  <br />
-                  Knowledge Base
-                </FeatureTextHeading>
-                <FeatureTextDescription>
-                  Learn why Push Chain stands out as
-                  <br />
-                  the foremost consumer chain in web3
-                </FeatureTextDescription>
-              </KnowledgeBaseTextContainer>
-            </KnowledgeBaseContainer>
+                  </AnyChainContainer>
+                </FeatureContainerSecondSegregator>
+              </FeatureContainerSegregator>
+            </FeatureSubContainer>
+            <FeatureSubContainer>
+              <KnowledgeBaseContainer>
+                <KnowledgeBaseIcon
+                  size={56}
+                  style={{ alignSelf: 'flex-end' }}
+                />
+                <KnowledgeBaseIconMobile
+                  size={24}
+                  style={{ alignSelf: 'flex-end' }}
+                />
+                <KnowledgeBaseTextContainer>
+                  <FeatureTextHeading
+                    style={{ color: '#000000', whiteSpace: 'break-spaces' }}
+                  >
+                    Explore the
+                    <br />
+                    Knowledge Base
+                  </FeatureTextHeading>
+                  <FeatureTextDescription>
+                    Learn why Push Chain stands out as
+                    <br />
+                    the foremost consumer chain in web3
+                  </FeatureTextDescription>
+                </KnowledgeBaseTextContainer>
+              </KnowledgeBaseContainer>
 
-            <ScalableContainer>
-              <FeatureTextSubHeading>
-                Infinitely
-                <br />
-                Scalable
-              </FeatureTextSubHeading>
-            </ScalableContainer>
-          </FeatureSubContainer>
-        </FeatureContainer>
+              <ScalableContainer>
+                <FeatureTextSubHeading>
+                  Infinitely
+                  <br />
+                  Scalable
+                </FeatureTextSubHeading>
+              </ScalableContainer>
+            </FeatureSubContainer>
+          </FeatureContainer>
 
-        <HeaderTwoContainer>
-          <HeaderTwo>One chain, infinite possibilities</HeaderTwo>
-          <div style={{ height: 200 }}></div>
-          <HeaderTwoSubheader>
-            Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk
-            <br />
-            handango empressr orkut appjet, convore xobni eduvant babblely.
-            <br /> <br />
-            Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk
-            handango.
-          </HeaderTwoSubheader>
-        </HeaderTwoContainer>
-      </InnerContainer>
+          <HeaderTwoContainer>
+            <HeaderTwo>One chain, infinite possibilities</HeaderTwo>
+            <div style={{ height: 200 }}></div>
+            <HeaderTwoSubheader>
+              Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk
+              <br />
+              handango empressr orkut appjet, convore xobni eduvant babblely.
+              <br /> <br />
+              Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk
+              handango.
+            </HeaderTwoSubheader>
+          </HeaderTwoContainer>
+        </InnerContainer>
+      </ChainFeaturesWrapper>
       <DividerImg
-        src={
-          require(`@site/static/assets/website/chain/chainFeaturesDivider.png`)
+        srcSet={`${
+          require('/static/assets/website/chain/chainFeaturesDivider@2x.png')
             .default
-        }
+        } 2x, ${require('/static/assets/website/chain/chainFeaturesDivider@3x.png').default} 3x`}
         alt={`Chain Features Divider`}
         width='-webkit-fill-available'
         height='auto'
@@ -177,14 +187,28 @@ const ChainFeaturesContainer = styled.div`
 const DividerImg = styled.img`
   width: -webkit-fill-available;
 `;
-const InnerContainer = styled.div`
+
+const ChainFeaturesWrapper = styled.div`
   background-color: #000000;
-  padding: 167px 120px 409px 120px;
+  margin: -4px 0px;
   width: -webkit-fill-available;
-  margin: -2px 0px;
+`;
+
+const InnerContainer = styled.div`
+  width: 1200px;
+  margin: 0 auto;
+
+  @media (max-width: 1248px) {
+    padding: 0 24px;
+    width: 100%;
+  }
 
   @media ${device.tablet} {
-    padding: 16px;
+    padding: 0 24px;
+  }
+
+  @media ${device.mobileL} {
+    padding: 0 16px;
   }
 `;
 
@@ -303,6 +327,10 @@ const FinalityContainer = styled.div`
   border-radius: 48px;
   border: 2px solid #fff;
 
+  @media (max-width: 1248px) {
+    width: calc(50% - 8px);
+  }
+
   @media ${device.tablet} {
     width: 100%;
     height: 292px;
@@ -316,8 +344,13 @@ const FeatureContainerSegregator = styled.div`
   width: -webkit-fill-available;
   gap: 16px;
 
+  @media (max-width: 1248px) {
+    width: calc(50% - 8px);
+  }
+
   @media ${device.tablet} {
     flex-direction: column;
+    width: -webkit-fill-available;
   }
 `;
 
