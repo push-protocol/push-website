@@ -39,7 +39,6 @@ const Chain = () => {
 export default Chain;
 
 const ChainWrapper = styled(ItemV)`
-  overflow-x: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;

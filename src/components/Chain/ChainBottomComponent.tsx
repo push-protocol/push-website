@@ -13,6 +13,7 @@ import Accordion from '@site/src/components/Accordion';
 import { General } from '@site/src/config/ChainFAQconfig';
 import DiscordSVG from '@site/static/assets/website/shared/discord.svg';
 import { ChainEmailSignup } from './ChainEmailSignup';
+import ChainCanvas from './ChainCanvas';
 
 const ChainBottomComponent: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
@@ -104,7 +105,9 @@ const ChainBottomComponent: FC = () => {
         </ItemH>
 
         {/* image here */}
-        <div style={{ height: '200px' }}></div>
+        <ChainCanvasItem>
+          <ChainCanvas />
+        </ChainCanvasItem>
       </ElevateSection>
 
       <InputSection>
@@ -168,7 +171,9 @@ const FaqLink = styled(A)`
 
   &:hover {
     text-decoration: none !important;
-    .anchorSVGlink {
+    .anchorSVGlink {import ChainCanvas from './ChainCanvas';
+import ChainCanvas from './ChainCanvas';
+
       color: #fff;
     }
   }
@@ -194,6 +199,8 @@ const ElevateSection = styled.div`
   border-radius: 32px;
   background: #000;
   padding: 64px 64px 0px 64px;
+  position: relative;
+  overflow: hidden;
 
   @media ${device.mobileL} {
     margin-top: 200px;
@@ -219,4 +226,8 @@ const InputSection = styled.div`
     margin-top: 24px;
     margin-bottom: 240px;
   }
+`;
+
+const ChainCanvasItem = styled.div`
+  height: 200px;
 `;
