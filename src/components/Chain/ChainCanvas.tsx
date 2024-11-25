@@ -87,17 +87,15 @@ export default function ChainCanvas() {
     const paddingX = 21; // Horizontal padding
     const paddingY = 14; // Vertical padding
     const fontSize = 27;
-    const letterSpacing = -0.547;
 
-    // Create tags with consistent width calculation
+    // Create tags
     const tags = TAGS.map((tag, index) => {
       const ctx = document.createElement('canvas').getContext('2d')!;
       ctx.font = `${fontSize}px sans-serif`;
-      ctx.letterSpacing = `${letterSpacing}px`; // Add letter spacing to context
-      const textWidth = ctx.measureText(tag).width; // Measure the width of the text
+      const textWidth = ctx.measureText(tag).width;
 
-      const width = Math.max(textWidth + paddingX * 2, 150); // Apply horizontal padding
-      const height = fontSize + paddingY * 2; // Apply vertical padding
+      const width = Math.max(textWidth + paddingX * 2, 150);
+      const height = fontSize + paddingY * 2;
 
       const x = Math.random() * (window.innerWidth - width) + width / 2;
       const y = Math.random() * (window.innerHeight - height) + height / 2;
@@ -143,7 +141,7 @@ export default function ChainCanvas() {
 
     Matter.Events.on(render, 'afterRender', () => {
       ctx.font = '27px N27, sans-serif';
-      ctx.letterSpacing = '-0.547px';
+      // ctx.letterSpacing = '0.547px';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillStyle = '#FFFFFF';
