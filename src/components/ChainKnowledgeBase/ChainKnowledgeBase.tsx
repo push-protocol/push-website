@@ -1,34 +1,25 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React from 'react';
-import { ChainFeaturesSection } from './ChainFeaturesSection';
 
 import styled from 'styled-components';
 
 import { ItemV } from '../../../src/css/SharedStyling';
-import ChainHeader from './ChainHeader';
-import ChainHeroSection from './ChainHeroSection';
-import ChainMarqueeSection from './ChainMarqueeSection';
-import ChainFooter from './ChainFooter';
-import ChainBottomComponent from './ChainBottomComponent';
+import ChainHeader from '../Chain/ChainHeader';
+import ChainFooter from '../Chain/ChainFooter';
+import ChainBottomComponent from '../Chain/ChainBottomComponent';
+import ChainKnowledgeBaseComponent from './ChainKnowledgeBaseComponent';
 
 import { device } from '../../../src/config/globals';
 
-const Chain = () => {
+const ChainKnowledgeBase = () => {
   return (
     <ChainWrapper>
       {/* Header */}
       <ChainHeader />
       <ChainInnerWrapper>
-        <ChainHeroSection />
-      </ChainInnerWrapper>
-
-      <ChainMarqueeSection />
-
-      <ChainFeaturesSection />
-
-      <ChainInnerWrapper>
-        <ChainBottomComponent showFaq={true} />
+        <ChainKnowledgeBaseComponent />
+        <ChainBottomComponent />
       </ChainInnerWrapper>
 
       {/* Footer */}
@@ -37,7 +28,7 @@ const Chain = () => {
   );
 };
 
-export default Chain;
+export default ChainKnowledgeBase;
 
 const ChainWrapper = styled(ItemV)`
   // overflow-x: hidden;
@@ -51,6 +42,7 @@ const ChainWrapper = styled(ItemV)`
 `;
 
 const ChainInnerWrapper = styled(ItemV)`
+  width: 1200px;
   margin: 0 auto;
 
   @media ${device.desktopL} {

@@ -198,6 +198,14 @@ const InnerContainer = styled.div`
   width: 1200px;
   margin: 0 auto;
 
+  @media ${device.desktopL} {
+    width: 1400px;
+  }
+
+  @media ${device.desktop} {
+    width: 1200px;
+  }
+
   @media (max-width: 1248px) {
     padding: 0 24px;
     width: 100%;

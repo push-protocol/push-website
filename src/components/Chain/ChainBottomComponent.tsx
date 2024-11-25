@@ -15,63 +15,69 @@ import DiscordSVG from '@site/static/assets/website/shared/discord.svg';
 import { ChainEmailSignup } from './ChainEmailSignup';
 import ChainCanvas from './ChainCanvas';
 
-const ChainBottomComponent: FC = () => {
+type ChainBottomComponentProps = {
+  showFaq?: boolean;
+};
+
+const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
   const isMobile = useMediaQuery(device.mobileL);
 
   return (
-    <ChainBottomComponentWrapper>
+    <ChainBottomComponentWrapper showFaq={showFaq}>
       {/* faq section */}
-      <ItemH
-        flexDirection={isMobile && 'column'}
-        alignItems='flex-start'
-        justifyContent='space-between'
-        gap={!isMobile && '70px'}
-      >
-        <ItemV
+      {showFaq && (
+        <ItemH
+          flexDirection={isMobile && 'column'}
           alignItems='flex-start'
-          justifyContent='flex-start'
-          padding={!isMobile && '23px 0 0 0'}
+          justifyContent='space-between'
+          gap={!isMobile && '70px'}
         >
-          <H2
-            color='#000'
-            fontSize={isMobile ? '36px' : '48px'}
-            fontFamily='N27'
-            textAlign={isMobile && 'center'}
-            margin={isMobile && '0 auto'}
-            fontWeight='500'
-            lineHeight='120%'
+          <ItemV
+            alignItems='flex-start'
+            justifyContent='flex-start'
+            padding={!isMobile && '23px 0 0 0'}
           >
-            Frequently Asked Questions
-          </H2>
-
-          <FaqLink
-            href='https://discord.gg/pushprotocol'
-            target='_blank'
-            title='Discord'
-            fontSize='16px'
-            margin={isMobile ? '24px auto 0 auto' : '24px 0 0 0'}
-            background='#5865F2'
-            color='#FFF'
-            fontFamily='N27'
-          >
-            <DiscordSVG width={24} />
-            <p>Ask us on Discord</p>
-            <BsArrowUpRight className='anchorSVGlink' />
-          </FaqLink>
-        </ItemV>
-
-        <ItemV alignItems='flex-start' justifyContent='flex-start'>
-          <AccordionGrid>
-            <Accordion
-              items={General}
+            <H2
+              color='#000'
+              fontSize={isMobile ? '36px' : '48px'}
               fontFamily='N27'
-              textColor='#000 !important'
+              textAlign={isMobile && 'center'}
+              margin={isMobile && '0 auto'}
               fontWeight='500'
-              fontSize='24px'
-            />
-          </AccordionGrid>
-        </ItemV>
-      </ItemH>
+              lineHeight='120%'
+            >
+              Frequently Asked Questions
+            </H2>
+
+            <FaqLink
+              href='https://discord.gg/pushprotocol'
+              target='_blank'
+              title='Discord'
+              fontSize='16px'
+              margin={isMobile ? '24px auto 0 auto' : '24px 0 0 0'}
+              background='#5865F2'
+              color='#FFF'
+              fontFamily='N27'
+            >
+              <DiscordSVG width={24} />
+              <p>Ask us on Discord</p>
+              <BsArrowUpRight className='anchorSVGlink' />
+            </FaqLink>
+          </ItemV>
+
+          <ItemV alignItems='flex-start' justifyContent='flex-start'>
+            <AccordionGrid>
+              <Accordion
+                items={General}
+                fontFamily='N27'
+                textColor='#000 !important'
+                fontWeight='500'
+                fontSize='24px'
+              />
+            </AccordionGrid>
+          </ItemV>
+        </ItemH>
+      )}
 
       <ElevateSection>
         <ItemH maxWidth='850px' margin='0 auto'>
@@ -136,8 +142,15 @@ const ChainBottomComponent: FC = () => {
 export default ChainBottomComponent;
 
 const ChainBottomComponentWrapper = styled.div`
-  width: 1200px;
-  margin: 113px auto 0 auto;
+  margin: ${(props) => (props.showFaq ? '113px auto 0 auto' : '0 auto')};
+
+  @media ${device.desktopL} {
+    width: 1400px;
+  }
+
+  @media ${device.desktop} {
+    width: 1200px;
+  }
 
   @media (max-width: 1248px) {
     width: 100%;
@@ -149,7 +162,7 @@ const ChainBottomComponentWrapper = styled.div`
   }
 
   @media ${device.mobileL} {
-    margin: 103px auto 0 auto;
+    margin: ${(props) => (props.showFaq ? '103px auto 0 auto' : ' 0 auto')};
     padding: 0 16px;
   }
 `;
@@ -173,6 +186,7 @@ const FaqLink = styled(A)`
     text-decoration: none !important;
     .anchorSVGlink {import ChainCanvas from './ChainCanvas';
 import ChainCanvas from './ChainCanvas';
+import ChainBottomComponent from './ChainBottomComponent';
 
       color: #fff;
     }
@@ -195,7 +209,7 @@ const AccordionGrid = styled.div`
 
 const ElevateSection = styled.div`
   width: 100%;
-  margin-top: 300px;
+  margin-top: ${(props) => (props.showFaq ? '300px' : '200px')};
   border-radius: 32px;
   background: #000;
   padding: 64px 64px 0px 64px;
