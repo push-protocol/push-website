@@ -7,18 +7,18 @@ import Head from '@docusaurus/Head';
 import Layout from '@theme/Layout';
 
 // Internal Component
-import ChainKnowledgeBase from '../components/ChainKnowledgeBase/ChainKnowledgeBase';
+import Chain from '../../components/Chain/Chain';
 
 // Import Assets
 
 // Internal Configs
 import { PageMeta } from '@site/src/config/pageMeta';
 
-function PushChainKnowledgeBase() {
+function PushChain() {
   return (
     <Layout
-      title={PageMeta.CHAINKNOWLEDGEBASE.pageTitle}
-      description={PageMeta.CHAINKNOWLEDGEBASE.pageDescription}
+      title={PageMeta.CHAIN.pageTitle}
+      description={PageMeta.CHAIN.pageDescription}
       showNavbar={false}
     >
       <Head>
@@ -76,9 +76,9 @@ function PushChainKnowledgeBase() {
         </script>
       </Head>
 
-      <ChainKnowledgeBase />
+      <Chain />
     </Layout>
   );
 }
 
-export default PushChainKnowledgeBase;
+export default PushChain;

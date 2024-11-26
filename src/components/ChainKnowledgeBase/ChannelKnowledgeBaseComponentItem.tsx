@@ -39,7 +39,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       >
         {item.title}
       </H3>
-      <ItemH margin='0 0 auto 0' alignItems='flex-start'>
+      <ItemH margin='0 0 auto 0' alignItems='flex-start' alignSelf='flex-start'>
         <Span
           margin='8px 0 0 0'
           fontSize={isMobile ? '16px' : '18px'}

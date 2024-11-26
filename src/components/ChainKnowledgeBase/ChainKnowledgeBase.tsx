@@ -31,7 +31,6 @@ const ChainKnowledgeBase = () => {
 export default ChainKnowledgeBase;
 
 const ChainWrapper = styled(ItemV)`
-  // overflow-x: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -63,7 +62,6 @@ const ChainInnerWrapper = styled(ItemV)`
   }
 
   @media ${device.mobileL} {
-    // margin: 103px auto 0 auto;
     padding: 0 16px;
   }
 `;

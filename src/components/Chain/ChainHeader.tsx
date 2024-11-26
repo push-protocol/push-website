@@ -5,6 +5,7 @@ import React, { FC, useState } from 'react';
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Link from '@docusaurus/Link';
 
 import GLOBALS, { device, structure } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
@@ -29,6 +30,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ChainHeader: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
+  const isTablet = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState('technology');
   const [scrollDirection] = useScrollDirection(isMobileMenuOpen);
@@ -40,14 +42,17 @@ const ChainHeader: FC = () => {
   const showMobileMenu = isMobile && isMobileMenuOpen;
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
 
-  const handleSectionNavigation = (id) => {
-    setActiveItem(id);
-    if (showMobileMenu) toggleMobileMenu();
+  const handleSectionNavigation = (item) => {
+    setActiveItem(item?.id);
+    if (!item.url) {
+      if (showMobileMenu) toggleMobileMenu();
 
-    gsap.to(window, {
-      duration: 0.75,
-      scrollTo: { y: `#${id}` },
-    });
+      // Scroll to the section if no URL exists
+      gsap.to(window, {
+        duration: 0.75,
+        scrollTo: { y: `#${item?.id}` },
+      });
+    }
   };
 
   const openLink = (link: string) => {
@@ -60,8 +65,8 @@ const ChainHeader: FC = () => {
 
   // Dummy data for navigation items
   const navItems = [
-    { id: 'technology', label: 'Technology' },
-    { id: 'knowledge', label: 'Knowledge Base' },
+    { id: 'technology', label: 'Technology', url: '/chain' },
+    { id: 'knowledge', label: 'Knowledge Base', url: '/chain/knowledge' },
     { id: 'roadmap', label: 'Roadmap' },
     { id: 'faq', label: 'F.A.Q' },
   ];
@@ -115,12 +120,30 @@ const ChainHeader: FC = () => {
                   <NavigationMenuItem
                     key={item.id}
                     isActive={activeItem === item.id}
-                    onClick={() => handleSectionNavigation(item.id)}
+                    onClick={() => handleSectionNavigation(item)}
                     showMobileMenu={isMobileMenuOpen}
                   >
-                    <NavigationMenuHeader isActive={activeItem === item.id}>
-                      <Span fontSize='18px'>{item.label}</Span>
-                    </NavigationMenuHeader>
+                    {item.url ? (
+                      <Link
+                        to={item.url}
+                        onClick={showMobileMenu ? toggleMobileMenu : undefined}
+                        className='navLink'
+                      >
+                        <NavigationMenuHeader isActive={activeItem === item.id}>
+                          <Span fontSize='18px'>{item.label}</Span>
+                        </NavigationMenuHeader>
+                      </Link>
+                    ) : (
+                      <ItemH
+                        className='navLink'
+                        alignSelf={isTablet && 'flex-start'}
+                        justifyContent={isTablet && 'flex-start'}
+                      >
+                        <NavigationMenuHeader isActive={activeItem === item.id}>
+                          <Span fontSize='18px'>{item.label}</Span>
+                        </NavigationMenuHeader>
+                      </ItemH>
+                    )}
                   </NavigationMenuItem>
                 ))}
               </NavigationMenu>
@@ -356,7 +379,6 @@ const NavigationMenuItem = styled.li`
   font-family: N27, sans-serif;
   border-radius: 16px;
   background: #fff;
-  padding: ${(props) => (props.showMobileMenu ? '16px' : '0px 24px')};
   display: flex;
   flex-direction: column;
   align-items: ${(props) => (props.showMobileMenu ? 'flex-start' : 'center')};
@@ -378,7 +400,19 @@ const NavigationMenuItem = styled.li`
     display: block;
   }
 
+  .navLink {
+    flex: 1;
+    margin: auto 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: ${(props) => (props.showMobileMenu ? '16px' : '0px 24px')};
+    cursor: pointer;
+  }
+
   &:hover {
+    cursor: pointer;
+
     & span {
       transition-duration: 0.7s;
     }
@@ -402,12 +436,7 @@ const NavigationMenuItem = styled.li`
 const NavigationMenuHeader = styled.div`
   display: flex;
   align-items: center;
-  cursor: pointer;
   margin: auto 0;
-
-  &:hover {
-    cursor: pointer;
-  }
 
   & .chevronIcon {
     transition-duration: 0.4s;
