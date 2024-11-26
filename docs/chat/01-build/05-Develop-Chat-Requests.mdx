@@ -5,7 +5,7 @@ hide_title: true
 slug: ./chat-requests
 displayed_sidebar: pushChatSidebar
 sidebar_position: 4
-image: "/assets/docs/previews/docs_chat_develop_manage--chat_requests.png"
+image: '/assets/docs/previews/docs_chat_develop_manage--chat_requests.png'
 ---
 
 # Chat requests overview
@@ -146,16 +146,16 @@ const statusOfChatWithBob = await userAlice.chat.info(chatId, bobAddress);
 
 </Details>
 
-## Block chat request API
+## Block a user API
 
-To block an incoming chat requests. Once blocked, the user will not be able to send you DMs or invite you to a group.
+To block an user. Once blocked, the user will not be able to send you DMs or invite you to a group.
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-// userAlice.chat.block([recipient])
-// recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
+// userAlice.chat.block([target])
+// target - wallet address of the user to block
 const bobBlockAliceRequest = await userBob.chat.block([aliceAddress]);
 ```
 
@@ -166,9 +166,9 @@ const bobBlockAliceRequest = await userBob.chat.block([aliceAddress]);
 
 ### Block chat request parameters
 
-| Param         | Type       | Default | Remarks                                                                                                                                                                                                                                                 |
-| ------------- | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string[]` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat') including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
+| Param         | Type       | Default | Remarks                                                                                                                                                                                         |
+| ------------- | ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`recipient`_ | `string[]` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat') including wallet addresses, chain agnostic wallet addresses. |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
@@ -216,8 +216,8 @@ To unblock an user.
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-// userAlice.chat.unblock([recipient])
-// recipient - Can be wallet address, nft address or chatid | See Types of Recipient for more info
+// userAlice.chat.unblock([target])
+// target - wallet address of the user to unblock
 const bobUnblockAlice = await userBob.chat.unblock([aliceAddress]);
 ```
 
@@ -228,9 +228,9 @@ const bobUnblockAlice = await userBob.chat.unblock([aliceAddress]);
 
 ### Unblock a user parameters
 
-| Param         | Type       | Default | Remarks                                                                                                                                                                                                                                                 |
-| ------------- | ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| _`recipient`_ | `string[]` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat') including wallet addresses, chain agnostic wallet addresses, NFT addresses or even chatid which is useful for groups |
+| Param         | Type       | Default | Remarks                                                                                                                                                                                         |
+| ------------- | ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`recipient`_ | `string[]` | -       | [Recipient supports a number of address format](/docs/chat/supported-wallet-standards/ 'Supported wallet standards for Push Chat') including wallet addresses, chain agnostic wallet addresses. |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
