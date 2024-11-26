@@ -5,8 +5,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { ItemV } from '../../../src/css/SharedStyling';
-import ChainHeader from '../Chain/ChainHeader';
-import ChainFooter from '../Chain/ChainFooter';
 import ChainBottomComponent from '../Chain/ChainBottomComponent';
 import ChainKnowledgeBaseComponent from './ChainKnowledgeBaseComponent';
 
@@ -15,15 +13,10 @@ import { device } from '../../../src/config/globals';
 const ChainKnowledgeBase = () => {
   return (
     <ChainWrapper>
-      {/* Header */}
-      <ChainHeader />
       <ChainInnerWrapper>
         <ChainKnowledgeBaseComponent />
         <ChainBottomComponent />
       </ChainInnerWrapper>
-
-      {/* Footer */}
-      <ChainFooter />
     </ChainWrapper>
   );
 };

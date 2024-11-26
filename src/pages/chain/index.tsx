@@ -19,7 +19,7 @@ function PushChain() {
     <Layout
       title={PageMeta.CHAIN.pageTitle}
       description={PageMeta.CHAIN.pageDescription}
-      showNavbar={false}
+      showNavbar={'chain'}
     >
       <Head>
         {/* <!-- Update Facebook Meta Tags --> */}

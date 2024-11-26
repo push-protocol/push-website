@@ -1,11 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React, { FC, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Link from '@docusaurus/Link';
+// import Link from '@docusaurus/Link';
 
 import GLOBALS, { device, structure } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
@@ -29,10 +30,12 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 gsap.registerPlugin(ScrollTrigger);
 
 const ChainHeader: FC = () => {
+  const history = useHistory();
+
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState('technology');
+  const [activeItem, setActiveItem] = useState(null);
   const [scrollDirection] = useScrollDirection(isMobileMenuOpen);
 
   const toggleMobileMenu = () => {
@@ -55,6 +58,17 @@ const ChainHeader: FC = () => {
     }
   };
 
+  const handleRedirect = (item) => {
+    if (item.url) {
+      console.log('push it');
+      history.push(item?.url);
+      setActiveItem(item?.id);
+    } else {
+      handleSectionNavigation(item);
+    }
+    if (showMobileMenu) toggleMobileMenu();
+  };
+
   const openLink = (link: string) => {
     window.open(link, '_blank');
   };
@@ -62,6 +76,8 @@ const ChainHeader: FC = () => {
   const openHomePage = () => {
     window.open('/', '_self');
   };
+
+  console.log(activeItem, 'activeItem');
 
   // Dummy data for navigation items
   const navItems = [
@@ -120,30 +136,19 @@ const ChainHeader: FC = () => {
                   <NavigationMenuItem
                     key={item.id}
                     isActive={activeItem === item.id}
-                    onClick={() => handleSectionNavigation(item)}
+                    onClick={() => handleRedirect(item)}
                     showMobileMenu={isMobileMenuOpen}
                   >
-                    {item.url ? (
-                      <Link
-                        to={item.url}
-                        onClick={showMobileMenu ? toggleMobileMenu : undefined}
-                        className='navLink'
-                      >
-                        <NavigationMenuHeader isActive={activeItem === item.id}>
-                          <Span fontSize='18px'>{item.label}</Span>
-                        </NavigationMenuHeader>
-                      </Link>
-                    ) : (
-                      <ItemH
-                        className='navLink'
-                        alignSelf={isTablet && 'flex-start'}
-                        justifyContent={isTablet && 'flex-start'}
-                      >
-                        <NavigationMenuHeader isActive={activeItem === item.id}>
-                          <Span fontSize='18px'>{item.label}</Span>
-                        </NavigationMenuHeader>
-                      </ItemH>
-                    )}
+                    <ItemH
+                      className='navLink'
+                      alignSelf={isTablet && 'flex-start'}
+                      justifyContent={isTablet && 'flex-start'}
+                      onClick={() => handleRedirect(item)}
+                    >
+                      <NavigationMenuHeader isActive={activeItem === item.id}>
+                        <Span fontSize='18px'>{item.label}</Span>
+                      </NavigationMenuHeader>
+                    </ItemH>
                   </NavigationMenuItem>
                 ))}
               </NavigationMenu>

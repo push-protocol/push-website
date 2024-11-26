@@ -6,10 +6,8 @@ import styled from 'styled-components';
 import { device } from '../../../src/config/globals';
 import { ItemV } from '../../../src/css/SharedStyling';
 
-import ChainHeader from './ChainHeader';
 import ChainHeroSection from './ChainHeroSection';
 import ChainMarqueeSection from './ChainMarqueeSection';
-import ChainFooter from './ChainFooter';
 import ChainBottomComponent from './ChainBottomComponent';
 import ChainUseCase from './ChainUseCase';
 import ChainRoadmapSection from './ChainRoadmapSection';
@@ -17,9 +15,6 @@ import { ChainFeaturesSection } from './ChainFeaturesSection';
 
 const Chain = () => (
   <ChainWrapper>
-    {/* Header */}
-    <ChainHeader />
-
     {/* Main Content */}
     <MainContent>
       <ChainHeroSection />
@@ -39,9 +34,6 @@ const Chain = () => (
       <ChainRoadmapSection />
       <ChainBottomComponent showFaq={true} />
     </MainContent>
-
-    {/* Footer */}
-    <ChainFooter />
   </ChainWrapper>
 );
 
