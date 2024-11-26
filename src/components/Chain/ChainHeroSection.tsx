@@ -3,11 +3,12 @@
 import React, { FC } from 'react';
 
 import styled from 'styled-components';
-
-import { Button, H2, H3, ItemV } from '../../css/SharedStyling';
+import { TbArrowUpRight } from 'react-icons/tb';
 
 import { device } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
+
+import { A, Button, H2, H3, ItemV } from '../../css/SharedStyling';
 
 const ChainHeroSection: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
@@ -101,6 +102,21 @@ const ChainHeroSection: FC = () => {
           <br />
           Linear scalability and dynamic sharding ensures read and write txs
           keep on increasing as number of nodes are added to the network.
+          <TextLink
+            href='https://discord.gg/pushprotocol'
+            target='_blank'
+            title='Discord Push Network'
+            fontSize={isMobile ? '16px' : '20px'}
+            margin={isMobile ? '24px auto 0 auto' : '29px 0 0 0'}
+            background='transparent'
+            padding='0'
+            color='#D548EC'
+            fontFamily='N27'
+            hoverBackground='transparent'
+          >
+            <p>Discover Push Network</p>
+            <TbArrowUpRight className='anchorSVGlink' />
+          </TextLink>
         </GridText>
       </CountSection>
 
@@ -254,5 +270,33 @@ const GridText = styled.div`
     width: 100%;
     margin-top: 48px;
     text-align: center;
+  }
+`;
+
+const TextLink = styled(A)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  cursor: pointer;
+
+  @media ${device.tablet} {
+    justify-content: center;
+  }
+
+  p {
+    margin: 0px !important;
+  }
+  .anchorSVGlink {
+    color: #d548ec;
+    top: 0px;
+  }
+
+  &:hover {
+    text-decoration: none !important;
+    .anchorSVGlink {
+      color: #d548ec;
+    }
   }
 `;

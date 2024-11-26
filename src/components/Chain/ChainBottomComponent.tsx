@@ -142,7 +142,7 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
 export default ChainBottomComponent;
 
 const ChainBottomComponentWrapper = styled.div`
-  margin: ${(props) => (props.showFaq ? '113px auto 0 auto' : '0 auto')};
+  margin: ${(props) => (props.showFaq ? '213px auto 0 auto' : '0 auto')};
 
   @media ${device.desktopL} {
     width: 1400px;
@@ -162,7 +162,7 @@ const ChainBottomComponentWrapper = styled.div`
   }
 
   @media ${device.mobileL} {
-    margin: ${(props) => (props.showFaq ? '103px auto 0 auto' : ' 0 auto')};
+    margin: ${(props) => (props.showFaq ? '153px auto 0 auto' : ' 0 auto')};
     padding: 0 16px;
   }
 `;
@@ -184,10 +184,7 @@ const FaqLink = styled(A)`
 
   &:hover {
     text-decoration: none !important;
-    .anchorSVGlink {import ChainCanvas from './ChainCanvas';
-import ChainCanvas from './ChainCanvas';
-import ChainBottomComponent from './ChainBottomComponent';
-
+    .anchorSVGlink {
       color: #fff;
     }
   }

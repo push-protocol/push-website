@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Matter from 'matter-js';
 import { device } from '@site/src/config/globals';
+import { useInView } from 'react-intersection-observer';
 
 const COLORS = ['#A855F7', '#4ADE80', '#FACC15', '#F472B6'];
 
@@ -26,8 +27,11 @@ export default function ChainCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const engineRef = useRef<Matter.Engine>();
   const renderRef = useRef<Matter.Render>();
+  const [ref, inView] = useInView({ threshold: 1.0 });
 
   useEffect(() => {
+    if (!inView) return;
+
     const Engine = Matter.Engine;
     const Render = Matter.Render;
     const World = Matter.World;
@@ -181,10 +185,21 @@ export default function ChainCanvas() {
       World.clear(engine.world, false);
       Engine.clear(engine);
     };
-  }, []);
+  }, [inView]);
 
-  return <StyledCanvas ref={canvasRef} />;
+  return (
+    <Wrapper ref={ref}>
+      <StyledCanvas ref={canvasRef} />
+    </Wrapper>
+  );
 }
+
+// Styled components
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`;
 
 // Styled canvas element
 const StyledCanvas = styled.canvas`

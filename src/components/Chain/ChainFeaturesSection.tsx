@@ -170,7 +170,7 @@ export { ChainFeaturesSection };
 const ChainFeaturesContainer = styled.div`
   align-items: flex-start;
   display: flex;
-  padding: 172px 0px 224px 0px;
+  padding: 172px 0px 192px 0px;
   flex-direction: column;
 
   width: -webkit-fill-available;
