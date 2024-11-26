@@ -1,12 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React, { FC, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import Link from '@docusaurus/Link';
+import Link from '@docusaurus/Link';
 
 import GLOBALS, { device, structure } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
@@ -30,8 +29,6 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 gsap.registerPlugin(ScrollTrigger);
 
 const ChainHeader: FC = () => {
-  const history = useHistory();
-
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.laptop);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -59,13 +56,8 @@ const ChainHeader: FC = () => {
   };
 
   const handleRedirect = (item) => {
-    if (item.url) {
-      console.log('push it');
-      history.push(item?.url);
-      setActiveItem(item?.id);
-    } else {
-      handleSectionNavigation(item);
-    }
+    console.log(item);
+    handleSectionNavigation(item);
     if (showMobileMenu) toggleMobileMenu();
   };
 
@@ -139,16 +131,28 @@ const ChainHeader: FC = () => {
                     onClick={() => handleRedirect(item)}
                     showMobileMenu={isMobileMenuOpen}
                   >
-                    <ItemH
-                      className='navLink'
-                      alignSelf={isTablet && 'flex-start'}
-                      justifyContent={isTablet && 'flex-start'}
-                      onClick={() => handleRedirect(item)}
-                    >
-                      <NavigationMenuHeader isActive={activeItem === item.id}>
-                        <Span fontSize='18px'>{item.label}</Span>
-                      </NavigationMenuHeader>
-                    </ItemH>
+                    {item.url ? (
+                      <Link
+                        to={item.url}
+                        onClick={() => handleRedirect(item)}
+                        className='navLink'
+                      >
+                        <NavigationMenuHeader isActive={activeItem === item.id}>
+                          <Span fontSize='18px'>{item.label}</Span>
+                        </NavigationMenuHeader>
+                      </Link>
+                    ) : (
+                      <ItemH
+                        className='navLink'
+                        alignSelf={isTablet && 'flex-start'}
+                        justifyContent={isTablet && 'flex-start'}
+                        onClick={() => handleRedirect(item)}
+                      >
+                        <NavigationMenuHeader isActive={activeItem === item.id}>
+                          <Span fontSize='18px'>{item.label}</Span>
+                        </NavigationMenuHeader>
+                      </ItemH>
+                    )}
                   </NavigationMenuItem>
                 ))}
               </NavigationMenu>

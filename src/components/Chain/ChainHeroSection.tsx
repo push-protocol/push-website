@@ -9,6 +9,7 @@ import { device } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
 
 import { A, Button, H2, H3, ItemV } from '../../css/SharedStyling';
+import ChainAlertBar from './ChainAlertBar';
 
 const ChainHeroSection: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
@@ -35,6 +36,10 @@ const ChainHeroSection: FC = () => {
 
   return (
     <ChainHeroSectionWrapper>
+      <ChainAlertBar
+        text='Push Chain Governance Proposal is Live'
+        url='https://test.com'
+      />
       <HeroText>Build Universal Apps</HeroText>
       <HeroSubText>
         Push Chain is a shared state blockchain allowing all chains to come
