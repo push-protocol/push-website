@@ -6,16 +6,16 @@ import styled from 'styled-components';
 
 import { ItemV } from '../../../src/css/SharedStyling';
 import ChainBottomComponent from '../Chain/ChainBottomComponent';
-import ChainKnowledgeBaseComponent from './ChainKnowledgeBaseComponent';
-import ChainKnowledgeBaseGrid from './ChainKnowledgeGrid';
+import ChainKnowledgeBaseGrid from '../ChainKnowledgeBase/ChainKnowledgeGrid';
+import ChainKnowledgeBaseArticleContent from './ChainKnowledgeBaseArticleContent';
 
 import { device } from '../../../src/config/globals';
 
-const ChainKnowledgeBase = () => {
+const ChainKnowledgeBaseArticle = () => {
   return (
     <ChainWrapper>
       <ChainInnerWrapper>
-        <ChainKnowledgeBaseComponent />
+        <ChainKnowledgeBaseArticleContent />
         <ChainKnowledgeBaseGrid />
         <ChainBottomComponent />
       </ChainInnerWrapper>
@@ -23,7 +23,7 @@ const ChainKnowledgeBase = () => {
   );
 };
 
-export default ChainKnowledgeBase;
+export default ChainKnowledgeBaseArticle;
 
 const ChainWrapper = styled(ItemV)`
   width: 100%;

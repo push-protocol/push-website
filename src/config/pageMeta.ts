@@ -65,4 +65,8 @@ export const PageMeta = {
     pageTitle: 'Push KnowledgeBase',
     pageDescription: 'Push KnowledgeBase',
   },
+  ARTICLE: {
+    pageTitle: 'Push KnowledgeBase',
+    pageDescription: 'Push KnowledgeBase',
+  },
 };

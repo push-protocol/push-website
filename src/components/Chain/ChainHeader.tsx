@@ -69,7 +69,7 @@ const ChainHeader: FC = () => {
     window.open('/', '_self');
   };
 
-  console.log(activeItem, 'activeItem');
+  // console.log(activeItem, 'activeItem');
 
   // Dummy data for navigation items
   const navItems = [
