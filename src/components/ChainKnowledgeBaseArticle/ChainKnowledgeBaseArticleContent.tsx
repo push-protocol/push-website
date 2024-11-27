@@ -22,7 +22,7 @@ const ChainKnowledgeBaseArticleContent = () => {
 
   return (
     <ChainKnowledgeBaseArticleWrapper>
-      <ItemH gap='100px' flexWrap='nowrap'>
+      <ItemH flexDirection={isMobile && 'column'} gap='100px' flexWrap='nowrap'>
         <ItemV
           maxWidth='350px'
           alignItems='flex-start'
