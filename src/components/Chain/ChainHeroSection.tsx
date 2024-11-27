@@ -176,6 +176,7 @@ const HeroText = styled.div`
   line-height: 140%;
   letter-spacing: -1.44px;
   text-align: center;
+  margin-top: 12px;
 
   @media ${device.tablet} {
     font-size: 48px;

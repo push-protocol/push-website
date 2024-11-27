@@ -15,6 +15,7 @@ import {
   Notification,
   useRewardsNotification,
 } from '../hooks/useRewardsNotification';
+import { useChainNotification } from '../hooks/useChainNotification';
 
 // Initialize Internalization
 i18nInitialize();
@@ -50,6 +51,7 @@ export default function Root({ children }) {
     excludeDefaultConfigAt(path)
   );
   useRewardsNotification();
+  useChainNotification();
 
   // return superimposed class names if conditions are met
   function returnAdditionalClasses(conditions) {

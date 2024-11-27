@@ -31,7 +31,7 @@ const ChainAlertBar = ({ text, url }: AlertBarProps) => {
       <H2 fontWeight='400' fontFamily='FK Grotesk Neue'>
         {text}
       </H2>
-      <BsArrowRight />
+      <BsArrowRight color='#D548EC' />
     </HeroButton>
   );
 };
