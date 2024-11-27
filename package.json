@@ -28,6 +28,7 @@
     }
   },
   "dependencies": {
+    "@cookbookdev/docsbot": "^4.24.7",
     "@docusaurus/core": "3.0.1",
     "@docusaurus/cssnano-preset": "3.0.1",
     "@docusaurus/plugin-client-redirects": "3.0.1",
