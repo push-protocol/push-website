@@ -69,4 +69,8 @@ export const PageMeta = {
     pageTitle: 'Push KnowledgeBase',
     pageDescription: 'Push KnowledgeBase',
   },
+  ECOSYSTEM: {
+    pageTitle: 'Push Ecosystem',
+    pageDescription: 'Push Ecosystem',
+  },
 };

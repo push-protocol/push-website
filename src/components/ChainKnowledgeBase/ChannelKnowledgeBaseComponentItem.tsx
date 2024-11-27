@@ -18,7 +18,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       background='#FFF'
       padding='24px'
       alignItems='flex-start'
-      borderRadius='24px'
+      borderRadius='32px'
       justifyContent='space-between'
     >
       <div
