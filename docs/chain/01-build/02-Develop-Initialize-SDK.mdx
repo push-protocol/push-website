@@ -1,0 +1,70 @@
+---
+id: docs-chain-develop-initialize-sdk
+title: Initialize SDK
+hide_title: true
+slug: ./initialize-chain
+displayed_sidebar: pushChainSidebar
+sidebar_position: 2
+image: "/assets/docs/previews/docs_notifications_develop--initialize_user.png"
+---
+
+# Initialize SDK overview
+
+In order to start your integration with Push Chain, you will first need to initialize the SDK.
+
+<head>
+  <title>{`Initialize SDK | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
+
+### Installation
+
+- `@pushprotocol/node-core` is necessary for interacting with Push Chain
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{ className: "codetab js" }} default>
+    ```bash
+    # Install Libraries
+    npm install @pushprotocol/node-core
+    ```
+  </TabItem>
+</Tabs>
+
+
+## Initialize SDK
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+// Import Push Chain SDK
+import {PushNetwork, CONSTANTS} from '@pushprotocol/node-core';
+
+// Initialize the SDK
+const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
+```
+  </TabItem>
+</Tabs>
+
+For production, use `CONSTANTS.ENV.PROD`
+
+For development, use `CONSTANTS.ENV.STAGING`
+
+### `PushNetwork.instance` function return type
+
+When initializing the SDK, you will get an instance of the `PushNetwork` class.
+
+```typescript
+export declare class PushNetwork {
+    block: Block;
+    tx: Tx;
+    wallet: Wallet;
+}
+```
+
+Here is a breakdown for each of public fields of that class.
+- **Block**: The Block class in the PushNetwork handles operations related to blockchain blocks. It provides methods to initialize a block instance, serialize and deserialize block data, and fetch blocks from the network.
+- **Tx**: The Transaction class in the PushNetwork is designed to manage transactions within the network. It provides functionality to create unsigned transactions, serialize and deserialize transaction data, and send transactions to the network.
+- **Wallet**: The Wallet class manages wallet interactions, including connecting to a wallet, signing data, and checking the connection status.

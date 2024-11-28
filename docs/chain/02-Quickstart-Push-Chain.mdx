@@ -90,7 +90,6 @@ import TabItem from '@theme/TabItem';
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{ className: "codetab js" }} default>
     ```typescript
-    // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
     const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
 
     // Initializing viem Account. This will be used for signing when sending a transaction
@@ -102,7 +101,6 @@ import TabItem from '@theme/TabItem';
 
   <TabItem value="react" attributes={{ className: "codetab react" }} default>
     ```typescript
-    // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
     const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
 
     // Initializing viem Account. This will be used for signing when sending a transaction
@@ -114,7 +112,6 @@ import TabItem from '@theme/TabItem';
 
   <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
     ```typescript
-    // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
     const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
 
     // Initializing viem Account. This will be used for signing when sending a transaction
@@ -124,6 +121,10 @@ import TabItem from '@theme/TabItem';
     ```
   </TabItem>
 </Tabs>
+
+For production, use `CONSTANTS.ENV.PROD`
+
+For development, use `CONSTANTS.ENV.STAGING`
 
 ### Send a Transaction
 
