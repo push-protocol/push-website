@@ -1,0 +1,146 @@
+---
+id: docs-chain-develop-get-started
+title: Get Started
+hide_title: true
+slug: ./get-started
+displayed_sidebar: pushChainSidebar
+sidebar_position: 1
+image: "/assets/docs/previews/docs_notifications_develop--get_started.png"
+---
+
+# Get started
+
+Push Chain enables users to build Consumer-centric Apps with high scalability and better UX.
+
+<head>
+  <title>{`Start Building | Push Notifications | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ReactPlayer from 'react-player';
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  ModalMidEqual,
+  AFocus,
+  AImp,
+} from '@site/src/css/SharedStyling';
+
+## Speed run
+
+The following speed run is designed to give you a quick overview of usage and demonstrates how Push Chain SDK can be integrated successfully in minimal lines of code.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+// Import Push Chain SDK and viem
+import { PushNetwork } from '@pushprotocol/node-core';
+import { hexToBytes } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { config } from 'dotenv';
+
+config();
+
+interface PushSigner {
+  account: string;
+  signMessage: (dataToBeSigned: Uint8Array) => Promise<Uint8Array>;
+}
+
+async function main() {
+  // Initialize push SDK
+  let pushNetwork = await PushNetwork.initialize();
+
+  // Fetch transaction by hash
+  const transaction = await pushNetwork.tx.search('3e30a2a89f0122157832b3495a4e5e26e15c0e2123cbc2e17170ac6cdba5c6fa')
+
+  // Fetch block by hash
+  const block = await pushNetwork.block.search('ad5184d509d4e37ecbd928c958ea793f9d11ff0e0c1cbee53b3a3c6a9398e730')
+
+  // Initialize user Account
+  const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
+  if (!senderEthereumPrivateKey) throw new Error('Invalid private key');
+  const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
+  const receiverSolanaAddress = 'solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp:ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR';
+
+  // Initialize signer object that will be used to sign the transaction
+  const signer: PushSigner = {
+    account: `eip155:1:${ethereumSenderAccount.address}`,
+    signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
+      return hexToBytes(await ethereumSenderAccount.signMessage({ message: { raw: data } }));
+    }
+  };
+
+  const email = {
+    title: 'Hello old friend from Solana!',
+    message: 'Greetings from Ethereum world.'
+  };
+
+  // Create Unsigned Transaction
+  const unsignedTransaction = pushNetwork.tx.createUnsigned(
+    'MY_EMAIL_APP',
+    [receiverSolanaAddress],
+    new TextEncoder().encode(JSON.stringify(email))
+  );
+
+  // Send transaction
+  const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
+  console.log(`Transaction submitted! ${transactionHash}`);
+}
+
+void main();
+```
+  </TabItem>
+</Tabs>
+
+## Installation
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```zsh
+# Install Libraries
+npm install @pushprotocol/node-core viem dotenv
+```
+  </TabItem>
+</Tabs>
+
+## Quickstart from SDK repos
+
+<ModalContainer>
+<ModalSmall
+  onClick={() =>
+    window.open('https://github.com/push-protocol/push-sdk', '_blank')
+  }
+>
+  <img
+    src={require('/static/assets/docs/techstack/javascript.png').default}
+    srcSet={`${
+      require('/static/assets/docs/techstack/javascript@2x.png').default
+    } 2x, ${
+      require('/static/assets/docs/techstack/javascript@3x.png').default
+    } 3x`}
+    alt='Image representation of Javascript SDK of Push Protocol'
+  />
+  <ModalWrapper>
+    <span>
+      Javascript
+      <svg
+        width='20'
+        height='28'
+        viewBox='0 0 29 28'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          d='m7.501 21.001 14-14M10.125 7.001H21.5v11.375'
+          stroke='#A0A3B1'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+        ></path>
+      </svg>
+    </span>
+  </ModalWrapper>
+</ModalSmall>
+</ModalContainer>
