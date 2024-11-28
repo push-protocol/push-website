@@ -13,6 +13,17 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
+  pushChainSidebar: [
+    {
+      type: 'doc',
+      id: 'chain/introduction',
+    },
+    {
+      type: 'doc',
+      id: 'chain/docs-chain-quickstart',
+    },
+  ],
+
   pushNotificationSidebar: [
     {
       type: 'doc',

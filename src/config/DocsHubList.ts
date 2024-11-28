@@ -34,7 +34,7 @@ const signer = ethers.Wallet.createRandom();
 const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
 
 // Send a notification to users of your protocol
-const apiResponse = await userAlice.channel.send(['*'], { 
+const apiResponse = await userAlice.channel.send(['*'], {
   notification: {
     title: 'Hello World Notification',
     body: 'Web3 native notifications are here!',
@@ -55,7 +55,7 @@ const userAlice = await PushAPI.initialize(signer, { env: 'staging' });
 
 // Send a message to Bob
 const aliceMessagesBob = await userAlice.chat.send(
-  '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666', 
+  '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666',
   {content: "Gm gm! It's a me... Mario"}
 );
 
@@ -65,6 +65,19 @@ const aliceMessagesBob = await userAlice.chat.send(
 ];
 
 export const TechDocItems: ITechDocItem[] = [
+  {
+    title: 'Chain',
+    srcref: 'dao',
+    alt: 'Logo representing Push Chain - Push Protocol',
+    link: '/docs/chain',
+    target: '_self',
+    description: 'Learn about Push Chain and how to integrate it.',
+    codeblock: `// Initialize PushNetwork
+let pushNetwork = await PushNetwork.initialize()
+
+// Search for a transaction by hash
+const tx = await pushNetwork.tx.search('3e30a2a89f0122157832b3495a4e5e26e15c0e2123cbc2e17170ac6cdba5c6fa')`,
+  },
   {
     title: 'Notifications',
     srcref: 'notification',
@@ -77,7 +90,7 @@ export const TechDocItems: ITechDocItem[] = [
 const userAlice = await PushAPI.initialize(signer);
 
 // Send a notification to users of your protocol
-const response = await userAlice.channel.send(['*'], { 
+const response = await userAlice.channel.send(['*'], {
   notification: {
     title: 'Hello World Notification',
     body: 'Web3 native notifications are here!',
@@ -97,7 +110,7 @@ const userAlice = await PushAPI.initialize(signer);
 
 // Send message
 const aliceMessagesBob = await userAlice.chat.send(
-  '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666', 
+  '0x99A08ac6254dcf7ccc37CeC662aeba8eFA666666',
   {content: "Gm gm! It's a me... Mario"}
 );`,
   },
