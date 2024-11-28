@@ -13,7 +13,7 @@ image: "/assets/docs/previews/docs_notifications--quickstart.png"
 Everything you will need to get up and running in 2 minutes or less!
 
 <head>
-  <title>Quickstart | Push Notification | Push Documentation</title>
+  <title>Quickstart | Push Chain | Push Documentation</title>
 </head>
 
 import Tabs from '@theme/Tabs';
@@ -23,28 +23,22 @@ import TabItem from '@theme/TabItem';
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{ className: "codetab js" }} default>
-
-    ```zsh
+    ```bash
     # Install Libraries
-    npm install @pushprotocol/restapi@latest ethers@^5.7
+    npm install @pushprotocol/node-core viem dotenv
     ```
-
   </TabItem>
   <TabItem value="react" attributes={{ className: "codetab react" }} default>
-
     ```zsh
     # Install Libraries
-    npm install @pushprotocol/restapi@latest ethers@^5.7
+    npm install @pushprotocol/node-core viem dotenv
     ```
-
   </TabItem>
   <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
-
     ```zsh
     # Install Libraries
-    npm install @pushprotocol/restapi@latest ethers@^5.7
+    npm install @pushprotocol/node-core viem dotenv
     ```
-
   </TabItem>
 </Tabs>
 
@@ -52,191 +46,188 @@ import TabItem from '@theme/TabItem';
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{ className: "codetab js" }} default>
+    ```typescript
+    // Import Push Chain SDK
+    import {PushNetwork, CONSTANTS} from '@pushprotocol/node-core';
 
-    ```js
-    // Import restapi for function calls
-    import {PushAPI, CONSTANTS} from '@pushprotocol/restapi';
-
-    // Ethers or Viem, both are supported
-    import {ethers} from 'ethers';
+    // Import necessary dependencies
+    import {hexToBytes} from 'viem'
+    import {privateKeyToAccount} from 'viem/accounts'
+    import {config} from 'dotenv'
+    config()
     ```
-
   </TabItem>
 
   <TabItem value="react" attributes={{ className: "codetab react" }} default>
+    ```typescript
+    // Import Push Chain SDK
+    import {PushNetwork, CONSTANTS} from '@pushprotocol/node-core';
 
-    ```js
-    // Import restapi for function calls
-    import {PushAPI, CONSTANTS} from '@pushprotocol/restapi';
-
-    // Ethers or Viem, both are supported
-    import {ethers} from 'ethers';
+    // Import necessary dependencies
+    import {hexToBytes} from 'viem'
+    import {privateKeyToAccount} from 'viem/accounts'
+    import {config} from 'dotenv'
+    config()
     ```
-
   </TabItem>
 
   <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
+    ```typescript
+    // Import Push Chain SDK
+    import {PushNetwork, CONSTANTS} from '@pushprotocol/node-core';
 
-    ```js
-    // Import restapi for function calls
-    import {PushAPI, CONSTANTS} from '@pushprotocol/restapi';
-
-    // Ethers or Viem, both are supported
-    import {ethers} from 'ethers';
+    // Import necessary dependencies
+    import {hexToBytes} from 'viem'
+    import {privateKeyToAccount} from 'viem/accounts'
+    import {config} from 'dotenv'
+    config()
     ```
-
   </TabItem>
 </Tabs>
 
-### Initialize User
+### Initialize Push Chain SDK
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{ className: "codetab js" }} default>
-
-    ```js
-    // Creating a random signer from a wallet, ideally this is the wallet you will connect
-    const signer = ethers.Wallet.createRandom();
-
-    // Initialize wallet user
+    ```typescript
     // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
-    const userAlice = await PushAPI.initialize(signer, {
-    env: CONSTANTS.ENV.STAGING,
-  });
-    ```
+    const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
 
+    // Initializing viem Account. This will be used for signing when sending a transaction
+    const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
+    if (!senderEthereumPrivateKey) throw new Error('Invalid private key');
+    const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
+    ```
   </TabItem>
 
   <TabItem value="react" attributes={{ className: "codetab react" }} default>
-
-    ```js
-    // Creating a random signer from a wallet, ideally this is the wallet you will connect
-    const signer = ethers.Wallet.createRandom();
-
-    // Initialize wallet user
+    ```typescript
     // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
-    const userAlice = await PushAPI.initialize(signer, {
-    env: CONSTANTS.ENV.STAGING,
-  });
-    ```
+    const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
 
+    // Initializing viem Account. This will be used for signing when sending a transaction
+    const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
+    if (!senderEthereumPrivateKey) throw new Error('Invalid private key');
+    const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
+    ```
   </TabItem>
 
   <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
-
-    ```js
-    // Creating a random signer from a wallet, ideally this is the wallet you will connect
-    const signer = ethers.Wallet.createRandom();
-
-    // Initialize wallet user
+    ```typescript
     // 'CONSTANTS.ENV.PROD' -> mainnet apps | 'CONSTANTS.ENV.STAGING' -> testnet apps
-    const userAlice = await PushAPI.initialize(signer, {
-    env: CONSTANTS.ENV.STAGING,
-  });
-    ```
+    const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
 
+    // Initializing viem Account. This will be used for signing when sending a transaction
+    const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
+    if (!senderEthereumPrivateKey) throw new Error('Invalid private key');
+    const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
+    ```
   </TabItem>
 </Tabs>
 
-### Send Notification
+### Send a Transaction
+
+In this example we will be sending a transaction with category `MY_EMAIL_APP` and the following data:
+
+```typescript
+const email = {
+  title: 'Hello old friend from Solana!',
+  message: 'Greetings from Ethereum world.'
+};
+```
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{ className: "codetab js" }} default>
+    ```typescript
+    // Create Signer object to sign messages
+    const signer = {
+      account: `eip155:1:${ethereumSenderAccount.address}`,
+      signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
+        return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
+      }
+    };
 
-    ```js
-    // Requires user to have a channel, see Create Channel section for more info
-    // ['*'] sends to all wallets who have opted in to your channel
-    const response = await userAlice.channel.send(['*'], {
-    notification: {
-    title: 'You awesome notification',
-    body: 'from your amazing protocol',
-  },
-  });
+    // Create unsigned transaction
+    const unsignedTransaction = pushNetwork.tx.createUnsigned(
+      'MY_EMAIL_APP',
+      // Solana address
+      [ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR],
+      new TextEncoder().encode(JSON.stringify(email))
+    );
+
+    // Send transaction
+    const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
+    console.log(`Transaction submitted! ${transactionHash}`);
     ```
-
   </TabItem>
 
   <TabItem value="react" attributes={{ className: "codetab react" }} default>
+    ```typescript
+    // Create Signer object to sign messages
+    const signer = {
+      account: `eip155:1:${ethereumSenderAccount.address}`,
+      signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
+        return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
+    }
+  };
 
-    ```js
-    // Requires user to have a channel, see Create Channel section for more info
-    // ['*'] sends to all wallets who have opted in to your channel
-    const response = await userAlice.channel.send(['*'], {
-    notification: {
-    title: 'You awesome notification',
-    body: 'from your amazing protocol',
-  },
-  });
+  // Create unsigned transaction
+  const unsignedTransaction = pushNetwork.tx.createUnsigned(
+    'MY_EMAIL_APP',
+    // Solana address
+    [ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR],
+    new TextEncoder().encode(JSON.stringify(email))
+  );
+
+  // Send transaction
+  const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
+  console.log(`Transaction submitted! ${transactionHash}`);
     ```
-
   </TabItem>
 
   <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
+    ```typescript
+    // Create Signer object to sign messages
+    const signer = {
+      account: `eip155:1:${ethereumSenderAccount.address}`,
+      signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
+        return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
+      }
+    };
 
-    ```js
-    // Requires user to have a channel, see Create Channel section for more info
-    // ['*'] sends to all wallets who have opted in to your channel
-    const response = await userAlice.channel.send(['*'], {
-    notification: {
-    title: 'You awesome notification',
-    body: 'from your amazing protocol',
-  },
-  });
+    // Create unsigned transaction
+    const unsignedTransaction = pushNetwork.tx.createUnsigned(
+      'MY_EMAIL_APP',
+      // Solana address
+      [ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR],
+      new TextEncoder().encode(JSON.stringify(email))
+    );
+
+    // Send transaction
+    const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
+    console.log(`Transaction submitted! ${transactionHash}`);
     ```
-
   </TabItem>
 </Tabs>
 
-### Stream / Real time updates / Socket
+### Fetch Transaction
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{ className: "codetab js" }} default>
-
-    ```js
-    // To listen to real time notifications
-    const stream = await userAlice.initStream([CONSTANTS.STREAM.NOTIF]);
-
-    // Setup event handling
-    stream.on(CONSTANTS.STREAM.NOTIF, (data) => {
-    console.log(data);
-  });
-
-    // Connect stream but only after setting all event handling
-    stream.connect();
+    ```typescript
+    const transaction = await pushNetwork.tx.search('3e30a2a89f0122157832b3495a4e5e26e15c0e2123cbc2e17170ac6cdba5c6fa')
     ```
-
   </TabItem>
 
   <TabItem value="react" attributes={{ className: "codetab react" }} default>
-
-    ```js
-    // To listen to real time notifications
-    const stream = await userAlice.initStream([CONSTANTS.STREAM.NOTIF]);
-
-    // Setup event handling
-    stream.on(CONSTANTS.STREAM.NOTIF, (data) => {
-    console.log(data);
-  });
-
-    // Connect stream but only after setting all event handling
-    stream.connect();
+    ```typescript
+    const transaction = await pushNetwork.tx.search('3e30a2a89f0122157832b3495a4e5e26e15c0e2123cbc2e17170ac6cdba5c6fa')
     ```
-
   </TabItem>
 
   <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
-
-    ```js
-    // To listen to real time notifications
-    const stream = await userAlice.initStream([CONSTANTS.STREAM.NOTIF]);
-
-    // Setup event handling
-    stream.on(CONSTANTS.STREAM.NOTIF, (data) => {
-    console.log(data);
-  });
-
-    // Connect stream but only after setting all event handling
-    stream.connect();
+    ```typescript
+    const transaction = await pushNetwork.tx.search('3e30a2a89f0122157832b3495a4e5e26e15c0e2123cbc2e17170ac6cdba5c6fa')
     ```
-
   </TabItem>
 </Tabs>
