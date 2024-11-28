@@ -2,14 +2,18 @@
 // @ts-nocheck
 import React from 'react';
 import styled from 'styled-components';
+import Markdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
 
 import { device } from '../../config/globals';
 import useMediaQuery from '../../hooks/useMediaQuery';
 
 import { H3, ItemH, ItemV, Span } from '../../css/SharedStyling';
 
-const ChainKnowledgeBaseArticleContent = () => {
+const ChainKnowledgeBaseArticleContent = ({ item }) => {
   const isMobile = useMediaQuery(device.mobileL);
+  const { content } = item;
 
   const TableOfContent = [
     'Introduction to Push Chain',
@@ -69,40 +73,14 @@ const ChainKnowledgeBaseArticleContent = () => {
           </ItemV>
         </ItemV>
 
-        <ItemV>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-          ultricies quam at justo imperdiet malesuada. Duis quis est sit amet
-          nunc vehicula condimentum. Phasellus tristique sem non erat gravida,
-          in facilisis nulla rhoncus. Integer viverra justo nec ante luctus
-          tempus. Donec tincidunt, odio eget tincidunt feugiat, lorem ligula
-          accumsan libero, vel fringilla ex velit a ligula. Nulla id risus nec
-          ipsum malesuada luctus. Introduction to Push Chain Quisque auctor elit
-          non urna mollis, in vestibulum urna suscipit. Proin consequat nisl at
-          sapien scelerisque, non vehicula orci lobortis. Nulla fermentum, mi
-          sed cursus tincidunt, magna tortor tincidunt purus, sit amet accumsan
-          tortor enim id odio. Phasellus at nisl nisi. Aliquam erat volutpat.
-          Duis dapibus blandit ligula, id volutpat ex facilisis nec. Fusce
-          mollis turpis at justo pulvinar laoreet. Vivamus ultrices nulla quis
-          nibh fermentum gravida. Mauris convallis tristique lectus ut laoreet.
-          How Push Chain Works Nunc hendrerit, erat a feugiat cursus, ligula
-          magna venenatis ex, sit amet vestibulum justo augue in massa. Cras
-          mattis aliquet arcu nec facilisis. Proin lacinia, sapien vel tincidunt
-          tristique, lectus nulla tincidunt arcu, ut pulvinar dolor justo ut
-          magna. Nam in justo sit amet sapien vestibulum fermentum sit amet vel
-          augue. Integer euismod consectetur ligula, ut suscipit ex luctus ut.
-          Sed ac purus nec dolor ultrices consequat. Aenean non nulla sit amet
-          lacus vulputate rhoncus. Sed vitae ligula non felis eleifend eleifend.
-          Fusce posuere urna non purus auctor, nec feugiat urna elementum.
-          Phasellus ut arcu vitae felis porttitor accumsan. Nunc hendrerit, erat
-          a feugiat cursus, ligula magna venenatis ex, sit amet vestibulum justo
-          augue in massa. Cras mattis aliquet arcu nec facilisis. Key Features
-          of Push Chain Sub Header Nunc hendrerit, erat a feugiat cursus, ligula
-          magna venenatis ex, sit amet vestibulum justo augue in massa. Cras
-          mattis aliquet arcu nec facilisis. Proin lacinia, sapien vel tincidunt
-          tristique, lectus nulla tincidunt arcu, ut pulvinar dolor justo ut
-          magna. Source: Nunc hendrerit, erat a feugiat cursus, ligula magna
-          venenatis
-        </ItemV>
+        <MarkdownSection alignItems='flex-start' alignSelf='flex-start'>
+          <Markdown
+            remarkPlugins={[remarkGfm]} // Enable GitHub Flavored Markdown
+            rehypePlugins={[rehypeRaw]} // Allow raw HTML rendering
+          >
+            {content}
+          </Markdown>
+        </MarkdownSection>
       </ItemH>
     </ChainKnowledgeBaseArticleWrapper>
   );
@@ -115,5 +93,25 @@ const ChainKnowledgeBaseArticleWrapper = styled.div`
 
   @media ${device.mobileL} {
     margin: 153px auto 0 auto;
+  }
+`;
+
+const MarkdownSection = styled(ItemV)`
+  // styles for images
+  img {
+    border-radius: 32px;
+  }
+  p {
+    img {
+      border-radius: 32px;
+    }
+  }
+
+  // styles for list
+  ul,
+  ol {
+    li {
+      list-style: inherit !important;
+    }
   }
 `;

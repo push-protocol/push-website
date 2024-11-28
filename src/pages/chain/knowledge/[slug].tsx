@@ -11,14 +11,13 @@ import { PageMeta } from '@site/src/config/pageMeta';
 import ChainKnowledgeBaseArticle from '../../../components/ChainKnowledgeBaseArticle/ChainKnowledgeBaseArticle';
 
 function Page(metadata) {
-  console.log(metadata, 'close');
   return (
     <Layout
       title={PageMeta.ARTICLE.pageTitle}
       description={PageMeta.ARTICLE.pageDescription}
       showNavbar={'chain'}
     >
-      <ChainKnowledgeBaseArticle />
+      <ChainKnowledgeBaseArticle item={metadata?.metadata} />
     </Layout>
   );
 }

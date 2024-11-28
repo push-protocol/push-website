@@ -1,12 +1,11 @@
-module.exports = function myPlugin() {
+const ArticleContent = require('../src/config/KnowledgeBaseArticle');
+
+export default function myPlugin() {
   return {
     name: 'dynamic-routes-plugin',
     async loadContent() {
       // Simulated content for dynamic routes
-      return [
-        { slug: 'page1', title: 'Page 1', content: '...' },
-        { slug: 'page2', title: 'Page 2', content: '...' },
-      ];
+      return ArticleContent?.knowledgeBaseArticleContent;
     },
     async contentLoaded({ content, actions }) {
       const { addRoute, createData } = actions;
@@ -29,4 +28,4 @@ module.exports = function myPlugin() {
       );
     },
   };
-};
+}

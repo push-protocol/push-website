@@ -11,11 +11,11 @@ import ChainKnowledgeBaseArticleContent from './ChainKnowledgeBaseArticleContent
 
 import { device } from '../../../src/config/globals';
 
-const ChainKnowledgeBaseArticle = () => {
+const ChainKnowledgeBaseArticle = ({ item }) => {
   return (
     <ChainWrapper>
       <ChainInnerWrapper>
-        <ChainKnowledgeBaseArticleContent />
+        <ChainKnowledgeBaseArticleContent item={item} />
         <ChainKnowledgeBaseGrid />
         <ChainBottomComponent />
       </ChainInnerWrapper>
