@@ -22,6 +22,10 @@ const sidebars = {
       type: 'doc',
       id: 'chain/docs-chain-quickstart',
     },
+    {
+      type: 'doc',
+      id: 'chain/docs-chain-important-concepts',
+    },
   ],
 
   pushNotificationSidebar: [
