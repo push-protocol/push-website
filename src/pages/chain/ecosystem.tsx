@@ -5,7 +5,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 
 // Internal Component
-import ChainEcosystem from '../../components/ChainEcosystem/ChainEcosystem';
+import ChainEcosystem from '../../components/Chain/ChainEcosystem/ChainEcosystem';
 
 // Internal Configs
 import { PageMeta } from '@site/src/config/pageMeta';

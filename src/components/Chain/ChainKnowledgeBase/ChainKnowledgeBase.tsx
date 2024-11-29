@@ -4,18 +4,18 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import { ItemV } from '../../../src/css/SharedStyling';
-import ChainBottomComponent from '../Chain/ChainBottomComponent';
-import ChainKnowledgeBaseGrid from '../ChainKnowledgeBase/ChainKnowledgeGrid';
-import ChainKnowledgeBaseArticleContent from './ChainKnowledgeBaseArticleContent';
+import { ItemV } from '../../../css/SharedStyling';
+import ChainBottomComponent from '../ChainBottomComponent';
+import ChainKnowledgeBaseComponent from './ChainKnowledgeBaseComponent';
+import ChainKnowledgeBaseGrid from './ChainKnowledgeGrid';
 
-import { device } from '../../../src/config/globals';
+import { device } from '../../../config/globals';
 
-const ChainKnowledgeBaseArticle = ({ item }) => {
+const ChainKnowledgeBase = () => {
   return (
     <ChainWrapper>
       <ChainInnerWrapper>
-        <ChainKnowledgeBaseArticleContent item={item} />
+        <ChainKnowledgeBaseComponent />
         <ChainKnowledgeBaseGrid />
         <ChainBottomComponent />
       </ChainInnerWrapper>
@@ -23,7 +23,7 @@ const ChainKnowledgeBaseArticle = ({ item }) => {
   );
 };
 
-export default ChainKnowledgeBaseArticle;
+export default ChainKnowledgeBase;
 
 const ChainWrapper = styled(ItemV)`
   width: 100%;

@@ -3,10 +3,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { device } from '../../config/globals';
-import useMediaQuery from '../../hooks/useMediaQuery';
+import { device } from '../../../config/globals';
+import useMediaQuery from '../../../hooks/useMediaQuery';
 
-import { Button, H3, ItemH, ItemV, Span } from '../../css/SharedStyling';
+import { Button, H3, ItemH, ItemV, Span } from '../../../css/SharedStyling';
 import ChainEcosystemAppItem from './ChainEcosystemAppItem';
 
 const ChainEcosystemContent = () => {

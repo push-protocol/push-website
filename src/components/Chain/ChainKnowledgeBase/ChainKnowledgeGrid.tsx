@@ -3,12 +3,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { device } from '../../config/globals';
-import useMediaQuery from '../../hooks/useMediaQuery';
-import { createGridRows } from './utils/CreateGridRows';
+import { device } from '../../../config/globals';
+import useMediaQuery from '../../../hooks/useMediaQuery';
+import { createGridRows } from '../utils/CreateGridRows';
 
-import { H2, ItemV } from '../../css/SharedStyling';
-import { ChainKnowledgeBaseContent } from '../../config/ChainKnowledgeBaseConfig';
+import { H2, ItemV } from '../../../css/SharedStyling';
+import { ChainKnowledgeBaseContent } from '../../../config/ChainKnowledgeBaseConfig';
 import ChannelKnowledgeBaseComponentItem from './ChannelKnowledgeBaseComponentItem';
 
 const ChainKnowledgeBaseGrid = () => {

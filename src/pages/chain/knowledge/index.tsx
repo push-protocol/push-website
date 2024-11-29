@@ -7,7 +7,7 @@ import Head from '@docusaurus/Head';
 import Layout from '@theme/Layout';
 
 // Internal Component
-import ChainKnowledgeBase from '../../../components/ChainKnowledgeBase/ChainKnowledgeBase';
+import ChainKnowledgeBase from '../../../components/Chain/ChainKnowledgeBase/ChainKnowledgeBase';
 
 // Import Assets
 

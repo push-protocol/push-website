@@ -5,10 +5,10 @@ import styled from 'styled-components';
 
 import { TbArrowUpRight } from 'react-icons/tb';
 
-import { device } from '../../config/globals';
-import useMediaQuery from '../../hooks/useMediaQuery';
+import { device } from '../../../config/globals';
+import useMediaQuery from '../../../hooks/useMediaQuery';
 
-import { H3, ItemH, ItemV, Span } from '../../css/SharedStyling';
+import { H3, ItemH, ItemV, Span } from '../../../css/SharedStyling';
 
 const ChainEcosystemAppItem: FC = ({ item, index }) => {
   const isMobile = useMediaQuery(device.mobileL);
