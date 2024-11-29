@@ -88,56 +88,49 @@ To send the transaction a Signer is necessary. In the example below we will be i
   </TabItem>
 </Tabs>
 
----
+### Create Unsigned Transaction parameters
 
-### Create channel parameters
-
-| Param       | Type                    | Subtype                   | Default | Remarks                                                                                                                                                                        |
-| ----------- | ----------------------- | ------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| _`options`_ | `object`                | -                         | -       | Configuration options for creating a channel                                                                                                                                   |
-| -           | _`options.name`_        | `string`                  | -       | The name of the channel                                                                                                                                                        |
-| -           | _`options.description`_ | `string`                  | -       | A description of the channel                                                                                                                                                   |
-| -           | _`options.icon`_        | `string (base64 encoded)` | -       | The channel's icon in base64 encoded string format                                                                                                                             |
-| -           | _`options.url`_         | `string`                  | -       | The URL associated with the channel                                                                                                                                            |
-| -           | `options.alias`         | `string`                  | -       | alias address in in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address)                                                      |
-| -           | `options.progresshook`  | `(progress) => void`      | -       | A callback function that's called during channel creation progress, [see progress object](/docs/notifications/build/create-channel/#create-channel-progress-object-parameters) |
-
-> Note: Parameters _`in this style`_ are mandatory.
+| Param       | Type                    |  Remarks                                                                                                                                                                        |
+| ----------- | ----------------------- |  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `category`| `string`                |  Transaction Category                                                                                                                                   |
+| `recipients` | `string[]`         | Recipients of the transaction                                                                                                                                                        |
+| `data`           | `Uint8Array` |  Array of Bytes for the transaction data                                                                                                                                                    |
 
 <Details summary="Expected response">
-
 ```typescript
 {
   transactionHash: '0x0232fb66e2cb41c291ca10af4aa3ad0bc515adcea34de0f456db10306db89677';
 }
 ```
-
 </Details>
 
----
+### Send Unsigned Transaction parameters
 
-### Create channel progress object parameters
+| Param       | Type                    |  Remarks                                                                                                                                                                        |
+| ----------- | ----------------------- |  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `unsignedTx`| `Transaction` |  Unsigned Transaction that was created above by calling the `createUnsigned` method |
+| `signer` | `Signer` | Object to sign the transaction that will be submited to Push Chain |
 
-_Optional:_ Informs about individual progress stages during channel creation if progresshook is function is passed during channel creation API call.
+Where `Signer` is defined as:
 
-| Param      | Type             | Subtype  | Default | Remarks                                                |
-| ---------- | ---------------- | -------- | ------- | ------------------------------------------------------ |
-| `progress` | `object`         | -        | -       | progress object that is passed in the callback         |
-| -          | `Progress.id`    | `string` | -       | Predefined, ID associated with the progress objects    |
-| -          | `Progress.level` | `string` | -       | Predefined, Level associated with the progress objects |
-| -          | `Progress.title` | `string` | -       | Predefined, title associated with the progress objects |
-| -          | `Progress.info`  | `string` | -       | Predefined, info associated with the progress objects  |
+```typescript
+{
+  account: string;
+  signMessage: (dataToBeSigned: Uint8Array) => Promise<Uint8Array>;
+}
+```
 
-_`Progress object details`_
+| Param       | Type                    |  Remarks                                                                                                                                                                        |
+| ----------- | ----------------------- |  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `account`| `string` |  Address in CAIP-10 format with the address that will be used to sign the Transaction |
+| `signMessage` | `(dataToBeSigned: Uint8Array) => Promise<Uint8Array>` | Function to sign an array of bytes |
 
-| Progress.id              | Progress.level | Progress.title                                      | Progress.info                                           |
-| ------------------------ | -------------- | --------------------------------------------------- | ------------------------------------------------------- |
-| `PUSH-CHANNEL-CREATE-01` | `INFO`         | Uploading data to IPFS                              | The channel’s data is getting uploaded to IPFS          |
-| `PUSH-CHANNEL-CREATE-02` | `INFO`         | Approving PUSH tokens                               | Gives approval to Push Core contract to spend 50 $PUSH  |
-| `PUSH-CHANNEL-CREATE-03` | `INFO`         | Channel is getting created                          | Calls Push Core contract to create your channel         |
-| `PUSH-CHANNEL-CREATE-04` | `SUCCESS`      | Channel creation is done, Welcome to Push Ecosystem | Channel creation is completed                           |
-| `PUSH-CHANNEL-UPDATE-01` | `INFO`         | Uploading new data to IPFS                          | The channel’s new data is getting uploaded to IPFS      |
-| `PUSH-CHANNEL-UPDATE-02` | `INFO`         | Approving PUSH tokens                               | Gives approval to Push Core contract to spend 50 $PUSH  |
-| `PUSH-CHANNEL-UPDATE-03` | `INFO`         | Channel is getting updated                          | Calls Push Core contract to update your channel details |
-| `PUSH-CHANNEL-UPDATE-04` | `SUCCESS`      | Channel is updated with new data                    | Channel is successfully updated                         |
-| `PUSH-ERROR-02`          | `ERROR`        | Transaction failed for a function call              | Transaction failed                                      |
+
+<Details summary="Expected response">
+```typescript
+{
+  transactionHash: '0x0232fb66e2cb41c291ca10af4aa3ad0bc515adcea34de0f456db10306db89677';
+}
+```
+</Details>
+
