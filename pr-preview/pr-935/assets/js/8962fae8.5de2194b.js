@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[42638],{157380:e=>{e.exports=JSON.parse('{"label":"Communication","permalink":"/push-website/pr-preview/pr-935/blog/tags/communication","allTagsPath":"/push-website/pr-preview/pr-935/blog/tags","count":5,"unlisted":false}')}}]);
