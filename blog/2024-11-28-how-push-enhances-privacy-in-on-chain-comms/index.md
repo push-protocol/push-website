@@ -1,7 +1,7 @@
 ---
 slug: how-push-enhances-privacy-in-on-chain-communications
 title: 'How Push Enhances Privacy in On-Chain Communications'
-authors: [sixty keys]
+authors: [sixty]
 image: './cover-image.webp'
 description: 'How Push Enhances Privacy in On-Chain Communications'
 text: 'While privacy is fundamental to blockchain technology, communicating on-chain poses distinct challenges. Because wallet addresses are public by design, users face risks from unsolicited messages, data mining, and phishing attempts.'
