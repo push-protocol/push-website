@@ -185,3 +185,42 @@ Returns the transactions that were received by the recipient wallet address
 | `pageSize` | `number`                   |  Optional. Maximum number of elements returned per page, used for pagination. Default: `30`                                                                                                                                                                                                     |
 | `page` | `number`                   |  Optional. Page number, user for pagination. Default: `1`                                                                                                                                                                                                     |
 | `category` | `string`                   |  Category that the transaction belongs to                                                                                                                                                                                                     |
+
+## Get by sender OR recipient wallet address
+
+Returns the transactions that were sent OR received by the wallet address
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+    Let's fetch the latest 10 transactions that were sent OR received by the address `0x8F6325974108C7041B8035131eCe8A89708d02d0` that have as category `MY_EMAIL_APP`.
+
+    It's important to notice that addresses are stored on CAIP-10 format. That means that the address above will be represented in Ethereum mainnet as `eip155:1:0x8F6325974108C7041B8035131eCe8A89708d02d0`.
+
+    - `eip155`: Represents the Ethereum chain
+    - `1`: Is the chain Id for Ethereum mainnet
+
+    ```typescript
+    const response = await pushNetwork.tx.get(
+      Math.floor(Date.now()),
+      'DESC',
+      10,
+      1,
+      'eip155:1:0x8F6325974108C7041B8035131eCe8A89708d02d0',
+      'MY_EMAIL_APP'
+    );
+    ```
+  </TabItem>
+</Tabs>
+
+---
+
+### `pushNetwork.tx.get` info parameters
+
+| Param     | Type                      |  Remarks                                                                                                                                                                                                                              |
+| --------- | ------------------------- |  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `startTime` | `number`                   |  Optional. Filter by time. UNIX timestamp format. Default: `Math.floor(Date.now() / 1000)`                                                                                                                                                                                                     |
+| `direction` | `"ASC" or "DESC"`                   |  Optional. Filter by time. If `DESC`, it will fetch all transactions before `startTime`. If `ASC`, it will fetch all transactions after `startTime`. Default: `ASC`                                                                                                                                                                                                     |
+| `pageSize` | `number`                   |  Optional. Maximum number of elements returned per page, used for pagination. Default: `30`                                                                                                                                                                                                     |
+| `page` | `number`                   |  Optional. Page number, user for pagination. Default: `1`                                                                                                                                                                                                     |
+| `userAddress` | `string`                   |  Transaction Sender OR Recipient address in CAIP-10 format                                                                                                                                                                                                     |
+| `category` | `string`                   |  Category that the transaction belongs to                                                                                                                                                                                                     |
