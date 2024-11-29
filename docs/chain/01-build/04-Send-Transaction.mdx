@@ -1,0 +1,143 @@
+---
+id: docs-send-transaction
+title: Send Transaction
+hide_title: true
+slug: ./send-transaction
+displayed_sidebar: pushChainSidebar
+sidebar_position: 4
+image: "/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png"
+---
+
+# Send Transaction Overview
+
+We will go over how you can use the Push Chain SDK to send transactions to the network.
+
+<head>
+  <title>{`Send Transaction | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AFocus,
+} from '@site/src/css/SharedStyling';
+
+## Send Transaction
+
+Sending a transaction on Push Chain is pretty straight forward and consists of 2 steps:
+
+- Calling the `createUnsigned` to create an Unsigned Transaction
+- Send transaction
+
+To send the transaction a Signer is necessary. In the example below we will be importing a private key from the `.env` and using the `Account` class from `viem` library to sign the transaction, but you can use any other library.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+    First, let's initialize our viem Account. This will be used for signing when sending a transaction
+
+    ```typescript
+    const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
+    const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
+    ```
+
+    In this example we will be sending a transaction with category `MY_EMAIL_APP` and the following data:
+
+    ```typescript
+    const email = {
+      title: 'Hello old friend from Solana!',
+      message: 'Greetings from Ethereum world.'
+    };
+    ```
+
+    Now, let's create our signer object to sign messages that are sent to Push Chain:
+
+    ```typescript
+    const signer = {
+      account: `eip155:1:${ethereumSenderAccount.address}`,
+      signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
+        return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
+      }
+    };
+    ```
+
+    Let's serialize the `email` object:
+
+    ```typescript
+    const serializedData = new TextEncoder().encode(JSON.stringify(data));
+    ```
+
+    Now, let's create our Unsigned Transaction. We will be sending this transaction to the Ethereum mainnet address `0x8F6325974108C7041B8035131eCe8A89708d02d0` and add as `category` for this example: `MY_EMAIL_APP`:
+
+    ```typescript
+    const unsignedTransaction = pushNetwork.tx.createUnsigned(
+      'MY_EMAIL_APP',
+      ['eip155:1:0x8F6325974108C7041B8035131eCe8A89708d02d0'],
+      serializedData
+    );
+    ```
+
+    Let's send our transaction:
+
+    ```typescript
+    const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
+    ```
+  </TabItem>
+</Tabs>
+
+---
+
+### Create channel parameters
+
+| Param       | Type                    | Subtype                   | Default | Remarks                                                                                                                                                                        |
+| ----------- | ----------------------- | ------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| _`options`_ | `object`                | -                         | -       | Configuration options for creating a channel                                                                                                                                   |
+| -           | _`options.name`_        | `string`                  | -       | The name of the channel                                                                                                                                                        |
+| -           | _`options.description`_ | `string`                  | -       | A description of the channel                                                                                                                                                   |
+| -           | _`options.icon`_        | `string (base64 encoded)` | -       | The channel's icon in base64 encoded string format                                                                                                                             |
+| -           | _`options.url`_         | `string`                  | -       | The URL associated with the channel                                                                                                                                            |
+| -           | `options.alias`         | `string`                  | -       | alias address in in [chain specific wallet format](/docs/notifications/important-concepts/#chain-specific-wallet-address)                                                      |
+| -           | `options.progresshook`  | `(progress) => void`      | -       | A callback function that's called during channel creation progress, [see progress object](/docs/notifications/build/create-channel/#create-channel-progress-object-parameters) |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+
+```typescript
+{
+  transactionHash: '0x0232fb66e2cb41c291ca10af4aa3ad0bc515adcea34de0f456db10306db89677';
+}
+```
+
+</Details>
+
+---
+
+### Create channel progress object parameters
+
+_Optional:_ Informs about individual progress stages during channel creation if progresshook is function is passed during channel creation API call.
+
+| Param      | Type             | Subtype  | Default | Remarks                                                |
+| ---------- | ---------------- | -------- | ------- | ------------------------------------------------------ |
+| `progress` | `object`         | -        | -       | progress object that is passed in the callback         |
+| -          | `Progress.id`    | `string` | -       | Predefined, ID associated with the progress objects    |
+| -          | `Progress.level` | `string` | -       | Predefined, Level associated with the progress objects |
+| -          | `Progress.title` | `string` | -       | Predefined, title associated with the progress objects |
+| -          | `Progress.info`  | `string` | -       | Predefined, info associated with the progress objects  |
+
+_`Progress object details`_
+
+| Progress.id              | Progress.level | Progress.title                                      | Progress.info                                           |
+| ------------------------ | -------------- | --------------------------------------------------- | ------------------------------------------------------- |
+| `PUSH-CHANNEL-CREATE-01` | `INFO`         | Uploading data to IPFS                              | The channel’s data is getting uploaded to IPFS          |
+| `PUSH-CHANNEL-CREATE-02` | `INFO`         | Approving PUSH tokens                               | Gives approval to Push Core contract to spend 50 $PUSH  |
+| `PUSH-CHANNEL-CREATE-03` | `INFO`         | Channel is getting created                          | Calls Push Core contract to create your channel         |
+| `PUSH-CHANNEL-CREATE-04` | `SUCCESS`      | Channel creation is done, Welcome to Push Ecosystem | Channel creation is completed                           |
+| `PUSH-CHANNEL-UPDATE-01` | `INFO`         | Uploading new data to IPFS                          | The channel’s new data is getting uploaded to IPFS      |
+| `PUSH-CHANNEL-UPDATE-02` | `INFO`         | Approving PUSH tokens                               | Gives approval to Push Core contract to spend 50 $PUSH  |
+| `PUSH-CHANNEL-UPDATE-03` | `INFO`         | Channel is getting updated                          | Calls Push Core contract to update your channel details |
+| `PUSH-CHANNEL-UPDATE-04` | `SUCCESS`      | Channel is updated with new data                    | Channel is successfully updated                         |
+| `PUSH-ERROR-02`          | `ERROR`        | Transaction failed for a function call              | Transaction failed                                      |

@@ -89,34 +89,46 @@ import TabItem from '@theme/TabItem';
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{ className: "codetab js" }} default>
+    First, let's initialize the Push Chain SDK:
+
     ```typescript
     const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
+    ```
 
-    // Initializing viem Account. This will be used for signing when sending a transaction
+    Now, let's initialize our `viem` Account. This will be used for signing when sending a transaction:
+
+    ```typescript
     const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
-    if (!senderEthereumPrivateKey) throw new Error('Invalid private key');
     const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
     ```
   </TabItem>
 
   <TabItem value="react" attributes={{ className: "codetab react" }} default>
+    First, let's initialize the Push Chain SDK:
+
     ```typescript
     const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
+    ```
 
-    // Initializing viem Account. This will be used for signing when sending a transaction
+    Now, let's initialize our `viem` Account. This will be used for signing when sending a transaction:
+
+    ```typescript
     const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
-    if (!senderEthereumPrivateKey) throw new Error('Invalid private key');
     const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
     ```
   </TabItem>
 
   <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
+    First, let's initialize the Push Chain SDK:
+
     ```typescript
     const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
+    ```
 
-    // Initializing viem Account. This will be used for signing when sending a transaction
+    Now, let's initialize our `viem` Account. This will be used for signing when sending a transaction:
+
+    ```typescript
     const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
-    if (!senderEthereumPrivateKey) throw new Error('Invalid private key');
     const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
     ```
   </TabItem>
@@ -139,74 +151,107 @@ const email = {
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{ className: "codetab js" }} default>
+    Now, let's create our signer object to sign messages that are sent to Push Chain:
+
     ```typescript
-    // Create Signer object to sign messages
     const signer = {
       account: `eip155:1:${ethereumSenderAccount.address}`,
       signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
         return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
       }
     };
+    ```
 
-    // Create unsigned transaction
+    Let's serialize the `email` object:
+
+    ```typescript
+    const serializedData = new TextEncoder().encode(JSON.stringify(data));
+    ```
+
+    Now, let's create our Unsigned Transaction. We will be sending this transaction to the Ethereum mainnet address `0x8F6325974108C7041B8035131eCe8A89708d02d0` and add as `category` for this example: `MY_EMAIL_APP`:
+
+    ```typescript
     const unsignedTransaction = pushNetwork.tx.createUnsigned(
       'MY_EMAIL_APP',
-      // Solana address
-      [ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR],
-      new TextEncoder().encode(JSON.stringify(email))
+      ['eip155:1:0x8F6325974108C7041B8035131eCe8A89708d02d0'],
+      serializedData
     );
+    ```
 
-    // Send transaction
+    Let's send our transaction:
+
+    ```typescript
     const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
-    console.log(`Transaction submitted! ${transactionHash}`);
     ```
   </TabItem>
 
   <TabItem value="react" attributes={{ className: "codetab react" }} default>
+    Now, let's create our signer object to sign messages that are sent to Push Chain:
+
     ```typescript
-    // Create Signer object to sign messages
-    const signer = {
-      account: `eip155:1:${ethereumSenderAccount.address}`,
-      signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
-        return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
-    }
-  };
-
-  // Create unsigned transaction
-  const unsignedTransaction = pushNetwork.tx.createUnsigned(
-    'MY_EMAIL_APP',
-    // Solana address
-    [ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR],
-    new TextEncoder().encode(JSON.stringify(email))
-  );
-
-  // Send transaction
-  const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
-  console.log(`Transaction submitted! ${transactionHash}`);
-    ```
-  </TabItem>
-
-  <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
-    ```typescript
-    // Create Signer object to sign messages
     const signer = {
       account: `eip155:1:${ethereumSenderAccount.address}`,
       signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
         return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
       }
     };
+    ```
 
-    // Create unsigned transaction
+    Let's serialize the `email` object:
+
+    ```typescript
+    const serializedData = new TextEncoder().encode(JSON.stringify(data));
+    ```
+
+    Now, let's create our Unsigned Transaction. We will be sending this transaction to the Ethereum mainnet address `0x8F6325974108C7041B8035131eCe8A89708d02d0` and add as `category` for this example: `MY_EMAIL_APP`:
+
+    ```typescript
     const unsignedTransaction = pushNetwork.tx.createUnsigned(
       'MY_EMAIL_APP',
-      // Solana address
-      [ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR],
-      new TextEncoder().encode(JSON.stringify(email))
+      ['eip155:1:0x8F6325974108C7041B8035131eCe8A89708d02d0'],
+      serializedData
     );
+    ```
 
-    // Send transaction
+    Let's send our transaction:
+
+    ```typescript
     const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
-    console.log(`Transaction submitted! ${transactionHash}`);
+    ```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
+    Now, let's create our signer object to sign messages that are sent to Push Chain:
+
+    ```typescript
+    const signer = {
+      account: `eip155:1:${ethereumSenderAccount.address}`,
+      signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
+        return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
+      }
+    };
+    ```
+
+    Let's serialize the `email` object:
+
+    ```typescript
+    const serializedData = new TextEncoder().encode(JSON.stringify(data));
+    ```
+
+    Now, let's create our Unsigned Transaction. We will be sending this transaction to the Ethereum mainnet address `0x8F6325974108C7041B8035131eCe8A89708d02d0` and add as `category` for this example: `MY_EMAIL_APP`:
+
+    ```typescript
+    const unsignedTransaction = pushNetwork.tx.createUnsigned(
+      'MY_EMAIL_APP',
+      ['eip155:1:0x8F6325974108C7041B8035131eCe8A89708d02d0'],
+      serializedData
+    );
+    ```
+
+    Let's send our transaction:
+
+    ```typescript
+    const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
     ```
   </TabItem>
 </Tabs>
