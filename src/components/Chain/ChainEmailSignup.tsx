@@ -10,13 +10,12 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import { BiLoaderAlt } from 'react-icons/bi';
 import styled from 'styled-components';
 
-// Internal Components
-import { Span } from '@site/src/css/SharedStyling';
-
-import useEmailValidationAndSend from '@site/src/hooks/useEmailValidationAndSend';
-
 // Internal Configs
 import { device } from '@site/src/config/globals';
+import useEmailValidationAndSend from '@site/src/hooks/useEmailValidationAndSend';
+
+// Internal Components
+import { Span } from '@site/src/css/SharedStyling';
 
 export type signupType = {
   showButton?: boolean;

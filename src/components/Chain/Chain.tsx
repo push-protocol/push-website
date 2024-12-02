@@ -3,15 +3,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// External Components
 import { device } from '../../../src/config/globals';
 import { ItemV } from '../../../src/css/SharedStyling';
+import { ChainMarqueeList } from './config/ChainMarqueeList';
 
+// Internal Components
 import ChainHeroSection from './ChainHeroSection';
 import ChainMarqueeSection from './ChainMarqueeSection';
 import ChainBottomComponent from './ChainBottomComponent';
 import ChainUseCase from './ChainUseCase';
 import ChainRoadmapSection from './ChainRoadmapSection';
 import { ChainFeaturesSection } from './ChainFeaturesSection';
+
+// Import assets
+import StarIcon from '@site/static/assets/website/chain/StarIcon.svg';
+import UnionIcon from '@site/static/assets/website/chain/Union.svg';
+import NoteIcon from '@site/static/assets/website/chain/note.svg';
+import SmileIcon from '@site/static/assets/website/chain/smile.svg';
+import EmailIcon from '@site/static/assets/website/chain/email.svg';
+import SpadeIcon from '@site/static/assets/website/chain/spades.svg';
 
 const Chain = () => (
   <ChainWrapper>
@@ -20,7 +31,12 @@ const Chain = () => (
       <ChainHeroSection />
     </MainContent>
 
-    <ChainMarqueeSection />
+    <ChainMarqueeSection
+      chainMarqueeList={ChainMarqueeList}
+      backgroundColor='#F19AFF'
+      rotateDegree={-5} // Custom rotation degree
+      icons={[StarIcon, UnionIcon]}
+    />
 
     <ChainFeaturesSection />
 
@@ -28,7 +44,12 @@ const Chain = () => (
       <ChainUseCase />
     </MainContent>
 
-    <ChainMarqueeSection />
+    <ChainMarqueeSection
+      chainMarqueeList={ChainMarqueeList}
+      backgroundColor='#3EF09D'
+      rotateDegree={5} // Custom rotation degree
+      icons={[NoteIcon, SmileIcon, EmailIcon, SpadeIcon]}
+    />
 
     <MainContent>
       <ChainRoadmapSection />

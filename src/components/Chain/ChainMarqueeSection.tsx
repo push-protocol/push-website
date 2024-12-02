@@ -1,62 +1,77 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+
+// React + Web3 Essentials
 import React, { FC } from 'react';
-
 import styled from 'styled-components';
-import { SplideSlide } from '@splidejs/react-splide';
+import ReactMarquee from 'react-fast-marquee';
 
-import NewMarqueeAnimation from '@site/src/components/NewMarqueeAnimation';
 import { H2, ItemH, ItemV } from '@site/src/css/SharedStyling';
-import { ChainMarqueeList } from '../../config/ChainMarqueeList';
 
-import StarIcon from '@site/static/assets/website/chain/StarIcon.svg';
-import UnionIcon from '@site/static/assets/website/chain/Union.svg';
+interface ChainMarqueeSectionProps {
+  backgroundColor?: string; // Optional background color
+  rotateDegree?: number; // Optional rotation degree
+  chainMarqueeList: Array<{ title: string }>; // Marquee data list
+  icons: React.ComponentType<React.SVGProps<SVGSVGElement>>[]; // Array of icon components
+}
 
-const ChainMarqueeSection: FC = () => {
+const ChainMarqueeSection: FC<ChainMarqueeSectionProps> = ({
+  backgroundColor = '#F19AFF',
+  rotateDegree = -5,
+  chainMarqueeList,
+  icons,
+}) => {
   return (
-    <MarqueeItem padding='0' overflow='hidden' flex='1' margin='174px 0 80px 0'>
-      <GridMarquee
-        speed={1}
-        gradientWidth={8}
-        gap={18}
-        bg='#F19AFF'
-        direction='ltr'
-        width='100vw'
-        height='125px'
+    <MarqueeWrapper
+      padding='0'
+      overflow='hidden'
+      flex='1'
+      margin='174px 0 80px 0'
+      backgroundColor={backgroundColor}
+      rotateDegree={rotateDegree}
+    >
+      <ReactMarquee
+        gradient={false} // Disable gradient for simplicity
+        speed={50} // Adjust the speed to your preference
+        direction='left'
+        loop={0}
       >
-        {ChainMarqueeList.map((item, index) => {
-          // Alternate icons based on index
-          const Icon = index % 2 === 0 ? StarIcon : UnionIcon;
+        {chainMarqueeList?.map((item, index) => {
+          // Cycle through the icons based on the index and number of icons
+          const Icon = icons[index % icons.length]; // Modulo ensures it wraps around if there are more items than icons
           return (
-            <SplideSlide>
-              <NotificationMarquee>
-                <GridItem>
-                  <H2 fontFamily='N27'>{item.title}</H2>
-                  <Icon width={34} height={34} />
-                </GridItem>
-              </NotificationMarquee>
-            </SplideSlide>
+            <MarqueeItem key={index}>
+              <GridItem>
+                <H2 fontFamily='N27'>{item.title}</H2>
+                <Icon width={34} height={34} />
+              </GridItem>
+            </MarqueeItem>
           );
         })}
-      </GridMarquee>
-    </MarqueeItem>
+      </ReactMarquee>
+    </MarqueeWrapper>
   );
 };
 
 export default ChainMarqueeSection;
 
-const MarqueeItem = styled(ItemV)`
+const MarqueeWrapper = styled(ItemV)<{
+  backgroundColor: string;
+  rotateDegree: number;
+}>`
   width: 100%;
-  //   transform: rotate(-5.346deg);
-  //   transform-origin: center;
+  overflow: hidden;
+  transform-origin: center center;
+  background-color: ${(props) => props.backgroundColor};
+  transform: skewY(${(props) => props.rotateDegree}deg);
 `;
 
-const NotificationMarquee = styled(ItemH)`
+const MarqueeItem = styled(ItemH)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  margin: auto 0;
+  align-items: flex-end;
+  margin: auto 17.5px;
 `;
 
 const GridItem = styled(ItemH)`
@@ -83,13 +98,4 @@ const GridItem = styled(ItemH)`
       color: #fff;
     }
   }
-
-  svg {
-    height: 20px;
-    width: 20px;
-  }
-`;
-
-const GridMarquee = styled(NewMarqueeAnimation)`
-  width: 100%;
 `;
