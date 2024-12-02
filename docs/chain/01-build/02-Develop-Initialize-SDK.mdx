@@ -22,13 +22,13 @@ import Details from '@theme/Details';
 
 ### Installation
 
-- `@pushprotocol/node-core` is necessary for interacting with Push Chain
+- `@pushprotocol/push-chain` is necessary for interacting with Push Chain
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{ className: "codetab js" }} default>
     ```bash
     # Install Libraries
-    npm install @pushprotocol/node-core
+    npm install @pushprotocol/push-chain
     ```
   </TabItem>
 </Tabs>
@@ -40,7 +40,7 @@ import Details from '@theme/Details';
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
 // Import Push Chain SDK
-import {PushNetwork, CONSTANTS} from '@pushprotocol/node-core';
+import {PushNetwork, CONSTANTS} from '@pushprotocol/push-chain';
 
 // Initialize the SDK
 const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);

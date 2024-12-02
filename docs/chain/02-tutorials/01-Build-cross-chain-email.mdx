@@ -23,7 +23,7 @@ This example will cover the steps to set up the SDK, configure the sender and re
 Before we begin, let’s install the necessary dependencies for our project. These libraries will provide the tools we need to interact with the Push Chain, manage blockchain accounts, and securely handle environment variables.
 
 ```shell
-npm install @pushprotocol/node-core viem dotenv
+npm install @pushprotocol/push-chain viem dotenv
 ```
 
 ## 2. Setting Up the SDK
@@ -159,7 +159,7 @@ For the emails that the user has received, we do the exact same logic, but we on
 
 ```typescript
 // Import Push Chain SDK and viem
-import { PushNetwork } from '@pushprotocol/node-core';
+import { PushNetwork } from '@pushprotocol/push-chain';
 import { hexToBytes } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
 import { config } from 'dotenv';
