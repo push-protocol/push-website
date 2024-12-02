@@ -18,25 +18,49 @@ import { device } from '../../../src/config/globals';
 type AlertBarProps = {
   text: string;
   url?: string;
+  textColor?: string;
+  backgroundColor?: string;
+  borderColor?: string;
+  iconColor?: string;
+  showStarIcon?: boolean;
+  center?: boolean;
 };
 
-const ChainAlertBar = ({ text, url }: AlertBarProps) => {
+const ChainAlertBar = ({
+  text,
+  url,
+  textColor = '#000', // Default text color
+  backgroundColor = '#fff', // Default background color
+  borderColor = '#f19aff', // Default border color
+  iconColor = '#D548EC', // Default icon color
+  showStarIcon = true, // Default: show the star icon
+  center = false, // Default: no centering
+}: AlertBarProps) => {
   return (
     <HeroButton
       onClick={() => {
         if (url) window.open(url, '_blank');
       }}
+      textColor={textColor}
+      backgroundColor={backgroundColor}
+      borderColor={borderColor}
+      center={center}
     >
-      <StarColoredIcon />
+      {showStarIcon && <StarColoredIcon />}
       <H2 fontWeight='400' fontFamily='FK Grotesk Neue'>
         {text}
       </H2>
-      <BsArrowRight color='#D548EC' />
+      <BsArrowRight color={iconColor} />
     </HeroButton>
   );
 };
 
-const HeroButton = styled(Button)`
+const HeroButton = styled(Button)<{
+  textColor: string;
+  backgroundColor: string;
+  borderColor: string;
+  center: boolean;
+}>`
   font-family: FK Grotesk Neue;
   display: flex;
   flex-direction: row;
@@ -44,11 +68,12 @@ const HeroButton = styled(Button)`
   justify-content: space-between;
   padding: 12px 16px;
   gap: 8px;
-  margin: 0 auto;
+
+  ${(props) => (props.center ? 'margin: 0 auto;' : 'margin: 0;')}
 
   border-radius: 16px;
-  border: 1.5px solid #f19aff;
-  background: #fff;
+  border: 1.5px solid ${(props) => props.borderColor};
+  background: ${(props) => props.backgroundColor};
 
   @media ${device.mobileM} {
     gap: 4px;
@@ -67,7 +92,7 @@ const HeroButton = styled(Button)`
   }
 
   h2 {
-    color: #000;
+    color: ${(props) => props.textColor};
     font-family: N27;
     font-size: 16px;
     font-style: normal;

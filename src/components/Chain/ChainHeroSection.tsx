@@ -39,6 +39,7 @@ const ChainHeroSection: FC = () => {
       <ChainAlertBar
         text='Push Chain Governance Proposal is Live'
         url='https://test.com'
+        center={true}
       />
       <HeroText>Build Universal Apps</HeroText>
       <HeroSubText>

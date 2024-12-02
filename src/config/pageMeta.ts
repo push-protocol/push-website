@@ -73,4 +73,8 @@ export const PageMeta = {
     pageTitle: 'Push Ecosystem',
     pageDescription: 'Push Ecosystem',
   },
+  TEMPLATE: {
+    pageTitle: 'Push Ecosystem',
+    pageDescription: 'Push Ecosystem',
+  },
 };
