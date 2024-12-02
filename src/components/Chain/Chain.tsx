@@ -31,6 +31,7 @@ const Chain = () => (
       <ChainHeroSection />
     </MainContent>
 
+    {/* marquee section */}
     <ChainMarqueeSection
       chainMarqueeList={ChainMarqueeList}
       backgroundColor='#F19AFF'
@@ -44,6 +45,7 @@ const Chain = () => (
       <ChainUseCase />
     </MainContent>
 
+    {/* second marquee section */}
     <ChainMarqueeSection
       chainMarqueeList={ChainMarqueeList}
       backgroundColor='#3EF09D'

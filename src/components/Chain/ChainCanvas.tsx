@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Matter from 'matter-js';
 import { device } from '@site/src/config/globals';
 import { useInView } from 'react-intersection-observer';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 const COLORS = ['#A855F7', '#4ADE80', '#FACC15', '#F472B6'];
 
@@ -28,9 +29,34 @@ export default function ChainCanvas() {
   const engineRef = useRef<Matter.Engine>();
   const renderRef = useRef<Matter.Render>();
   const [ref, inView] = useInView({ threshold: 1.0 });
+  const isMobile = useMediaQuery(device.mobileL);
+  const [displayedTags, setDisplayedTags] = useState<string[]>(TAGS);
+
+  const updateTagsForScreenSize = () => {
+    if (isMobile) {
+      setDisplayedTags(TAGS.slice(0, 6)); // Show only 6 tags on mobile and tablets
+    } else {
+      setDisplayedTags(TAGS); // Show all tags on larger screens
+    }
+  };
 
   useEffect(() => {
-    if (!inView) return;
+    updateTagsForScreenSize(); // Initial update on component mount
+
+    // Resize listener
+    const handleResize = () => {
+      updateTagsForScreenSize();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobile]);
+
+  useEffect(() => {
+    if (!inView) return; // Exit early if not in view
 
     const Engine = Matter.Engine;
     const Render = Matter.Render;
@@ -93,7 +119,7 @@ export default function ChainCanvas() {
     const fontSize = 27;
 
     // Create tags
-    const tags = TAGS.map((tag, index) => {
+    const tags = displayedTags.map((tag, index) => {
       const ctx = document.createElement('canvas').getContext('2d')!;
       ctx.font = `${fontSize}px sans-serif`;
       const textWidth = ctx.measureText(tag).width;
@@ -185,7 +211,7 @@ export default function ChainCanvas() {
       World.clear(engine.world, false);
       Engine.clear(engine);
     };
-  }, [inView]);
+  }, [inView, displayedTags]); // Only re-run when inView or displayedTags change
 
   return (
     <Wrapper ref={ref}>

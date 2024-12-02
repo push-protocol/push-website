@@ -241,4 +241,8 @@ const InputSection = styled.div`
 
 const ChainCanvasItem = styled.div`
   height: 200px;
+
+  @media ${device.tablet} {
+    height: 300px;
+  }
 `;
