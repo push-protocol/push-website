@@ -11,6 +11,7 @@ import { useHistory } from 'react-router-dom';
 import GLOBALS, { device, structure } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
+import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 import {
   Button,
@@ -37,6 +38,7 @@ const ChainHeader: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
   const [scrollDirection] = useScrollDirection(isMobileMenuOpen);
+  const baseURL = useSiteBaseUrl() || '';
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
@@ -60,7 +62,7 @@ const ChainHeader: FC = () => {
 
   const handleRedirect = (item) => {
     if (item?.url) {
-      history.push(item?.url);
+      history.push(baseURL + item?.url);
       setActiveItem(item?.id);
     } else {
       handleSectionNavigation(item);
@@ -87,7 +89,7 @@ const ChainHeader: FC = () => {
   // Update the active item based on the current location
   useEffect(() => {
     const activeNavItem = navItems.find(
-      (item) => location.pathname === item.url
+      (item) => location.pathname === baseURL + item.url
     );
     if (activeNavItem) {
       setActiveItem(activeNavItem.id);

@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { toast, Toaster } from 'sonner';
 import { useLocation } from 'react-router-dom';
 import { BiX } from 'react-icons/bi';
+import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 
 // Internal Components
 import { Button, Image } from '../../src/css/SharedStyling';
@@ -33,8 +34,10 @@ export const useChainNotification = () => {
   const [hasMounted, setHasMounted] = useState(false);
 
   const location = useLocation();
+  const baseURL = useSiteBaseUrl();
+  const pathname = baseURL + '/chain';
 
-  const isChainPage = location?.pathname?.startsWith('/chain');
+  const isChainPage = location.pathname?.startsWith(pathname);
 
   const showNotification = () => {
     const toastId = toast.custom(

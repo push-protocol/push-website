@@ -19,7 +19,9 @@ export default function myPlugin() {
           );
 
           addRoute({
-            path: `/chain/knowledge/${item.slug}`,
+            path: process.env.GITHUB_ACTIONS
+              ? `${process.env.REACT_APP_BASE_URL}/chain/knowledge/${item.slug}`
+              : `/chain/knowledge/${item.slug}`,
             exact: true,
             component: '@site/src/pages/chain/knowledge/[slug].tsx',
             modules: { metadata },
