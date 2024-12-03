@@ -1,11 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import styled from 'styled-components';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Link from '@docusaurus/Link';
+import { useLocation } from '@docusaurus/router';
+import { useHistory } from 'react-router-dom';
 
 import GLOBALS, { device, structure } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
@@ -31,6 +32,8 @@ gsap.registerPlugin(ScrollTrigger);
 const ChainHeader: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.laptop);
+  const history = useHistory();
+  const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
   const [scrollDirection] = useScrollDirection(isMobileMenuOpen);
@@ -56,8 +59,12 @@ const ChainHeader: FC = () => {
   };
 
   const handleRedirect = (item) => {
-    console.log(item);
-    handleSectionNavigation(item);
+    if (item?.url) {
+      history.push(item?.url);
+      setActiveItem(item?.id);
+    } else {
+      handleSectionNavigation(item);
+    }
     if (showMobileMenu) toggleMobileMenu();
   };
 
@@ -69,8 +76,6 @@ const ChainHeader: FC = () => {
     window.open('/', '_self');
   };
 
-  // console.log(activeItem, 'activeItem');
-
   // Dummy data for navigation items
   const navItems = [
     { id: 'technology', label: 'Technology', url: '/chain' },
@@ -78,6 +83,16 @@ const ChainHeader: FC = () => {
     { id: 'roadmap', label: 'Roadmap' },
     { id: 'faq', label: 'F.A.Q' },
   ];
+
+  // Update the active item based on the current location
+  useEffect(() => {
+    const activeNavItem = navItems.find(
+      (item) => location.pathname === item.url
+    );
+    if (activeNavItem) {
+      setActiveItem(activeNavItem.id);
+    }
+  }, [location]);
 
   return (
     <StyledHeader
@@ -124,35 +139,24 @@ const ChainHeader: FC = () => {
                 className='navigationMenu'
                 showMobileMenu={isMobileMenuOpen}
               >
-                {navItems.map((item) => (
+                {navItems?.map((item) => (
                   <NavigationMenuItem
                     key={item.id}
                     isActive={activeItem === item.id}
+                    className={activeItem === item?.id ? 'active' : ''}
                     onClick={() => handleRedirect(item)}
                     showMobileMenu={isMobileMenuOpen}
                   >
-                    {item.url ? (
-                      <Link
-                        to={item.url}
-                        onClick={() => handleRedirect(item)}
-                        className='navLink'
-                      >
-                        <NavigationMenuHeader isActive={activeItem === item.id}>
-                          <Span fontSize='18px'>{item.label}</Span>
-                        </NavigationMenuHeader>
-                      </Link>
-                    ) : (
-                      <ItemH
-                        className='navLink'
-                        alignSelf={isTablet && 'flex-start'}
-                        justifyContent={isTablet && 'flex-start'}
-                        onClick={() => handleRedirect(item)}
-                      >
-                        <NavigationMenuHeader isActive={activeItem === item.id}>
-                          <Span fontSize='18px'>{item.label}</Span>
-                        </NavigationMenuHeader>
-                      </ItemH>
-                    )}
+                    <ItemH
+                      className='navLink'
+                      alignSelf={isTablet && 'flex-start'}
+                      justifyContent={isTablet && 'flex-start'}
+                      onClick={() => handleRedirect(item)}
+                    >
+                      <NavigationMenuHeader isActive={activeItem === item.id}>
+                        <Span fontSize='18px'>{item.label}</Span>
+                      </NavigationMenuHeader>
+                    </ItemH>
                   </NavigationMenuItem>
                 ))}
               </NavigationMenu>
@@ -354,6 +358,10 @@ const NavigationMenu = styled.ul`
 
   z-index: 999;
 
+  .active {
+    background: #fff !important;
+  }
+
   @media ${device.laptop} {
     flex-direction: column;
     flex: 0 0 75%;
@@ -387,11 +395,11 @@ const NavigationMenuItem = styled.li`
   position: relative;
   font-family: N27, sans-serif;
   border-radius: 16px;
-  background: #fff;
+  background: transparent;
+
   display: flex;
   flex-direction: column;
   align-items: ${(props) => (props.showMobileMenu ? 'flex-start' : 'center')};
-  background: ${(props) => (props.isActive ? '#FFF' : 'transparent')};
   transition: background 0.3s;
 
   & span {
