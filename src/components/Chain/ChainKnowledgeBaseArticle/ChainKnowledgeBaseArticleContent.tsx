@@ -1,3 +1,5 @@
+/* eslint-disable @docusaurus/no-html-links */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React from 'react';
@@ -6,6 +8,7 @@ import Markdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
+import rehypeSanitize from 'rehype-sanitize';
 
 import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
@@ -72,7 +75,14 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
         <MarkdownSection alignItems='flex-start' alignSelf='flex-start'>
           <Markdown
             remarkPlugins={[remarkGfm]} // Enable GitHub Flavored Markdown
-            rehypePlugins={[rehypeSlug, rehypeRaw]} // Allow raw HTML rendering
+            rehypePlugins={[rehypeSlug, rehypeRaw, rehypeSanitize]} // Allow raw HTML rendering and sanitizing
+            components={{
+              a: ({ node, ...props }) => (
+                <a {...props} target='_blank' rel='noopener noreferrer'>
+                  {props.children}
+                </a>
+              ),
+            }}
           >
             {content}
           </Markdown>
