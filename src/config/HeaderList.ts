@@ -133,6 +133,13 @@ export const HeaderList = {
   ],
   docshub: [
     {
+      title: 'Push Chain Docs',
+      subtitle: 'Infrastructure for universal, scalable Web3 apps',
+      srcrefoff: 'chat-icon-off',
+      href: '/docs/chain',
+      target: '_self',
+    },
+    {
       title: 'Notification Docs',
       subtitle: 'Web3 native notification alerts',
       srcrefoff: 'inbox-icon-off',
