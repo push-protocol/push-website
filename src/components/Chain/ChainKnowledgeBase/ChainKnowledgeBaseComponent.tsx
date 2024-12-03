@@ -7,7 +7,7 @@ import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 
 import { Button, H2, H3, ItemH, ItemV } from '../../../css/SharedStyling';
-import { ChainKnowledgeBaseHeaderConfig } from '../../../config/ChainKnowledgeBaseConfig';
+import { ChainKnowledgeBaseHeaderConfig } from '../config/ChainKnowledgeBaseConfig';
 
 const ChainKnowledgeBaseComponent = () => {
   const isMobile = useMediaQuery(device.mobileL);

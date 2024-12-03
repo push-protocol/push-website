@@ -1,25 +1,40 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React, { FC } from 'react';
+import styled from 'styled-components';
 
 import { TbArrowUpRight } from 'react-icons/tb';
 
 import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
+import { useSiteBaseUrl } from '../../../utils/useSiteBaseUrl';
 
 import { H3, ItemH, ItemV, Span } from '../../../css/SharedStyling';
 
 const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
+  // for navigation
   const isMobile = useMediaQuery(device.mobileL);
+  const baseURL = useSiteBaseUrl() || '';
+
+  const openLink = (item) => {
+    if (item?.url) {
+      window.open(item?.url, '_blank');
+    } else {
+      // Open internal route in a new tab
+      const internalUrl = `${baseURL}/chain/knowledge/${item?.slug}`;
+      window.open(internalUrl, '_blank');
+    }
+  };
 
   return (
-    <ItemV
+    <Card
       key={index}
       background='#FFF'
       padding='24px'
       alignItems='flex-start'
       borderRadius='32px'
       justifyContent='space-between'
+      onClick={() => openLink(item)}
     >
       <div
         style={{
@@ -72,8 +87,12 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
         </Span>
         <TbArrowUpRight color='#D548EC' size={24} />
       </ItemH>
-    </ItemV>
+    </Card>
   );
 };
+
+const Card = styled(ItemV)`
+  cursor: pointer;
+`;
 
 export default ChannelKnowledgeBaseComponentItem;

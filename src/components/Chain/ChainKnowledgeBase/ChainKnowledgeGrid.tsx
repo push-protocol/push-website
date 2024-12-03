@@ -8,14 +8,14 @@ import useMediaQuery from '../../../hooks/useMediaQuery';
 import { createGridRows } from '../utils/CreateGridRows';
 
 import { H2, ItemV } from '../../../css/SharedStyling';
-import { ChainKnowledgeBaseContent } from '../../../config/ChainKnowledgeBaseConfig';
+import { knowledgeBaseArticleContent } from '../config/ChainKnowledgeBaseConfig';
 import ChannelKnowledgeBaseComponentItem from './ChannelKnowledgeBaseComponentItem';
 
 const ChainKnowledgeBaseGrid = () => {
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
 
-  const gridRows = createGridRows(ChainKnowledgeBaseContent);
+  const gridRows = createGridRows(knowledgeBaseArticleContent);
 
   return (
     <ChainKnowledgeBaseGridWrapper>
@@ -44,7 +44,7 @@ const ChainKnowledgeBaseGrid = () => {
 
         <ChainKnowledgeGrid>
           {isTablet &&
-            ChainKnowledgeBaseContent?.map((item, index) => (
+            knowledgeBaseArticleContent?.map((item, index) => (
               <ChannelKnowledgeBaseComponentItem item={item} index={index} />
             ))}
         </ChainKnowledgeGrid>

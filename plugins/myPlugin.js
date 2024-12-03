@@ -1,4 +1,4 @@
-const ArticleContent = require('../src/config/KnowledgeBaseArticle');
+const ArticleContent = require('../src/components/Chain/config/ChainKnowledgeBaseConfig');
 
 export default function myPlugin() {
   return {

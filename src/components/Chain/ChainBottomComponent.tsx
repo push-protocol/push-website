@@ -10,7 +10,7 @@ import useMediaQuery from '../../hooks/useMediaQuery';
 
 import { A, H2, H3, ItemH, ItemV, Span } from '../../css/SharedStyling';
 import Accordion from '@site/src/components/Accordion';
-import { General } from '@site/src/config/ChainFAQconfig';
+import { General } from './config/ChainFAQconfig';
 import DiscordSVG from '@site/static/assets/website/shared/discord.svg';
 import { ChainEmailSignup } from './ChainEmailSignup';
 import ChainCanvas from './ChainCanvas';
