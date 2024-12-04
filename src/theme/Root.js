@@ -15,6 +15,7 @@ import {
   Notification,
   useRewardsNotification,
 } from '../hooks/useRewardsNotification';
+import { useChainNotification } from '../hooks/useChainNotification';
 
 // Initialize Internalization
 i18nInitialize();
@@ -45,7 +46,12 @@ export default function Root({ children }) {
   ];
 
   const baseURL = useSiteBaseUrl();
+  const excludePaths = ['/BRB', '/DOCS', '/BOOTCAMP', '/CHAIN', '/TEMPLATE'];
+  const shouldRenderFooter = excludePaths.every((path) =>
+    excludeDefaultConfigAt(path)
+  );
   useRewardsNotification();
+  useChainNotification();
 
   // return superimposed class names if conditions are met
   function returnAdditionalClasses(conditions) {
@@ -116,14 +122,12 @@ export default function Root({ children }) {
       <Content>{children}</Content>
       <Notification />
 
-      {excludeDefaultConfigAt('/BRB') &&
-        excludeDefaultConfigAt('/DOCS') &&
-        excludeDefaultConfigAt('/BOOTCAMP') && (
-          <>
-            <Footer />
-            <CookieComponent />
-          </>
-        )}
+      {shouldRenderFooter && (
+        <>
+          <Footer />
+          <CookieComponent />
+        </>
+      )}
     </PageContainer>
   );
 }

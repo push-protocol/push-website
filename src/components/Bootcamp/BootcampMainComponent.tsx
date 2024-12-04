@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 // React + Web3 Essentials
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 // External Components
 import { gsap } from 'gsap';
@@ -38,55 +38,10 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
+import { useScrollDirection } from '../../hooks/useScrollDirection';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
-
-let lastScrollY = 0;
-const SCROLL_DELTA = 5;
-
-if (typeof window !== 'undefined') {
-  lastScrollY = window.scrollY;
-}
-
-function useScrollDirection(mobileMenuActive) {
-  const [scrollDirection, setScrollDirection] = useState(null);
-
-  useEffect(() => {
-    const updateScrollDirection = () => {
-      let scrollY = 0;
-
-      if (typeof window !== 'undefined') {
-        scrollY = window.scrollY;
-      }
-      let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
-
-      if (
-        direction !== scrollDirection &&
-        (scrollY - lastScrollY > SCROLL_DELTA ||
-          scrollY - lastScrollY < -SCROLL_DELTA)
-      ) {
-        // check if isMobileMenuOpen then override
-        if (mobileMenuActive) {
-          direction = 'scrollUp';
-        }
-
-        setScrollDirection(direction);
-      }
-
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-    };
-
-    // add event listener
-    window.addEventListener('scroll', updateScrollDirection, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', updateScrollDirection); // clean up
-    };
-  }, [scrollDirection, mobileMenuActive]);
-
-  return [scrollDirection];
-}
 
 export const BootcampMainComponent = () => {
   const d = new Date();

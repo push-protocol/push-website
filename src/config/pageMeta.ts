@@ -57,4 +57,24 @@ export const PageMeta = {
     pageDescription:
       'BRB Bootcamp is the go-to place to learn every aspect of the web3 ecosystem from fundamentals to shipping your first project',
   },
+  CHAIN: {
+    pageTitle: 'Push Chain',
+    pageDescription: 'Push Chain',
+  },
+  KNOWLEDGE: {
+    pageTitle: 'Push KnowledgeBase',
+    pageDescription: 'Push KnowledgeBase',
+  },
+  ARTICLE: {
+    pageTitle: 'Push KnowledgeBase',
+    pageDescription: 'Push KnowledgeBase',
+  },
+  ECOSYSTEM: {
+    pageTitle: 'Push Ecosystem',
+    pageDescription: 'Push Ecosystem',
+  },
+  TEMPLATE: {
+    pageTitle: 'Push Ecosystem',
+    pageDescription: 'Push Ecosystem',
+  },
 };
