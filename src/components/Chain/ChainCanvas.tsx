@@ -5,23 +5,18 @@ import { device } from '@site/src/config/globals';
 import { useInView } from 'react-intersection-observer';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
-const COLORS = ['#A855F7', '#4ADE80', '#FACC15', '#F472B6'];
+const COLORS = ['#4B75FF', '#FC564A', '#2EC780', '#E3B92D', '#E492FF'];
 
 const TAGS = [
-  'Graphic Design',
-  'Banners & Posters',
-  'Framer Development',
-  'Motion Design',
-  'NFT Art',
-  'Branding',
-  'Product Design',
-  'Infographics',
-  'Webflow Development',
-  'Website Design',
-  'T-shirt & Merch',
-  'Illustrations',
-  'Marketing',
-  'UI/UX Design',
+  'gaming',
+  'nft',
+  'social',
+  'consumer apps',
+  'defi',
+  'infrastructure',
+  'dao',
+  'messaging',
+  'blockchain',
 ];
 
 export default function ChainCanvas() {
@@ -115,27 +110,28 @@ export default function ChainCanvas() {
     ];
 
     const paddingX = 21; // Horizontal padding
-    const paddingY = 14; // Vertical padding
-    const fontSize = 27;
+    const paddingY = 12; // Vertical padding
+    const fontSize = 45;
 
     // Create tags
     const tags = displayedTags.map((tag, index) => {
       const ctx = document.createElement('canvas').getContext('2d')!;
-      ctx.font = `${fontSize}px sans-serif`;
+      ctx.font = `${fontSize}px N27`;
       const textWidth = ctx.measureText(tag).width;
 
-      const width = Math.max(textWidth + paddingX * 2, 150);
+      // const width = Math.max(textWidth + paddingX * 2, 150);
+      const width = Math.max(textWidth + paddingX * 2);
       const height = fontSize + paddingY * 2;
 
       const x = Math.random() * (window.innerWidth - width) + width / 2;
       const y = Math.random() * (window.innerHeight - height) + height / 2;
 
       return Bodies.rectangle(x, y, width, height, {
-        chamfer: { radius: 25 },
+        chamfer: { radius: 32 },
         render: {
           fillStyle: COLORS[index % COLORS.length],
-          strokeStyle: '#000000',
-          lineWidth: 2,
+          strokeStyle: '#000',
+          lineWidth: 8,
         },
         restitution: 0.5,
         friction: 0.1,
@@ -170,8 +166,7 @@ export default function ChainCanvas() {
     const ctx = canvas.getContext('2d')!;
 
     Matter.Events.on(render, 'afterRender', () => {
-      ctx.font = '27px N27, sans-serif';
-      // ctx.letterSpacing = '0.547px';
+      ctx.font = '400 45px N27';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillStyle = '#FFFFFF';
