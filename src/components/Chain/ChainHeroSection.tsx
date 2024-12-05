@@ -2,7 +2,7 @@
 // @ts-nocheck
 import React, { FC } from 'react';
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { TbArrowUpRight } from 'react-icons/tb';
 
 import { device } from '../../../src/config/globals';
@@ -41,7 +41,9 @@ const ChainHeroSection: FC = () => {
         url='https://test.com'
         center={true}
       />
-      <HeroText>Build Universal Apps</HeroText>
+      <TypewriterText>
+        <p>Build Universal Apps</p>
+      </TypewriterText>
       <HeroSubText>
         Push Chain is a shared state blockchain allowing all chains to come
         together and enable consumer apps that works from any chain.
@@ -168,22 +170,42 @@ const ChainHeroSectionWrapper = styled.div`
   }
 `;
 
-const HeroText = styled.div`
-  color: #000;
-  font-family: N27;
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 140%;
-  letter-spacing: -1.44px;
-  text-align: center;
-  margin-top: 12px;
+const typing = keyframes`
+  0% { width: 0; }               /* Start typing */
+  40% { width: 20ch; }           /* Fully typed */
+  50% { width: 20ch; }           /* Pause briefly */
+  100% { width: 0; }             /* Erase text */
+`;
 
-  @media ${device.tablet} {
-    font-size: 48px;
+const cursor = keyframes`
+  50% { border-color: transparent; }
+`;
+
+const TypewriterText = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+
+  p {
+    font-family: 'N27', sans-serif;
+    font-size: 72px;
     font-weight: 500;
-    line-height: 111%;
-    letter-spacing: -0.96px;
+    line-height: 140%;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 20ch;
+    animation:
+      ${typing} 4s steps(20) infinite,
+      ${cursor} 0.6s step-end infinite;
+  }
+
+  @media (max-width: 768px) {
+    p {
+      font-size: 48px;
+    }
   }
 `;
 
