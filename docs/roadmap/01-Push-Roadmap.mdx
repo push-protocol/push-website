@@ -44,6 +44,7 @@ timeline
             : Anon Chat (Wallet > Anon > Wallet)
             : Custom Roles for Groups
             : DAO and Governance V2
+            : Email / Telegram Notifications
             : Push goes Multi-Chain (Hello non-EVMs)
 ```
 
@@ -53,7 +54,7 @@ timeline
 
 ## Live Roadmap
 
-### Push Nodes Alpha _<sup><sub>Q3 2024</sub></sup>_
+### Push Nodes Alpha _<sup><sub>Q4 2024</sub></sup>_
 
 Push nodes will complete the final step of decentralization and will be open for everyone to run and participate in securing the network, enabling genesis of Push Network (L2 for web3 communication).
 
@@ -65,7 +66,15 @@ Push network is a Proof of Stake network requiring nodes to stake [**_`$PUSH`_**
   url='https://www.youtube.com/watch?v=JCwH2pN69dw'
 />
 
-### Unified Push SDK V2 <sup>_NEW_</sup> _<sup><sub>Q3 2024</sub></sup>_
+<p />
+
+:::info
+
+Push Protocol amd Nodes is evolving, we will be announcing the evolution of this milestone soon via governance.
+
+:::
+
+### Unified Push SDK V2 <sup>_NEW_</sup> _~**<i><sup><sub>Q3 2024[↗](https://www.npmjs.com/package/@pushprotocol/restapi 'SDK Documentation')</sub></sup></i>**~_
 
 We started the journey of making our SDK more developer friendly with unified SDK to enable both chat and notifications in [4 LoC or less](/docs/ 'Push SDK Documentation').
 
@@ -73,7 +82,9 @@ We will be taking this further with V2 of our SDK to encompass all forms of comm
 
 :::note
 
-V2 is a breaking change, we recommend all developers to join our [Discord server](https://discord.gg/pushprotocol) -> `#dev-announcements` channel for information on how to upgrade and best practices for easier transition.
+V2 is changed to be an iterative process to avoid breaking changes and instead work on backward compatible features. The iterations can be tracked [here](https://github.com/push-protocol/push-sdk).
+
+This is a breaking change, we recommend all developers to join our [Discord server](https://discord.gg/pushprotocol) -> `#dev-announcements` channel for information on how to upgrade and best practices for easier transition.
 
 :::
 
@@ -89,67 +100,105 @@ Push Points are a new way for users to show they belong to the Push community an
 
 Hyper scalable chat will allow asynchronous messages in DMs or groups enabling several users to chat without wait. It will also enable groups to have 50k-100k users in a single group.
 
-### Push MetaMask Snap V2 _~**<sup><sub>Q4 2024</sub></sup>**~_
+### Push MetaMask Snap V2 _**<sup><sub>Q3 2024[↗](https://app.push.org/snap 'Install Push Snap on MetaMask')</sub></sup>**_
 
 We bought notifications to MetaMask with our [MetaMask Snap](https://snaps.metamask.io/snap/npm/pushprotocol/snap/). We will be upgrading it to V2 to enable chat and other forms of communication in MetaMask!
+
+Snap has been upgraded with new features, due to limitations of Metamask for chat functionality. We have introduced in-app chat notifications on Push Mobile App [iOS](https://apps.apple.com/us/app/push-epns/id1528614910 'Push iOS App') and [Android](https://play.google.com/store/apps/details?id=io.epns.epns&hl=en 'Push Android App').
 
 ### Guest Mode on dApp <sup>_NEW_</sup> _**<sup><sub>Q1 2024[↗](https://app.push.org/ 'Guest Mode dApp')</sub></sup>**_
 
 We will be enabling guest mode on dApp to enable users to use Push without having to connect their wallet. Web3 needs to be accessible with the same ease as web2 and we are working towards it.
 
-### Push Protocol V2.5 <sup>_NEW_</sup> _~<sup><sub>Q2 2024</sub></sup>~_
+### Push Protocol V2.5 <sup>_NEW_</sup> _**<sup><sub>Q1 2024[↗](https://github.com/push-protocol/push-smart-contracts 'Push Protocol V2.5')</sub></sup>**_
 
 Push Protocol V2.5 is a planned upgrade to Push Protocol V2. It will enable several new features and will be a major step towards Push Protocol V3. Features include adding dynamic fees for various premium functionality, splitting contracts to enable better gas management, etc.
 
-### Fee Pool Expansion _~<sup><sub>Q2 2024</sub></sup>~_
+:::note
+
+Push Protocol V2.5 is feature complete and merged with Push Protocol V3.
+
+:::
+
+### Fee Pool Expansion _~**<i><sup><sub>Q2 2024</sub></sup></i>**~_
 
 Push Tokenenoics V2 further opens up the fee pool to enable more features. It also is a step towards Push Protocol V3 where crypto wallets will also be able to earn part of the fee from the fee pool, apart from token holders.
 
 Some of the fee pool features it will add on for [**_`$PUSH`_**](https://coinmarketcap.com/currencies/epns/ '$PUSH at Coinmarketcap.com') are - **Incentivized Chat**, **Complex Gated Groups**, **Push Payments Fee**, etc. Read about tokenomics in detail [here](/docs/tokenomics/deepdive/$push/ 'Push Tokenomics').
 
-### User Profile Settings _~**<sup><sub>Q3 2024</sub></sup>**~_
+:::note
+
+This is now treated as evolution of push nodes and a subset of email / telegram notifications, that is a [new addition to the roadmap](/docs/roadmap#email--telegram-notifications-q4-2024 'Enabling email / telegram notifications for Push Notification').
+
+:::
+
+### User Profile Settings _~**<i><sup><sub>Q3 2024</sub></sup></i>**~_
 
 With the unified SDK, Push user profiles handle everything from notifications to chat to spaces to video. Enabling user profile also enabled us to create intricate user profile settings to enable users to customize their experience on how they want to be notified, preferences for chat, audio, video, etc.
 
 Apart from our anti-spam mechanism already in place for user-centric actions (ie: opt-in to get notifications, accept chat requests, etc). This opens up the possibility of users choosing who can message them, whether it's open to all, or another recipient needs to pay (with return option) to make it to their inbox. Same for who can video call them, if at all among other options.
 
-### Notification Read Receipts _~<sup><sub>Q2 2024</sub></sup>~_
+:::note
+
+User profile settings is getting a makeover as the Push Protocol and nodes evolves.
+
+:::
+
+### Notification Read Receipts _~**<sup><sub>Q1 2025</sub></sup>**~_
 
 Notification read receipts is a popular feature requested by several protocols. Doing this in a decentralized manner is a challenge (who do you trust in interoperable environment?) but this seems possible with Push profiles that can silently sign these read receipts from a frontend. We will be working on this soon.
 
-### Smart Contract Wallet Support _~**<sup><sub>Q2 2024</sub></sup>**~_
+### Smart Contract Wallet Support _<sup><sub>Q4 2024</sub></sup>_
 
 Push already supports Smart Contract wallets that conform to EIP-1271 standard. Though, we are not opening it officially since the decryption process for few AA wallets can be a security risk (When they store all signatures to execute a transaction). We have few ideas on how to solve this and will be working on it during this quarter.
 
-### NFT Sharded Encryption <sup>_NEW_</sup> _~<sup><sub>Q2 2024</sub></sup>~_
+:::note
+
+SDK is feature complete, frontend is revamping to enable this soon.
+
+:::
+
+### NFT Sharded Encryption <sup>_NEW_</sup> _~**<i><sup><sub>Q2 2024</sub></sup></i>**~_
 
 Push NFT Chat is the first of its kind NFT Chat that enables communication to be tied to NFTs! Read more about it [here](/blog/introducing-push-nft-chat-chats-and-comms-tied-to-your-nf-ts-done-right/ 'Article explaining NFT Chat').
 
 It's a game changer but does require an added step when it's transferred to another user for communication to get transferred. With the help of sharded encryption, we will be able to eliminate this step and enable smoothest experience for NFT Chat, even when you change wallets, or want to start afresh :smile:.
 
-### Push Nodes Audit _~<sup><sub>Q3 2024</sub></sup>~_
+:::note
+
+Ties to the evolution of Push Nodes, will announce more details after governance proposal goes out.
+
+:::
+
+### Push Nodes Audit _~**<i><sup><sub>Q3 2024</sub></sup></i>**~_
 
 Push Nodes Audit will be a third party audit of Push Nodes to ensure that it's secure and ready for production. Audit will likely include all relevant smart contracts and the node software on which the Proof of Stake network will depend for security.
 
-### Proof of Stake Network <sup>_NEW_</sup> _~<sup><sub>Q3 2024</sub></sup>~_
+:::note
+
+Ties to the evolution of Push Nodes, will announce more details after governance proposal goes out.
+
+:::
+
+### Proof of Stake Network <sup>_NEW_</sup> _<sup><sub>Q3 2024</sub></sup>_
 
 Proof of Stake launch will make Push Network (L2 for web3 communication) incentivized for every validator, storage, delivery nodes. It will enable anyone to run a node and participate in securing the network and get rewarded for it by earning [**_`$PUSH`_**](https://coinmarketcap.com/currencies/epns/ '$PUSH at Coinmarketcap.com').
 
 Proof of Stake works by both incentivizing and penalizing nodes for their actions. Ensuring that the network is secure and reliable for all users and protocols.
 
-### Revamped Website _~<sup><sub>Q3 2024</sub></sup>~_
+### Revamped Website _**<sup><sub>Q3 2024[↗](https://push.org 'Revamped Push Website')</sub></sup>**_
 
 We will be revamping our website to enable better communication of our vision, product and features focused on developers and users.
 
-### Analytics Dashboard <sup>_NEW_</sup> _~<sup><sub>Q3 2024</sub></sup>~_
+### Analytics Dashboard <sup>_NEW_</sup> _**<sup><sub>Q3 2024[↗](https://push.network 'Push Network Analytics')</sub></sup>**_
 
 Push Network is a decentralized network and we want to enable everyone to participate in it. Analytics dashboard will enable anyone to see the health of the network and how it's performing.
 
-### Other SDKs _~<sup><sub>Q3 2024</sub></sup>~_
+### Other SDKs _**<sup><sub>Q3 2024[↗](https://github.com/push-protocol/push-swift-sdk 'Swift SDK')[↗](https://github.com/ethereum-push-notification-service/push-kotlin-sdk 'Kotlin SDK')[↗](https://github.com/push-protocol/push-restapi-dart 'Dart SDK')</sub></sup>**_
 
 Push SDK is getting really popular with several protocols using it for their notifications and chat. We will be bringing new features of our unified SDK to other platforms like Swift, Android, Flutter, etc to enable developers to use Push SDK in their mobile apps with the coding language of their choice.
 
-### Autonomous Group <sup>_NEW_</sup> _~<sup><sub>Q3 2024</sub></sup>~_
+### Autonomous Group <sup>_NEW_</sup> _~**<sup><sub>Q2 2025</sub></sup>**~_
 
 Gated group chats have been a game changer for web3 protocols to create communities of their users and engage with them in a seamless manner. It allows for gamification of the community and enables protocols to create their own game theory for who can join the group, send messages and who can't.
 
@@ -157,7 +206,7 @@ The next step towards this is autonomity of these groups. We will be enabling pr
 
 After all, DAO should have their DAGs free of any ownership unless it can be cryptographically set :smile:.
 
-### Push Protocol V3 <sup>_NEW_</sup> _~<sup><sub>Q4 2024</sub></sup>~_
+### Push Protocol V3 <sup>_NEW_</sup> _<sup><sub>Q4 2024[↗](https://github.com/push-protocol/push-smart-contracts 'Push Protocol V3')</sub></sup>_
 
 We are bringing basket of tokens in V3, which means any fee pool action is not reliant on [**_`$PUSH`_**](https://coinmarketcap.com/currencies/epns/ '$PUSH at Coinmarketcap.com') but can use a number of stable coins with usage of [**_`$PUSH`_**](https://coinmarketcap.com/currencies/epns/ '$PUSH at Coinmarketcap.com') to pay fees at a discounted price.
 
@@ -165,19 +214,23 @@ This will enable more frictionless experience for protocols or users who want to
 
 Apart for this, V3 will feature ability to split fee pool between token holders and crypto wallets along with some other features that we will be announcing soon.
 
-### Anon Chat <sup>_NEW_</sup> _~<sup><sub>Q4 2024</sub></sup>~_
+### Anon Chat <sup>_NEW_</sup> _~**<sup><sub>Q2 2025</sub></sup>**~_
 
 Anon Chat is a feature that will enable users to chat with each other without revealing their wallet identity. Currently, wallet chats with another wallet but with anon chat, wallet can generate a temporary identity that can be used to chat with another wallet and then be discarded 🥷.
 
-### Custom Roles for Groups _~<sup><sub>Q4 2024</sub></sup>~_
+### Custom Roles / Rules for Groups _**<sup><sub>Q4 2024[↗](/docs/chat/build/conditional-rules-for-group/ 'Custom rules and roles for groups')</sub></sup>**_
 
-Custom roles for groups will enable protocols to create their own roles for their gated groups.
+Custom roles for groups will enable protocols to create their own roles and rules for their gated groups.
 
-### Governance V2 _~<sup><sub>Q4 2024</sub></sup>~_
+### Governance V2 _**<sup><sub>Q4 2024[↗](/docs/dao/ 'Push DAO Phase 2')</sub></sup>**_
 
 We started with progressive decentralized governance [phase 0 followed by phase 1](/blog/push-dao-progressive-decentralization-the-next-phase-of-push-governance/ 'Article explaining Push DAO and how it works') and will be taking it further with phase 2.
 
-### Push goes Multi-Chain <sup>_NEW_</sup> _~<sup><sub>Q4 2024</sub></sup>~_
+### Email / Telegram Notifications _<sup><sub>Q4 2024</sub></sup>_
+
+Push has sent over 140m notifications and has more than 300k subscribers getting notifications to wallets. We will be enabling protocols to send notifications to email and telegram in addition to Push notifications to wallets to further simplify the UX and to expand the reach of Push to mainstream users.
+
+### Push goes Multi-Chain <sup>_NEW_</sup> _<sup><sub>Q4 2024[↗](https://github.com/oak-security/audit-reports/blob/main/Push/2024-11-29%20Audit%20Report%20-%20Push%20Protocol%20-%20Comm%20Cairo.pdf 'Cairo Smart Contract Audit')</sub></sup>_
 
 Push is cross-chain by design and already supports several chains like Ethereum, Polygon, BNB, Arbitrum, etc. It's time to enable Push to support non-EVM chains like Bitcoin, Solana, Avalanche, etc.
 
