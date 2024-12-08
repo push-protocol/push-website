@@ -3,7 +3,7 @@
 import React, { FC } from 'react';
 
 import styled from 'styled-components';
-import { BsArrowUpRight, BsArrowRight } from 'react-icons/bs';
+import { TbArrowUpRight } from 'react-icons/tb';
 
 import { device } from '@site/src/config/globals';
 import useMediaQuery from '../../hooks/useMediaQuery';
@@ -61,7 +61,7 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
             >
               <DiscordSVG width={24} />
               <p>Ask us on Discord</p>
-              <BsArrowUpRight className='anchorSVGlink' />
+              <TbArrowUpRight className='anchorSVGlink' />
             </FaqLink>
           </ItemV>
 
@@ -94,23 +94,6 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
           </H3>
         </ItemH>
 
-        <ItemH flex='0'>
-          <FaqLink
-            href='https://discord.gg/pushprotocol'
-            target='_blank'
-            title='Discord'
-            fontSize='16px'
-            margin={isMobile ? '24px auto 0 auto' : '48px 0'}
-            background='#D548EC'
-            color='#FFF'
-            fontFamily='N27'
-          >
-            <p>Start Building</p>
-            <BsArrowRight className='anchorSVGlink' />
-          </FaqLink>
-        </ItemH>
-
-        {/* image here */}
         <ChainCanvasItem>
           <ChainCanvas />
         </ChainCanvasItem>
@@ -212,6 +195,7 @@ const ElevateSection = styled.div`
   padding: 64px 64px 0px 64px;
   position: relative;
   overflow: hidden;
+  gap: 48px;
 
   @media ${device.mobileL} {
     margin-top: 200px;

@@ -13,18 +13,19 @@ const ChainRoadmapSection: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
   const completedList = [
     'Proof Of Stake',
-    'Proof Of Stake',
-    'Proof Of Stake',
-    'Proof Of Stake',
-    'Proof Of Stake',
+    'Dynamic Sharding',
+    'Parallel Validators',
+    'Any Chain Transactions',
+    'Wallet Abstraction',
   ];
 
   const inProgressList = [
-    'Proof Of Stake',
-    'Proof Of Stake',
-    'Proof Of Stake',
-    'Proof Of Stake',
-    'Proof Of Stake',
+    'Mapping Multiple Web3 Wallets',
+    'Smart Contracts/Virtual Machine',
+    'Fees Abstraction',
+    'Seamless Interoperability',
+    'Wallet State on any Chain',
+    'Universal Smart Contract',
   ];
 
   return (
@@ -63,7 +64,7 @@ const ChainRoadmapSection: FC = () => {
             Completed
           </Span>
 
-          {completedList.map((item) => (
+          {completedList?.map((item) => (
             <CompleteTag>
               <Span
                 fontSize={isMobile ? '20px' : '20px'}
@@ -91,7 +92,7 @@ const ChainRoadmapSection: FC = () => {
             In Progress
           </Span>
 
-          {inProgressList.map((item) => (
+          {inProgressList?.map((item) => (
             <InProgressTag>
               <Span
                 fontSize={isMobile ? '20px' : '20px'}
@@ -113,6 +114,47 @@ const ChainRoadmapSection: FC = () => {
 
 export default ChainRoadmapSection;
 
+const RoadmapSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 64px;
+  align-items: stretch;
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
+const CompleteSection = styled.div`
+  background: #f19aff;
+  padding: 16px;
+  border-radius: 24px;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @media ${device.laptopM} {
+    width: 100%;
+  }
+`;
+
+const InProgressSection = styled.div`
+  background: #000;
+  padding: 16px;
+  border-radius: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media ${device.laptopM} {
+    width: 100%;
+  }
+`;
+
 const ChainRoadmapWrapperSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -124,32 +166,32 @@ const ChainRoadmapWrapperSection = styled.div`
   }
 `;
 
-const RoadmapSection = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-  margin-top: 64px;
-  align-items: flex-start;
+// const RoadmapSection = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   gap: 16px;
+//   margin-top: 64px;
+//   align-items: flex-start;
 
-  @media ${device.tablet} {
-    flex-direction: column;
-  }
-`;
+//   @media ${device.tablet} {
+//     flex-direction: column;
+//   }
+// `;
 
-const CompleteSection = styled.div`
-  background: #f19aff;
-  padding: 16px;
-  border-radius: 24px;
-  flex: 2;
+// const CompleteSection = styled.div`
+//   background: #f19aff;
+//   padding: 16px;
+//   border-radius: 24px;
+//   flex: 2;
 
-  @media ${device.laptopM} {
-    width: 100%;
-  }
+//   @media ${device.laptopM} {
+//     width: 100%;
+//   }
 
-  @media ${device.tablet} {
-    width: 100%;
-  }
-`;
+//   @media ${device.tablet} {
+//     width: 100%;
+//   }
+// `;
 
 const CompleteTag = styled.div`
   background: #000;
@@ -173,13 +215,13 @@ const CompleteTag = styled.div`
   }
 `;
 
-const InProgressSection = styled.div`
-  width: 100%;
-  background: #000;
-  padding: 16px;
-  border-radius: 24px;
-  flex: 1;
-`;
+// const InProgressSection = styled.div`
+//   width: 100%;
+//   background: #000;
+//   padding: 16px;
+//   border-radius: 24px;
+//   flex: 1;
+// `;
 
 const InProgressTag = styled.div`
   width: 100%;

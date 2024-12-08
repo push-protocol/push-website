@@ -5,15 +5,12 @@ import styled from 'styled-components';
 // Internal Components
 import { A, ItemH, Span } from '@site/src/css/SharedStyling';
 
-// Import Assets
-import ImageFAQ from '@site/static/assets/website/faq/faq-projects.webp';
-
 // Internal Configs
 import { device } from '@site/src/config/globals';
 
 export const General = [
   {
-    question: 'What is Push?',
+    question: 'What is Push Chain?',
     section: 'General',
     renderAnswer: () => (
       <Answer>
@@ -33,7 +30,7 @@ export const General = [
     ),
   },
   {
-    question: 'What is Push trying to solve?',
+    question: 'How does Push Chain work??',
     section: 'General',
     renderAnswer: () => (
       <Answer>
@@ -62,7 +59,7 @@ export const General = [
     ),
   },
   {
-    question: 'What are the web3 communication products launched by Push?',
+    question: 'Why is Push Chain unique for users?',
     section: 'General',
     renderAnswer: () => (
       <Answer>
@@ -79,7 +76,7 @@ export const General = [
     ),
   },
   {
-    question: 'How can I use Push as an end-user?',
+    question: 'How do I get involved with Push Chain Grants?',
     section: 'General',
     renderAnswer: () => (
       <Answer>
@@ -136,7 +133,7 @@ export const General = [
     ),
   },
   {
-    question: 'Is Push decentralised?',
+    question: 'What will happen to Push Protocol?',
     section: 'General',
     renderAnswer: () => (
       <Answer>
@@ -152,36 +149,6 @@ export const General = [
           crypto-graphical proofs. The other part which ensures that the content
           can't be censored is in final stages now of testing and public alpha
           push nodes are expected to be rolled out soon.
-        </Span>
-      </Answer>
-    ),
-  },
-  {
-    question:
-      'On which blockchain is Push deployed? Can I send notifications from non-EVM chains as well?',
-    section: 'General',
-    renderAnswer: () => (
-      <Answer>
-        <Span>
-          Push is currently live on Ethereum, Polygon and BNB chain with other
-          major EVM chains and non-EVM / non-Ethereum chains to be supported
-          soon. Push Notifications via gasless sdk and Push Chat sdk supports
-          all EVM chains as of now.
-        </Span>
-      </Answer>
-    ),
-  },
-  {
-    question: 'How many projects have integrated with Push so far?',
-    section: 'General',
-    renderAnswer: () => (
-      <Answer>
-        <Span>
-          <Image src={ImageFAQ} alt='Push Ecosystem' loading='lazy' />
-        </Span>
-        <Span>
-          More than 400 projects have integrated with Push which includes our
-          150+ partners including Lens, Polygon, Gitcoin, Decentraland, etc.
         </Span>
       </Answer>
     ),
@@ -211,11 +178,6 @@ const Answer = styled(ItemH)`
   & Span:not(:first-child) {
     margin-top: 24px;
   }
-`;
-
-const Image = styled.img`
-  width: 80%;
-  height: auto;
 `;
 
 const AMod = styled(A)`

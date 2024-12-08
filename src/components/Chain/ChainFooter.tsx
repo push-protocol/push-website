@@ -7,7 +7,6 @@ import { useHistory } from 'react-router-dom';
 import { useLocation } from '@docusaurus/router';
 
 // External Components
-import { useTranslation } from 'react-i18next';
 import { BsTwitterX } from 'react-icons/bs';
 import styled from 'styled-components';
 
@@ -28,18 +27,17 @@ import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
-import { HeaderList } from '@site/src/config/HeaderList';
+import { ChainFooterList } from './config/ChainFooterList';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
 
 const tosPrivacyLinks = [
-  { href: '/tos', text: 'footer.mail-section.tos' },
-  { href: '/privacy', text: 'footer.mail-section.privacy' },
+  { href: '/tos', text: 'Terms of service' },
+  { href: '/privacy', text: 'Privacy' },
 ];
 
 function ChainFooter() {
   // Internationalization
-  const { t } = useTranslation();
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
   const baseURL = useSiteBaseUrl() || '';
@@ -109,13 +107,13 @@ function ChainFooter() {
                     </LinkTo>
 
                     <Span fontWeight='500' fontSize='16px' lineHeight='142%'>
-                      Build Universal Apps
+                      Interoperable, <br /> Universal Apps
                     </Span>
                   </FooterLinkItem>
                 </FooterColumn>
 
                 <FooterColumns>
-                  {['developers', 'community', 'resources'].map((key) => (
+                  {['resources', 'community', 'developers'].map((key) => (
                     <FooterColumn key={key}>
                       <FooterLinks>
                         <Span
@@ -126,13 +124,13 @@ function ChainFooter() {
                           textTransform='uppercase'
                           margin='0 0 8px 0'
                         >
-                          {t(`header.${key}.title`)}
+                          {key}
                         </Span>
-                        {HeaderList[key]?.map((item) => (
+                        {ChainFooterList[key]?.map((item) => (
                           <FooterAnchorSecondary
                             as='div'
                             key={item.title}
-                            title={t(item.title)}
+                            title={item.title}
                             onClick={(e) =>
                               handleNavigation(
                                 e,
@@ -142,7 +140,7 @@ function ChainFooter() {
                               )
                             }
                           >
-                            {t(item.title)}
+                            {item.title}
                           </FooterAnchorSecondary>
                         ))}
                       </FooterLinks>
@@ -186,7 +184,7 @@ function ChainFooter() {
                 </ItemH>
               </ItemV>
 
-              <ItemH justifyContent='flex-end' className='pushLinks' gap='12px'>
+              <ItemH justifyContent='flex-end' className='pushLinks' gap='32px'>
                 {tosPrivacyLinks.map(({ href, text }) => (
                   <FooterAnchorSecondary
                     as={LinkTo}
@@ -194,7 +192,7 @@ function ChainFooter() {
                     to={useBaseUrl(href)}
                     onClick={() => document.documentElement.scrollTo(0, 0)}
                   >
-                    {t(text)}
+                    {text}
                   </FooterAnchorSecondary>
                 ))}
               </ItemH>
@@ -345,7 +343,9 @@ const FooterAnchorSecondary = styled(A)`
   &:hover {
     color: #fff !important;
     background: transparent !important;
-  }
+  }import { ChainFooterList } from './config/ChainFooterList';
+import { useTranslation } from 'react-i18next';
+
 
   &:before {
     background: transparent;

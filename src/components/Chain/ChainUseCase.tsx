@@ -3,48 +3,32 @@
 import React, { FC } from 'react';
 
 import styled from 'styled-components';
-import { TbArrowUpRight } from 'react-icons/tb';
 
 import { device } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
 
-import { A, H3 } from '../../css/SharedStyling';
+import { H3 } from '../../css/SharedStyling';
 
 const ChainUseCase: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
-  const isTablet = useMediaQuery(device.tablet);
+  const isTablet = useMediaQuery(device.laptop);
 
   return (
     <ChainUseCaseWrapper>
-      <H3
+      <StyledH3
         fontSize={isMobile ? '36px' : '52px'}
         fontWeight='500'
         fontFamily='N27'
         lineHeight='120%'
         letterSpacing='-1.05px'
-        textAlign={isTablet && 'center'}
+        textAlign={isTablet ? 'center' : 'left'}
       >
-        A use case for every consumer
-      </H3>
+        An app for every user on every chain
+      </StyledH3>
 
       <GridText>
-        Discover use cases thriving on Push Chain. Build true cross chain
-        experiences. The possibilities are endless.
-        <TextLink
-          href='https://discord.gg/pushprotocol'
-          target='_blank'
-          title='Discord Push Network'
-          fontSize={isMobile ? '16px' : '20px'}
-          margin={isMobile ? '24px auto 0 auto' : '29px 0 0 0'}
-          background='transparent'
-          hoverBackground='transparent'
-          padding='0'
-          color='#D548EC'
-          fontFamily='N27'
-        >
-          <p>Explore Ecosystem Apps</p>
-          <TbArrowUpRight className='anchorSVGlink' />
-        </TextLink>
+        Build true universal applications for any user on any chain. The
+        possibilities are endless.
       </GridText>
     </ChainUseCaseWrapper>
   );
@@ -56,18 +40,34 @@ const ChainUseCaseWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin-top: 0px;
   gap: 222px;
 
-  @media ${device.tablet} {
-    gap: 0px;
+  @media ${device.laptop} {
     flex-direction: column;
+    align-items: center;
+    gap: 48px;
     margin-top: 0px;
   }
 `;
 
+const StyledH3 = styled(H3)`
+  width: 480px;
+  text-align: left;
+
+  @media ${device.laptop} {
+    max-width: 500px;
+    text-align: center;
+  }
+
+  @media ${device.mobileL} {
+    width: 100%;
+  }
+`;
+
 const GridText = styled.div`
-  width: 500px;
+  width: 480px;
   color: #000;
   font-family: N27;
   font-size: 24px;
@@ -75,38 +75,13 @@ const GridText = styled.div`
   font-weight: 400;
   line-height: 140%;
 
-  @media ${device.tablet} {
-    flex-direction: column;
-    width: 100%;
+  @media ${device.laptop} {
+    max-width: 500px;
     margin-top: 48px;
     text-align: center;
   }
-`;
 
-const TextLink = styled(A)`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-  cursor: pointer;
-
-  @media ${device.tablet} {
-    justify-content: center;
-  }
-
-  p {
-    margin: 0px !important;
-  }
-  .anchorSVGlink {
-    color: #d548ec;
-    top: 0px;
-  }
-
-  &:hover {
-    text-decoration: none !important;
-    .anchorSVGlink {
-      color: #d548ec;
-    }
+  @media ${device.mobileL} {
+    width: 100%;
   }
 `;

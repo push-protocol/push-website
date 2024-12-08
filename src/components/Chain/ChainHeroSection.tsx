@@ -8,7 +8,7 @@ import { TbArrowUpRight } from 'react-icons/tb';
 import { device } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
 
-import { A, Button, H2, H3, ItemV } from '../../css/SharedStyling';
+import { A, Button, H2, H3, ItemH, ItemV } from '../../css/SharedStyling';
 import ChainAlertBar from './ChainAlertBar';
 import ImageHolder from '../../../src/components/ImageHolder';
 
@@ -26,10 +26,6 @@ const ChainHeroSection: FC = () => {
       label: 'Finality',
     },
     {
-      count: '20k',
-      label: 'Transactions',
-    },
-    {
       imageUrl: 'supported-chains',
       label: 'Supported Chains',
     },
@@ -45,8 +41,8 @@ const ChainHeroSection: FC = () => {
       <TypewriterText>Build Universal App</TypewriterText>
       <HeroSubText>
         Push Chain is a shared-state blockchain that allows all chains to unify,
-        enabling consumer apps that function from any chain. <br /> Push is the
-        layer 1 for the web3 app ecosystem.
+        enabling consumer apps that function from any chain. <br />{' '}
+        <b>Push is the layer 1 for the web3 app ecosystem.</b>
       </HeroSubText>
       <HeroButtons>
         <Button
@@ -132,21 +128,51 @@ const ChainHeroSection: FC = () => {
           Linear scalability and dynamic sharding ensure read and write
           transactions continue to increase as more nodes are added to the
           network.
-          <TextLink
-            href='https://scan.push.org'
-            target='_blank'
-            title='Discord Push Network'
-            fontSize={isMobile ? '16px' : '20px'}
-            margin={isMobile ? '24px auto 0 auto' : '29px 0 0 0'}
-            background='transparent'
-            padding='0'
-            color='#D548EC'
-            fontFamily='N27'
-            hoverBackground='transparent'
+          <ItemH
+            alignItems='flex-start'
+            justifyContent='flex-start'
+            gap='40px'
+            margin={isMobile ? '24px auto 12px auto' : '29px 0 12px 0'}
           >
-            <p>Discover Push Network</p>
-            <TbArrowUpRight className='anchorSVGlink' />
-          </TextLink>
+            <TextLink
+              href='https://simulate.push.org'
+              target='_blank'
+              title='Discord Push Network'
+              fontSize={isMobile ? '16px' : '20px'}
+              background='transparent'
+              padding='0'
+              color='#D548EC'
+              fontFamily='N27'
+              hoverBackground='transparent'
+            >
+              <p>Simulate Tx</p>
+              <TbArrowUpRight className='anchorSVGlink' />
+            </TextLink>
+            <TextLink
+              href='https://scan.push.org'
+              target='_blank'
+              title='Discord Push Network'
+              fontSize={isMobile ? '16px' : '20px'}
+              background='transparent'
+              padding='0'
+              color='#D548EC'
+              fontFamily='N27'
+              hoverBackground='transparent'
+            >
+              <p>Push Scan Devnet</p>
+              <TbArrowUpRight className='anchorSVGlink' />
+            </TextLink>
+          </ItemH>
+          <H3
+            fontSize={isMobile ? '14px' : '16px'}
+            fontWeight='400'
+            fontFamily='N27'
+            lineHeight='140%'
+            color='#777686'
+          >
+            Universal applications will launch with Testnet. <br />
+            Devnet is live. Try now!
+          </H3>
         </GridText>
       </CountSection>
 

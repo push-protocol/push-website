@@ -17,6 +17,12 @@ const TAGS = [
   'dao',
   'messaging',
   'blockchain',
+  'market prediction',
+  'omni chain poker',
+  'social apps',
+  'notifications',
+  'rumors',
+  'crypto dca',
 ];
 
 export default function ChainCanvas() {
@@ -25,6 +31,8 @@ export default function ChainCanvas() {
   const renderRef = useRef<Matter.Render>();
   const [ref, inView] = useInView({ threshold: 1.0 });
   const isMobile = useMediaQuery(device.mobileL);
+  const isTablet = useMediaQuery(device.tablet);
+  const isLaptop = useMediaQuery(device.laptopL);
   const [displayedTags, setDisplayedTags] = useState<string[]>(TAGS);
 
   const updateTagsForScreenSize = () => {
@@ -109,9 +117,9 @@ export default function ChainCanvas() {
       ),
     ];
 
-    const paddingX = 32; // Horizontal padding
-    const paddingY = 22; // Vertical padding
-    const fontSize = 55;
+    const paddingX = isTablet ? 22 : isLaptop ? 22 : 32; // Horizontal padding
+    const paddingY = isTablet ? 12 : isLaptop ? 18 : 22; // Vertical padding
+    const fontSize = isTablet ? 40 : isLaptop ? 43 : 50; // Font size
 
     // Create tags
     const tags = displayedTags.map((tag, index) => {
@@ -126,7 +134,7 @@ export default function ChainCanvas() {
       const y = Math.random() * (window.innerHeight - height) + height / 2;
 
       return Bodies.rectangle(x, y, width, height, {
-        chamfer: { radius: 47 },
+        chamfer: { radius: isTablet ? 32 : isLaptop ? 35 : 42 },
         render: {
           fillStyle: COLORS[index % COLORS.length],
           strokeStyle: '#000',
@@ -165,17 +173,34 @@ export default function ChainCanvas() {
     const ctx = canvas.getContext('2d')!;
 
     Matter.Events.on(render, 'afterRender', () => {
-      ctx.font = '400 55px N27';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
+      ctx.font = `400 ${fontSize}px N27`; // Font style
+      ctx.textBaseline = 'middle'; // Vertically align text
       ctx.fillStyle = '#FFFFFF';
+
+      const letterSpacing = -0.9; // Adjust letter spacing for tighter characters
 
       tags.forEach((tag) => {
         ctx.save();
-        ctx.translate(tag.position.x, tag.position.y);
-        ctx.rotate(tag.angle);
-        ctx.fillText(tag.label, 0, 0); // Centered text
-        ctx.restore();
+        ctx.translate(tag.position.x, tag.position.y); // Position tag
+        ctx.rotate(tag.angle); // Rotate text with tag
+
+        // Calculate total width of the text with custom letter spacing
+        let totalWidth = 0;
+        for (const char of tag.label) {
+          totalWidth += ctx.measureText(char).width + letterSpacing;
+        }
+        totalWidth -= letterSpacing; // Remove extra spacing from the last character
+
+        // Center the text block by setting initial xOffset
+        let xOffset = -totalWidth / 2; // Start drawing from the center
+
+        // Draw each character
+        for (const char of tag.label) {
+          ctx.fillText(char, xOffset, 0); // Draw character
+          xOffset += ctx.measureText(char).width + letterSpacing; // Increment xOffset
+        }
+
+        ctx.restore(); // Restore context state
       });
     });
 

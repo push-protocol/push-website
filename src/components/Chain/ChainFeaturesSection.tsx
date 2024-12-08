@@ -145,7 +145,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                       title={'title'}
                     />
 
-                    <FeatureTextSubHeading style={{ color: 'white' }}>
+                    <FeatureTextSubHeading style={{ color: '#000' }}>
                       Any Chain
                       <span className='breakpoint'>Transactions</span>
                     </FeatureTextSubHeading>
@@ -512,7 +512,7 @@ const AnyChainContainer = styled.div`
   gap: 10px;
   flex-shrink: 0;
   border-radius: 48px;
-  background: #fc564a;
+  background: #ffff;
 
   @media ${device.tablet} {
     width: 100%;
