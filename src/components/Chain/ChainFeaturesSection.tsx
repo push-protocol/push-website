@@ -3,10 +3,13 @@
 // @ts-nocheck
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
-import { TbArrowUpRight } from 'react-icons/tb';
 import styled from 'styled-components';
-import { Button } from '@site/src/css/SharedStyling';
+import { TbArrowUpRight } from 'react-icons/tb';
+
 import { device } from '../../../src/config/globals';
+
+import { Button, ItemH, Image } from '@site/src/css/SharedStyling';
+import ImageHolder from '../../../src/components/ImageHolder';
 
 export type ChainFeaturesSectionProps = {};
 
@@ -31,8 +34,9 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
         <InnerContainer>
           <HeaderContainer>
             <Header>
-              Craft seamless, consumer <br /> focused experiences across <br />
-              any chain
+              Craft seamless, consumer-focused
+              <br />
+              experiences for users on any chain
             </Header>
             <Link href='#'>
               <Button
@@ -52,21 +56,56 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           <FeatureContainer>
             <FeatureSubContainer>
               <FinalityContainer>
+                <ImageHolder
+                  src={
+                    require(
+                      `@site/static/assets/website/chain/instant-finality.webp`
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/chain/instant-finality@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/instant-finality@3x.webp`).default} 3x`}
+                  alt={'alt'}
+                  title={'title'}
+                />
+
                 <FeatureTextHeading>
                   Instant
                   <span className='breakpoint'> Finality</span>
                 </FeatureTextHeading>
               </FinalityContainer>
+
               <FeatureContainerSegregator>
                 <OnboardingContainer>
+                  <ImageHolder
+                    src={
+                      require(
+                        `@site/static/assets/website/chain/seamless-instant.webp`
+                      ).default
+                    }
+                    srcSet={`${require(`@site/static/assets/website/chain/seamless-instant@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/seamless-instant@3x.webp`).default} 3x`}
+                    alt={'alt'}
+                    title={'title'}
+                  />
+
                   <FeatureTextSubHeading>
                     Seamless, Instant
                     <br />
                     Onboarding
                   </FeatureTextSubHeading>
                 </OnboardingContainer>
+
                 <FeatureContainerSecondSegregator>
                   <TxFeeContainer>
+                    <Image
+                      src={
+                        require(
+                          `@site/static/assets/website/chain/cheap-storage.webp`
+                        ).default
+                      }
+                      srcSet={`${require(`@site/static/assets/website/chain/cheap-storage@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/cheap-storage@3x.webp`).default} 3x`}
+                      alt={'alt'}
+                      title={'title'}
+                      width='auto'
+                    />
                     <FeatureTextSubHeading style={{ color: 'white' }}>
                       Cheap
                       <br />
@@ -74,6 +113,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                       Tx Fee
                     </FeatureTextSubHeading>
                   </TxFeeContainer>
+
                   <StorageAndScalableContainerMobile>
                     <TxFeeContainerMobile>
                       <FeatureTextSubHeading style={{ color: 'white' }}>
@@ -83,6 +123,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                         Tx Fee
                       </FeatureTextSubHeading>
                     </TxFeeContainerMobile>
+
                     <ScalableContainerMobile>
                       <FeatureTextSubHeading>
                         Infinitely
@@ -91,7 +132,19 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                       </FeatureTextSubHeading>
                     </ScalableContainerMobile>
                   </StorageAndScalableContainerMobile>
+
                   <AnyChainContainer>
+                    <ImageHolder
+                      src={
+                        require(
+                          `@site/static/assets/website/chain/any-chain.webp`
+                        ).default
+                      }
+                      srcSet={`${require(`@site/static/assets/website/chain/any-chain@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/any-chain@3x.webp`).default} 3x`}
+                      alt={'alt'}
+                      title={'title'}
+                    />
+
                     <FeatureTextSubHeading style={{ color: 'white' }}>
                       Any Chain
                       <span className='breakpoint'>Transactions</span>
@@ -100,16 +153,29 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                 </FeatureContainerSecondSegregator>
               </FeatureContainerSegregator>
             </FeatureSubContainer>
+
             <FeatureSubContainer>
               <KnowledgeBaseContainer>
-                <KnowledgeBaseIcon
-                  size={56}
-                  style={{ alignSelf: 'flex-end' }}
-                />
-                <KnowledgeBaseIconMobile
-                  size={24}
-                  style={{ alignSelf: 'flex-end' }}
-                />
+                <ItemH alignItems='flex-start' justifyContent='space-between'>
+                  <ImageHolder
+                    src={
+                      require(
+                        `@site/static/assets/website/chain/explore-knowledgebase.webp`
+                      ).default
+                    }
+                    srcSet={`${require(`@site/static/assets/website/chain/explore-knowledgebase@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/explore-knowledgebase@3x.webp`).default} 3x`}
+                    alt={'alt'}
+                    title={'title'}
+                  />
+                  <KnowledgeBaseIcon
+                    size={56}
+                    style={{ alignSelf: 'flex-start' }}
+                  />
+                  <KnowledgeBaseIconMobile
+                    size={24}
+                    style={{ alignSelf: 'flex-start' }}
+                  />
+                </ItemH>
                 <KnowledgeBaseTextContainer>
                   <FeatureTextHeading
                     style={{ color: '#000000', whiteSpace: 'break-spaces' }}
@@ -127,6 +193,17 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
               </KnowledgeBaseContainer>
 
               <ScalableContainer>
+                <Image
+                  src={
+                    require(
+                      `@site/static/assets/website/chain/infinitely-scalable.webp`
+                    ).default
+                  }
+                  srcSet={`${require(`@site/static/assets/website/chain/infinitely-scalable@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/infinitely-scalable@3x.webp`).default} 3x`}
+                  alt={'alt'}
+                  title={'title'}
+                  width='auto'
+                />
                 <FeatureTextSubHeading>
                   Infinitely
                   <br />
@@ -137,15 +214,24 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           </FeatureContainer>
 
           <HeaderTwoContainer>
-            <HeaderTwo>One chain, infinite possibilities</HeaderTwo>
-            <div style={{ height: 200 }}></div>
+            <HeaderTwo>One chain for infinite possibilities</HeaderTwo>
+
+            <ImageHolder
+              src={
+                require(`@site/static/assets/website/chain/one-chain.webp`)
+                  .default
+              }
+              srcSet={`${require(`@site/static/assets/website/chain/one-chain@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/one-chain@3x.webp`).default} 3x`}
+              alt={'alt'}
+              title={'title'}
+            />
             <HeaderTwoSubheader>
-              Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk
-              <br />
-              handango empressr orkut appjet, convore xobni eduvant babblely.
+              Push chain allows developers to finally create applications that
+              are accessible from any chain.
               <br /> <br />
-              Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk
-              handango.
+              Push Chain's shared state enables settlement from all EVM and
+              non-EVM chains, enabling shared applications and unleashing new
+              experiences that benefit all L1s, L2s, and their users.
             </HeaderTwoSubheader>
           </HeaderTwoContainer>
         </InnerContainer>
@@ -402,11 +488,12 @@ const OnboardingContainer = styled.div`
   width: 100%;
   height: 334.496px;
   padding: 32px;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 10px;
   flex-shrink: 0;
   border-radius: 48px;
   background: #64f6b2;
+  flex-direction: column;
 
   @media ${device.tablet} {
     width: 100%;
@@ -420,7 +507,7 @@ const AnyChainContainer = styled.div`
   height: 278.124px;
   padding: 32px;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 10px;
   flex-shrink: 0;
@@ -515,11 +602,12 @@ const StorageAndScalableContainerMobile = styled.div`
 `;
 
 const HeaderTwoContainer = styled.div`
+  max-width: 800px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin: 300px auto 0 auto;
   gap: 20px;
-  margin-top: 479px;
 
   @media ${device.tablet} {
     margin-top: 120px;
