@@ -109,9 +109,9 @@ export default function ChainCanvas() {
       ),
     ];
 
-    const paddingX = 21; // Horizontal padding
-    const paddingY = 12; // Vertical padding
-    const fontSize = 45;
+    const paddingX = 32; // Horizontal padding
+    const paddingY = 22; // Vertical padding
+    const fontSize = 55;
 
     // Create tags
     const tags = displayedTags.map((tag, index) => {
@@ -119,7 +119,6 @@ export default function ChainCanvas() {
       ctx.font = `${fontSize}px N27`;
       const textWidth = ctx.measureText(tag).width;
 
-      // const width = Math.max(textWidth + paddingX * 2, 150);
       const width = Math.max(textWidth + paddingX * 2);
       const height = fontSize + paddingY * 2;
 
@@ -127,11 +126,11 @@ export default function ChainCanvas() {
       const y = Math.random() * (window.innerHeight - height) + height / 2;
 
       return Bodies.rectangle(x, y, width, height, {
-        chamfer: { radius: 32 },
+        chamfer: { radius: 47 },
         render: {
           fillStyle: COLORS[index % COLORS.length],
           strokeStyle: '#000',
-          lineWidth: 8,
+          lineWidth: 12,
         },
         restitution: 0.5,
         friction: 0.1,
@@ -166,7 +165,7 @@ export default function ChainCanvas() {
     const ctx = canvas.getContext('2d')!;
 
     Matter.Events.on(render, 'afterRender', () => {
-      ctx.font = '400 45px N27';
+      ctx.font = '400 55px N27';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillStyle = '#FFFFFF';

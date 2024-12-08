@@ -82,7 +82,7 @@ const ChainHeader: FC = () => {
   const navItems = [
     { id: 'technology', label: 'Technology', url: '/chain' },
     { id: 'knowledge', label: 'Knowledge Base', url: '/chain/knowledge' },
-    { id: 'roadmap', label: 'Roadmap' },
+    { id: 'roadmap', label: 'Whitepaper' },
     { id: 'faq', label: 'F.A.Q' },
   ];
 
@@ -181,7 +181,7 @@ const ChainHeader: FC = () => {
                     openLink('https://twitter.com/pushprotocol');
                   }}
                 >
-                  Start Building
+                  Get Notified
                 </Button>
               </IconMenu>
             </HeaderFocusItems>
@@ -229,14 +229,15 @@ const NavList = styled.div`
 const StyledHeader = styled.header`
   font-family: N27, sans-serif;
   position: fixed;
-  top: ${(props) => (props.showMobileMenu ? '0px' : '23px')};
+  top: 0;
   left: 0;
   right: 0;
-  height: ${(props) => (props.isMobileMenuOpen ? '100vh' : '64px')};
+  height: ${(props) => (props.isMobileMenuOpen ? '100vh' : 'auto')};
+  padding-top: 12px;
+  padding-bottom: 12px;
 
-  /* color: #ffffff;
-  background: #121315; */
-  opacity: 1;
+  background: rgba(232, 239, 248, 0.5);
+  backdrop-filter: blur(calc(24px / 2));
   z-index: 99999 !important;
   transition: top 0.3s ease-in-out;
 
@@ -281,6 +282,8 @@ const StyledHeader = styled.header`
   @media ${device.laptop} {
     flex-direction: column;
     top: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     background-color: ${(props) =>
       props.isMobileMenuOpen ? '#000' : 'transparent'};
 

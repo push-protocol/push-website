@@ -6,7 +6,10 @@ import styled from 'styled-components';
 // External Components
 import { device } from '../../../src/config/globals';
 import { ItemV } from '../../../src/css/SharedStyling';
-import { ChainMarqueeList } from './config/ChainMarqueeList';
+import {
+  ChainMarqueeList,
+  ChainMarqueeSecondList,
+} from './config/ChainMarqueeList';
 
 // Internal Components
 import ChainHeroSection from './ChainHeroSection';
@@ -23,6 +26,8 @@ import NoteIcon from '@site/static/assets/website/chain/note.svg';
 import SmileIcon from '@site/static/assets/website/chain/smile.svg';
 import EmailIcon from '@site/static/assets/website/chain/email.svg';
 import SpadeIcon from '@site/static/assets/website/chain/spades.svg';
+import BellIcon from '@site/static/assets/website/chain/bellicon.svg';
+import DCAIcon from '@site/static/assets/website/chain/dcaicon.svg';
 
 const Chain = () => (
   <ChainWrapper>
@@ -47,10 +52,10 @@ const Chain = () => (
 
     {/* second marquee section */}
     <ChainMarqueeSection
-      chainMarqueeList={ChainMarqueeList}
+      chainMarqueeList={ChainMarqueeSecondList}
       backgroundColor='#3EF09D'
       rotateDegree={5} // Custom rotation degree
-      icons={[NoteIcon, SmileIcon, EmailIcon, SpadeIcon]}
+      icons={[SpadeIcon, SmileIcon, EmailIcon, NoteIcon, BellIcon, DCAIcon]}
     />
 
     <MainContent>

@@ -6,7 +6,8 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import ReactMarquee from 'react-fast-marquee';
 
-import { H2, ItemH, ItemV } from '@site/src/css/SharedStyling';
+import { H2, ItemV } from '@site/src/css/SharedStyling';
+import { device } from '../../../src/config/globals';
 
 interface ChainMarqueeSectionProps {
   backgroundColor?: string; // Optional background color
@@ -21,6 +22,7 @@ const ChainMarqueeSection: FC<ChainMarqueeSectionProps> = ({
   chainMarqueeList,
   icons,
 }) => {
+  const duplicatedList = [...chainMarqueeList, ...chainMarqueeList]; // Duplicate the list
   return (
     <MarqueeWrapper
       padding='0'
@@ -36,15 +38,15 @@ const ChainMarqueeSection: FC<ChainMarqueeSectionProps> = ({
         direction='left'
         loop={0}
       >
-        {chainMarqueeList?.map((item, index) => {
+        {duplicatedList?.map((item, index) => {
           // Cycle through the icons based on the index and number of icons
           const Icon = icons[index % icons.length]; // Modulo ensures it wraps around if there are more items than icons
           return (
             <MarqueeItem key={index}>
-              <GridItem>
-                <H2 fontFamily='N27'>{item.title}</H2>
-                <Icon width={34} height={34} />
-              </GridItem>
+              {/* <GridItem> */}
+              <H2 fontFamily='N27'>{item.title}</H2>
+              {/* </GridItem> */}
+              <Icon width={34} height={34} />
             </MarqueeItem>
           );
         })}
@@ -64,23 +66,30 @@ const MarqueeWrapper = styled(ItemV)<{
   transform-origin: center center;
   background-color: ${(props) => props.backgroundColor};
   transform: skewY(${(props) => props.rotateDegree}deg);
+  padding: 33px 0;
+  overflow: hidden;
 `;
 
-const MarqueeItem = styled(ItemH)`
+const MarqueeItem = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
-  margin: auto 17.5px;
-`;
-
-const GridItem = styled(ItemH)`
-  display: flex;
-  flex-direction: row;
-  gap: 35px;
   align-items: center;
-  flex: 1;
-  height: 125px;
+  margin: 0 32px;
+  overflow: hidden;
+  gap: 64px;
+
+  @media ${device.desktop} {
+    margin: auto 48px;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  @media ${device.laptopL} {
+    margin: auto 24px;
+    justify-content: space-between;
+    gap: 48px;
+  }
 
   h2 {
     color: #000;
@@ -94,8 +103,9 @@ const GridItem = styled(ItemH)`
 
   &:hover {
     cursor: pointer;
+
     h2 {
-      color: #fff;
+      color: #fff; /* Change text color on hover */
     }
   }
 `;
