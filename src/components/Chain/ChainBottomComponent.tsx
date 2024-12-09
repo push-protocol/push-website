@@ -32,6 +32,7 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
           alignItems='flex-start'
           justifyContent='space-between'
           gap={!isMobile && '70px'}
+          id='faq'
         >
           <ItemV
             alignItems='flex-start'

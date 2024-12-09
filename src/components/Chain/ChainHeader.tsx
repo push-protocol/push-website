@@ -89,7 +89,7 @@ const ChainHeader: FC = () => {
     { id: 'technology', label: 'Technology', url: '/chain' },
     { id: 'knowledge', label: 'Knowledge Base', url: '/chain/knowledge' },
     { id: 'roadmap', label: 'Whitepaper' },
-    { id: 'faq', label: 'F.A.Q' },
+    { id: 'faq', label: 'F.A.Q', url: '/chain' },
   ];
 
   // Update the active item based on the current location

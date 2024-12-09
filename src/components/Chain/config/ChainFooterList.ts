@@ -15,8 +15,8 @@ export const ChainFooterList = {
     {
       title: 'Brand Kit',
       subtitle: 'header.resources.link3.subtitle',
-      href: '/docs/roadmap',
-      target: '_self',
+      href: 'https://pushprotocol.notion.site/Push-Chain-Brand-Kit-and-Guidelines-d374a18fc78e4635a437ccad49350dac?pvs=4',
+      target: '_blank',
     },
   ],
   community: [
