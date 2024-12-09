@@ -38,10 +38,11 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
     >
       <div
         style={{
-          height: '128px',
-          width: '212px',
+          height: 'auto',
+          width: '100%',
           backgroundColor: '#D9D9D9',
           borderRadius: '24px',
+          aspectRatio: '16/9',
         }}
       ></div>
       <H3
@@ -83,7 +84,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
           letterSpacing='-0.64px'
           color='#D548EC'
         >
-          {item.linkText}
+          Learn More
         </Span>
         <TbArrowUpRight color='#D548EC' size={24} />
       </ItemH>

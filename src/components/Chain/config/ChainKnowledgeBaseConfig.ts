@@ -1,20 +1,21 @@
 /* eslint-disable no-irregular-whitespace */
 export const ChainKnowledgeBaseHeaderConfig = {
-  title: 'What is Push Chain?',
+  title: 'Introducing Push Chain',
   description: `Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk
   handango empressr orkut appjet, convore xobni eduvant babblely.
   <br /><br />
   Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk handango.`,
-  video: {
-    src: 'https://www.youtube.com/embed/lhiwW3SfoZE',
-    title: 'Afrobeats & Amapiano Mix 2024 | DJames Live in Toronto',
-  },
+  // video: {
+  //   src: 'https://www.youtube.com/embed/lhiwW3SfoZE',
+  //   title: 'Afrobeats & Amapiano Mix 2024 | DJames Live in Toronto',
+  // },
+  image: `knowledge-frame`,
   learnMore: 'Hey! Want to learn more about Push Chain?',
 };
 
 export const knowledgeBaseArticleContent = [
   {
-    slug: 'why-push',
+    slug: 'Why Push Chain?',
     image: '',
     title: 'Why Push?',
     subtitle:
@@ -33,7 +34,7 @@ This is **Page 1** content written in MDX.
   {
     slug: 'decentralized-ecosystem',
     image: '',
-    title: 'Decentralized Ecosystem',
+    title: 'Evolution of Push',
     subtitle:
       'Push Chain powers dApps and decentralized messaging, connecting blockchains seamlessly',
     linkText: 'Explore More',
@@ -167,7 +168,7 @@ Let’s keep pushing! 🌍🚀`,
   {
     slug: 'secure-and-fast',
     image: '',
-    title: 'Secure and Fast',
+    title: 'Benchmark of Push Chain',
     subtitle: 'Experience the fastest and most secure blockchain transactions.',
     linkText: 'Read More',
     url: 'https://test.com',
@@ -175,7 +176,7 @@ Let’s keep pushing! 🌍🚀`,
   {
     slug: 'interoperable-network',
     image: '',
-    title: 'Interoperable Network',
+    title: 'Node Randomization',
     subtitle:
       'Push Chain connects with multiple networks, ensuring smooth operability.',
     linkText: 'See How',
@@ -184,7 +185,7 @@ Let’s keep pushing! 🌍🚀`,
   {
     slug: 'future-ready',
     image: '',
-    title: 'Future Ready',
+    title: 'Is Push Another L1?',
     subtitle: 'Built for tomorrow, Push Chain supports innovative solutions.',
     linkText: 'Discover More',
     url: 'https://test.com',

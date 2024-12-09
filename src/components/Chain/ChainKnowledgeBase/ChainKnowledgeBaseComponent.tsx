@@ -8,6 +8,7 @@ import useMediaQuery from '../../../hooks/useMediaQuery';
 
 import { Button, H2, H3, ItemH, ItemV } from '../../../css/SharedStyling';
 import { ChainKnowledgeBaseHeaderConfig } from '../config/ChainKnowledgeBaseConfig';
+import ImageHolder from '../../../../src/components/ImageHolder';
 
 const ChainKnowledgeBaseComponent = () => {
   const isMobile = useMediaQuery(device.mobileL);
@@ -40,16 +41,36 @@ const ChainKnowledgeBaseComponent = () => {
         </ItemV>
 
         <IFrameItem>
-          <iframe
-            width={isMobile ? '100%' : '560px'}
-            height={isMobile ? '100%' : '325px'}
-            src={ChainKnowledgeBaseHeaderConfig.video.src}
-            title={ChainKnowledgeBaseHeaderConfig.video.title}
-            frameBorder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-            referrerPolicy='strict-origin-when-cross-origin'
-            allowFullScreen
-          ></iframe>
+          <IFrameImage
+            background={ChainKnowledgeBaseHeaderConfig?.image && '#E8EFF8'}
+            borderRadius='32px'
+          >
+            {ChainKnowledgeBaseHeaderConfig?.video && (
+              <iframe
+                width={isMobile ? '100%' : '560px'}
+                height={isMobile ? '100%' : '325px'}
+                src={ChainKnowledgeBaseHeaderConfig.video.src}
+                title={ChainKnowledgeBaseHeaderConfig.video.title}
+                frameBorder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                referrerPolicy='strict-origin-when-cross-origin'
+                allowFullScreen
+              ></iframe>
+            )}
+
+            {ChainKnowledgeBaseHeaderConfig?.image && (
+              <ImageHolder
+                src={
+                  require(
+                    `@site/static/assets/website/chain/${ChainKnowledgeBaseHeaderConfig?.image}.webp`
+                  ).default
+                }
+                srcSet={`${require(`@site/static/assets/website/chain/${ChainKnowledgeBaseHeaderConfig?.image}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/${ChainKnowledgeBaseHeaderConfig?.image}@3x.webp`).default} 3x`}
+                alt={'alt'}
+                title={'title'}
+              />
+            )}
+          </IFrameImage>
 
           <IframeContent>
             <H3
@@ -61,8 +82,8 @@ const ChainKnowledgeBaseComponent = () => {
               color='#000'
               flex='1'
             >
-              Check out the detailed explainer video to find out what makes the
-              Push Chain unique
+              Craft seamless, consumer-focused experiences for users on any
+              chain
             </H3>
             <Button
               background='#D548EC'
@@ -71,7 +92,7 @@ const ChainKnowledgeBaseComponent = () => {
               fontSize='18px'
               onClick={() => {}}
             >
-              Start Building
+              Get Notified about Testnet
             </Button>
           </IframeContent>
         </IFrameItem>
@@ -90,11 +111,15 @@ const ChainKnowledgeBaseComponentWrapper = styled.div`
   }
 `;
 
+const IFrameImage = styled(ItemH)`
+  aspect-ratio: 16/9;
+`;
+
 const IFrameItem = styled.div`
   padding: 16px;
   background: white;
   display: flex;
-  border-radius: 24px;
+  border-radius: 40px;
   flex-direction: column;
   max-width: 592px;
   justify-content: center;

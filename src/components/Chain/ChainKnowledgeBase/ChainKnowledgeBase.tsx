@@ -17,7 +17,7 @@ const ChainKnowledgeBase = () => {
       <ChainInnerWrapper>
         <ChainKnowledgeBaseComponent />
         <ChainKnowledgeBaseGrid />
-        <ChainBottomComponent />
+        <ChainBottomComponent showFaq={true} />
       </ChainInnerWrapper>
     </ChainWrapper>
   );
