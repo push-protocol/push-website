@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[25020],{249129:e=>{e.exports=JSON.parse('{"slug":"future-ready","image":"","title":"Future Ready","subtitle":"Built for tomorrow, Push Chain supports innovative solutions.","linkText":"Discover More","url":"https://test.com"}')}}]);

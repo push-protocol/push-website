@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[60661],{312579:e=>{e.exports=JSON.parse('{"slug":"secure-and-fast","image":"","title":"Benchmark of Push Chain","subtitle":"Experience the fastest and most secure blockchain transactions.","url":"https://test.com"}')}}]);
