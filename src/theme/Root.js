@@ -11,10 +11,7 @@ import Footer from '@site/src/segments/Footer';
 import ServerStyle from '@site/src/theme/ServerStyle';
 import CookieComponent from '../components/CookieComponent';
 import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
-import {
-  Notification,
-  useRewardsNotification,
-} from '../hooks/useRewardsNotification';
+import { Notification } from '../hooks/useRewardsNotification';
 import { useChainNotification } from '../hooks/useChainNotification';
 
 // Initialize Internalization
@@ -50,7 +47,6 @@ export default function Root({ children }) {
   const shouldRenderFooter = excludePaths.every((path) =>
     excludeDefaultConfigAt(path)
   );
-  useRewardsNotification();
   useChainNotification();
 
   // return superimposed class names if conditions are met

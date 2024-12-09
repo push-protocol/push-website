@@ -4,12 +4,12 @@
 import React, { useEffect, useState, FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import { toast, Toaster } from 'sonner';
-import { useLocation } from 'react-router-dom';
 import { BiX } from 'react-icons/bi';
-import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 
 // Internal Components
-import { Button, Image } from '../../src/css/SharedStyling';
+import { Button } from '../../src/css/SharedStyling';
+import { PushLogoSVG } from '../components/reusables/pushlogo';
+import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 
 type NotificationProps = {
   image?: ReactNode;
@@ -33,29 +33,12 @@ type NotificationProps = {
 export const useChainNotification = () => {
   const [hasMounted, setHasMounted] = useState(false);
 
-  const location = useLocation();
-  const baseURL = useSiteBaseUrl();
-  const pathname = baseURL + '/chain';
-
-  const isChainPage = location.pathname?.startsWith(pathname);
-
   const showNotification = () => {
     const toastId = toast.custom(
       () => (
         <NotificationItem
           title='Vote for Push Devnet'
-          description='Governance proposal is live! Vote today to make Push Chain a reality'
-          image={
-            <Image
-              src={
-                require(
-                  `@site/static/assets/website/illustrations/rewardspoint.png`
-                ).default
-              }
-              srcSet={`${require(`@site/static/assets/website/illustrations/rewardspoint@2x.png`).default} 2x, ${require(`@site/static/assets/website/illustrations/rewardspoint@3x.png`).default} 3x`}
-              alt='Image showing BRB Chat is powered by Push Chat'
-            />
-          }
+          description='Governance proposal is live! Vote today to power up Push Chain'
           position='bottom-left'
           onClick={() => {
             localStorage.setItem('chainNotificationShown', 'true');
@@ -81,7 +64,7 @@ export const useChainNotification = () => {
       const notificationAlreadyShown =
         localStorage.getItem('chainNotificationShown') === 'true';
 
-      if (!notificationAlreadyShown && isChainPage && !hasMounted) {
+      if (!notificationAlreadyShown && !hasMounted) {
         showNotification();
         setHasMounted(true);
       } else {
@@ -89,7 +72,7 @@ export const useChainNotification = () => {
         setHasMounted(false);
       }
     }
-  }, [isChainPage]);
+  }, []);
 };
 
 export const Notification = () => {
@@ -120,13 +103,11 @@ const NotificationItem: FC<NotificationProps> = ({
         <BiX size={20} color='#FFF' />
       </CloseButton>
       <TextContainer>
-        <Image
-          src={
-            require(`@site/static/assets/website/chain/VideoCamera.png`).default
-          }
-          srcSet={`${require(`@site/static/assets/website/chain/VideoCamera@2x.png`).default} 2x, ${require(`@site/static/assets/website/chain/VideoCamera@3x.png`).default} 3x`}
-          alt={`Chain Video Camera`}
-        />
+        <PushLogoBlackContainer>
+          <PushLogoSVG />
+
+          <ChainLogoDark style={{ margin: '0px 0px 0px 8px' }} />
+        </PushLogoBlackContainer>
         <NotificationTitle>{title}</NotificationTitle>
         <Button
           background='transparent'
@@ -219,4 +200,12 @@ const CloseButton = styled.div`
   position: absolute;
   right: 8px;
   top: 8px;
+`;
+
+const PushLogoBlackContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 `;
