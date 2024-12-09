@@ -42,6 +42,7 @@
   --ifm-modal-border-input: 1px solid rgba(186, 196, 214, 0.4);
   --ifm-blog-avatar-border: 1px solid #e6e7ec;
   --ifm-color-in-progress: #e79cff;
+  --ifm-color-pivot: #db82f8;
   --ifm-color-scheduled: #9b9fb1;
   --ifm-color-moved-to: #575d73;
   --ifm-color-new-indicator: #ff8282;
@@ -86,6 +87,7 @@
   --ifm-modal-border-input: none;
   --ifm-blog-avatar-border: none;
   --ifm-color-in-progress: #e79cff;
+  --ifm-color-pivot: #db82f8;
   --ifm-color-scheduled: #9b9fb1;
   --ifm-color-moved-to: #575d73;
   --ifm-color-new-indicator: #ff8282;
@@ -872,7 +874,7 @@ li {
 /* ------------------ */
 .PushBlog
   .img_node_modules-\@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module,
-.PushBlog img, 
+.PushBlog img,
 .blog-section img {
   border-radius: 32px;
 }
@@ -949,6 +951,12 @@ em del sup:before {
 em del strong sup:before {
   content: 'Moved';
   background: var(--ifm-color-moved-to);
+  color: var(--ifm-color-primary-inverse);
+}
+
+em del strong i sup:before {
+  content: 'Pivot';
+  background: var(--ifm-color-pivot);
   color: var(--ifm-color-primary-inverse);
 }
 
