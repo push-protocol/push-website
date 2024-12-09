@@ -28,7 +28,7 @@ export type signupType = {
 
 export const ChainEmailSignup = (props: signupType) => {
   const [isLoading, apiResponse, emailError, onEmailSubmit] =
-    useEmailValidationAndSend();
+    useEmailValidationAndSend(true);
 
   return (
     <Box>
@@ -61,12 +61,12 @@ export const ChainEmailSignup = (props: signupType) => {
       </Wrapper>
 
       {apiResponse && (
-        <ResponseSpan className='msg' color='green'>
+        <ResponseSpan className='msg' color='#000'>
           {apiResponse}
         </ResponseSpan>
       )}
       {!apiResponse && emailError && (
-        <ResponseSpan className='msg' color='#D98AEC'>
+        <ResponseSpan className='msg' color='#000'>
           {emailError}
         </ResponseSpan>
       )}

@@ -53,7 +53,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
               </Button>
             </Link>
           </HeaderContainer>
-          <FeatureContainer>
+          <FeatureContainer id='technology'>
             <FeatureSubContainer>
               <FinalityContainer>
                 <ImageHolder

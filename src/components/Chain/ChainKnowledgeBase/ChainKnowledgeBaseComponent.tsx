@@ -5,13 +5,16 @@ import styled from 'styled-components';
 
 import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
+import useModal from '../hooks/useModal';
 
 import { Button, H2, H3, ItemH, ItemV } from '../../../css/SharedStyling';
 import { ChainKnowledgeBaseHeaderConfig } from '../config/ChainKnowledgeBaseConfig';
 import ImageHolder from '../../../../src/components/ImageHolder';
+import ChainElevateModal from '../ChainElevateModal';
 
 const ChainKnowledgeBaseComponent = () => {
   const isMobile = useMediaQuery(device.mobileL);
+  const { isOpen, open, close } = useModal();
 
   return (
     <ChainKnowledgeBaseComponentWrapper>
@@ -90,13 +93,16 @@ const ChainKnowledgeBaseComponent = () => {
               fontFamily='N27'
               fontWeight='500'
               fontSize='18px'
-              onClick={() => {}}
+              onClick={open}
             >
               Get Notified about Testnet
             </Button>
           </IframeContent>
         </IFrameItem>
       </ItemH>
+
+      {/* modal */}
+      <ChainElevateModal isOpen={isOpen} onClose={close} />
     </ChainKnowledgeBaseComponentWrapper>
   );
 };

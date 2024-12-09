@@ -21,13 +21,14 @@ type ChainBottomComponentProps = {
 
 const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
   const isMobile = useMediaQuery(device.mobileL);
+  const isTablet = useMediaQuery(device.tablet);
 
   return (
     <ChainBottomComponentWrapper showFaq={showFaq}>
       {/* faq section */}
       {showFaq && (
         <ItemH
-          flexDirection={isMobile && 'column'}
+          flexDirection={isTablet && 'column'}
           alignItems='flex-start'
           justifyContent='space-between'
           gap={!isMobile && '70px'}
@@ -41,8 +42,8 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
               color='#000'
               fontSize={isMobile ? '36px' : '48px'}
               fontFamily='N27'
-              textAlign={isMobile && 'center'}
-              margin={isMobile && '0 auto'}
+              textAlign={isTablet && 'center'}
+              margin={isTablet && '0 auto'}
               fontWeight='500'
               lineHeight='120%'
             >
@@ -54,7 +55,7 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
               target='_blank'
               title='Discord'
               fontSize='16px'
-              margin={isMobile ? '24px auto 0 auto' : '24px 0 0 0'}
+              margin={isTablet ? '24px auto 0 auto' : '24px 0 0 0'}
               background='#5865F2'
               color='#FFF'
               fontFamily='N27'
@@ -224,9 +225,9 @@ const InputSection = styled.div`
 `;
 
 const ChainCanvasItem = styled.div`
-  height: 200px;
+  height: 230px;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     height: 300px;
   }
 `;

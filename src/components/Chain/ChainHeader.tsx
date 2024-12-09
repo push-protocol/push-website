@@ -7,11 +7,14 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLocation } from '@docusaurus/router';
 import { useHistory } from 'react-router-dom';
+import { AiOutlineClose } from 'react-icons/ai';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 import GLOBALS, { device, structure } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
 import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import useModal from './hooks/useModal';
 
 import {
   Button,
@@ -24,8 +27,7 @@ import {
 import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
 import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
 import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
-import { AiOutlineClose } from 'react-icons/ai';
-import { GiHamburgerMenu } from 'react-icons/gi';
+import ChainElevateModal from './ChainElevateModal';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -38,6 +40,8 @@ const ChainHeader: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
   const [scrollDirection] = useScrollDirection(isMobileMenuOpen);
+  const { isOpen, open, close } = useModal();
+
   const baseURL = useSiteBaseUrl() || '';
 
   const toggleMobileMenu = () => {
@@ -62,16 +66,18 @@ const ChainHeader: FC = () => {
 
   const handleRedirect = (item) => {
     if (item?.url) {
-      history.push(baseURL + item?.url);
+      const targetUrl = `${baseURL + item?.url}`;
+      history.push(targetUrl);
+
+      gsap.to(window, {
+        duration: 0.75,
+        scrollTo: { y: `#${item?.id}` },
+      });
       setActiveItem(item?.id);
     } else {
       handleSectionNavigation(item);
     }
     if (showMobileMenu) toggleMobileMenu();
-  };
-
-  const openLink = (link: string) => {
-    window.open(link, '_blank');
   };
 
   const openHomePage = () => {
@@ -176,10 +182,7 @@ const ChainHeader: FC = () => {
                   fontWeight='500'
                   fontSize='18px'
                   flex={isMobileMenuOpen && '1'}
-                  onClick={() => {
-                    if (isMobileMenuOpen) toggleMobileMenu();
-                    openLink('https://twitter.com/pushprotocol');
-                  }}
+                  onClick={open}
                 >
                   Get Notified
                 </Button>
@@ -188,6 +191,9 @@ const ChainHeader: FC = () => {
           </NavList>
         </HeaderContent>
       </Section>
+
+      {/* modal */}
+      <ChainElevateModal isOpen={isOpen} onClose={close} />
     </StyledHeader>
   );
 };

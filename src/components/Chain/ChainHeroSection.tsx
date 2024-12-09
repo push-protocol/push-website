@@ -4,17 +4,25 @@ import React, { FC } from 'react';
 
 import styled, { keyframes } from 'styled-components';
 import { TbArrowUpRight } from 'react-icons/tb';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { device } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
+import useModal from './hooks/useModal';
 
 import { A, Button, H2, H3, ItemH, ItemV } from '../../css/SharedStyling';
 import ChainAlertBar from './ChainAlertBar';
+import ChainElevateModal from './ChainElevateModal';
 import ImageHolder from '../../../src/components/ImageHolder';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 const ChainHeroSection: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.laptop);
+  const { isOpen, open, close } = useModal();
 
   const HeroGrid = [
     {
@@ -30,6 +38,13 @@ const ChainHeroSection: FC = () => {
       label: 'Supported Chains',
     },
   ];
+
+  const scrollTo = (id) => {
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: { y: `#${id}` },
+    });
+  };
 
   return (
     <ChainHeroSectionWrapper>
@@ -51,6 +66,7 @@ const ChainHeroSection: FC = () => {
           fontWeight='500'
           fontSize='18px'
           width={isMobile && '100%'}
+          onClick={open}
         >
           Get Notified about Testnet
         </Button>
@@ -61,10 +77,13 @@ const ChainHeroSection: FC = () => {
           fontSize='18px'
           color='#000'
           width={isMobile && '100%'}
+          onClick={() => scrollTo('technology')}
         >
           Explore Push Chain
         </Button>
       </HeroButtons>
+
+      <ChainElevateModal isOpen={isOpen} onClose={close} />
 
       <ItemV padding='48px 0'>
         <ImageHolder
@@ -130,7 +149,7 @@ const ChainHeroSection: FC = () => {
           network.
           <ItemH
             alignItems='flex-start'
-            justifyContent='flex-start'
+            justifyContent={!isTablet && 'flex-start'}
             gap='40px'
             margin={isMobile ? '24px auto 12px auto' : '29px 0 12px 0'}
           >
@@ -390,7 +409,9 @@ const TextLink = styled(A)`
 
   &:hover {
     text-decoration: none !important;
-    .anchorSVGlink {
+    .anchorSVGlink {import useModal from './hooks/useModal';
+import ChainElevateModal from './ChainElevateModal';
+
       color: #d548ec;
     }
   }
