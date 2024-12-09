@@ -56,7 +56,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           <FeatureContainer id='technology'>
             <FeatureSubContainer>
               <FinalityContainer>
-                <ImageHolder
+                <Image
                   src={
                     require(
                       `@site/static/assets/website/chain/instant-finality.webp`
@@ -75,7 +75,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
               <FeatureContainerSegregator>
                 <OnboardingContainer>
-                  <ImageHolder
+                  <Image
                     src={
                       require(
                         `@site/static/assets/website/chain/seamless-instant.webp`
@@ -116,6 +116,18 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
                   <StorageAndScalableContainerMobile>
                     <TxFeeContainerMobile>
+                      <Image
+                        src={
+                          require(
+                            `@site/static/assets/website/chain/cheap-storage.webp`
+                          ).default
+                        }
+                        srcSet={`${require(`@site/static/assets/website/chain/cheap-storage@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/cheap-storage@3x.webp`).default} 3x`}
+                        alt={'alt'}
+                        title={'title'}
+                        width='auto'
+                      />
+
                       <FeatureTextSubHeading style={{ color: 'white' }}>
                         Cheap
                         <br />
@@ -125,6 +137,17 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                     </TxFeeContainerMobile>
 
                     <ScalableContainerMobile>
+                      <Image
+                        src={
+                          require(
+                            `@site/static/assets/website/chain/infinitely-scalable.webp`
+                          ).default
+                        }
+                        srcSet={`${require(`@site/static/assets/website/chain/infinitely-scalable@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/infinitely-scalable@3x.webp`).default} 3x`}
+                        alt={'alt'}
+                        title={'title'}
+                        width='auto'
+                      />
                       <FeatureTextSubHeading>
                         Infinitely
                         <br />
@@ -157,7 +180,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
             <FeatureSubContainer>
               <KnowledgeBaseContainer>
                 <ItemH alignItems='flex-start' justifyContent='space-between'>
-                  <ImageHolder
+                  <Image
                     src={
                       require(
                         `@site/static/assets/website/chain/explore-knowledgebase.webp`
@@ -184,11 +207,11 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                     <br />
                     Knowledge Base
                   </FeatureTextHeading>
-                  <FeatureTextDescription>
+                  <span>
                     Learn why Push Chain stands out as
                     <br />
                     the foremost consumer chain in web3
-                  </FeatureTextDescription>
+                  </span>
                 </KnowledgeBaseTextContainer>
               </KnowledgeBaseContainer>
 
@@ -352,7 +375,7 @@ const FeatureSubContainer = styled.div`
   }
 `;
 
-const FeatureTextHeading = styled.span`
+const FeatureTextHeading = styled.h2`
   color: #fff;
   font-family: N27;
   font-size: 52px;
@@ -360,6 +383,7 @@ const FeatureTextHeading = styled.span`
   font-weight: 400;
   line-height: 100%; /* 52px */
   letter-spacing: -1.04px;
+  margin: 0;
 
   display: inline;
   white-space: nowrap;
@@ -394,20 +418,6 @@ const FeatureTextSubHeading = styled.span`
   }
 `;
 
-const FeatureTextDescription = styled.span`
-  color: #000;
-  font-family: N27;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 125%; /* 30px */
-  letter-spacing: -0.48px;
-
-  @media ${device.tablet} {
-    font-size: 14px;
-  }
-`;
-
 const FinalityContainer = styled.div`
   display: flex;
   width: 50%;
@@ -420,6 +430,7 @@ const FinalityContainer = styled.div`
   flex-shrink: 0;
   border-radius: 48px;
   border: 2px solid #fff;
+  position: relative;
 
   @media (max-width: 1248px) {
     width: calc(50% - 8px);
@@ -427,8 +438,17 @@ const FinalityContainer = styled.div`
 
   @media ${device.tablet} {
     width: 100%;
-    height: 292px;
+    height: fit-content;
     padding: 24px;
+    overflow: hidden;
+    border-radius: 16px;
+
+    img {
+      display: block;
+      width: auto;
+      height: 200px;
+      object-fit: contain;
+    }
   }
 `;
 
@@ -472,10 +492,20 @@ const TxFeeContainer = styled.div`
   background: #4b75ff;
 
   @media ${device.tablet} {
-    height: 246px;
     display: none;
+    border-radius: 16px;
+    height: 275px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: auto;
+      height: 150px;
+      object-fit: contain;
+    }
   }
 `;
+
 const TxFeeContainerMobile = styled(TxFeeContainer)`
   display: none;
 
@@ -483,6 +513,7 @@ const TxFeeContainerMobile = styled(TxFeeContainer)`
     display: flex;
   }
 `;
+
 const OnboardingContainer = styled.div`
   display: flex;
   width: 100%;
@@ -497,8 +528,17 @@ const OnboardingContainer = styled.div`
 
   @media ${device.tablet} {
     width: 100%;
-    height: 219px;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 16px;
     padding: 24px;
+
+    img {
+      display: block;
+      width: auto;
+      height: 200px;
+      object-fit: contain;
+    }
   }
 `;
 const AnyChainContainer = styled.div`
@@ -516,8 +556,16 @@ const AnyChainContainer = styled.div`
 
   @media ${device.tablet} {
     width: 100%;
-    height: 216px;
+    height: 246px;
+    overflow: hidden;
+    border-radius: 16px;
     padding: 24px;
+
+    img {
+      display: block;
+      width: auto;
+      object-fit: contain;
+    }
   }
 `;
 
@@ -544,7 +592,16 @@ const ScalableContainerMobile = styled(ScalableContainer)`
   @media ${device.tablet} {
     display: flex;
     width: 47%;
-    height: 246px;
+    border-radius: 16px;
+    height: 275px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: auto;
+      height: 150px;
+      object-fit: contain;
+    }
   }
 `;
 
@@ -561,10 +618,54 @@ const KnowledgeBaseContainer = styled.div`
   border-radius: 48px;
   background: #e492ff;
 
+  img {
+    display: block;
+    width: auto;
+    height: 200px;
+    object-fit: contain;
+  }
+
+  span {
+    color: #000;
+    font-family: N27;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%; /* 30px */
+    letter-spacing: -0.48px;
+
+    @media ${device.tablet} {
+      font-size: 14px;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: #fff !important;
+
+    span {
+      color: #fff !important;
+    }
+
+    h2 {
+      color: #fff !important;
+    }
+  }
+
   @media ${device.tablet} {
     width: 100%;
-    height: 244px;
+    height: fit-content;
+    overflow: hidden;
+    border-radius: 16px;
     padding: 24px;
+    gap: 30px;
+
+    img {
+      display: block;
+      width: 80%;
+      height: auto;
+      object-fit: contain;
+    }
   }
 `;
 

@@ -29,9 +29,9 @@ export const ChainKnowledgeBaseHeaderConfig = {
 
 export const knowledgeBaseArticleContent = [
   {
-    slug: 'Why Push Chain?',
+    slug: 'why-push-chain',
     image: '',
-    title: 'Why Push?',
+    title: 'Why Push Chain?',
     subtitle:
       'Push Chain is a shared state blockchain allowing all chains to come together and enable consumer apps that works from any chain.',
     content: `
