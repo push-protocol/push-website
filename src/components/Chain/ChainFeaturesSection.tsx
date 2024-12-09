@@ -14,6 +14,17 @@ import ImageHolder from '../../../src/components/ImageHolder';
 export type ChainFeaturesSectionProps = {};
 
 const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
+  const ImageItem = ({ link }) => {
+    return (
+      <Image
+        src={require(`@site/static/assets/website/chain/${link}.webp`).default}
+        srcSet={`${require(`@site/static/assets/website/chain/${link}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/${link}@3x.webp`).default} 3x`}
+        alt={'alt'}
+        title={'title'}
+        width='auto'
+      />
+    );
+  };
   return (
     <ChainFeaturesContainer>
       <DividerImg
@@ -56,16 +67,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           <FeatureContainer id='technology'>
             <FeatureSubContainer>
               <FinalityContainer>
-                <Image
-                  src={
-                    require(
-                      `@site/static/assets/website/chain/instant-finality.webp`
-                    ).default
-                  }
-                  srcSet={`${require(`@site/static/assets/website/chain/instant-finality@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/instant-finality@3x.webp`).default} 3x`}
-                  alt={'alt'}
-                  title={'title'}
-                />
+                <ImageItem link={'instant-finality'} />
 
                 <FeatureTextHeading>
                   Instant
@@ -75,16 +77,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
               <FeatureContainerSegregator>
                 <OnboardingContainer>
-                  <Image
-                    src={
-                      require(
-                        `@site/static/assets/website/chain/seamless-instant.webp`
-                      ).default
-                    }
-                    srcSet={`${require(`@site/static/assets/website/chain/seamless-instant@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/seamless-instant@3x.webp`).default} 3x`}
-                    alt={'alt'}
-                    title={'title'}
-                  />
+                  <ImageItem link={'seamless-instant'} />
 
                   <FeatureTextSubHeading>
                     Seamless, Instant
@@ -95,17 +88,8 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
                 <FeatureContainerSecondSegregator>
                   <TxFeeContainer>
-                    <Image
-                      src={
-                        require(
-                          `@site/static/assets/website/chain/cheap-storage.webp`
-                        ).default
-                      }
-                      srcSet={`${require(`@site/static/assets/website/chain/cheap-storage@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/cheap-storage@3x.webp`).default} 3x`}
-                      alt={'alt'}
-                      title={'title'}
-                      width='auto'
-                    />
+                    <ImageItem link={'cheap-storage'} />
+
                     <FeatureTextSubHeading style={{ color: 'white' }}>
                       Cheap
                       <br />
@@ -116,17 +100,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
                   <StorageAndScalableContainerMobile>
                     <TxFeeContainerMobile>
-                      <Image
-                        src={
-                          require(
-                            `@site/static/assets/website/chain/cheap-storage.webp`
-                          ).default
-                        }
-                        srcSet={`${require(`@site/static/assets/website/chain/cheap-storage@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/cheap-storage@3x.webp`).default} 3x`}
-                        alt={'alt'}
-                        title={'title'}
-                        width='auto'
-                      />
+                      <ImageItem link={'cheap-storage'} />
 
                       <FeatureTextSubHeading style={{ color: 'white' }}>
                         Cheap
@@ -137,17 +111,8 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                     </TxFeeContainerMobile>
 
                     <ScalableContainerMobile>
-                      <Image
-                        src={
-                          require(
-                            `@site/static/assets/website/chain/infinitely-scalable.webp`
-                          ).default
-                        }
-                        srcSet={`${require(`@site/static/assets/website/chain/infinitely-scalable@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/infinitely-scalable@3x.webp`).default} 3x`}
-                        alt={'alt'}
-                        title={'title'}
-                        width='auto'
-                      />
+                      <ImageItem link={'infinitely-scalable'} />
+
                       <FeatureTextSubHeading>
                         Infinitely
                         <br />
@@ -157,16 +122,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   </StorageAndScalableContainerMobile>
 
                   <AnyChainContainer>
-                    <ImageHolder
-                      src={
-                        require(
-                          `@site/static/assets/website/chain/any-chain.webp`
-                        ).default
-                      }
-                      srcSet={`${require(`@site/static/assets/website/chain/any-chain@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/any-chain@3x.webp`).default} 3x`}
-                      alt={'alt'}
-                      title={'title'}
-                    />
+                    <ImageItem link={'any-chain'} />
 
                     <FeatureTextSubHeading style={{ color: '#000' }}>
                       Any Chain
@@ -180,16 +136,8 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
             <FeatureSubContainer>
               <KnowledgeBaseContainer>
                 <ItemH alignItems='flex-start' justifyContent='space-between'>
-                  <Image
-                    src={
-                      require(
-                        `@site/static/assets/website/chain/explore-knowledgebase.webp`
-                      ).default
-                    }
-                    srcSet={`${require(`@site/static/assets/website/chain/explore-knowledgebase@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/explore-knowledgebase@3x.webp`).default} 3x`}
-                    alt={'alt'}
-                    title={'title'}
-                  />
+                  <ImageItem link={'explore-knowledgebase'} />
+
                   <KnowledgeBaseIcon
                     size={56}
                     style={{ alignSelf: 'flex-start' }}
