@@ -1,4 +1,10 @@
 /* eslint-disable no-irregular-whitespace */
+
+// Knowledge Base Header Configuration:
+// This edits the Header, description oon /chain/knowledge
+// FOr the header image, if you want to use an image, use the image field.
+// If you want to use a youtube link or video, attach the embed link url in the video field
+
 export const ChainKnowledgeBaseHeaderConfig = {
   title: 'Introducing Push Chain',
   description: `Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk
@@ -7,11 +13,19 @@ export const ChainKnowledgeBaseHeaderConfig = {
   Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk handango.`,
   // video: {
   //   src: 'https://www.youtube.com/embed/lhiwW3SfoZE',
-  //   title: 'Afrobeats & Amapiano Mix 2024 | DJames Live in Toronto',
+  //   title: 'title',
   // },
   image: `knowledge-frame`,
   learnMore: 'Hey! Want to learn more about Push Chain?',
 };
+
+// Knowledge Base Content Configuration:
+// - Add a new object with the following fields:
+//   - `slug`: URL identifier for the knowledge base item.
+//   - `image`, `title`, `subtitle`: Metadata for the item.
+//   - `content`: Use HTML or Markdown to create the article (similar to the blog section).
+//   - `url`: For external links, provide the full URL instead of using `content`.
+//NOTE: , cause we use a plugin to get this to work, you have to restart your local server to see the code changes after editing a blog article(TODO: add hot-reload functionality)
 
 export const knowledgeBaseArticleContent = [
   {
@@ -20,7 +34,6 @@ export const knowledgeBaseArticleContent = [
     title: 'Why Push?',
     subtitle:
       'Push Chain is a shared state blockchain allowing all chains to come together and enable consumer apps that works from any chain.',
-    linkText: 'Learn More',
     content: `
 # Page 1
 ## [Page 1](https://test.com)
@@ -37,7 +50,6 @@ This is **Page 1** content written in MDX.
     title: 'Evolution of Push',
     subtitle:
       'Push Chain powers dApps and decentralized messaging, connecting blockchains seamlessly',
-    linkText: 'Explore More',
     content: `
 
 ![Cover Image of Push Protocol Monthly Updates - October](/assets/previews/brbpreview.png)
@@ -170,7 +182,6 @@ Let’s keep pushing! 🌍🚀`,
     image: '',
     title: 'Benchmark of Push Chain',
     subtitle: 'Experience the fastest and most secure blockchain transactions.',
-    linkText: 'Read More',
     url: 'https://test.com',
   },
   {
@@ -179,7 +190,6 @@ Let’s keep pushing! 🌍🚀`,
     title: 'Node Randomization',
     subtitle:
       'Push Chain connects with multiple networks, ensuring smooth operability.',
-    linkText: 'See How',
     url: 'https://test.com',
   },
   {
@@ -187,7 +197,6 @@ Let’s keep pushing! 🌍🚀`,
     image: '',
     title: 'Is Push Another L1?',
     subtitle: 'Built for tomorrow, Push Chain supports innovative solutions.',
-    linkText: 'Discover More',
     url: 'https://test.com',
   },
 ];
