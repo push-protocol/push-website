@@ -9,8 +9,6 @@ import Layout from '@theme/Layout';
 // Internal Component
 import Chain from '../../components/Chain/Chain';
 
-// Import Assets
-
 // Internal Configs
 import { PageMeta } from '@site/src/config/pageMeta';
 
@@ -23,12 +21,9 @@ function PushChain() {
     >
       <Head>
         {/* <!-- Update Facebook Meta Tags --> */}
-        {/* <meta property='og:url' content='https://push.org/brb' />
+        <meta property='og:url' content='https://push.org/chain' />
         <meta property='og:type' content='website' />
-        <meta
-          property='og:title'
-          content='Push | BRB (Billions Reasons to Build)'
-        />
+        <meta property='og:title' content='Push | Chain' />
         <meta
           name='og:description'
           content='Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!'
@@ -36,18 +31,15 @@ function PushChain() {
         <meta
           property='og:image'
           content={useBaseUrl(
-            require('/static/assets/previews/brbpreview.png').default,
+            require('/static/assets/previews/chainpreview.webp').default,
             { absolute: true }
           )}
-        /> */}
+        />
 
         {/* <!-- Update Twitter Meta Tags --> */}
-        {/* <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site' content='@pushprotocol' />
-        <meta
-          name='twitter:title'
-          content='Push | BRB (Billions Reasons to Build)'
-        />
+        <meta name='twitter:title' content='Push | Chain' />
         <meta
           name='twitter:description'
           content='Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!'
@@ -55,10 +47,10 @@ function PushChain() {
         <meta
           name='twitter:image'
           content={useBaseUrl(
-            require('/static/assets/previews/brbpreview.png').default,
+            require('/static/assets/previews/chainpreview.webp').default,
             { absolute: true }
           )}
-        /> */}
+        />
 
         <script type='application/ld+json'>
           {JSON.stringify({
