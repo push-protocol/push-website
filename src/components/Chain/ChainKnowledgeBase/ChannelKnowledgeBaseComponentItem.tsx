@@ -17,11 +17,14 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
   const baseURL = useSiteBaseUrl() || '';
 
   const openLink = (item) => {
-    if (item?.url) {
-      window.open(item?.url, '_blank');
+    if (item?.url.startsWith('https://')) {
+      window.open(item.url, '_blank');
+    } else if (item?.url.startsWith('/')) {
+      const internalUrl = `${baseURL}${item.url}`;
+      window.open(internalUrl, '_blank');
     } else {
       // Open internal route in a new tab
-      const internalUrl = `${baseURL}/chain/knowledge/${item?.slug}`;
+      const internalUrl = `${baseURL}/chain/knowledge/${item?.slug};`;
       window.open(internalUrl, '_blank');
     }
   };
