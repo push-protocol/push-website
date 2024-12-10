@@ -58,23 +58,26 @@ export const PageMeta = {
       'BRB Bootcamp is the go-to place to learn every aspect of the web3 ecosystem from fundamentals to shipping your first project',
   },
   CHAIN: {
-    pageTitle: 'Push Chain',
-    pageDescription: 'Push Chain',
+    pageTitle: 'Push Chain | Any Chain. Any User. Any App',
+    pageDescription:
+      'Push Chain is a shared state blockchain for shared app experience. Capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability.',
   },
   KNOWLEDGE: {
-    pageTitle: 'Push KnowledgeBase',
-    pageDescription: 'Push KnowledgeBase',
+    pageTitle: 'Push Chain | Knowledge Base',
+    pageDescription:
+      'Discover everything for tutorials to code base to what makes Push Chain tick at the knowledge hub.',
   },
   ARTICLE: {
-    pageTitle: 'Push KnowledgeBase',
-    pageDescription: 'Push KnowledgeBase',
+    pageTitle: 'Push Chain | Knowledge Base',
+    pageDescription:
+      'Discover everything for tutorials to code base to what makes Push Chain tick at the knowledge hub.',
   },
   ECOSYSTEM: {
     pageTitle: 'Push Ecosystem',
     pageDescription: 'Push Ecosystem',
   },
   TEMPLATE: {
-    pageTitle: 'Push Ecosystem',
-    pageDescription: 'Push Ecosystem',
+    pageTitle: 'Push Template',
+    pageDescription: 'Push Template',
   },
 };

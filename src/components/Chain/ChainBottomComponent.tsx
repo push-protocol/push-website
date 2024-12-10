@@ -110,8 +110,8 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
             lineHeight='120%'
             letterSpacing='-0.48px'
           >
-            Subscribe to be among the first to get whitelisted & get timely
-            updates
+            To get exclusive updates and be the first to try universal app
+            experiences
           </Span>
         </ItemH>
 

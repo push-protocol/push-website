@@ -3,7 +3,7 @@
 // React + Web3 Essentials
 import React from 'react';
 import Head from '@docusaurus/Head';
-// import useBaseUrl from '@docusaurus/useBaseUrl';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 
 // Internal Component
@@ -23,10 +23,13 @@ function PushChain() {
         {/* <!-- Update Facebook Meta Tags --> */}
         <meta property='og:url' content='https://push.org/chain' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content='Push | Chain' />
+        <meta
+          property='og:title'
+          content='Push Chain | Any Chain. Any User. Any App'
+        />
         <meta
           name='og:description'
-          content='Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!'
+          content='Push Chain is a shared state blockchain for shared app experience. Capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability.'
         />
         <meta
           property='og:image'
@@ -39,10 +42,13 @@ function PushChain() {
         {/* <!-- Update Twitter Meta Tags --> */}
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site' content='@pushprotocol' />
-        <meta name='twitter:title' content='Push | Chain' />
+        <meta
+          name='twitter:title'
+          content='Push Chain | Any Chain. Any User. Any App'
+        />
         <meta
           name='twitter:description'
-          content='Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!'
+          content='Push Chain is a shared state blockchain for shared app experience. Capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability.'
         />
         <meta
           name='twitter:image'

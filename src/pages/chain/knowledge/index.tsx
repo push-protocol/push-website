@@ -3,13 +3,11 @@
 // React + Web3 Essentials
 import React from 'react';
 import Head from '@docusaurus/Head';
-// import useBaseUrl from '@docusaurus/useBaseUrl';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 
 // Internal Component
 import ChainKnowledgeBase from '../../../components/Chain/ChainKnowledgeBase/ChainKnowledgeBase';
-
-// Import Assets
 
 // Internal Configs
 import { PageMeta } from '@site/src/config/pageMeta';
@@ -23,42 +21,36 @@ function PushChainKnowledgeBase() {
     >
       <Head>
         {/* <!-- Update Facebook Meta Tags --> */}
-        {/* <meta property='og:url' content='https://push.org/brb' />
+        <meta property='og:url' content='https://push.org/chain/knowledge' />
         <meta property='og:type' content='website' />
-        <meta
-          property='og:title'
-          content='Push | BRB (Billions Reasons to Build)'
-        />
+        <meta property='og:title' content='Push Chain | Knowledge Base' />
         <meta
           name='og:description'
-          content='Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!'
+          content='Discover everything for tutorials to code base to what makes Push Chain tick at the knowledge hub.'
         />
         <meta
           property='og:image'
           content={useBaseUrl(
-            require('/static/assets/previews/brbpreview.png').default,
+            require('/static/assets/previews/chainpreview.webp').default,
             { absolute: true }
           )}
-        /> */}
+        />
 
         {/* <!-- Update Twitter Meta Tags --> */}
-        {/* <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site' content='@pushprotocol' />
-        <meta
-          name='twitter:title'
-          content='Push | BRB (Billions Reasons to Build)'
-        />
+        <meta name='twitter:title' content='Push Chain | Knowledge Base' />
         <meta
           name='twitter:description'
-          content='Join us in an epic tech showdown across 18 Indian cities, where brilliant minds collaborate to tackle a major challenge. Compete for a chance to claim over $50,000 USD in prizes!'
+          content='Discover everything for tutorials to code base to what makes Push Chain tick at the knowledge hub.'
         />
         <meta
           name='twitter:image'
           content={useBaseUrl(
-            require('/static/assets/previews/brbpreview.png').default,
+            require('/static/assets/previews/chainpreview.webp').default,
             { absolute: true }
           )}
-        /> */}
+        />
 
         <script type='application/ld+json'>
           {JSON.stringify({
