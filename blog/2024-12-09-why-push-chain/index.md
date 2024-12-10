@@ -5,14 +5,14 @@ authors: [push]
 image: './cover-image.webp'
 description: 'Why PUSH Chain?'
 text: 'Push Protocol recently announced its governance proposal of launching Push Chain.
-Push Protocol envisions the creation of Push Chain which enables a shared state L1 chain designed to support truly scalable consumer applications and universal applications.
-This article explains why Push Chain is needed and why it matters.'
+Push Protocol envisions the creation of Push Chain which enables a shared state L1 chain designed to support truly scalable consumer applications and universal applications.This article explains why Push Chain is needed and why it matters.'
 tags: [Push Chain, Shared App Experience, Any Chain Tx, Universal Smart Contracts, Shared State Blockchain, Consumer Tx, Parallel Validators, Dynamic Sharding]
 ---
 
+![Cover Image of Why Push Chain](./cover-image.webp)
+
 <!--truncate-->
 
-![Cover Image of Why Push Chain](./cover-image.webp)
 
 # Article Draft
 

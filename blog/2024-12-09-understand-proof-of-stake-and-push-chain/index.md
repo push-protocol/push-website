@@ -8,9 +8,10 @@ text: 'In a globally distributed computing environment, achieving collective agr
 tags: [Push Chain, Proof of Stake, Push Chain Nodes]
 ---
 
+![Cover Image of Understand Proof of Stake (POS) and Push Chain PoS](./cover-image.webp)
+
 <!--truncate-->
 
-![Cover Image of Understand Proof of Stake (POS) and Push Chain PoS](./cover-image.webp)
 
 In a globally distributed computing environment, achieving collective agreement on the true state of the system has always been a complex challenge.
 
