@@ -63,22 +63,34 @@ const ChainHeader: FC = () => {
       });
     }
   };
-
   const handleRedirect = (item) => {
     setActiveItem(item?.id);
 
-    if (item?.url) {
-      const targetUrl = `${baseURL + item?.url}`;
+    // Handle external links
+    if (item?.url.startsWith('https://')) {
+      setIsMobileMenuOpen(false);
+      window.open(item?.url, '_blank');
+      return;
+    }
+
+    // Handle internal links
+    if (item?.url.startsWith('/')) {
+      const targetUrl = `${baseURL}${item?.url}`;
+
+      // Navigate to the new URL
       history.push(targetUrl);
       setIsMobileMenuOpen(false);
 
+      // Scroll to the section
       gsap.to(window, {
         duration: 0.75,
         scrollTo: { y: `#${item?.id}` },
       });
-    } else {
-      handleSectionNavigation(item);
+      return;
     }
+
+    // Handle in-page navigation
+    handleSectionNavigation(item);
   };
 
   const openHomePage = () => {
@@ -89,7 +101,11 @@ const ChainHeader: FC = () => {
   const navItems = [
     { id: 'technology', label: 'Technology', url: '/chain' },
     { id: 'knowledge', label: 'Knowledge Base', url: '/chain/knowledge' },
-    { id: 'roadmap', label: 'Whitepaper' },
+    {
+      id: 'whitepaper',
+      label: 'Whitepaper',
+      url: 'https://docs.google.com/document/d/13aXKhE6-GBV6aHF5mX9T_XNTGYOeiHIOXNqM6k1FUnQ/edit?usp=sharing',
+    },
     { id: 'faq', label: 'F.A.Q', url: '/chain' },
   ];
 
@@ -160,7 +176,6 @@ const ChainHeader: FC = () => {
                       className='navLink'
                       alignSelf={isTablet && 'flex-start'}
                       justifyContent={isTablet && 'flex-start'}
-                      onClick={() => handleRedirect(item)}
                     >
                       <NavigationMenuHeader isActive={activeItem === item.id}>
                         <Span fontSize='18px'>{item.label}</Span>

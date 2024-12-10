@@ -3,10 +3,12 @@
 // @ts-nocheck
 import React, { FC } from 'react';
 import Link from '@docusaurus/Link';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { TbArrowUpRight } from 'react-icons/tb';
 
 import { device } from '../../../src/config/globals';
+import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
 
 import { Button, ItemH, Image } from '@site/src/css/SharedStyling';
 import ImageHolder from '../../../src/components/ImageHolder';
@@ -14,6 +16,13 @@ import ImageHolder from '../../../src/components/ImageHolder';
 export type ChainFeaturesSectionProps = {};
 
 const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
+  const history = useHistory();
+  const baseURL = useSiteBaseUrl() || '';
+
+  const handleClick = () => {
+    const targetUrl = `${baseURL}/chain/knowledge`;
+    history.push(targetUrl);
+  };
   const ImageItem = ({ link }) => {
     return (
       <Image
@@ -49,7 +58,10 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
               <br />
               experiences for users on any chain
             </Header>
-            <Link href='#'>
+            <Link
+              href='https://docs.google.com/document/d/13aXKhE6-GBV6aHF5mX9T_XNTGYOeiHIOXNqM6k1FUnQ/edit?usp=sharing'
+              target='_blank'
+            >
               <Button
                 background='#D548EC'
                 borderRadius='16px'
@@ -134,7 +146,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
             </FeatureSubContainer>
 
             <FeatureSubContainer>
-              <KnowledgeBaseContainer>
+              <KnowledgeBaseContainer onClick={handleClick}>
                 <ItemH alignItems='flex-start' justifyContent='space-between'>
                   <ImageItem link={'explore-knowledgebase'} />
 

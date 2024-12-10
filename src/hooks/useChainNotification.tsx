@@ -42,7 +42,7 @@ export const useChainNotification = () => {
           position='bottom-left'
           onClick={() => {
             localStorage.setItem('chainNotificationShown', 'true');
-            window.open('https://governance.push.org', '_blank');
+            window.open('https://gov.push.org', '_blank');
             toast.dismiss(toastId);
           }}
           onClose={() => {

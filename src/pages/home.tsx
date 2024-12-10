@@ -78,7 +78,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
   };
 
   const noNavbar = false;
-  const alertLink = `https://governance.push.org/`;
+  const alertLink = `https://gov.push.org/`;
 
   return (
     <Layout

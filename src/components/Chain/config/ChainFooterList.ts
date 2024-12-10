@@ -2,19 +2,16 @@ export const ChainFooterList = {
   resources: [
     {
       title: 'Knowledge Base',
-      subtitle: 'header.resources.link1.subtitle',
-      href: '/chain/knowledgebase',
+      href: '/chain/knowledge',
       target: '_blank',
     },
     {
       title: 'Whitepaper',
-      subtitle: 'header.resources.link2.subtitle',
-      href: '/faq',
-      target: '_self',
+      href: 'https://docs.google.com/document/d/13aXKhE6-GBV6aHF5mX9T_XNTGYOeiHIOXNqM6k1FUnQ/edit?usp=sharing',
+      target: '_blank',
     },
     {
       title: 'Brand Kit',
-      subtitle: 'header.resources.link3.subtitle',
       href: 'https://pushprotocol.notion.site/Push-Chain-Brand-Kit-and-Guidelines-d374a18fc78e4635a437ccad49350dac?pvs=4',
       target: '_blank',
     },
@@ -22,7 +19,7 @@ export const ChainFooterList = {
   community: [
     {
       title: 'Governance',
-      href: 'https://governance.push.org',
+      href: 'https://gov.push.org',
       target: '_blank',
     },
   ],
