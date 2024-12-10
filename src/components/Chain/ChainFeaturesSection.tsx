@@ -10,6 +10,7 @@ import { TbArrowUpRight } from 'react-icons/tb';
 import { device } from '../../../src/config/globals';
 import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
 
+import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
 import { Button, ItemH, Image } from '@site/src/css/SharedStyling';
 import ImageHolder from '../../../src/components/ImageHolder';
 
@@ -36,20 +37,8 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
   };
   return (
     <ChainFeaturesContainer>
-      <DividerImg
-        src={
-          require(`@site/static/assets/website/chain/chainFeaturesDivider.png`)
-            .default
-        }
-        srcSet={`${
-          require('/static/assets/website/chain/chainFeaturesDivider@2x.png')
-            .default
-        } 2x, ${require('/static/assets/website/chain/chainFeaturesDivider@3x.png').default} 3x`}
-        alt={`Chain Features Divider`}
-        width='-webkit-fill-available'
-        height='auto'
-        loading='lazy'
-      />
+      <DividerImg />
+
       <ChainFeaturesWrapper>
         <InnerContainer>
           <HeaderContainer>
@@ -219,17 +208,8 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           </HeaderTwoContainer>
         </InnerContainer>
       </ChainFeaturesWrapper>
-      <DividerImg
-        srcSet={`${
-          require('/static/assets/website/chain/chainFeaturesDivider@2x.png')
-            .default
-        } 2x, ${require('/static/assets/website/chain/chainFeaturesDivider@3x.png').default} 3x`}
-        alt={`Chain Features Divider`}
-        width='-webkit-fill-available'
-        height='auto'
-        loading='lazy'
-        className='inverted-divider'
-      />
+
+      <DividerImg inverted />
     </ChainFeaturesContainer>
   );
 };
@@ -253,14 +233,21 @@ const ChainFeaturesContainer = styled.div`
   }
 `;
 
-const DividerImg = styled.img`
-  width: -webkit-fill-available;
+const DividerImg = styled.div`
+  width: 100%;
+  height: 200px;
+  background-image: url(${ImageBg});
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: ${({ inverted }) => (inverted ? 'top' : 'bottom')};
+  transform: ${({ inverted }) => (inverted ? 'rotate(180deg)' : 'none')};
 `;
 
 const ChainFeaturesWrapper = styled.div`
   background-color: #000000;
   margin: -4px 0px;
   width: -webkit-fill-available;
+  padding: 150px 0;
 `;
 
 const InnerContainer = styled.div`
