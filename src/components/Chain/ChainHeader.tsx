@@ -65,19 +65,20 @@ const ChainHeader: FC = () => {
   };
 
   const handleRedirect = (item) => {
+    setActiveItem(item?.id);
+
     if (item?.url) {
       const targetUrl = `${baseURL + item?.url}`;
       history.push(targetUrl);
+      setIsMobileMenuOpen(false);
 
       gsap.to(window, {
         duration: 0.75,
         scrollTo: { y: `#${item?.id}` },
       });
-      setActiveItem(item?.id);
     } else {
       handleSectionNavigation(item);
     }
-    if (showMobileMenu) toggleMobileMenu();
   };
 
   const openHomePage = () => {

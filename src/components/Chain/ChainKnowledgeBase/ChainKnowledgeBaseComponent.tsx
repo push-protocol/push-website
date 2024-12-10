@@ -141,4 +141,13 @@ const IframeContent = styled.div`
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 16px;
+
+  @media ${device.mobileL} {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
 `;

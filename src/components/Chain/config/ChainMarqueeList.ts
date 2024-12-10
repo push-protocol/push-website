@@ -9,13 +9,19 @@ export const ChainMarqueeList = [
     title: 'shared state',
   },
   {
-    title: 'interoperable L1 universal apps',
+    title: 'shared app experience',
   },
   {
     title: 'instant finality',
   },
   {
+    title: 'any chain',
+  },
+  {
     title: 'dynamic sharding',
+  },
+  {
+    title: 'any app',
   },
 ];
 
@@ -25,6 +31,9 @@ export const ChainMarqueeSecondList = [
   },
   {
     title: 'omni chain poker',
+  },
+  {
+    title: 'any chain email',
   },
   {
     title: 'social apps',
@@ -37,5 +46,8 @@ export const ChainMarqueeSecondList = [
   },
   {
     title: 'crypto dca',
+  },
+  {
+    title: 'chain agnostic ai agents',
   },
 ];

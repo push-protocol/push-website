@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
+import { ChainEcosystemAppsList } from '../config/ChainEcosystemList';
 
 import { Button, H3, ItemH, ItemV, Span } from '../../../css/SharedStyling';
 import ChainEcosystemAppItem from './ChainEcosystemAppItem';
@@ -15,67 +16,8 @@ const ChainEcosystemContent = () => {
   // State to manage the number of items to display
   const [visibleApps, setVisibleApps] = useState(6);
 
-  const chainEcosystemApps = [
-    {
-      title: 'Poker App',
-      subtitle:
-        'Push Chain is a shared state blockchain allowing all chains to come together and enable consumer apps that works from any chain.',
-      url: 'https://test.com',
-      tags: ['gaming', 'defi'],
-    },
-    {
-      title: 'Push Mail',
-      subtitle:
-        'Push Chain is a shared state blockchain allowing all chains to come together and enable consumer apps that works from any chain.',
-      url: '',
-      tags: ['productivity'],
-    },
-    {
-      title: 'Poker App',
-      subtitle:
-        'Push Chain is a shared state blockchain allowing all chains to come together and enable consumer apps that works from any chain.',
-      url: '',
-      tags: ['gaming', 'defi'],
-    },
-    {
-      title: 'Push Chat',
-      subtitle:
-        'Push Chain is a shared state blockchain allowing all chains to come together and enable consumer apps that works from any chain.',
-      url: '',
-      tags: ['social', 'messaging'],
-    },
-    {
-      title: 'Push Notifications',
-      subtitle:
-        'Push Chain is a shared state blockchain allowing all chains to come together and enable consumer apps that works from any chain.',
-      url: '',
-      tags: ['productivity'],
-    },
-    {
-      title: 'Poker App',
-      subtitle:
-        'Push Chain is a shared state blockchain allowing all chains to come together and enable consumer apps that works from any chain.',
-      url: '',
-      tags: ['gaming', 'defi'],
-    },
-    {
-      title: 'New App',
-      subtitle:
-        'Push Chain is a shared state blockchain allowing all chains to come together and enable consumer apps that works from any chain.',
-      url: '',
-      tags: ['social'],
-    },
-    {
-      title: 'Another App',
-      subtitle:
-        'Push Chain is a shared state blockchain allowing all chains to come together and enable consumer apps that works from any chain.',
-      url: '',
-      tags: ['messaging'],
-    },
-  ];
-
   const handleLoadMore = () => {
-    setVisibleApps(chainEcosystemApps.length); // Show all items
+    setVisibleApps(ChainEcosystemAppsList?.length); // Show all items
   };
 
   return (
@@ -106,12 +48,12 @@ const ChainEcosystemContent = () => {
       </ItemV>
 
       <ChainEcoSystemApps>
-        {chainEcosystemApps.slice(0, visibleApps).map((item, index) => (
+        {ChainEcosystemAppsList?.slice(0, visibleApps).map((item, index) => (
           <ChainEcosystemAppItem key={index} item={item} index={index} />
         ))}
       </ChainEcoSystemApps>
 
-      {visibleApps < chainEcosystemApps.length && (
+      {visibleApps < ChainEcosystemAppsList?.length && (
         <ItemH>
           <Button
             background='transparent'

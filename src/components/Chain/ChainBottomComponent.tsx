@@ -24,7 +24,7 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
   const isTablet = useMediaQuery(device.tablet);
 
   return (
-    <ChainBottomComponentWrapper showFaq={showFaq}>
+    <ChainBottomComponentWrapper showFaq={showFaq} id='faq'>
       {/* faq section */}
       {showFaq && (
         <ItemH
@@ -32,7 +32,6 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
           alignItems='flex-start'
           justifyContent='space-between'
           gap={!isMobile && '70px'}
-          id='faq'
         >
           <ItemV
             alignItems='flex-start'

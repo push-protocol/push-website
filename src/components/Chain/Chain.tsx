@@ -28,6 +28,7 @@ import EmailIcon from '@site/static/assets/website/chain/email.svg';
 import SpadeIcon from '@site/static/assets/website/chain/spades.svg';
 import BellIcon from '@site/static/assets/website/chain/bellicon.svg';
 import DCAIcon from '@site/static/assets/website/chain/dcaicon.svg';
+import TechnologyIcon from '@site/static/assets/website/chain/technology.svg';
 
 const Chain = () => (
   <ChainWrapper>
@@ -55,7 +56,15 @@ const Chain = () => (
       chainMarqueeList={ChainMarqueeSecondList}
       backgroundColor='#3EF09D'
       rotateDegree={5} // Custom rotation degree
-      icons={[SpadeIcon, SmileIcon, EmailIcon, NoteIcon, BellIcon, DCAIcon]}
+      icons={[
+        SpadeIcon,
+        SmileIcon,
+        EmailIcon,
+        NoteIcon,
+        BellIcon,
+        DCAIcon,
+        TechnologyIcon,
+      ]}
     />
 
     <MainContent>
