@@ -27,12 +27,12 @@ const TAGS = [
 
 export default function ChainCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const engineRef = useRef<Matter.Engine>();
-  const renderRef = useRef<Matter.Render>();
+  const engineRef = useRef<Matter.Engine>(null);
+  const renderRef = useRef<Matter.Render>(null);
   const [ref, inView] = useInView({ threshold: 1.0 });
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
-  const isLaptop = useMediaQuery(device.laptopM);
+  const isLaptop = useMediaQuery(device.laptopL);
   const [displayedTags, setDisplayedTags] = useState<string[]>(TAGS);
 
   const updateTagsForScreenSize = () => {
@@ -117,8 +117,8 @@ export default function ChainCanvas() {
       ),
     ];
 
-    const paddingX = isTablet ? 15 : isLaptop ? 15 : 32; // Horizontal padding
-    const paddingY = isTablet ? 12 : isLaptop ? 16 : 22; // Vertical padding
+    const paddingX = isTablet ? 15 : isLaptop ? 15 : 28; // Horizontal padding
+    const paddingY = isTablet ? 12 : isLaptop ? 16 : 21; // Vertical padding
     const fontSize = isTablet ? 35 : isLaptop ? 37 : 50; // Font size
 
     // Create tags
@@ -134,7 +134,7 @@ export default function ChainCanvas() {
       const y = Math.random() * (window.innerHeight - height) + height / 2;
 
       return Bodies.rectangle(x, y, width, height, {
-        chamfer: { radius: isTablet ? 26 : isLaptop ? 28 : 42 },
+        chamfer: { radius: isTablet ? 26 : isLaptop ? 28 : 39 },
         render: {
           fillStyle: COLORS[index % COLORS.length],
           strokeStyle: '#000',
