@@ -74,7 +74,9 @@ function PushChain() {
         </script>
       </Head>
 
-      <Chain />
+      <div style={{ background: '#e8eff8' }}>
+        <Chain />
+      </div>
     </Layout>
   );
 }

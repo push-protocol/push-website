@@ -59,10 +59,30 @@ export const knowledgeBaseArticleContent = [
   },
   {
     slug: 'is-push-chain-another-layer-1',
-    // image: '',
     title: 'Is Push Another L1?',
     subtitle:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget aliquet lectus. In at porttitor lacus. Morbi fermentum egestas porta.',
     url: '/blog/is-push-chain-another-layer-1',
+  },
+  {
+    slug: 'consumer-apps-that-can-be-built-on-push-chain',
+    title: 'Consumer Apps 🫶🏽 Push Chain?',
+    subtitle:
+      'Blockchain technology has transformed the way we interact digitally, but its current ecosystem faces significant challenges in scalability, usability, and accessibility, particularly for consumer-focused applications. ',
+    url: '/blog/consumer-apps-that-can-be-built-on-push-chain/',
+  },
+  {
+    slug: 'faq-push-chain',
+    title: 'Push Chain’s Frequently Asked Questions',
+    subtitle:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget aliquet lectus. In at porttitor lacus. Morbi fermentum egestas porta.',
+    url: '/blog/faq-push-chain/',
+  },
+  {
+    slug: 'understand-proof-of-stake-and-push-chain',
+    title: 'Understand Proof of Stake (POS) and Push Chain PoS',
+    subtitle:
+      'In a globally distributed computing environment, achieving collective agreement on the true state of the system has always been a complex challenge.',
+    url: '/blog/understand-proof-of-stake-and-push-chain/',
   },
 ];
