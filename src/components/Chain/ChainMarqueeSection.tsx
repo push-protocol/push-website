@@ -43,9 +43,7 @@ const ChainMarqueeSection: FC<ChainMarqueeSectionProps> = ({
           const Icon = icons[index % icons.length]; // Modulo ensures it wraps around if there are more items than icons
           return (
             <MarqueeItem key={index}>
-              {/* <GridItem> */}
               <H2 fontFamily='N27'>{item.title}</H2>
-              {/* </GridItem> */}
               <Icon width={34} height={34} />
             </MarqueeItem>
           );
@@ -99,13 +97,5 @@ const MarqueeItem = styled.div`
     font-weight: 400;
     line-height: 100%;
     letter-spacing: -0.84px;
-  }
-
-  &:hover {
-    cursor: pointer;
-
-    h2 {
-      color: #fff; /* Change text color on hover */
-    }
   }
 `;

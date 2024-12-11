@@ -98,12 +98,18 @@ function ChainFooter() {
                     <Span fontWeight='500' fontSize='16px' lineHeight='142%'>
                       <Typewriter
                         options={{
-                          strings: ['Interoperable,'],
+                          strings: [
+                            'Interoperable,',
+                            'Any Chain,',
+                            'Omnichain,',
+                            'Shared Apps,',
+                          ],
                           autoStart: true,
                           loop: true,
                           delay: 50,
                           deleteSpeed: 75,
                           pauseFor: 1500,
+                          cursor: '',
                         }}
                       />
                       Universal Apps

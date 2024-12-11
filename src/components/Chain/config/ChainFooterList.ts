@@ -7,7 +7,7 @@ export const ChainFooterList = {
     },
     {
       title: 'Whitepaper',
-      href: 'https://docs.google.com/document/d/13aXKhE6-GBV6aHF5mX9T_XNTGYOeiHIOXNqM6k1FUnQ/edit?usp=sharing',
+      href: 'https://whitepaper.push.org/',
       target: '_blank',
     },
     {

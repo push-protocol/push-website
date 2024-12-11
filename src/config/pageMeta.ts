@@ -72,10 +72,6 @@ export const PageMeta = {
     pageDescription:
       'Discover everything for tutorials to code base to what makes Push Chain tick at the knowledge hub.',
   },
-  ECOSYSTEM: {
-    pageTitle: 'Push Ecosystem',
-    pageDescription: 'Push Ecosystem',
-  },
   TEMPLATE: {
     pageTitle: 'Push Template',
     pageDescription: 'Push Template',

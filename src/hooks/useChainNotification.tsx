@@ -37,7 +37,7 @@ export const useChainNotification = () => {
     const toastId = toast.custom(
       () => (
         <NotificationItem
-          title='Vote for Push Devnet'
+          title='Vote for Devnet'
           description='Governance proposal is live! Vote today to power up Push Chain'
           position='bottom-left'
           onClick={() => {
@@ -132,7 +132,7 @@ const NotificationContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  height: 368px;
+  height: 310px;
   width: 320px;
   cursor: pointer;
   box-sizing: border-box;
@@ -162,7 +162,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 24px;
   flex: 1;
   box-sizing: border-box;
@@ -178,6 +178,7 @@ const NotificationTitle = styled.span`
   font-weight: 500;
   line-height: 110%; /* 39.6px */
   letter-spacing: -0.72px;
+  width: 100%;
 `;
 
 const NotificationDescription = styled.span`

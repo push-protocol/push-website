@@ -6,7 +6,6 @@ import Link from '@docusaurus/Link';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { TbArrowUpRight } from 'react-icons/tb';
-import Typewriter from 'typewriter-effect';
 
 import { device } from '../../../src/config/globals';
 import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
@@ -25,13 +24,13 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
     const targetUrl = `${baseURL}/chain/knowledge`;
     history.push(targetUrl);
   };
-  const ImageItem = ({ link }) => {
+  const ImageItem = ({ link, title, alt }) => {
     return (
       <Image
         src={require(`@site/static/assets/website/chain/${link}.webp`).default}
         srcSet={`${require(`@site/static/assets/website/chain/${link}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/${link}@3x.webp`).default} 3x`}
-        alt={'alt'}
-        title={'title'}
+        alt={alt}
+        title={title}
         width='auto'
       />
     );
@@ -46,24 +45,9 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
             <Header>
               Craft seamless, consumer-focused
               <br />
-              experiences for users on{' '}
-              <InlineTypewriterText>
-                <Typewriter
-                  options={{
-                    strings: ['any chain'],
-                    autoStart: true,
-                    loop: true,
-                    delay: 50,
-                    deleteSpeed: 75,
-                    pauseFor: 1500,
-                  }}
-                />
-              </InlineTypewriterText>
+              experiences for users on any chain
             </Header>
-            <Link
-              href='https://docs.google.com/document/d/13aXKhE6-GBV6aHF5mX9T_XNTGYOeiHIOXNqM6k1FUnQ/edit?usp=sharing'
-              target='_blank'
-            >
+            <Link href='https://whitepaper.push.org/' target='_blank'>
               <Button
                 background='#D548EC'
                 borderRadius='16px'
@@ -81,7 +65,11 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           <FeatureContainer id='technology'>
             <FeatureSubContainer>
               <FinalityContainer>
-                <ImageItem link={'instant-finality'} />
+                <ImageItem
+                  link={'instant-finality'}
+                  title='Instant Finality'
+                  alt='Instant Finality'
+                />
 
                 <FeatureTextHeading>
                   Instant
@@ -91,7 +79,11 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
               <FeatureContainerSegregator>
                 <OnboardingContainer>
-                  <ImageItem link={'seamless-instant'} />
+                  <ImageItem
+                    link={'seamless-instant'}
+                    title='Seamless Instant'
+                    alt='Seamless Instant'
+                  />
 
                   <FeatureTextSubHeading>
                     Seamless, Instant
@@ -102,7 +94,11 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
                 <FeatureContainerSecondSegregator>
                   <TxFeeContainer>
-                    <ImageItem link={'cheap-storage'} />
+                    <ImageItem
+                      link={'cheap-storage'}
+                      title='Cheap Storage'
+                      alt='Cheap Storage'
+                    />
 
                     <FeatureTextSubHeading style={{ color: 'white' }}>
                       Cheap
@@ -114,7 +110,11 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
                   <StorageAndScalableContainerMobile>
                     <TxFeeContainerMobile>
-                      <ImageItem link={'cheap-storage'} />
+                      <ImageItem
+                        link={'cheap-storage'}
+                        title='Cheap Storage'
+                        alt='Cheap Storage'
+                      />
 
                       <FeatureTextSubHeading style={{ color: 'white' }}>
                         Cheap
@@ -125,7 +125,11 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                     </TxFeeContainerMobile>
 
                     <ScalableContainerMobile>
-                      <ImageItem link={'infinitely-scalable'} />
+                      <ImageItem
+                        link={'infinitely-scalable'}
+                        title='Infinitely Scalable'
+                        alt='Infinitely Scalable'
+                      />
 
                       <FeatureTextSubHeading>
                         Infinitely
@@ -136,7 +140,11 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   </StorageAndScalableContainerMobile>
 
                   <AnyChainContainer>
-                    <ImageItem link={'any-chain'} />
+                    <ImageItem
+                      link={'any-chain'}
+                      title='Any Chain'
+                      alt='Any Chain'
+                    />
 
                     <FeatureTextSubHeading style={{ color: '#000' }}>
                       Any Chain
@@ -150,7 +158,11 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
             <FeatureSubContainer>
               <KnowledgeBaseContainer onClick={handleClick}>
                 <ItemH alignItems='flex-start' justifyContent='space-between'>
-                  <ImageItem link={'explore-knowledgebase'} />
+                  <ImageItem
+                    link={'explore-knowledgebase'}
+                    title='Explore Knowledgebase'
+                    alt='Explore Knowledgebase'
+                  />
 
                   <KnowledgeBaseIcon
                     size={56}
@@ -178,17 +190,12 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
               </KnowledgeBaseContainer>
 
               <ScalableContainer>
-                <Image
-                  src={
-                    require(
-                      `@site/static/assets/website/chain/infinitely-scalable.webp`
-                    ).default
-                  }
-                  srcSet={`${require(`@site/static/assets/website/chain/infinitely-scalable@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/infinitely-scalable@3x.webp`).default} 3x`}
-                  alt={'alt'}
-                  title={'title'}
-                  width='auto'
+                <ImageItem
+                  link={'infinitely-scalable'}
+                  title='Infinitely Scalable'
+                  alt='Infinitely Scalable'
                 />
+
                 <FeatureTextSubHeading>
                   Infinitely
                   <br />
@@ -207,8 +214,8 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   .default
               }
               srcSet={`${require(`@site/static/assets/website/chain/one-chain@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/one-chain@3x.webp`).default} 3x`}
-              alt={'alt'}
-              title={'title'}
+              alt={'One chain'}
+              title={'One chain'}
             />
             <HeaderTwoSubheader>
               Push chain allows developers to finally create applications that
@@ -313,10 +320,6 @@ const Header = styled.span`
   @media ${device.tablet} {
     text-align: center;
   }
-`;
-
-const InlineTypewriterText = styled.span`
-  display: inline-block; /* Ensures the typewriter text stays on the same line */
 `;
 
 const FeatureContainer = styled.div`

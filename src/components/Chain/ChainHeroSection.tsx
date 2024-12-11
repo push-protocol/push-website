@@ -59,12 +59,19 @@ const ChainHeroSection: FC = () => {
         <TypewriterWrapper>
           <Typewriter
             options={{
-              strings: ['Universal'],
+              strings: [
+                'Universal',
+                'Interoperable',
+                'Any Chain',
+                'Omnichain',
+                'Shared Apps',
+              ],
               autoStart: true,
               loop: true,
               delay: 50,
               deleteSpeed: 75,
               pauseFor: 1500,
+              cursor: '',
             }}
           />
         </TypewriterWrapper>
@@ -107,8 +114,8 @@ const ChainHeroSection: FC = () => {
             require(`@site/static/assets/website/chain/chain-hero.webp`).default
           }
           srcSet={`${require(`@site/static/assets/website/chain/chain-hero@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/chain-hero@3x.webp`).default} 3x`}
-          alt={'alt'}
-          title={'title'}
+          alt={'Build Universal Apps'}
+          title={'Build Universal Apps'}
         />
       </ItemV>
       <SectionText>
@@ -268,7 +275,7 @@ const HeroText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   height: 100%;
   text-align: center;
   font-family: N27;

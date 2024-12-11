@@ -104,7 +104,7 @@ const ChainHeader: FC = () => {
     {
       id: 'whitepaper',
       label: 'Whitepaper',
-      url: 'https://docs.google.com/document/d/13aXKhE6-GBV6aHF5mX9T_XNTGYOeiHIOXNqM6k1FUnQ/edit?usp=sharing',
+      url: 'https://whitepaper.push.org/',
     },
     { id: 'faq', label: 'F.A.Q', url: '/chain' },
   ];

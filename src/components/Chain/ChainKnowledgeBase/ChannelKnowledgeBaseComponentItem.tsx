@@ -48,6 +48,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
           aspectRatio: '16/9',
         }}
       ></div>
+      {/* {item?.image && <Image src={require(`@site/${item?.image}`).default} />} */}
       <H3
         margin='24px 0 0 0'
         fontSize={isMobile ? '26px' : '32px'}

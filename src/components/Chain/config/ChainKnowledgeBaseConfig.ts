@@ -7,10 +7,7 @@
 
 export const ChainKnowledgeBaseHeaderConfig = {
   title: 'Introducing Push Chain',
-  description: `Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk
-  handango empressr orkut appjet, convore xobni eduvant babblely.
-  <br /><br />
-  Webtwo ipsum unigo. Elgg skype woopra fleck ifttt imvu, hipmunk handango.`,
+  description: `Push Chain is a shared state blockchain for shared app experience. Push Chain is capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability`,
   // video: {
   //   src: 'https://www.youtube.com/embed/lhiwW3SfoZE',
   //   title: 'title',
@@ -30,7 +27,7 @@ export const ChainKnowledgeBaseHeaderConfig = {
 export const knowledgeBaseArticleContent = [
   {
     slug: 'why-push-chain',
-    image: '',
+    image: 'blog/2024-12-09-why-push-chain/cover-image.webp',
     title: 'Why Push Chain?',
     subtitle:
       'Push Protocol recently announced its governance proposal of launching Push Chain. Push Protocol envisions the creation of Push Chain which enables a shared state L1 chain designed to support truly scalable consumer applications and universal applications.',
