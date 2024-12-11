@@ -14,7 +14,7 @@
             <guid>https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/consumer-apps-that-can-be-built-on-push-chain</guid>
             <pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Consumer Apps 🫶🏽 Push Chain - Innovations that can be built on Push Chain]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Consumer Apps 🫶🏽 Push Chain - Innovations that can be built on Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-f7366d37297ee65289d3e8c0d47e4f65.webp" width="1600" height="900" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Consumer Apps 🫶🏽 Push Chain - Innovations that can be built on Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-9a8c3febf53dee1ded45bb38afdcd8a8.webp" width="1600" height="900" class="img_ev3q"></p>
 <p>Blockchain technology has transformed the way we interact digitally, but its current ecosystem faces significant challenges in scalability, usability, and accessibility, particularly for consumer-focused applications. Push Chain emerges as a cutting-edge Proof-of-Stake blockchain, purpose-built to bridge fragmented web3 ecosystems and deliver hyper-scalable and user-friendly universal applications. In this article, we delve into the evolution of the Push Chain, its phased development roadmap, and the innovative applications it empowers.</p>
 <p><img loading="lazy" alt="First Image of Consumer Apps 🫶🏽 Push Chain - Innovations that can be built on Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image1-628d893fa9d908783f3959055d76cbc3.webp" width="768" height="403" class="img_ev3q"></p>
 <p>Push Protocol initially emerged to address a communication gap in web3. By introducing real-time notifications and decentralized chat, Push Protocol became the communication backbone for projects like Uniswap, Lens Protocol, and Snapshot. Over time, Push extended its mission to simplify user and developer experiences (UX and DevX) in web3.</p>
@@ -96,7 +96,7 @@
             <guid>https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/evolution-of-push-chain</guid>
             <pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[A brief history of Push and it’s evolution to chaining]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of A brief history of Push and it’s evolution to chaining" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-f7366d37297ee65289d3e8c0d47e4f65.webp" width="1600" height="900" class="img_ev3q"></p>]]></content:encoded>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of A brief history of Push and it’s evolution to chaining" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-aa6dad1374225da472a1f805834ae52f.webp" width="1600" height="900" class="img_ev3q"></p>]]></content:encoded>
             <category>Push Chain</category>
             <category>Shared App Experience</category>
             <category>Shared State Blockchain</category>
@@ -117,7 +117,7 @@
             <guid>https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/is-push-chain-another-layer-1</guid>
             <pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Is Push Chain Another L1?]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Is Push Chain Another L1?" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-f7366d37297ee65289d3e8c0d47e4f65.webp" width="1600" height="900" class="img_ev3q"></p>]]></content:encoded>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Is Push Chain Another L1?" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-c65e48013a7422b4d8c7bb468b531331.webp" width="1600" height="900" class="img_ev3q"></p>]]></content:encoded>
             <category>Push Chain</category>
             <category>Shared State Blockchain</category>
         </item>
@@ -127,7 +127,7 @@
             <guid>https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding</guid>
             <pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Benchmarking Push Chain Nodes : Scaling with Validator Nodes]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Benchmarking Push Chain Nodes : Scaling with Validator Nodes" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-f7366d37297ee65289d3e8c0d47e4f65.webp" width="1600" height="900" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Benchmarking Push Chain Nodes : Scaling with Validator Nodes" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-6113608a2ad3b73e9016d5eb7c399257.webp" width="1600" height="900" class="img_ev3q"></p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="introduction">Introduction<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h3>
 <p>The Push Chain Network, a Proof-of-Stake (PoS) blockchain designed for consumer-centric applications, offers an innovative approach to scalability and usability in the decentralized space. By leveraging features like dynamic sharding, parallel block execution, and true scale, Push Chain promises a seamless environment for universal applications. This blog explores the benchmarking results of Push Chain under varying node configurations, providing insights into how the network behaves and scales as the number of nodes increases.</p>
 <hr>
@@ -256,12 +256,12 @@
             <category>Dynamic Sharding</category>
         </item>
         <item>
-            <title><![CDATA[👋🏾 Randomized Node Selection of Push Chain]]></title>
+            <title><![CDATA[👋🏾 Randomized Parallel Validators of Push Chain]]></title>
             <link>https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/randomized-node-selection-push-chain</link>
             <guid>https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/randomized-node-selection-push-chain</guid>
             <pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[👋🏾 Randomized Node Selection of Push Chain]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of 👋🏾 Randomized Node Selection of Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-f7366d37297ee65289d3e8c0d47e4f65.webp" width="1600" height="900" class="img_ev3q"></p>
+            <description><![CDATA[👋🏾 Randomized Parallel Validators of Push Chain]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of 👋🏾 Randomized Parallel Validators of Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-c65e48013a7422b4d8c7bb468b531331.webp" width="1600" height="900" class="img_ev3q"></p>
 <p>One of the defining aspects of decentralized networks is their lack of a central authority to govern how they operate. Instead, these networks rely on a set of rules and systems to securely communicate and reach consensus on the overall state of the network.</p>
 <p>Achieving this is no small task. It involves many essential components that ensure the network remains secure and fair, and among the most critical of these is <strong>randomness</strong>.</p>
 <p>At its core, randomness is the absence of patterns or predictability in events. It's what makes a dice roll uncertain, ensures fairness in games, and strengthens the cryptographic algorithms that secure modern systems. In decentralized networks, randomness serves as a cornerstone of security and fairness, helping to prevent bias and manipulation.</p>
@@ -487,7 +487,7 @@
             <guid>https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain</guid>
             <pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Why PUSH Chain?]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-f7366d37297ee65289d3e8c0d47e4f65.webp" width="1600" height="900" class="img_ev3q"></p>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-cc026e92debc8378450504a05e2a3ff2.webp" width="1600" height="900" class="img_ev3q"></p>
 <p>Push Protocol recently announced its governance proposal of launching Push Chain.</p>
 <p>Push Protocol envisions the creation of Push Chain which enables a shared state L1 chain designed to support truly scalable consumer applications and universal applications.</p>
 <p>This article explains why Push Chain is needed and why it matters.</p>
