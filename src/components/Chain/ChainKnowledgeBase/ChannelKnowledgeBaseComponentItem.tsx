@@ -40,7 +40,15 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       onClick={() => openLink(item)}
     >
       {item?.image ? (
-        <Image src={require(`@site/${item?.image}`).default} />
+        <KnowledgeImage
+          src={
+            require(
+              `@site/static/assets/website/chain/knowledge/${item?.image}.webp`
+            ).default
+          }
+          alt={item?.title}
+          title={item?.title}
+        />
       ) : (
         <div
           style={{
@@ -54,7 +62,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       )}
       <H3
         margin='24px 0 0 0'
-        fontSize={isMobile ? '26px' : '32px'}
+        fontSize={isMobile ? '24px' : '28px'}
         fontWeight='500'
         fontFamily='N27'
         lineHeight={isMobile ? '100%' : '140%'}
@@ -68,7 +76,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
           fontSize={isMobile ? '16px' : '18px'}
           fontWeight='400'
           fontFamily='N27'
-          lineHeight={isMobile ? '100%' : '140%'}
+          lineHeight={isMobile ? '140%' : '140%'}
           letterSpacing='-0.64px'
           color='#757D8D'
         >
@@ -79,7 +87,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       <ItemH
         alignItems='center'
         justifyContent='space-between'
-        margin='84px 0 0 0'
+        margin='32px 0 0 0'
         cursor='pointer'
         flex='0'
       >
@@ -101,6 +109,12 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
 
 const Card = styled(ItemV)`
   cursor: pointer;
+`;
+
+const KnowledgeImage = styled(Image)`
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 24px;
 `;
 
 export default ChannelKnowledgeBaseComponentItem;

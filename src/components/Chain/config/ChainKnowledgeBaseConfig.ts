@@ -27,7 +27,7 @@ export const ChainKnowledgeBaseHeaderConfig = {
 export const knowledgeBaseArticleContent = [
   {
     slug: 'why-push-chain',
-    image: 'blog/2024-12-09-why-push-chain/cover-image.webp',
+    image: 'why-push-chain',
     title: 'Why Push Chain?',
     subtitle:
       'Push Protocol recently announced its governance proposal of launching Push Chain. Push Protocol envisions the creation of Push Chain which enables a shared state L1 chain designed to support truly scalable consumer applications and universal applications.',
@@ -35,7 +35,7 @@ export const knowledgeBaseArticleContent = [
   },
   {
     slug: 'evolution-of-push-chain',
-    image: '',
+    image: 'evolution-of-push-chain',
     title: 'Evolution of Push',
     subtitle:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget aliquet lectus. In at porttitor lacus. Morbi fermentum egestas porta.',
@@ -43,7 +43,7 @@ export const knowledgeBaseArticleContent = [
   },
   {
     slug: 'parallel-validators-and-dynamic-sharding',
-    image: '',
+    image: 'benchmarking-push-chain-nodes',
     title: 'Benchmark of Push Chain',
     subtitle:
       'The Push Chain Network, a Proof-of-Stake (PoS) blockchain designed for consumer-centric applications, offers an innovative approach to scalability and usability in the decentralized space.',
@@ -51,7 +51,7 @@ export const knowledgeBaseArticleContent = [
   },
   {
     slug: 'randomized-node-selection-push-chain',
-    image: '',
+    image: 'randomized-parallel',
     title: 'Node Randomization',
     subtitle:
       'One of the defining aspects of decentralized networks is their lack of a central authority to govern how they operate.',
@@ -59,7 +59,7 @@ export const knowledgeBaseArticleContent = [
   },
   {
     slug: 'is-push-chain-another-layer-1',
-    image: '',
+    // image: '',
     title: 'Is Push Another L1?',
     subtitle:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget aliquet lectus. In at porttitor lacus. Morbi fermentum egestas porta.',

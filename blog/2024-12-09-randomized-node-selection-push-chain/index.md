@@ -1,14 +1,14 @@
 ---
 slug: randomized-node-selection-push-chain
-title: '👋🏾 Randomized Node Selection of Push Chain'
+title: '👋🏾 Randomized Parallel Validators of Push Chain'
 authors: [push]
 image: './cover-image.webp'
-description: '👋🏾 Randomized Node Selection of Push Chain'
+description: '👋🏾 Randomized Parallel Validators of Push Chain'
 text: 'One of the defining aspects of decentralized networks is their lack of a central authority to govern how they operate. Instead, these networks rely on a set of rules and systems to securely communicate and reach consensus on the overall state of the network.'
 tags: [Push Chain, Push Chain Nodes, Parallel Validators]
 ---
 
-![Cover Image of 👋🏾 Randomized Node Selection of Push Chain](./cover-image.webp)
+![Cover Image of 👋🏾 Randomized Parallel Validators of Push Chain](./cover-image.webp)
 
 <!--truncate-->
 
