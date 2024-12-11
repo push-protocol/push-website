@@ -39,16 +39,19 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       justifyContent='space-between'
       onClick={() => openLink(item)}
     >
-      {/* <div
-        style={{
-          height: 'auto',
-          width: '100%',
-          backgroundColor: '#D9D9D9',
-          borderRadius: '24px',
-          aspectRatio: '16/9',
-        }}
-      ></div>  */}
-      {item?.image && <Image src={require(`@site/${item?.image}`).default} />}
+      {item?.image ? (
+        <Image src={require(`@site/${item?.image}`).default} />
+      ) : (
+        <div
+          style={{
+            height: 'auto',
+            width: '100%',
+            backgroundColor: '#D9D9D9',
+            borderRadius: '24px',
+            aspectRatio: '16/9',
+          }}
+        ></div>
+      )}
       <H3
         margin='24px 0 0 0'
         fontSize={isMobile ? '26px' : '32px'}

@@ -28,7 +28,7 @@ const ChainKnowledgeBaseComponent = () => {
             letterSpacing='-1.098px'
             textAlign='center'
           >
-            {ChainKnowledgeBaseHeaderConfig.title}
+            {ChainKnowledgeBaseHeaderConfig?.title}
           </H2>
 
           <H3
@@ -37,10 +37,9 @@ const ChainKnowledgeBaseComponent = () => {
             fontFamily='N27'
             lineHeight='140%'
             textAlign='center'
-            dangerouslySetInnerHTML={{
-              __html: ChainKnowledgeBaseHeaderConfig.description,
-            }}
-          />
+          >
+            {ChainKnowledgeBaseHeaderConfig?.description}
+          </H3>
         </ItemV>
 
         <IFrameItem>
