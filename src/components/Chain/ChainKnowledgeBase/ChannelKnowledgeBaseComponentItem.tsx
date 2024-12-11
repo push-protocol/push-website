@@ -9,7 +9,7 @@ import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import { useSiteBaseUrl } from '../../../utils/useSiteBaseUrl';
 
-import { H3, ItemH, ItemV, Span } from '../../../css/SharedStyling';
+import { H3, Image, ItemH, ItemV, Span } from '../../../css/SharedStyling';
 
 const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
   // for navigation
@@ -39,7 +39,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       justifyContent='space-between'
       onClick={() => openLink(item)}
     >
-      <div
+      {/* <div
         style={{
           height: 'auto',
           width: '100%',
@@ -47,8 +47,8 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
           borderRadius: '24px',
           aspectRatio: '16/9',
         }}
-      ></div>
-      {/* {item?.image && <Image src={require(`@site/${item?.image}`).default} />} */}
+      ></div>  */}
+      {item?.image && <Image src={require(`@site/${item?.image}`).default} />}
       <H3
         margin='24px 0 0 0'
         fontSize={isMobile ? '26px' : '32px'}
