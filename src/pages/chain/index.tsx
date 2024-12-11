@@ -34,7 +34,7 @@ function PushChain() {
         <meta
           property='og:image'
           content={useBaseUrl(
-            require('/static/assets/previews/chainpreview.webp').default,
+            require('/static/assets/previews/chainpreview.png').default,
             { absolute: true }
           )}
         />
@@ -53,7 +53,7 @@ function PushChain() {
         <meta
           name='twitter:image'
           content={useBaseUrl(
-            require('/static/assets/previews/chainpreview.webp').default,
+            require('/static/assets/previews/chainpreview.png').default,
             { absolute: true }
           )}
         />
