@@ -335,60 +335,65 @@
             <pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate>
             <description><![CDATA[Understand Proof of Stake (POS) and Push Chain PoS]]></description>
             <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Understand Proof of Stake (POS) and Push Chain PoS" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-f7366d37297ee65289d3e8c0d47e4f65.webp" width="1600" height="900" class="img_ev3q"></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="introduction">Introduction<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
 <p>In a globally distributed computing environment, achieving collective agreement on the true state of the system has always been a complex challenge.</p>
-<p>Fortunately, there are algorithms ( <em>specialized instructions</em> ) that assist in preserving this ‘single-truth-state’ while balancing network security, long-term sustainability, and economic incentives.</p>
-<p>Such algorithms in the web3 space, are popularly known as - Consensus Algorithms.</p>
-<p>This article is the only guide you will need to know about - What Proof oF Stake is, Its significance and how does it work.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="proof-of-stake---a-quick-overview">Proof Of Stake - A quick overview:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#proof-of-stake---a-quick-overview" class="hash-link" aria-label="Direct link to Proof Of Stake - A quick overview:" title="Direct link to Proof Of Stake - A quick overview:">​</a></h2>
-<p>Proof Of Stake is a consensus algorithm used to secure blockchain networks where block producers (validators) are chosen based on the number of tokens they're willing to "stake" or lock up as collateral.</p>
+<p>Fortunately, there are algorithms (<em>specialized instructions</em>) that assist in preserving this ‘single-truth-state’ while balancing network security, long-term sustainability, and economic incentives.</p>
+<p>Such algorithms in the web3 space, are popularly known as Consensus Algorithms.</p>
+<p>This article is the only guide you will need to know about - What Proof of Stake is, its significance and how does it work.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="proof-of-stake---a-quick-overview">Proof of Stake - A quick overview:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#proof-of-stake---a-quick-overview" class="hash-link" aria-label="Direct link to Proof of Stake - A quick overview:" title="Direct link to Proof of Stake - A quick overview:">​</a></h2>
+<p>Proof of Stake is a consensus algorithm used to secure blockchain networks where block producers (validators) are chosen based on the number of tokens they're willing to "stake" or lock up as collateral.</p>
 <p>Validators are incentivised to act honestly, since, any malicious behaviour would result in them losing their staked assets.</p>
-<p>[DIAGRAM]</p>
 <p><img loading="lazy" alt="First Image of Understand Proof of Stake (POS) and Push Chain PoS" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image1-e1c9d431f7518c55fbfe2c3aa7dea283.webp" width="2396" height="824" class="img_ev3q"></p>
-<p>Validators - Are Nodes responsible for securing the network by performing two key actions:</p>
+<p>Validators are nodes responsible for securing the network by performing two key actions:</p>
 <ul>
 <li>Proposing new blocks - containing transactions.</li>
 <li>Attestation - Examining and voting on the blocks proposed by other validators</li>
 </ul>
-<p>Now that we have a basic understanding about the PoS.</p>
-<p><strong>Lets go down the rabbit hole to know more about it.</strong></p>
+<p>Now that we have a basic understanding about the PoS, lets go down the rabbit hole to know more about it.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-do-we-need-pos">Why do we need PoS?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#why-do-we-need-pos" class="hash-link" aria-label="Direct link to Why do we need PoS?" title="Direct link to Why do we need PoS?">​</a></h2>
-<p>Each network is  based on some foundational philosophies.</p>
-<p>Bitcoin  popularly known for its PoW (Proof of Work) algorithm is based on the principal of -<strong>Earning the right to validate by demonstrating computational work.</strong></p>
-<p>Where as chains like Ethereum, Solana and Push Chain - are predominantly based on the philosophies of “<strong>Proving value to validate and earn incentives  at the risk of commitment and economic loss”</strong></p>
+<p>Each network is based on some foundational philosophies.</p>
+<p>Bitcoin popularly known for its PoW (Proof of Work) algorithm is based on the principal of earning the right to validate by demonstrating computational work.</p>
+<p>Chains like Ethereum, Solana and Push Chain are predominantly based on the philosophies of “Proving value to validate and earn incentives at the risk of commitment and economic loss”</p>
 <p>This proves your commitment towards the network by staking tokens to participate in network’s consensus with the risk of being penalized for jeopardizing the network’s security.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ease-of-entry">Ease of Entry:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#ease-of-entry" class="hash-link" aria-label="Direct link to Ease of Entry:" title="Direct link to Ease of Entry:">​</a></h3>
 <p>Staking makes it easier for individuals to participate in securing the network, promoting decentralization.</p>
 <p>An Ethereum validator node could be easily run on a normal laptop.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="energy-efficiency">Energy Efficiency:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#energy-efficiency" class="hash-link" aria-label="Direct link to Energy Efficiency:" title="Direct link to Energy Efficiency:">​</a></h3>
-<p>→ PoS networks are highly energy efficient in terms of cost of operations and compute consumption.</p>
-<p>→ PoS eliminates the energy-intensive mining computations of PoW, replacing them with a stake-based validator selection process that requires only basic network communication and transaction validation operations.</p>
+<ul>
+<li>
+<p>PoS networks are highly energy efficient in terms of cost of operations and compute consumption.</p>
+</li>
+<li>
+<p>PoS eliminates the energy-intensive mining computations of PoW, replacing them with a stake-based validator selection process that requires only basic network communication and transaction validation operations.</p>
+</li>
+</ul>
 <p><img loading="lazy" alt="Second Image of Understand Proof of Stake (POS) and Push Chain PoS" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image2-2b56c897259d738781e5f1fb68be0df5.webp" width="1150" height="606" class="img_ev3q"></p>
 <p><img loading="lazy" alt="Third Image of Understand Proof of Stake (POS) and Push Chain PoS" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image3-49ccdc1dd96fd6f73e515c8626772db6.webp" width="1838" height="1412" class="img_ev3q"></p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="stake-to-participate">Stake to participate:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#stake-to-participate" class="hash-link" aria-label="Direct link to Stake to participate:" title="Direct link to Stake to participate:">​</a></h3>
-<p>In PoS networks, <strong>influence is tied to economical commitment instead of computational power.</strong></p>
+<p>In PoS networks, influence is tied to economical commitment instead of computational power.</p>
 <p>Participants (validators) pledge their assets (stake) in exchange for the right to participate in the network’s consensus.</p>
-<p>Thus, creating an relationship that  equally benefit the interests of the validators as well as the collective network.</p>
+<p>Thus, creating a relationship that equally benefits the interests of the validators as well as the collective network.</p>
 <p><em>The equation only stands true until the validators stay true to their commitments.</em></p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="skin-in-the-game">Skin in the game:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#skin-in-the-game" class="hash-link" aria-label="Direct link to Skin in the game:" title="Direct link to Skin in the game:">​</a></h3>
 <p>The success of a PoS network hinges on the honesty of its validators.</p>
-<p>Validators are required to deposit (stake) the networks native currency in adequate quantities to participate  in the block creation.</p>
-<p>Validators risk losing their staked assets <em>(getting slashed</em> <em>)i</em>f they attempt to game the system for their personal gains by :</p>
+<p>Validators are required to deposit (stake) the networks native currency in adequate quantities to participate in the block creation.</p>
+<p>Validators risk losing their staked assets <em>(getting slashed</em> *) if they attempt to game the system for their personal gains by :</p>
 <ul>
 <li>Approving fraudulent transactions</li>
 <li>Censoring incoming transactions.</li>
-<li>Failiing to participate</li>
+<li>Failing to participate</li>
 <li>Sending conflicting attestations</li>
 <li>Proposing multiple blocks in a single slot (aka Equivocating)</li>
 </ul>
 <p>As the network grows, the cost to attack it increases proportionally.</p>
 <p>The amount of tokens slashed varies with every network.</p>
-<p>To know about slashing values for Push Chain - visit the Push Chain Governance Proposal [PROPOSAL LINK].</p>
+<p>To know about slashing values for Push Chain - visit the <a href="https://gov.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Governance Proposal</a>.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="scalability">Scalability:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#scalability" class="hash-link" aria-label="Direct link to Scalability:" title="Direct link to Scalability:">​</a></h3>
 <p>In PoS the block creation is a process of “<strong>probabilistic election</strong>” rather than “<strong>computation competition</strong>”.</p>
 <p>Since time taken to elect a validator is significantly less, block creation frequency is (arguably) much higher than PoW networks, significantly boosting transaction speeds and scalability.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="security-and-resilience">Security and Resilience:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#security-and-resilience" class="hash-link" aria-label="Direct link to Security and Resilience:" title="Direct link to Security and Resilience:">​</a></h3>
 <p>As highlighted earlier, in a PoS network, the cost to attack increases proportionally with the network’s growth.</p>
-<p>A 51% attack—where malicious actors gain control of 51% of staked coins to reverse transactions and manipulate block confirmations—becomes increasingly impractical and expensive as the network grows and the token prices rises (ideally).</p>
+<p>A 51% attack—where malicious actors gain control of 51% of staked coins to reverse transactions and manipulate block confirmations becomes increasingly impractical and expensive as the network grows and the token prices rises (ideally).</p>
 <p>Dominic Williams, Founder of ICP, outlines three critical elements of Sybil resistance in his paper</p>
 <p>‘<a href="https://docs.google.com/document/d/1eRTAe3szuIoZEloHvRMtZlrU7t2un4UVQ8LarpU3LNk/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Sybil-resistant Network Identities From Dedicated Hardware</a>’</p>
 <ul>
@@ -397,28 +402,28 @@
 <li><strong>Exit Penalty</strong>: The penalties for leaving or misbehaving</li>
 </ul>
 <p><img loading="lazy" alt="Fourth Image of Understand Proof of Stake (POS) and Push Chain PoS" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image4-d459feb3f4515572fcf2fdb1662ef77e.webp" width="2002" height="1338" class="img_ev3q"></p>
-<p>PoW chains like Bitcoin does not have an Exit Penalty mechanism - to punish the validators for deterring the integrity of network. But PoS chains, like Push Chain - cover all the bases, ensuring stricter sybil resistance.</p>
+<p>PoW chains like Bitcoin does not have an Exit Penalty mechanism to punish the validators for deterring the integrity of network. But PoS chains, like Push Chain cover all the bases, ensuring stricter sybil resistance.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-does-proof-of-stake-work">How does Proof of Stake work?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#how-does-proof-of-stake-work" class="hash-link" aria-label="Direct link to How does Proof of Stake work?" title="Direct link to How does Proof of Stake work?">​</a></h2>
 <p>The Proof of Stake (PoS) process operates in three key phases:</p>
 <ol>
 <li><strong>Validator Selection</strong></li>
-<li><strong>Block creation and validation</strong></li>
+<li><strong>Block Creation and Validation</strong></li>
 <li><strong>Finalization</strong></li>
 </ol>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="validator-selection"><strong>Validator Selection:</strong><a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#validator-selection" class="hash-link" aria-label="Direct link to validator-selection" title="Direct link to validator-selection">​</a></h3>
 <p><img loading="lazy" alt="Fifth Image of Understand Proof of Stake (POS) and Push Chain PoS" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image5-d24488a5c3075314c38e3ecbbcaaa89f.webp" width="2180" height="506" class="img_ev3q"></p>
-<p>Validator selection forms the backbone of PoS, where nodes participate by staking the network’s native currency into a deposit contract. The staked amount must meet or exceed a predetermined threshold or lowerbound (e.g., 32 ETH for Ethereum).</p>
+<p>Validator Selection forms the backbone of PoS, where nodes participate by staking the network’s native currency into a deposit contract. The staked amount must meet or exceed a predetermined threshold or lowerbound (e.g., 32 ETH for Ethereum).</p>
 <p>To propose a block, the probability of validators getting elected is directly proportional to the staked amount relative to the total coins staked across the network.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="block-creation"><strong>Block creation:</strong><a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#block-creation" class="hash-link" aria-label="Direct link to block-creation" title="Direct link to block-creation">​</a></h3>
 <p>Timekeeping is critical in PoS, structured through two key units: <strong>Slot</strong> and <strong>Epoch.</strong></p>
 <ul>
-<li>A slot - is a fixed duration of time that varies network to network ( 1 slot = 12 sec in Ethereum and 400ms in Solana).</li>
+<li>A slot - is a fixed duration of time that varies network to network (1 slot = 12 sec in Ethereum and 400ms in Solana).</li>
 <li><strong>Epoch</strong>: A cycle comprising multiple slots (e.g., 32 slots in Ethereum)</li>
 </ul>
 <p>Slots are sequential and occur one after other in a linear manner.</p>
-<p>(<em>But not in case of Push Chain - More on this later)</em></p>
-<p>Each slot is assigned to a randomly chosen validator, selected through  Specialized algorithms like RandDAO in Ethereum and VDF - Verifiable Delay Function in Solana.</p>
-<p>Within their slot duration, validators responsible for tasks:</p>
+<p>(<em>But not in case of Push Chain - More on this later</em>)</p>
+<p>Each slot is assigned to a randomly chosen validator, selected through specialized algorithms like RandDAO in Ethereum and VDF - Verifiable Delay Function in Solana.</p>
+<p>Within their slot duration, validators are responsible for tasks:</p>
 <ul>
 <li>Package transactions into a block</li>
 <li>Verify their validity</li>
@@ -432,42 +437,33 @@
 <p><img loading="lazy" alt="Seventh Image of Understand Proof of Stake (POS) and Push Chain PoS" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image7-9088a84eb87b61c54a7b46adf9154fe6.webp" width="1542" height="424" class="img_ev3q"></p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="edge-cases">Edge cases:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#edge-cases" class="hash-link" aria-label="Direct link to Edge cases:" title="Direct link to Edge cases:">​</a></h3>
 <ul>
-<li>
-<p><strong>Missed Blocks -</strong></p>
-<ul>
-<li>Instances when a validator fails to propose a block within their slot, it results in a missed block.</li>
-</ul>
-</li>
-<li>
-<p><strong>Orphaned Blocks -</strong></p>
-<p>These occur when a block is rejected by the validating committee or during a chain fork.</p>
-<p>Orphaned blocks represent alternative versions of chain historythat are not followed  by majority of network.</p>
-</li>
+<li><strong>Missed Blocks</strong> - Instances when a validator fails to propose a block within their slot, it results in a missed block.</li>
+<li><strong>Orphaned Blocks</strong> - These occur when a block is rejected by the validating committee or during a chain fork. Orphaned blocks represent alternative versions of chain historythat are not followed by majority of network.</li>
 </ul>
 <p>In summary, this is how the entire process would look like:</p>
 <p><img loading="lazy" alt="Eigth Image of Understand Proof of Stake (POS) and Push Chain PoS" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image8-c154f786db3f95363f5fc1249d19805c.webp" width="1278" height="1372" class="img_ev3q"></p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-does-push-nodes-use-pos">How does Push Nodes use PoS?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#how-does-push-nodes-use-pos" class="hash-link" aria-label="Direct link to How does Push Nodes use PoS?" title="Direct link to How does Push Nodes use PoS?">​</a></h3>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-push-nodes-use-pos">How Push Nodes use PoS?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#how-push-nodes-use-pos" class="hash-link" aria-label="Direct link to How Push Nodes use PoS?" title="Direct link to How Push Nodes use PoS?">​</a></h2>
 <p>Push Chain - is a Proof of Stake shared state blockchain for shared app experiences designed to support the development of <strong>hyper-scalable, consumer-centric, universal web3 applications.</strong></p>
-<p>Push Chain enables txs from any chain (Solana, Eth, EVM, or non-EVM) with fast finality of &lt; 1 second and the ability to scale infinitely as nodes increase, supporting tens of thousands of parallel transactions</p>
+<p>Push Chain enables txs from any chain (Solana, Eth, EVM, or non-EVM) with fast finality of &lt; 1 second. It has the ability to scale infinitely as nodes increase, supporting tens of thousands of parallel transactions</p>
 <ul>
 <li>Any Chain Tx ⛓️</li>
 <li>Fee &amp; Wallet Abstraction 💰&nbsp;🔐</li>
 <li>Parallel Validation and Dynamic Sharding 🛠️</li>
 <li>Consumer tx (unordered) and Traditional tx (ordered)</li>
 <li>Universal Smart Contract 🌐</li>
-<li>Shared App Experience  🤝</li>
+<li>Shared App Experience 🤝</li>
 </ul>
 <p>Push Chain uses an innovative approach towards tweaking its consensus mechanism in order to incorporate its multi-node architecture and ability to support both, ordered and un-ordered blocks with parallel validation.</p>
 <p>Push Chain distributes responsibilities across three specialized node types:</p>
-<p><strong>Validator Nodes -</strong>  Forms the backbone of the network, handling transaction validation and block production.</p>
-<p><strong>Storage Nodes</strong> - Manage the network's data through dynamic sharding, enabling efficient  distribution and retrieval. Storage Nodes work in sync with validators to ensure data availability and decentralization.</p>
+<p><strong>Validator Nodes</strong> - Forms the backbone of the network, handling transaction validation and block production.</p>
+<p><strong>Storage Nodes</strong> - Manage the network's data through dynamic sharding, enabling efficient distribution and retrieval. Storage Nodes work in sync with validators to ensure data availability and decentralization.</p>
 <p><strong>Archival Nodes</strong> - Serve as the network's historical record keepers, storing complete transaction logs and providing WebSocket functionality for real-time data access and analytics.</p>
-<p>Optimised for hyper scalable consumer apps - Push Chain introduces <strong>stateless blocks</strong> with parallel execution ****for faster processing and validation of non-value consumer data transactions.</p>
-<p>For selecting block validators - the system uses a multi-level randomization process to avoid  validator collusion during parallel block processing.</p>
-<p>More details about the randomization mechanism can be found in the Push Chain Whitepaper.</p>
-<p>To maintain the network’s economical integrity - Push Chain has a modified penalising mechanism which  includes the act of ‘Reporting’ - Which acts like a warning to correct the node’s behaviour instead of simply slashing and banning the node instantly.</p>
+<p>Optimised for hyper scalable consumer apps - Push Chain introduces <strong>stateless blocks</strong> with parallel execution for faster processing and validation of non-value consumer data transactions.</p>
+<p>For selecting block validators - the system uses a multi-level randomization process to avoid validator collusion during parallel block processing.</p>
+<p>More details about the randomization mechanism can be found in the <a href="https://whitepaper.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Whitepaper</a>.</p>
+<p>To maintain the network’s economical integrity Push Chain has a modified penalising mechanism which includes the act of ‘Reporting’. It acts like a warning to correct the node’s behaviour instead of simply slashing and banning the node instantly.</p>
 <p><img loading="lazy" alt="Ninth Image of Understand Proof of Stake (POS) and Push Chain PoS" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image9-7595d8391a6ccd4625d8891809817751.webp" width="1082" height="1008" class="img_ev3q"></p>
-<p>There are a lot more novel and interesting elements that make Push Chain a powerful choice for building Universal Apps - Read [Push Whitepaper] to know more!</p>]]></content:encoded>
+<p>There are a lot more novel and interesting elements that make Push Chain a powerful choice for building Universal Apps. Read <a href="https://whitepaper.push.org/" target="_blank" rel="noopener noreferrer">Push Whitepaper</a> to know more!</p>]]></content:encoded>
             <category>Push Chain</category>
             <category>Proof of Stake</category>
             <category>Push Chain Nodes</category>
