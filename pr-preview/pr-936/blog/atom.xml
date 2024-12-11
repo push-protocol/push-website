@@ -137,16 +137,16 @@
         <category label="Shared State Blockchain" term="Shared State Blockchain"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Benchmarking Push Chain Nodes : Scaling with Validator Nodes]]></title>
+        <title type="html"><![CDATA[Benchmarking Push Chain : Scaling with Validator Nodes]]></title>
         <id>https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding</id>
         <link href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding"/>
         <updated>2024-12-09T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Benchmarking Push Chain Nodes : Scaling with Validator Nodes]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Benchmarking Push Chain Nodes : Scaling with Validator Nodes" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-6113608a2ad3b73e9016d5eb7c399257.webp" width="1600" height="900" class="img_ev3q"></p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="introduction">Introduction<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h3>
+        <summary type="html"><![CDATA[Benchmarking Push Chain : Scaling with Validator Nodes]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Benchmarking Push Chain : Scaling with Validator Nodes" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-6113608a2ad3b73e9016d5eb7c399257.webp" width="1600" height="900" class="img_ev3q"></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="introduction">Introduction<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
 <p>The Push Chain Network, a Proof-of-Stake (PoS) blockchain designed for consumer-centric applications, offers an innovative approach to scalability and usability in the decentralized space. By leveraging features like dynamic sharding, parallel block execution, and true scale, Push Chain promises a seamless environment for universal applications. This blog explores the benchmarking results of Push Chain under varying node configurations, providing insights into how the network behaves and scales as the number of nodes increases.</p>
 <hr>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="node-types-and-roles"><strong>Node Types and Roles</strong><a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#node-types-and-roles" class="hash-link" aria-label="Direct link to node-types-and-roles" title="Direct link to node-types-and-roles">​</a></h3>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="node-types-and-roles">Node Types and Roles<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#node-types-and-roles" class="hash-link" aria-label="Direct link to Node Types and Roles" title="Direct link to Node Types and Roles">​</a></h2>
 <ul>
 <li><strong>Validator Nodes:</strong> Responsible for handling transaction validation and serving as the primary interface for client interactions.</li>
 <li><strong>Storage Nodes:</strong> Tasked with storing validated transactions in a sharded manner for optimized data access and storage efficiency.</li>
@@ -156,9 +156,9 @@
 <p>💡 Note: While the roles described above provide a high-level overview, nodes in the Push Chain Network perform significantly more complex tasks, including dynamic sharding, transaction propagation, and ensuring data consistency across the network.</p>
 </blockquote>
 <hr>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benchmarking-setup"><strong>Benchmarking Setup</strong><a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#benchmarking-setup" class="hash-link" aria-label="Direct link to benchmarking-setup" title="Direct link to benchmarking-setup">​</a></h3>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benchmarking-setup">Benchmarking Setup<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#benchmarking-setup" class="hash-link" aria-label="Direct link to Benchmarking Setup" title="Direct link to Benchmarking Setup">​</a></h2>
 <p>The benchmarking tests were conducted in controlled environments with different node configurations:</p>
-<p><strong>Environment Configurations</strong></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="environment-configurations">Environment Configurations<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#environment-configurations" class="hash-link" aria-label="Direct link to Environment Configurations" title="Direct link to Environment Configurations">​</a></h3>
 <ol>
 <li><strong>Configuration 1</strong>:<!-- -->
 <ul>
@@ -191,9 +191,9 @@
 </blockquote>
 <p>The benchmarks primarily evaluate the performance of the <strong>validator nodes</strong>, which serve as the gateway for client interactions. However, since validator nodes interact with storage nodes and archival nodes internally, the results effectively reflect the performance of the entire network.</p>
 <hr>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benchmark-results"><strong>Benchmark Results</strong><a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#benchmark-results" class="hash-link" aria-label="Direct link to benchmark-results" title="Direct link to benchmark-results">​</a></h3>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benchmark-results">Benchmark Results<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#benchmark-results" class="hash-link" aria-label="Direct link to Benchmark Results" title="Direct link to Benchmark Results">​</a></h2>
 <p>The following tests were conducted to measure the performance of the Push Chain Network under varying configurations, focusing on the behavior of <strong>validator nodes</strong> as the number of nodes increases. Each test was performed using multiple parallel threads, simulating real-world scenarios where multiple users interact with the network simultaneously.</p>
-<p><strong>1. Ping Validator Test</strong></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-ping-validator-test">1. Ping Validator Test<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#1-ping-validator-test" class="hash-link" aria-label="Direct link to 1. Ping Validator Test" title="Direct link to 1. Ping Validator Test">​</a></h3>
 <p>This test measures the round-trip time taken by multiple threads to select and ping a random validator node, simulating basic connectivity under increasing load.</p>
 <table><thead><tr><th><strong>Threads</strong></th><th><strong>Configuration 1</strong></th><th><strong>Configuration 2</strong></th><th><strong>Configuration 3</strong></th></tr></thead><tbody><tr><td>10</td><td>21.72 ms</td><td>27.96 ms</td><td>26.43 ms</td></tr><tr><td>50</td><td>296.98 ms</td><td>94.45 ms</td><td>124.54 ms</td></tr><tr><td>100</td><td>371.32 ms</td><td>137.20 ms</td><td>151.44 ms</td></tr><tr><td>250</td><td>396.70 ms</td><td>232.06 ms</td><td>209.23 ms</td></tr><tr><td>500</td><td>497.69 ms</td><td>342.74 ms</td><td>287.24 ms</td></tr><tr><td>1000</td><td>785.19 ms</td><td>705.11 ms</td><td>545.10 ms</td></tr><tr><td>2000</td><td>1498.14 ms</td><td>1245.16 ms</td><td>1085.70 ms</td></tr><tr><td>5000</td><td>5608.33 ms</td><td>3637.42 ms</td><td>3297.24 ms</td></tr><tr><td>10000</td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td></tr></tbody></table>
 <p><strong>Observations:</strong></p>
@@ -202,7 +202,7 @@
 <li>Traffic is split among more validator nodes in configurations with higher node counts, reducing the load on individual nodes and improving overall response times.</li>
 <li>At <strong>10,000 threads</strong>, all configurations errored out, indicating the upper limit of the network under the current setup. However, <strong>Configuration 3</strong> demonstrated the highest capacity before encountering errors, highlighting the benefits of increased validator nodes for scalability.</li>
 </ul>
-<p><strong>2. Get Token Validator Test</strong></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-get-token-validator-test">2. Get Token Validator Test<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#2-get-token-validator-test" class="hash-link" aria-label="Direct link to 2. Get Token Validator Test" title="Direct link to 2. Get Token Validator Test">​</a></h3>
 <p>This test measures the time taken for multiple threads to request an access token from a random validator node. Access tokens are essential for sending transactions and performing other write operations on the network.</p>
 <table><thead><tr><th><strong>Threads</strong></th><th><strong>Configuration 1</strong></th><th><strong>Configuration 2</strong></th><th><strong>Configuration 3</strong></th></tr></thead><tbody><tr><td>10</td><td>250.46 ms</td><td>253.37 ms</td><td>170.53 ms</td></tr><tr><td>50</td><td>969.38 ms</td><td>855.97 ms</td><td>427.89 ms</td></tr><tr><td>100</td><td>1540.05 ms</td><td>1294.32 ms</td><td>638.69 ms</td></tr><tr><td>250</td><td>2855.72 ms</td><td>2108.26 ms</td><td>1325.33 ms</td></tr><tr><td>500</td><td>4869.79 ms</td><td>3645.61 ms</td><td>3033.06 ms</td></tr><tr><td>1000</td><td>7850.41 ms</td><td>6541.31 ms</td><td>5036.91 ms</td></tr><tr><td>2000</td><td>21562.69 ms</td><td>12378.07 ms</td><td>7839.82 ms</td></tr><tr><td>5000</td><td>62539.38 ms</td><td>37642.91 ms</td><td>22250.88 ms</td></tr><tr><td>10000</td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td></tr></tbody></table>
 <p><strong>Observations:</strong></p>
@@ -211,7 +211,7 @@
 <li>At lower thread counts (e.g., 10 or 50), the differences between configurations are minimal since the traffic does not fully utilize the network's capacity. However, at higher thread counts (e.g., 500 or more), <strong>Configuration 3</strong> outperforms the others due to its ability to handle a higher volume of concurrent requests.</li>
 <li>At <strong>10,000 threads</strong>, all configurations errored out, indicating the network’s throughput limit under the current setup. However, <strong>Configuration 3</strong> reached significantly higher performance thresholds before encountering errors.</li>
 </ul>
-<p><strong>3. Send Transactions to Validator Test</strong></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-send-transactions-to-validator-test">3. Send Transactions to Validator Test<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#3-send-transactions-to-validator-test" class="hash-link" aria-label="Direct link to 3. Send Transactions to Validator Test" title="Direct link to 3. Send Transactions to Validator Test">​</a></h3>
 <p>This test measures the time taken for multiple threads to send transactions to validator nodes. Each transaction submission involves the following steps:</p>
 <ol>
 <li>Retrieving an <strong>access token</strong> from a validator node.</li>
@@ -228,7 +228,7 @@
 <li>At lower thread counts (e.g., 10 or 50), the differences between configurations are smaller due to minimal load. However, at higher thread counts, <strong>Configuration 3</strong> handles a significantly larger volume of transactions before encountering errors.</li>
 <li>Errors such as timeouts occurred at <strong>250 threads</strong> for <strong>Configuration 1</strong> and <strong>500 threads</strong> for <strong>Configuration 2</strong>, highlighting the limits of these setups. <strong>Configuration 3</strong> demonstrated a higher capacity before reaching its threshold.</li>
 </ul>
-<p><strong>4. Get Transactions Test</strong></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4-get-transactions-test">4. Get Transactions Test<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#4-get-transactions-test" class="hash-link" aria-label="Direct link to 4. Get Transactions Test" title="Direct link to 4. Get Transactions Test">​</a></h3>
 <p>This test measures the time required for threads to retrieve transaction data of a particular blockchain address from validator nodes, simulating a typical query load where users request information about transactions. The process involves the following steps:</p>
 <ol>
 <li>The validator node determines the <strong>shard</strong> corresponding to the requested address.</li>
@@ -242,7 +242,7 @@
 <li>At lower thread counts (e.g., 10 or 50), the performance differences are less pronounced since the network does not experience significant load. However, as thread counts increase, <strong>Configuration 3</strong> handles requests more effectively due to its ability to distribute load better across a higher number of validator nodes.</li>
 <li>Errors at <strong>1000 threads</strong> in all configurations highlight the scalability limitations imposed by the constant number of storage nodes. Increasing the number of storage nodes could improve performance at these higher thread counts.</li>
 </ul>
-<p><strong>5. Get Push ID Info Test</strong></p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5-get-push-id-info-test">5. Get Push ID Info Test<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#5-get-push-id-info-test" class="hash-link" aria-label="Direct link to 5. Get Push ID Info Test" title="Direct link to 5. Get Push ID Info Test">​</a></h3>
 <p>This test measures the time required for threads to retrieve Push ID information from validator nodes for a given blockchain address, simulating a typical query load where users request mappings of Push IDs. The process involves the following steps:</p>
 <ol>
 <li>The validator node identifies the <strong>shard</strong> corresponding to the requested address or Push ID.</li>
@@ -257,7 +257,7 @@
 <li><strong>Configuration 3</strong> consistently shows the best results at all thread counts before errors occur, showcasing the benefits of distributing the load across more validator nodes.</li>
 </ul>
 <hr>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusions"><strong>Conclusions</strong><a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#conclusions" class="hash-link" aria-label="Direct link to conclusions" title="Direct link to conclusions">​</a></h3>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusions"><strong>Conclusions</strong><a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/parallel-validators-and-dynamic-sharding#conclusions" class="hash-link" aria-label="Direct link to conclusions" title="Direct link to conclusions">​</a></h2>
 <ul>
 <li><strong>Scalability:</strong> As the number of nodes increased, the Push Chain Network demonstrated significantly improved scalability, particularly in <strong>Configuration 3</strong>. This configuration exhibited the best performance across most tests, showcasing the network’s ability to scale efficiently without sacrificing speed. The benefits of <strong>dynamic sharding</strong> ensured that even as the network grew, the system maintained fast response times, handling multiple concurrent threads effectively.</li>
 <li><strong>Performance Bottlenecks:</strong> While performance remained strong as the node count grew, the network did experience timeouts and errors at higher thread counts. This indicates that, although the system can scale, there are throughput limits at extreme loads. However, <strong>Configuration 3</strong> was able to handle a larger volume of requests compared to smaller configurations, validating the advantages of scaling up the number of validator nodes. Given that the <strong>goal of the Push Chain Network</strong> is to scale up to <strong>100,000 validator nodes</strong>, the throughput limits observed at high thread counts are just the beginning. As the network grows, these limits would become significantly larger, making the network capable of handling a vastly higher volume of requests.</li>
