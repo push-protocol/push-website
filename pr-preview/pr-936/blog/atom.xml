@@ -502,15 +502,16 @@
         <updated>2024-12-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Why PUSH Chain?]]></summary>
         <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-cc026e92debc8378450504a05e2a3ff2.webp" width="1600" height="900" class="img_ev3q"></p>
-<p>Push Protocol recently announced its governance proposal of launching Push Chain.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="introduction">Introduction<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
+<p>Push Protocol recently announced its <a href="https://gov.push.org/" target="_blank" rel="noopener noreferrer">governance proposal</a> of launching Push Chain.</p>
 <p>Push Protocol envisions the creation of Push Chain which enables a shared state L1 chain designed to support truly scalable consumer applications and universal applications.</p>
 <p>This article explains why Push Chain is needed and why it matters.</p>
 <p>We will dive deep into each of the concerns that exist in web3 today and the solutions that Push Chain offers for each one of them.</p>
-<p>In order to understand what Push Chain offers, let’s first get a good understanding of the concerns in today’s web3 world that is a blocker for consumer apps and universal/unified  applications.</p>
+<p>In order to understand what Push Chain offers, let’s first get a good understanding of the concerns in today’s web3 world that is a blocker for consumer apps and universal/unified applications.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="the-major-concerns-in-web3-today">The Major Concerns in Web3 Today<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#the-major-concerns-in-web3-today" class="hash-link" aria-label="Direct link to The Major Concerns in Web3 Today" title="Direct link to The Major Concerns in Web3 Today">​</a></h2>
-<p><strong>1. Web3 is not well-equipped for building truly scalable  consumer-centric adoption</strong></p>
-<p>Fundamentally,  web3 should be unbiased towards a peculiar industry use case. However, practically, there’s an evident misalignment where today’s web3 infrastructure is more optimized for financial use cases.</p>
-<p>Financial apps and consumer-centric apps (<em>e.g. social, gaming, etc</em>)  inherently have different infrastructure needs:</p>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="web3-is-not-well-equipped-for-building-truly-scalable-consumer-centric-adoption">Web3 is not well-equipped for building truly scalable consumer-centric adoption<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#web3-is-not-well-equipped-for-building-truly-scalable-consumer-centric-adoption" class="hash-link" aria-label="Direct link to Web3 is not well-equipped for building truly scalable consumer-centric adoption" title="Direct link to Web3 is not well-equipped for building truly scalable consumer-centric adoption">​</a></h3>
+<p>Fundamentally, web3 should be unbiased towards a peculiar industry use case. However, practically, there’s an evident misalignment where today’s web3 infrastructure is more optimized for financial use cases.</p>
+<p>Financial apps and consumer-centric apps (<em>e.g. social, gaming, etc</em>) inherently have different infrastructure needs:</p>
 <p>Finance-specific apps require:</p>
 <ul>
 <li><em>A high level of security,</em></li>
@@ -525,7 +526,7 @@
 <li><em>Affordability</em></li>
 <li><em>Support for both ordered and unordered transactions ( a.k.a, consumer transactions, as we call it )</em></li>
 </ul>
-<p>Web3 ecosystem is heavily skewed  towards financial applications. The bias is evident in the rise of projects centered around trading, lending, staking, perps, and similar use cases.</p>
+<p>Web3 ecosystem is heavily skewed towards financial applications. The bias is evident in the rise of projects centered around trading, lending, staking, perps, and similar use cases.</p>
 <p>Such finance-centric infrastructure forces consumer apps to make suboptimal compromises impacting their performance and usability.</p>
 <p>Even the advent of app-specific chains hasn’t fully resolved these tradeoffs.</p>
 <p>For instance, the <a href="https://a16zcrypto.com/posts/article/state-of-crypto-report-2024/" target="_blank" rel="noopener noreferrer"><strong>State of Crypto 2024</strong></a> report by a16z highlights how on-chain games running on dedicated rollups are struggling to keep up with the increasing user demand, straining the network and as a result consuming multifolds of M/gas (<em>mega gas per second</em>) as compared to Ethereum.</p>
@@ -535,31 +536,33 @@
 <p>The report from a16z also provides another key insight:</p>
 <p><img loading="lazy" alt="Second Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image2-c5b67901ce12b97c3fbf39b8cd9a5f02.webp" width="1868" height="1558" class="img_ev3q"></p>
 <p><strong>Out of ~617 million global crypto users, only 5-10% (30-60 million) users actively transact!</strong></p>
-<p>Barriers to entry, the dilemma of choosing the right chain, and multiple points of friction in UX  could reasonably be attributed as causes of the growing share of dormant users.</p>
+<p>Barriers to entry, the dilemma of choosing the right chain, and multiple points of friction in UX could reasonably be attributed as causes of the growing share of dormant users.</p>
 <p><img loading="lazy" alt="Third Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image3-2751b46496c5642278c8ebdb04b5df65.webp" width="2408" height="1000" class="img_ev3q"></p>
 <p>Vitalik in his <a href="https://youtu.be/ei3tDRMjw6k?si=w1kYuzgR0ho-90Eb&amp;t=1775" target="_blank" rel="noopener noreferrer">recent talk at Devcon</a> (timestamp: 29:35) emphasized the need for building both non-financial and mixed financial applications.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="fragmentation-of-chains-is-a-major-blocker-towards-overall-web3-ux-improvement"><strong>Fragmentation of chains is a major blocker towards overall web3 UX improvement</strong><a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#fragmentation-of-chains-is-a-major-blocker-towards-overall-web3-ux-improvement" class="hash-link" aria-label="Direct link to fragmentation-of-chains-is-a-major-blocker-towards-overall-web3-ux-improvement" title="Direct link to fragmentation-of-chains-is-a-major-blocker-towards-overall-web3-ux-improvement">​</a></h3>
-<p>With Vitalik’s conception of the <em>Rollup-Centric  Roadmap, back in 2020,</em> Ethereum pivoted towards rollups as their scaling strategy - as <strong>bundling multiple transactions</strong>&nbsp;<strong>into batches</strong>&nbsp;significantly increased&nbsp;<em><strong>transaction throughput</strong></em>&nbsp;and&nbsp;<em><strong>reduced transaction costs.</strong></em></p>
+<p>With Vitalik’s conception of the <em>Rollup-Centric Roadmap, back in 2020,</em> Ethereum pivoted towards rollups as their scaling strategy - as <strong>bundling multiple transactions</strong>&nbsp;<strong>into batches</strong>&nbsp;significantly increased&nbsp;<strong><em>transaction throughput</em></strong>&nbsp;and&nbsp;<strong><em>reduced transaction costs.</em></strong></p>
 <p>This solved Ethereum’s scalability issues effectively and led to an abundance of <em>L2 and L3 chains.</em></p>
 <p>However, the joyous ride is now hitting some rough bumps.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="ux-fragmentation">UX Fragmentation<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#ux-fragmentation" class="hash-link" aria-label="Direct link to UX Fragmentation" title="Direct link to UX Fragmentation">​</a></h3>
 <p><em>Clutter is the Enemy of Clarity.</em></p>
 <p>With each additional step spent completing an action, including switching between networks, time spent in choosing the right chain, protocol, or wallet, decreases <a href="https://andrewchen.com/psychd-funnel-conversion/" target="_blank" rel="noopener noreferrer"><em>Psych</em> - a unit of measure for motivation to complete an action.</a></p>
 <p>Here is a quick glance at what a typical web3 user needs to deal with in this multi-chain universe:</p>
-<p><em>→managing multiple wallets,
-→managing multiple native tokens/assets in their multiple wallets,
-→understanding the nuances of each network,
-→navigating multiple networks to perform simple tasks,
-→interacting with complicated dapp UIs with frequent network switching
-→navigate through inconsistent user interfaces
-→relying on the risky route of cross-chain bridging between chains
-→experiencing difficulty in maintaining a consistent cross-chain identity due to the multi-chain   ecosystem
-→dealing with the lack of standardization between networks, protocols, etc
-→dealing with the learning curve of understanding different networks, each with its own set of rules, interfaces, and requirements.</em></p>
+<ul>
+<li>Managing multiple wallets,</li>
+<li>Managing multiple native tokens/assets in their multiple wallets,</li>
+<li>Understanding the nuances of each network,</li>
+<li>Navigating multiple networks to perform simple tasks,</li>
+<li>Interacting with complicated dapp UIs with frequent network switching</li>
+<li>Navigate through inconsistent user interfaces</li>
+<li>Relying on the risky route of cross-chain bridging between chains</li>
+<li>Experiencing difficulty in maintaining a consistent cross-chain identity due to the multi-chain ecosystem</li>
+<li>Dealing with the lack of standardization between networks, protocols, etc</li>
+<li>Dealing with the learning curve of understanding different networks, each with its own set of rules, interfaces, and requirements.</li>
+</ul>
 <p>Remember that this is just a glance at the UX problem.</p>
 <p>There are undoubtedly more issues issues for a web3 user daily. The list is even longer when it comes to newbie web3 users.</p>
 <p><img loading="lazy" alt="Fourth Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image4-1ffdae2ec53d35c95e7f47f4c1f0acbe.webp" width="2128" height="1140" class="img_ev3q"></p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="user-retention-challenges"><strong>User Retention Challenges</strong><a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#user-retention-challenges" class="hash-link" aria-label="Direct link to user-retention-challenges" title="Direct link to user-retention-challenges">​</a></h3>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="user-retention-challenges">User Retention Challenges<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#user-retention-challenges" class="hash-link" aria-label="Direct link to User Retention Challenges" title="Direct link to User Retention Challenges">​</a></h3>
 <p>Poor UX can directly impact user retention.</p>
 <p>Truth be told, it already is impacting user retention.</p>
 <p>When users encounter difficulties in navigating the web3 ecosystem, they are less likely to return to it. High-profile dApps that have struggled with user retention due to UX issues serve as cautionary tales for new projects entering the space. Complex interfaces, slow transaction times, and confusing wallet setups have all contributed to a decline in user engagement and adoption.</p>
@@ -572,14 +575,14 @@
 <p>Each additional chain integrated into an application introduces new potential vulnerabilities. Developers must ensure that the security of cross-chain interactions is robust, as any weakness could lead to exploits or hacks.</p>
 <p>Furthermore, developing for a multi-chain ecosystem that still lacks adequate standardization - is costly. It requires more time and resources, as developers need to learn and implement different protocols, test on multiple platforms, and ensure compatibility across the whole environment involved. The additional cost of extensive security audits makes the process of building &amp; maintaining apps even more difficult.</p>
 <p>There is no one size fits all solution, nor is there a way to restrict the proliferation of chains.</p>
-<p><em><strong>But what if there was a way to unify every fragmented state under one shared state?</strong></em></p>
+<p><strong><em>But what if there was a way to unify every fragmented state under one shared state?</em></strong></p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="a-shared-state-chain-is-needed-that-can-enable-shared-app-experiences"><strong>A shared state chain is needed that can enable shared app experiences</strong><a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#a-shared-state-chain-is-needed-that-can-enable-shared-app-experiences" class="hash-link" aria-label="Direct link to a-shared-state-chain-is-needed-that-can-enable-shared-app-experiences" title="Direct link to a-shared-state-chain-is-needed-that-can-enable-shared-app-experiences">​</a></h3>
 <p>Let’s dive a bit further into the complexities of multi-chain web3 world.</p>
 <p>While fragmented UX is definitely a concern, there are more.</p>
 <p>There are over 30 Layer 1s, 120 Layer 2s and soon thousands of Layer 3 chains.
 Imagine the sheer number of DApps deployed on all of these chains!</p>
 <p>Newer chains have led to the rise of siloed environments having limited or zero awareness of each others state - even Ethereum!</p>
-<p>The majority of these apps still operate within closed systems. Contracts pertaining to each chain store states in an isolated manner leaving little opportunity for users for a unified experience.  Siloed environments in turn add more interop complexities forcing developers to <strong>shift price-sensitive apps</strong> to app-sensitive infrastructure, further affecting the UX and escalating fragmentation.</p>
+<p>The majority of these apps still operate within closed systems. Contracts pertaining to each chain store states in an isolated manner leaving little opportunity for users for a unified experience. Siloed environments in turn add more interop complexities forcing developers to <strong>shift price-sensitive apps</strong> to app-sensitive infrastructure, further affecting the UX and escalating fragmentation.</p>
 <p>Here is a quick look at Vitalik and Justin Drake talking about the same issues:</p>
 <p><img loading="lazy" alt="Fifth Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image5-ba2bb43ea96df9a072e6e0f8c40fc82c.webp" width="1226" height="1452" class="img_ev3q"></p>
 <p><img loading="lazy" alt="Sixth Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image6-dd608dd464b88b7015a73445fab636b2.webp" width="1528" height="766" class="img_ev3q"></p>
@@ -599,7 +602,7 @@ Imagine the sheer number of DApps deployed on all of these chains!</p>
 <li><strong>Phase-1:</strong> To enable consumer-centric apps with hyper scalability, fee abstraction, wallet abstraction and any chain transactions.</li>
 <li><strong>Phase-2:</strong> To enable seamless interoperability between chains for apps and users.<br>
 <!-- -->(<em>An intermediary phase to enable the universal smart contracts and shared state</em>)</li>
-<li><strong>Phase-3:</strong>  To enable universal smart contracts and shared state in order to make other chain’s state accessible on Push Chain and unlocking the era of universal apps.</li>
+<li><strong>Phase-3:</strong> To enable universal smart contracts and shared state in order to make other chain’s state accessible on Push Chain and unlocking the era of universal apps.</li>
 </ol>
 <p>Now, let’s understand each of the above-mentioned concerns and explore how Push Chain aims to resolve them.</p>
 <ol>
@@ -612,7 +615,7 @@ Imagine the sheer number of DApps deployed on all of these chains!</p>
 <li>
 <p><strong>Simplified User-Onboarding:</strong> Apps required seamless onboarding and intuitive user interface. In simpler terms, this indicates that applications should be so easy to use that the user should never have to learn the intricacies of the underlying technology stack.</p>
 <p>However, its not the case in web3. The intuitiveness ends the moment users are required to <em>set up a web3 wallet and remember the mnemonics</em>. This means the very first step a user is required to do for using web3 apps will most likely be the most difficult step in itself.</p>
-<p>Once the user enters the rabbit hole of using a web3 app, they are then required to either <em>choose a chain, sign a transaction, collect and manage native gas tokens of the respective chain, switch between different chains, bridge tokens, etc.</em> The list goes on and <em><strong>the further you explore, the harder the UX.</strong></em></p>
+<p>Once the user enters the rabbit hole of using a web3 app, they are then required to either <em>choose a chain, sign a transaction, collect and manage native gas tokens of the respective chain, switch between different chains, bridge tokens, etc.</em> The list goes on and <strong><em>the further you explore, the harder the UX.</em></strong></p>
 <p>With Wallet Abstraction**,** Push Chain aims to enable seamless user onboarding without going through the manual and complicated procedure of setting up a web3 wallet.</p>
 <p><img loading="lazy" alt="Eigth Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image8-70c78f84636ce3306181274bed509f46.webp" width="1036" height="898" class="img_ev3q"></p>
 <p>Wallet abstraction addresses challenges by removing the need for direct mnemonic management. Instead, Push Chain allows users to authenticate using familiar methods like <em>social logins, email, or phone numbers.</em> This system abstracts away the complexity of mnemonic custody by securely managing a master key pair on behalf of the user, while still ensuring they retain ultimate control.</p>
@@ -624,7 +627,7 @@ Imagine the sheer number of DApps deployed on all of these chains!</p>
 <li>
 <p><strong>Instant Finality &amp; Scalability:</strong> A consumer-centric app needs to support a large number of users without compromising performance. Additionally, it needs to support instant finality so that users experience a similar speed as in traditional apps.</p>
 <p>Although layer 2 solutions and rollups aim to address scalability, the current state of web3 still struggles to match the speed and efficiency of traditional centralized systems. For a consumer-centric app, any delay in processing or finalizing transactions will lead to a poor user experience.</p>
-<p><strong>Push Chain</strong> is designed to solve this with its instant finality as well as its support for <em>unordered transactions, <strong>a.k.a, consumer transactions.</strong></em></p>
+<p><strong>Push Chain</strong> is designed to solve this with its instant finality as well as its support for unordered transactions, a.k.a, consumer transactions.</p>
 <p>A consumer transaction can be defined as the type of transaction that doesn't benefit from the strict ordering as seen in traditional web3 transactions where strict ordering with a nonce is mandatory. These can also be categorized as transfers of consumer data like notifications, emails, blogs, etc that do not require a strict order to be executed.</p>
 <p>Since there is no state change for such transactions, they don’t need to change the merkle root of the network and thus can be called <strong>orderless transactions.</strong></p>
 <p>Examples of these transactions can be emails sent from one user to another, posting on social media, writing blogs, creating content, defining user settings for an app, defining user meta-data, storing soft state data for gaming among others.</p>
@@ -660,26 +663,25 @@ Imagine the sheer number of DApps deployed on all of these chains!</p>
 <li>Delegate on-chain intricacies and risks from users to solvers ( <em>specialized on-chain actors )</em></li>
 </ul>
 <p>At the point in which both of these goals are accomplished, we will achieve a win for both the users and the apps on top of Push Chain.</p>
-<p><strong>With Phase 3,</strong> we achieve the shared state L1 chain that is capable of supporting universal apps. Most importantly, this phase establishes one of the key features of Push Chain, i.e., <strong>shared app experiences (</strong> <em>with Shared State )</em><strong>.</strong></p>
+<p><strong>With Phase 3,</strong> we achieve the shared state L1 chain that is capable of supporting universal apps. Most importantly, this phase establishes one of the key features of Push Chain, i.e., <strong>shared app experiences</strong> (with Shared State).</p>
 <p>Shared state means that Push Chain not only has read and write access to its own state but also has read-only access to all the other supported chains’ states. Combining this with Push ID enables universal smart contracts wherein the smart contracts on Push Chain have access to the state of all of the wallets of the user even if those wallets belong to other chain(s). This enables developers to understand the user and build universal smart contracts to fulfill the user’s need irrespective of what chain(s) the user state is on which ushers countless innovations.</p>
 <p><img loading="lazy" alt="Ninth Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image9-0277bcf4353ad392efa0adcf75fb3894.webp" width="1364" height="1006" class="img_ev3q"></p>
 <p>The feature opens up the entire web3 userbase to be available for a web3 application enabling shared app experiences no matter from what blockchain the user accesses the application. It also makes Push Chain the shared settlement layer for all other chains (EVM / Non-EVM).</p>
-<p>This enables developers to completely abstract away any learning from the user, creating an era where a user does not use Uniswap “on Ethereum” or Uniswap “on Polygon” or Uniswap “on Arbitrum” — but rather simply <strong>uses Uniswap</strong> for its features**.**</p>
+<p>This enables developers to completely abstract away any learning from the user, creating an era where a user does not use Uniswap “on Ethereum” or Uniswap “on Polygon” or Uniswap “on Arbitrum” — but rather simply <strong>uses Uniswap</strong> for its features.</p>
 </li>
 </ol>
 <hr>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusion">Conclusion<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h3>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusion">Conclusion<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#conclusion" class="hash-link" aria-label="Direct link to Conclusion" title="Direct link to Conclusion">​</a></h2>
 <p>This article was an extensive guide to understanding the need for Push Chain, what it offers, and how it benefits the overall web3 ecosystem.</p>
 <p>It is quite evident how the above-mentioned concerns with web3 today is a major blocker behind the growth of consumer-centric web3 apps.</p>
 <p>With Push Chain, we aim to resolve each of these blockers and provide an infrastructure dedicated to building and supporting top-notch web3 apps with hyper scalability, enhanced user onboarding, better UX with wallet and fee abstraction, and a shared state L1 chain designed to build universal apps with shared app experience.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="next-steps">Next Steps<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
 <ol>
-<li><strong>The Governance Proposal for Push Chain is now LIVE</strong> and ****Push community members have the opportunity to vote on the proposal as well as share their views and ask questions below.</li>
+<li><strong>The Governance Proposal for Push Chain is now LIVE</strong> and Push community members have the opportunity to vote on the proposal as well as share their views and ask questions below.</li>
 <li><strong>Check out the Push Chain Whitepaper</strong> for a detailed overview of the vision and the underlying technicalities.</li>
-<li><strong>Visit the <a href="https://push.org/chain" target="_blank" rel="noopener noreferrer">Push Chain Website</a></strong> to find a one-pager explanation of the vision.</li>
-<li><a href="https://scan.push.org/" target="_blank" rel="noopener noreferrer">**Push Chain Devnet</a>** is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well. ****</li>
-<li><a href="https://simulate.push.org/" target="_blank" rel="noopener noreferrer">**Push Chain Simulate Tx</a> already** provides a way for everyone to send tx from any chain using wallet abstraction.</li>
-<li><strong>Visit the Push Ecosystem Page</strong> that provides a list of apps that are already built on top of the Push Chain infra.</li>
+<li>Visit the <a href="https://push.org/chain" target="_blank" rel="noopener noreferrer">Push Chain Website</a> to find a one-pager explanation of the vision.</li>
+<li><a href="https://scan.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Devnet</a> is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.</li>
+<li><a href="https://simulate.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Simulate Tx</a> already provides a way for everyone to send tx from any chain using wallet abstraction.</li>
 </ol>]]></content>
         <author>
             <name>Push Protocol</name>
