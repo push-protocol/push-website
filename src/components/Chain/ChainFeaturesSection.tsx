@@ -252,7 +252,7 @@ const DividerImg = styled.div`
   background-image: url(${ImageBg});
   background-repeat: repeat-x;
   background-size: contain;
-  background-position: ${({ inverted }) => (inverted ? 'top' : 'bottom')};
+  background-position: ${({ inverted }) => (inverted ? 'bottom' : 'bottom')};
   transform: ${({ inverted }) => (inverted ? 'rotate(180deg)' : 'none')};
 `;
 

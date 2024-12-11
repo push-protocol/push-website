@@ -56,7 +56,7 @@ const ChainHeroSection: FC = () => {
       />
       <HeroText>
         <span>Build</span>
-        <div>
+        <TypewriterWrapper>
           <Typewriter
             options={{
               strings: ['Universal'],
@@ -67,8 +67,8 @@ const ChainHeroSection: FC = () => {
               pauseFor: 1500,
             }}
           />
-        </div>
-        <span>App</span>
+        </TypewriterWrapper>
+        <span>Apps</span>
       </HeroText>
       <HeroSubText>
         Push Chain is a shared-state blockchain that allows all chains to unify,
@@ -271,11 +271,28 @@ const HeroText = styled.div`
   gap: 10px;
   height: 100%;
   text-align: center;
-  font-family: 'N27', sans-serif;
+  font-family: N27;
   font-size: 72px;
   font-weight: 500;
   line-height: 140%;
   color: #000;
+
+  @media ${device.tablet} {
+    font-size: 54px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 48px;
+    display: grid;
+    line-height: 100%;
+    gap: 0px;
+    padding-top: 10px;
+    white-space: nowrap;
+  }
+`;
+
+const TypewriterWrapper = styled.span`
+  display: inline-block;
 `;
 
 const HeroSubText = styled.div`
@@ -293,6 +310,9 @@ const HeroSubText = styled.div`
 
   @media (max-width: 900px) {
     width: 100%;
+  }
+
+  @media ${device.tablet} {
     font-size: 20px;
     font-weight: 400;
     line-height: 140%;
