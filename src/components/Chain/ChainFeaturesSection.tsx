@@ -6,6 +6,7 @@ import Link from '@docusaurus/Link';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { TbArrowUpRight } from 'react-icons/tb';
+import Typewriter from 'typewriter-effect';
 
 import { device } from '../../../src/config/globals';
 import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
@@ -45,7 +46,19 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
             <Header>
               Craft seamless, consumer-focused
               <br />
-              experiences for users on any chain
+              experiences for users on{' '}
+              <InlineTypewriterText>
+                <Typewriter
+                  options={{
+                    strings: ['any chain'],
+                    autoStart: true,
+                    loop: true,
+                    delay: 50,
+                    deleteSpeed: 75,
+                    pauseFor: 1500,
+                  }}
+                />
+              </InlineTypewriterText>
             </Header>
             <Link
               href='https://docs.google.com/document/d/13aXKhE6-GBV6aHF5mX9T_XNTGYOeiHIOXNqM6k1FUnQ/edit?usp=sharing'
@@ -300,6 +313,10 @@ const Header = styled.span`
   @media ${device.tablet} {
     text-align: center;
   }
+`;
+
+const InlineTypewriterText = styled.span`
+  display: inline-block; /* Ensures the typewriter text stays on the same line */
 `;
 
 const FeatureContainer = styled.div`

@@ -2,10 +2,11 @@
 // @ts-nocheck
 import React, { FC } from 'react';
 
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { TbArrowUpRight } from 'react-icons/tb';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Typewriter from 'typewriter-effect';
 
 import { device } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
@@ -53,7 +54,22 @@ const ChainHeroSection: FC = () => {
         url='https://gov.push.org/'
         center={true}
       />
-      <TypewriterText>Build Universal App</TypewriterText>
+      <HeroText>
+        <span>Build</span>
+        <div>
+          <Typewriter
+            options={{
+              strings: ['Universal'],
+              autoStart: true,
+              loop: true,
+              delay: 50,
+              deleteSpeed: 75,
+              pauseFor: 1500,
+            }}
+          />
+        </div>
+        <span>App</span>
+      </HeroText>
       <HeroSubText>
         Push Chain is a shared-state blockchain that allows all chains to unify,
         enabling consumer apps that function from any chain. <br />{' '}
@@ -248,21 +264,11 @@ const ChainHeroSectionWrapper = styled.div`
   }
 `;
 
-const typing = keyframes`
-  0% { width: 0; }               /* Start typing */
-  40% { width: 9ch; }           /* Fully typed */
-  50% { width: 9ch; }           /* Pause briefly */
-  100% { width: 0; }             /* Erase text */
-`;
-
-const cursor = keyframes`
-  50% { border-color: transparent; }
-`;
-
-const TypewriterText = styled.div`
+const HeroText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   height: 100%;
   text-align: center;
   font-family: 'N27', sans-serif;
@@ -270,27 +276,6 @@ const TypewriterText = styled.div`
   font-weight: 500;
   line-height: 140%;
   color: #000;
-
-  p {
-    animation: none;
-    // display: inline-block;
-    // white-space: nowrap;
-    // overflow: hidden;
-    // width: 9ch;
-    // animation:
-    //   ${typing} 4s steps(9) infinite,
-    //   ${cursor} 0.6s step-end infinite;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 48px;
-
-    p {
-      animation: none;
-      white-space: normal;
-      border: none;
-    }
-  }
 `;
 
 const HeroSubText = styled.div`

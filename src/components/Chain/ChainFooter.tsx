@@ -9,6 +9,7 @@ import { useLocation } from '@docusaurus/router';
 // External Components
 import { BsTwitterX } from 'react-icons/bs';
 import styled from 'styled-components';
+import Typewriter from 'typewriter-effect';
 
 // Internal Components
 import {
@@ -95,7 +96,17 @@ function ChainFooter() {
                     </LinkTo>
 
                     <Span fontWeight='500' fontSize='16px' lineHeight='142%'>
-                      Interoperable, <br /> Universal Apps
+                      <Typewriter
+                        options={{
+                          strings: ['Interoperable,'],
+                          autoStart: true,
+                          loop: true,
+                          delay: 50,
+                          deleteSpeed: 75,
+                          pauseFor: 1500,
+                        }}
+                      />
+                      Universal Apps
                     </Span>
                   </FooterLinkItem>
                 </FooterColumn>
