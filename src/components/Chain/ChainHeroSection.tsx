@@ -64,7 +64,7 @@ const ChainHeroSection: FC = () => {
                 'Interoperable',
                 'Any Chain',
                 'Omnichain',
-                'Shared Apps',
+                'Shared State',
               ],
               autoStart: true,
               loop: true,
