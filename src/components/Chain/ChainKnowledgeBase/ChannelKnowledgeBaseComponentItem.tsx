@@ -99,7 +99,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
           letterSpacing='-0.64px'
           color='#D548EC'
         >
-          Learn More
+          Read More
         </Span>
         <TbArrowUpRight color='#D548EC' size={24} />
       </ItemH>
