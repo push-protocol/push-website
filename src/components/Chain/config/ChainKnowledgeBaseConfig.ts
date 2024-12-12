@@ -77,7 +77,7 @@ export const knowledgeBaseArticleContent = [
     image: 'frequently-asked-questions',
     title: 'Push Chain’s Frequently Asked Questions',
     subtitle:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget aliquet lectus. In at porttitor lacus. Morbi fermentum egestas porta.',
+      'The place to find answers to all the popular questions the community has asked about Push Chain. Crowdsourced from Push Fam ❤️ and curated by the Push team 💪.',
     url: '/blog/faq-push-chain/',
   },
   {
