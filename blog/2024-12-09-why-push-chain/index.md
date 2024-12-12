@@ -102,7 +102,7 @@ Here is a quick glance at what a typical web3 user needs to deal with in this mu
 
 Remember that this is just a glance at the UX problem.
 
-There are undoubtedly more issues issues for a web3 user daily. The list is even longer when it comes to newbie web3 users.
+There are undoubtedly more issues for a web3 user daily. The list is even longer when it comes to newbie web3 users.
 
 ![Fourth Image of Why Push Chain](./image4.webp)
 
@@ -198,7 +198,7 @@ Now, let’s understand each of the above-mentioned concerns and explore how Pus
 
       Once the user enters the rabbit hole of using a web3 app, they are then required to either _choose a chain, sign a transaction, collect and manage native gas tokens of the respective chain, switch between different chains, bridge tokens, etc._ The list goes on and **_the further you explore, the harder the UX._**
 
-      With Wallet Abstraction**,** Push Chain aims to enable seamless user onboarding without going through the manual and complicated procedure of setting up a web3 wallet.
+      With Wallet Abstraction, Push Chain aims to enable seamless user onboarding without going through the manual and complicated procedure of setting up a web3 wallet.
 
       ![Eigth Image of Why Push Chain](./image8.webp)
 
@@ -206,7 +206,7 @@ Now, let’s understand each of the above-mentioned concerns and explore how Pus
 
       The Push wallet can dynamically derive blockchain-specific keys from the master key pair, enabling seamless interaction across multiple blockchain networks. By simplifying wallet operations and providing a unified experience, wallet abstraction reduces friction, enhances usability, and makes blockchain technology more accessible without compromising security.
 
-      > _The whitepaper explains the Key Management and technical aspects around keys in much more depth. Check it out here_
+      > _The whitepaper explains the Key Management and technical aspects around keys in greater detail. Check it out here_
 
    2. **Instant Finality & Scalability:** A consumer-centric app needs to support a large number of users without compromising performance. Additionally, it needs to support instant finality so that users experience a similar speed as in traditional apps.
 
@@ -220,7 +220,7 @@ Now, let’s understand each of the above-mentioned concerns and explore how Pus
 
       Examples of these transactions can be emails sent from one user to another, posting on social media, writing blogs, creating content, defining user settings for an app, defining user meta-data, storing soft state data for gaming among others.
 
-      The Push Network is designed to facilitate a wide range of consumer transactions, providing a robust and scalable platform for decentralized applications. The transaction model in the Push Network is tailored to support high-throughput, low-latency operations, ensuring that various applications can interact seamlessly.
+      The chain is designed to facilitate a wide range of consumer transactions, providing a robust and scalable platform for decentralized applications. The transaction model in the Push Chain is tailored to support high-throughput, low-latency operations, ensuring that various applications can interact seamlessly.
 
       **Since scalability is crucial for any application, phase 1** of the Push Chain roadmap includes the development of new optimization such as **parallel block execution and dynamic sharding** to create the true scaling of web3 apps, enabling read and write capabilities that scale as the number of nodes in the network scales, which provides an infrastructure that can handle the needs of thousands of applications related to speed and scalability.
 
@@ -255,7 +255,7 @@ Now, let’s understand each of the above-mentioned concerns and explore how Pus
 
    **With Phase 2** of its roadmap, the chain aims to establish seamless interoperability between chains to enable cross-chain features in the apps. The interoperability shall be enabled using a solver network capable of instant cross-chain transactions to ensure better UX. The network shall be designed to move not just value but also arbitrary payloads that seamlessly transfer smart contract calls to other chains.
 
-   The main goals of this phase is are to:
+   The main goals of this phase is to:
 
    - Enable fast and reliable movement of messages/assets between chain
    - Delegate on-chain intricacies and risks from users to solvers ( _specialized on-chain actors )_
@@ -264,7 +264,7 @@ Now, let’s understand each of the above-mentioned concerns and explore how Pus
 
    **With Phase 3,** we achieve the shared state L1 chain that is capable of supporting universal apps. Most importantly, this phase establishes one of the key features of Push Chain, i.e., **shared app experiences** (with Shared State).
 
-   Shared state means that Push Chain not only has read and write access to its own state but also has read-only access to all the other supported chains’ states. Combining this with Push ID enables universal smart contracts wherein the smart contracts on Push Chain have access to the state of all of the wallets of the user even if those wallets belong to other chain(s). This enables developers to understand the user and build universal smart contracts to fulfill the user’s need irrespective of what chain(s) the user state is on which ushers countless innovations.
+   Shared state allows Push Chain to access data from its own chain as well as supported external chains. Combining this with Push ID enables universal smart contracts wherein the smart contracts on Push Chain have access to the state of all of the wallets of the user even if those wallets belong to other chain(s). This enables developers to understand the user and build universal smart contracts to fulfill the user’s need irrespective of what chain(s) the user state is on which ushers countless innovations.
 
    ![Ninth Image of Why Push Chain](./image9.webp)
 
