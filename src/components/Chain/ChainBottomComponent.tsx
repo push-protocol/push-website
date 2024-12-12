@@ -33,7 +33,7 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
           justifyContent='space-between'
           gap={!isMobile && '70px'}
         >
-          <ItemV
+          <FAQHeader
             alignItems='flex-start'
             justifyContent='flex-start'
             padding={!isMobile && '23px 0 0 0'}
@@ -42,8 +42,6 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
               color='#000'
               fontSize={isMobile ? '36px' : '48px'}
               fontFamily='N27'
-              textAlign={isTablet && 'center'}
-              margin={isTablet && '0 auto'}
               fontWeight='500'
               lineHeight='120%'
             >
@@ -55,7 +53,6 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
               target='_blank'
               title='Discord'
               fontSize='16px'
-              margin={isTablet ? '24px auto 0 auto' : '24px 0 0 0'}
               background='#5865F2'
               color='#FFF'
               fontFamily='N27'
@@ -64,7 +61,7 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
               <p>Ask us on Discord</p>
               <TbArrowUpRight className='anchorSVGlink' />
             </FaqLink>
-          </ItemV>
+          </FAQHeader>
 
           <ItemV alignItems='flex-start' justifyContent='flex-start'>
             <AccordionGrid>
@@ -157,6 +154,11 @@ const FaqLink = styled(A)`
   align-items: center;
   overflow: inherit;
   gap: 12px;
+  margin: 24px 0 0 0;
+
+  @media ${device.tablet} {
+    margin: 24px auto 0 auto;
+  }
 
   p {
     margin: 0px !important;
@@ -229,5 +231,12 @@ const ChainCanvasItem = styled.div`
 
   @media ${device.laptop} {
     height: 300px;
+  }
+`;
+
+const FAQHeader = styled(ItemV)`
+  @media ${device.tablet} {
+    text-align: center;
+    margin: 0 auto;
   }
 `;

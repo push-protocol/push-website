@@ -22,7 +22,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ChainHeroSection: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
-  const isTablet = useMediaQuery(device.laptop);
   const { isOpen, open, close } = useModal();
 
   const HeroGrid = [
@@ -88,7 +87,6 @@ const ChainHeroSection: FC = () => {
           fontFamily='N27'
           fontWeight='500'
           fontSize='18px'
-          width={isMobile && '100%'}
           onClick={open}
         >
           Get Notified about Testnet
@@ -99,7 +97,6 @@ const ChainHeroSection: FC = () => {
           fontWeight='500'
           fontSize='18px'
           color='#000'
-          width={isMobile && '100%'}
           onClick={() => scrollTo('technology')}
         >
           Explore Push Chain
@@ -126,7 +123,7 @@ const ChainHeroSection: FC = () => {
       <CountSection>
         <GridSection>
           {HeroGrid.map((item) => (
-            <ItemV alignItems={isTablet ? 'center' : 'flex-start'}>
+            <GridDiv>
               {item.count && (
                 <H2
                   fontSize={isMobile ? '40px' : '72px'}
@@ -158,7 +155,7 @@ const ChainHeroSection: FC = () => {
               >
                 {item.label}
               </H3>
-            </ItemV>
+            </GridDiv>
           ))}
         </GridSection>
 
@@ -170,9 +167,8 @@ const ChainHeroSection: FC = () => {
           Linear scalability and dynamic sharding ensure read and write
           transactions continue to increase as more nodes are added to the
           network.
-          <ItemH
+          <TextDiv
             alignItems='flex-start'
-            justifyContent={!isTablet && 'flex-start'}
             gap='40px'
             margin={isMobile ? '24px auto 12px auto' : '29px 0 12px 0'}
           >
@@ -204,7 +200,7 @@ const ChainHeroSection: FC = () => {
               <p>Push Scan Devnet</p>
               <TbArrowUpRight className='anchorSVGlink' />
             </TextLink>
-          </ItemH>
+          </TextDiv>
           <H3
             fontSize={isMobile ? '14px' : '16px'}
             fontWeight='400'
@@ -341,6 +337,10 @@ const HeroButtons = styled.div`
     flex-direction: column;
     width: 100%;
     margin: 64px auto 0 auto;
+
+    button {
+      width: 100%;
+    }
   }
 `;
 
@@ -383,6 +383,20 @@ const GridSection = styled.div`
   }
 `;
 
+const GridDiv = styled(ItemV)`
+  align-items: flex-start;
+
+  @media ${device.laptop} {
+    align-items: center;
+  }
+
+  @media ${device.mobileL} {
+    h2 {
+      font-size: 40px;
+    }
+  }
+`;
+
 const GridText = styled.div`
   width: 500px;
   color: #000;
@@ -397,6 +411,14 @@ const GridText = styled.div`
     width: 100%;
     margin-top: 48px;
     text-align: center;
+  }
+`;
+
+const TextDiv = styled(ItemH)`
+  justify-content: flex-start;
+
+  @media ${device.laptop} {
+    justify-content: center;
   }
 `;
 
