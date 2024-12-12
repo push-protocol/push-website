@@ -361,7 +361,6 @@ function Header() {
                   <NavigationMenuItem>
                     <NavigationMenuHeader
                       onClick={() => openChainLink()}
-                      // expanded={mobileMenuMap[0]}
                       id='text5'
                     >
                       <Span

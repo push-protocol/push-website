@@ -78,7 +78,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
   };
 
   const noNavbar = false;
-  const alertLink = `https://gov.push.org/`;
+  const alertLink = `https://gov.push.org/t/introducing-push-chain-a-shared-state-l1-for-universal-apps/1991`;
 
   return (
     <Layout

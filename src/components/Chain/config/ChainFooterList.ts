@@ -19,7 +19,7 @@ export const ChainFooterList = {
   community: [
     {
       title: 'Governance',
-      href: 'https://gov.push.org',
+      href: 'https://gov.push.org/t/introducing-push-chain-a-shared-state-l1-for-universal-apps/1991',
       target: '_blank',
     },
   ],
