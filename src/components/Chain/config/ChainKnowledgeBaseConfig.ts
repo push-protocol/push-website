@@ -51,7 +51,7 @@ export const knowledgeBaseArticleContent = [
     image: 'consumer-apps',
     title: 'Consumer Apps 🫶🏽 Push Chain?',
     subtitle:
-      'Blockchain technology has transformed the way we interact digitally, but its current ecosystem faces significant challenges in scalability, usability, and accessibility, particularly for consumer-focused applications. Push Chain emerges as a cutting-edge Proof-of-Stake blockchain...',
+      'Web 3 is growing at lightning speed!Hundreds of L1s, Thousands of L2s and soon Tens of thousands of L3s!! While striving to make systems more scalable, decentralized and secure, we risk overlooking a crucial goal...',
     url: '/blog/consumer-apps-that-can-be-built-on-push-chain/',
   },
   {

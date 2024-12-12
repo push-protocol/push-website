@@ -144,7 +144,7 @@ Slots are sequential and occur one after other in a linear manner.
 
 (_But not in case of Push Chain - More on this later_)
 
-Each slot is assigned to a randomly chosen validator, selected through specialized algorithms like RandDAO in Ethereum and VDF - Verifiable Delay Function in Solana.
+Each slot is assigned to a randomly chosen validator, selected through specialized algorithms like RANDAO in Ethereum and VDF - Verifiable Delay Function in Solana.
 
 Within their slot duration, validators are responsible for tasks:
 
@@ -167,7 +167,7 @@ Once a block is proposed, a committee of a defined number of validators is rando
 ### Edge cases:
 
 - **Missed Blocks** - Instances when a validator fails to propose a block within their slot, it results in a missed block.
-- **Orphaned Blocks** - These occur when a block is rejected by the validating committee or during a chain fork. Orphaned blocks represent alternative versions of chain historythat are not followed by majority of network.
+- **Orphaned Blocks** - These occur when a block is rejected by the validating committee or during a chain fork. Orphaned blocks represent alternative versions of chain history that are not followed by majority of network.
 
 In summary, this is how the entire process would look like:
 
