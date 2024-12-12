@@ -171,9 +171,9 @@ Reach out to us on our [Push Discord Community](https://discord.com/invite/pushp
 
 ## So What’s next?
 
-1. [**The Governance Proposal for Push Chain is now LIVE**](https://gov.push.org) and ****Push community members have the opportunity to vote on the proposal as well as share their views and ask questions below.
-2. **Check out the [Push Chain Whitepaper](https://whitepaper.push.org)** for a detailed overview of the vision and the underlying technicalities.
-3. **Visit the [Push Chain Website](https://push.org/chain)** to find a one-pager explanation of the vision.
-4. [**Push Chain Devnet](https://scan.push.org/)** is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well. ****
-5. [**Push Chain Simulate Tx](https://simulate.push.org) already** provides a way for everyone to send a tx from any chain using wallet abstraction.
-6. **Visit the Push Ecosystem Page** that provides a list of apps that are already built on top of the Push Chain infra.
+1. **The [Governance Proposal](https://gov.push.org/t/introducing-push-chain-a-shared-state-l1-for-universal-apps/1991) for Push Chain is now LIVE** and Push community members have the opportunity to vote on the proposal as well as share their views and ask questions below.
+2. **Check out the [Push Chain Whitepaper](https://whitepaper.push.org?utm_source=pushblog&utm_medium=referral&utm_campaign=pcgov)** for a detailed overview of the vision and the underlying technicalities.
+3. Visit the [Push Chain Website](https://push.org/chain?utm_source=pushblog&utm_medium=referral&utm_campaign=pcgov) to find a one-pager explanation of the vision.
+4. [Push Chain Devnet](https://scan.push.org/?utm_source=pushblog&utm_medium=referral&utm_campaign=pcgov) is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.
+5. [Push Chain Simulate Tx](https://simulate.push.org?utm_source=pushblog&utm_medium=referral&utm_campaign=pcgov) already provides a way for everyone to send tx from any chain using wallet abstraction.
+<!-- 6. **Visit the Push Ecosystem Page** that provides a list of apps that are already built on top of the Push Chain infra. -->

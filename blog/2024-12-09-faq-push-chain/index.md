@@ -4,7 +4,7 @@ title: 'Push Chain’s Frequently Asked Questions'
 authors: [push]
 image: './cover-image.webp'
 description: 'Push Chain’s Frequently Asked Questions'
-text: ''
+text: 'The place to find answers to all the popular questions the community has asked about Push Chain. Crowdsourced from Push Fam ❤️ and curated by the Push team 💪.'
 tags: [Push Chain, Push Chain FAQs]
 ---
 
