@@ -102,7 +102,7 @@ function ChainFooter() {
                             'Interoperable,',
                             'Any Chain,',
                             'Omnichain,',
-                            'Shared Apps,',
+                            'Shared State,',
                           ],
                           autoStart: true,
                           loop: true,
