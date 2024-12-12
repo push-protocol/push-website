@@ -116,7 +116,7 @@
         <link href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/faq-push-chain"/>
         <updated>2024-12-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Push Chain’s Frequently Asked Questions]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Push Chain’s Frequently Asked Questions" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-f7366d37297ee65289d3e8c0d47e4f65.webp" width="1600" height="900" class="img_ev3q"></p>]]></content>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Push Chain’s Frequently Asked Questions" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-cd2255df54913750cccc2fe1014061eb.webp" width="1600" height="900" class="img_ev3q"></p>]]></content>
         <author>
             <name>Push Protocol</name>
             <uri>https://twitter.com/pushprotocol</uri>
@@ -359,7 +359,7 @@
         <link href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain"/>
         <updated>2024-12-09T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Understand Proof of Stake (POS) and Push Chain PoS]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Understand Proof of Stake (POS) and Push Chain PoS" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-f7366d37297ee65289d3e8c0d47e4f65.webp" width="1600" height="900" class="img_ev3q"></p>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Cover Image of Understand Proof of Stake (POS) and Push Chain PoS" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/cover-image-0e557c865dc3ac84a6be9e2670ebe6cb.webp" width="1600" height="900" class="img_ev3q"></p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="introduction">Introduction<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/understand-proof-of-stake-and-push-chain#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
 <p>In a globally distributed computing environment, achieving collective agreement on the true state of the system has always been a complex challenge.</p>
 <p>Fortunately, there are algorithms (<em>specialized instructions</em>) that assist in preserving this ‘single-truth-state’ while balancing network security, long-term sustainability, and economic incentives.</p>
