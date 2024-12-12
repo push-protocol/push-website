@@ -25,7 +25,7 @@ const ChainRoadmapSection: FC = () => {
     'Fees Abstraction',
     'Seamless Interoperability',
     'Wallet State on any Chain',
-    'Universal Smart Contract',
+    'Universal Smart Contracts',
   ];
 
   return (

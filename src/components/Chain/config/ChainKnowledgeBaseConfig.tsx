@@ -1,5 +1,7 @@
 /* eslint-disable no-irregular-whitespace */
 
+import React from 'react';
+
 // Knowledge Base Header Configuration:
 // This edits the Header, description oon /chain/knowledge
 // FOr the header image, if you want to use an image, use the image field.
@@ -7,7 +9,14 @@
 
 export const ChainKnowledgeBaseHeaderConfig = {
   title: 'Introducing Push Chain',
-  description: `Push Chain is a shared state blockchain for shared app experience. Push Chain is capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability`,
+  description: () => (
+    <div>
+      Push Chain is a shared state blockchain for universal applications. It is
+      designed to allow <b>transactions from any chain</b> (ETH, Solana, EVM,
+      non-EVM), has <b>1s fast finality</b> and has <b>true scalability</b>
+      (read and write throughput increases as the number of nodes increases)
+    </div>
+  ),
   // video: {
   //   src: 'https://www.youtube.com/embed/lhiwW3SfoZE',
   //   title: 'title',

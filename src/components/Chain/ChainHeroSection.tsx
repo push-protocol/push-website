@@ -31,7 +31,7 @@ const ChainHeroSection: FC = () => {
       label: 'Block Size',
     },
     {
-      count: '~1s',
+      count: '<1s',
       label: 'Finality',
     },
     {

@@ -38,7 +38,7 @@ const ChainKnowledgeBaseComponent = () => {
             lineHeight='140%'
             textAlign='center'
           >
-            {ChainKnowledgeBaseHeaderConfig?.description}
+            {ChainKnowledgeBaseHeaderConfig?.description()}
           </H3>
         </ItemV>
 

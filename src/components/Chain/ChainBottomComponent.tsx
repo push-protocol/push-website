@@ -91,7 +91,7 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
             lineHeight='120%'
             letterSpacing='-0.72px'
           >
-            Elevate your app with the most powerful Universal Chain for web3
+            Elevate your app with the most powerful universal chain for web3
           </H3>
         </ItemH>
 
