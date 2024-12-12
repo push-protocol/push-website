@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[36456],{714278:e=>{e.exports=JSON.parse('{"label":"Shapeshift","permalink":"/push-website/pr-preview/pr-943/blog/tags/shapeshift","allTagsPath":"/push-website/pr-preview/pr-943/blog/tags","count":1,"unlisted":false}')}}]);
