@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 // External Components
+import Link from '@docusaurus/Link';
 import styled from 'styled-components';
 // Internal Components
 import { A, ItemH, Span } from '@site/src/css/SharedStyling';
@@ -15,45 +16,50 @@ export const General = [
     renderAnswer: () => (
       <Answer>
         <Span>
-          Push is the world’s first blockchain-agnostic decentralised
-          communication protocol for Web3. It is an open network for validating
-          and indexing all sorts of communication (notifications, chats, etc)
-          that can then be integrated by any crypto frontend (dApps, wallets,
-          etc).
+          Push Chain is a shared state blockchain for universal applications. It
+          is designed to allow <b>transactions from any chain</b> (ETH, Solana,
+          EVM, non-EVM), has <b>1s fast finality</b> and has{' '}
+          <b>true scalability</b> (read and write throughput increases as the
+          number of nodes increases).
         </Span>
         <Span>
-          Any smart contract, dApp, or backend service can integrate Push to
-          provide a communication layer through notifications or chats that are
-          tied to the wallet addresses of users.
+          It introduces some ground breaking innovations such as consumer txs
+          (order not important), parallel validators and dynamic sharding and
+          universal smart contracts. The result is a layer 1 with the ability to
+          become a shared settlement layer for all L1s 🤝 L2s 🤝 L3.
         </Span>
       </Answer>
     ),
   },
   {
-    question: 'How does Push Chain work??',
+    question: 'How does Push Chain work?',
     section: 'General',
     renderAnswer: () => (
       <Answer>
         <Span>
-          Push is building the communication layer for Web3, using which any
-          dApp, smart contracts or backend can send any real time communications
-          (such as notifications, chats, video and more) that are tied directly
-          to a user's wallet address (aka web3 usernames).
+          Push Chain is a sharded, Proof-of-Stake (PoS) blockchain that features
+          different types of nodes—validators, storage nodes, and archival
+          nodes—each optimized for specific roles and responsibilities to ensure
+          high efficiency. This design gives the chain fast finality of less
+          than one second.
         </Span>
         <Span>
-          This addresses a major gap in the web3 infrastructure, and improving
-          the everyday experience for blockchain users. The notifications (or
-          any other communications) are off-chain, gasless for all scenarios
-          except when a smart contract sends them (in which case the smart
-          contract pays a slightly higher gas fees for the payload that is sent
-          on blockchain).
+          Push Chain also introduces several key innovations in web3. At launch,
+          these include <b>consumer transactions</b> (these are txs where order
+          is not critical), <b>Push ID</b>, which maps multiple EVM and non-EVM
+          accounts to a single user and <b>wallet and fees abstraction</b>.
         </Span>
         <Span>
-          While communications are encrypted and secure, they utilize Push open
-          network which means any dApp or crypto wallet can easily integrate
-          them making the lives of all web3 users a lot easier and more akin to
-          web2 UX where apps (or protocols) communicate with their users
-          whenever something of importance occurs or is about to occur for them.
+          In later phases, Push Chain will introduce <b>shared state</b> and{' '}
+          <b>universal smart contracts</b>. These features will enable smart
+          contracts deployed on Push Chain to access the state of both EVM and{' '}
+          non-EVM wallets connected to a single user.
+        </Span>
+        <Span>
+          This results in <b>universal applications</b> for web3. In this
+          paradigm, instead of being a user of "Uniswap on Ethereum," "Uniswap
+          on Polygon," or "Uniswap on Arbitrum," a person simply becomes a{' '}
+          <b>user of Uniswap</b>.
         </Span>
       </Answer>
     ),
@@ -64,13 +70,21 @@ export const General = [
     renderAnswer: () => (
       <Answer>
         <Span>
-          <b>⚬ Push Notifications:</b> Enables any smart contract, dApp, backend
-          to deliver critical informations as notifications to web3 users
-          directly to their wallet addresses.
+          Push Chain addresses specific gaps in the existing blockchains, such
+          as interoperability, shared app experiences, enabling new app
+          experiences, and scalability. While existing blockchains are robust,
+          they operate in their own eco-system and an aggregator to unite these
+          chains are needed.
         </Span>
         <Span>
-          <b>⚬ Push Chat(wallet-to-wallet chat):</b> Enabling 2-way
-          communication for web3 users from their wallet addresses.
+          Push Chain’s focus is on being a <b>shared state chain</b> for
+          universal applications acting as a unifying layer where all chains can
+          come together and use PC as universal hub or do settlement between
+          them.
+        </Span>
+        <Span>
+          PC offers a new paradigm of web3 that works from <b>Any Chain.</b> For{' '}
+          <b>Any User.</b> And is suitable for <b>Any App.</b>
         </Span>
       </Answer>
     ),
@@ -81,53 +95,20 @@ export const General = [
     renderAnswer: () => (
       <Answer>
         <Span>
-          Connect to the{' '}
-          <AMod href='https://app.push.org/#/channels' target={'_blank'}>
-            Push dApp
-          </AMod>{' '}
-          & opt-in to channels to get notifications for protocols that are
-          relevant to you. Channels are protocols that activate themselves on
-          Push protocol to send notification.
+          While we are thrilled with the early interest coming from developers
+          to build universal apps, we are still in the governance phase for
+          ratifying our evolution from Push Protocol to Push Chain and hence do
+          not have a grants program now.
         </Span>
         <Span>
-          You can receive notifications from any crypto frontends that have
-          already integrated Push. Alternatively, you can use via{' '}
-          <AMod href='https://app.push.org/#/channels' target={'_blank'}>
-            Push dApp
-          </AMod>
-          ,{' '}
-          <AMod
-            href='https://chrome.google.com/webstore/detail/push-protocol-alpha/lbdcbpaldalgiieffakjhiccoeebchmg'
-            target={'_blank'}
-          >
-            browser extension
-          </AMod>
-          , and mobile app (
-          <AMod
-            href='https://play.google.com/store/apps/details?id=io.epns.epns&pli=1'
-            target={'_blank'}
-          >
-            Android
-          </AMod>{' '}
-          &{' '}
-          <AMod
-            href='https://apps.apple.com/app/ethereum-push-service-epns/id1528614910'
-            target={'_blank'}
-          >
-            iOS
-          </AMod>
-          ) in case your favorite wallet or dApp doesn't have Push support yet.
-        </Span>
-        <Span>
-          Push recently launched a wallet-to-wallet communication product called
-          Push Chat which is in alpha stage. Reach out to us on{' '}
-          <AMod
-            href='https://discord.com/invite/pushprotocol'
-            target={'_blank'}
-          >
-            Discord
-          </AMod>{' '}
-          to get exclusive Push Chat access.
+          This will change very soon once the community approves of Push Chain!
+          Meanwhile, to frontrun other grantees, please drop us an email at{' '}
+          <Link href='mailto:team@push.org'>team@push.org</Link> with the
+          subject line as <b>Grant MEOW</b> and your app idea. Or, simply follow{' '}
+          <Link href='https://x.com/pushprotocol' target='_blank'>
+            @pushprotocol
+          </Link>{' '}
+          for more updates around the grants program and its release.
         </Span>
       </Answer>
     ),
@@ -138,17 +119,18 @@ export const General = [
     renderAnswer: () => (
       <Answer>
         <Span>
-          Push operates on network of nodes called Push Nodes which are
-          responsible for the validation, storage, and delivery of notifications
-          & chats.
+          Today's push notification and chat protocols will benefit
+          significantly from being built on top of Push Chain. A dedicated
+          section of the team will focus on maintaining and enhancing these
+          protocols, ensuring they remain the de-facto standard in their
+          respective domains.
         </Span>
         <Span>
-          Major efforts are put into decentralising Push Nodes which is in the
-          final stages now. Any content or payloads getting delivered are
-          already immutable and can't be changed as they are secured using
-          crypto-graphical proofs. The other part which ensures that the content
-          can't be censored is in final stages now of testing and public alpha
-          push nodes are expected to be rolled out soon.
+          By aligning with Push Chain, notifications and chat sent through the
+          protocols will be processed as transactions on the chain. This
+          integration not only enables these protocols to accrue value but also
+          marks the beginning of a new chapter in their evolution, further
+          enhancing their utility and impact within the web3 ecosystem.
         </Span>
       </Answer>
     ),
