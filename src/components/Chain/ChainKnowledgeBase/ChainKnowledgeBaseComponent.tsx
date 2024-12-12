@@ -8,7 +8,7 @@ import useMediaQuery from '../../../hooks/useMediaQuery';
 import useModal from '../hooks/useModal';
 
 import { Button, H2, H3, ItemH, ItemV } from '../../../css/SharedStyling';
-import { ChainKnowledgeBaseHeaderConfig } from '../config/ChainKnowledgeBaseConfig';
+import { ChainKnowledgeBaseHeader } from '../config/ChainKnowledgeBaseHeader';
 import ImageHolder from '../../../../src/components/ImageHolder';
 import ChainElevateModal from '../ChainElevateModal';
 
@@ -28,7 +28,7 @@ const ChainKnowledgeBaseComponent = () => {
             letterSpacing='-1.098px'
             textAlign='center'
           >
-            {ChainKnowledgeBaseHeaderConfig?.title}
+            {ChainKnowledgeBaseHeader?.title}
           </H2>
 
           <H3
@@ -38,21 +38,21 @@ const ChainKnowledgeBaseComponent = () => {
             lineHeight='140%'
             textAlign='center'
           >
-            {ChainKnowledgeBaseHeaderConfig?.description()}
+            {ChainKnowledgeBaseHeader?.description()}
           </H3>
         </ItemV>
 
         <IFrameItem>
           <IFrameImage
-            background={ChainKnowledgeBaseHeaderConfig?.image && '#E8EFF8'}
+            background={ChainKnowledgeBaseHeader?.image && '#E8EFF8'}
             borderRadius='32px'
           >
-            {ChainKnowledgeBaseHeaderConfig?.video && (
+            {ChainKnowledgeBaseHeader?.video && (
               <iframe
                 width={isMobile ? '100%' : '560px'}
                 height={isMobile ? '100%' : '325px'}
-                src={ChainKnowledgeBaseHeaderConfig.video.src}
-                title={ChainKnowledgeBaseHeaderConfig.video.title}
+                src={ChainKnowledgeBaseHeader.video.src}
+                title={ChainKnowledgeBaseHeader.video.title}
                 frameBorder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                 referrerPolicy='strict-origin-when-cross-origin'
@@ -60,14 +60,14 @@ const ChainKnowledgeBaseComponent = () => {
               ></iframe>
             )}
 
-            {ChainKnowledgeBaseHeaderConfig?.image && (
+            {ChainKnowledgeBaseHeader?.image && (
               <ImageHolder
                 src={
                   require(
-                    `@site/static/assets/website/chain/${ChainKnowledgeBaseHeaderConfig?.image}.webp`
+                    `@site/static/assets/website/chain/${ChainKnowledgeBaseHeader?.image}.webp`
                   ).default
                 }
-                srcSet={`${require(`@site/static/assets/website/chain/${ChainKnowledgeBaseHeaderConfig?.image}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/${ChainKnowledgeBaseHeaderConfig?.image}@3x.webp`).default} 3x`}
+                srcSet={`${require(`@site/static/assets/website/chain/${ChainKnowledgeBaseHeader?.image}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/${ChainKnowledgeBaseHeader?.image}@3x.webp`).default} 3x`}
                 alt={'alt'}
                 title={'title'}
               />

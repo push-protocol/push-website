@@ -68,7 +68,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
         lineHeight={isMobile ? '100%' : '140%'}
         letterSpacing='-0.64px'
       >
-        {item.title}
+        {item?.title}
       </H3>
       <ItemH margin='0 0 auto 0' alignItems='flex-start' alignSelf='flex-start'>
         <Span
@@ -80,7 +80,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
           letterSpacing='-0.64px'
           color='#757D8D'
         >
-          {item.subtitle}
+          {item?.subtitle}
         </Span>
       </ItemH>
 
