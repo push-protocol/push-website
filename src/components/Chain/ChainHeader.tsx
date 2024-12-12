@@ -34,7 +34,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ChainHeader: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
-  const isTablet = useMediaQuery(device.laptop);
   const history = useHistory();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -172,15 +171,11 @@ const ChainHeader: FC = () => {
                     onClick={() => handleRedirect(item)}
                     showMobileMenu={isMobileMenuOpen}
                   >
-                    <ItemH
-                      className='navLink'
-                      alignSelf={isTablet && 'flex-start'}
-                      justifyContent={isTablet && 'flex-start'}
-                    >
+                    <MenuNavLink className='navLink'>
                       <NavigationMenuHeader isActive={activeItem === item.id}>
                         <Span fontSize='18px'>{item.label}</Span>
                       </NavigationMenuHeader>
-                    </ItemH>
+                    </MenuNavLink>
                   </NavigationMenuItem>
                 ))}
               </NavigationMenu>
@@ -344,6 +339,13 @@ const MobileMenuToggleIcon = styled.span`
   @media ${device.laptop} {
     display: flex;
     cursor: pointer;
+  }
+`;
+
+const MenuNavLink = styled(ItemH)`
+  @media ${device.laptop} {
+    align-self: flex-start;
+    justify-content: flex-start;
   }
 `;
 
