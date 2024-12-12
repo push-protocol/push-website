@@ -16,7 +16,7 @@ October has been another outstanding month for Push Protocol, showcasing signifi
 
 Here’s a recap of our latest updates 👇
 
-### **Protocol Milestones:**
+## **Protocol Milestones:**
 
 ### **Push Points Program Launch 🚀**
 
@@ -42,7 +42,6 @@ These metrics are a testament to the growing interest in secure, on-chain commun
 - **In-app notifications, as a feature, was** sent to the testing phase.
 - Several **UI enhancements and fixes** were completed, further refining the user experience.
 
-
 **Mobile App**
 
 - An **Android-optimized version was released to** improve accessibility.
@@ -51,7 +50,7 @@ These metrics are a testament to the growing interest in secure, on-chain commun
 **Website Updates**
 
 - We published comprehensive **Push Points Program [documentation](https://push.org/docs/rewards/)**.
-- We released several blog posts on topics like [**Push Points](https://push.org/blog/introducing-the-push-points-program/), [CCR Features](https://push.org/blog/abstracting-chains-for-better-dapp-ux/)**, [decentralized social media](https://push.org/blog/what-is-decentralized-social-media/), and [consumer crypto themes](https://push.org/blog/), contributed by community members.
+- We released several blog posts on topics like [\*\*Push Points](https://push.org/blog/introducing-the-push-points-program/), [CCR Features](https://push.org/blog/abstracting-chains-for-better-dapp-ux/)\*\*, [decentralized social media](https://push.org/blog/what-is-decentralized-social-media/), and [consumer crypto themes](https://push.org/blog/), contributed by community members.
 - We enhanced review and testing with the deploy preview functionality and migrated the production build from Vercel to the GitHub pages for improved efficiency.
 
 **SDK & Backend Updates**
@@ -81,7 +80,7 @@ November saw major ecosystem updates in this sphere, with exciting integrations 
 
 **Push Points Partner Collaborations**
 
-Push Points rolled out collaborations with [**QuickSwap](https://app.push.org/channels/0xf198eBCc8dB86F707bAdDdBa236aB5b619c59D3c), [ShapeShift](https://app.push.org/channels/0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be), [Cyber](https://app.push.org/channels/0xBc28359C93cA00A5724fe398606f27e43007C22D), [PWN](https://app.push.org/channels/0x991552E1C2A96D0Ae72E19552b08A1889aebCF53), [Revoke Cash](https://app.push.org/channels/0x65bB67c2416186aE3107F7c2C6728b272a579e3d),** and [**Unstoppable Domains**](https://app.push.org/channels/0xdbBc2Ac8cb8D02B26F165b4BC120fd4b14DA6cDA) to bring Push Points to life and ensure that it scales as a program. 
+Push Points rolled out collaborations with [\*\*QuickSwap](https://app.push.org/channels/0xf198eBCc8dB86F707bAdDdBa236aB5b619c59D3c), [ShapeShift](https://app.push.org/channels/0x90A48D5CF7343B08dA12E067680B4C6dbfE551Be), [Cyber](https://app.push.org/channels/0xBc28359C93cA00A5724fe398606f27e43007C22D), [PWN](https://app.push.org/channels/0x991552E1C2A96D0Ae72E19552b08A1889aebCF53), [Revoke Cash](https://app.push.org/channels/0x65bB67c2416186aE3107F7c2C6728b272a579e3d),** and [**Unstoppable Domains\*\*](https://app.push.org/channels/0xdbBc2Ac8cb8D02B26F165b4BC120fd4b14DA6cDA) to bring Push Points to life and ensure that it scales as a program.
 
 **Channel Growth Highlights**
 
@@ -109,7 +108,7 @@ Push Protocol’s DAO initiatives reflect our dedication to community-driven gro
 
 - We partnered with **Unstoppable Domains** as a Push Points partner.
 - We architected the strategy and sourced the tooling needed for the launch of the **PushCast podcast** (launching in November).
-- We supported two Devcon attendees through our [**Devcon](https://devcon.org/en/) Scholar Initiative**.
+- We supported two Devcon attendees through our [\*\*Devcon](https://devcon.org/en/) Scholar Initiative\*\*.
 - We began developing more transparent contributor pathways for 2025, showcasing how contributors can grow within the ecosystem. As with all Push DAO strategy changes for 2025, we’ll share the frameworks publicly in their final form, in December.
 
 **Workshops and Events**
@@ -125,7 +124,7 @@ Our commitment to Web3 education and ecosystem expansion continued through Novem
 
 - We conducted an [**Ekolance Workshop**](https://www.youtube.com/watch?v=60t101ro2uM), a grantee-hosted session on building Web3 DApps with Push tech.
 - Our DAO Lead, Ian LeViness, participated in a [**SocialFi panel**](https://x.com/pushprotocol/status/1849401395147055525) on X alongside partners such as **Conflux** and **Unstoppable Domains**.
-- Ian also represented the ecosystem on several podcasts, including [**The Silicon Dreams](https://www.youtube.com/watch?v=Mc_wp_4zNvQ&list=PLu0fIscp1uLKza4WMSCl76C5VdK9l0Tll&index=49) Podcast** and [**Jax Dwyer’s](https://www.youtube.com/watch?v=Ysy-jV0tiUU) Podcast**, promoting Push’s vision and community.
+- Ian also represented the ecosystem on several podcasts, including [\*\*The Silicon Dreams](https://www.youtube.com/watch?v=Mc_wp_4zNvQ&list=PLu0fIscp1uLKza4WMSCl76C5VdK9l0Tll&index=49) Podcast** and [**Jax Dwyer’s](https://www.youtube.com/watch?v=Ysy-jV0tiUU) Podcast\*\*, promoting Push’s vision and community.
 - We also booked several more podcast appearances for November and December, which will be included in the following reports.
 
 ### **Looking Ahead**
