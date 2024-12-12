@@ -1,14 +1,15 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 
+import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import { TbArrowUpRight } from 'react-icons/tb';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Typewriter from 'typewriter-effect';
 
-import { device } from '../../../src/config/globals';
+import { device, size } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
 import useModal from './hooks/useModal';
 
@@ -23,6 +24,8 @@ gsap.registerPlugin(ScrollTrigger);
 const ChainHeroSection: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
   const { isOpen, open, close } = useModal();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [hovered, setHovered] = useState(true);
 
   const HeroGrid = [
     {
@@ -45,6 +48,23 @@ const ChainHeroSection: FC = () => {
       scrollTo: { y: `#${id}` },
     });
   };
+
+  // decide video format for bg and header illustration
+  // const disableVideoAt = size.tablet;
+
+  // handle mouse entry
+  // const handleMouseEnter = (e) => {
+  // setHovered(true);
+  // };
+
+  // handle mouse leave
+  // const handleMouseLeave = (e) => {
+  // setHovered(false);
+
+  // reset transform
+  // const container = document.getElementById(id);
+  // container.style.transform = `rotateX(0deg) rotateY(0deg) translateZ(0px)`;
+  // };
 
   return (
     <ChainHeroSectionWrapper>
@@ -106,14 +126,50 @@ const ChainHeroSection: FC = () => {
       <ChainElevateModal isOpen={isOpen} onClose={close} />
 
       <ItemV padding='48px 0'>
-        <ImageHolder
+        <ReactPlayer
+          url={
+            require(`@site/static/assets/website/chain/chain-hero.webm`).default
+          }
+          playing={
+            hovered &&
+            typeof window !== 'undefined' &&
+            window.innerWidth > size.tablet
+              ? true
+              : false
+          }
+          loop={true}
+          muted={true}
+          width='100%'
+          height='100%'
+          config={{
+            file: {
+              attributes: {
+                controlsList: 'nofullscreen',
+              },
+            },
+          }}
+          style={
+            {
+              // position: 'absolute',
+              // top: 0,
+              // bottom: 0,
+              // right: 0,
+              // left: 0,
+              // visibility:
+              //   hovered && window.innerWidth > disableVideoAt
+              //     ? 'visible'
+              //     : 'hidden',
+            }
+          }
+        />
+        {/* <ImageHolder
           src={
             require(`@site/static/assets/website/chain/chain-hero.webp`).default
           }
           srcSet={`${require(`@site/static/assets/website/chain/chain-hero@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/chain-hero@3x.webp`).default} 3x`}
           alt={'Build Universal Apps'}
           title={'Build Universal Apps'}
-        />
+        /> */}
       </ItemV>
       <SectionText>
         Consumer applications that work from any chain, reach instant finality,
