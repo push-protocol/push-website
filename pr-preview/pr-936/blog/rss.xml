@@ -715,7 +715,7 @@ A unified VM that enables complex universal smart contract logic that is able to
 <li>Dealing with the learning curve of understanding different networks, each with its own set of rules, interfaces, and requirements.</li>
 </ul>
 <p>Remember that this is just a glance at the UX problem.</p>
-<p>There are undoubtedly more issues issues for a web3 user daily. The list is even longer when it comes to newbie web3 users.</p>
+<p>There are undoubtedly more issues for a web3 user daily. The list is even longer when it comes to newbie web3 users.</p>
 <p><img loading="lazy" alt="Fourth Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image4-1ffdae2ec53d35c95e7f47f4c1f0acbe.webp" width="2128" height="1140" class="img_ev3q"></p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="user-retention-challenges">User Retention Challenges<a href="https://push-protocol.github.io/push-website/pr-preview/pr-936/blog/why-push-chain#user-retention-challenges" class="hash-link" aria-label="Direct link to User Retention Challenges" title="Direct link to User Retention Challenges">​</a></h3>
 <p>Poor UX can directly impact user retention.</p>
@@ -771,12 +771,12 @@ Imagine the sheer number of DApps deployed on all of these chains!</p>
 <p><strong>Simplified User-Onboarding:</strong> Apps required seamless onboarding and intuitive user interface. In simpler terms, this indicates that applications should be so easy to use that the user should never have to learn the intricacies of the underlying technology stack.</p>
 <p>However, its not the case in web3. The intuitiveness ends the moment users are required to <em>set up a web3 wallet and remember the mnemonics</em>. This means the very first step a user is required to do for using web3 apps will most likely be the most difficult step in itself.</p>
 <p>Once the user enters the rabbit hole of using a web3 app, they are then required to either <em>choose a chain, sign a transaction, collect and manage native gas tokens of the respective chain, switch between different chains, bridge tokens, etc.</em> The list goes on and <strong><em>the further you explore, the harder the UX.</em></strong></p>
-<p>With Wallet Abstraction**,** Push Chain aims to enable seamless user onboarding without going through the manual and complicated procedure of setting up a web3 wallet.</p>
+<p>With Wallet Abstraction, Push Chain aims to enable seamless user onboarding without going through the manual and complicated procedure of setting up a web3 wallet.</p>
 <p><img loading="lazy" alt="Eigth Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image8-70c78f84636ce3306181274bed509f46.webp" width="1036" height="898" class="img_ev3q"></p>
 <p>Wallet abstraction addresses challenges by removing the need for direct mnemonic management. Instead, Push Chain allows users to authenticate using familiar methods like <em>social logins, email, or phone numbers.</em> This system abstracts away the complexity of mnemonic custody by securely managing a master key pair on behalf of the user, while still ensuring they retain ultimate control.</p>
 <p>The Push wallet can dynamically derive blockchain-specific keys from the master key pair, enabling seamless interaction across multiple blockchain networks. By simplifying wallet operations and providing a unified experience, wallet abstraction reduces friction, enhances usability, and makes blockchain technology more accessible without compromising security.</p>
 <blockquote>
-<p><em>The whitepaper explains the Key Management and technical aspects around keys in much more depth. Check it out here</em></p>
+<p><em>The whitepaper explains the Key Management and technical aspects around keys in greater detail. Check it out here</em></p>
 </blockquote>
 </li>
 <li>
@@ -786,7 +786,7 @@ Imagine the sheer number of DApps deployed on all of these chains!</p>
 <p>A consumer transaction can be defined as the type of transaction that doesn't benefit from the strict ordering as seen in traditional web3 transactions where strict ordering with a nonce is mandatory. These can also be categorized as transfers of consumer data like notifications, emails, blogs, etc that do not require a strict order to be executed.</p>
 <p>Since there is no state change for such transactions, they don’t need to change the merkle root of the network and thus can be called <strong>orderless transactions.</strong></p>
 <p>Examples of these transactions can be emails sent from one user to another, posting on social media, writing blogs, creating content, defining user settings for an app, defining user meta-data, storing soft state data for gaming among others.</p>
-<p>The Push Network is designed to facilitate a wide range of consumer transactions, providing a robust and scalable platform for decentralized applications. The transaction model in the Push Network is tailored to support high-throughput, low-latency operations, ensuring that various applications can interact seamlessly.</p>
+<p>The chain is designed to facilitate a wide range of consumer transactions, providing a robust and scalable platform for decentralized applications. The transaction model in the Push Chain is tailored to support high-throughput, low-latency operations, ensuring that various applications can interact seamlessly.</p>
 <p><strong>Since scalability is crucial for any application, phase 1</strong> of the Push Chain roadmap includes the development of new optimization such as <strong>parallel block execution and dynamic sharding</strong> to create the true scaling of web3 apps, enabling read and write capabilities that scale as the number of nodes in the network scales, which provides an infrastructure that can handle the needs of thousands of applications related to speed and scalability.</p>
 </li>
 <li>
@@ -812,14 +812,14 @@ Imagine the sheer number of DApps deployed on all of these chains!</p>
 <p>If an infrastructure achieves both of these for the apps built on top of it, it can ideally resolve the most difficult UX problem that exists in web3 apps today.</p>
 <p>That’s exactly what Push Chain aims to solve in its Phase 2 and 3.</p>
 <p><strong>With Phase 2</strong> of its roadmap, the chain aims to establish seamless interoperability between chains to enable cross-chain features in the apps. The interoperability shall be enabled using a solver network capable of instant cross-chain transactions to ensure better UX. The network shall be designed to move not just value but also arbitrary payloads that seamlessly transfer smart contract calls to other chains.</p>
-<p>The main goals of this phase is are to:</p>
+<p>The main goals of this phase is to:</p>
 <ul>
 <li>Enable fast and reliable movement of messages/assets between chain</li>
 <li>Delegate on-chain intricacies and risks from users to solvers ( <em>specialized on-chain actors )</em></li>
 </ul>
 <p>At the point in which both of these goals are accomplished, we will achieve a win for both the users and the apps on top of Push Chain.</p>
 <p><strong>With Phase 3,</strong> we achieve the shared state L1 chain that is capable of supporting universal apps. Most importantly, this phase establishes one of the key features of Push Chain, i.e., <strong>shared app experiences</strong> (with Shared State).</p>
-<p>Shared state means that Push Chain not only has read and write access to its own state but also has read-only access to all the other supported chains’ states. Combining this with Push ID enables universal smart contracts wherein the smart contracts on Push Chain have access to the state of all of the wallets of the user even if those wallets belong to other chain(s). This enables developers to understand the user and build universal smart contracts to fulfill the user’s need irrespective of what chain(s) the user state is on which ushers countless innovations.</p>
+<p>Shared state allows Push Chain to access data from its own chain as well as supported external chains. Combining this with Push ID enables universal smart contracts wherein the smart contracts on Push Chain have access to the state of all of the wallets of the user even if those wallets belong to other chain(s). This enables developers to understand the user and build universal smart contracts to fulfill the user’s need irrespective of what chain(s) the user state is on which ushers countless innovations.</p>
 <p><img loading="lazy" alt="Ninth Image of Why Push Chain" src="https://push-protocol.github.io/push-website/pr-preview/pr-936/assets/images/image9-0277bcf4353ad392efa0adcf75fb3894.webp" width="1364" height="1006" class="img_ev3q"></p>
 <p>The feature opens up the entire web3 userbase to be available for a web3 application enabling shared app experiences no matter from what blockchain the user accesses the application. It also makes Push Chain the shared settlement layer for all other chains (EVM / Non-EVM).</p>
 <p>This enables developers to completely abstract away any learning from the user, creating an era where a user does not use Uniswap “on Ethereum” or Uniswap “on Polygon” or Uniswap “on Arbitrum” — but rather simply <strong>uses Uniswap</strong> for its features.</p>
