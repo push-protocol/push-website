@@ -260,6 +260,10 @@ function Header() {
     });
   };
 
+  const openChainLink = () => {
+    history.push(baseURL + '/chain');
+  };
+
   return (
     <StyledHeader
       showMobileMenu={showMobileMenu}
@@ -354,6 +358,25 @@ function Header() {
                   className='navigationMenu'
                   showMobileMenu={isMobileMenuOpen}
                 >
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader
+                      onClick={() => openChainLink()}
+                      // expanded={mobileMenuMap[0]}
+                      id='text5'
+                    >
+                      <Span
+                        fontSize='18px'
+                        fontWeight='500'
+                        letterSpacing='-0.03em'
+                        lineHeight='142%'
+                        padding='16px'
+                        color='inherit'
+                      >
+                        Push Chain
+                      </Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
                   <NavigationMenuItem>
                     <NavigationMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 0)}

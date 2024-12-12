@@ -93,7 +93,8 @@ const ChainHeader: FC = () => {
   };
 
   const openHomePage = () => {
-    window.open('/', '_self');
+    const targetUrl = `${baseURL}/chain`;
+    history.push(targetUrl);
   };
 
   // Dummy data for navigation items
@@ -131,11 +132,12 @@ const ChainHeader: FC = () => {
         >
           <NavList isMobileMenuOpen={isMobileMenuOpen}>
             <MenuTop padding={isMobileMenuOpen && '16px'} flex='initial'>
-              <PushLogoBlackContainer className='headerlogo' flex='initial'>
-                <PushLogo
-                  style={{ margin: '0px 9px 0px 4px' }}
-                  onClick={openHomePage}
-                />
+              <PushLogoBlackContainer
+                className='headerlogo'
+                flex='initial'
+                onClick={openHomePage}
+              >
+                <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
 
                 {isMobileMenuOpen ? <ChainLogoDark /> : <ChainLogo />}
               </PushLogoBlackContainer>
