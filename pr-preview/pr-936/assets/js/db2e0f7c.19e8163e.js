@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[21078],{628834:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-936/blog/tags/developer/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":13,"previousPage":"/push-website/pr-preview/pr-936/blog/tags/developer","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
