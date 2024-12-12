@@ -73,12 +73,12 @@ const MarqueeItem = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 0 32px;
+  margin: 0 24px;
   overflow: hidden;
   gap: 64px;
 
   @media ${device.desktop} {
-    margin: auto 48px;
+    margin: auto 24px;
     justify-content: space-between;
     gap: 48px;
   }
