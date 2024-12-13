@@ -4,7 +4,7 @@ title: 'Push Chain’s Frequently Asked Questions'
 authors: [push]
 image: './cover-image.webp'
 description: 'Push Chain’s Frequently Asked Questions'
-text: ''
+text: 'The place to find answers to all the popular questions the community has asked about Push Chain. Crowdsourced from Push Fam ❤️ and curated by the Push team 💪.'
 tags: [Push Chain, Push Chain FAQs]
 ---
 
@@ -229,6 +229,8 @@ True scale is the ability of a protocol's ecosystem to grow at both the infrastr
 As a new layer 1, Push Chain would have its own native token with tokenomics suited to the functioning, maintenance, and security of a blockchain.
 
 The governance proposal for Push Chain introduces the layer 1 as a potential direction for the Push ecosystem. If approved, Push would then introduce tokenomics for feedback and discussion among the community.
+
+Push Chain would need a new token because an L1 token has a fundamentally different design and purpose than a token designed to incentivize the notifications protocol. A priority for Push Chain tokenomics is to ensure that all Push Protocol $PUSH holders are able to migrate their tokens to the Push Chain native token (ticker TBD).
 
 **Note: Push Chain mainnet is not live, nor is any token related to Push Chain besides Push Protocol [$PUSH](https://coinmarketcap.com/currencies/epns/ '$PUSH on CMC').** Any communication about Push Chain will come directly from the Push company website and X / Twitter handle.
 
