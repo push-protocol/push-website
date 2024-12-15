@@ -30,11 +30,23 @@ jobs:
           node-version: 18.x
           cache: yarn
 
+      - name: Prune dependencies
+        run: |
+          yarn autoclean --init
+          echo "*.log" >> .yarnclean
+          echo "*.gz" >> .yarnclean
+          yarn autoclean --force
+
       - name: Install and Build
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
         run: |
           yarn install
           yarn build:pr:preview
+
+      - name: Cleanup after build to save space
+        run: |
+          rm -rf node_modules
+          rm -rf .cache
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1.4.7
