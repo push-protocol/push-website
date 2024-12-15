@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
@@ -22,10 +22,10 @@ import ImageHolder from '../../../src/components/ImageHolder';
 gsap.registerPlugin(ScrollTrigger);
 
 const ChainHeroSection: FC = () => {
+  const playerRef = useRef<ReactPlayer | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
   const isMobile = useMediaQuery(device.mobileL);
   const { isOpen, open, close } = useModal();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [hovered, setHovered] = useState(true);
 
   const HeroGrid = [
     {
@@ -49,22 +49,23 @@ const ChainHeroSection: FC = () => {
     });
   };
 
-  // decide video format for bg and header illustration
-  // const disableVideoAt = size.tablet;
-
-  // handle mouse entry
-  // const handleMouseEnter = (e) => {
-  // setHovered(true);
-  // };
-
-  // handle mouse leave
-  // const handleMouseLeave = (e) => {
-  // setHovered(false);
-
-  // reset transform
-  // const container = document.getElementById(id);
-  // container.style.transform = `rotateX(0deg) rotateY(0deg) translateZ(0px)`;
-  // };
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: playerRef.current?.wrapper, // The video wrapper element
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnter: () => setIsPlaying(true), // Start playback when video enters
+      onLeave: () => {
+        setIsPlaying(false);
+        playerRef.current?.seekTo(0);
+      },
+      onEnterBack: () => setIsPlaying(true),
+      onLeaveBack: () => {
+        setIsPlaying(false);
+        playerRef.current?.seekTo(0);
+      },
+    });
+  }, []);
 
   return (
     <ChainHeroSectionWrapper>
@@ -125,17 +126,15 @@ const ChainHeroSection: FC = () => {
 
       <ChainElevateModal isOpen={isOpen} onClose={close} />
 
-      <ItemV padding='48px 0'>
+      <ItemV padding='48px 0' ref={playerRef}>
         <ReactPlayer
           url={
             require(`@site/static/assets/website/chain/chain-hero.webm`).default
           }
           playing={
-            hovered &&
+            isPlaying &&
             typeof window !== 'undefined' &&
             window.innerWidth > size.tablet
-              ? true
-              : false
           }
           loop={true}
           muted={true}
@@ -148,28 +147,7 @@ const ChainHeroSection: FC = () => {
               },
             },
           }}
-          style={
-            {
-              // position: 'absolute',
-              // top: 0,
-              // bottom: 0,
-              // right: 0,
-              // left: 0,
-              // visibility:
-              //   hovered && window.innerWidth > disableVideoAt
-              //     ? 'visible'
-              //     : 'hidden',
-            }
-          }
         />
-        {/* <ImageHolder
-          src={
-            require(`@site/static/assets/website/chain/chain-hero.webp`).default
-          }
-          srcSet={`${require(`@site/static/assets/website/chain/chain-hero@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/chain-hero@3x.webp`).default} 3x`}
-          alt={'Build Universal Apps'}
-          title={'Build Universal Apps'}
-        /> */}
       </ItemV>
       <SectionText>
         Consumer applications that work from any chain, reach instant finality,
