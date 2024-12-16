@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[77435],{178728:e=>{e.exports=JSON.parse('{"label":"Liquidity","permalink":"/push-website/pr-preview/pr-948/blog/tags/liquidity","allTagsPath":"/push-website/pr-preview/pr-948/blog/tags","count":1,"unlisted":false}')}}]);
