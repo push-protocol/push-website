@@ -13,6 +13,8 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
+      - name: Check disk usage
+        run: df -h
       - name: Set up environment variables
         run: |
           echo "REACT_APP_PREVIEW_BASE=pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
@@ -36,15 +38,16 @@ jobs:
           yarn install
           yarn build:pr:preview
 
-      - name: Prune dependencies and cleanup after build
-        if: github.event.action != 'closed'
+      - name: Clean up Node.js cache
         run: |
-          yarn autoclean --init
-          echo "*.log" >> .yarnclean
-          echo "*.gz" >> .yarnclean
-          yarn autoclean --force
-          rm -rf node_modules
+          npm cache clean --force
+          yarn cache clean
+          rm -rf ~/.npm ~/.cache
+
+      - name: Clean up temporary files
+        run: |
           rm -rf .cache
+          rm -rf node_modules/.cache
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1.4.7
