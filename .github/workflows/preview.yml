@@ -15,6 +15,26 @@ jobs:
     steps:
       - name: Check disk usage
         run: df -h
+
+      # Clean up temporary directories and GitHub runner cache
+      - name: Remove temporary and cache directories
+        run: |
+          echo "Cleaning up temporary directories and caches..."
+          sudo rm -rf /tmp/*
+          sudo rm -rf /home/runner/work/_temp
+          sudo rm -rf /home/runner/work/_actions
+          sudo rm -rf /home/runner/work/_tool
+          sudo rm -rf ~/.npm ~/.cache ~/.yarn
+          df -h
+
+      # Clean up unnecessary system logs
+      - name: Remove system logs
+        run: |
+          echo "Cleaning up system logs..."
+          sudo rm -rf /var/log/*
+          sudo journalctl --vacuum-size=10M || true
+          df -h
+
       - name: Set up environment variables
         run: |
           echo "REACT_APP_PREVIEW_BASE=pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
