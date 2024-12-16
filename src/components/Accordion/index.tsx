@@ -9,6 +9,7 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 // Internal Components
 import { H2, H3 } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
@@ -46,6 +47,8 @@ const Accordion: React.FC<AccordionProps> = ({
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
+
+  const baseUrl = useSiteBaseUrl() || '';
 
   return (
     <div>
@@ -102,7 +105,7 @@ const Accordion: React.FC<AccordionProps> = ({
 
           {activeIndex === index &&
             item.renderAnswer !== undefined &&
-            item.renderAnswer()}
+            item.renderAnswer(baseUrl)}
         </AccordionSection>
       ))}
     </div>
