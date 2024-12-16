@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[29321],{77126:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-948/blog/tags/tge","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
