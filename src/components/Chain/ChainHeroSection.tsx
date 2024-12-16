@@ -1,14 +1,15 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 
+import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import { TbArrowUpRight } from 'react-icons/tb';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Typewriter from 'typewriter-effect';
 
-import { device } from '../../../src/config/globals';
+import { device, size } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
 import useModal from './hooks/useModal';
 
@@ -21,6 +22,8 @@ import ImageHolder from '../../../src/components/ImageHolder';
 gsap.registerPlugin(ScrollTrigger);
 
 const ChainHeroSection: FC = () => {
+  const playerRef = useRef<ReactPlayer | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
   const isMobile = useMediaQuery(device.mobileL);
   const { isOpen, open, close } = useModal();
 
@@ -45,6 +48,24 @@ const ChainHeroSection: FC = () => {
       scrollTo: { y: `#${id}` },
     });
   };
+
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: playerRef.current?.wrapper, // The video wrapper element
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnter: () => setIsPlaying(true), // Start playback when video enters
+      onLeave: () => {
+        setIsPlaying(false);
+        playerRef.current?.seekTo(0);
+      },
+      onEnterBack: () => setIsPlaying(true),
+      onLeaveBack: () => {
+        setIsPlaying(false);
+        playerRef.current?.seekTo(0);
+      },
+    });
+  }, []);
 
   return (
     <ChainHeroSectionWrapper>
@@ -105,14 +126,27 @@ const ChainHeroSection: FC = () => {
 
       <ChainElevateModal isOpen={isOpen} onClose={close} />
 
-      <ItemV padding='48px 0'>
-        <ImageHolder
-          src={
-            require(`@site/static/assets/website/chain/chain-hero.webp`).default
+      <ItemV padding='48px 0' ref={playerRef}>
+        <ReactPlayer
+          url={
+            require(`@site/static/assets/website/chain/chain-hero.webm`).default
           }
-          srcSet={`${require(`@site/static/assets/website/chain/chain-hero@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/chain-hero@3x.webp`).default} 3x`}
-          alt={'Build Universal Apps'}
-          title={'Build Universal Apps'}
+          playing={
+            isPlaying &&
+            typeof window !== 'undefined' &&
+            window.innerWidth > size.tablet
+          }
+          loop={true}
+          muted={true}
+          width='100%'
+          height='100%'
+          config={{
+            file: {
+              attributes: {
+                controlsList: 'nofullscreen',
+              },
+            },
+          }}
         />
       </ItemV>
       <SectionText>
