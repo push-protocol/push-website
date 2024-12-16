@@ -15,14 +15,6 @@ export const knowledgeBaseArticleContent = [
       'Push Protocol recently announced its governance proposal of launching Push Chain. Push Protocol envisions the creation of Push Chain which enables a shared state L1 chain designed to support truly scalable consumer applications and universal applications.',
     url: '/blog/why-push-chain',
   },
-  // {
-  //   slug: 'evolution-of-push-chain',
-  //   image: 'evolution-of-push-chain',
-  //   title: 'Evolution of Push',
-  //   subtitle:
-  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget aliquet lectus. In at porttitor lacus. Morbi fermentum egestas porta.',
-  //   url: '/blog/evolution-of-push-chain',
-  // },
   {
     slug: 'parallel-validators-and-dynamic-sharding',
     image: 'benchmarking-push-chain-nodes',
@@ -69,5 +61,13 @@ export const knowledgeBaseArticleContent = [
     subtitle:
       'In a globally distributed computing environment, achieving collective agreement on the true state of the system has always been a complex challenge. Fortunately, there are algorithms (specialized instructions) that assist in preserving this ‘single-truth-state’ while...',
     url: '/blog/understand-proof-of-stake-and-push-chain/',
+  },
+  {
+    slug: 'evolution-of-push',
+    image: 'evolution-of-push',
+    title: 'Evolution of Push',
+    subtitle:
+      'Push Protocol has come a long way! We’ve delivered over 140M notifications, built a community of 500K aggregate users, powered notifications for 500+ projects, and are known as the de facto leader in notifications and communications for web3.',
+    url: '/blog/evolution-of-push',
   },
 ];
