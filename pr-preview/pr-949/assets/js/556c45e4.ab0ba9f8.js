@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[18886],{796754:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-949/blog/tags/consumer-apps","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
