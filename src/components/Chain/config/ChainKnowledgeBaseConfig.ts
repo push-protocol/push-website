@@ -63,11 +63,11 @@ export const knowledgeBaseArticleContent = [
     url: '/blog/understand-proof-of-stake-and-push-chain/',
   },
   {
-    slug: 'evolution-of-push-chain',
-    image: 'evolution-of-push-chain',
+    slug: 'evolution-of-push',
+    image: 'evolution-of-push',
     title: 'Evolution of Push',
     subtitle:
       'Push Protocol has come a long way! We’ve delivered over 140M notifications, built a community of 500K aggregate users, powered notifications for 500+ projects, and are known as the de facto leader in notifications and communications for web3.',
-    url: '/blog/evolution-of-push-chain',
+    url: '/blog/evolution-of-push',
   },
 ];
