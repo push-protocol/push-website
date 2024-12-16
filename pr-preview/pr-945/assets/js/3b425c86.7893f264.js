@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[32272],{498019:e=>{e.exports=JSON.parse('{"label":"Ethereum Gas Fee","permalink":"/push-website/pr-preview/pr-945/blog/tags/ethereum-gas-fee","allTagsPath":"/push-website/pr-preview/pr-945/blog/tags","count":1,"unlisted":false}')}}]);
