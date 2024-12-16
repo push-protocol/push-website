@@ -16,6 +16,30 @@ export const knowledgeBaseArticleContent = [
     url: '/blog/why-push-chain',
   },
   {
+    slug: 'evolution-of-push',
+    image: 'evolution-of-push',
+    title: 'Evolution of Push',
+    subtitle:
+      'Push Protocol has come a long way! We’ve delivered over 140M notifications, built a community of 500K aggregate users, powered notifications for 500+ projects, and are known as the de facto leader in notifications and communications for web3.',
+    url: '/blog/evolution-of-push',
+  },
+  {
+    slug: 'faq-push-chain',
+    image: 'frequently-asked-questions',
+    title: 'Push Chain’s Frequently Asked Questions',
+    subtitle:
+      'The place to find answers to all the popular questions the community has asked about Push Chain. Crowdsourced from Push Fam ❤️ and curated by the Push team 💪.',
+    url: '/blog/faq-push-chain/',
+  },
+  {
+    slug: 'consumer-apps-that-can-be-built-on-push-chain',
+    image: 'consumer-apps',
+    title: 'Consumer Apps 🫶🏽 Push Chain?',
+    subtitle:
+      'Web 3 is growing at lightning speed!Hundreds of L1s, Thousands of L2s and soon Tens of thousands of L3s!! While striving to make systems more scalable, decentralized and secure, we risk overlooking a crucial goal...',
+    url: '/blog/consumer-apps-that-can-be-built-on-push-chain/',
+  },
+  {
     slug: 'parallel-validators-and-dynamic-sharding',
     image: 'benchmarking-push-chain-nodes',
     title: 'Benchmark of Push Chain',
@@ -39,35 +63,11 @@ export const knowledgeBaseArticleContent = [
   //   url: '/blog/is-push-chain-another-layer-1',
   // },
   {
-    slug: 'consumer-apps-that-can-be-built-on-push-chain',
-    image: 'consumer-apps',
-    title: 'Consumer Apps 🫶🏽 Push Chain?',
-    subtitle:
-      'Web 3 is growing at lightning speed!Hundreds of L1s, Thousands of L2s and soon Tens of thousands of L3s!! While striving to make systems more scalable, decentralized and secure, we risk overlooking a crucial goal...',
-    url: '/blog/consumer-apps-that-can-be-built-on-push-chain/',
-  },
-  {
-    slug: 'faq-push-chain',
-    image: 'frequently-asked-questions',
-    title: 'Push Chain’s Frequently Asked Questions',
-    subtitle:
-      'The place to find answers to all the popular questions the community has asked about Push Chain. Crowdsourced from Push Fam ❤️ and curated by the Push team 💪.',
-    url: '/blog/faq-push-chain/',
-  },
-  {
     slug: 'understand-proof-of-stake-and-push-chain',
     image: 'understand-proof-of-stake',
     title: 'Understand Proof of Stake (POS) and Push Chain PoS',
     subtitle:
       'In a globally distributed computing environment, achieving collective agreement on the true state of the system has always been a complex challenge. Fortunately, there are algorithms (specialized instructions) that assist in preserving this ‘single-truth-state’ while...',
     url: '/blog/understand-proof-of-stake-and-push-chain/',
-  },
-  {
-    slug: 'evolution-of-push',
-    image: 'evolution-of-push',
-    title: 'Evolution of Push',
-    subtitle:
-      'Push Protocol has come a long way! We’ve delivered over 140M notifications, built a community of 500K aggregate users, powered notifications for 500+ projects, and are known as the de facto leader in notifications and communications for web3.',
-    url: '/blog/evolution-of-push',
   },
 ];
