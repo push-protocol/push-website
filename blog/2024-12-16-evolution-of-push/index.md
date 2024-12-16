@@ -121,7 +121,7 @@ Push started getting noticed by OGs of web3, we were so humbled by people who we
 
 <!-- image 10 -->
 ![Tenth Image of Evolution of Push](./image1.webp)
-<ImageText>https://balajis.com/p/why-india-should-buy-bitcoin | https://x.com/balajis/status/1336367129960931329 | https://thedefiant.io/news/defi/unstoppable-domains-launches-token-gated-group-chats | https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation</ImageText>
+<ImageText>[Why India Should Buy Bitcoin Article by BalajiS](https://balajis.com/p/why-india-should-buy-bitcoin) | [Excited to fund EPNS Tweet](https://x.com/balajis/status/1336367129960931329)| [Unstoppable Domains Launches Gated Groups Article](https://thedefiant.io/news/defi/unstoppable-domains-launches-token-gated-group-chats) | [EPNS Raises 10M at 131M Valuation Article](https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation)</ImageText>
 
 
 ## Building one of the first consumer app
@@ -160,6 +160,7 @@ But as we dived deep and started building the features for enabling notification
 
 <!-- image 11 -->
 ![Eleventh Image of Evolution of Push](./image6.webp)
+<ImageText>https://x.com/pushprotocol/status/1574771582790406144</ImageText>
 
 ### Becoming the leading notification protocol for web3
 Push notifications protocol came a long way from its humble beginnings to now. Today, we have powered hundreds of millions of notifications sent to web3 users across the globe. 
