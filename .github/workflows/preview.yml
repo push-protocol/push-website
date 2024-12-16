@@ -16,18 +16,17 @@ jobs:
       - name: Check disk usage
         run: df -h
 
-      # Clean up temporary directories and GitHub runner cache
+      # Clean up temporary directories and caches (excluding `_actions`)
       - name: Remove temporary and cache directories
         run: |
           echo "Cleaning up temporary directories and caches..."
           sudo rm -rf /tmp/*
           sudo rm -rf /home/runner/work/_temp
-          sudo rm -rf /home/runner/work/_actions
           sudo rm -rf /home/runner/work/_tool
           sudo rm -rf ~/.npm ~/.cache ~/.yarn
           df -h
 
-      # Clean up unnecessary system logs
+      # Clean up system logs
       - name: Remove system logs
         run: |
           echo "Cleaning up system logs..."
