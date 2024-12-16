@@ -13,27 +13,6 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     steps:
-      - name: Check disk usage
-        run: df -h
-
-      # Clean up temporary directories and caches (excluding `_actions`)
-      - name: Remove temporary and cache directories
-        run: |
-          echo "Cleaning up temporary directories and caches..."
-          sudo rm -rf /tmp/*
-          sudo rm -rf /home/runner/work/_temp
-          sudo rm -rf /home/runner/work/_tool
-          sudo rm -rf ~/.npm ~/.cache ~/.yarn
-          df -h
-
-      # Clean up system logs
-      - name: Remove system logs
-        run: |
-          echo "Cleaning up system logs..."
-          sudo rm -rf /var/log/*
-          sudo journalctl --vacuum-size=10M || true
-          df -h
-
       - name: Set up environment variables
         run: |
           echo "REACT_APP_PREVIEW_BASE=pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
@@ -41,6 +20,7 @@ jobs:
           echo "REACT_APP_PUBLIC_URL=https://push-protocol.github.io" >> $GITHUB_ENV
           echo "GITHUB_PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
           echo "REACT_APP_BASE_URL=/push-website/pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -56,17 +36,6 @@ jobs:
         run: |
           yarn install
           yarn build:pr:preview
-
-      - name: Clean up Node.js cache
-        run: |
-          npm cache clean --force
-          yarn cache clean
-          rm -rf ~/.npm ~/.cache
-
-      - name: Clean up temporary files
-        run: |
-          rm -rf .cache
-          rm -rf node_modules/.cache
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1.4.7
