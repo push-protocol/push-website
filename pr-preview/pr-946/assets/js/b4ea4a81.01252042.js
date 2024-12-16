@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[49271],{893838:e=>{e.exports=JSON.parse('{"label":"Discord","permalink":"/push-website/pr-preview/pr-946/blog/tags/discord","allTagsPath":"/push-website/pr-preview/pr-946/blog/tags","count":1,"unlisted":false}')}}]);
