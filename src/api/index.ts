@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 
@@ -61,6 +62,35 @@ export async function sendEmailToMailingList({ email }) {
     name: '',
     email: email,
     list: 'YPwxHS892tH8Nhs13wzKqWbQ',
+    api_key: 'TdzMcZVNTn1mjtAJHBpB',
+    boolean: true,
+  };
+
+  let formBody = [];
+  for (const property in details) {
+    const encodedKey = encodeURIComponent(property);
+    const encodedValue = encodeURIComponent(details[property]);
+    formBody.push(encodedKey + '=' + encodedValue);
+  }
+  formBody = formBody.join('&');
+
+  return fetch('https://tools.push.org/sendy/subscribe', {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+    },
+    body: formBody,
+  }).then((response) => {
+    return response.text();
+  });
+}
+
+export async function sendEmailToChainMailingList({ email }) {
+  const details = {
+    name: '',
+    email: email,
+    list: 'lh9Lq2FicS763EGk8Fhh763zZQ',
     api_key: 'TdzMcZVNTn1mjtAJHBpB',
     boolean: true,
   };
