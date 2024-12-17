@@ -34,7 +34,7 @@ So the next time your DeFi loan is about to be liquidated, or a governance propo
 
 
 ### Creating MVP at ETHGlobal HackMoney 2020
-We were guided by EF to go and build the project out first at ETHGlobal, which is what we did and was the best thing that ever happened for us. We have made friends that are mentors, friends that are our investors, friends that helped us connect to relevant projects and friends that geeked out together or tech.
+We were guided by EF to go and build the project out first at ETHGlobal, which is what we did and was the best thing that ever happened for us. We have made friends that are mentors, friends that are our investors, friends that helped us connect to relevant projects and friends that geeked out together on tech.
 
 Excuse the video quality, I still hadn’t learned at this point what good quality cams or lighting could do.
 
@@ -121,7 +121,7 @@ Push started getting noticed by OGs of web3, we were so humbled by people who we
 
 <!-- image 10 -->
 ![Tenth Image of Evolution of Push](./image1.webp)
-<ImageText>[Why India Should Buy Bitcoin Article by BalajiS](https://balajis.com/p/why-india-should-buy-bitcoin) | [Excited to fund EPNS Tweet](https://x.com/balajis/status/1336367129960931329)| [Unstoppable Domains Launches Gated Groups Article](https://thedefiant.io/news/defi/unstoppable-domains-launches-token-gated-group-chats) | [EPNS Raises 10M at 131M Valuation Article](https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation)</ImageText>
+<ImageText>[Why India Should Buy Bitcoin Article by BalajiS](https://balajis.com/p/why-india-should-buy-bitcoin)  |  [Excited to fund EPNS Tweet](https://x.com/balajis/status/1336367129960931329)  |  [Unstoppable Domains Launches Gated Groups Article](https://thedefiant.io/news/defi/unstoppable-domains-launches-token-gated-group-chats)  |  [EPNS Raises 10M at 131M Valuation Article](https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation)</ImageText>
 
 
 ## Building one of the first consumer app
