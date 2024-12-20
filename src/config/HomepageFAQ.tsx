@@ -1,5 +1,11 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+//
+import React from 'react';
+
 // External Components
 import styled from 'styled-components';
+
 // Internal Components
 import { A, ItemH, LI, Span, UL } from '@site/src/css/SharedStyling';
 
@@ -8,7 +14,6 @@ import ImageFAQ from '@site/static/assets/website/faq/faq-projects.webp';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export const General = [
   {
@@ -191,7 +196,7 @@ export const Notifs = [
   {
     question: 'Can I integrate notifications on Frontend / Wallet?',
     section: 'Notifs',
-    renderAnswer: () => (
+    renderAnswer: (baseUrl) => (
       <Answer>
         <Span>
           Yes, Push Protocol is an open yet secure network, and behaves similar
@@ -203,18 +208,19 @@ export const Notifs = [
         <Span>
           Learn more about{' '}
           <AMod
-            href={useBaseUrl(
-              '/docs/notifications/build/integrating-notifications/'
-            )}
+            href={
+              baseUrl + '/docs/notifications/build/integrating-notifications/'
+            }
             target={'_blank'}
           >
             integrating Push Notification in your dApp
           </AMod>{' '}
           /{' '}
           <AMod
-            href={useBaseUrl(
+            href={
+              baseUrl +
               '/docs/notifications/tutorials/integrate-notifications-via-delivery-node/'
-            )}
+            }
             target={'_blank'}
           >
             Push Notification in your crypto wallet.
@@ -298,15 +304,15 @@ export const Notifs = [
   {
     question: 'Do I need a channel to send notifications?',
     section: 'Notifs',
-    renderAnswer: () => (
+    renderAnswer: (baseUrl) => (
       <Answer>
         <Span>
           Yes, any protocol that wants to send notifications will need to
           activate themselves on Push protocol, read{' '}
           <AMod
-            href={useBaseUrl(
-              '/docs/notifications/tutorials/create-your-channel/'
-            )}
+            href={
+              baseUrl + '/docs/notifications/tutorials/create-your-channel/'
+            }
             target={'_blank'}
           >
             How to create channel
@@ -371,12 +377,12 @@ export const Chat = [
   {
     question: 'Is Push Chat end-to-end encrypted?',
     section: 'Chat',
-    renderAnswer: () => (
+    renderAnswer: (baseUrl) => (
       <Answer>
         <Span>
           Yes, Push Chat is end-to-end encrypted. The encryption is based on PGP
           Keys. Read more about{' '}
-          <AMod href={useBaseUrl('/docs/chat')} target={'_blank'}>
+          <AMod href={baseUrl + '/docs/chat'} target={'_blank'}>
             how it works here.
           </AMod>
         </Span>
@@ -425,7 +431,7 @@ export const IntegratingPush = [
   {
     question: 'How can I integrate Push as a service/developer?',
     section: 'IntegratingPush',
-    renderAnswer: () => (
+    renderAnswer: (baseUrl) => (
       <Answer>
         <Span>
           Push can be used as a utility for communication. A service/developer
@@ -436,7 +442,7 @@ export const IntegratingPush = [
         <Span>
           The{' '}
           <AMod
-            href={useBaseUrl('/docs/notifications/quickstart/')}
+            href={baseUrl + '/docs/notifications/quickstart/'}
             target={'_blank'}
           >
             Push JS SDK
@@ -460,24 +466,26 @@ export const IntegratingPush = [
         <Span>
           Other ways of integrating Push notifications are via{' '}
           <AMod
-            href={useBaseUrl(
+            href={
+              baseUrl +
               '/docs/notifications/build/send-notification-via-smart-contract/'
-            )}
+            }
             target={'_blank'}
           >
             smart contracts
           </AMod>
           ,{' '}
           <AMod
-            href={useBaseUrl(
+            href={
+              baseUrl +
               '/docs/notifications/tutorials/send-notification-via-subgraph'
-            )}
+            }
             target={'_blank'}
           >
             subgraphs
           </AMod>
           , and{' '}
-          <AMod href={useBaseUrl('/docs/notifications')} target={'_blank'}>
+          <AMod href={baseUrl + '/docs/notifications'} target={'_blank'}>
             more as outlined here!
           </AMod>
         </Span>
@@ -503,11 +511,11 @@ export const IntegratingPush = [
   {
     question: 'Where can I find the code samples for integration?',
     section: 'IntegratingPush',
-    renderAnswer: () => (
+    renderAnswer: (baseUrl) => (
       <Answer>
         <Span>
           Push Chat integration -{' '}
-          <AMod href={useBaseUrl('/docs/chat')} target={'_blank'}>
+          <AMod href={baseUrl + '/docs/chat'} target={'_blank'}>
             Docs
           </AMod>
           ,
@@ -518,7 +526,7 @@ export const IntegratingPush = [
             Github
           </AMod>{' '}
           Push Notifications -{' '}
-          <AMod href={useBaseUrl('/docs/notifications')} target={'_blank'}>
+          <AMod href={baseUrl + '/docs/notifications'} target={'_blank'}>
             Docs
           </AMod>
           ,
