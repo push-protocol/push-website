@@ -16,6 +16,14 @@ export const knowledgeBaseArticleContent = [
     url: '/blog/why-push-chain',
   },
   {
+    slug: 'innovations-by-push-chain',
+    image:'innovations-by-push-chain',
+    title: 'Innovations by Push Chain',
+    subtitle:
+      'Unlike traditional L1 chains, Push Chain introduces ten key innovations and optimized mechanisms to unify any chain, any user, and any app. This article will help you understand - What Innovations Push Chain brings to Web3!',
+    url: '/blog/innovations-by-push-chain',
+  },
+  {
     slug: 'evolution-of-push',
     image: 'evolution-of-push',
     title: 'Evolution of Push',
