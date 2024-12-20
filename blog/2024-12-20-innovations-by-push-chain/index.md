@@ -74,13 +74,13 @@ In addition to parsing addresses across various chains, Push Chain supports tran
 
 Push Chain achieves this by accepting signed payload data and supporting the native signers of individual chains. Validator nodes then verify these signatures → conduct pre-transaction checks (such as fee validation) → and then admit the transactions to the network.
 
-Here’s a quick demo of an app that lets you send transactions to Push Chain from any chain of your choice.
+<!-- Here’s a quick demo of an app that lets you send transactions to Push Chain from any chain of your choice.
 
-<!-- [SIMULATE VIDEO] -->
+
 <video width="640" height="360" controls>
-  <source src="./simulate_push_chain.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <source src="./simulate_push_chain.mp4" type="video/mp4" />
+  
+</video> -->
 
 To clarify, a user doesn’t have to “bridge” to another chain to use our platform. Instead, the app becomes universal and available to all users of any chain.
 
