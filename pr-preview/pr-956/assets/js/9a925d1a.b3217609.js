@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[28489],{618170:e=>{e.exports=JSON.parse('{"label":"Sports Betting","permalink":"/push-website/pr-preview/pr-956/blog/tags/sports-betting","allTagsPath":"/push-website/pr-preview/pr-956/blog/tags","count":1,"unlisted":false}')}}]);
