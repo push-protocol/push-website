@@ -165,6 +165,7 @@ export const getNotifications = async ({
     return res.data;
   } catch (e) {
     console.log('Error occured in notification', e);
+    return null;
   }
 };
 
@@ -187,6 +188,7 @@ export const getSubscribers = async ({
     return res.data;
   } catch (e) {
     console.log('Error occured in subscribers', e);
+    return null;
   }
 };
 
