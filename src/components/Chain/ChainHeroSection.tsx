@@ -70,8 +70,8 @@ const ChainHeroSection: FC = () => {
   return (
     <ChainHeroSectionWrapper>
       <ChainAlertBar
-        text='Push Chain Governance Proposal is Live'
-        url='https://gov.push.org/t/introducing-push-chain-a-shared-state-l1-for-universal-apps/1991'
+        text='Push Chain proposal has successfully passed'
+        url='https://snapshot.box/#/s:pushdao.eth/proposal/0xa4a301c9a346356326d59e425245459d9fbde71b02aabc49a4ce191f0504f66a'
         center={true}
       />
       <HeroText>

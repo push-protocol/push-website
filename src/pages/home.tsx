@@ -78,7 +78,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
   };
 
   const noNavbar = false;
-  const alertLink = `https://gov.push.org/t/introducing-push-chain-a-shared-state-l1-for-universal-apps/1991`;
+  const alertLink = `https://snapshot.box/#/s:pushdao.eth/proposal/0xa4a301c9a346356326d59e425245459d9fbde71b02aabc49a4ce191f0504f66a`;
 
   return (
     <Layout
@@ -158,7 +158,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             <HeroPrimary flex='initial' justifyContent='flex-start'>
               <HeroItem maxWidth='50%' alignItems='flex-start'>
                 <InfoBar
-                  text='Push Chain Governance Proposal is Live'
+                  text='Push Chain proposal has successfully passed'
                   url={alertLink}
                 />
 
