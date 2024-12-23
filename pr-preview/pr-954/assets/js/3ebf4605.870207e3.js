@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[82364],{801619:e=>{e.exports=JSON.parse('{"label":"Design Thinking","permalink":"/push-website/pr-preview/pr-954/blog/tags/design-thinking","allTagsPath":"/push-website/pr-preview/pr-954/blog/tags","count":1,"unlisted":false}')}}]);
