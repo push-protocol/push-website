@@ -158,7 +158,7 @@ export default function Home({ homePageBlogMetadata, recentPosts }) {
             <HeroPrimary flex='initial' justifyContent='flex-start'>
               <HeroItem maxWidth='50%' alignItems='flex-start'>
                 <InfoBar
-                  text='Push Chain proposal has successfully passed'
+                  text='Push Chain proposal has successfully passed.'
                   url={alertLink}
                 />
 
