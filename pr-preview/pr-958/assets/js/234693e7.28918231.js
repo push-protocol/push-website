@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[56260],{976264:e=>{e.exports=JSON.parse('{"label":"YouTube","permalink":"/push-website/pr-preview/pr-958/blog/tags/you-tube","allTagsPath":"/push-website/pr-preview/pr-958/blog/tags","count":1,"unlisted":false}')}}]);
