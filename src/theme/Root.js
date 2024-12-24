@@ -12,7 +12,6 @@ import ServerStyle from '@site/src/theme/ServerStyle';
 import CookieComponent from '../components/CookieComponent';
 import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 import { Notification } from '../hooks/useRewardsNotification';
-import { useChainNotification } from '../hooks/useChainNotification';
 
 // Initialize Internalization
 i18nInitialize();
@@ -47,7 +46,6 @@ export default function Root({ children }) {
   const shouldRenderFooter = excludePaths.every((path) =>
     excludeDefaultConfigAt(path)
   );
-  useChainNotification();
 
   // return superimposed class names if conditions are met
   function returnAdditionalClasses(conditions) {
