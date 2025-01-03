@@ -478,9 +478,7 @@ const TextLink = styled(A)`
 
   &:hover {
     text-decoration: none !important;
-    .anchorSVGlink {import useModal from './hooks/useModal';
-import ChainElevateModal from './ChainElevateModal';
-
+    .anchorSVGlink {
       color: #d548ec;
     }
   }
