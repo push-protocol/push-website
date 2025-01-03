@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[35887],{428561:e=>{e.exports=JSON.parse('{"label":"UX","permalink":"/push-website/pr-preview/pr-960/blog/tags/ux","allTagsPath":"/push-website/pr-preview/pr-960/blog/tags","count":1,"unlisted":false}')}}]);
