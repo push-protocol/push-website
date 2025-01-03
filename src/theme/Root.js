@@ -11,10 +11,7 @@ import Footer from '@site/src/segments/Footer';
 import ServerStyle from '@site/src/theme/ServerStyle';
 import CookieComponent from '../components/CookieComponent';
 import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
-import {
-  Notification,
-  useRewardsNotification,
-} from '../hooks/useRewardsNotification';
+import { Notification } from '../hooks/useRewardsNotification';
 
 // Initialize Internalization
 i18nInitialize();
@@ -45,7 +42,10 @@ export default function Root({ children }) {
   ];
 
   const baseURL = useSiteBaseUrl();
-  useRewardsNotification();
+  const excludePaths = ['/BRB', '/DOCS', '/BOOTCAMP', '/CHAIN', '/TEMPLATE'];
+  const shouldRenderFooter = excludePaths.every((path) =>
+    excludeDefaultConfigAt(path)
+  );
 
   // return superimposed class names if conditions are met
   function returnAdditionalClasses(conditions) {
@@ -116,14 +116,12 @@ export default function Root({ children }) {
       <Content>{children}</Content>
       <Notification />
 
-      {excludeDefaultConfigAt('/BRB') &&
-        excludeDefaultConfigAt('/DOCS') &&
-        excludeDefaultConfigAt('/BOOTCAMP') && (
-          <>
-            <Footer />
-            <CookieComponent />
-          </>
-        )}
+      {shouldRenderFooter && (
+        <>
+          <Footer />
+          <CookieComponent />
+        </>
+      )}
     </PageContainer>
   );
 }
