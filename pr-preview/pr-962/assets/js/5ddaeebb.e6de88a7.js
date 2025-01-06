@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[90231],{718530:e=>{e.exports=JSON.parse('{"label":"Debitcard","permalink":"/push-website/pr-preview/pr-962/blog/tags/debitcard","allTagsPath":"/push-website/pr-preview/pr-962/blog/tags","count":1,"unlisted":false}')}}]);

@@ -1,0 +1,13 @@
+<svg width="102" height="102" viewBox="0 0 102 102" fill="none" xmlns="http://www.w3.org/2000/svg" alt="Logo for Idle Finance">
+<title>Idle Finance</title>
+<rect width="102" height="102" rx="32" fill="#BED9FF"/>
+<g clip-path="url(#clip0_3300_8585)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M48.812 22.5V68.2907H27V33.5938L48.812 22.5Z" fill="#0414D1"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M53.188 79.5V33.4204H75V33.9404V68.3773L53.188 79.5Z" fill="#0414D1"/>
+</g>
+<defs>
+<clipPath id="clip0_3300_8585">
+<rect width="48" height="57" fill="white" transform="translate(27 22.5)"/>
+</clipPath>
+</defs>
+</svg>
