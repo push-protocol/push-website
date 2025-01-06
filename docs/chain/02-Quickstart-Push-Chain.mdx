@@ -19,128 +19,83 @@ Everything you will need to get up and running in 2 minutes or less!
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-### Installation
+## Overview
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{ className: "codetab js" }} default>
-    ```bash
-    # Install Libraries
-    npm install @pushprotocol/push-chain viem dotenv
-    ```
-  </TabItem>
-  <TabItem value="react" attributes={{ className: "codetab react" }} default>
-    ```zsh
-    # Install Libraries
-    npm install @pushprotocol/push-chain viem dotenv
-    ```
-  </TabItem>
-  <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
-    ```zsh
-    # Install Libraries
-    npm install @pushprotocol/push-chain viem dotenv
-    ```
-  </TabItem>
-</Tabs>
+Push Chain is designed to enable Web3 Applications to communicate and transact seamlessly across various blockchain networks. This guide will demonstrate how to quickly set up and interact with Push Chain SDK, leveraging **guest mode** to showcase the ability to use your Ethereum address without requiring a Push Wallet.
 
-### Import libraries
+---
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{ className: "codetab js" }} default>
-    ```typescript
-    // Import Push Chain SDK
-    import {PushNetwork, CONSTANTS} from '@pushprotocol/push-chain';
+## Installation
 
-    // Import necessary dependencies
-    import {hexToBytes} from 'viem'
-    import {privateKeyToAccount} from 'viem/accounts'
-    import {config} from 'dotenv'
-    config()
-    ```
-  </TabItem>
+To get started with Push Chain SDK, you will need to install the following dependencies:
 
-  <TabItem value="react" attributes={{ className: "codetab react" }} default>
-    ```typescript
-    // Import Push Chain SDK
-    import {PushNetwork, CONSTANTS} from '@pushprotocol/push-chain';
+- `@pushprotocol/push-chain`: The core library for interacting with Push Chain.
+- `viem`: A lightweight and efficient library for handling Web3-related tasks, such as key management and signing transactions.
 
-    // Import necessary dependencies
-    import {hexToBytes} from 'viem'
-    import {privateKeyToAccount} from 'viem/accounts'
-    import {config} from 'dotenv'
-    config()
-    ```
-  </TabItem>
+Run the following command to install both libraries:
 
-  <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
-    ```typescript
-    // Import Push Chain SDK
-    import {PushNetwork, CONSTANTS} from '@pushprotocol/push-chain';
+```bash
+npm install @pushprotocol/push-chain viem
+```
 
-    // Import necessary dependencies
-    import {hexToBytes} from 'viem'
-    import {privateKeyToAccount} from 'viem/accounts'
-    import {config} from 'dotenv'
-    config()
-    ```
-  </TabItem>
-</Tabs>
+## Import libraries
 
-### Initialize Push Chain SDK
+Import the necessary libraries to start interacting with Push Chain:
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{ className: "codetab js" }} default>
-    First, let's initialize the Push Chain SDK:
+```typescript
+// Import Push Chain SDK for blockchain interactions
+import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
 
-    ```typescript
-    const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
-    ```
+// Import utility functions from viem
+import { hexToBytes } from 'viem';
+import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
+```
 
-    Now, let's initialize our `viem` Account. This will be used for signing when sending a transaction:
+Explanation:
 
-    ```typescript
-    const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
-    const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
-    ```
-  </TabItem>
+- `PushChain` and `CONSTANTS` are essential for working with the Push Chain SDK.
+- `hexToBytes` helps convert hexadecimal strings to byte arrays.
+- `privateKeyToAccount` creates an Ethereum-compatible account object from a private key, enabling account management and signing capabilities.Explanation:
 
-  <TabItem value="react" attributes={{ className: "codetab react" }} default>
-    First, let's initialize the Push Chain SDK:
+## Create Signer Object
 
-    ```typescript
-    const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
-    ```
+The signer object is used for signing messages and transactions. This is critical in guest mode, where your Ethereum address acts as your identity:
 
-    Now, let's initialize our `viem` Account. This will be used for signing when sending a transaction:
+```typescript
+const privateKey = generatePrivateKey(); // Replace with your private key generation logic
+const account = privateKeyToAccount(privateKey);
 
-    ```typescript
-    const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
-    const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
-    ```
-  </TabItem>
+const universalSigner: UniversalSigner = {
+  chain: CONSTANTS.Chain.EVM.sepolia.name, // Use Sepolia testnet for this example
+  chainId: CONSTANTS.Chain.EVM.sepolia.chainId, // Chain ID of Sepolia
+  account: account.address, // Ethereum address derived from the private key
+  signMessage: async (data: Uint8Array) => {
+    const signature = await account.signMessage({
+      message: { raw: data }, // Data to be signed
+    });
+    return hexToBytes(signature); // Convert signature to byte array
+  },
+};
+```
 
-  <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
-    First, let's initialize the Push Chain SDK:
+Key Points:
 
-    ```typescript
-    const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
-    ```
+- Private Key: Keep it secure; it is used to authenticate and sign transactions.
+- Chain Details: Configure the chain name and ID for the network you’re using (Sepolia in this case).
 
-    Now, let's initialize our `viem` Account. This will be used for signing when sending a transaction:
+## Initialize Push Chain SDK
 
-    ```typescript
-    const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
-    const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
-    ```
-  </TabItem>
-</Tabs>
+Initialize the Push Chain SDK using the signer object. The default environment is `devnet`:
 
-For production, use `CONSTANTS.ENV.PROD`
+```typescript
+const pushChain = await PushChain.initialize(universalSigner);
+```
 
-For development, use `CONSTANTS.ENV.STAGING`
+## Send a Transaction
 
-### Send a Transaction
+### Define the message
 
-In this example we will be sending a transaction with category `MY_EMAIL_APP` and the following data:
+In this example, we’ll send an email-like message via Push Chain, which will be serialized and sent to the recipients:
 
 ```typescript
 const email = {
@@ -149,131 +104,49 @@ const email = {
 };
 ```
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{ className: "codetab js" }} default>
-    Now, let's create our signer object to sign messages that are sent to Push Chain:
+### Serialize the Data
 
-    ```typescript
-    const signer = {
-      account: `eip155:1:${ethereumSenderAccount.address}`,
-      signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
-        return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
-      }
-    };
-    ```
+Let's serialize the `email` object:
 
-    Let's serialize the `email` object:
+```typescript
+const serializedData = new TextEncoder().encode(JSON.stringify(email));
+```
 
-    ```typescript
-    const serializedData = new TextEncoder().encode(JSON.stringify(data));
-    ```
+### Set the Recipients
 
-    Now, let's create our Unsigned Transaction. We will be sending this transaction to the Ethereum mainnet address `0x8F6325974108C7041B8035131eCe8A89708d02d0` and add as `category` for this example: `MY_EMAIL_APP`:
+We will send the message to a single recipient that will be a random generated Ethereum address on Sepolia:
 
-    ```typescript
-    const unsignedTransaction = pushNetwork.tx.createUnsigned(
-      'MY_EMAIL_APP',
-      ['eip155:1:0x8F6325974108C7041B8035131eCe8A89708d02d0'],
-      serializedData
-    );
-    ```
+```typescript
+const recipients: UniversalAccount[] = [
+  {
+    chain: CONSTANTS.Chain.EVM.sepolia.name,
+    chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+    account: privateKeyToAccount(generatePrivateKey()).address,
+  },
+];
+```
 
-    Let's send our transaction:
+### Send the Transaction
 
-    ```typescript
-    const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
-    ```
-  </TabItem>
+Send the serialized data and category (e.g., `MY_EMAIL_APP`) to the recipients:
 
-  <TabItem value="react" attributes={{ className: "codetab react" }} default>
-    Now, let's create our signer object to sign messages that are sent to Push Chain:
+```typescript
+const tx = await pushChain.tx.send(recipients, {
+  category: 'MY_EMAIL_APP', // Specify the category of the transaction
+  data: serializedData, // Attach the serialized message
+});
+```
 
-    ```typescript
-    const signer = {
-      account: `eip155:1:${ethereumSenderAccount.address}`,
-      signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
-        return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
-      }
-    };
-    ```
+**What Happens Here?**
 
-    Let's serialize the `email` object:
+- The transaction is signed and sent to Push Chain, where it can be accessed and verified by the specified recipients.
 
-    ```typescript
-    const serializedData = new TextEncoder().encode(JSON.stringify(data));
-    ```
 
-    Now, let's create our Unsigned Transaction. We will be sending this transaction to the Ethereum mainnet address `0x8F6325974108C7041B8035131eCe8A89708d02d0` and add as `category` for this example: `MY_EMAIL_APP`:
+## Fetch Transactions
 
-    ```typescript
-    const unsignedTransaction = pushNetwork.tx.createUnsigned(
-      'MY_EMAIL_APP',
-      ['eip155:1:0x8F6325974108C7041B8035131eCe8A89708d02d0'],
-      serializedData
-    );
-    ```
+Fetching transaction details on Push Chain is straightforward and allows you to retrieve all relevant data about a previously sent transaction using its unique hash. This is particularly useful for verifying transaction status, viewing metadata, or debugging applications.
 
-    Let's send our transaction:
-
-    ```typescript
-    const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
-    ```
-  </TabItem>
-
-  <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
-    Now, let's create our signer object to sign messages that are sent to Push Chain:
-
-    ```typescript
-    const signer = {
-      account: `eip155:1:${ethereumSenderAccount.address}`,
-      signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
-        return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
-      }
-    };
-    ```
-
-    Let's serialize the `email` object:
-
-    ```typescript
-    const serializedData = new TextEncoder().encode(JSON.stringify(data));
-    ```
-
-    Now, let's create our Unsigned Transaction. We will be sending this transaction to the Ethereum mainnet address `0x8F6325974108C7041B8035131eCe8A89708d02d0` and add as `category` for this example: `MY_EMAIL_APP`:
-
-    ```typescript
-    const unsignedTransaction = pushNetwork.tx.createUnsigned(
-      'MY_EMAIL_APP',
-      ['eip155:1:0x8F6325974108C7041B8035131eCe8A89708d02d0'],
-      serializedData
-    );
-    ```
-
-    Let's send our transaction:
-
-    ```typescript
-    const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
-    ```
-  </TabItem>
-</Tabs>
-
-### Fetch Transaction
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{ className: "codetab js" }} default>
-    ```typescript
-    const transaction = await pushNetwork.tx.search('3e30a2a89f0122157832b3495a4e5e26e15c0e2123cbc2e17170ac6cdba5c6fa')
-    ```
-  </TabItem>
-
-  <TabItem value="react" attributes={{ className: "codetab react" }} default>
-    ```typescript
-    const transaction = await pushNetwork.tx.search('3e30a2a89f0122157832b3495a4e5e26e15c0e2123cbc2e17170ac6cdba5c6fa')
-    ```
-  </TabItem>
-
-  <TabItem value="reactnative" attributes={{ className: "codetab reactnative" }} default>
-    ```typescript
-    const transaction = await pushNetwork.tx.search('3e30a2a89f0122157832b3495a4e5e26e15c0e2123cbc2e17170ac6cdba5c6fa')
-    ```
-  </TabItem>
-</Tabs>
+```typescript
+const transactionHash = '177482c5a504f3922875c216f71a2b236f344cfbf334f97c8f59547e1e21fb23';
+const transaction = await pushChain.tx.get(transactionHash);
+```

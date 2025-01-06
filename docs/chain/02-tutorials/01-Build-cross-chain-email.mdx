@@ -10,9 +10,14 @@ image: "/assets/docs/previews/docs_notifications_tutorial_create_channel--creati
 
 # Build a Cross-Chain Email
 
-In this guide, we’ll walk through sending a transaction that represents an email using the Push Network SDK, demonstrating interoperability between Ethereum and Solana. Specifically, the user `0x8B34F80aB15f9dA9156A37D177BD07E8f921bd59` on Ethereum wants to send an email to their friend `ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR` on Solana.
+In this guide, we’ll demonstrate how to send a cross-chain email using the updated **Push Chain SDK**. This example shows how a user on Ethereum can send an email to their friend `ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR` on Solana.
 
-This example will cover the steps to set up the SDK, configure the sender and recipient addresses, sign the transaction, and successfully send it to the Push Chain network.
+We'll cover:
+1. Setting up the SDK
+2. Configuring sender and recipient addresses
+3. Signing and sending a transaction
+4. Fetching sent and received emails
+
 
 <head>
   <title>{`Cross-Chain Email | Tutorial | Push Chain | Push Documentation`}</title>
@@ -20,221 +25,183 @@ This example will cover the steps to set up the SDK, configure the sender and re
 
 ## 1. Installing dependencies
 
-Before we begin, let’s install the necessary dependencies for our project. These libraries will provide the tools we need to interact with the Push Chain, manage blockchain accounts, and securely handle environment variables.
+To get started, install the required dependencies:
 
 ```shell
-npm install @pushprotocol/push-chain viem dotenv
+npm install @pushprotocol/push-chain viem
 ```
 
-## 2. Setting Up the SDK
+**Why These Libraries?**
 
-The first step is to initialize the Push Network SDK, which acts as the communication layer for our application:
+-	`@pushprotocol/push-chain`: Core SDK for interacting with Push Chain.
+-	`viem`: Utilities for Ethereum key management and signing.
 
-```typescript
-let pushNetwork = await PushNetwork.initialize();
-```
-
-This line establishes a connection to the Push Network, enabling us to create, sign, and send transactions.
-
-## 3. Configuring Sender and Recipient Addresses
-
-For this example, we’ll use Ethereum as the sender’s blockchain and Solana as the recipient’s. Here’s how to configure the addresses:
+Import installed dependencies:
 
 ```typescript
+// Import Push Chain SDK
+import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
+
+// Import utility functions from viem
 import { hexToBytes } from 'viem';
-import { privateKeyToAccount } from 'viem/accounts';
-import { config } from 'dotenv';
-config();
-
-const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
-if (!senderEthereumPrivateKey) throw new Error('Invalid private key');
-
-const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
-const receiverSolanaAddress = 'solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp:ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR';
+import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
 ```
 
-Here:
-
--	We use the `dotenv` package to manage sensitive information, in our case, the user's private keys.
--	The privateKeyToAccount function from `viem` converts the private key into an account object.
--	The Solana address is formatted to include its blockchain CAIP-10 prefix (`solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp:`).
-
-## 4. Creating the Signer Object
+## 2. Creating the Signer Object
 
 Let's create now the signer object that is responsible for proving ownership of the sender’s account by signing the transaction.
 
 ```typescript
-interface PushSigner {
-  account: string;
-  signMessage: (dataToBeSigned: Uint8Array) => Promise<Uint8Array>;
-}
+const privateKey = generatePrivateKey(); // Replace with your private key
+const account = privateKeyToAccount(privateKey);
 
-const signer: PushSigner = {
-  account: `eip155:1:${ethereumSenderAccount.address}`,
-  signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
-    return hexToBytes(await ethereumSenderAccount.signMessage({ message: { raw: data } }));
-  }
+const universalSigner: UniversalSigner = {
+  chain: CONSTANTS.Chain.EVM.sepolia.name, // Use Sepolia testnet for this example
+  chainId: CONSTANTS.Chain.EVM.sepolia.chainId, // Chain ID of Sepolia
+  account: account.address, // Ethereum address derived from the private key
+  signMessage: async (data: Uint8Array) => {
+    const signature = await account.signMessage({
+      message: { raw: data }, // Data to be signed
+    });
+    return hexToBytes(signature); // Convert signature to byte array
+  },
 };
 ```
 
-Explanation:
--	`account`: Specifies the sender’s CAIP-10 address prefixed with eip155:1: to indicate Ethereum’s mainnet.
--	`signMessage`: A function that signs the transaction data using the Ethereum private key.
+## 3. Initialize Push Chain
+
+Initialize the Push Chain SDK using the signer object. The default environment is `devnet`:
+
+```typescript
+const pushChain = await PushChain.initialize(universalSigner);
+```
+
+## 4. Recipient Addresses
+
+For this example, we’ll use Ethereum as the sender’s blockchain and Solana as the recipient’s. Here’s how to configure the recipient Solana address:
+
+```typescript
+const recipients: UniversalAccount[] = [
+  {
+    chain: CONSTANTS.Chain.Solana.devnet.name,
+    chainId: CONSTANTS.Chain.Solana.devnet.chainId,
+    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+  },
+];
+```
 
 ## 5. Building the Email Payload
 
-In this example, our payload contains a simple email with a title and message:
+Define the email payload to be sent:
 
 ```typescript
 const email = {
-  title: 'Hello old friend from Solana!',
-  message: 'Greetings from Ethereum world.'
+  title: 'Hello from Ethereum!',
+  message: 'This is a cross-chain email to Solana.',
 };
+
+// Serialize the email payload
+const serializedData = new TextEncoder().encode(JSON.stringify(email));
 ```
 
-## 6. Creating an Unsigned Transaction
+## 6. Send Email
 
-Next, we create the transaction using the Push Network SDK. Each transaction includes a category field that categorizes its purpose, making it easier to differentiate application-specific transactions.
-
-In this example, we will choose as category `MY_EMAIL_APP`:
+Send the serialized data and category (e.g., `MY_EMAIL_APP`) to the recipients:
 
 ```typescript
-const unsignedTransaction = pushNetwork.tx.createUnsigned(
-  'MY_EMAIL_APP', // Transaction category
-  [receiverSolanaAddress], // Recipients
-  new TextEncoder().encode(JSON.stringify(email)) // Email payload
-);
-```
-
-## 7. Sending the Transaction
-
-Finally, we send the transaction by signing it with the signer object:
-
-```typescript
-const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
-console.log(`Transaction submitted! ${transactionHash}`);
-```
-
-## 8. Fetch Sent and Received Emails
-
-Now, let's fetch all the emails that a particular user has sent and received.
-
-For fetching the emails sent, we use the function `getBySender` function from the `transaction` class.
-
-```typescript
-const res = await this.pushNetwork.tx.getBySender(
-  `eip155:1:${ethereumSenderAccount.address}`,
-  Math.floor(Date.now()),
-  'DESC',
-  30,
-  1,
-  'MY_EMAIL_APP'
-);
-
-const pushMail: {title: string; message: string;}[] = [];
-res.blocks.forEach((block) => {
-  const mails: {title: string; message: string;}[] = block.blockDataAsJson.txobjList.map(
-    (txObj: { tx: Transaction }, index: number) => {
-      const decodedData = new TextDecoder().decode(new Uint8Array(
-        Buffer.from(txObj.tx.data as unknown as string, 'base64')
-      ));
-
-      const mailTxData = JSON.parse(decodedData) as {title: string; message: string;}
-
-      return {
-        title: mailTxData.title,
-        message: mailTxData.message,
-      };
-    }
-  );
-
-  // Spread the transformed mails into pushMail array
-  pushMail.push(...mails);
+const tx = await pushChain.tx.send(recipients, {
+  category: 'MY_EMAIL_APP', // Specify the category of the transaction
+  data: serializedData, // Attach the serialized message
 });
 ```
 
-For the emails that the user has received, we do the exact same logic, but we only change the function call to `getByRecipient`.
+## 7. Fetch Emails
+
+Now, let's fetch all the emails that a particular user has sent and received.
+
+For fetching the emails sent, we use the function `get` function from the `tx` class.
+
+```typescript
+const transactionResponse = (await pushChain.tx.get(
+  tx.txHash
+)) as SimplifiedBlockResponse;
+
+transactionResponse.blocks.map((block: SimplifiedBlockType) => {
+  block.transactions.map((t: SimplifiedTxResponse) => {
+    const decodedData = new TextDecoder().decode(
+      new Uint8Array(Buffer.from(t.txnData as unknown as string, 'hex'))
+    );
+    const mailTxData = JSON.parse(decodedData) as {
+      title: string;
+      message: string;
+    };
+    console.log(mailTxData);
+  });
+});
+```
 
 ## Complete Example Code
 
 ```typescript
-// Import Push Chain SDK and viem
-import { PushNetwork } from '@pushprotocol/push-chain';
+import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
 import { hexToBytes } from 'viem';
-import { privateKeyToAccount } from 'viem/accounts';
-import { config } from 'dotenv';
-
-config();
-
-interface PushSigner {
-  account: string;
-  signMessage: (dataToBeSigned: Uint8Array) => Promise<Uint8Array>;
-}
+import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
 
 async function main() {
-  // Initialize Push SDK
-  let pushNetwork = await PushNetwork.initialize();
+  const privateKey = generatePrivateKey();
+  const account = privateKeyToAccount(privateKey);
 
-  // Initialize user account
-  const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
-  if (!senderEthereumPrivateKey) throw new Error('Invalid private key');
-  const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
-  const receiverSolanaAddress = 'solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp:ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR';
-
-  // Initialize signer object
-  const signer: PushSigner = {
-    account: `eip155:1:${ethereumSenderAccount.address}`,
-    signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
-      return hexToBytes(await ethereumSenderAccount.signMessage({ message: { raw: data } }));
-    }
+  const universalSigner: UniversalSigner = {
+    chain: CONSTANTS.Chain.EVM.sepolia.name,
+    chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+    account: account.address,
+    signMessage: async (data: Uint8Array) => {
+      const signature = await account.signMessage({
+        message: { raw: data },
+      });
+      return hexToBytes(signature);
+    },
   };
 
-  // Email payload
+  const pushChain = await PushChain.initialize(universalSigner);
+
+  const recipients: UniversalAccount[] = [
+    {
+      chain: CONSTANTS.Chain.EVM.sepolia.name,
+      chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+      account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+    },
+  ];
+
   const email = {
-    title: 'Hello old friend from Solana!',
-    message: 'Greetings from Ethereum world.'
+    title: 'Hello from Ethereum!',
+    message: 'This is a cross-chain email to Solana.',
   };
 
-  // Create unsigned transaction
-  const unsignedTransaction = pushNetwork.tx.createUnsigned(
-    'MY_EMAIL_APP',
-    [receiverSolanaAddress],
-    new TextEncoder().encode(JSON.stringify(email))
-  );
+  const serializedData = new TextEncoder().encode(JSON.stringify(email));
 
-  // Send transaction
-  const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
-  console.log(`Transaction submitted! ${transactionHash}`);
+  const tx = await pushChain.tx.send(recipients, {
+    category: 'MY_EMAIL_APP',
+    data: serializedData,
+  });
 
-  // Fetch sent emails
-  const res = await this.pushNetwork.tx.getBySender(
-    `eip155:1:${ethereumSenderAccount.address}`,
-    Math.floor(Date.now()),
-    'DESC',
-    30,
-    1,
-    'MY_EMAIL_APP'
-  );
+  await new Promise((resolve) => setTimeout(resolve, 3000));
 
-  const pushMail: {title: string; message: string;}[] = [];
-  res.blocks.forEach((block) => {
-    const mails: {title: string; message: string;}[] = block.blockDataAsJson.txobjList.map(
-      (txObj: { tx: Transaction }, index: number) => {
-        const decodedData = new TextDecoder().decode(new Uint8Array(
-          Buffer.from(txObj.tx.data as unknown as string, 'base64')
-        ));
+  const transactionResponse = (await pushChain.tx.get(
+    tx.txHash
+  )) as SimplifiedBlockResponse;
 
-        const mailTxData = JSON.parse(decodedData) as {title: string; message: string;}
-
-        return {
-          title: mailTxData.title,
-          message: mailTxData.message,
-        };
-      }
-    );
-
-    // Spread the transformed mails into pushMail array
-    pushMail.push(...mails);
+  transactionResponse.blocks.map((block: SimplifiedBlockType) => {
+    block.transactions.map((t: SimplifiedTxResponse) => {
+      const decodedData = new TextDecoder().decode(
+        new Uint8Array(Buffer.from(t.txnData as unknown as string, 'hex'))
+      );
+      const mailTxData = JSON.parse(decodedData) as {
+        title: string;
+        message: string;
+      };
+      console.log(mailTxData);
+    });
   });
 }
 
@@ -243,5 +210,7 @@ void main();
 
 # Conclusion
 
-This example demonstrates how, by using the Push Network SDK, developers can bridge blockchains like Ethereum and Solana to enable innovative use cases such as cross-chain emails.
+This tutorial demonstrated how to build a cross-chain email system using the Push Chain SDK, enabling seamless communication between blockchains like Ethereum and Solana. By setting up the SDK, configuring accounts, and signing transactions, you’ve learned how to send and fetch messages securely across chains.
+
+With this foundation, you can explore more use cases for cross-chain messaging and integrate these features into your dApps. Push Chain simplifies creating interoperable Web3 solutions, opening the door to innovative decentralized applications. 
 

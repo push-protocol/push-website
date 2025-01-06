@@ -62,6 +62,56 @@ const aliceMessagesBob = await userAlice.chat.send(
 
 `,
   },
+  {
+    title: 'Push Chain Quickstart',
+    codeblock: `// Import Push Chain SDK
+import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
+
+// Import utility functions from viem
+import { hexToBytes } from 'viem';
+import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
+
+// Generate Private Key and Account
+const privateKey = generatePrivateKey();
+const account = privateKeyToAccount(privateKey);
+
+// Create Universal Signer
+const universalSigner: UniversalSigner = {
+  chain: CONSTANTS.Chain.EVM.sepolia.name,
+  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+  account: account.address,
+  signMessage: async (data: Uint8Array) => {
+    const signature = await account.signMessage({
+      message: { raw: data },
+    });
+    return hexToBytes(signature);
+  },
+};
+
+// Initialize SDK
+const pushChain = await PushChain.initialize(universalSigner);
+
+// Transaction recipient
+const recipients: UniversalAccount[] = [
+  {
+    chain: CONSTANTS.Chain.Solana.devnet.name,
+    chainId: CONSTANTS.Chain.Solana.devnet.chainId,
+    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+  },
+];
+
+// Transaction Payload
+const email = {
+  title: 'Hello old friend from Solana!',
+  message: 'Greetings from Ethereum world.',
+};
+
+// Send Transaction
+const tx = await pushChain.tx.send(recipients, {
+  category: 'example-category',
+  data: new TextEncoder().encode(JSON.stringify(email)),
+});`,
+  },
 ];
 
 export const TechDocItems: ITechDocItem[] = [
@@ -71,12 +121,48 @@ export const TechDocItems: ITechDocItem[] = [
     alt: 'Logo representing Push Chain - Push Protocol',
     link: '/docs/chain',
     target: '_self',
-    description: 'Learn about Push Chain and how to integrate it.',
-    codeblock: `// Initialize PushNetwork
-let pushNetwork = await PushNetwork.initialize()
+    description:
+      'Explore Push Chain and learn how to integrate it for building universal Apps.',
+    codeblock: `// Import private key
+const privateKey = generatePrivateKey();
+const account = privateKeyToAccount(privateKey);
 
-// Search for a transaction by hash
-const tx = await pushNetwork.tx.search('3e30a2a89f0122157832b3495a4e5e26e15c0e2123cbc2e17170ac6cdba5c6fa')`,
+// Create Universal Signer
+const universalSigner: UniversalSigner = {
+  chain: CONSTANTS.Chain.EVM.sepolia.name,
+  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+  account: account.address,
+  signMessage: async (data: Uint8Array) => {
+    const signature = await account.signMessage({
+      message: { raw: data },
+    });
+    return hexToBytes(signature);
+  },
+};
+
+// Initialize SDK
+const pushChain = await PushChain.initialize(universalSigner);
+
+// Transaction recipient
+const recipients: UniversalAccount[] = [
+  {
+    chain: CONSTANTS.Chain.Solana.devnet.name,
+    chainId: CONSTANTS.Chain.Solana.devnet.chainId,
+    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+  },
+];
+
+// Transaction Payload
+const email = {
+  title: 'Hello old friend from Solana!',
+  message: 'Greetings from Ethereum world.',
+};
+
+// Send Transaction
+const tx = await pushChain.tx.send(recipients, {
+  category: 'Email-Example',
+  data: new TextEncoder().encode(JSON.stringify(email)),
+});`,
   },
   {
     title: 'Notifications',

@@ -24,9 +24,8 @@ Push Chain enables users to interact directly with the blockchain using their ex
 
 For users seeking a streamlined interface, Push Chain provides an embeddable wallet that enhances the user experience by combining simplicity with security. The embeddable wallet offers:
 
-- **Unified Access**: A single wallet interface to interact with Push Chain, supporting both cross-chain and on-chain transactions.
+- **Unified Access**: Unified Access: A single wallet interface to interact with Push Chain, supporting both cross-chain and on-chain transactions.
 - **Frictionless Onboarding**: New users can log in with email or social accounts, providing a Web2-like experience while maintaining Web3’s security and decentralization.
-- **Session Keys**: Reduces repetitive signing by allowing session-based interactions, making the user experience smoother and more efficient.
 
 ## Logging in with Email
 
@@ -41,9 +40,9 @@ Here’s how you can use the Push Wallet SDK to connect a wallet in your web3 ap
 ```typescript
 async function pushWalletLoginHandler(): Promise<void> {
   try {
-    if (pushNetwork) {
+    if (pushChain) {
       // Establish wallet connection
-      const pushAddress: string = await pushNetwork.wallet.connect();
+      const pushAddress: string = await pushChain.wallet.connect();
 
       // Process and store the connected account
       setPushAccount(pushAddress);

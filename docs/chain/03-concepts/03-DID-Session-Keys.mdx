@@ -1,6 +1,6 @@
 ---
 id: docs-chain-did
-title: Decentralized Identities and Session Keys
+title: Decentralized Identities
 hide_title: true
 slug: ./push-chain-did
 displayed_sidebar: pushChainSidebar
@@ -8,11 +8,11 @@ sidebar_position: 3
 image: "/assets/docs/previews/docs_notifications_tutorial_create_channel--creating_your_channel.png"
 ---
 
-# Simplifying UX in Web3: The Role of Decentralized Identities and Session Keys on Push Chain
+# Simplifying UX in Web3: The Role of Decentralized Identities on Push Chain
 
-One of the major hurdles for mass adoption of web3 technologies is user experience (UX). Managing multiple wallets, navigating various blockchain ecosystems, and repeatedly approving transactions can overwhelm even experienced users. Push Chain addresses these challenges head-on by introducing **Decentralized Identities (DIDs)** and **Session Keys**, two key innovations that streamline user interactions without compromising security or decentralization.
+One of the major hurdles for mass adoption of web3 technologies is user experience (UX). Managing multiple wallets, navigating various blockchain ecosystems, and repeatedly approving transactions can overwhelm even experienced users. Push Chain addresses these challenges head-on by introducing **Decentralized Identities (DIDs)**, a key innovation that streamlines user interactions without compromising security or decentralization.
 
-In this article, we’ll explore how these features simplify wallet management, enable seamless interactions, and set the stage for a unified web3 experience.
+In this article, we’ll explore how DIDs simplify wallet management, enable seamless interactions, and set the stage for a unified web3 experience.
 
 ---
 
@@ -22,57 +22,48 @@ Decentralized Identities (DIDs) are globally unique identifiers that provide a u
 
 ### **Key Features of DIDs on Push Chain**
 1. **Multi-Wallet Mapping**:
-- A single DID can represent multiple wallets from various blockchain ecosystems, eliminating the need for users to juggle multiple keys and accounts.
-- For example, a user’s DID could link their Ethereum and Solana wallets, enabling seamless interactions across both networks.
+   - A single DID can represent multiple wallets from various blockchain ecosystems, eliminating the need for users to juggle multiple keys and accounts.
+   - For example, a user’s DID could link their Ethereum and Solana wallets, enabling seamless interactions across both networks.
 
 2. **Cross-Chain Compatibility**:
-- DIDs enable cross-chain applications to function without requiring users to switch wallets or networks manually.
-- Developers can build apps that recognize a user by their DID, regardless of the underlying blockchain.
+   - DIDs enable cross-chain applications to function without requiring users to switch wallets or networks manually.
+   - Developers can build apps that recognize a user by their DID, regardless of the underlying blockchain.
+
+3. **Unified Transaction History**:
+   - Users can access a consolidated view of their blockchain activities, spanning multiple wallets and networks, all tied to their DID.
+   - This simplifies tracking assets, transactions, and application activity.
 
 ---
 
-## **What Are Session Keys?**
-
-Session Keys are temporary, limited-access keys that allow users to interact with decentralized applications (dApps) without repeatedly signing transactions or exposing their private keys. This feature significantly enhances UX by balancing convenience and security.
-
-### **How Session Keys Work**
-- **Delegated Access**: A user can grant a session key to a dApp, specifying which operations it can perform and for how long.
-- **Temporary Permissions**: Session keys expire after a predefined duration or after completing a set number of operations, ensuring minimal risk.
-- **No Private Key Exposure**: Unlike traditional wallet connections, session keys eliminate the need to repeatedly sign with a private key, reducing friction.
-
----
-
-## **DIDs and Session Keys in Action**
+## **DIDs in Action**
 
 ### **1. Simplifying Cross-Chain Interactions**
 With DIDs, users can seamlessly interact with apps across multiple blockchains. For example:
 - A user signs in to a Push Chain-powered gaming app using their DID, which maps both their Ethereum and Solana wallets.
 - The app retrieves the user’s assets, achievements, or settings from either blockchain without requiring the user to switch networks.
 
-### **2. Enhancing Gaming Experiences**
-Session keys allow uninterrupted gameplay in decentralized games:
-- A player grants a session key to a game for in-game purchases and moves.
-- The game uses the session key to execute these actions without repeatedly prompting the user for wallet approvals, providing a smooth experience.
+### **2. Building User-Friendly Social Media dApps**
+Decentralized social platforms built on Push Chain can use DIDs to link user profiles across chains, enabling a unified user experience. Users can manage their interactions and data from a single identity, reducing complexity.
 
-
-### **3. Building User-Friendly Social Media dApps**
-Decentralized social platforms built on Push Chain can use DIDs to link user profiles across chains. Session keys enable users to post updates or interact with content without needing to sign every action manually.
+### **3. Enhancing E-Commerce and Loyalty Platforms**
+DIDs simplify customer interactions by linking multiple payment methods or loyalty accounts to one identity. For example:
+- Users can access their reward points, payment history, and offers from different ecosystems, all through a single DID.
 
 ---
 
 ## **Advantages for Developers**
 
-Push Chain’s unified user architecture and session keys also benefit developers:
+Push Chain’s unified user architecture also benefits developers:
 - **Simplified Integration**: Apps only need to integrate with a user’s DID, not multiple wallet APIs.
-- **Improved Retention**: Frictionless user experiences increase engagement and reduce drop-off rates.
-- **Secure and Scalable**: Session keys enable secure, low-overhead interactions that scale efficiently for high-traffic apps.
+- **Cross-Chain Applications**: Developers can create applications that interact with multiple blockchains seamlessly using a single identity system.
+- **Enhanced Analytics**: Unified identities enable developers to gather better insights into user behavior across blockchain ecosystems.
 
 ---
 
 ## **Why Push Chain’s Approach Matters**
 
-By combining Decentralized Identities and Session Keys, Push Chain bridges the gap between web2 and web3 user experiences. Here’s why this matters:
-- **For Users**: DIDs and session keys make web3 applications as intuitive as traditional web2 apps while preserving decentralization.
+By introducing Decentralized Identities, Push Chain bridges the gap between web2 and web3 user experiences. Here’s why this matters:
+- **For Users**: DIDs make web3 applications as intuitive as traditional web2 apps while preserving decentralization.
 - **For Developers**: These tools simplify app design and integration, reducing time-to-market and operational complexities.
 
 Push Chain is building the foundation for a unified web3 ecosystem where users can interact seamlessly with decentralized applications, regardless of their technical expertise.
@@ -81,8 +72,8 @@ Push Chain is building the foundation for a unified web3 ecosystem where users c
 
 ## **Conclusion**
 
-The integration of Decentralized Identities and Session Keys on Push Chain is a game-changer for web3. By abstracting wallet management and simplifying user interactions, these innovations pave the way for mass adoption of blockchain-based applications.
+The integration of Decentralized Identities on Push Chain is a game-changer for web3. By abstracting wallet management and simplifying user interactions, DIDs pave the way for mass adoption of blockchain-based applications.
 
-As web3 continues to evolve, features like DIDs and session keys will become essential for creating user-centric, secure, and scalable decentralized applications. Push Chain is leading this charge, ensuring that the next generation of blockchain apps is built with both users and developers in mind.
+As web3 continues to evolve, features like DIDs will become essential for creating user-centric, secure, and scalable decentralized applications. Push Chain is leading this charge, ensuring that the next generation of blockchain apps is built with both users and developers in mind.
 
 **Ready to innovate with Push Chain?** Start building today and create the seamless web3 experiences of tomorrow.

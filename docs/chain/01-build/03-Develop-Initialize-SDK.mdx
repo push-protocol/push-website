@@ -24,40 +24,70 @@ import Details from '@theme/Details';
 
 To integrate with Push Chain, you need the `@pushprotocol/push-chain` library. Install it using the following command:
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{ className: "codetab js" }} default>
-    ```bash
-    # Install Libraries
-    npm install @pushprotocol/push-chain
-    ```
-  </TabItem>
-</Tabs>
-
+```bash
+# Install Libraries
+npm install @pushprotocol/push-chain
+```
 
 ## SDK Initialization
+
+The Push Chain SDK can be initialized in two ways, depending on the functionality required:
+
+	1.	**Without Universal Signer**: For read-only operations like fetching blockchain data (e.g., blocks, transactions), you can initialize the SDK without providing a Universal Signer.
+	2.	**With Universal Signer**: If you want to send transactions or perform operations requiring message signing, you must initialize the SDK with a Universal Signer.
+
+### Initializing Without Universal Signer
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
 // Import Push Chain SDK
-import {PushNetwork, CONSTANTS} from '@pushprotocol/push-chain';
+import { PushChain } from '@pushprotocol/push-chain';
 
-// Initialize the SDK
-const pushNetwork = await PushNetwork.initialize(CONSTANTS.ENV.STAGING);
+// Initialize the SDK. Default devnet environment is used.
+const pushChain = await PushChain.initialize();
 ```
   </TabItem>
 </Tabs>
 
-For production, use `CONSTANTS.ENV.PROD`
+### Initializing With Universal Signer
 
-For development, use `CONSTANTS.ENV.STAGING`
+To send transactions or perform actions that require message signing, you need to initialize the SDK with a Universal Signer.
 
-### `PushNetwork.instance` function return type
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+// Import required modules
+import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
+import { privateKeyToAccount, hexToBytes } from 'viem';
 
-Initializing the SDK provides an instance of the PushNetwork class, which includes the following public fields:
+// Import private key
+const privateKey = generatePrivateKey(); // Replace with your private key
+const account = privateKeyToAccount(privateKey);
+
+// Create Universal Signer
+const universalSigner = {
+  chain: CONSTANTS.Chain.EVM.sepolia.name, // Sepolia Testnet
+  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+  account: account.address,
+  signMessage: async (data: Uint8Array) => {
+    const signature = await account.signMessage({ message: { raw: data } });
+    return hexToBytes(signature);
+  },
+};
+
+// Initialize the SDK with the Universal Signer
+const pushChain = await PushChain.initialize(universalSigner);
+```
+  </TabItem>
+</Tabs>
+
+### `PushChain.instance` function return type
+
+Initializing the SDK provides an instance of the PushChain class, which includes the following public fields:
 
 ```typescript
-export declare class PushNetwork {
+export declare class PushChain {
   block: Block;
   tx: Tx;
   wallet: Wallet;
@@ -65,6 +95,6 @@ export declare class PushNetwork {
 ```
 
 Here is a breakdown for each of public fields of that class.
-- **Block**: The Block class in the PushNetwork handles operations related to blockchain blocks. It provides methods to initialize a block instance, serialize and deserialize block data, and fetch blocks from the network.
-- **Tx**: The Transaction class in the PushNetwork is designed to manage transactions within the network. It provides functionality to create unsigned transactions, serialize and deserialize transaction data, and send transactions to the network.
+- **Block**: The Block class in the PushChain handles operations related to blockchain blocks. It provides methods to initialize a block instance and fetch blocks from the network.
+- **Tx**: The Transaction class in the PushChain is designed to manage transactions within the network. It provides functionality to send and transactions to the network.
 - **Wallet**: The Wallet class manages wallet interactions, including connecting to a wallet, signing data, and checking the connection status.

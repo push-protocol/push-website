@@ -28,109 +28,102 @@ import {
 
 ## Send Transaction
 
-Sending a transaction on Push Chain is pretty straight forward and consists of 2 steps:
+Sending a transaction on Push Chain is straightforward. Below is an example of how to send a transaction using the Push Chain SDK.
 
-- Calling the `createUnsigned` to create an Unsigned Transaction
-- Send transaction
+```typescript
+send: (
+  recipients: UniversalAccount[],
+  options: {
+    category: string;
+    data: Uint8Array;
+  }
+) => Promise<{ txHash: string }>;
+```
 
-To send the transaction a Signer is necessary. In the example below we will be importing a private key from the `.env` and using the `Account` class from `viem` library to sign the transaction, but you can use any other library.
+| **Param**     | **Type**                | **Remarks**                                                                                       |
+|---------------|-------------------------|---------------------------------------------------------------------------------------------------|
+| `recipients`  | `UniversalAccount[]`   | An array of recipient addresses in a chain-agnostic format. Each address specifies the destination for the transaction. |
+| `category`    | `string`               | The category of the transaction, used to classify or tag the transaction (e.g., `example-category`). |
+| `data`        | `Uint8Array`           | Serialized data payload for the transaction.                                                      |
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-    First, let's initialize our viem Account. This will be used for signing when sending a transaction
-
-    ```typescript
-    const senderEthereumPrivateKey = process.env.ETHEREUM_PRIVATE_KEY;
-    const ethereumSenderAccount = privateKeyToAccount(senderEthereumPrivateKey as `0x${string}`);
-    ```
-
-    In this example we will be sending a transaction with category `MY_EMAIL_APP` and the following data:
-
-    ```typescript
-    const email = {
-      title: 'Hello old friend from Solana!',
-      message: 'Greetings from Ethereum world.'
-    };
-    ```
-
-    Now, let's create our signer object to sign messages that are sent to Push Chain:
-
-    ```typescript
-    const signer = {
-      account: `eip155:1:${ethereumSenderAccount.address}`,
-      signMessage: async (data: Uint8Array): Promise<Uint8Array> => {
-        return hexToBytes(await ethereumSenderAccount.signMessage({message: {raw: data}}));
-      }
-    };
-    ```
-
-    Let's serialize the `email` object:
-
-    ```typescript
-    const serializedData = new TextEncoder().encode(JSON.stringify(data));
-    ```
-
-    Now, let's create our Unsigned Transaction. We will be sending this transaction to the Ethereum mainnet address `0x8F6325974108C7041B8035131eCe8A89708d02d0` and add as `category` for this example: `MY_EMAIL_APP`:
-
-    ```typescript
-    const unsignedTransaction = pushNetwork.tx.createUnsigned(
-      'MY_EMAIL_APP',
-      ['eip155:1:0x8F6325974108C7041B8035131eCe8A89708d02d0'],
-      serializedData
-    );
-    ```
-
-    Let's send our transaction:
-
-    ```typescript
-    const transactionHash = await pushNetwork.tx.send(unsignedTransaction, signer);
-    ```
-  </TabItem>
-</Tabs>
-
-### Create Unsigned Transaction parameters
-
-| Param       | Type                    |  Remarks                                                                                                                                                                        |
-| ----------- | ----------------------- |  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `category`| `string`                |  Transaction Category                                                                                                                                   |
-| `recipients` | `string[]`         | Recipients of the transaction                                                                                                                                                        |
-| `data`           | `Uint8Array` |  Array of Bytes for the transaction data                                                                                                                                                    |
+--------
 
 <Details summary="Expected response">
+
 ```typescript
 {
-  transactionHash: '0x0232fb66e2cb41c291ca10af4aa3ad0bc515adcea34de0f456db10306db89677';
+  "txHash": "8bff4e865dfb9d4b028ed1924f9151d7a104787617abc0eac3b0869be59db6ad"
 }
 ```
+
+Response properties description:
+
+| **Property**             | **Type**                 | **Description**                                                                                     |
+|---------------------------|--------------------------|-----------------------------------------------------------------------------------------------------|
+| `txHash`             | `string`                | Transaction Hash |
+
 </Details>
 
-### Send Unsigned Transaction parameters
-
-| Param       | Type                    |  Remarks                                                                                                                                                                        |
-| ----------- | ----------------------- |  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `unsignedTx`| `Transaction` |  Unsigned Transaction that was created above by calling the `createUnsigned` method |
-| `signer` | `Signer` | Object to sign the transaction that will be submited to Push Chain |
-
-Where `Signer` is defined as:
+### Initialize the Universal Signer
+Generate a private key and account, then create a Universal Signer object. We will use `viem` to generate the private key and account.
 
 ```typescript
-{
-  account: string;
-  signMessage: (dataToBeSigned: Uint8Array) => Promise<Uint8Array>;
-}
+import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
+import { hexToBytes } from 'viem';
+import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
+
+// Generate Private Key and Account
+const privateKey = generatePrivateKey();
+const account = privateKeyToAccount(privateKey);
+
+// Create Universal Signer
+const universalSigner = {
+  chain: CONSTANTS.Chain.EVM.sepolia.name, // Sepolia Testnet
+  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+  account: account.address,
+  signMessage: async (data: Uint8Array) => {
+    const signature = await account.signMessage({
+      message: { raw: data },
+    });
+    return hexToBytes(signature);
+  },
+};
 ```
 
-| Param       | Type                    |  Remarks                                                                                                                                                                        |
-| ----------- | ----------------------- |  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `account`| `string` |  Address in CAIP-10 format with the address that will be used to sign the Transaction |
-| `signMessage` | `(dataToBeSigned: Uint8Array) => Promise<Uint8Array>` | Function to sign an array of bytes |
+### Initialize the SDK
 
+Initialize the Push Chain SDK with the Universal Signer:
 
-<Details summary="Expected response">
 ```typescript
-{
-  transactionHash: '0x0232fb66e2cb41c291ca10af4aa3ad0bc515adcea34de0f456db10306db89677';
-}
+const pushChain = await PushChain.initialize(universalSigner);
 ```
-</Details>
 
+### Define Transaction Payload
+
+```typescript
+const email = {
+  title: 'Hello old friend from Solana!',
+  message: 'Greetings from Ethereum world.',
+};
+```
+
+### Specify Recipients
+
+```typescript
+const recipients = [
+  {
+    chain: CONSTANTS.Chain.Solana.devnet.name, // Solana Devnet
+    chainId: CONSTANTS.Chain.Solana.devnet.chainId,
+    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+  },
+];
+```
+
+### Send the Transaction
+
+```typescript
+const tx = await pushChain.tx.send(recipients, {
+  category: 'example-category',
+  data: new TextEncoder().encode(JSON.stringify(email)),
+});
+```
