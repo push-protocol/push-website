@@ -18,70 +18,27 @@ Before diving into the SDK and how you can integrate Push Chain to build the new
   </title>
 </head>
 
-## Push Chain in 1 sentence
+## What is the Transaction Category?
 
-Push Chain is a Proof-of-Stake layer 1 blockchain to enable hyper-scalable, consumer-centric omni-chain web3 applications.
+The transaction category in Push Chain refers to the type of operation the transaction represents, such as email, blog, notifications, or other specific use cases. 
 
-## Push Chain in 1 paragraph
+It helps identify and organize transactions within the network, allowing precise handling and retrieval tailored to their purpose.
 
-Push Chain is an omni-chain, Proof-of-Stake, Layer 1 blockchain designed to enable a new wave of scalable and consumer-centric web3 applications. It addresses the current limitations of blockchain networks, such as poor user experience, high transaction costs, and fragmented ecosystems, by introducing innovations like parallel block execution and dynamic sharding.
+**Note**: Each transaction must have *one* category assigned to it.
 
-# Push Concepts
+## How many recipients can a transaction have?
 
-### Consumer Transactions
+A transaction can have **at least 1 recipient**, but there is no upper limit to the number of recipients. 
 
-Consumer transactions are a cornerstone of Push Chain's infrastructure, tailored to support non-financial, user-focused applications. Unlike traditional blockchain transactions that prioritize financial accuracy, consumer transactions are optimized for scalability, cost efficiency, and user experience, making them ideal for applications such as messaging, gaming, and social interactions.
+Recipients can be wallets on **multiple chains** and do not need to all be on the same chain. For example, a transaction can include recipients on Ethereum, Solana, or other supported blockchains.
 
-#### Key Characteristics:
-- **Orderless Execution**: Removes the need for strict ordering, allowing multiple transactions to be processed simultaneously without dependency constraints.
-- **Lightweight Design**: Optimized for minimal computational overhead, ensuring quick processing and low costs.
-- **Application Focus**: Specifically designed to cater to consumer-centric use cases, emphasizing user interaction over financial data validation.
+## What can the transaction payload contain?
 
-### Omni-chain
+The transaction payload can be **anything**, as long as it is represented in bytes. 
 
-**Omni-chain** refers to Push Chain's ability to enable seamless interoperability across multiple blockchain networks. It allows data, assets, and functionalities to move freely between chains, bringing the user a unified experience.
+The data payload can include any information that suits your application's needs, provided it is associated with a valid **transaction category**. For example:  
+- An **email** as part of a messaging application.  
+- A **social media post**, like a text, image, or video.  
+- A **notification** or event trigger for your application.  
+- **Game state data** for a gaming app.  
 
-#### Examples:
-  - Unified Balance
-  - Abstracted cross-chain function execution
-
-### Proof-of-Stake
-
-Push Chain leverages a Proof-of-Stake consensus to validate transactions and secure the network. Validators stake tokens to participate in block production and attestation, earning rewards for honest behavior and facing penalties for malicious actions.
-
-#### Key Points:
-  - Energy-efficient compared to Proof-of-Work.
-  - Promotes decentralization through economic incentives.
-  - Validators are dynamically assigned tasks to ensure fairness and security.
-
-### Decentralized Identities (DID)
-
-Push Chain introduces Decentralized Identities to unify a user’s blockchain presence across multiple chains. By mapping various wallets to a single DID, the network enables seamless cross-chain interactions, improves user experience, and supports features like unified transaction history and unified account balance.
-
-#### Features:
-  - Unified Transaction History: Tracks and consolidates user activity across all connected wallets and blockchains, offering a seamless overview of transactions.
-  - Cross-Chain Identity Management: Simplifies the process of managing multiple wallets by linking them to a single, unified identity, enabling effortless interactions across chains.
-
-### Parallel Block Execution
-
-Parallel block execution enables Push Chain to process multiple blocks simultaneously rather than sequentially. This approach maximizes throughput and ensures the network can handle high transaction volumes efficiently, making it suitable for consumer-centric applications with high-performance demands.
-
-#### Benefits:
-  - High scalability for consumer apps like gaming or social platforms.
-  - Reduced congestion during peak usage periods.
-
-### Dynamic Sharding
-
-Dynamic sharding divides the network’s workload into smaller, manageable pieces (shards) and distributes them across nodes. This mechanism dynamically adjusts the allocation of data and transactions based on the network’s size and demand, optimizing performance, storage, and fault tolerance as the network scales.
-
-#### Advantages:
-  - **Scalability**: Efficiently supports network growth without degrading performance.
-  - **Fault Tolerance**: Isolates failures to specific shards, preventing system-wide impact.
-
-### Fee Abstraction
-
-Push Chain introduces fee abstraction, allowing users to pay transaction fees in tokens of their choice or have the fees covered by the application.
-
-#### Examples:
-  - Users pay in stablecoins or application-specific tokens.
-  - Applications cover fees for seamless onboarding, similar to traditional web apps.

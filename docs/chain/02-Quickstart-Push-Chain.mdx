@@ -19,28 +19,38 @@ Everything you will need to get up and running in 2 minutes or less!
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Overview
+### Installation
 
-Push Chain is designed to enable Web3 Applications to communicate and transact seamlessly across various blockchain networks. This guide will demonstrate how to quickly set up and interact with Push Chain SDK, leveraging **guest mode** to showcase the ability to use your Ethereum address without requiring a Push Wallet.
-
----
-
-## Installation
-
-To get started with Push Chain SDK, you will need to install the following dependencies:
-
-- `@pushprotocol/push-chain`: The core library for interacting with Push Chain.
-- `viem`: A lightweight and efficient library for handling Web3-related tasks, such as key management and signing transactions.
-
-Run the following command to install both libraries:
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```bash
 npm install @pushprotocol/push-chain viem
 ```
 
-## Import libraries
+  </TabItem>
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
 
-Import the necessary libraries to start interacting with Push Chain:
+```bash
+npm install @pushprotocol/push-chain viem
+```
+
+  </TabItem>
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+
+```bash
+npm install @pushprotocol/push-chain viem
+```
+
+  </TabItem>
+</Tabs>
+
+### Import libraries
+
+
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
@@ -51,15 +61,39 @@ import { hexToBytes } from 'viem';
 import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
 ```
 
-Explanation:
+  </TabItem>
 
-- `PushChain` and `CONSTANTS` are essential for working with the Push Chain SDK.
-- `hexToBytes` helps convert hexadecimal strings to byte arrays.
-- `privateKeyToAccount` creates an Ethereum-compatible account object from a private key, enabling account management and signing capabilities.Explanation:
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
 
-## Create Signer Object
+```typescript
+// Import Push Chain SDK for blockchain interactions
+import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
 
-The signer object is used for signing messages and transactions. This is critical in guest mode, where your Ethereum address acts as your identity:
+// Import utility functions from viem
+import { hexToBytes } from 'viem';
+import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+
+```typescript
+// Import Push Chain SDK for blockchain interactions
+import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
+
+// Import utility functions from viem
+import { hexToBytes } from 'viem';
+import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
+```
+
+  </TabItem>
+</Tabs>
+
+### Initialize Push Chain SDK
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
 const privateKey = generatePrivateKey(); // Replace with your private key generation logic
@@ -76,47 +110,75 @@ const universalSigner: UniversalSigner = {
     return hexToBytes(signature); // Convert signature to byte array
   },
 };
-```
 
-Key Points:
-
-- Private Key: Keep it secure; it is used to authenticate and sign transactions.
-- Chain Details: Configure the chain name and ID for the network you’re using (Sepolia in this case).
-
-## Initialize Push Chain SDK
-
-Initialize the Push Chain SDK using the signer object. The default environment is `devnet`:
-
-```typescript
 const pushChain = await PushChain.initialize(universalSigner);
 ```
 
-## Send a Transaction
+  </TabItem>
 
-### Define the message
-
-In this example, we’ll send an email-like message via Push Chain, which will be serialized and sent to the recipients:
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```typescript
+const privateKey = generatePrivateKey(); // Replace with your private key generation logic
+const account = privateKeyToAccount(privateKey);
+
+const universalSigner: UniversalSigner = {
+  chain: CONSTANTS.Chain.EVM.sepolia.name, // Use Sepolia testnet for this example
+  chainId: CONSTANTS.Chain.EVM.sepolia.chainId, // Chain ID of Sepolia
+  account: account.address, // Ethereum address derived from the private key
+  signMessage: async (data: Uint8Array) => {
+    const signature = await account.signMessage({
+      message: { raw: data }, // Data to be signed
+    });
+    return hexToBytes(signature); // Convert signature to byte array
+  },
+};
+
+const pushChain = await PushChain.initialize(universalSigner);
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+
+```typescript
+const privateKey = generatePrivateKey(); // Replace with your private key generation logic
+const account = privateKeyToAccount(privateKey);
+
+const universalSigner: UniversalSigner = {
+  chain: CONSTANTS.Chain.EVM.sepolia.name, // Use Sepolia testnet for this example
+  chainId: CONSTANTS.Chain.EVM.sepolia.chainId, // Chain ID of Sepolia
+  account: account.address, // Ethereum address derived from the private key
+  signMessage: async (data: Uint8Array) => {
+    const signature = await account.signMessage({
+      message: { raw: data }, // Data to be signed
+    });
+    return hexToBytes(signature); // Convert signature to byte array
+  },
+};
+
+const pushChain = await PushChain.initialize(universalSigner);
+```
+
+  </TabItem>
+</Tabs>
+
+### Send Transaction
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+// Define transaction payload
 const email = {
   title: 'Hello old friend from Solana!',
   message: 'Greetings from Ethereum world.'
 };
-```
 
-### Serialize the Data
-
-Let's serialize the `email` object:
-
-```typescript
+// Serialize transaction payload
 const serializedData = new TextEncoder().encode(JSON.stringify(email));
-```
 
-### Set the Recipients
-
-We will send the message to a single recipient that will be a random generated Ethereum address on Sepolia:
-
-```typescript
+// Set transaction recipient. In this example, we will send the message to a random Ethereum address on Sepolia
 const recipients: UniversalAccount[] = [
   {
     chain: CONSTANTS.Chain.EVM.sepolia.name,
@@ -124,29 +186,122 @@ const recipients: UniversalAccount[] = [
     account: privateKeyToAccount(generatePrivateKey()).address,
   },
 ];
-```
 
-### Send the Transaction
-
-Send the serialized data and category (e.g., `MY_EMAIL_APP`) to the recipients:
-
-```typescript
+// Send transaction
 const tx = await pushChain.tx.send(recipients, {
   category: 'MY_EMAIL_APP', // Specify the category of the transaction
   data: serializedData, // Attach the serialized message
 });
 ```
 
-**What Happens Here?**
+  </TabItem>
 
-- The transaction is signed and sent to Push Chain, where it can be accessed and verified by the specified recipients.
-
-
-## Fetch Transactions
-
-Fetching transaction details on Push Chain is straightforward and allows you to retrieve all relevant data about a previously sent transaction using its unique hash. This is particularly useful for verifying transaction status, viewing metadata, or debugging applications.
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```typescript
-const transactionHash = '177482c5a504f3922875c216f71a2b236f344cfbf334f97c8f59547e1e21fb23';
-const transaction = await pushChain.tx.get(transactionHash);
+// Define transaction payload
+const email = {
+  title: 'Hello old friend from Solana!',
+  message: 'Greetings from Ethereum world.'
+};
+
+// Serialize transaction payload
+const serializedData = new TextEncoder().encode(JSON.stringify(email));
+
+// Set transaction recipient. In this example, we will send the message to a random Ethereum address on Sepolia
+const recipients: UniversalAccount[] = [
+  {
+    chain: CONSTANTS.Chain.EVM.sepolia.name,
+    chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+    account: privateKeyToAccount(generatePrivateKey()).address,
+  },
+];
+
+// Send transaction
+const tx = await pushChain.tx.send(recipients, {
+  category: 'MY_EMAIL_APP', // Specify the category of the transaction
+  data: serializedData, // Attach the serialized message
+});
 ```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+
+```typescript
+// Define transaction payload
+const email = {
+  title: 'Hello old friend from Solana!',
+  message: 'Greetings from Ethereum world.'
+};
+
+// Serialize transaction payload
+const serializedData = new TextEncoder().encode(JSON.stringify(email));
+
+// Set transaction recipient. In this example, we will send the message to a random Ethereum address on Sepolia
+const recipients: UniversalAccount[] = [
+  {
+    chain: CONSTANTS.Chain.EVM.sepolia.name,
+    chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+    account: privateKeyToAccount(generatePrivateKey()).address,
+  },
+];
+
+// Send transaction
+const tx = await pushChain.tx.send(recipients, {
+  category: 'MY_EMAIL_APP', // Specify the category of the transaction
+  data: serializedData, // Attach the serialized message
+});
+```
+
+  </TabItem>
+</Tabs>
+
+### Fetch Transactions
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+const transactions = await pushChain.tx.get('*', {
+  category: 'MY_EMAIL_APP',
+});
+for (const blocks of transactions.blocks) {
+  for (const t of blocks.transactions) {
+    console.log('transaction: ', t);
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+
+```typescript
+const transactions = await pushChain.tx.get('*', {
+  category: 'MY_EMAIL_APP',
+});
+for (const blocks of transactions.blocks) {
+  for (const t of blocks.transactions) {
+    console.log('transaction: ', t);
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+
+```typescript
+const transactions = await pushChain.tx.get('*', {
+  category: 'MY_EMAIL_APP',
+});
+for (const blocks of transactions.blocks) {
+  for (const t of blocks.transactions) {
+    console.log('transaction: ', t);
+  }
+}
+```
+
+  </TabItem>
+</Tabs>

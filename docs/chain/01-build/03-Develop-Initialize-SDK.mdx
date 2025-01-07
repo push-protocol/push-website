@@ -20,16 +20,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Details from '@theme/Details';
 
-### Installation
-
-To integrate with Push Chain, you need the `@pushprotocol/push-chain` library. Install it using the following command:
-
-```bash
-# Install Libraries
-npm install @pushprotocol/push-chain
-```
-
-## SDK Initialization
+## Initialize Push Chain API
 
 The Push Chain SDK can be initialized in two ways, depending on the functionality required:
 
@@ -39,6 +30,7 @@ The Push Chain SDK can be initialized in two ways, depending on the functionalit
 ### Initializing Without Universal Signer
 
 <Tabs className="codetabs" groupId="code-examples">
+
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
 // Import Push Chain SDK
@@ -48,11 +40,30 @@ import { PushChain } from '@pushprotocol/push-chain';
 const pushChain = await PushChain.initialize();
 ```
   </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+// Import Push Chain SDK
+import { PushChain } from '@pushprotocol/push-chain';
+
+// Initialize the SDK. Default devnet environment is used.
+const pushChain = await PushChain.initialize();
+```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+// Import Push Chain SDK
+import { PushChain } from '@pushprotocol/push-chain';
+
+// Initialize the SDK. Default devnet environment is used.
+const pushChain = await PushChain.initialize();
+```
+  </TabItem>
+
 </Tabs>
 
 ### Initializing With Universal Signer
-
-To send transactions or perform actions that require message signing, you need to initialize the SDK with a Universal Signer.
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
@@ -80,11 +91,71 @@ const universalSigner = {
 const pushChain = await PushChain.initialize(universalSigner);
 ```
   </TabItem>
+
+      <TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+// Import required modules
+import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
+import { privateKeyToAccount, hexToBytes } from 'viem';
+
+// Import private key
+const privateKey = generatePrivateKey(); // Replace with your private key
+const account = privateKeyToAccount(privateKey);
+
+// Create Universal Signer
+const universalSigner = {
+  chain: CONSTANTS.Chain.EVM.sepolia.name, // Sepolia Testnet
+  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+  account: account.address,
+  signMessage: async (data: Uint8Array) => {
+    const signature = await account.signMessage({ message: { raw: data } });
+    return hexToBytes(signature);
+  },
+};
+
+// Initialize the SDK with the Universal Signer
+const pushChain = await PushChain.initialize(universalSigner);
+```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+// Import required modules
+import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
+import { privateKeyToAccount, hexToBytes } from 'viem';
+
+// Import private key
+const privateKey = generatePrivateKey(); // Replace with your private key
+const account = privateKeyToAccount(privateKey);
+
+// Create Universal Signer
+const universalSigner = {
+  chain: CONSTANTS.Chain.EVM.sepolia.name, // Sepolia Testnet
+  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+  account: account.address,
+  signMessage: async (data: Uint8Array) => {
+    const signature = await account.signMessage({ message: { raw: data } });
+    return hexToBytes(signature);
+  },
+};
+
+// Initialize the SDK with the Universal Signer
+const pushChain = await PushChain.initialize(universalSigner);
+```
+  </TabItem>
 </Tabs>
 
-### `PushChain.instance` function return type
+### Initialize Push Chain parameters
 
-Initializing the SDK provides an instance of the PushChain class, which includes the following public fields:
+When initializing your Push Chain instance, you can customize the process using several parameters. Here's a breakdown:
+
+| Param      | Type                     |  Default       | Remarks                                                                                                                                                                         |
+| ---------- | ------------------------ |  ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`universalSigner`_ | `UniversalSigner`             |  null             | Signer responsible for signing when sending transactions. Only used for `send` function                                                                                         |
+|  `options.network`   | `PushChainEnvironment`         | `devnet`     | Push Chain environment                                                                                                                                        |
+
+
+<Details summary="Expected response">
 
 ```typescript
 export declare class PushChain {
@@ -94,7 +165,10 @@ export declare class PushChain {
 }
 ```
 
-Here is a breakdown for each of public fields of that class.
-- **Block**: The Block class in the PushChain handles operations related to blockchain blocks. It provides methods to initialize a block instance and fetch blocks from the network.
-- **Tx**: The Transaction class in the PushChain is designed to manage transactions within the network. It provides functionality to send and transactions to the network.
-- **Wallet**: The Wallet class manages wallet interactions, including connecting to a wallet, signing data, and checking the connection status.
+| Param      | Type                     |  Remarks                                                                                                                                                                         |
+| ---------- | ------------------------ |  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `block` | `Block` | The Block class in the PushChain handles operations related to blockchain blocks. It provides methods to initialize a block instance and fetch blocks from the network. |
+|  `tx`   | `Tx`  | The Transaction class in the PushChain is designed to manage transactions within the network. It provides functionality to send and transactions to the network. |
+|  `wallet`   | `Wallet`  | The Wallet class manages wallet interactions, including connecting to a wallet, signing data, and checking the connection status. |
+
+</Details>
