@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[49369],{516547:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-965/blog/tags/bnb","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
