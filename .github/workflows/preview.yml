@@ -21,6 +21,17 @@ jobs:
           echo "GITHUB_PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
           echo "REACT_APP_BASE_URL=/push-website/pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
 
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false # Set to true if you're sure tool cache is unnecessary
+          android: true # Removes Android SDK (saves ~4GB)
+          dotnet: true # Removes .NET Core SDK (saves ~1GB)
+          haskell: true # Removes Haskell tools (saves ~1GB)
+          large-packages: true # Removes large packages
+          docker-images: true # Removes unused Docker images
+          swap-storage: true # Removes swap files
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -30,6 +41,10 @@ jobs:
         with:
           node-version: 18.x
           cache: yarn
+
+      - name: Clean yarn cache
+        run: yarn cache clean --force
+      # - run: yarn ci
 
       - name: Install and Build
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
