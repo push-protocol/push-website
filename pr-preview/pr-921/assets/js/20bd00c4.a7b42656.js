@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[95986],{356995:e=>{e.exports=JSON.parse('{"label":"Tge","permalink":"/push-website/pr-preview/pr-921/blog/tags/tge","allTagsPath":"/push-website/pr-preview/pr-921/blog/tags","count":1,"unlisted":false}')}}]);
