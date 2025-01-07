@@ -122,9 +122,7 @@ Response properties description:
 
 </Details>
 
-## Examples
-
-### Get Transaction by hash
+## Retrieving by hash
 
 Fetch a transaction that has the hash `177482c5a504f3922875c216f71a2b236f344cfbf334f97c8f59547e1e21fb23`.
 
@@ -132,7 +130,7 @@ Fetch a transaction that has the hash `177482c5a504f3922875c216f71a2b236f344cfbf
 const transaction = await pushChain.tx.get('177482c5a504f3922875c216f71a2b236f344cfbf334f97c8f59547e1e21fb23');
 ```
 
-### Get All Transactions By Category
+## Retrieving by category
 
 ```typescript
 const transactionByCategory = await pushChain.tx.get('*', {
@@ -140,7 +138,7 @@ const transactionByCategory = await pushChain.tx.get('*', {
 });
 ```
 
-### Get Transaction By Sender address
+## Retrieving by sender address
 
 We will fetch transactions sent by this CAIP-10 address: `push:devnet:pushconsumer1l8wd6ucrwf43stuavxwfc9jmr5emlkr66guml6`.
 
@@ -155,7 +153,7 @@ const transctionBySender = await pushChain.tx.get(
 );
 ```
 
-### Get Transaction By Receiver address
+## Retrieving by receiver address
 
 We will fetch transactions received by this CAIP-10 address: `push:devnet:pushconsumer1l8wd6ucrwf43stuavxwfc9jmr5emlkr66guml6`.
 

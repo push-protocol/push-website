@@ -126,9 +126,7 @@ Response properties description:
 
 </Details>
 
-## Examples
-
-### Get Block by hash
+## Retrieving by hash
 
 Fetch a Block that has the hash `36939148bee59c6e1a9d4e6e6fb4e72d407f8667324714c206e64e1485f0f5ee`.
 
@@ -136,7 +134,7 @@ Fetch a Block that has the hash `36939148bee59c6e1a9d4e6e6fb4e72d407f8667324714c
 const block = await pushChain.block.get('36939148bee59c6e1a9d4e6e6fb4e72d407f8667324714c206e64e1485f0f5ee');
 ```
 
-### Get All Blocks By Time
+## Retrieving by time
 
 ```typescript
 const yesterday = Math.floor(Date.now() - 24 * 60 * 60 * 1000);

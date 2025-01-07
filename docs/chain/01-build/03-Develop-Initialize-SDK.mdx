@@ -22,55 +22,13 @@ import Details from '@theme/Details';
 
 ## Initialize Push Chain API
 
-The Push Chain SDK can be initialized in two ways, depending on the functionality required:
-
-	1.	**Without Universal Signer**: For read-only operations like fetching blockchain data (e.g., blocks, transactions), you can initialize the SDK without providing a Universal Signer.
-	2.	**With Universal Signer**: If you want to send transactions or perform operations requiring message signing, you must initialize the SDK with a Universal Signer.
-
-### Initializing Without Universal Signer
-
-<Tabs className="codetabs" groupId="code-examples">
-
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-```typescript
-// Import Push Chain SDK
-import { PushChain } from '@pushprotocol/push-chain';
-
-// Initialize the SDK. Default devnet environment is used.
-const pushChain = await PushChain.initialize();
-```
-  </TabItem>
-
-  <TabItem value="react" attributes={{className: "codetab react"}} default>
-```typescript
-// Import Push Chain SDK
-import { PushChain } from '@pushprotocol/push-chain';
-
-// Initialize the SDK. Default devnet environment is used.
-const pushChain = await PushChain.initialize();
-```
-  </TabItem>
-
-  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
-```typescript
-// Import Push Chain SDK
-import { PushChain } from '@pushprotocol/push-chain';
-
-// Initialize the SDK. Default devnet environment is used.
-const pushChain = await PushChain.initialize();
-```
-  </TabItem>
-
-</Tabs>
-
-### Initializing With Universal Signer
-
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
 // Import required modules
 import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
-import { privateKeyToAccount, hexToBytes } from 'viem';
+import { hexToBytes } from 'viem';
+import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 
 // Import private key
 const privateKey = generatePrivateKey(); // Replace with your private key
@@ -96,7 +54,8 @@ const pushChain = await PushChain.initialize(universalSigner);
 ```typescript
 // Import required modules
 import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
-import { privateKeyToAccount, hexToBytes } from 'viem';
+import { hexToBytes } from 'viem';
+import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 
 // Import private key
 const privateKey = generatePrivateKey(); // Replace with your private key
@@ -122,7 +81,8 @@ const pushChain = await PushChain.initialize(universalSigner);
 ```typescript
 // Import required modules
 import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
-import { privateKeyToAccount, hexToBytes } from 'viem';
+import { hexToBytes } from 'viem';
+import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
 
 // Import private key
 const privateKey = generatePrivateKey(); // Replace with your private key
@@ -145,6 +105,8 @@ const pushChain = await PushChain.initialize(universalSigner);
   </TabItem>
 </Tabs>
 
+> Note: If signer is not provided or is `null`, then the SDK will switch to read-only mode. This means that you can only read data from the blockchain and not send transactions.
+
 ### Initialize Push Chain parameters
 
 When initializing your Push Chain instance, you can customize the process using several parameters. Here's a breakdown:
@@ -158,10 +120,47 @@ When initializing your Push Chain instance, you can customize the process using 
 <Details summary="Expected response">
 
 ```typescript
-export declare class PushChain {
-  block: Block;
-  tx: Tx;
-  wallet: Wallet;
+{
+  block: Block {
+    validator: Validator {
+      activeValidatorURL: 'https://vv3.dev.push.org',
+      env: 1,
+      validatorContractClient: [Object],
+      ReqModifier: [Function (anonymous)],
+      call: [Function (anonymous)]
+    },
+    get: [Function (anonymous)]
+  },
+  tx: Tx {
+    validator: Validator {
+      activeValidatorURL: 'https://vv3.dev.push.org',
+      env: 1,
+      validatorContractClient: [Object],
+      ReqModifier: [Function (anonymous)],
+      call: [Function (anonymous)]
+    },
+    env: 1,
+    signer: null,
+    get: [Function (anonymous)],
+    send: [Function (anonymous)],
+    tokenCache: TokenCache {
+      validator: [Validator],
+      TOKEN_EXPIRE_SECONDS: 60,
+      cachedToken: [Object],
+      cachedTokenTs: 1736287769818
+    }
+  },
+  wallet: Wallet {
+    env: 1,
+    walletWindow: null,
+    connect: [Function (anonymous)],
+    sign: [Function (anonymous)],
+    appConnectionStatus: [Function (anonymous)],
+    requestAppConnection: [Function (anonymous)],
+    openWalletWindow: [Function (anonymous)],
+    requestWalletAddress: [Function (anonymous)],
+    walletUrl: 'https://wallet.push.org'
+  }
 }
 ```
 

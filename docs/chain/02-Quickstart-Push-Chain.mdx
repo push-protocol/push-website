@@ -178,7 +178,7 @@ const email = {
 // Serialize transaction payload
 const serializedData = new TextEncoder().encode(JSON.stringify(email));
 
-// Set transaction recipient. In this example, we will send the message to a random Ethereum address on Sepolia
+// Set transaction recipient. We will send the message to a random Ethereum address on Sepolia
 const recipients: UniversalAccount[] = [
   {
     chain: CONSTANTS.Chain.EVM.sepolia.name,
@@ -263,9 +263,7 @@ const tx = await pushChain.tx.send(recipients, {
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-const transactions = await pushChain.tx.get('*', {
-  category: 'MY_EMAIL_APP',
-});
+const transactions = await pushChain.tx.get();
 for (const blocks of transactions.blocks) {
   for (const t of blocks.transactions) {
     console.log('transaction: ', t);
@@ -278,9 +276,7 @@ for (const blocks of transactions.blocks) {
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```typescript
-const transactions = await pushChain.tx.get('*', {
-  category: 'MY_EMAIL_APP',
-});
+const transactions = await pushChain.tx.get();
 for (const blocks of transactions.blocks) {
   for (const t of blocks.transactions) {
     console.log('transaction: ', t);
@@ -293,9 +289,7 @@ for (const blocks of transactions.blocks) {
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 
 ```typescript
-const transactions = await pushChain.tx.get('*', {
-  category: 'MY_EMAIL_APP',
-});
+const transactions = await pushChain.tx.get();
 for (const blocks of transactions.blocks) {
   for (const t of blocks.transactions) {
     console.log('transaction: ', t);
