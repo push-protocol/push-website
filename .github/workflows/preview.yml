@@ -24,13 +24,13 @@ jobs:
       - name: Free Disk Space (Ubuntu)
         uses: jlumbroso/free-disk-space@main
         with:
-          tool-cache: false # Set to true if you're sure tool cache is unnecessary
-          android: true # Removes Android SDK (saves ~4GB)
-          dotnet: true # Removes .NET Core SDK (saves ~1GB)
-          haskell: true # Removes Haskell tools (saves ~1GB)
-          large-packages: true # Removes large packages
-          docker-images: true # Removes unused Docker images
-          swap-storage: true # Removes swap files
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -58,7 +58,8 @@ jobs:
           umbrella-dir: pr-preview
 
       - uses: rossjrw/pr-preview-action@v1.4.7
-        if: github.event.action == 'closed' && !github.event.pull_request.merged
+        if: github.event.action == 'closed'
         with:
+          umbrella-dir: pr-preview
           source-dir: ./build/
           action: remove
