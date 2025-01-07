@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[5727],{343089:e=>{e.exports=JSON.parse('{"label":"Proof of Stake","permalink":"/push-website/pr-preview/pr-943/blog/tags/proof-of-stake","allTagsPath":"/push-website/pr-preview/pr-943/blog/tags","count":1,"unlisted":false}')}}]);
