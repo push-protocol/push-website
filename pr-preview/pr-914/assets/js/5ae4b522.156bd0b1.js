@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[50141],{350869:e=>{e.exports=JSON.parse('{"label":"Bankless","permalink":"/push-website/pr-preview/pr-914/blog/tags/bankless","allTagsPath":"/push-website/pr-preview/pr-914/blog/tags","count":1,"unlisted":false}')}}]);
