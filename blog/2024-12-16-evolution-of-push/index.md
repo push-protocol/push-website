@@ -73,7 +73,7 @@ We submitted this but then stressed out on if we were rude or missed the context
 ![Fourth Image of Evolution of Push](./image11.webp)
 <ImageText>https://x.com/harshrajat/status/1279398824729952257</ImageText>
 
-This was also the place where we made so many friends that I still reach out to for help now. This was the place where I first dmed Jaun Bennett, Met Sandeep, Alok (Standard VC), Thomas Klaus and countless other folks that I look up to.
+This was also the place where we made so many friends that I still reach out to for help now. This was the place where I first dmed Juan Benet, Met Sandeep, Alok (Standard VC), Thomas Klocanas and countless other folks that I look up to.
 
 This in a way completed our journey of getting onboarded to web3 as we were now part of the vibes!
 
