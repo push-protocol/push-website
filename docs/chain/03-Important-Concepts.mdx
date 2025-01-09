@@ -42,3 +42,48 @@ The data payload can include any information that suits your application's needs
 - A **notification** or event trigger for your application.  
 - **Game state data** for a gaming app.  
 
+## What is `UniversalAccount`?
+
+The **UniversalAccount** is a chain-agnostic way of representing an address, designed to work seamlessly across multiple blockchain ecosystems. It abstracts the details of the underlying blockchain, enabling developers to interact with addresses in a unified manner, regardless of the chain they belong to.
+
+### Example Usage
+Here’s an example of how to use a UniversalAccount to represent a recipient on the Solana blockchain:
+
+```typescript
+const recipients: UniversalAccount[] = [
+  {
+    chain: CONSTANTS.CHAIN.SOLANA,
+    chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
+    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+  },
+];
+```
+
+## What is `UniversalSigner`?
+
+The **UniversalSigner** is a chain-agnostic way of representing a signer, designed to facilitate signing operations across multiple blockchain ecosystems. It abstracts the underlying blockchain-specific details, providing a unified approach to handle signing logic, regardless of the chain involved.
+
+### Key Features of `UniversalSigner`
+1. **Chain-Agnostic Design**: Supports multiple blockchains like Ethereum, Solana, Push Chain, or any other chain, enabling a consistent signing experience across chains.
+2. **Unified Signing Interface**: Offers a standardized `signMessage` function, making it easy to sign messages in a multi-chain environment.
+3. **Extensibility**: Its structure allows for integrating new chains without changing the existing implementation.
+
+### Example Usage
+Here’s an example of how to define a `UniversalSigner` for the Ethereum blockchain using the `viem` library:
+
+```typescript
+const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
+const account = privateKeyToAccount(privateKey);
+
+const universalSigner: UniversalSigner = {
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
+  account: account.address, // Ethereum address derived from the private key
+  signMessage: async (data: Uint8Array) => {
+    const signature = await account.signMessage({
+      message: { raw: data }, // Data to be signed
+    });
+    return hexToBytes(signature); // Convert signature to a byte array
+  },
+};
+```
