@@ -135,7 +135,7 @@ export const HeaderList = {
     {
       title: 'Push Chain Docs',
       subtitle: 'Infrastructure for universal, scalable Web3 apps',
-      srcrefoff: 'chat-icon-off',
+      srcrefoff: 'pushchain-icon-off',
       href: '/docs/chain',
       target: '_self',
     },

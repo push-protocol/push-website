@@ -117,7 +117,7 @@ const tx = await pushChain.tx.send(recipients, {
 export const TechDocItems: ITechDocItem[] = [
   {
     title: 'Chain',
-    srcref: 'dao',
+    srcref: 'pushchain',
     alt: 'Logo representing Push Chain - Push Protocol',
     link: '/docs/chain',
     target: '_self',
