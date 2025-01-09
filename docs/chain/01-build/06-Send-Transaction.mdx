@@ -34,19 +34,17 @@ import {
 const tx = await pushChain.tx.send(
   [
     {
-      chain: CONSTANTS.Chain.Solana.devnet.name,
-      chainId: CONSTANTS.Chain.Solana.devnet.chainId,
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
       account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
     },
   ],
   {
-    category: 'example-category',
-    data: new TextEncoder().encode(
-      JSON.stringify({
-        title: 'Hello old friend from Solana!',
-        message: 'Greetings from Ethereum world.',
-      })
-    ),
+    category: 'MY_CUSTOM_CATEGORY',
+    data: JSON.stringify({
+      title: 'Hello old friend from Solana!',
+      message: 'Greetings from Ethereum world.',
+    }),
   }
 );
 ```
@@ -57,19 +55,17 @@ const tx = await pushChain.tx.send(
 const tx = await pushChain.tx.send(
   [
     {
-      chain: CONSTANTS.Chain.Solana.devnet.name,
-      chainId: CONSTANTS.Chain.Solana.devnet.chainId,
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
       account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
     },
   ],
   {
-    category: 'example-category',
-    data: new TextEncoder().encode(
-      JSON.stringify({
-        title: 'Hello old friend from Solana!',
-        message: 'Greetings from Ethereum world.',
-      })
-    ),
+    category: 'MY_CUSTOM_CATEGORY',
+    data: JSON.stringify({
+      title: 'Hello old friend from Solana!',
+      message: 'Greetings from Ethereum world.',
+    }),
   }
 );
 ```
@@ -80,19 +76,17 @@ const tx = await pushChain.tx.send(
 const tx = await pushChain.tx.send(
   [
     {
-      chain: CONSTANTS.Chain.Solana.devnet.name,
-      chainId: CONSTANTS.Chain.Solana.devnet.chainId,
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
       account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
     },
   ],
   {
-    category: 'example-category',
-    data: new TextEncoder().encode(
-      JSON.stringify({
-        title: 'Hello old friend from Solana!',
-        message: 'Greetings from Ethereum world.',
-      })
-    ),
+    category: 'MY_CUSTOM_CATEGORY',
+    data: JSON.stringify({
+      title: 'Hello old friend from Solana!',
+      message: 'Greetings from Ethereum world.',
+    }),
   }
 );
 ```
@@ -132,23 +126,23 @@ Response properties description:
 Here below is an example of sending an Email to a Solana address. The payload is a simply JSON object with a title and message.
 
 ```typescript
-const recipients: UniversalAccount[] = [
-  {
-    chain: CONSTANTS.Chain.Solana.devnet.name,
-    chainId: CONSTANTS.Chain.Solana.devnet.chainId,
-    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-  },
-];
-
 const email = {
   title: 'Hello from Ethereum!',
   message: 'This is a cross-chain email to Solana.',
 };
 
-const serializedData = new TextEncoder().encode(JSON.stringify(email));
+const recipients = [
+  {
+    chain: CONSTANTS.CHAIN.SOLANA,
+    chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
+    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+  },
+];
 
-const tx = await pushChain.tx.send(recipients, {
-  category: 'MY_EMAIL_APP',
-  data: serializedData,
-});
+const tx = await pushChain.tx.send(recipients, 
+  {
+    category: 'MY_EMAIL_APP',
+    data: JSON.stringify(email),
+  }
+);
 ```

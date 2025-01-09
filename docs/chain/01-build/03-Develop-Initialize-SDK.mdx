@@ -36,12 +36,14 @@ const account = privateKeyToAccount(privateKey);
 
 // Create Universal Signer
 const universalSigner = {
-  chain: CONSTANTS.Chain.EVM.sepolia.name, // Sepolia Testnet
-  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
-  account: account.address,
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
+  account: account.address, // Ethereum address derived from the private key
   signMessage: async (data: Uint8Array) => {
-    const signature = await account.signMessage({ message: { raw: data } });
-    return hexToBytes(signature);
+    const signature = await account.signMessage({
+      message: { raw: data }, // Data to be signed
+    });
+    return hexToBytes(signature); // Convert signature to a byte array
   },
 };
 
@@ -63,12 +65,14 @@ const account = privateKeyToAccount(privateKey);
 
 // Create Universal Signer
 const universalSigner = {
-  chain: CONSTANTS.Chain.EVM.sepolia.name, // Sepolia Testnet
-  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
-  account: account.address,
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
+  account: account.address, // Ethereum address derived from the private key
   signMessage: async (data: Uint8Array) => {
-    const signature = await account.signMessage({ message: { raw: data } });
-    return hexToBytes(signature);
+    const signature = await account.signMessage({
+      message: { raw: data }, // Data to be signed
+    });
+    return hexToBytes(signature); // Convert signature to a byte array
   },
 };
 
@@ -90,12 +94,14 @@ const account = privateKeyToAccount(privateKey);
 
 // Create Universal Signer
 const universalSigner = {
-  chain: CONSTANTS.Chain.EVM.sepolia.name, // Sepolia Testnet
-  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
-  account: account.address,
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
+  account: account.address, // Ethereum address derived from the private key
   signMessage: async (data: Uint8Array) => {
-    const signature = await account.signMessage({ message: { raw: data } });
-    return hexToBytes(signature);
+    const signature = await account.signMessage({
+      message: { raw: data }, // Data to be signed
+    });
+    return hexToBytes(signature); // Convert signature to a byte array
   },
 };
 
@@ -114,7 +120,7 @@ When initializing your Push Chain instance, you can customize the process using 
 | Param      | Type                     |  Default       | Remarks                                                                                                                                                                         |
 | ---------- | ------------------------ |  ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _`universalSigner`_ | `UniversalSigner`             |  null             | Signer responsible for signing when sending transactions. Only used for `send` function                                                                                         |
-|  `options.network`   | `PushChainEnvironment`         | `devnet`     | Push Chain environment                                                                                                                                        |
+|  `options.network`   | `ENV`         | `devnet`     | Push Chain environment                                                                                                                                        |
 
 
 <Details summary="Expected response">
