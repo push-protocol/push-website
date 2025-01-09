@@ -2,14 +2,14 @@
 slug: push-chain-joins-forces-with-aptos
 title: 'Push Chain Joins Forces With Aptos'
 authors: [push]
-image: './cover-image.webp'
+image: './cover-image.gif'
 description: 'Push Chain Joins Forces With Aptos'
 text: "Push Chain's road to testnet has kickstarted in full swing. Learn everything about our collaboration with Aptos - what it means for Push and Aptos users, the use cases it unlocks and more!"
 tags: [Push Chain, Shared App Experience, Any Chain Tx, Universal Smart Contracts, Shared State Blockchain, Consumer Tx, Parallel Validators, Dynamic Sharding]
 ---
 
 
-![Cover image of Push Chain Join Forces With Aptos ](./cover-image.webp)
+![Cover image of Push Chain Join Forces With Aptos ](./cover-image.gif)
 
 <!--truncate-->
 
