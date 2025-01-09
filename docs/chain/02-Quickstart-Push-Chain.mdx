@@ -96,18 +96,18 @@ import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-const privateKey = generatePrivateKey(); // Replace with your private key generation logic
+const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
 const universalSigner: UniversalSigner = {
-  chain: CONSTANTS.Chain.EVM.sepolia.name, // Use Sepolia testnet for this example
-  chainId: CONSTANTS.Chain.EVM.sepolia.chainId, // Chain ID of Sepolia
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address, // Ethereum address derived from the private key
   signMessage: async (data: Uint8Array) => {
     const signature = await account.signMessage({
       message: { raw: data }, // Data to be signed
     });
-    return hexToBytes(signature); // Convert signature to byte array
+    return hexToBytes(signature); // Convert signature to a byte array
   },
 };
 
@@ -119,18 +119,18 @@ const pushChain = await PushChain.initialize(universalSigner);
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```typescript
-const privateKey = generatePrivateKey(); // Replace with your private key generation logic
+const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
 const universalSigner: UniversalSigner = {
-  chain: CONSTANTS.Chain.EVM.sepolia.name, // Use Sepolia testnet for this example
-  chainId: CONSTANTS.Chain.EVM.sepolia.chainId, // Chain ID of Sepolia
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address, // Ethereum address derived from the private key
   signMessage: async (data: Uint8Array) => {
     const signature = await account.signMessage({
       message: { raw: data }, // Data to be signed
     });
-    return hexToBytes(signature); // Convert signature to byte array
+    return hexToBytes(signature); // Convert signature to a byte array
   },
 };
 
@@ -142,18 +142,18 @@ const pushChain = await PushChain.initialize(universalSigner);
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 
 ```typescript
-const privateKey = generatePrivateKey(); // Replace with your private key generation logic
+const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
 const universalSigner: UniversalSigner = {
-  chain: CONSTANTS.Chain.EVM.sepolia.name, // Use Sepolia testnet for this example
-  chainId: CONSTANTS.Chain.EVM.sepolia.chainId, // Chain ID of Sepolia
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address, // Ethereum address derived from the private key
   signMessage: async (data: Uint8Array) => {
     const signature = await account.signMessage({
       message: { raw: data }, // Data to be signed
     });
-    return hexToBytes(signature); // Convert signature to byte array
+    return hexToBytes(signature); // Convert signature to a byte array
   },
 };
 
@@ -169,29 +169,25 @@ const pushChain = await PushChain.initialize(universalSigner);
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-// Define transaction payload
-const email = {
-  title: 'Hello old friend from Solana!',
-  message: 'Greetings from Ethereum world.'
-};
-
-// Serialize transaction payload
-const serializedData = new TextEncoder().encode(JSON.stringify(email));
-
-// Set transaction recipient. We will send the message to a random Ethereum address on Sepolia
-const recipients: UniversalAccount[] = [
-  {
-    chain: CONSTANTS.Chain.EVM.sepolia.name,
-    chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
-    account: privateKeyToAccount(generatePrivateKey()).address,
-  },
-];
-
 // Send transaction
-const tx = await pushChain.tx.send(recipients, {
-  category: 'MY_EMAIL_APP', // Specify the category of the transaction
-  data: serializedData, // Attach the serialized message
-});
+const tx = await pushChain.tx.send(
+  // We will send the message to a Solana address
+  [
+    {
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
+      account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+    },
+  ],
+  {
+    category: 'MY_CUSTOM_CATEGORY', // Specify the category of the transaction
+    // Sample email payload
+    data: JSON.stringify({
+      title: 'Hello old friend from Solana!',
+      message: 'Greetings from Ethereum world.',
+    }),
+  }
+);
 ```
 
   </TabItem>
@@ -199,29 +195,25 @@ const tx = await pushChain.tx.send(recipients, {
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```typescript
-// Define transaction payload
-const email = {
-  title: 'Hello old friend from Solana!',
-  message: 'Greetings from Ethereum world.'
-};
-
-// Serialize transaction payload
-const serializedData = new TextEncoder().encode(JSON.stringify(email));
-
-// Set transaction recipient. In this example, we will send the message to a random Ethereum address on Sepolia
-const recipients: UniversalAccount[] = [
-  {
-    chain: CONSTANTS.Chain.EVM.sepolia.name,
-    chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
-    account: privateKeyToAccount(generatePrivateKey()).address,
-  },
-];
-
 // Send transaction
-const tx = await pushChain.tx.send(recipients, {
-  category: 'MY_EMAIL_APP', // Specify the category of the transaction
-  data: serializedData, // Attach the serialized message
-});
+const tx = await pushChain.tx.send(
+  // We will send the message to a Solana address
+  [
+    {
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
+      account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+    },
+  ],
+  {
+    category: 'MY_CUSTOM_CATEGORY', // Specify the category of the transaction
+    // Sample email payload
+    data: JSON.stringify({
+      title: 'Hello old friend from Solana!',
+      message: 'Greetings from Ethereum world.',
+    }),
+  }
+);
 ```
 
   </TabItem>
@@ -229,29 +221,25 @@ const tx = await pushChain.tx.send(recipients, {
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 
 ```typescript
-// Define transaction payload
-const email = {
-  title: 'Hello old friend from Solana!',
-  message: 'Greetings from Ethereum world.'
-};
-
-// Serialize transaction payload
-const serializedData = new TextEncoder().encode(JSON.stringify(email));
-
-// Set transaction recipient. In this example, we will send the message to a random Ethereum address on Sepolia
-const recipients: UniversalAccount[] = [
-  {
-    chain: CONSTANTS.Chain.EVM.sepolia.name,
-    chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
-    account: privateKeyToAccount(generatePrivateKey()).address,
-  },
-];
-
 // Send transaction
-const tx = await pushChain.tx.send(recipients, {
-  category: 'MY_EMAIL_APP', // Specify the category of the transaction
-  data: serializedData, // Attach the serialized message
-});
+const tx = await pushChain.tx.send(
+  // We will send the message to a Solana address
+  [
+    {
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
+      account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+    },
+  ],
+  {
+    category: 'MY_CUSTOM_CATEGORY', // Specify the category of the transaction
+    // Sample email payload
+    data: JSON.stringify({
+      title: 'Hello old friend from Solana!',
+      message: 'Greetings from Ethereum world.',
+    }),
+  }
+);
 ```
 
   </TabItem>
