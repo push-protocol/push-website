@@ -49,58 +49,50 @@ const account = privateKeyToAccount(privateKey);
 
 // Define a UniversalSigner object to interact with Push Chain
 const universalSigner: UniversalSigner = {
-  chain: CONSTANTS.Chain.EVM.sepolia.name,
-  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address,
   signMessage: async (data: Uint8Array) => {
     const signature = await account.signMessage({
       message: { raw: data }, // Data to be signed
     });
-    return hexToBytes(signature); // Convert signature to byte array
+    return hexToBytes(signature); // Convert signature to a byte array
   },
 };
 
 // Initialize the Push Chain SDK with the UniversalSigner
 const pushChain = await PushChain.initialize(universalSigner);
 
-// Define transaction payload
-const email = {
-  title: 'Hello from Ethereum!',
-  message: 'This is a cross-chain email to Solana.',
-};
-
 // Send Transaction
-const tx = await pushChain.tx.send([
+const tx = await pushChain.tx.send(
+  // We will send the transaction to a Solana address
+  [
+    {
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
+      account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+    },
+  ],
   {
-    chain: CONSTANTS.Chain.Solana.devnet.name, // Transaction recipient. We will send a transaction to a Solana address
-    chainId: CONSTANTS.Chain.Solana.devnet.chainId,
-    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-  },
-], {
-  category: 'CUSTOM_CATEGORY',
-  data: new TextEncoder().encode(JSON.stringify(email)),
-});
+    category: 'MY_CUSTOM_CATEGORY', // Specify the category of the transaction
+    // Sample email payload
+    data: JSON.stringify({
+      title: 'Hello old friend from Solana!',
+      message: 'Greetings from Ethereum world.',
+    }),
+  }
+);
+
 
 // Wait for a short delay to allow the transaction to be processed
 
 // Fetch the Transaction by its hash
-const transactionResponse = (await pushChain.tx.get(
-  tx.txHash
-)) as SimplifiedBlockResponse;
-
-// Decode and process the transactions in the response
-transactionResponse.blocks.map((block: SimplifiedBlockType) => {
-  block.transactions.map((t: SimplifiedTxResponse) => {
-    const decodedData = new TextDecoder().decode(
-      new Uint8Array(Buffer.from(t.txnData as unknown as string, 'hex'))
-    );
-    const mailTxData = JSON.parse(decodedData) as {
-      title: string;
-      message: string;
-    };
-    console.log(mailTxData);
-  });
-});
+const transactions = await pushChain.tx.get(tx.txHash);
+for (const blocks of transactions.blocks) {
+  for (const t of blocks.transactions) {
+    console.log('transaction data: ', t.txnData);
+  }
+}
 ```
 
   </TabItem>
@@ -234,7 +226,7 @@ npm install @pushprotocol/push-chain viem
 
 ### Sending Transaction
 
-Best way to understand Push Chain is to interact with it directly. Here is how you can get started —
+Best way to understand Push Chain is to interact with it directly. Here is how you can get started:
 
 <ModalContainer>
 <ModalSmall
