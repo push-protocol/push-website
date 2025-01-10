@@ -52,7 +52,7 @@ Before you can chat, you must authenticate yourself as the message sender. We’
 const privateKey = generatePrivateKey(); // Replace with your private key
 const account = privateKeyToAccount(privateKey);
 
-const universalSigner: UniversalSigner = {
+const universalSigner = {
   chain: CONSTANTS.CHAIN.ETHEREUM,
   chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address, // Ethereum address derived from the private key
@@ -131,7 +131,7 @@ async function main() {
   const privateKey = generatePrivateKey();
   const account = privateKeyToAccount(privateKey);
 
-  const universalSigner: UniversalSigner = {
+  const universalSigner = {
     chain: CONSTANTS.CHAIN.ETHEREUM,
     chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
     account: account.address, // Ethereum address derived from the private key

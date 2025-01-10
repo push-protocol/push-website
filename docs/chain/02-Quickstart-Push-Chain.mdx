@@ -99,7 +99,7 @@ import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
 const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
-const universalSigner: UniversalSigner = {
+const universalSigner = {
   chain: CONSTANTS.CHAIN.ETHEREUM,
   chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address, // Ethereum address derived from the private key
@@ -122,7 +122,7 @@ const pushChain = await PushChain.initialize(universalSigner);
 const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
-const universalSigner: UniversalSigner = {
+const universalSigner = {
   chain: CONSTANTS.CHAIN.ETHEREUM,
   chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address, // Ethereum address derived from the private key
@@ -145,7 +145,7 @@ const pushChain = await PushChain.initialize(universalSigner);
 const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
-const universalSigner: UniversalSigner = {
+const universalSigner = {
   chain: CONSTANTS.CHAIN.ETHEREUM,
   chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address, // Ethereum address derived from the private key
@@ -171,7 +171,7 @@ const pushChain = await PushChain.initialize(universalSigner);
 ```typescript
 // Send transaction
 const tx = await pushChain.tx.send(
-  // We will send the message to a Solana address
+  // We will send the transaction to a Solana address
   [
     {
       chain: CONSTANTS.CHAIN.SOLANA,
@@ -197,7 +197,7 @@ const tx = await pushChain.tx.send(
 ```typescript
 // Send transaction
 const tx = await pushChain.tx.send(
-  // We will send the message to a Solana address
+  // We will send the transaction to a Solana address
   [
     {
       chain: CONSTANTS.CHAIN.SOLANA,
@@ -223,7 +223,7 @@ const tx = await pushChain.tx.send(
 ```typescript
 // Send transaction
 const tx = await pushChain.tx.send(
-  // We will send the message to a Solana address
+  // We will send the transaction to a Solana address
   [
     {
       chain: CONSTANTS.CHAIN.SOLANA,

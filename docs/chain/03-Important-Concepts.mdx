@@ -75,7 +75,7 @@ Here’s an example of how to define a `UniversalSigner` for the Ethereum blockc
 const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
-const universalSigner: UniversalSigner = {
+const universalSigner = {
   chain: CONSTANTS.CHAIN.ETHEREUM,
   chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address, // Ethereum address derived from the private key

@@ -48,7 +48,7 @@ const privateKey = generatePrivateKey(); // Replace with your private key
 const account = privateKeyToAccount(privateKey);
 
 // Define a UniversalSigner object to interact with Push Chain
-const universalSigner: UniversalSigner = {
+const universalSigner = {
   chain: CONSTANTS.CHAIN.ETHEREUM,
   chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address,

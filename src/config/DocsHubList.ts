@@ -76,7 +76,7 @@ const privateKey = generatePrivateKey();
 const account = privateKeyToAccount(privateKey);
 
 // Create Universal Signer
-const universalSigner: UniversalSigner = {
+const universalSigner = {
   chain: CONSTANTS.CHAIN.ETHEREUM,
   chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address,
@@ -126,9 +126,9 @@ const privateKey = generatePrivateKey();
 const account = privateKeyToAccount(privateKey);
 
 // Create Universal Signer
-const universalSigner: UniversalSigner = {
-  chain: CONSTANTS.Chain.EVM.sepolia.name,
-  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+const universalSigner = {
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address,
   signMessage: async (data: Uint8Array) => {
     const signature = await account.signMessage({
@@ -141,26 +141,25 @@ const universalSigner: UniversalSigner = {
 // Initialize SDK
 const pushChain = await PushChain.initialize(universalSigner);
 
-// Transaction recipient
-const recipients: UniversalAccount[] = [
-  {
-    chain: CONSTANTS.Chain.Solana.devnet.name,
-    chainId: CONSTANTS.Chain.Solana.devnet.chainId,
-    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-  },
-];
-
-// Transaction Payload
-const email = {
-  title: 'Hello old friend from Solana!',
-  message: 'Greetings from Ethereum world.',
-};
-
 // Send Transaction
-const tx = await pushChain.tx.send(recipients, {
-  category: 'Email-Example',
-  data: new TextEncoder().encode(JSON.stringify(email)),
-});`,
+const tx = await pushChain.tx.send(
+  // We will send the transaction to a Solana address
+  [
+    {
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
+      account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+    },
+  ],
+  {
+    category: 'MY_CUSTOM_CATEGORY', // Specify the category of the transaction
+    // Sample email payload
+    data: JSON.stringify({
+      title: 'Hello old friend from Solana!',
+      message: 'Greetings from Ethereum world.',
+    }),
+  }
+);`,
   },
   {
     title: 'Notifications',
