@@ -77,8 +77,8 @@ const account = privateKeyToAccount(privateKey);
 
 // Create Universal Signer
 const universalSigner: UniversalSigner = {
-  chain: CONSTANTS.Chain.EVM.sepolia.name,
-  chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address,
   signMessage: async (data: Uint8Array) => {
     const signature = await account.signMessage({
@@ -91,26 +91,24 @@ const universalSigner: UniversalSigner = {
 // Initialize SDK
 const pushChain = await PushChain.initialize(universalSigner);
 
-// Transaction recipient
-const recipients: UniversalAccount[] = [
-  {
-    chain: CONSTANTS.Chain.Solana.devnet.name,
-    chainId: CONSTANTS.Chain.Solana.devnet.chainId,
-    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-  },
-];
-
-// Transaction Payload
-const email = {
-  title: 'Hello old friend from Solana!',
-  message: 'Greetings from Ethereum world.',
-};
-
 // Send Transaction
-const tx = await pushChain.tx.send(recipients, {
-  category: 'example-category',
-  data: new TextEncoder().encode(JSON.stringify(email)),
-});`,
+const tx = await pushChain.tx.send(
+  [
+    {
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
+      account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+    },
+  ],
+  {
+    category: 'MY_CUSTOM_CATEGORY',
+    data: JSON.stringify({
+      title: 'Hello from Ethereum!',
+      message: 'This is a cross-chain email to Solana.',
+    }),
+  }
+);
+`,
   },
 ];
 
