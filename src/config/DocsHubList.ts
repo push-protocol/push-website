@@ -121,11 +121,7 @@ export const TechDocItems: ITechDocItem[] = [
     target: '_self',
     description:
       'Explore Push Chain and learn how to integrate it for building universal Apps.',
-    codeblock: `// Import private key
-const privateKey = generatePrivateKey();
-const account = privateKeyToAccount(privateKey);
-
-// Create Universal Signer
+    codeblock: `// Create Universal Signer
 const universalSigner = {
   chain: CONSTANTS.CHAIN.ETHEREUM,
   chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
