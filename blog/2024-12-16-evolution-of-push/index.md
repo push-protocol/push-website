@@ -171,14 +171,14 @@ We have been integrated natively in many wallets and protocols including Unstopp
 ![Twelfth Image of Evolution of Push](./image2.webp)
 <ImageText>https://x.com/hypurr_co/status/1851645401834959098?s=46&t=iq2iJvugwsC0iZ3dI-wFOw</ImageText>
 
-## Enters Push Chain - realization of what we actually built and it’s impact on web3
+## Enters Push Chain - realization of what we actually built and its impact on web3
 ### Realization of the end game
 During building for our vision of the most perfect consumer app and the decentralized notification protocol and nodes out. We eventually realized that what we have built instead is far more significant and solves for the seamless web3 that we all dream of.
 
 This realization is what turned into our shared state blockchain - Push Chain, which while being an L1, is not just another L1 as it’s built to be used by users of any other chain without them needing to switch or bridge to this chain. It’s the future of web3 built for unification, consumer and universal apps and seamless onboarding. 
 
 ### Launching Push Chain proposal and Devnet 🚀
-This has led us to launching our proposal of Push Chain, which just to recap is is a shared state L1 blockchain for shared app experiences. Push Chain enables txs from any chain (Solana, Eth, EVM, or non-EVM) with fast finality of \<1 second and can scale infinitely as nodes increase, supporting tens of thousands of parallel transactions. 
+This has led us to launching our proposal of Push Chain, which just to recap is a shared state L1 blockchain for shared app experiences. Push Chain enables txs from any chain (Solana, Eth, EVM, or non-EVM) with fast finality of \<1 second and can scale infinitely as nodes increase, supporting tens of thousands of parallel transactions. 
 
 - Push Chain introduces groundbreaking features including:
 - Ability to do any chain tx
