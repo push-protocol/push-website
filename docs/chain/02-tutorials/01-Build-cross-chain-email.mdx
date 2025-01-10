@@ -56,8 +56,8 @@ const privateKey = generatePrivateKey(); // Replace with your private key
 const account = privateKeyToAccount(privateKey);
 
 const universalSigner: UniversalSigner = {
-  chain: CONSTANTS.Chain.EVM.sepolia.name, // Use Sepolia testnet for this example
-  chainId: CONSTANTS.Chain.EVM.sepolia.chainId, // Chain ID of Sepolia
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address, // Ethereum address derived from the private key
   signMessage: async (data: Uint8Array) => {
     const signature = await account.signMessage({
@@ -83,61 +83,40 @@ For this example, we’ll use Ethereum as the sender’s blockchain and Solana a
 ```typescript
 const recipients: UniversalAccount[] = [
   {
-    chain: CONSTANTS.Chain.Solana.devnet.name,
-    chainId: CONSTANTS.Chain.Solana.devnet.chainId,
+    chain: CONSTANTS.CHAIN.SOLANA,
+    chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
     account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
   },
 ];
 ```
 
-## 5. Building the Email Payload
-
-Define the email payload to be sent:
-
-```typescript
-const email = {
-  title: 'Hello from Ethereum!',
-  message: 'This is a cross-chain email to Solana.',
-};
-
-// Serialize the email payload
-const serializedData = new TextEncoder().encode(JSON.stringify(email));
-```
-
-## 6. Send Email
+## 5. Send Email
 
 Send the serialized data and category (e.g., `MY_EMAIL_APP`) to the recipients:
 
 ```typescript
 const tx = await pushChain.tx.send(recipients, {
-  category: 'MY_EMAIL_APP', // Specify the category of the transaction
-  data: serializedData, // Attach the serialized message
+  category: 'MY_EMAIL_APP',
+  data: JSON.stringify({
+    title: 'Hello from Ethereum!',
+    message: 'This is a cross-chain email to Solana.',
+  }),
 });
 ```
 
-## 7. Fetch Emails
+## 6. Fetch Emails
 
 Now, let's fetch all the emails that a particular user has sent and received.
 
 For fetching the emails sent, we use the function `get` function from the `tx` class.
 
 ```typescript
-const transactionResponse = (await pushChain.tx.get(
-  tx.txHash
-)) as SimplifiedBlockResponse;
-
-transactionResponse.blocks.map((block: SimplifiedBlockType) => {
-  block.transactions.map((t: SimplifiedTxResponse) => {
-    const decodedData = new TextDecoder().decode(
-      new Uint8Array(Buffer.from(t.txnData as unknown as string, 'hex'))
-    );
-    const mailTxData = JSON.parse(decodedData) as {
-      title: string;
-      message: string;
-    };
-    console.log(mailTxData);
-  });
-});
+const transactions = await pushChain.tx.get(tx.txHash);
+for (const blocks of transactions.blocks) {
+  for (const t of blocks.transactions) {
+    console.log('email: ', t.txnData);
+  }
+}
 ```
 
 ## Complete Example Code
@@ -152,8 +131,8 @@ async function main() {
   const account = privateKeyToAccount(privateKey);
 
   const universalSigner: UniversalSigner = {
-    chain: CONSTANTS.Chain.EVM.sepolia.name,
-    chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+    chain: CONSTANTS.CHAIN.ETHEREUM,
+    chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
     account: account.address,
     signMessage: async (data: Uint8Array) => {
       const signature = await account.signMessage({
@@ -167,42 +146,29 @@ async function main() {
 
   const recipients: UniversalAccount[] = [
     {
-      chain: CONSTANTS.Chain.EVM.sepolia.name,
-      chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
       account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
     },
   ];
 
-  const email = {
-    title: 'Hello from Ethereum!',
-    message: 'This is a cross-chain email to Solana.',
-  };
-
-  const serializedData = new TextEncoder().encode(JSON.stringify(email));
-
   const tx = await pushChain.tx.send(recipients, {
     category: 'MY_EMAIL_APP',
-    data: serializedData,
+    data: JSON.stringify({
+      title: 'Hello from Ethereum!',
+      message: 'This is a cross-chain email to Solana.',
+    }),
   });
+
 
   await new Promise((resolve) => setTimeout(resolve, 3000));
 
-  const transactionResponse = (await pushChain.tx.get(
-    tx.txHash
-  )) as SimplifiedBlockResponse;
-
-  transactionResponse.blocks.map((block: SimplifiedBlockType) => {
-    block.transactions.map((t: SimplifiedTxResponse) => {
-      const decodedData = new TextDecoder().decode(
-        new Uint8Array(Buffer.from(t.txnData as unknown as string, 'hex'))
-      );
-      const mailTxData = JSON.parse(decodedData) as {
-        title: string;
-        message: string;
-      };
-      console.log(mailTxData);
-    });
-  });
+  const transactions = await pushChain.tx.get(tx.txHash);
+  for (const blocks of transactions.blocks) {
+    for (const t of blocks.transactions) {
+      console.log('email: ', t.txnData);
+    }
+  }
 }
 
 void main();

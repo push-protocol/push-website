@@ -53,8 +53,8 @@ const privateKey = generatePrivateKey(); // Replace with your private key
 const account = privateKeyToAccount(privateKey);
 
 const universalSigner: UniversalSigner = {
-  chain: CONSTANTS.Chain.EVM.sepolia.name, // Use Sepolia testnet for this example
-  chainId: CONSTANTS.Chain.EVM.sepolia.chainId, // Chain ID of Sepolia
+  chain: CONSTANTS.CHAIN.ETHEREUM,
+  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
   account: account.address, // Ethereum address derived from the private key
   signMessage: async (data: Uint8Array) => {
     const signature = await account.signMessage({
@@ -81,8 +81,8 @@ Specify which accounts you want to chat with. Each recipient requires a chain na
 ```typescript
 const recipients: UniversalAccount[] = [
   {
-    chain: CONSTANTS.Chain.Solana.devnet.name,
-    chainId: CONSTANTS.Chain.Solana.devnet.chainId,
+    chain: CONSTANTS.CHAIN.SOLANA,
+    chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
     account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
   },
 ];
@@ -90,7 +90,7 @@ const recipients: UniversalAccount[] = [
 
 ## Step 5: Compose a Chat Message
 
-Unlike emails, chat messages are typically shorter and more frequent, but the core idea—serializing your content—remains the same. Let’s wrap our text, sender info, and timestamp in JSON:
+Unlike emails, chat messages are typically shorter and more frequent. Let’s wrap our text, sender info, and timestamp in JSON:
 
 ```typescript
 const chatMessage = {
@@ -98,8 +98,6 @@ const chatMessage = {
   text: 'Hello from Ethereum to Solana!',
   timestamp: Date.now(),
 };
-
-const serializedChat = new TextEncoder().encode(JSON.stringify(chatMessage));
 ```
 
 ## Step 6: Send the Chat Data
@@ -109,7 +107,7 @@ Push Chain transactions should be labeled with categories (e.g., `CHAT_APP`) so 
 ```typescript
 const tx = await pushChain.tx.send(recipients, {
   category: 'CHAT_APP',
-  data: serializedChat,
+  data: JSON.stringify(chatMessage),
 });
 ```
 
@@ -118,23 +116,12 @@ const tx = await pushChain.tx.send(recipients, {
 To visualize previous messages, we’ll decode them from a transaction response. Pass in the hash or a user address to retrieve transactions, then parse out the chat details:
 
 ```typescript
-const transactionResponse = (await pushChain.tx.get(
-  tx.txHash
-)) as SimplifiedBlockResponse;
-
-transactionResponse.blocks.forEach((block: SimplifiedBlockType) => {
-  block.transactions.forEach((t: SimplifiedTxResponse) => {
-    const decodedData = new TextDecoder().decode(
-      new Uint8Array(Buffer.from(t.txnData as unknown as string, 'hex'))
-    );
-    const chatTxData = JSON.parse(decodedData) as {
-      sender: string;
-      text: string;
-      timestamp: number;
-    };
-    console.log(chatTxData);
-  });
-});
+const transactions = await pushChain.tx.get(tx.txHash);
+for (const blocks of transactions.blocks) {
+  for (const t of blocks.transactions) {
+    console.log('chat: ', t.txnData);
+  }
+}
 ```
 
 ## Complete Example Code
@@ -145,14 +132,14 @@ async function main() {
   const account = privateKeyToAccount(privateKey);
 
   const universalSigner: UniversalSigner = {
-    chain: CONSTANTS.Chain.EVM.sepolia.name,
-    chainId: CONSTANTS.Chain.EVM.sepolia.chainId,
-    account: account.address,
+    chain: CONSTANTS.CHAIN.ETHEREUM,
+    chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
+    account: account.address, // Ethereum address derived from the private key
     signMessage: async (data: Uint8Array) => {
       const signature = await account.signMessage({
-        message: { raw: data },
+        message: { raw: data }, // Data to be signed
       });
-      return hexToBytes(signature);
+      return hexToBytes(signature); // Convert signature to byte array
     },
   };
 
@@ -162,8 +149,8 @@ async function main() {
   // 2) Who do we chat with
   const recipients: UniversalAccount[] = [
     {
-      chain: CONSTANTS.Chain.Solana.devnet.name,
-      chainId: CONSTANTS.Chain.Solana.devnet.chainId,
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
       account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
     },
   ];
@@ -174,33 +161,23 @@ async function main() {
     text: 'Hello from Ethereum to Solana!',
     timestamp: Date.now(),
   };
-  const serializedChat = new TextEncoder().encode(JSON.stringify(chatMessage));
 
   // 4) Send the chat transaction
   const tx = await pushChain.tx.send(recipients, {
     category: 'CHAT_APP',
-    data: serializedChat,
+    data: JSON.stringify(chatMessage),
   });
 
   // Wait a moment for finalization
   await new Promise((resolve) => setTimeout(resolve, 3000));
 
   // 5) Retrieve the chat message
-  const transactionResponse = (await pushChain.tx.get(tx.txHash)) as SimplifiedBlockResponse;
-
-  transactionResponse.blocks.forEach((block: SimplifiedBlockType) => {
-    block.transactions.forEach((t: SimplifiedTxResponse) => {
-      const decodedData = new TextDecoder().decode(
-        new Uint8Array(Buffer.from(t.txnData as unknown as string, 'hex'))
-      );
-      const chatTxData = JSON.parse(decodedData) as {
-        sender: string;
-        text: string;
-        timestamp: number;
-      };
-      console.log(chatTxData);
-    });
-  });
+  const transactions = await pushChain.tx.get(tx.txHash);
+  for (const blocks of transactions.blocks) {
+    for (const t of blocks.transactions) {
+      console.log('chat: ', t.txnData);
+    }
+  }
 }
 
 void main();
