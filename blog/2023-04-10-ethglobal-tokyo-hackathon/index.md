@@ -34,7 +34,7 @@ We’re excited to award multiple prizes totaling $5k for the best and most crea
 
 Since Push Protocol went live three years ago, builders from the web3 ecosystem have built a variety of creative and useful use cases with Push, including DeFi, DAO, NFT, and Tooling. We’ve put together some product requests and sample use cases to inspire you further.
 
-Getting started is easy! Follow these simple steps to [create a channel](/docs/notifications/tutorials/create-your-channel/), as the first step for sending notifications via Push Protocol:
+Getting started is easy! Follow these simple steps to [create a channel](https://comms.push.org/docs/notifications/tutorials/create-your-channel/), as the first step for sending notifications via Push Protocol:
 
 1. Go to http://staging.push.org and connect your wallet.
 2. Once connected, go to Developer > Create Channel.
@@ -43,7 +43,7 @@ Getting started is easy! Follow these simple steps to [create a channel](/docs/n
 5. After the transaction is approved, approve the second transaction call.
 6. Congratulations! Your channel has been successfully created, and you are all set to send or receive notifications.
 
-And if you’re looking into Push Chat integration, head over to [Push Chat SDK](/docs/chat/) — you’ll be able to integrate wallet-to-wallet chat, whether it’s for customer support or group chat, with a few minutes.
+And if you’re looking into Push Chat integration, head over to [Push Chat SDK](https://comms.push.org/docs/chat/) — you’ll be able to integrate wallet-to-wallet chat, whether it’s for customer support or group chat, with a few minutes.
 
 ## The Ultimate Hackathon Survival Guide
 

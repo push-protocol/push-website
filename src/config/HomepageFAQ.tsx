@@ -196,7 +196,7 @@ export const Notifs = [
   {
     question: 'Can I integrate notifications on Frontend / Wallet?',
     section: 'Notifs',
-    renderAnswer: (baseUrl) => (
+    renderAnswer: () => (
       <Answer>
         <Span>
           Yes, Push Protocol is an open yet secure network, and behaves similar
@@ -209,7 +209,7 @@ export const Notifs = [
           Learn more about{' '}
           <AMod
             href={
-              baseUrl + '/docs/notifications/build/integrating-notifications/'
+              'https://comms.push.org/docs/notifications/build/integrating-notifications/'
             }
             target={'_blank'}
           >
@@ -218,8 +218,7 @@ export const Notifs = [
           /{' '}
           <AMod
             href={
-              baseUrl +
-              '/docs/notifications/tutorials/integrate-notifications-via-delivery-node/'
+              'https://comms.push.org/docs/notifications/tutorials/integrate-notifications-via-delivery-node/'
             }
             target={'_blank'}
           >
@@ -229,7 +228,7 @@ export const Notifs = [
         <Span>
           Additionally, wallets should check out{' '}
           <AMod
-            href='https://push.org/docs/tokenomics/deepdive/$push/'
+            href='https://comms.push.org/docs/tokenomics/deepdive/$push/'
             target={'_blank'}
           >
             fee pool of Push which re-imagines and incentivises their
@@ -304,14 +303,14 @@ export const Notifs = [
   {
     question: 'Do I need a channel to send notifications?',
     section: 'Notifs',
-    renderAnswer: (baseUrl) => (
+    renderAnswer: () => (
       <Answer>
         <Span>
           Yes, any protocol that wants to send notifications will need to
           activate themselves on Push protocol, read{' '}
           <AMod
             href={
-              baseUrl + '/docs/notifications/tutorials/create-your-channel/'
+              'https://comms.push.org/docs/notifications/tutorials/create-your-channel/'
             }
             target={'_blank'}
           >
@@ -377,12 +376,12 @@ export const Chat = [
   {
     question: 'Is Push Chat end-to-end encrypted?',
     section: 'Chat',
-    renderAnswer: (baseUrl) => (
+    renderAnswer: () => (
       <Answer>
         <Span>
           Yes, Push Chat is end-to-end encrypted. The encryption is based on PGP
           Keys. Read more about{' '}
-          <AMod href={baseUrl + '/docs/chat'} target={'_blank'}>
+          <AMod href={'https://comms.push.org/docs/chat'} target={'_blank'}>
             how it works here.
           </AMod>
         </Span>
@@ -431,7 +430,7 @@ export const IntegratingPush = [
   {
     question: 'How can I integrate Push as a service/developer?',
     section: 'IntegratingPush',
-    renderAnswer: (baseUrl) => (
+    renderAnswer: () => (
       <Answer>
         <Span>
           Push can be used as a utility for communication. A service/developer
@@ -442,7 +441,7 @@ export const IntegratingPush = [
         <Span>
           The{' '}
           <AMod
-            href={baseUrl + '/docs/notifications/quickstart/'}
+            href={'https://comms.push.org/docs/notifications/quickstart/'}
             target={'_blank'}
           >
             Push JS SDK
@@ -467,8 +466,7 @@ export const IntegratingPush = [
           Other ways of integrating Push notifications are via{' '}
           <AMod
             href={
-              baseUrl +
-              '/docs/notifications/build/send-notification-via-smart-contract/'
+              'https://comms.push.org/docs/notifications/build/send-notification-via-smart-contract/'
             }
             target={'_blank'}
           >
@@ -477,15 +475,17 @@ export const IntegratingPush = [
           ,{' '}
           <AMod
             href={
-              baseUrl +
-              '/docs/notifications/tutorials/send-notification-via-subgraph'
+              'https://comms.push.org/docs/notifications/tutorials/send-notification-via-subgraph'
             }
             target={'_blank'}
           >
             subgraphs
           </AMod>
           , and{' '}
-          <AMod href={baseUrl + '/docs/notifications'} target={'_blank'}>
+          <AMod
+            href={'https://comms.push.org/docs/notifications'}
+            target={'_blank'}
+          >
             more as outlined here!
           </AMod>
         </Span>
@@ -511,11 +511,11 @@ export const IntegratingPush = [
   {
     question: 'Where can I find the code samples for integration?',
     section: 'IntegratingPush',
-    renderAnswer: (baseUrl) => (
+    renderAnswer: () => (
       <Answer>
         <Span>
           Push Chat integration -{' '}
-          <AMod href={baseUrl + '/docs/chat'} target={'_blank'}>
+          <AMod href={'https://comms.push.org/docs/chat'} target={'_blank'}>
             Docs
           </AMod>
           ,
@@ -526,7 +526,10 @@ export const IntegratingPush = [
             Github
           </AMod>{' '}
           Push Notifications -{' '}
-          <AMod href={baseUrl + '/docs/notifications'} target={'_blank'}>
+          <AMod
+            href={'https://comms.push.org/docs/notifications'}
+            target={'_blank'}
+          >
             Docs
           </AMod>
           ,
@@ -649,7 +652,10 @@ export const Token = [
         </Span>
         <Span>
           Read in detail 👉{' '}
-          <AMod href='https://push.org/docs/tokenomics/' target={'_blank'}>
+          <AMod
+            href='https://comms.push.org/docs/tokenomics/'
+            target={'_blank'}
+          >
             Pusheconomics
           </AMod>
         </Span>

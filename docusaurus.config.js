@@ -76,43 +76,6 @@ const config = {
     ],
     require.resolve('./plugins/custom-webpack-plugin'),
     require.resolve('./plugins/myPlugin'),
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
-        toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
-        redirects: [
-          {
-            from: '/docs/chat/build/stream-chats/',
-            to: '/docs/chat/build/stream-chat/',
-          },
-          {
-            from: '/docs/chat/build/types-of-recipient/',
-            to: '/docs/chat/supported-wallet-standards/',
-          },
-          {
-            from: '/docs/chat/tutorials/push-sdk-playground/',
-            to: '/docs/chat/playground/push-sdk-playground/',
-          },
-          {
-            from: '/docs/chat/tutorials/push-react-component-playground-example/',
-            to: '/docs/chat/playground/push-react-component-playground-example/',
-          },
-          // // Redirect from multiple old paths to the new path
-          // {
-          //   to: '/docs/newDoc2',
-          //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
-          // },
-        ],
-        createRedirects(existingPath) {
-          if (existingPath.includes('/docs/dev')) {
-            // Redirect from /docs/team/X to /community/X and /docs/support/X to /community/X
-            return [existingPath.replace('/docs/dev', '/docs')];
-          }
-          return undefined; // Return a falsy value: no redirect created
-        },
-      },
-    ],
   ],
 
   presets: [
@@ -122,15 +85,7 @@ const config = {
         gtag: {
           trackingID: 'G-N9ZHXNRLYL',
         },
-        docs: {
-          path: 'docs',
-          routeBasePath: 'docs',
-          sidebarPath: require.resolve('./sidebars.js'),
-          sidebarCollapsed: false,
-          // Please change this to your repo.
-          // Remove this to remove the 'edit this page' links.
-          editUrl: 'https://github.com/push-protocol/push-website/blob/main',
-        },
+        docs: false,
         blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -186,7 +141,7 @@ const config = {
             label: 'Homepage',
           },
           {
-            to: '/docs',
+            to: 'https://comms.push.org/docs',
             position: 'left',
             label: 'Docs',
           },

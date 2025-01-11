@@ -18,7 +18,7 @@ Welcome to this last month's highlights and fresh product launches! From excitin
 
 Most notably we launched our [Community Based Messaging](https://push.org/blog/announcing-group-chat-from-push-unstoppable/) feature for Group Chats directly on Unstoppable Domains! With this collaboration, every ‘badge’ (NFTs assigned to wallets based on wallet holder status/activity history) will have its own Group Chat. Holding badges allow you to access the respective Group Chat. [Try it out for yourself!](https://unstoppabledomains.com/)
 
-We also launched our [Live Push Roadmap for 2024](https://push.org/docs/roadmap/). It’s an all-new way to track and follow along with all of our planned developments for the year. Spoiler, there is no shortage of exciting developments to come. We’ll be launching Push Nodes (our final hurdle to achieve full scale decentralization) as well as new MetaMask Snap enhancements.
+We also launched our [Live Push Roadmap for 2024](https://comms.push.org/docs/roadmap/). It’s an all-new way to track and follow along with all of our planned developments for the year. Spoiler, there is no shortage of exciting developments to come. We’ll be launching Push Nodes (our final hurdle to achieve full scale decentralization) as well as new MetaMask Snap enhancements.
 
 ### Frens of Push
 

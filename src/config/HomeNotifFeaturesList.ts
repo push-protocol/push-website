@@ -131,7 +131,7 @@ export const NotifFeaturesList = {
         {
           type: 'button',
           buttontext: 'home.notification-section.box4.buttontext',
-          buttonlink: '/docs/notifications/quickstart',
+          buttonlink: 'https://comms.push.org/docs/notifications/quickstart',
           buttontitle: 'home.notification-section.box4.buttontitle',
         },
         {

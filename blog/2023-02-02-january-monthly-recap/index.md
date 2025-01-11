@@ -30,7 +30,7 @@ With the groundwork for Push Smart Contracts v2 in place, we’re already making
 
 Besides the upgrade to v1.5, we’ve also had a host of fantastic developments have taken place including:
 
-- New features to the [Push Chat SDK](/docs/chat)
+- New features to the [Push Chat SDK](https://comms.push.org/docs/chat)
 - The analytical dashboard undergoing extensive quality assurance
 
 In addition to all our progress on the development front and the successful update to v1.5, we’ve got a loaded roadmap with more exciting new features to come. Stay updated with all the latest happenings on[ Push Discord](https://discord.com/invite/pushprotocol).

@@ -150,7 +150,7 @@ The benefits of using Alchemy include:
 
 ## Push Protocol
 
-Push Protocol can be used to create a real-time messaging system for your dApp, allowing users to receive updates about their collectibles instantly. Follow the [official documentation](/docs/ 'Push developer docs') for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
+Push Protocol can be used to create a real-time messaging system for your dApp, allowing users to receive updates about their collectibles instantly. Follow the [official documentation](https://comms.push.org/docs/ 'Push developer docs') for more details. The official PUSH-SDK packages are also available [here](https://www.npmjs.com/~pushprotocol).
 
 Here is a sample workflow to integrate Push Protocol:
 
