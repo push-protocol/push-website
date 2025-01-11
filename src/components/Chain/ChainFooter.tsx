@@ -38,7 +38,7 @@ const tosPrivacyLinks = [
   { href: '/privacy', text: 'Privacy' },
 ];
 
-function ChainFooter() {
+function ChainFooter({ showPattern }) {
   // Internationalization
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
@@ -75,7 +75,7 @@ function ChainFooter() {
 
   return (
     <ChainFooterContainer>
-      <DividerImg />
+      {showPattern && <DividerImg />}
       <StyledFooter>
         <FooterSection id='footer'>
           <Content alignSelf='center'>
