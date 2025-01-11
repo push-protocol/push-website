@@ -8,7 +8,7 @@ import Layout from '@theme/Layout';
 
 // Internal Configs
 import { PageMeta } from '@site/src/config/pageMeta';
-import ChainKnowledgeBaseArticle from '../../../components/Chain/ChainKnowledgeBaseArticle/ChainKnowledgeBaseArticle';
+import ChainKnowledgeBaseArticle from '../../components/Chain/ChainKnowledgeBaseArticle/ChainKnowledgeBaseArticle';
 
 function Page(metadata) {
   return (

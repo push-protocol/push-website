@@ -57,12 +57,10 @@ const ChainHeroSection: FC = () => {
       onEnter: () => setIsPlaying(true), // Start playback when video enters
       onLeave: () => {
         setIsPlaying(false);
-        playerRef.current?.seekTo(0);
       },
       onEnterBack: () => setIsPlaying(true),
       onLeaveBack: () => {
         setIsPlaying(false);
-        playerRef.current?.seekTo(0);
       },
     });
   }, []);

@@ -99,14 +99,15 @@ const ChainHeader: FC = () => {
 
   // Dummy data for navigation items
   const navItems = [
-    { id: 'technology', label: 'Technology', url: '/chain' },
-    { id: 'knowledge', label: 'Knowledge Base', url: '/chain/knowledge' },
+    { id: 'technology', label: 'Technology', url: '/' },
+    { id: 'knowledge', label: 'Knowledge Base', url: '/knowledge' },
     {
       id: 'whitepaper',
       label: 'Whitepaper',
       url: 'https://whitepaper.push.org/',
     },
-    { id: 'faq', label: 'F.A.Q', url: '/chain' },
+    { id: 'blog', label: 'Blog', url: '/blog' },
+    { id: 'faq', label: 'F.A.Q', url: '/' },
   ];
 
   // Update the active item based on the current location

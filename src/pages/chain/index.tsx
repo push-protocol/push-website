@@ -1,84 +1,54 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-// React + Web3 Essentials
-import React from 'react';
-import Head from '@docusaurus/Head';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import Layout from '@theme/Layout';
+import React, { useEffect } from 'react';
+import { useHistory } from '@docusaurus/router';
+import styled from 'styled-components';
 
-// Internal Component
-import Chain from '../../components/Chain/Chain';
+import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
+import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 
-// Internal Configs
-import { PageMeta } from '@site/src/config/pageMeta';
+import { ItemV } from '../../../src/css/SharedStyling';
 
 function PushChain() {
+  const history = useHistory();
+
+  // Redirect to Home Page
+  useEffect(() => {
+    history.push('/');
+  }, []);
+
   return (
-    <Layout
-      title={PageMeta.CHAIN.pageTitle}
-      description={PageMeta.CHAIN.pageDescription}
-      showNavbar={'chain'}
-    >
-      <Head>
-        {/* <!-- Update Facebook Meta Tags --> */}
-        <meta property='og:url' content='https://push.org/chain' />
-        <meta property='og:type' content='website' />
-        <meta
-          property='og:title'
-          content='Push Chain | Any Chain. Any User. Any App'
-        />
-        <meta
-          name='og:description'
-          content='Push Chain is a shared state blockchain for shared app experience. Capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability.'
-        />
-        <meta
-          property='og:image'
-          content={useBaseUrl(
-            require('/static/assets/previews/chainpreview.png').default,
-            { absolute: true }
-          )}
-        />
-
-        {/* <!-- Update Twitter Meta Tags --> */}
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:site' content='@pushprotocol' />
-        <meta
-          name='twitter:title'
-          content='Push Chain | Any Chain. Any User. Any App'
-        />
-        <meta
-          name='twitter:description'
-          content='Push Chain is a shared state blockchain for shared app experience. Capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability.'
-        />
-        <meta
-          name='twitter:image'
-          content={useBaseUrl(
-            require('/static/assets/previews/chainpreview.png').default,
-            { absolute: true }
-          )}
-        />
-
-        <script type='application/ld+json'>
-          {JSON.stringify({
-            '@context': 'https://schema.org/',
-            '@type': 'Organization',
-            name: 'Push Protocol',
-            description: 'The Communication Protocol of Web3',
-            url: 'https://push.org',
-            logo: '/assets/website/favicon.ico',
-            sameAs: [
-              'https://twitter.com/pushprotocol',
-              'https://www.linkedin.com/company/push-protocol/mycompany/',
-            ],
-          })}
-        </script>
-      </Head>
-
-      <div style={{ background: '#e8eff8' }}>
-        <Chain />
-      </div>
-    </Layout>
+    <Container>
+      <PushLogoBlackContainer className='headerlogo' flex='initial'>
+        <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
+        <ChainLogoDark />
+      </PushLogoBlackContainer>
+      <Message>Redirecting...</Message>
+    </Container>
   );
 }
 
 export default PushChain;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  text-align: center;
+`;
+
+const PushLogoBlackContainer = styled(ItemV)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #fff;
+`;
+
+const Message = styled.p`
+  font-size: 18px;
+  margin-top: 8px;
+`;

@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-/* eslint-disable react/prop-types */
 /* eslint-disable */
 
 // React + Web3 Essentials
@@ -76,23 +75,7 @@ const FeaturedList = () => {
       <MarqueeAnimation speed={MARQUEE_ANIMATION_SPEED * 1.15} gradient={false}>
         {MediaList.map((item) => {
           return (
-            <FeaturedCard
-              id={item.srcref}
-              key={item.srcref}
-              // className={`${hovered === item.srcref ? "active" : ""} ${item.srcref}`}
-              // onMouseLeave={(e)=>handleMouseLeave(e, item.srcref)}
-              // onMouseEnter={(e)=>handleMouseEnter(e, item.srcref)}
-              // onMouseMove={(e)=>handleMouseMove(e, item.srcref)}>
-            >
-              {/* <GlowwyBorder 
-                            className={`${hovered === item.srcref ? "active" : ""} glowwy`}
-                        />
-
-                        <Glowwy 
-                            className={`${hovered === item.srcref ? "active" : ""} glowwy`}
-                        />
-                            */}
-
+            <FeaturedCard id={item.srcref} key={item.srcref}>
               <FeaturedCardTitle>{t(item.translatedtitle)}</FeaturedCardTitle>
               <ArticleSource>
                 <Image
@@ -145,7 +128,8 @@ const FeaturedCard = styled(ItemV)`
   flex-direction: column;
   justify-content: space-between;
   border-radius: 32px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #000;
+  // border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0 12px;
   overflow: hidden !important;
 
@@ -178,7 +162,8 @@ const FeaturedCard = styled(ItemV)`
 const FeaturedCardTitle = styled(Span)`
   flex: initial;
   align-self: auto;
-  color: rgb(255, 255, 255);
+  // color: rgb(255, 255, 255);
+  color: black;
   background: transparent;
   font-weight: 400;
   font-size: 19px;
@@ -237,7 +222,8 @@ const SpanLink = styled(Span)`
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  color: #fff;
+  // color: #fff;
+  color: black;
   font-family: FK Grotesk Neue;
   line-height: 142%;
 
