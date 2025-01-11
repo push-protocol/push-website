@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[74950],{327574:e=>{e.exports=JSON.parse('{"label":"Ideo","permalink":"/push-website/pr-preview/pr-973/blog/tags/ideo","allTagsPath":"/push-website/pr-preview/pr-973/blog/tags","count":1,"unlisted":false}')}}]);
