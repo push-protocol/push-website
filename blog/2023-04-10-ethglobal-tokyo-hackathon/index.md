@@ -52,7 +52,7 @@ If this is your first time participating in a hackathon, we got you covered.
 Here are a few resources and tips to get you started:
 
 - [Ultimate Push Integration Cheat Sheet](https://www.notion.so/pushprotocol/How-to-make-the-best-out-of-a-hackathon-with-Push-Protocol-bea2f4dda47b4756b405b65abad00c23)
-- [Getting Started Developer Docs](/docs/)
+- [Getting Started Developer Docs](https://comms.push.org/docs/)
 - Join the [ETHGlobal Discord](https://discord.com/channels/554623348622098432/1051824954032803921) to find a team or hack alone.
 - Go through the [Push Use Case Notion Page](https://pushprotocol.notion.site/Notifications-Chat-ultimate-resources-Ideas-d92b75eca4c2475e957af7a331bedefe?p=b56fc11396ff4c5e9e68a30e6f360e0b&pm=s) to get some inspiration.
 - Checkout Push workshops for live demos on building with Push, like [“How to Add Web3 Notifications to Your Project”](https://www.youtube.com/watch?v=pB--X3X1QO4&ab_channel=DeUniversityofEthereum). Here’s all of our [previous workshops](https://www.youtube.com/playlist?list=PLyWTqFLqKt9ZJIPvTjf6GHOn7u7_8h1DY).

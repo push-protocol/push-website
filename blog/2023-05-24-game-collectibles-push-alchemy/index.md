@@ -191,7 +191,7 @@ Developers seeking more in-depth guidance can refer to the following resources:
 
 - Alchemy documentation: [docs.alchemy.com](https://docs.alchemy.com/)
 - Alchemy University: [university.alchemy.com](https://university.alchemy.com/)
-- Push Protocol documentation: [push.org/docs](/docs/)
+- Push Protocol documentation: [push.org/docs](https://comms.push.org/docs/)
 - Solidity documentation: [docs.soliditylang.org](https://docs.soliditylang.org/en/latest/)
 - Foundry documentation: [book.getfoundry.sh](https://book.getfoundry.sh/)
 
