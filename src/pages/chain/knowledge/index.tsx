@@ -9,7 +9,7 @@ import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 
 import { ItemV } from '../../../../src/css/SharedStyling';
 
-function PushChain() {
+function PushChainKnowledge() {
   const history = useHistory();
 
   // Redirect to Home Page
@@ -28,7 +28,7 @@ function PushChain() {
   );
 }
 
-export default PushChain;
+export default PushChainKnowledge;
 
 const Container = styled.div`
   display: flex;
