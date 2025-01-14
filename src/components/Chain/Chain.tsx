@@ -89,7 +89,7 @@ const Chain = () => {
               lineHeight='130%'
               textAlign='center'
             >
-              Featured Section
+              Featured Stories
             </H2>
           </ItemH>
 

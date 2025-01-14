@@ -72,9 +72,18 @@ const ChainHeader: FC = () => {
       return;
     }
 
+    if (item?.url == '/blog') {
+      const targetUrl = baseURL + item?.url;
+
+      // Navigate to the new URL
+      history.push(targetUrl);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
     // Handle internal links
     if (item?.url.startsWith('/')) {
-      const targetUrl = `${baseURL}${item?.url}`;
+      const targetUrl = baseURL + item?.url;
 
       // Navigate to the new URL
       history.push(targetUrl);
@@ -93,7 +102,7 @@ const ChainHeader: FC = () => {
   };
 
   const openHomePage = () => {
-    const targetUrl = `${baseURL}/chain`;
+    const targetUrl = baseURL;
     history.push(targetUrl);
   };
 
