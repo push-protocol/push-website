@@ -32,7 +32,7 @@ import {
   Section,
   Span,
 } from '@site/src/css/SharedStyling';
-import Footer from '@site/src/segments/Footer';
+import ChainFooter from '../Chain/ChainFooter';
 
 // Import Assets
 import ArrowUp from '@site/static/assets/docs/ArrowUpRight-pink.svg';
@@ -196,7 +196,7 @@ export default function HomepageFeatures(): JSX.Element {
     >
       <Head>
         {/* <!-- Facebook Meta Tags --> */}
-        <meta property='og:url' content='https://comms.push.org/docs' />
+        <meta property='og:url' content='https://push.org/docs' />
         <meta property='og:type' content='website' />
         <meta property='og:title' content='Push | Documentation Hub' />
         <meta
@@ -244,8 +244,152 @@ export default function HomepageFeatures(): JSX.Element {
       </Head>
 
       {/* DOCS HERO SECTION */}
+      <DocsHeroSection>
+        <ItemV
+          position='absolute'
+          top='-149px'
+          left='0'
+          right='0'
+          height='149px'
+          background={'var(--ifm-docs-hero-bg)'}
+        ></ItemV>
+        <Content padding='0px'>
+          <HeroHeader>
+            <ItemV zIndex='1'>
+              <H1 color='var(--ifm-color-primary-text)' margin='0 !important'>
+                Push Chain Documentation Hub
+              </H1>
+              <Span
+                color='var(--ifm-color-primary-text)'
+                padding='0 0 64px 0'
+                textAlign='center'
+              >
+                Get started with building shared state apps for any chain.
+              </Span>
+              <HeroButton disabled={true}>
+                <Span padding='0 10px 0 0' fontSize='18px'>
+                  Coming Soon
+                </Span>
+                <FiArrowUpRight size={16} />
+              </HeroButton>
+            </ItemV>
 
-      <div>new</div>
+            <ItemV
+              position='absolute'
+              bottom='-25%'
+              left='0'
+              right='0'
+              height='50%'
+            >
+              <PulseStatic />
+              <Pulse>
+                <Pulsate stagger={0}></Pulsate>
+                <Pulsate stagger={1}></Pulsate>
+                <Pulsate stagger={2}></Pulsate>
+                <Pulsate stagger={3}></Pulsate>
+                <Pulsate stagger={4}></Pulsate>
+                <Pulsate stagger={5}></Pulsate>
+                <Pulsate stagger={6}></Pulsate>
+              </Pulse>
+            </ItemV>
+          </HeroHeader>
+        </Content>
+      </DocsHeroSection>
+
+      {/* QUICKSTART SECTION */}
+      <HomepageSection alignItems='flex-start'>
+        <FluidContent>
+          <HomepageSubHeader>Popular Quickstart</HomepageSubHeader>
+
+          <PopularQuickiesList>
+            {QuickstartItems.map((item, idx) => {
+              return (
+                <PopularQuickiesCard key={idx}>
+                  <PopularQuickiesHeader>
+                    <PopularQuickiesTitle>{`${item.title}`}</PopularQuickiesTitle>
+                  </PopularQuickiesHeader>
+
+                  <PopularQuickiesContent>
+                    <PopularQuickiesCodeBlock
+                      language='jsx'
+                      showLineNumbers={true}
+                    >
+                      {item.codeblock}
+                    </PopularQuickiesCodeBlock>
+                  </PopularQuickiesContent>
+                </PopularQuickiesCard>
+              );
+            })}
+          </PopularQuickiesList>
+        </FluidContent>
+      </HomepageSection>
+
+      {/* TECH DOCS SECTION */}
+      <HomepageSection>
+        <FluidContent>
+          <HomepageSubHeader id='techdocs'>
+            Technical Documentation
+          </HomepageSubHeader>
+          <TechDocCardList>
+            {TechDocItems.map((props, idx) => (
+              <TechDocItem key={idx} docutheme={colorMode} {...props} />
+            ))}
+          </TechDocCardList>
+        </FluidContent>
+      </HomepageSection>
+
+      {/* SDK SECTION */}
+      <HomepageSection>
+        <FluidContent>
+          <ItemH justifyContent='flex-start'>
+            <HomepageSubHeader>Push SDK</HomepageSubHeader>
+            <Link
+              to='https://www.npmjs.com/package/@pushprotocol/restapi'
+              target='_blank'
+            >
+              <Span fontSize='18px' margin='0 5px 0 10px'>
+                Explore SDK
+              </Span>
+              <Span>
+                <FiArrowUpRight size={20} />
+              </Span>
+            </Link>
+          </ItemH>
+
+          <PushSdkCardList justifyContent='flex-start'>
+            {SdkItemsList.map((item, idx) => (
+              <PushSdkCard>
+                <PushSdkContent href={item.link} target='_blank'>
+                  <PushSdkContentTitle>{item.title}</PushSdkContentTitle>
+                  <PushSdkContentArrow>
+                    <FiArrowUpRight size={24} />
+                  </PushSdkContentArrow>
+                </PushSdkContent>
+              </PushSdkCard>
+            ))}
+          </PushSdkCardList>
+
+          {/* <div className='Faqs-main-container'>
+            <div className='sub-container'>
+              <span className="hero_home_Faq_header">
+                Frequently Asked Questions
+              </span>
+              <Link to='https://push.org/faq' target='_blank'>
+                <div className='hero_home_explore'>
+                  <p className='hero_home_explore_link'>
+                    Explore FAQs
+                  </p>
+                  <FiArrowUpRight className='arrowUp-icon' />
+                </div>
+              </Link>
+            </div>
+            <FAQ />
+
+          </div> */}
+        </FluidContent>
+      </HomepageSection>
+
+      <ChainFooter showPattern={false} />
     </Layout>
   );
 }
@@ -279,7 +423,8 @@ const HeroHeader = styled(ItemV)`
   }
 `;
 
-const HeroButton = styled(Link)`
+const HeroButton = styled(Button)`
+  cursor: ${(props) => (props.disabled ? 'not-allowed !important' : 'pointer')};
   align-items: center;
   background-color: #d548ec;
   border-radius: 16px;
@@ -292,6 +437,7 @@ const HeroButton = styled(Link)`
   padding: 12px 30px;
   text-decoration: none;
   transition: all 0.1s ease-in-out;
+  opacity: 0.8;
 
   &:hover {
     transform: scale(1.05);
