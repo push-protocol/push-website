@@ -1,22 +1,32 @@
 /* eslint-disable @typescript-eslint/ban-types */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
+
+import ReactPlayer from 'react-player';
 import Link from '@docusaurus/Link';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { TbArrowUpRight } from 'react-icons/tb';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import { device } from '../../../src/config/globals';
+import { device, size } from '../../../src/config/globals';
 import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
 
 import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
 import { Button, ItemH, Image } from '@site/src/css/SharedStyling';
-import ImageHolder from '../../../src/components/ImageHolder';
+// import ImageHolder from '../../../src/components/ImageHolder';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 export type ChainFeaturesSectionProps = {};
 
 const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
+  const playerRef = useRef<ReactPlayer | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
   const history = useHistory();
   const baseURL = useSiteBaseUrl() || '';
 
@@ -24,6 +34,25 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
     const targetUrl = `${baseURL}/chain/knowledge`;
     history.push(targetUrl);
   };
+
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: playerRef.current?.wrapper, // The video wrapper element
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnter: () => setIsPlaying(true), // Start playback when video enters
+      onLeave: () => {
+        setIsPlaying(false);
+        playerRef.current?.seekTo(0);
+      },
+      onEnterBack: () => setIsPlaying(true),
+      onLeaveBack: () => {
+        setIsPlaying(false);
+        playerRef.current?.seekTo(0);
+      },
+    });
+  }, []);
+
   const ImageItem = ({ link, title, alt }) => {
     return (
       <Image
@@ -64,11 +93,34 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           </HeaderContainer>
           <FeatureContainer id='technology'>
             <FeatureSubContainer>
-              <FinalityContainer>
-                <ImageItem
+              <FinalityContainer ref={playerRef}>
+                {/* <ImageItem
                   link={'instant-finality'}
                   title='Instant Finality'
                   alt='Instant Finality'
+                /> */}
+                <ReactPlayer
+                  url={
+                    require(
+                      `@site/static/assets/website/chain/instant-finality.webm`
+                    ).default
+                  }
+                  playing={
+                    isPlaying &&
+                    typeof window !== 'undefined' &&
+                    window.innerWidth > size.tablet
+                  }
+                  loop={true}
+                  muted={true}
+                  width='100%'
+                  height='100%'
+                  config={{
+                    file: {
+                      attributes: {
+                        controlsList: 'nofullscreen',
+                      },
+                    },
+                  }}
                 />
 
                 <FeatureTextHeading>
@@ -79,10 +131,34 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
               <FeatureContainerSegregator>
                 <OnboardingContainer>
-                  <ImageItem
+                  {/* <ImageItem
                     link={'seamless-instant'}
                     title='Seamless Instant'
                     alt='Seamless Instant'
+                  /> */}
+
+                  <ReactPlayer
+                    url={
+                      require(
+                        `@site/static/assets/website/chain/onboarding.webm`
+                      ).default
+                    }
+                    playing={
+                      isPlaying &&
+                      typeof window !== 'undefined' &&
+                      window.innerWidth > size.tablet
+                    }
+                    loop={true}
+                    muted={true}
+                    width='100%'
+                    height='100%'
+                    config={{
+                      file: {
+                        attributes: {
+                          controlsList: 'nofullscreen',
+                        },
+                      },
+                    }}
                   />
 
                   <FeatureTextSubHeading>
@@ -94,10 +170,33 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
                 <FeatureContainerSecondSegregator>
                   <TxFeeContainer>
-                    <ImageItem
+                    {/* <ImageItem
                       link={'cheap-storage'}
                       title='Cheap Storage'
                       alt='Cheap Storage'
+                    /> */}
+                    <ReactPlayer
+                      url={
+                        require(
+                          `@site/static/assets/website/chain/cheap_storage.webm`
+                        ).default
+                      }
+                      playing={
+                        isPlaying &&
+                        typeof window !== 'undefined' &&
+                        window.innerWidth > size.tablet
+                      }
+                      loop={true}
+                      muted={true}
+                      width='30%'
+                      // height='auto'
+                      config={{
+                        file: {
+                          attributes: {
+                            controlsList: 'nofullscreen',
+                          },
+                        },
+                      }}
                     />
 
                     <FeatureTextSubHeading style={{ color: 'white' }}>
@@ -140,10 +239,33 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   </StorageAndScalableContainerMobile>
 
                   <AnyChainContainer>
-                    <ImageItem
+                    {/* <ImageItem
                       link={'any-chain'}
                       title='Any Chain'
                       alt='Any Chain'
+                    /> */}
+                    <ReactPlayer
+                      url={
+                        require(
+                          `@site/static/assets/website/chain/any_chain.webm`
+                        ).default
+                      }
+                      playing={
+                        isPlaying &&
+                        typeof window !== 'undefined' &&
+                        window.innerWidth > size.tablet
+                      }
+                      loop={true}
+                      muted={true}
+                      width='100%'
+                      height='100%'
+                      config={{
+                        file: {
+                          attributes: {
+                            controlsList: 'nofullscreen',
+                          },
+                        },
+                      }}
                     />
 
                     <FeatureTextSubHeading style={{ color: '#000' }}>
@@ -157,11 +279,39 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
             <FeatureSubContainer>
               <KnowledgeBaseContainer onClick={handleClick}>
-                <ItemH alignItems='flex-start' justifyContent='space-between'>
-                  <ImageItem
+                <ItemH
+                  alignItems='flex-start'
+                  justifyContent='space-between'
+                  ref={playerRef}
+                >
+                  {/* <ImageItem
                     link={'explore-knowledgebase'}
                     title='Explore Knowledgebase'
                     alt='Explore Knowledgebase'
+                  /> */}
+                  <ReactPlayer
+                    url={
+                      require(
+                        `@site/static/assets/website/chain/knowledge_base.webm`
+                      ).default
+                    }
+                    playing={
+                      isPlaying &&
+                      typeof window !== 'undefined' &&
+                      window.innerWidth > size.tablet
+                    }
+                    loop={true}
+                    muted={true}
+                    // width='100%'
+                    // height='100%'
+                    style={{ objectFit: 'contain' }}
+                    config={{
+                      file: {
+                        attributes: {
+                          controlsList: 'nofullscreen',
+                        },
+                      },
+                    }}
                   />
 
                   <KnowledgeBaseIcon
@@ -189,11 +339,34 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                 </KnowledgeBaseTextContainer>
               </KnowledgeBaseContainer>
 
-              <ScalableContainer>
-                <ImageItem
+              <ScalableContainer ref={playerRef}>
+                {/* <ImageItem
                   link={'infinitely-scalable'}
                   title='Infinitely Scalable'
                   alt='Infinitely Scalable'
+                /> */}
+                <ReactPlayer
+                  url={
+                    require(
+                      `@site/static/assets/website/chain/infinitely_scale.webm`
+                    ).default
+                  }
+                  playing={
+                    isPlaying &&
+                    typeof window !== 'undefined' &&
+                    window.innerWidth > size.tablet
+                  }
+                  loop={true}
+                  muted={true}
+                  width='100%'
+                  height='100%'
+                  config={{
+                    file: {
+                      attributes: {
+                        controlsList: 'nofullscreen',
+                      },
+                    },
+                  }}
                 />
 
                 <FeatureTextSubHeading>
@@ -208,7 +381,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           <HeaderTwoContainer>
             <HeaderTwo>One chain for infinite possibilities</HeaderTwo>
 
-            <ImageHolder
+            {/* <ImageHolder
               src={
                 require(`@site/static/assets/website/chain/one-chain.webp`)
                   .default
@@ -216,7 +389,30 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
               srcSet={`${require(`@site/static/assets/website/chain/one-chain@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/one-chain@3x.webp`).default} 3x`}
               alt={'One chain'}
               title={'One chain'}
+            /> */}
+            <ReactPlayer
+              url={
+                require(`@site/static/assets/website/chain/one-chain.webm`)
+                  .default
+              }
+              playing={
+                isPlaying &&
+                typeof window !== 'undefined' &&
+                window.innerWidth > size.tablet
+              }
+              loop={true}
+              muted={true}
+              width='100%'
+              height='100%'
+              config={{
+                file: {
+                  attributes: {
+                    controlsList: 'nofullscreen',
+                  },
+                },
+              }}
             />
+
             <HeaderTwoSubheader>
               Push chain allows developers to finally create applications that
               are accessible from any chain.

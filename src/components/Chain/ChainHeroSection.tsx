@@ -129,7 +129,7 @@ const ChainHeroSection: FC = () => {
       <ItemV padding='48px 0' ref={playerRef}>
         <ReactPlayer
           url={
-            require(`@site/static/assets/website/chain/chain-hero.webm`).default
+            require(`@site/static/assets/website/chain/chain_hero.webm`).default
           }
           playing={
             isPlaying &&
@@ -140,6 +140,7 @@ const ChainHeroSection: FC = () => {
           muted={true}
           width='100%'
           height='100%'
+          // height='100%'
           config={{
             file: {
               attributes: {
