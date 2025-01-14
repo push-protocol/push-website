@@ -1,34 +1,34 @@
 ---
 slug: push-chain-joins-forces-with-zklink
-title: 'Push Chain Joins Forces With ZKLink'
+title: 'Push Chain Joins Forces With zklink'
 authors: [push]
 image: './cover-image.gif'
-description: 'Push Chain joins forces with ZKLink!'
-text: "Push Chain's road to testnet has kickstarted in full swing.  Learn everything about our collaboration with ZKLink - what it means for Push and ZKLink users, the use cases it unlocks and more!"
+description: 'Push Chain joins forces with zklink!'
+text: "Push Chain's road to testnet has kickstarted in full swing.  Learn everything about our collaboration with zklink - what it means for Push and zklink users, the use cases it unlocks and more!"
 tags: [Push Chain, Partnerships, Shared App Experience, Any Chain Tx, Universal Smart Contracts, Shared State Blockchain, Consumer Tx, Parallel Validators, Dynamic Sharding]
 ---
 
-![Cover image of Push Chain Join forces with ZKLink ](./cover-image.gif)
+![Cover image of Push Chain Join forces with zklink ](./cover-image.gif)
 
 <!--truncate-->
 
-Push Chain is pumped to join forces with ZKLink!
+Push Chain is pumped to join forces with zklink!
 
 A significant step for propelling our mission of enabling any user from any app to interact with any chain!
 
-Learn what this announcement means for ZKLink and Push Chain users, the use cases it unlocks, and how the collaboration benefits the greater Web3 ecosystem.
+Learn what this announcement means for zklink and Push Chain users, the use cases it unlocks, and how the collaboration benefits the greater Web3 ecosystem.
 
-## What is  ZKLink?
+## What is  zklink?
 
-[ZKLink](https://zk.link/) is the world’s first ZK-powered Layer 3 solution that aggregates all EVM-compatible networks.
+[zklink](https://zk.link/) is the world’s first ZK-powered Layer 3 solution that aggregates all EVM-compatible networks.
 
-ZKLink includes two prudent networks:
+zklink includes two prudent networks:
 
-**[ZKLink Nova](https://zklink.io/)**: A general-purpose Layer 3 rollup designed to resolve liquidity fragmentation across Ethereum Layer 2s by providing a shared aggregated settlement layer.
+**[zklink Nova](https://zklink.io/)**: A general-purpose Layer 3 rollup designed to resolve liquidity fragmentation across Ethereum Layer 2s by providing a shared aggregated settlement layer.
 
-To date, ZKLink Nova boasts over 26 Million Transactions with 1.3 million Unique Addresses, Aggregating over 17 networks!
+To date, zklink Nova boasts over 26 Million Transactions with 1.3 million Unique Addresses, Aggregating over 17 networks!
 
-**[ZKLink X](https://zk.link/X)**: A highly customizable and secure application-specific rollup, optimized for trading-focused applications.
+**[zklink X](https://zk.link/X)**: A highly customizable and secure application-specific rollup, optimized for trading-focused applications.
 
 
 ## What is Push Chain?
@@ -39,20 +39,20 @@ built to allow developers to create universal apps and act as a shared settlemen
 [Explore more about Push Chain here](https://push.org/chain/)
 
 
-## Bringing ZKLink to Push Chain
+## Bringing zklink to Push Chain
 
-## 👥 What does this mean for ZKLink and Push Chain Users?
+## 👥 What does this mean for zklink and Push Chain Users?
 
 **Interact with any non-evm app, without leaving Zklink**
 
-Push Chain extends the aggregation capabilities of ZKLink enabling ZkLink users to easily interact with and explore non-evm ecosystems like Solana, Aptos and Cosmos - all without leaving the operational comfort offered by ZkLink.
+Push Chain extends the aggregation capabilities of zklink enabling ZkLink users to easily interact with and explore non-evm ecosystems like Solana, Aptos and Cosmos - all without leaving the operational comfort offered by ZkLink.
 
-No need to create new wallets, learn and follow complex bridging steps- simply utilize Push Chain to seamlessly interplay between ZKLink and the non-evm ecosystem
+No need to create new wallets, learn and follow complex bridging steps- simply utilize Push Chain to seamlessly interplay between zklink and the non-evm ecosystem
 
 
 **Unified Experience**
 
-Since ZKLink aggregates Ethereum networks and serves as a unified point of access, users from non-evm space can easily leverage Push Chain to explore and interact with EVM space- abstracting away all the manual complexities traditionally faced by non-EVM users when transacting on EVM chains.
+Since zklink aggregates Ethereum networks and serves as a unified point of access, users from non-evm space can easily leverage Push Chain to explore and interact with EVM space- abstracting away all the manual complexities traditionally faced by non-EVM users when transacting on EVM chains.
 
 All of the above with the advantage of - instant finality, security and superfast execution.
 
@@ -62,7 +62,7 @@ All of the above with the advantage of - instant finality, security and superfas
 
 **Build super abstracted - shared settlement apps**
 
-With shared settlement capabilities of Push Chain and ZKLink - devs can build apps with powerful chain, fee and wallet abstraction capabilities - allowing transactions from any chain with near-instant finality.
+With shared settlement capabilities of Push Chain and zklink - devs can build apps with powerful chain, fee and wallet abstraction capabilities - allowing transactions from any chain with near-instant finality.
 
 **Build universally compliant consumer and mixed financial apps**
 
@@ -90,7 +90,7 @@ This is where Push Chain’s Consumer Tx feature enables non-financial and consu
 
 **Unified Liquidity Markets** - EVM-bound liquidity markets like [Lido](https://lido.fi/), [Curve](https://curve.fi/#/ethereum/swap), and [Native](https://native.org/app/credit-pool/) can utilize fee and chain abstraction features of Push Chain to seamlessly allow non-evm Liquidity Providers to effortlessly participate in market-making opportunities within a few clicks with no extra UX overhead.
 
-**Universal Prediction Markets** - Where users from ZKLink and other chains can collectively speculate on real-life events. Markets can aggregate liquidity from all chains simultaneously bringing more user traction and better yield opportunities.
+**Universal Prediction Markets** - Where users from zklink and other chains can collectively speculate on real-life events. Markets can aggregate liquidity from all chains simultaneously bringing more user traction and better yield opportunities.
 
 
 
