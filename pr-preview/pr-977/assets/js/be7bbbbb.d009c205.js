@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[93791],{619144:e=>{e.exports=JSON.parse('{"label":"Easyfi","permalink":"/push-website/pr-preview/pr-977/blog/tags/easyfi","allTagsPath":"/push-website/pr-preview/pr-977/blog/tags","count":1,"unlisted":false}')}}]);
