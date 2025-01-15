@@ -219,7 +219,7 @@ const SpanLink = styled(Span)`
   font-weight: 500;
   letter-spacing: -0.02em;
   color: #fff;
-  font-family: FK Grotesk Neue;
+  font-family: N27;
   line-height: 142%;
 
   &:after {
