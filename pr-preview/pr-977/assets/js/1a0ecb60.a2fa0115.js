@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[24877],{588440:e=>{e.exports=JSON.parse('{"label":"Web3 Game","permalink":"/push-website/pr-preview/pr-977/blog/tags/web-3-game","allTagsPath":"/push-website/pr-preview/pr-977/blog/tags","count":2,"unlisted":false}')}}]);
