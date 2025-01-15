@@ -18,7 +18,7 @@ October has been a month of incredible development, thought-provoking discussion
 
 ## Development
 
-We've been hard at work enhancing the Push UX for builders. Our [Push Docs](https://push.org/docs/) have received a major revamp making it easier than ever to build with Push. Some of the exciting new features include:
+We've been hard at work enhancing the Push UX for builders. Our [Push Docs](https://comms.push.org/docs/) have received a major revamp making it easier than ever to build with Push. Some of the exciting new features include:
 
 - Unified API for notifications & chat
 - Live playground & code examples

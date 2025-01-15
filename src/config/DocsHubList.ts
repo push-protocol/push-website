@@ -69,8 +69,8 @@ export const TechDocItems: ITechDocItem[] = [
     title: 'Notifications',
     srcref: 'notification',
     alt: 'Logo representing Push Notifications - Push Protocol',
-    link: '/docs/notifications',
-    target: '_self',
+    link: 'https://comms.push.org/docs/notifications',
+    target: '_blank',
     description:
       'Explore different ways of sending and receiving notifications and more.',
     codeblock: `// Initialize wallet user
@@ -88,8 +88,8 @@ const response = await userAlice.channel.send(['*'], {
     title: 'Push Chat',
     srcref: 'message',
     alt: 'Logo representing Push Chat - Push Protocol',
-    link: '/docs/chat',
-    target: '_self',
+    link: 'https://comms.push.org/docs/chat',
+    target: '_blank',
     description:
       'Learn about the details of Push Chat and how to do web3 native messaging.',
     codeblock: `// Initialize wallet user
@@ -105,8 +105,8 @@ const aliceMessagesBob = await userAlice.chat.send(
     title: 'Push Video',
     srcref: 'video',
     alt: 'Logo representing Push Video - Push Protocol',
-    link: '/docs/video',
-    target: '_self',
+    link: 'https://comms.push.org/docs/video',
+    target: '_blank',
     description:
       'Learn about the details of Push Video and how to easily integrate it.',
     codeblock: `// Initialize wallet user
@@ -147,8 +147,8 @@ await aliceVideoCall.request([recipient]);
     title: 'Hackers',
     srcref: 'hackers',
     alt: 'Logo representing hackers section - Push Protocol',
-    link: '/docs/hackers',
-    target: '_self',
+    link: 'https://comms.push.org/docs/hackers',
+    target: '_blank',
     description:
       'Are you a hacker? Learn how to instantly get started with Push Protocol.',
   },
@@ -156,8 +156,8 @@ await aliceVideoCall.request([recipient]);
     title: 'DAO',
     srcref: 'dao',
     alt: 'Logo representing Push DAO - Push Protocol',
-    link: '/docs/dao',
-    target: '_self',
+    link: 'https://comms.push.org/docs/dao',
+    target: '_blank',
     description: 'DAO of Push Protocol and how to get involved.',
   },
   // {
@@ -172,8 +172,8 @@ await aliceVideoCall.request([recipient]);
     title: 'Tokenomics',
     srcref: 'tokenomics',
     alt: 'Logo representing tokenomics of $PUSH - Push Protocol',
-    link: '/docs/tokenomics',
-    target: '_self',
+    link: 'https://comms.push.org/docs/tokenomics',
+    target: '_blank',
     description:
       'Learn about the tokenomics of $PUSH which powers the Push Protocol.',
   },
@@ -181,8 +181,8 @@ await aliceVideoCall.request([recipient]);
     title: 'Roadmap',
     srcref: 'roadmap',
     alt: 'Logo representing roadmap of Push Protocol',
-    link: '/docs/roadmap',
-    target: '_self',
+    link: 'https://comms.push.org/docs/roadmap',
+    target: '_blank',
     description:
       'Roadmap of Push Protocol and all the exciting things to come.',
   },
@@ -190,8 +190,8 @@ await aliceVideoCall.request([recipient]);
     title: 'Push Reward Points',
     srcref: 'rewards',
     alt: 'Logo representing reward points of Push Protocol',
-    link: '/docs/rewards',
-    target: '_self',
+    link: 'https://comms.push.org/docs/rewards',
+    target: '_blank',
     description:
       'Reward Points Program for contributors. Complete activities and earn points.',
   },

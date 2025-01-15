@@ -1,10 +1,6 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
+/* eslint-disable */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import {
   PageMetadata,
@@ -46,8 +42,6 @@ export default function Layout(props) {
       <AnnouncementBar />
       {/* navbar for docs/blogs */}
       {(showNavbar === undefined || showNavbar === 'docusaurus') && <Navbar />}
-      {/* navbar for website pages */}
-      {showNavbar === 'website' && <Header />}
       {/* navbar for chain pages and sub pages */}
       {showNavbar === 'chain' && <ChainHeader />}
       <div
@@ -66,7 +60,7 @@ export default function Layout(props) {
       {!noFooter && <Footer />}
       {showNavbar === 'chain' && (
         <ItemH background='#e8eff8'>
-          <ChainFooter />
+          <ChainFooter showPattern={true} />
         </ItemH>
       )}
     </LayoutProvider>

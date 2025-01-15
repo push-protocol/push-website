@@ -101,4 +101,4 @@ Your continued support and enthusiasm fuel our commitment to push the boundaries
 
 ### **What’s coming up?**
 
-Stay tuned for more updates as we continue to push the boundaries of the Web3 ecosystem and keep your eyes on our [2024 roadmap](https://push.org/docs/roadmap/), for a further glimpse into what's next. Together, let's continue to push the industry forward toward unified applications and a better UX than ever before!
+Stay tuned for more updates as we continue to push the boundaries of the Web3 ecosystem and keep your eyes on our [2024 roadmap](https://comms.push.org/docs/roadmap/), for a further glimpse into what's next. Together, let's continue to push the industry forward toward unified applications and a better UX than ever before!

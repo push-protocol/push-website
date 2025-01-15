@@ -7,29 +7,26 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 
 // Internal Component
-import Chain from '../components/Chain/Chain';
+import ChainKnowledgeBase from '../../components/Chain/ChainKnowledgeBase/ChainKnowledgeBase';
 
 // Internal Configs
 import { PageMeta } from '@site/src/config/pageMeta';
 
-function PushHomepage() {
+function PushChainKnowledgeBase() {
   return (
     <Layout
-      title={PageMeta.CHAIN.pageTitle}
-      description={PageMeta.CHAIN.pageDescription}
+      title={PageMeta.KNOWLEDGE.pageTitle}
+      description={PageMeta.KNOWLEDGE.pageDescription}
       showNavbar={'chain'}
     >
       <Head>
         {/* <!-- Update Facebook Meta Tags --> */}
-        <meta property='og:url' content='https://push.org' />
+        <meta property='og:url' content='https://push.org/chain/knowledge' />
         <meta property='og:type' content='website' />
-        <meta
-          property='og:title'
-          content='Push Chain | Any Chain. Any User. Any App'
-        />
+        <meta property='og:title' content='Push Chain | Knowledge Base' />
         <meta
           name='og:description'
-          content='Push Chain is a shared state blockchain for shared app experience. Capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability.'
+          content='Discover everything for tutorials to code base to what makes Push Chain tick at the knowledge hub.'
         />
         <meta
           property='og:image'
@@ -42,13 +39,10 @@ function PushHomepage() {
         {/* <!-- Update Twitter Meta Tags --> */}
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site' content='@pushprotocol' />
-        <meta
-          name='twitter:title'
-          content='Push Chain | Any Chain. Any User. Any App'
-        />
+        <meta name='twitter:title' content='Push Chain | Knowledge Base' />
         <meta
           name='twitter:description'
-          content='Push Chain is a shared state blockchain for shared app experience. Capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability.'
+          content='Discover everything for tutorials to code base to what makes Push Chain tick at the knowledge hub.'
         />
         <meta
           name='twitter:image'
@@ -74,11 +68,9 @@ function PushHomepage() {
         </script>
       </Head>
 
-      <div style={{ background: '#e8eff8' }}>
-        <Chain />
-      </div>
+      <ChainKnowledgeBase />
     </Layout>
   );
 }
 
-export default PushHomepage;
+export default PushChainKnowledgeBase;

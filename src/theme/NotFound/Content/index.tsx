@@ -1,29 +1,28 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+/* eslint-disable */
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 
-import React from 'react';
+import React, { ReactElement } from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import type { Props } from '@theme/NotFound/Content';
 import Heading from '@theme/Heading';
-import { Content, Section } from '../../../css/SharedStyling';
+import { Content, ItemH, Section } from '../../../css/SharedStyling';
 import { useLocation } from '@docusaurus/router';
 import styled from 'styled-components';
 
 // Internal Components
-import Footer from '../../../segments/Footer';
 import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import ChainFooter from '@site/src/components/Chain/ChainFooter';
 
-export default function NotFoundContent({ className }: Props): JSX.Element {
+export default function NotFoundContent({ className }: Props): ReactElement {
   const location = useLocation();
   const baseURL = useSiteBaseUrl();
 
   // Determine if the pathname starts with '/docs'
-  const isDocsPage = location?.pathname.startsWith(baseURL + '/docs');
+  const isDocsPage =
+    location?.pathname.startsWith(baseURL + '/docs') ||
+    location?.pathname.startsWith(baseURL + '/blog');
 
   return (
     <PageContainer isDocsPage={isDocsPage!}>
@@ -63,7 +62,11 @@ export default function NotFoundContent({ className }: Props): JSX.Element {
         </Content>
       </Section>
 
-      {isDocsPage && <Footer />}
+      {isDocsPage && (
+        <ItemH background='#e8eff8'>
+          <ChainFooter showPattern={false} />
+        </ItemH>
+      )}
     </PageContainer>
   );
 }
@@ -71,5 +74,10 @@ export default function NotFoundContent({ className }: Props): JSX.Element {
 const PageContainer = styled.div<{ isDocsPage?: boolean }>`
   display: flex;
   flex-direction: column;
+  ${({ isDocsPage }) => !isDocsPage && 'background: #e8eff8'};
   ${({ isDocsPage }) => isDocsPage && 'min-height: 100vh;'};
+  ${({ isDocsPage }) =>
+    isDocsPage
+      ? 'color: var(--ifm-color-primary-text) !important'
+      : 'color: #000 !important'};
 `;

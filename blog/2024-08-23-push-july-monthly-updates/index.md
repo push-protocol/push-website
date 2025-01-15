@@ -20,7 +20,7 @@ With all of this in mind, we are excited to share the highlights:
 
 Our [website](https://push.org/) has undergone a revamp, as we:
 
-- Updated the [developer docs](https://push.org/docs/) and [2024 live roadmap](https://push.org/docs/roadmap/).
+- Updated the [developer docs](https://comms.push.org/docs/) and [2024 live roadmap](https://comms.push.org/docs/roadmap/).
 - Performed various bug fixes for better UX.
 - Uploaded several new [articles](https://push.org/blog/) focused on developer engagement and protocol growth announcements.
 

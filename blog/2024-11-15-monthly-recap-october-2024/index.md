@@ -49,7 +49,7 @@ These metrics are a testament to the growing interest in secure, on-chain commun
 
 **Website Updates**
 
-- We published comprehensive **Push Points Program [documentation](https://push.org/docs/rewards/)**.
+- We published comprehensive **Push Points Program [documentation](https://comms.push.org/docs/rewards/)**.
 - We released several blog posts on topics like [\*\*Push Points](https://push.org/blog/introducing-the-push-points-program/), [CCR Features](https://push.org/blog/abstracting-chains-for-better-dapp-ux/)\*\*, [decentralized social media](https://push.org/blog/what-is-decentralized-social-media/), and [consumer crypto themes](https://push.org/blog/), contributed by community members.
 - We enhanced review and testing with the deploy preview functionality and migrated the production build from Vercel to the GitHub pages for improved efficiency.
 
@@ -129,6 +129,6 @@ Our commitment to Web3 education and ecosystem expansion continued through Novem
 
 ### **Looking Ahead**
 
-With many exciting updates on our [roadmap](https://push.org/docs/roadmap/), we’re thrilled to push the boundaries of Web3 communication as we approach the new year. Stay tuned for December updates as we continue to innovate and enhance our ecosystem. Your support drives us forward!
+With many exciting updates on our [roadmap](https://comms.push.org/docs/roadmap/), we’re thrilled to push the boundaries of Web3 communication as we approach the new year. Stay tuned for December updates as we continue to innovate and enhance our ecosystem. Your support drives us forward!
 
 Let’s keep pushing! 🌍🚀

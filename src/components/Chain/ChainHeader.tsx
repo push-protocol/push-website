@@ -72,9 +72,18 @@ const ChainHeader: FC = () => {
       return;
     }
 
+    if (item?.url == '/blog') {
+      const targetUrl = baseURL + item?.url;
+
+      // Navigate to the new URL
+      history.push(targetUrl);
+      setIsMobileMenuOpen(false);
+      return;
+    }
+
     // Handle internal links
     if (item?.url.startsWith('/')) {
-      const targetUrl = `${baseURL}${item?.url}`;
+      const targetUrl = baseURL + item?.url;
 
       // Navigate to the new URL
       history.push(targetUrl);
@@ -93,20 +102,21 @@ const ChainHeader: FC = () => {
   };
 
   const openHomePage = () => {
-    const targetUrl = `${baseURL}/chain`;
+    const targetUrl = baseURL;
     history.push(targetUrl);
   };
 
   // Dummy data for navigation items
   const navItems = [
-    { id: 'technology', label: 'Technology', url: '/chain' },
-    { id: 'knowledge', label: 'Knowledge Base', url: '/chain/knowledge' },
+    { id: 'technology', label: 'Technology', url: '/' },
+    { id: 'knowledge', label: 'Knowledge Base', url: '/knowledge' },
     {
       id: 'whitepaper',
       label: 'Whitepaper',
       url: 'https://whitepaper.push.org/',
     },
-    { id: 'faq', label: 'F.A.Q', url: '/chain' },
+    { id: 'blog', label: 'Blog', url: '/blog' },
+    { id: 'faq', label: 'F.A.Q', url: '/' },
   ];
 
   // Update the active item based on the current location

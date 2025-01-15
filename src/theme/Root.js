@@ -7,7 +7,7 @@ import i18nInitialize from '@site/src/utils/i18n';
 import styled from 'styled-components';
 
 // Internal Components
-import Footer from '@site/src/segments/Footer';
+// import Footer from '@site/src/segments/Footer';
 import ServerStyle from '@site/src/theme/ServerStyle';
 import CookieComponent from '../components/CookieComponent';
 import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
@@ -118,7 +118,7 @@ export default function Root({ children }) {
 
       {shouldRenderFooter && (
         <>
-          <Footer />
+          {/* <Footer /> */}
           <CookieComponent />
         </>
       )}
