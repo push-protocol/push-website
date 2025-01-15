@@ -270,7 +270,6 @@ export default function HomepageFeatures(): JSX.Element {
                 <Span padding='0 10px 0 0' fontSize='18px'>
                   Coming Soon
                 </Span>
-                <FiArrowUpRight size={16} />
               </HeroButton>
             </ItemV>
 
@@ -297,7 +296,7 @@ export default function HomepageFeatures(): JSX.Element {
       </DocsHeroSection>
 
       {/* QUICKSTART SECTION */}
-      <HomepageSection alignItems='flex-start'>
+      {/* <HomepageSection alignItems='flex-start'>
         <FluidContent>
           <HomepageSubHeader>Popular Quickstart</HomepageSubHeader>
 
@@ -322,7 +321,7 @@ export default function HomepageFeatures(): JSX.Element {
             })}
           </PopularQuickiesList>
         </FluidContent>
-      </HomepageSection>
+      </HomepageSection> */}
 
       {/* TECH DOCS SECTION */}
       <HomepageSection>
