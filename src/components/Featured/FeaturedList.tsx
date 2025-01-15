@@ -103,7 +103,9 @@ const FeaturedList = () => {
                   borderRadius='16px'
                   padding='0'
                 >
-                  <SpanLink>{t(item.urltranslatedtitle)}</SpanLink>
+                  <SpanLink className='text-underline'>
+                    {t(item.urltranslatedtitle)}
+                  </SpanLink>
                   <FiArrowUpRight className='anchorSVG' />
                 </A>
               </ArticleSource>
@@ -116,7 +118,8 @@ const FeaturedList = () => {
 };
 
 const FeaturedCardList = styled(ItemH)`
-  margin: 72px 0 0 0;
+  margin: 64px 0 0 0;
+  flex: 0;
   flex-flow: nowrap;
 `;
 const FeaturedCard = styled(ItemV)`
@@ -128,8 +131,7 @@ const FeaturedCard = styled(ItemV)`
   flex-direction: column;
   justify-content: space-between;
   border-radius: 32px;
-  border: 1px solid #000;
-  // border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
   margin: 0 12px;
   overflow: hidden !important;
 
@@ -138,15 +140,10 @@ const FeaturedCard = styled(ItemV)`
   }
   &:hover {
     // background: linear-gradient(251.72deg, rgb(221, 68, 185) 14.29%, rgb(139, 111, 217) 86.35%);
-    background: linear-gradient(
-      234deg,
-      #3e1548 2.83%,
-      #280e2f 24.75%,
-      #0d0d0f 57.42%
-    );
-    & a {
-      //   color: #fff !important;
-      //   border-radius: 0px;
+    background: #d548ec;
+
+    .text-underline {
+      text-decoration: text-underline;
     }
   }
 
@@ -162,8 +159,7 @@ const FeaturedCard = styled(ItemV)`
 const FeaturedCardTitle = styled(Span)`
   flex: initial;
   align-self: auto;
-  // color: rgb(255, 255, 255);
-  color: black;
+  color: rgb(255, 255, 255);
   background: transparent;
   font-weight: 400;
   font-size: 19px;
@@ -222,8 +218,7 @@ const SpanLink = styled(Span)`
   font-size: 16px;
   font-weight: 500;
   letter-spacing: -0.02em;
-  // color: #fff;
-  color: black;
+  color: #fff;
   font-family: FK Grotesk Neue;
   line-height: 142%;
 

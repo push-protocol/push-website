@@ -5,12 +5,11 @@ import styled from 'styled-components';
 
 // External Components
 import { device } from '../../../src/config/globals';
-import { Content, H2, ItemH, ItemV } from '../../../src/css/SharedStyling';
+import { ItemV } from '../../../src/css/SharedStyling';
 import {
   ChainMarqueeList,
   ChainMarqueeSecondList,
 } from './config/ChainMarqueeList';
-import FeaturedList from '@site/src/components/Featured/FeaturedList';
 
 // Internal Components
 import ChainHeroSection from './ChainHeroSection';
@@ -19,9 +18,6 @@ import ChainBottomComponent from './ChainBottomComponent';
 import ChainUseCase from './ChainUseCase';
 import ChainRoadmapSection from './ChainRoadmapSection';
 import { ChainFeaturesSection } from './ChainFeaturesSection';
-
-//Hooks
-import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import assets
 import StarIcon from '@site/static/assets/website/chain/StarIcon.svg';
@@ -35,7 +31,6 @@ import DCAIcon from '@site/static/assets/website/chain/dcaicon.svg';
 import TechnologyIcon from '@site/static/assets/website/chain/technology.svg';
 
 const Chain = () => {
-  const isMobile = useMediaQuery(device.mobileL);
   return (
     <ChainWrapper>
       {/* Main Content */}
@@ -75,29 +70,7 @@ const Chain = () => {
 
       <MainContent>
         <ChainRoadmapSection />
-      </MainContent>
 
-      <FeaturedInSection id='featured'>
-        <Content className='fluid'>
-          <ItemH justifyContent='center'>
-            <H2
-              color='#000'
-              fontWeight='500'
-              letterSpacing='normal'
-              fontSize={isMobile ? '24px' : '36px'}
-              fontFamily='N27'
-              lineHeight='130%'
-              textAlign='center'
-            >
-              Featured Stories
-            </H2>
-          </ItemH>
-
-          <FeaturedList />
-        </Content>
-      </FeaturedInSection>
-
-      <MainContent>
         <ChainBottomComponent showFaq={true} />
       </MainContent>
     </ChainWrapper>
@@ -138,11 +111,4 @@ const MainContent = styled(ItemV)`
   @media ${device.mobileL} {
     padding: 0 16px;
   }
-`;
-
-const FeaturedInSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 150px;
 `;
