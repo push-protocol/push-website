@@ -50,7 +50,7 @@ const ChainHeroSection: FC = () => {
   };
 
   const openComms = () => {
-    window.location.href = 'https://comms.push.org';
+    window.open('https://comms.push.org', '_blank');
   };
 
   useEffect(() => {

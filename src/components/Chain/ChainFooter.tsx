@@ -75,31 +75,38 @@ function ChainFooter({ showPattern }) {
     }
   };
 
+  // Determine if the pathname starts with '/docs' or Blog
+  const isDocsOrBlogsPage =
+    location?.pathname.startsWith(baseURL + '/docs') ||
+    location?.pathname.startsWith(baseURL + '/blog');
+
   return (
     <ChainFooterContainer>
       {showPattern && <DividerImg />}
 
       <StyledFooter>
         {/* featured section */}
-        <FeaturedInSection id='featured'>
-          <Content className='fluid'>
-            <ItemH justifyContent='center' flex='0'>
-              <H2
-                color='#FFF'
-                fontWeight='500'
-                letterSpacing='normal'
-                fontSize={isMobile ? '24px' : '36px'}
-                fontFamily='N27'
-                lineHeight='130%'
-                textAlign='center'
-              >
-                Featured Stories
-              </H2>
-            </ItemH>
+        {!isDocsOrBlogsPage && (
+          <FeaturedInSection id='featured'>
+            <Content className='fluid'>
+              <ItemH justifyContent='center' flex='0'>
+                <H2
+                  color='#FFF'
+                  fontWeight='500'
+                  letterSpacing='normal'
+                  fontSize={isMobile ? '24px' : '36px'}
+                  fontFamily='N27'
+                  lineHeight='130%'
+                  textAlign='center'
+                >
+                  Featured Stories
+                </H2>
+              </ItemH>
 
-            <FeaturedList />
-          </Content>
-        </FeaturedInSection>
+              <FeaturedList />
+            </Content>
+          </FeaturedInSection>
+        )}
 
         <FooterSection id='footer'>
           <Content alignSelf='center'>
