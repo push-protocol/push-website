@@ -15,6 +15,7 @@ import Typewriter from 'typewriter-effect';
 import {
   A,
   Content,
+  H2,
   ItemH,
   ItemV,
   LinkTo,
@@ -26,6 +27,7 @@ import GithubSVG from '@site/static/assets/website/shared/github.svg';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
 import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
 import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
+import FeaturedList from '@site/src/components/Featured/FeaturedList';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';
@@ -38,7 +40,7 @@ const tosPrivacyLinks = [
   { href: '/privacy', text: 'Privacy' },
 ];
 
-function ChainFooter() {
+function ChainFooter({ showPattern }) {
   // Internationalization
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
@@ -73,10 +75,39 @@ function ChainFooter() {
     }
   };
 
+  // Determine if the pathname starts with '/docs' or Blog
+  const isDocsOrBlogsPage =
+    location?.pathname.startsWith(baseURL + '/docs') ||
+    location?.pathname.startsWith(baseURL + '/blog');
+
   return (
     <ChainFooterContainer>
-      <DividerImg />
+      {showPattern && <DividerImg />}
+
       <StyledFooter>
+        {/* featured section */}
+        {!isDocsOrBlogsPage && (
+          <FeaturedInSection id='featured'>
+            <Content className='fluid'>
+              <ItemH justifyContent='center' flex='0'>
+                <H2
+                  color='#FFF'
+                  fontWeight='500'
+                  letterSpacing='normal'
+                  fontSize={isMobile ? '24px' : '36px'}
+                  fontFamily='N27'
+                  lineHeight='130%'
+                  textAlign='center'
+                >
+                  Featured Stories
+                </H2>
+              </ItemH>
+
+              <FeaturedList />
+            </Content>
+          </FeaturedInSection>
+        )}
+
         <FooterSection id='footer'>
           <Content alignSelf='center'>
             {/* footer links */}
@@ -229,6 +260,7 @@ const ChainFooterContainer = styled.div`
 const StyledFooter = styled.footer`
   font-family: N27;
   display: flex;
+  flex-direction: column;
   position: relative;
   background: #000;
   width: 100%;
@@ -254,6 +286,13 @@ const FooterColumn = styled.div`
   flex-direction: column;
 
   align-items: center;
+`;
+
+const FeaturedInSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 0px;
 `;
 
 const FooterColumns = styled.div`

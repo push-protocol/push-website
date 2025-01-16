@@ -20,10 +20,10 @@ export default function myPlugin() {
 
           addRoute({
             path: process.env.GITHUB_ACTIONS
-              ? `${process.env.REACT_APP_BASE_URL}/chain/knowledge/${item.slug}`
-              : `/chain/knowledge/${item.slug}`,
+              ? `${process.env.REACT_APP_BASE_URL}/knowledge/${item.slug}`
+              : `/knowledge/${item.slug}`,
             exact: true,
-            component: '@site/src/pages/chain/knowledge/[slug].tsx',
+            component: '@site/src/pages/knowledge/[slug].tsx',
             modules: { metadata },
           });
         })

@@ -19,7 +19,7 @@ Welcome to last month’s developments and new product releases from the month o
 
 Our [Notification Settings](https://push.org/blog/introducing-notification-settings/) feature has arrived, offering both channel owners and subscribers new customization options. Channel owners can now create unlimited notification categories to better segment notifications, while subscribers can select the kinds of notifications they want to opt-in for.
 
-We also rolled out the [Conditional Gating feature for Group Chats](https://push.org/docs/chat/build/conditional-rules-for-group/). Using predefined conditions such as holding a certain NFT, token, or activity history, you can enable and restrict which wallets can and can’t access a given activity/channel. Dive into our comprehensive [thread](https://twitter.com/pushprotocol/status/1724470355031429628) to discover how this functionality works.
+We also rolled out the [Conditional Gating feature for Group Chats](https://comms.push.org/docs/chat/build/conditional-rules-for-group/). Using predefined conditions such as holding a certain NFT, token, or activity history, you can enable and restrict which wallets can and can’t access a given activity/channel. Dive into our comprehensive [thread](https://twitter.com/pushprotocol/status/1724470355031429628) to discover how this functionality works.
 
 ### Frens of Push
 

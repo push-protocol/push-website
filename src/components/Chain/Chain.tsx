@@ -30,49 +30,52 @@ import BellIcon from '@site/static/assets/website/chain/bellicon.svg';
 import DCAIcon from '@site/static/assets/website/chain/dcaicon.svg';
 import TechnologyIcon from '@site/static/assets/website/chain/technology.svg';
 
-const Chain = () => (
-  <ChainWrapper>
-    {/* Main Content */}
-    <MainContent>
-      <ChainHeroSection />
-    </MainContent>
+const Chain = () => {
+  return (
+    <ChainWrapper>
+      {/* Main Content */}
+      <MainContent>
+        <ChainHeroSection />
+      </MainContent>
 
-    {/* marquee section */}
-    <ChainMarqueeSection
-      chainMarqueeList={ChainMarqueeList}
-      backgroundColor='#F19AFF'
-      rotateDegree={-5} // Custom rotation degree
-      icons={[StarIcon, UnionIcon]}
-    />
+      {/* marquee section */}
+      <ChainMarqueeSection
+        chainMarqueeList={ChainMarqueeList}
+        backgroundColor='#F19AFF'
+        rotateDegree={-5} // Custom rotation degree
+        icons={[StarIcon, UnionIcon]}
+      />
 
-    <ChainFeaturesSection />
+      <ChainFeaturesSection />
 
-    <MainContent>
-      <ChainUseCase />
-    </MainContent>
+      <MainContent>
+        <ChainUseCase />
+      </MainContent>
 
-    {/* second marquee section */}
-    <ChainMarqueeSection
-      chainMarqueeList={ChainMarqueeSecondList}
-      backgroundColor='#3EF09D'
-      rotateDegree={5} // Custom rotation degree
-      icons={[
-        SpadeIcon,
-        SmileIcon,
-        EmailIcon,
-        NoteIcon,
-        BellIcon,
-        DCAIcon,
-        TechnologyIcon,
-      ]}
-    />
+      {/* second marquee section */}
+      <ChainMarqueeSection
+        chainMarqueeList={ChainMarqueeSecondList}
+        backgroundColor='#3EF09D'
+        rotateDegree={5} // Custom rotation degree
+        icons={[
+          SpadeIcon,
+          SmileIcon,
+          EmailIcon,
+          NoteIcon,
+          BellIcon,
+          DCAIcon,
+          TechnologyIcon,
+        ]}
+      />
 
-    <MainContent>
-      <ChainRoadmapSection />
-      <ChainBottomComponent showFaq={true} />
-    </MainContent>
-  </ChainWrapper>
-);
+      <MainContent>
+        <ChainRoadmapSection />
+
+        <ChainBottomComponent showFaq={true} />
+      </MainContent>
+    </ChainWrapper>
+  );
+};
 
 export default Chain;
 

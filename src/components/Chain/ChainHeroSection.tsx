@@ -49,6 +49,10 @@ const ChainHeroSection: FC = () => {
     });
   };
 
+  const openComms = () => {
+    window.open('https://comms.push.org', '_blank');
+  };
+
   useEffect(() => {
     ScrollTrigger.create({
       trigger: playerRef.current?.wrapper, // The video wrapper element
@@ -57,12 +61,10 @@ const ChainHeroSection: FC = () => {
       onEnter: () => setIsPlaying(true), // Start playback when video enters
       onLeave: () => {
         setIsPlaying(false);
-        playerRef.current?.seekTo(0);
       },
       onEnterBack: () => setIsPlaying(true),
       onLeaveBack: () => {
         setIsPlaying(false);
-        playerRef.current?.seekTo(0);
       },
     });
   }, []);
@@ -287,6 +289,19 @@ const ChainHeroSection: FC = () => {
           thriving ecosystem, Push Protocol is evolving to launch and scale Push
           Chain.
         </H3>
+      </ItemV>
+
+      <ItemV width='100%'>
+        <Button
+          background='#D548EC'
+          fontFamily='N27'
+          fontWeight='500'
+          fontSize='18px'
+          onClick={openComms}
+          margin='20px auto 0 auto'
+        >
+          Explore Communications Protocol
+        </Button>
       </ItemV>
     </ChainHeroSectionWrapper>
   );

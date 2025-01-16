@@ -48,7 +48,7 @@ Below, you’ll find a comprehensive summary of all of the updates made over the
 
 - **Deploy Preview Functionality:** Implemented a new deploy preview feature to streamline the review and testing process.
 - **Production Build Migration:** Transitioned our production build from Vercel to GitHub Pages, for increased efficiency.
-- **Push Points Program Documentation:** Released comprehensive docs for the [Push Points Program](https://push.org/docs/rewards/), detailing how users can earn and redeem points.
+- **Push Points Program Documentation:** Released comprehensive docs for the [Push Points Program](https://comms.push.org/docs/rewards/), detailing how users can earn and redeem points.
 - **Blog Content:** Published several consumer crypto-themed blogs, including [Push Points Program](https://push.org/blog/introducing-the-push-points-program/) updates and other key insights.
 
 
@@ -125,4 +125,4 @@ Push Protocol continues to expand its ecosystem through new collaborations:
 
 **What’s coming up?**
 
-With far more to come before the year’s end, your continued support and enthusiasm will continue to fuel our commitment to pushing the boundaries of technology while building a supportive and diverse Web3 ecosystem. Keep an eye out on our [2024 roadmap](https://push.org/docs/roadmap/), which always gives you a look into what's next!
+With far more to come before the year’s end, your continued support and enthusiasm will continue to fuel our commitment to pushing the boundaries of technology while building a supportive and diverse Web3 ecosystem. Keep an eye out on our [2024 roadmap](https://comms.push.org/docs/roadmap/), which always gives you a look into what's next!
