@@ -15,8 +15,7 @@ import { device, size } from '../../../src/config/globals';
 import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
 
 import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
-import { Button, ItemH, Image } from '@site/src/css/SharedStyling';
-// import ImageHolder from '../../../src/components/ImageHolder';
+import { Button, ItemH } from '@site/src/css/SharedStyling';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -53,17 +52,6 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
     });
   }, []);
 
-  const ImageItem = ({ link, title, alt }) => {
-    return (
-      <Image
-        src={require(`@site/static/assets/website/chain/${link}.webp`).default}
-        srcSet={`${require(`@site/static/assets/website/chain/${link}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/${link}@3x.webp`).default} 3x`}
-        alt={alt}
-        title={title}
-        width='auto'
-      />
-    );
-  };
   return (
     <ChainFeaturesContainer>
       <DividerImg />
@@ -94,11 +82,6 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           <FeatureContainer id='technology'>
             <FeatureSubContainer>
               <FinalityContainer ref={playerRef}>
-                {/* <ImageItem
-                  link={'instant-finality'}
-                  title='Instant Finality'
-                  alt='Instant Finality'
-                /> */}
                 <ReactPlayer
                   url={
                     require(
@@ -131,12 +114,6 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
               <FeatureContainerSegregator>
                 <OnboardingContainer>
-                  {/* <ImageItem
-                    link={'seamless-instant'}
-                    title='Seamless Instant'
-                    alt='Seamless Instant'
-                  /> */}
-
                   <ReactPlayer
                     url={
                       require(
@@ -170,34 +147,31 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
                 <FeatureContainerSecondSegregator>
                   <TxFeeContainer>
-                    {/* <ImageItem
-                      link={'cheap-storage'}
-                      title='Cheap Storage'
-                      alt='Cheap Storage'
-                    /> */}
-                    <ReactPlayer
-                      url={
-                        require(
-                          `@site/static/assets/website/chain/cheap_storage.webm`
-                        ).default
-                      }
-                      playing={
-                        isPlaying &&
-                        typeof window !== 'undefined' &&
-                        window.innerWidth > size.tablet
-                      }
-                      loop={true}
-                      muted={true}
-                      width='30%'
-                      // height='auto'
-                      config={{
-                        file: {
-                          attributes: {
-                            controlsList: 'nofullscreen',
+                    <div ref={playerRef} className='video'>
+                      <ReactPlayer
+                        url={
+                          require(
+                            `@site/static/assets/website/chain/cheap_storage.webm`
+                          ).default
+                        }
+                        playing={
+                          isPlaying &&
+                          typeof window !== 'undefined' &&
+                          window.innerWidth > size.tablet
+                        }
+                        loop={true}
+                        muted={true}
+                        width='100%'
+                        height='100%'
+                        config={{
+                          file: {
+                            attributes: {
+                              controlsList: 'nofullscreen',
+                            },
                           },
-                        },
-                      }}
-                    />
+                        }}
+                      />
+                    </div>
 
                     <FeatureTextSubHeading style={{ color: 'white' }}>
                       Cheap
@@ -209,11 +183,31 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
                   <StorageAndScalableContainerMobile>
                     <TxFeeContainerMobile>
-                      <ImageItem
-                        link={'cheap-storage'}
-                        title='Cheap Storage'
-                        alt='Cheap Storage'
-                      />
+                      <div ref={playerRef} className='video'>
+                        <ReactPlayer
+                          url={
+                            require(
+                              `@site/static/assets/website/chain/cheap_storage.webm`
+                            ).default
+                          }
+                          playing={
+                            isPlaying &&
+                            typeof window !== 'undefined' &&
+                            window.innerWidth > size.tablet
+                          }
+                          loop={true}
+                          muted={true}
+                          width='100%'
+                          height='100%'
+                          config={{
+                            file: {
+                              attributes: {
+                                controlsList: 'nofullscreen',
+                              },
+                            },
+                          }}
+                        />
+                      </div>
 
                       <FeatureTextSubHeading style={{ color: 'white' }}>
                         Cheap
@@ -224,11 +218,31 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                     </TxFeeContainerMobile>
 
                     <ScalableContainerMobile>
-                      <ImageItem
-                        link={'infinitely-scalable'}
-                        title='Infinitely Scalable'
-                        alt='Infinitely Scalable'
-                      />
+                      <div ref={playerRef} className='video'>
+                        <ReactPlayer
+                          url={
+                            require(
+                              `@site/static/assets/website/chain/infinitely_scale.webm`
+                            ).default
+                          }
+                          playing={
+                            isPlaying &&
+                            typeof window !== 'undefined' &&
+                            window.innerWidth > size.tablet
+                          }
+                          loop={true}
+                          muted={true}
+                          width='100%'
+                          height='100%'
+                          config={{
+                            file: {
+                              attributes: {
+                                controlsList: 'nofullscreen',
+                              },
+                            },
+                          }}
+                        />
+                      </div>
 
                       <FeatureTextSubHeading>
                         Infinitely
@@ -239,11 +253,6 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   </StorageAndScalableContainerMobile>
 
                   <AnyChainContainer>
-                    {/* <ImageItem
-                      link={'any-chain'}
-                      title='Any Chain'
-                      alt='Any Chain'
-                    /> */}
                     <ReactPlayer
                       url={
                         require(
@@ -283,12 +292,8 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   alignItems='flex-start'
                   justifyContent='space-between'
                   ref={playerRef}
+                  className='video'
                 >
-                  {/* <ImageItem
-                    link={'explore-knowledgebase'}
-                    title='Explore Knowledgebase'
-                    alt='Explore Knowledgebase'
-                  /> */}
                   <ReactPlayer
                     url={
                       require(
@@ -302,9 +307,8 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                     }
                     loop={true}
                     muted={true}
-                    // width='100%'
-                    // height='100%'
-                    style={{ objectFit: 'contain' }}
+                    width='100%'
+                    height='100%'
                     config={{
                       file: {
                         attributes: {
@@ -340,11 +344,6 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
               </KnowledgeBaseContainer>
 
               <ScalableContainer ref={playerRef}>
-                {/* <ImageItem
-                  link={'infinitely-scalable'}
-                  title='Infinitely Scalable'
-                  alt='Infinitely Scalable'
-                /> */}
                 <ReactPlayer
                   url={
                     require(
@@ -654,6 +653,18 @@ const TxFeeContainer = styled.div`
   border-radius: 48px;
   background: #4b75ff;
 
+  .video {
+    height: 120px !important;
+    width: auto !important;
+  }
+
+  video {
+    display: block;
+    height: 120px !important;
+    width: auto !important;
+    object-fit: contain;
+  }
+
   @media ${device.tablet} {
     display: none;
     border-radius: 16px;
@@ -674,6 +685,18 @@ const TxFeeContainerMobile = styled(TxFeeContainer)`
 
   @media ${device.tablet} {
     display: flex;
+
+    .video {
+      height: 120px !important;
+      width: auto !important;
+    }
+
+    video {
+      display: block;
+      height: 120px !important;
+      width: auto !important;
+      object-fit: contain;
+    }
   }
 `;
 
@@ -783,8 +806,20 @@ const KnowledgeBaseContainer = styled.div`
 
   img {
     display: block;
-    width: auto;
-    height: 200px;
+    width: auto !important;
+    height: 200px !important;
+    object-fit: contain;
+  }
+
+  .video {
+    width: auto !important;
+    height: 200px !important;
+  }
+
+  video {
+    display: block;
+    width: auto !important;
+    height: 200px !important;
     object-fit: contain;
   }
 
@@ -827,6 +862,16 @@ const KnowledgeBaseContainer = styled.div`
       display: block;
       width: 80%;
       height: auto;
+      object-fit: contain;
+    }
+
+    .video {
+      width: 80% !important;
+    }
+
+    video {
+      display: block;
+      width: 80% !important;
       object-fit: contain;
     }
   }
