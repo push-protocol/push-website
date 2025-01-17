@@ -16,6 +16,7 @@ import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
 
 import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
 import { Button, ItemH } from '@site/src/css/SharedStyling';
+import CustomReactPlayer from '../../utils/CustomReactPlayer';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -52,6 +53,11 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
     });
   }, []);
 
+  const canPlayVideo =
+    isPlaying &&
+    typeof window !== 'undefined' &&
+    window.innerWidth > size.tablet;
+
   return (
     <ChainFeaturesContainer>
       <DividerImg />
@@ -82,28 +88,13 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           <FeatureContainer id='technology'>
             <FeatureSubContainer>
               <FinalityContainer ref={playerRef}>
-                <ReactPlayer
+                <CustomReactPlayer
                   url={
                     require(
                       `@site/static/assets/website/chain/instant-finality.webm`
                     ).default
                   }
-                  playing={
-                    isPlaying &&
-                    typeof window !== 'undefined' &&
-                    window.innerWidth > size.tablet
-                  }
-                  loop={true}
-                  muted={true}
-                  width='100%'
-                  height='100%'
-                  config={{
-                    file: {
-                      attributes: {
-                        controlsList: 'nofullscreen',
-                      },
-                    },
-                  }}
+                  playing={canPlayVideo}
                 />
 
                 <FeatureTextHeading>
@@ -114,28 +105,13 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
               <FeatureContainerSegregator>
                 <OnboardingContainer>
-                  <ReactPlayer
+                  <CustomReactPlayer
                     url={
                       require(
                         `@site/static/assets/website/chain/onboarding.webm`
                       ).default
                     }
-                    playing={
-                      isPlaying &&
-                      typeof window !== 'undefined' &&
-                      window.innerWidth > size.tablet
-                    }
-                    loop={true}
-                    muted={true}
-                    width='100%'
-                    height='100%'
-                    config={{
-                      file: {
-                        attributes: {
-                          controlsList: 'nofullscreen',
-                        },
-                      },
-                    }}
+                    playing={canPlayVideo}
                   />
 
                   <FeatureTextSubHeading>
@@ -148,28 +124,13 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                 <FeatureContainerSecondSegregator>
                   <TxFeeContainer>
                     <div ref={playerRef} className='video'>
-                      <ReactPlayer
+                      <CustomReactPlayer
                         url={
                           require(
                             `@site/static/assets/website/chain/cheap_storage.webm`
                           ).default
                         }
-                        playing={
-                          isPlaying &&
-                          typeof window !== 'undefined' &&
-                          window.innerWidth > size.tablet
-                        }
-                        loop={true}
-                        muted={true}
-                        width='100%'
-                        height='100%'
-                        config={{
-                          file: {
-                            attributes: {
-                              controlsList: 'nofullscreen',
-                            },
-                          },
-                        }}
+                        playing={canPlayVideo}
                       />
                     </div>
 
@@ -184,28 +145,13 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   <StorageAndScalableContainerMobile>
                     <TxFeeContainerMobile>
                       <div ref={playerRef} className='video'>
-                        <ReactPlayer
+                        <CustomReactPlayer
                           url={
                             require(
                               `@site/static/assets/website/chain/cheap_storage.webm`
                             ).default
                           }
-                          playing={
-                            isPlaying &&
-                            typeof window !== 'undefined' &&
-                            window.innerWidth > size.tablet
-                          }
-                          loop={true}
-                          muted={true}
-                          width='100%'
-                          height='100%'
-                          config={{
-                            file: {
-                              attributes: {
-                                controlsList: 'nofullscreen',
-                              },
-                            },
-                          }}
+                          playing={canPlayVideo}
                         />
                       </div>
 
@@ -219,28 +165,13 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
                     <ScalableContainerMobile>
                       <div ref={playerRef} className='video'>
-                        <ReactPlayer
+                        <CustomReactPlayer
                           url={
                             require(
                               `@site/static/assets/website/chain/infinitely_scale.webm`
                             ).default
                           }
-                          playing={
-                            isPlaying &&
-                            typeof window !== 'undefined' &&
-                            window.innerWidth > size.tablet
-                          }
-                          loop={true}
-                          muted={true}
-                          width='100%'
-                          height='100%'
-                          config={{
-                            file: {
-                              attributes: {
-                                controlsList: 'nofullscreen',
-                              },
-                            },
-                          }}
+                          playing={canPlayVideo}
                         />
                       </div>
 
@@ -253,28 +184,13 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   </StorageAndScalableContainerMobile>
 
                   <AnyChainContainer>
-                    <ReactPlayer
+                    <CustomReactPlayer
                       url={
                         require(
                           `@site/static/assets/website/chain/any_chain.webm`
                         ).default
                       }
-                      playing={
-                        isPlaying &&
-                        typeof window !== 'undefined' &&
-                        window.innerWidth > size.tablet
-                      }
-                      loop={true}
-                      muted={true}
-                      width='100%'
-                      height='100%'
-                      config={{
-                        file: {
-                          attributes: {
-                            controlsList: 'nofullscreen',
-                          },
-                        },
-                      }}
+                      playing={canPlayVideo}
                     />
 
                     <FeatureTextSubHeading style={{ color: '#000' }}>
@@ -294,28 +210,13 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   ref={playerRef}
                   className='video'
                 >
-                  <ReactPlayer
+                  <CustomReactPlayer
                     url={
                       require(
                         `@site/static/assets/website/chain/knowledge_base.webm`
                       ).default
                     }
-                    playing={
-                      isPlaying &&
-                      typeof window !== 'undefined' &&
-                      window.innerWidth > size.tablet
-                    }
-                    loop={true}
-                    muted={true}
-                    width='100%'
-                    height='100%'
-                    config={{
-                      file: {
-                        attributes: {
-                          controlsList: 'nofullscreen',
-                        },
-                      },
-                    }}
+                    playing={canPlayVideo}
                   />
 
                   <KnowledgeBaseIcon
@@ -344,28 +245,13 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
               </KnowledgeBaseContainer>
 
               <ScalableContainer ref={playerRef}>
-                <ReactPlayer
+                <CustomReactPlayer
                   url={
                     require(
                       `@site/static/assets/website/chain/infinitely_scale.webm`
                     ).default
                   }
-                  playing={
-                    isPlaying &&
-                    typeof window !== 'undefined' &&
-                    window.innerWidth > size.tablet
-                  }
-                  loop={true}
-                  muted={true}
-                  width='100%'
-                  height='100%'
-                  config={{
-                    file: {
-                      attributes: {
-                        controlsList: 'nofullscreen',
-                      },
-                    },
-                  }}
+                  playing={canPlayVideo}
                 />
 
                 <FeatureTextSubHeading>
@@ -380,36 +266,12 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           <HeaderTwoContainer>
             <HeaderTwo>One chain for infinite possibilities</HeaderTwo>
 
-            {/* <ImageHolder
-              src={
-                require(`@site/static/assets/website/chain/one-chain.webp`)
-                  .default
-              }
-              srcSet={`${require(`@site/static/assets/website/chain/one-chain@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/one-chain@3x.webp`).default} 3x`}
-              alt={'One chain'}
-              title={'One chain'}
-            /> */}
-            <ReactPlayer
+            <CustomReactPlayer
               url={
                 require(`@site/static/assets/website/chain/one-chain.webm`)
                   .default
               }
-              playing={
-                isPlaying &&
-                typeof window !== 'undefined' &&
-                window.innerWidth > size.tablet
-              }
-              loop={true}
-              muted={true}
-              width='100%'
-              height='100%'
-              config={{
-                file: {
-                  attributes: {
-                    controlsList: 'nofullscreen',
-                  },
-                },
-              }}
+              playing={canPlayVideo}
             />
 
             <HeaderTwoSubheader>
