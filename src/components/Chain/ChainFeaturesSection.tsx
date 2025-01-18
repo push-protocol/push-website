@@ -15,7 +15,7 @@ import { device, size } from '../../../src/config/globals';
 import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
 
 import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
-import { Button, ItemH } from '@site/src/css/SharedStyling';
+import { Button } from '@site/src/css/SharedStyling';
 import CustomReactPlayer from '../../utils/CustomReactPlayer';
 
 // Register GSAP plugins
@@ -26,6 +26,11 @@ export type ChainFeaturesSectionProps = {};
 const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
   const playerRef = useRef<ReactPlayer | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+
+  const canPlayVideo =
+    isPlaying &&
+    typeof window !== 'undefined' &&
+    window.innerWidth > size.tablet;
 
   const history = useHistory();
   const baseURL = useSiteBaseUrl() || '';
@@ -52,11 +57,6 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
       },
     });
   }, []);
-
-  const canPlayVideo =
-    isPlaying &&
-    typeof window !== 'undefined' &&
-    window.innerWidth > size.tablet;
 
   return (
     <ChainFeaturesContainer>
@@ -95,6 +95,9 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                     ).default
                   }
                   playing={canPlayVideo}
+                  link={'instant-finality'}
+                  title='Instant Finality'
+                  alt='Instant Finality'
                 />
 
                 <FeatureTextHeading>
@@ -105,14 +108,19 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
               <FeatureContainerSegregator>
                 <OnboardingContainer>
-                  <CustomReactPlayer
-                    url={
-                      require(
-                        `@site/static/assets/website/chain/onboarding.webm`
-                      ).default
-                    }
-                    playing={canPlayVideo}
-                  />
+                  <div className='video'>
+                    <CustomReactPlayer
+                      url={
+                        require(
+                          `@site/static/assets/website/chain/onboarding.webm`
+                        ).default
+                      }
+                      playing={canPlayVideo}
+                      link={'seamless-instant'}
+                      title='Seamless Instant'
+                      alt='Seamless Instant'
+                    />
+                  </div>
 
                   <FeatureTextSubHeading>
                     Seamless, Instant
@@ -131,6 +139,9 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                           ).default
                         }
                         playing={canPlayVideo}
+                        link={'cheap-storage'}
+                        title='Cheap Storage'
+                        alt='Cheap Storage'
                       />
                     </div>
 
@@ -152,6 +163,9 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                             ).default
                           }
                           playing={canPlayVideo}
+                          link={'cheap-storage'}
+                          title='Cheap Storage'
+                          alt='Cheap Storage'
                         />
                       </div>
 
@@ -172,6 +186,9 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                             ).default
                           }
                           playing={canPlayVideo}
+                          link={'infinitely-scalable'}
+                          title='Infinitely Scalable'
+                          alt='Infinitely Scalable'
                         />
                       </div>
 
@@ -191,6 +208,9 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                         ).default
                       }
                       playing={canPlayVideo}
+                      link={'any-chain'}
+                      title='Any Chain'
+                      alt='Any Chain'
                     />
 
                     <FeatureTextSubHeading style={{ color: '#000' }}>
@@ -204,12 +224,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
             <FeatureSubContainer>
               <KnowledgeBaseContainer onClick={handleClick}>
-                <ItemH
-                  alignItems='flex-start'
-                  justifyContent='space-between'
-                  ref={playerRef}
-                  className='video'
-                >
+                <div ref={playerRef} className='video'>
                   <CustomReactPlayer
                     url={
                       require(
@@ -217,6 +232,9 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                       ).default
                     }
                     playing={canPlayVideo}
+                    link={'explore-knowledgebase'}
+                    title='Explore Knowledgebase'
+                    alt='Explore Knowledgebase'
                   />
 
                   <KnowledgeBaseIcon
@@ -227,7 +245,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                     size={24}
                     style={{ alignSelf: 'flex-start' }}
                   />
-                </ItemH>
+                </div>
                 <KnowledgeBaseTextContainer>
                   <FeatureTextHeading
                     style={{ color: '#000000', whiteSpace: 'break-spaces' }}
@@ -245,15 +263,19 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
               </KnowledgeBaseContainer>
 
               <ScalableContainer ref={playerRef}>
-                <CustomReactPlayer
-                  url={
-                    require(
-                      `@site/static/assets/website/chain/infinitely_scale.webm`
-                    ).default
-                  }
-                  playing={canPlayVideo}
-                />
-
+                <div className='video'>
+                  <CustomReactPlayer
+                    url={
+                      require(
+                        `@site/static/assets/website/chain/infinitely_scale.webm`
+                      ).default
+                    }
+                    playing={canPlayVideo}
+                    link={'infinitely-scalable'}
+                    title='Infinitely Scalable'
+                    alt='Infinitely Scalable'
+                  />
+                </div>
                 <FeatureTextSubHeading>
                   Infinitely
                   <br />
@@ -272,6 +294,9 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   .default
               }
               playing={canPlayVideo}
+              link={'one-chain'}
+              title='one chain'
+              alt='one chain'
             />
 
             <HeaderTwoSubheader>
@@ -574,6 +599,11 @@ const OnboardingContainer = styled.div`
   background: #64f6b2;
   flex-direction: column;
 
+  .video {
+    width: auto;
+    height: 169px;
+  }
+
   @media ${device.tablet} {
     width: 100%;
     height: fit-content;
@@ -630,6 +660,11 @@ const ScalableContainer = styled.div`
   border-radius: 48px;
   background: #ffe659;
 
+  .video {
+    // width: 100%;
+    height: 250px;
+  }
+
   @media ${device.tablet} {
     display: none;
   }
@@ -674,14 +709,16 @@ const KnowledgeBaseContainer = styled.div`
   }
 
   .video {
-    width: auto !important;
-    height: 200px !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   video {
     display: block;
-    width: auto !important;
-    height: 200px !important;
+    width: 420px !important;
+    height: auto !important;
     object-fit: contain;
   }
 
@@ -725,10 +762,6 @@ const KnowledgeBaseContainer = styled.div`
       width: 80%;
       height: auto;
       object-fit: contain;
-    }
-
-    .video {
-      width: 80% !important;
     }
 
     video {
