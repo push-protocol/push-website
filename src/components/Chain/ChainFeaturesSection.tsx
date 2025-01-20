@@ -232,6 +232,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                       ).default
                     }
                     playing={canPlayVideo}
+                    playContinuously={true}
                     link={'explore-knowledgebase'}
                     title='Explore Knowledgebase'
                     alt='Explore Knowledgebase'
@@ -294,6 +295,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   .default
               }
               playing={canPlayVideo}
+              playContinuously={true}
               link={'one-chain'}
               title='one chain'
               alt='one chain'

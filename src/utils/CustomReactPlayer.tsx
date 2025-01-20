@@ -2,7 +2,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React, { useState } from 'react';
-
 import styled from 'styled-components';
 import ReactPlayer from 'react-player';
 
@@ -14,9 +13,7 @@ type CustomReactPlayerProps = {
   loop?: boolean;
   muted?: boolean;
   className?: string;
-  link?: string;
-  alt?: string;
-  title?: string;
+  playContinuously?: boolean; // New prop to control continuous play
 };
 
 const CustomReactPlayer: React.FC<CustomReactPlayerProps> = ({
@@ -26,40 +23,40 @@ const CustomReactPlayer: React.FC<CustomReactPlayerProps> = ({
   loop = true,
   muted = true,
   className,
+  playContinuously = false, // Default is false
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handleMouseEnter = () => {
-    setIsPlaying(true);
+    if (!playContinuously) setIsPlaying(true);
   };
 
   const handleMouseLeave = () => {
-    setIsPlaying(false);
+    if (!playContinuously) setIsPlaying(false);
   };
+
   return (
-    <>
-      <VideoWrapper
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <ReactPlayer
-          url={url}
-          playing={isPlaying}
-          loop={loop}
-          muted={muted}
-          width={width}
-          height={height}
-          className={className}
-          config={{
-            file: {
-              attributes: {
-                controlsList: 'nofullscreen',
-              },
+    <VideoWrapper
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <ReactPlayer
+        url={url}
+        playing={playContinuously || isPlaying}
+        loop={loop}
+        muted={muted}
+        width={width}
+        height={height}
+        className={className}
+        config={{
+          file: {
+            attributes: {
+              controlsList: 'nofullscreen',
             },
-          }}
-        />
-      </VideoWrapper>
-    </>
+          },
+        }}
+      />
+    </VideoWrapper>
   );
 };
 
