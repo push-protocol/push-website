@@ -58,7 +58,7 @@ const account = privateKeyToAccount(privateKey);
 const universalSigner = {
   chain: CONSTANTS.CHAIN.ETHEREUM,
   chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
-  account: account.address, // Ethereum address derived from the private key
+  address: account.address, // Ethereum address derived from the private key
   signMessage: async (data: Uint8Array) => {
     const signature = await account.signMessage({
       message: { raw: data }, // Data to be signed
@@ -85,7 +85,7 @@ const recipients: UniversalAccount[] = [
   {
     chain: CONSTANTS.CHAIN.SOLANA,
     chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
-    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+    address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
   },
 ];
 ```
@@ -133,7 +133,7 @@ async function main() {
   const universalSigner = {
     chain: CONSTANTS.CHAIN.ETHEREUM,
     chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
-    account: account.address,
+    address: account.address,
     signMessage: async (data: Uint8Array) => {
       const signature = await account.signMessage({
         message: { raw: data },
@@ -148,7 +148,7 @@ async function main() {
     {
       chain: CONSTANTS.CHAIN.SOLANA,
       chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
-      account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+      address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
     },
   ];
 

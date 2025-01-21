@@ -78,7 +78,7 @@ const account = privateKeyToAccount(privateKey);
 const universalSigner = {
   chain: CONSTANTS.CHAIN.ETHEREUM,
   chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
-  account: account.address, // Ethereum address derived from the private key
+  address: account.address, // Ethereum address derived from the private key
   signMessage: async (data: Uint8Array) => {
     const signature = await account.signMessage({
       message: { raw: data }, // Data to be signed
