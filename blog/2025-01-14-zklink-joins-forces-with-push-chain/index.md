@@ -8,7 +8,7 @@ text: "Push Chain's road to testnet has kickstarted in full swing.  Learn everyt
 tags: [Push Chain, Partnerships, Shared App Experience, Any Chain Tx, Universal Smart Contracts, Shared State Blockchain, Consumer Tx, Parallel Validators, Dynamic Sharding]
 ---
 
-![Cover image of Push Chain Join forces with zkLink ](./cover-image.gif)
+![Cover image of Push Chain Join forces with zkLink ](./cover-image.webp)
 
 <!--truncate-->
 
@@ -36,7 +36,7 @@ To date, zkLink Nova boasts over 26 Million Transactions with 1.3 million Unique
 Push Chain is a shared state blockchain for universal apps. It is a Proof of Stake (PoS) chain
 built to allow developers to create universal apps and act as a shared settlement layer for multiple L1s, L2s, and L3s enabling transactions from any chain - any app and any user.
 
-[Explore more about Push Chain here](https://push.org/chain/)
+[Explore more about Push Chain here](https://push.org)
 
 
 ## Bringing zkLink to Push Chain

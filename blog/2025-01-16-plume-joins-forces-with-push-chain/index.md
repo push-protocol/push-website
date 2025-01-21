@@ -8,7 +8,7 @@ text: "Push Chain is set to revolutionize RWAfi by joining forces with Plume! Le
 tags: [Push Chain, Partnerships, Shared App Experience, Any Chain Tx, Universal Smart Contracts, Shared State Blockchain, Consumer Tx, Parallel Validators, Dynamic Sharding]
 ---
 
-![Cover image of Push Chain joins forces with Plume ](./cover-image.gif)
+![Cover image of Push Chain joins forces with Plume ](./cover-image.webp)
 
 <!--truncate-->
 
@@ -23,6 +23,13 @@ Learn what this announcement means for Plume and Push Chain users, the use cases
 With an ecosystem of over 180 apps and over 3.75 Million users in its early testnet Plume brings RWAs into the on-chain digital economy.
 
 With built-in AML compliance and a modular full stack architecture, Plume provides a super flexible platform for trading, financing, collateralizng RWAs for enhanced yield and market-making opportunities!
+
+## What is Push Chain?
+
+Push Chain is a shared state blockchain for universal apps. It is a Proof of Stake (PoS) chain
+built to allow developers to create universal apps and act as a shared settlement layer for multiple L1s, L2s, and L3s enabling transactions from any chain - any app and any user.
+
+[Explore more about Push Chain here](https://push.org)
 
 
 ## Bringing Plume to Push Chain
@@ -91,7 +98,7 @@ Push Chain isn’t here to replace networks or compete with any; instead, it aim
 
 ## Next Steps
 
-1. Follow @pushprotocol on X to get the latest updates about Push Chain
+1. Follow [@pushprotocol](https://x.com/pushprotocol) on X to get the latest updates about Push Chain
 2. Check out the [Push Chain Whitepaper](https://whitepaper.push.org/)for a detailed overview of the vision and the underlying technicalities.
 3. Visit the [Push Chain Website](https://push.org/chain) to find a one-pager explanation of the vision.
 4. [Push Chain Devnet](https://scan.push.org/) is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.

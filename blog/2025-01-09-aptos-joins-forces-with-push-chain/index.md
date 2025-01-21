@@ -9,7 +9,7 @@ tags: [Push Chain, Partnerships, Shared App Experience, Any Chain Tx, Universal 
 ---
 
 
-![Cover image of Push Chain Join Forces With Aptos ](./cover-image.gif)
+![Cover image of Push Chain Join Forces With Aptos ](./cover-image.webp)
 
 <!--truncate-->
 
@@ -30,7 +30,7 @@ With over 38.8 Million active addresses -  Aptos is home to some of the most pop
 Push Chain is a shared state blockchain for universal apps. It is a Proof of Stake (PoS) chain
 built to allow developers to create universal apps and act as a shared settlement layer for multiple L1s, L2s, and L3s enabling transactions from any chain - any app and any user.
 
-[Explore more about Push Chain here](https://push.org/chain/)
+[Explore more about Push Chain here](https://push.org)
 
 
 ## Bringing Aptos to Push Chain
