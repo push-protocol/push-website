@@ -1,22 +1,37 @@
 /* eslint-disable @typescript-eslint/ban-types */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
+
+import ReactPlayer from 'react-player';
 import Link from '@docusaurus/Link';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { TbArrowUpRight } from 'react-icons/tb';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import { device } from '../../../src/config/globals';
+import { device, size } from '../../../src/config/globals';
 import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
 
 import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
-import { Button, ItemH, Image } from '@site/src/css/SharedStyling';
-import ImageHolder from '../../../src/components/ImageHolder';
+import { Button } from '@site/src/css/SharedStyling';
+import CustomReactPlayer from '../../utils/CustomReactPlayer';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 export type ChainFeaturesSectionProps = {};
 
 const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
+  const playerRef = useRef<ReactPlayer | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const canPlayVideo =
+    isPlaying &&
+    typeof window !== 'undefined' &&
+    window.innerWidth > size.tablet;
+
   const history = useHistory();
   const baseURL = useSiteBaseUrl() || '';
 
@@ -24,17 +39,25 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
     const targetUrl = `${baseURL}/chain/knowledge`;
     history.push(targetUrl);
   };
-  const ImageItem = ({ link, title, alt }) => {
-    return (
-      <Image
-        src={require(`@site/static/assets/website/chain/${link}.webp`).default}
-        srcSet={`${require(`@site/static/assets/website/chain/${link}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/${link}@3x.webp`).default} 3x`}
-        alt={alt}
-        title={title}
-        width='auto'
-      />
-    );
-  };
+
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: playerRef.current?.wrapper, // The video wrapper element
+      start: 'top bottom',
+      end: 'bottom top',
+      onEnter: () => setIsPlaying(true), // Start playback when video enters
+      onLeave: () => {
+        setIsPlaying(false);
+        playerRef.current?.seekTo(0);
+      },
+      onEnterBack: () => setIsPlaying(true),
+      onLeaveBack: () => {
+        setIsPlaying(false);
+        playerRef.current?.seekTo(0);
+      },
+    });
+  }, []);
+
   return (
     <ChainFeaturesContainer>
       <DividerImg />
@@ -64,8 +87,14 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           </HeaderContainer>
           <FeatureContainer id='technology'>
             <FeatureSubContainer>
-              <FinalityContainer>
-                <ImageItem
+              <FinalityContainer ref={playerRef}>
+                <CustomReactPlayer
+                  url={
+                    require(
+                      `@site/static/assets/website/chain/instant-finality.webm`
+                    ).default
+                  }
+                  playing={canPlayVideo}
                   link={'instant-finality'}
                   title='Instant Finality'
                   alt='Instant Finality'
@@ -79,11 +108,19 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
               <FeatureContainerSegregator>
                 <OnboardingContainer>
-                  <ImageItem
-                    link={'seamless-instant'}
-                    title='Seamless Instant'
-                    alt='Seamless Instant'
-                  />
+                  <div className='video'>
+                    <CustomReactPlayer
+                      url={
+                        require(
+                          `@site/static/assets/website/chain/onboarding.webm`
+                        ).default
+                      }
+                      playing={canPlayVideo}
+                      link={'seamless-instant'}
+                      title='Seamless Instant'
+                      alt='Seamless Instant'
+                    />
+                  </div>
 
                   <FeatureTextSubHeading>
                     Seamless, Instant
@@ -94,11 +131,19 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
                 <FeatureContainerSecondSegregator>
                   <TxFeeContainer>
-                    <ImageItem
-                      link={'cheap-storage'}
-                      title='Cheap Storage'
-                      alt='Cheap Storage'
-                    />
+                    <div ref={playerRef} className='video'>
+                      <CustomReactPlayer
+                        url={
+                          require(
+                            `@site/static/assets/website/chain/cheap_storage.webm`
+                          ).default
+                        }
+                        playing={canPlayVideo}
+                        link={'cheap-storage'}
+                        title='Cheap Storage'
+                        alt='Cheap Storage'
+                      />
+                    </div>
 
                     <FeatureTextSubHeading style={{ color: 'white' }}>
                       Cheap
@@ -110,11 +155,19 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
                   <StorageAndScalableContainerMobile>
                     <TxFeeContainerMobile>
-                      <ImageItem
-                        link={'cheap-storage'}
-                        title='Cheap Storage'
-                        alt='Cheap Storage'
-                      />
+                      <div ref={playerRef} className='video'>
+                        <CustomReactPlayer
+                          url={
+                            require(
+                              `@site/static/assets/website/chain/cheap_storage.webm`
+                            ).default
+                          }
+                          playing={canPlayVideo}
+                          link={'cheap-storage'}
+                          title='Cheap Storage'
+                          alt='Cheap Storage'
+                        />
+                      </div>
 
                       <FeatureTextSubHeading style={{ color: 'white' }}>
                         Cheap
@@ -125,11 +178,19 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                     </TxFeeContainerMobile>
 
                     <ScalableContainerMobile>
-                      <ImageItem
-                        link={'infinitely-scalable'}
-                        title='Infinitely Scalable'
-                        alt='Infinitely Scalable'
-                      />
+                      <div ref={playerRef} className='video'>
+                        <CustomReactPlayer
+                          url={
+                            require(
+                              `@site/static/assets/website/chain/infinitely_scale.webm`
+                            ).default
+                          }
+                          playing={canPlayVideo}
+                          link={'infinitely-scalable'}
+                          title='Infinitely Scalable'
+                          alt='Infinitely Scalable'
+                        />
+                      </div>
 
                       <FeatureTextSubHeading>
                         Infinitely
@@ -140,7 +201,13 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   </StorageAndScalableContainerMobile>
 
                   <AnyChainContainer>
-                    <ImageItem
+                    <CustomReactPlayer
+                      url={
+                        require(
+                          `@site/static/assets/website/chain/any_chain.webm`
+                        ).default
+                      }
+                      playing={canPlayVideo}
                       link={'any-chain'}
                       title='Any Chain'
                       alt='Any Chain'
@@ -157,8 +224,15 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
 
             <FeatureSubContainer>
               <KnowledgeBaseContainer onClick={handleClick}>
-                <ItemH alignItems='flex-start' justifyContent='space-between'>
-                  <ImageItem
+                <div ref={playerRef} className='video'>
+                  <CustomReactPlayer
+                    url={
+                      require(
+                        `@site/static/assets/website/chain/knowledge_base.webm`
+                      ).default
+                    }
+                    playing={canPlayVideo}
+                    playContinuously={true}
                     link={'explore-knowledgebase'}
                     title='Explore Knowledgebase'
                     alt='Explore Knowledgebase'
@@ -172,7 +246,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                     size={24}
                     style={{ alignSelf: 'flex-start' }}
                   />
-                </ItemH>
+                </div>
                 <KnowledgeBaseTextContainer>
                   <FeatureTextHeading
                     style={{ color: '#000000', whiteSpace: 'break-spaces' }}
@@ -189,13 +263,20 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                 </KnowledgeBaseTextContainer>
               </KnowledgeBaseContainer>
 
-              <ScalableContainer>
-                <ImageItem
-                  link={'infinitely-scalable'}
-                  title='Infinitely Scalable'
-                  alt='Infinitely Scalable'
-                />
-
+              <ScalableContainer ref={playerRef}>
+                <div className='video'>
+                  <CustomReactPlayer
+                    url={
+                      require(
+                        `@site/static/assets/website/chain/infinitely_scale.webm`
+                      ).default
+                    }
+                    playing={canPlayVideo}
+                    link={'infinitely-scalable'}
+                    title='Infinitely Scalable'
+                    alt='Infinitely Scalable'
+                  />
+                </div>
                 <FeatureTextSubHeading>
                   Infinitely
                   <br />
@@ -208,15 +289,18 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
           <HeaderTwoContainer>
             <HeaderTwo>One chain for infinite possibilities</HeaderTwo>
 
-            <ImageHolder
-              src={
-                require(`@site/static/assets/website/chain/one-chain.webp`)
+            <CustomReactPlayer
+              url={
+                require(`@site/static/assets/website/chain/one-chain.webm`)
                   .default
               }
-              srcSet={`${require(`@site/static/assets/website/chain/one-chain@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/one-chain@3x.webp`).default} 3x`}
-              alt={'One chain'}
-              title={'One chain'}
+              playing={canPlayVideo}
+              playContinuously={true}
+              link={'one-chain'}
+              title='one chain'
+              alt='one chain'
             />
+
             <HeaderTwoSubheader>
               Push chain allows developers to finally create applications that
               are accessible from any chain.
@@ -458,6 +542,18 @@ const TxFeeContainer = styled.div`
   border-radius: 48px;
   background: #4b75ff;
 
+  .video {
+    height: 120px !important;
+    width: auto !important;
+  }
+
+  video {
+    display: block;
+    height: 120px !important;
+    width: auto !important;
+    object-fit: contain;
+  }
+
   @media ${device.tablet} {
     display: none;
     border-radius: 16px;
@@ -478,6 +574,18 @@ const TxFeeContainerMobile = styled(TxFeeContainer)`
 
   @media ${device.tablet} {
     display: flex;
+
+    .video {
+      height: 120px !important;
+      width: auto !important;
+    }
+
+    video {
+      display: block;
+      height: 120px !important;
+      width: auto !important;
+      object-fit: contain;
+    }
   }
 `;
 
@@ -492,6 +600,11 @@ const OnboardingContainer = styled.div`
   border-radius: 48px;
   background: #64f6b2;
   flex-direction: column;
+
+  .video {
+    width: auto;
+    height: 169px;
+  }
 
   @media ${device.tablet} {
     width: 100%;
@@ -549,6 +662,11 @@ const ScalableContainer = styled.div`
   border-radius: 48px;
   background: #ffe659;
 
+  .video {
+    // width: 100%;
+    height: 250px;
+  }
+
   @media ${device.tablet} {
     display: none;
   }
@@ -587,8 +705,22 @@ const KnowledgeBaseContainer = styled.div`
 
   img {
     display: block;
-    width: auto;
-    height: 200px;
+    width: auto !important;
+    height: 200px !important;
+    object-fit: contain;
+  }
+
+  .video {
+    width: 100% !important;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  video {
+    display: block;
+    width: 420px !important;
+    height: auto !important;
     object-fit: contain;
   }
 
@@ -631,6 +763,12 @@ const KnowledgeBaseContainer = styled.div`
       display: block;
       width: 80%;
       height: auto;
+      object-fit: contain;
+    }
+
+    video {
+      display: block;
+      width: 80% !important;
       object-fit: contain;
     }
   }
