@@ -87,24 +87,6 @@ const tx = await pushChain.tx.send(
   { category: 'MY_CUSTOM_CATEGORY', data: 'Hello world!' }
 );`,
   },
-  {
-    title: 'Examples',
-    srcref: 'star',
-    alt: 'Logo representing examples repo - Push Protocol',
-    link: 'https://github.com/push-protocol/push-chain-sdk/tree/main/examples',
-    target: '_blank',
-    description:
-      'Examples to showcase the power of Push Protocol’s communication stack.',
-  },
-  {
-    title: 'Push Reward Points',
-    srcref: 'rewards',
-    alt: 'Logo representing reward points of Push Protocol',
-    link: 'https://comms.push.org/docs/rewards',
-    target: '_blank',
-    description:
-      'Reward Points Program for contributors. Complete activities and earn points.',
-  },
 ];
 
 export const SdkItemsList: ISdkListItem[] = [
