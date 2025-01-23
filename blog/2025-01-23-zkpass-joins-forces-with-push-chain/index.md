@@ -2,7 +2,7 @@
 slug: push-chain-joins-forces-with-zkpass
 title: 'Push Chain Joins Forces With zkPass'
 authors: [push]
-image: './cover-image.gif'
+image: './cover-image.webp'
 description: 'Push Chain joins forces with zkPass!'
 text: "Push chain is pumped to join forces with zkPass to transform user privacy in the new internet world. Discover how this collaboration empowers devs, users and the entire web3 ecosystem!
 "
@@ -46,7 +46,7 @@ Push Chain extends zkPass’s proving capabilities by enabling verification supp
 
 **Universal private identity**
 
-Users can now create a truly private and unified blockchain presence through Push ID - a universal identity system that seamlessly connects all their wallets (EVM and non-EVM) into one profile. 
+Users can now create a truly private and unified blockchain presence through Push ID - a universal identity system that seamlessly connects all their wallets (EVM and non-EVM) into one profile.
 
 This unified identity gains enhanced privacy through zkPass, enabling **users to prove wallet ownership, assets or any other private information across any blockchain** without revealing their actual wallet details and enabling selective disclosure of wallets while linking to any application. **One private KYC that can be instantly validated on all apps and all chains.**
 
@@ -54,13 +54,13 @@ This unified identity gains enhanced privacy through zkPass, enabling **users to
 
 ## 👷‍♂️How does it benefit builders?
 
- 
-**Build Universally accessible privacy-centric DApps** 
+
+**Build Universally accessible privacy-centric DApps**
 Push Chain enables developers to build applications that work across any blockchain, while zkPass adds powerful privacy-preservation capabilities to this universal reach. Developers can use the [Push Chain](https://github.com/push-protocol/push-chain-sdk) and [Transgate](https://zkpass.gitbook.io/zkpass/developer-guides/extension-js-sdk) SDKs to create apps that verify user credentials, assets, or achievements across chains without managing complex privacy infrastructure or dealing with multiple chain-specific identity systems.
 
 **Build privately - verifiable DeFi Protocols**
 
-Build more sophisticated DeFi applications that can access verified user credentials while respecting privacy. 
+Build more sophisticated DeFi applications that can access verified user credentials while respecting privacy.
 
 Through Push Chain's shared state and zkPass's verification system, protocols can validate credit scores, collateral, and transaction history across chains without exposing sensitive user data enabling better risk assessment and more efficient capital allocation while maintaining user privacy.
 
@@ -69,17 +69,17 @@ Through Push Chain's shared state and zkPass's verification system, protocols ca
 
 In addition to the unified KYC and universal privacy-focused DeFi applications discussed above, the collaboration between Push Chain and zkPass unlocks the following use cases:
 
-**Universal Private RWA Hub** 
+**Universal Private RWA Hub**
 RWA marketplaces like [Kanza Finance](https://canza.io/) can leverage Push Chain and zkPass to enable instant cross-chain RWA operations with built-in compliance verification, all while keeping sensitive user data private and secure.
 
 
-**Unified AI marketplaces** 
+**Unified AI marketplaces**
 
 AI & Privacy centric chains like [Polyhedra EXP](https://www.polyhedra.network/) can host AI data marketplaces for using zkPass, users can privately contribute data to AI models while: Proving data authenticity without exposure and receiving rewards tied to any chain.
 
 Users can optimise their on-chain data collection process by using Push Chain’s unified shared settlement layer.
 
-**Universal launchpads.** 
+**Universal launchpads.**
 
 Cross chain launchpads like [Pools Finance](https://www.poolz.finance/) can leverage Push Chain and zkPass to power -  universal DApp launchpads where Developers can utilize Push Chain’s Universal Shared State and Parallel txn processing to deploy dApps once and instantly reach users across all or any specified networks while maintaining privacy preservation, credential verification and compliance through zkPass.
 

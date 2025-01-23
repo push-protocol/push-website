@@ -2,7 +2,7 @@
 slug: push-chain-joins-forces-with-zklink
 title: 'Push Chain Joins Forces With zkLink'
 authors: [push]
-image: './cover-image.gif'
+image: './cover-image.webp'
 description: 'Push Chain joins forces with zkLink!'
 text: "Push Chain's road to testnet has kickstarted in full swing.  Learn everything about our collaboration with zkLink - what it means for Push and zkLink users, the use cases it unlocks and more!"
 tags: [Push Chain, Partnerships, Shared App Experience, Any Chain Tx, Universal Smart Contracts, Shared State Blockchain, Consumer Tx, Parallel Validators, Dynamic Sharding]
@@ -68,7 +68,7 @@ With shared settlement capabilities of Push Chain and zkLink - devs can build ap
 
 Push Chain introduces a new transaction type: **‘consumer transactions’**, where transaction ordering is not essential.
 
-Why consumer tx? 
+Why consumer tx?
 
 Two major challenges hinder the scalability of consumer web3 apps:
 

@@ -2,7 +2,7 @@
 slug: push-chain-joins-forces-with-plume
 title: 'Push Chain Joins Forces With Plume'
 authors: [push]
-image: './cover-image.gif'
+image: './cover-image.webp'
 description: 'Push Chain joins forces with Plume!'
 text: "Push Chain is set to revolutionize RWAfi by joining forces with Plume! Learn what this announcement means for Plume and Push Chain users, the use cases it unlocks, and how the collaboration benefits the greater Web3 ecosystem."
 tags: [Push Chain, Partnerships, Shared App Experience, Any Chain Tx, Universal Smart Contracts, Shared State Blockchain, Consumer Tx, Parallel Validators, Dynamic Sharding]
@@ -41,7 +41,7 @@ built to allow developers to create universal apps and act as a shared settlemen
 Plume native users can access RWAfi instruments on any other EVM and non-EVM chains without leaving the operational comfort offered by Plume.
 
 
-Via Push Chain’s shared settlement layer - Plume ecosystem users can easily lend, borrow and sell RWAs listed on Plume to any user belonging to any chain. 
+Via Push Chain’s shared settlement layer - Plume ecosystem users can easily lend, borrow and sell RWAs listed on Plume to any user belonging to any chain.
 For instance - A Plume native user can trade their tokenized assets with a Solana native user.
 
 **Easily onboard web2 normies**
@@ -64,26 +64,26 @@ RWA-compliant apps deployed on Push Chain and Plume can be accessed and used by 
 
 **Build super scalable and super fast apps**
 
-In addition to Push Chain’s transact from any chain capabilities - Push Chain provides super fast settlement with sub-second finality and theoretically, can be scaled infinitely due to its true scaling engine - that increases the write throughput (or TPS) linearly as the number of nodes grow - achieving **True scale.**  
+In addition to Push Chain’s transact from any chain capabilities - Push Chain provides super fast settlement with sub-second finality and theoretically, can be scaled infinitely due to its true scaling engine - that increases the write throughput (or TPS) linearly as the number of nodes grow - achieving **True scale.**
 
 [Learn more about Push Chain’s Innovations here](https://push.org/blog/innovations-by-push-chain/).
 
 
 ## 🔓 Usecase Unlock:
 
-**Unified RWA Vaults** 
+**Unified RWA Vaults**
 
 With Push Chain, RWA Staking aggregators like [Nest](https://nest.credit/) can provide aggregated yield vaults across all blockchain ecosystems. With chain abstraction and Universal Smart Contracts, non-native Plume users can stake in preferred stable coins which can then be settled for platform-specific stables.
 
-**Universal Prediction Markets** 
+**Universal Prediction Markets**
 
 Markets like [Cultured](https://cultured.finance/) can leverage Push Chain to create unified betting markets accessible from any chain, enable cross-chain market making and liquidity, and attract more users while offering better yield opportunities.
 
-**Unified data source** 
+**Unified data source**
 
 [Nexus](https://docs.plumenetwork.xyz/plume/nexus-data-highway/overview) (Plume's data highway) can leverage Push Chain to distribute RWA data across all chains, enable universal price discovery and power cross-chain prediction markets
 
-**Shared Lending RWAs** 
+**Shared Lending RWAs**
 
 RWA Apps on Plume like [Osprey](https://osprey.market/) and [MetaStreet](https://metastreet.xyz/) can leverage Push Chain to provide a unified shared state borrow/lending management encompassing all chains - enabling users from any chain to lend and borrow tokenized assets with ease.
 
