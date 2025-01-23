@@ -2,7 +2,7 @@
 slug: push-chain-joins-forces-with-aptos
 title: 'Push Chain Joins Forces With Aptos'
 authors: [push]
-image: './cover-image.gif'
+image: './cover-image.webp'
 description: 'Push Chain Joins Forces With Aptos'
 text: "Push Chain's road to testnet has kickstarted in full swing. Learn everything about our collaboration with Aptos - what it means for Push and Aptos users, the use cases it unlocks and more!"
 tags: [Push Chain, Partnerships, Shared App Experience, Any Chain Tx, Universal Smart Contracts, Shared State Blockchain, Consumer Tx, Parallel Validators, Dynamic Sharding]
@@ -15,7 +15,7 @@ tags: [Push Chain, Partnerships, Shared App Experience, Any Chain Tx, Universal 
 
 Push Chain is pumped to join forces with Aptos!
 
-This marks a giant leap in Push Chain’s march towards unifying web3 and enabling a shared universal app experience. 
+This marks a giant leap in Push Chain’s march towards unifying web3 and enabling a shared universal app experience.
 
 Learn what this announcement means for Aptos and Push Chain users, the use cases it unlocks, and how the collaboration benefits the greater Web3 ecosystem.
 
@@ -79,7 +79,7 @@ While the possibilities of this collaboration are limitless, here’s a quick li
 
 **Cross Chain - Shared Liquid Staking:** Liquid Staking Apps like [Amnis Finance](https://amnis.finance/) can leverage Push Chain to provide cross-chain liquid staking and achieve unified staking positions across Aptos and other blockchain ecosystems. Users from any chain can stake their native tokens and use their liquid staking derivatives across all supported protocols.
 
-**Shared Sate DEX:** - DEXs like [Cellana Finance](https://cellana.finance/) can leverage Push Chain to provide chain-agnostic Ve(3,3) governance and achieve unified liquidity management across multiple blockchain ecosystems. 
+**Shared Sate DEX:** - DEXs like [Cellana Finance](https://cellana.finance/) can leverage Push Chain to provide chain-agnostic Ve(3,3) governance and achieve unified liquidity management across multiple blockchain ecosystems.
 
 **Unified Lending & Borrowing Apps:** Users from any chain can lend and borrow, addressing fragmented liquidity and enabling applications that act as universal liquidity hubs—taking liquidity from one chain and providing it to another.
 
