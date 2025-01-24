@@ -20,6 +20,11 @@ import ChainFooter from '@site/src/components/Chain/ChainFooter';
 export default function NotFoundContent({ className }: Props): ReactElement {
   const location = useLocation();
   const baseURL = useSiteBaseUrl();
+  // Normalize the pathname by removing the "push-website/pr-preview/pr-XXX" prefix
+  const normalizedPathname = location?.pathname.startsWith('/push-website')
+    ? location?.pathname.replace(/^\/push-website\/pr-preview\/pr-\d+/, '')
+    : location.pathname;
+
   const oldDocsUrls = [
     '/docs/chat',
     '/docs/notifications',
@@ -43,7 +48,7 @@ export default function NotFoundContent({ className }: Props): ReactElement {
   // Redirect logic for old docs pages
   useEffect(() => {
     if (isOldDocsPage) {
-      const externalUrl = `https://comms.push.org${location.pathname}`;
+      const externalUrl = `https://comms.push.org${normalizedPathname}`;
       window.location.href = externalUrl; // Redirect to external site
     }
   }, [isOldDocsPage, location.pathname]);
