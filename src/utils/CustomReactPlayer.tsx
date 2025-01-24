@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 import ReactPlayer from 'react-player';
 
@@ -26,13 +26,17 @@ const CustomReactPlayer: React.FC<CustomReactPlayerProps> = ({
   playContinuously = false, // Default is false
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const playerRef = useRef<ReactPlayer | null>(null); // Create a ref for ReactPlayer
 
   const handleMouseEnter = () => {
     if (!playContinuously) setIsPlaying(true);
   };
 
   const handleMouseLeave = () => {
-    if (!playContinuously) setIsPlaying(false);
+    if (!playContinuously) {
+      setIsPlaying(false);
+      playerRef.current?.seekTo(0); // Reset the video to the beginning
+    }
   };
 
   return (
@@ -41,6 +45,7 @@ const CustomReactPlayer: React.FC<CustomReactPlayerProps> = ({
       onMouseLeave={handleMouseLeave}
     >
       <ReactPlayer
+        ref={playerRef} // Attach the ref to ReactPlayer
         url={url}
         playing={playContinuously || isPlaying}
         loop={loop}
