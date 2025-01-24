@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[1297],{486167:e=>{e.exports=JSON.parse('{"label":"Erc6551","permalink":"/push-website/pr-preview/pr-986/blog/tags/erc-6551","allTagsPath":"/push-website/pr-preview/pr-986/blog/tags","count":1,"unlisted":false}')}}]);
