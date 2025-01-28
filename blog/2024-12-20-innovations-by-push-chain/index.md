@@ -41,7 +41,7 @@ Key Innovations and Superpowers of Push Chain include:
 
 → 3. **Fee Abstraction**
 
-→ 4. **Wallet abstractio**
+→ 4. **Wallet Abstraction**
 
 → 5. **Consumer (Unordered) and Traditional (Ordered) Transactions**
 
