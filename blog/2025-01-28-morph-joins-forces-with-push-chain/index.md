@@ -19,7 +19,7 @@ Learn what this announcement means for Morph and Push Chain users, the use cases
 
 ## What is Morph?
 
-[Morph](https://www.morphl2.io/) is a consumer app focussed Ethereum Layer 2 solution that combines the best of Optimistic and ZK Rollups to provide a secure and super fast consumer experience.
+[Morph](https://www.morphl2.io/) is a consumer app focused Ethereum Layer 2 solution that combines the best of Optimistic and ZK Rollups to provide a secure and super fast consumer experience.
 
 With over 5M txns to date, Morph is rallying towards becoming the global consumer layer for empowering everyday on-chain usage for every internet user.
 
