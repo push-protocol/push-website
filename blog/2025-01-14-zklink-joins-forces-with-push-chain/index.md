@@ -5,7 +5,18 @@ authors: [push]
 image: './cover-image.webp'
 description: 'Push Chain joins forces with zkLink!'
 text: "Push Chain's road to testnet has kickstarted in full swing.  Learn everything about our collaboration with zkLink - what it means for Push and zkLink users, the use cases it unlocks and more!"
-tags: [Push Chain, Partnerships, Shared App Experience, Any Chain Tx, Universal Smart Contracts, Shared State Blockchain, Consumer Tx, Parallel Validators, Dynamic Sharding]
+tags:
+  [
+    Push Chain,
+    Partnerships,
+    Shared App Experience,
+    Any Chain Tx,
+    Universal Smart Contracts,
+    Shared State Blockchain,
+    Consumer Tx,
+    Parallel Validators,
+    Dynamic Sharding,
+  ]
 ---
 
 ![Cover image of Push Chain Join forces with zkLink ](./cover-image.webp)
@@ -18,7 +29,7 @@ A significant step for propelling our mission of enabling any user from any app 
 
 Learn what this announcement means for zkLink and Push Chain users, the use cases it unlocks, and how the collaboration benefits the greater Web3 ecosystem.
 
-## What is  zkLink?
+## What is zkLink?
 
 [zkLink](https://zk.link/) is the world’s first ZK-powered Layer 3 solution that aggregates all EVM-compatible networks.
 
@@ -30,14 +41,12 @@ To date, zkLink Nova boasts over 26 Million Transactions with 1.3 million Unique
 
 **[zkLink X](https://zk.link/X)**: A highly customizable and secure application-specific rollup, optimized for trading-focused applications.
 
-
 ## What is Push Chain?
 
 Push Chain is a shared state blockchain for universal apps. It is a Proof of Stake (PoS) chain
 built to allow developers to create universal apps and act as a shared settlement layer for multiple L1s, L2s, and L3s enabling transactions from any chain - any app and any user.
 
 [Explore more about Push Chain here](https://push.org)
-
 
 ## Bringing zkLink to Push Chain
 
@@ -49,14 +58,11 @@ Push Chain extends the aggregation capabilities of zkLink enabling zkLink users 
 
 No need to create new wallets, learn and follow complex bridging steps- simply utilize Push Chain to seamlessly interplay between zkLink and the non-evm ecosystem
 
-
 **Unified Experience**
 
 Since zkLink aggregates Ethereum networks and serves as a unified point of access, users from non-evm space can easily leverage Push Chain to explore and interact with EVM space- abstracting away all the manual complexities traditionally faced by non-EVM users when transacting on EVM chains.
 
 All of the above with the advantage of - instant finality, security and superfast execution.
-
-
 
 ## 👷‍♂️ What does this mean for builders?
 
@@ -79,9 +85,6 @@ This is where Push Chain’s Consumer Tx feature enables non-financial and consu
 
 [Learn more about Push Chain’s Innovations here](https://push.org/blog/innovations-by-push-chain/)
 
-
-
-
 ## 🔓 Use case unlock:
 
 **Chain Agnostic AI Agents** - Push Chain’s universal shared state and ZKLink’s [application abstraction](https://blog.zk.link/zklink-research-roadmap-ai-agents-in-application-abstraction-fff297ef4577) pave the way for a new generation of chain-agnostic AI agents. These agents can perform autonomous operations in a borderless manner - unlocking a wide variety of financial, mixed financial, and non-financial use cases.
@@ -92,8 +95,6 @@ This is where Push Chain’s Consumer Tx feature enables non-financial and consu
 
 **Universal Prediction Markets** - Where users from zkLink and other chains can collectively speculate on real-life events. Markets can aggregate liquidity from all chains simultaneously bringing more user traction and better yield opportunities.
 
-
-
 ## **🌌** What does this mean for Web3?
 
 **Unifying experiences by bringing users together.**
@@ -102,7 +103,7 @@ Push Chain isn’t here to replace networks or compete with any; instead, it aim
 
 ## Next Steps
 
-1. Follow [@pushprotocol](https://x.com/pushprotocol) on X to get the latest updates about Push Chain
+1. Follow [@pushprotocol](https://x.com/PushChain) on X to get the latest updates about Push Chain
 2. Check out the [Push Chain Whitepaper](https://whitepaper.push.org/) for a detailed overview of the vision and the underlying technicalities.
 3. Visit the [Push Chain Website](https://push.org/chain) to find a one-pager explanation of the vision.
 4. [Push Chain Devnet](https://scan.push.org/?) is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.

@@ -99,7 +99,7 @@ export const TokenFaucet = ({
             background={isFollowed ? '#FFF' : '#25AAF5'}
             border='1px solid #25AAF5'
             padding='6.5px 8.5px'
-            onClick={() => openLink('https://twitter.com/pushprotocol')}
+            onClick={() => openLink('https://x.com/PushChain')}
           >
             {!isPosted && <X />}
             {isPosted && <XCompleted />}

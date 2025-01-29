@@ -1,11 +1,24 @@
 ---
 slug: push-year-in-review-2024
 title: 'Push Year In Review 2024'
-authors: [harsh,richa]
+authors: [harsh, richa]
 image: './cover-image.webp'
 description: 'Push Year In Review 2024'
 text: '2024 was a Push-tastic year for Push - We hit 100 million notifications, integrated supercool projects, launched Push Chain and so much more. Time for Push Rewind - 2024!'
-tags: [Push Chain, Updates, Insights, Year In Review, Shared App Experience, Any Chain Tx, Universal Smart Contracts, Shared State Blockchain, Consumer Tx, Parallel Validators, Dynamic Sharding]
+tags:
+  [
+    Push Chain,
+    Updates,
+    Insights,
+    Year In Review,
+    Shared App Experience,
+    Any Chain Tx,
+    Universal Smart Contracts,
+    Shared State Blockchain,
+    Consumer Tx,
+    Parallel Validators,
+    Dynamic Sharding,
+  ]
 ---
 
 ![Cover image of Push Year In Review 2024](./cover-image.webp)
@@ -21,7 +34,7 @@ We crossed multiple milestones with Push Notifications Protocol and unveiled the
 Special thanks to all our Push Communications Protocol users for supporting our journey and making Push the de-facto communication layer for web3!
 
 Let’s take a quick look at ‘Push Rewind 2024’
-*Don't miss the final reel (We have a major alpha reveal!)*
+_Don't miss the final reel (We have a major alpha reveal!)_
 
 import ReactPlayer from "react-player";
 import { ABlock } from "@site/src/css/SharedStyling";
@@ -30,13 +43,13 @@ import { ABlock } from "@site/src/css/SharedStyling";
 
 We finally achieved one of our most ambitious goals of sending over **100M** notifications to date!!
 
-As of year-end - Push has sent over **138+ Million notifications to its 300k+ subscribers**. 
+As of year-end - Push has sent over **138+ Million notifications to its 300k+ subscribers**.
 
 That’s almost **3x** the number of notifications sent and double the number of [subscribers from last year](https://push.org/blog/push-roadmap-recap-2023/) 😱.
 
 ![subscribers gained in 2024](./image1.webp)
 
-The Push ecosystem has expanded to **500 amazing projects**, including - [QuickSwap](https://app.push.org/channels/0xf198eBCc8dB86F707bAdDdBa236aB5b619c59D3c), [HyperLiquid](https://app.push.org/channels/0xf1A1542Ca902AE861B59bffE77D92E8CD76146f1),[Revoke](https://app.push.org/channels/0x65bB67c2416186aE3107F7c2C6728b272a579e3d), [ethOS](https://x.com/pushprotocol/status/1859145460939628803) and many more.
+The Push ecosystem has expanded to **500 amazing projects**, including - [QuickSwap](https://app.push.org/channels/0xf198eBCc8dB86F707bAdDdBa236aB5b619c59D3c), [HyperLiquid](https://app.push.org/channels/0xf1A1542Ca902AE861B59bffE77D92E8CD76146f1),[Revoke](https://app.push.org/channels/0x65bB67c2416186aE3107F7c2C6728b272a579e3d), [ethOS](https://x.com/PushChain/status/1859145460939628803) and many more.
 
 ## Highlights
 
@@ -47,7 +60,6 @@ The Push ecosystem has expanded to **500 amazing projects**, including - [QuickS
 We kickstarted Phase 1 of [Push Points Program](https://app.push.org/points?utm_source=push_blog&utm_medium=referral&utm_campaign=Push+Points&utm_content=blog_post) - a gamified reputation system, aimed at giving back to our Push Fam, ecosystem communities and devs who have supported Push every step of the way and helped us reach greater heights.
 
 Within three months of its launch, the program distributed millions of points to thousands of users for completing various activities centred around Push Communications Protocol, its ecosystem, and $PUSH staking.
-
 
 <ABlock href='https://app.push.org/points' title="Push Points Program Link">Push Points Program S1 concludes soon - Explore Now!</ABlock>
 
@@ -76,14 +88,12 @@ Extending a step towards seamless cross-chain communication and UX, we launched 
 
 <ABlock href='https://push.org/blog/cross-chain-requests-pre-pip/' title="Cross Chain Requests ">Click here to learn how we achieve cross-chain requests</ABlock>
 
-
 ## 4. Notification and Channel Categories 🗂️
 
 Exploring over 500+ channels on Push can be a time-consuming adventure.
 We launched the channel category feature so that you can better track and find the channel of your choice!
 
 <ABlock href='https://app.push.org/channels?chain=1&category=All' title="Cross Chain Requests ">Explore over 500 channels and 13 channel categories today!</ABlock>
-
 
 ## 5. Added open Frames, Reaction and Reply to Chat 💬
 
@@ -97,7 +107,6 @@ In addition to frames, we added two of the most wildly used web2 chat features -
 Especially helpful in group and conditionally gated group chats where a user needs to revert to a specific user's conversation.
 
 <ABlock href='https://app.push.org/chat' title="Cross Chain Requests ">Start chatting using your wallets today!</ABlock>
-
 
 ## 6. Push WEB3 App Gets Better!! ⚡️
 
@@ -134,7 +143,7 @@ No more repeated logins and wallet signings - Just a one-click access to your fa
 
 ### Redesigned Channel Dashboard:
 
-With the launch of the channel categories feature, we also revamped our Channel Dashboard - organizing over 500+ channels across 13 categories including Defi, media, DAO and many more. 
+With the launch of the channel categories feature, we also revamped our Channel Dashboard - organizing over 500+ channels across 13 categories including Defi, media, DAO and many more.
 Users can now filter and explore channels based on specific networks, such as [DeFi channels on Arbitrum](https://app.push.org/channels?chain=1&category=DeFi), [Media channels on Polygon](https://app.push.org/channels?chain=1&category=Media), and beyond—making channel discovery more intuitive and personalized.
 
 <!--  -->
@@ -159,26 +168,25 @@ Meet the Push Analytics Dashboard - A comprehensive source of real-time data, tr
 
 <ABlock href='https://push.network/dashboard' title="Push Communications Protocol Dashboard"> Checkout Push Communications Protocol’s Analytics here</ABlock>
 
-
 User activity and footprint on Push’s landing page have been growing immensely, every passing day!
 
 To ensure any unique (new) as well as seasoned web3 user understands the protocol’s mission, features and offerings - we’ve taken our website to the next level! This upgrade spans both Push Communications Protocol and Push Chain.
 
-*If you’ve read so far: a. you’re the best! b. more about Push Chain, in our final section 🏁*
+_If you’ve read so far: a. you’re the best! b. more about Push Chain, in our final section 🏁_
 
 <!--  -->
 
 ## 9. Launched Wallet to Email / Telegram Notifications 📧
 
-After tapping into over 300,000 wallets and sending over 100 million notifications we thought - ***how about sending on-chain notifications directly to your email or telegram?***
+After tapping into over 300,000 wallets and sending over 100 million notifications we thought - **_how about sending on-chain notifications directly to your email or telegram?_**
 
 This helps Push Communications to reach billions of everyday Email and TG users while paving the way for much smoother onboarding for web2 normies and budding web2 users.
 
-Now, users can receive web3 notifications from over 500 DApps straight to their Telegram or email accounts - no need to connect a wallet or endure various friction points while entering the web3 space. Simply, connect your TG and Email and receive notifs. 
+Now, users can receive web3 notifications from over 500 DApps straight to their Telegram or email accounts - no need to connect a wallet or endure various friction points while entering the web3 space. Simply, connect your TG and Email and receive notifs.
 
 It's that easy!
 
-<ABlock href='https://app.push.org/points/activity' title="Push Notifications on Telegram and Email">  Connect your Tg and Email to receive instant alerts!</ABlock>
+<ABlock href='https://app.push.org/points/activity' title="Push Notifications on Telegram and Email"> Connect your Tg and Email to receive instant alerts!</ABlock>
 
 <!--  -->
 
@@ -198,8 +206,7 @@ Due to Metamasks limitations for supporting communications across its mobile app
 
 2024 was a year filled with incredible integrations. The Push Ecosystem has expanded to 500+ Projects!
 
-Notable mentions include - [Hyperliquid](https://x.com/pushprotocol/status/1851625233654153716), [QuickSwap](https://x.com/pushprotocol/status/1826957066520383638),[Cartesi](https://x.com/pushprotocol/status/1844008819954970813), [Revoke](https://x.com/pushprotocol/status/1842198518418612357) and many more.
-
+Notable mentions include - [Hyperliquid](https://x.com/PushChain/status/1851625233654153716), [QuickSwap](https://x.com/PushChain/status/1826957066520383638),[Cartesi](https://x.com/PushChain/status/1844008819954970813), [Revoke](https://x.com/PushChain/status/1842198518418612357) and many more.
 
 <ABlock href='https://push.org/frens/' title="Frens Of Push"> Explore the Push Ecosystem here </ABlock>
 
@@ -209,11 +216,10 @@ Notable mentions include - [Hyperliquid](https://x.com/pushprotocol/status/18516
 
 Push DAO witnessed extraordinary exposure and participation in 2024.
 
-With hundreds of new participants, over 50 regular contributors, global exposure, quality grantees, and tremendous support from the Push Fam community, we've made exceptional progress. 
+With hundreds of new participants, over 50 regular contributors, global exposure, quality grantees, and tremendous support from the Push Fam community, we've made exceptional progress.
 
-In June 2024, we launched Push DAO V2 to advance our journey toward progressive decentralization. 
+In June 2024, we launched Push DAO V2 to advance our journey toward progressive decentralization.
 This new framework, supported by the DAO Council, streamlines engagement for contributors and builders.
-
 
 The launch of our **Push Grants Program V3** empowered both, early-stage and established projects building innovative social, gaming, and mobile apps. This initiative has driven impressive results—increasing grant applications tenfold and multiplying our active grantees five times over since the beginning of the year.
 
@@ -222,7 +228,7 @@ Our Push DAO BD SubDAO Program now offers rewards ranging from **$500–$1500** 
 Our revamped ambassador programs have reached new heights of influence, establishing a student hub at **Texas Tech University** and forming connections with event organizers across more than four continents.
 
 As we prepare to launch Push Chain, our DAO stands ready to make a significant impact on the ecosystem and beyond. Our core team brings together professionals with cross-industry expertise, while our current and prospective grantees span key industry sectors.
-Having achieved extraordinary growth in less than a year, we're positioned for even greater achievements in 2025. 
+Having achieved extraordinary growth in less than a year, we're positioned for even greater achievements in 2025.
 
 With our coordinated event and marketing strategy for the launch in place, you can expect to see the DAO everywhere next year, driving the chain's progress.
 
@@ -232,13 +238,9 @@ To continue our journey of Push DAO towards progressive decentralisation we intr
 
 ![Push Grants Council](./image8.webp)
 
-<ABlock href='https://gov.push.org/' title="Push Governance Forum">  Explore Push Governance Forum </ABlock>
+<ABlock href='https://gov.push.org/' title="Push Governance Forum"> Explore Push Governance Forum </ABlock>
 
-
-
-
-*And now - time for the special ALPHA!*
-
+_And now - time for the special ALPHA!_
 
 <!--  -->
 
@@ -250,14 +252,14 @@ This realization inspired the creation of [Push Chain](https://push.org/chain/) 
 
 ### Governance
 
-The Push Chain proposal received an overwhelming response at the Push Gov Forum with over 92% acceptance. 
+The Push Chain proposal received an overwhelming response at the Push Gov Forum with over 92% acceptance.
 The proposal then went on to SnapShot for formal voting - and we’re super stoked to announce that the community heavily participated in showing their voice and [passing the massive majority!](https://snapshot.box/#/s:pushdao.eth/proposal/0xa4a301c9a346356326d59e425245459d9fbde71b02aabc49a4ce191f0504f66a) Indicating a positive alignment with the team’s and the community’s vision.
 
-
 ### Push Chain WhitePaper
+
 If you're curious about Push Chain's philosophical and technical foundations and want to take a detailed look, dive into the [Push Chain Whitepaper](https://whitepaper.push.org/).
 
-The Whitepaper constitutes everything you need to know about  Push Chain’s Vision, Mission and all the underlying technical innovations that solve the current hardships in Web3.
+The Whitepaper constitutes everything you need to know about Push Chain’s Vision, Mission and all the underlying technical innovations that solve the current hardships in Web3.
 
 ### Push Chain LitePaper
 
@@ -268,13 +270,16 @@ Want a quick tour of Push Chain - And learn about the problem it solves, key inn
 ## 14. Launched Push Chain Devnet + Push Scan + Push Chain Website 🌐
 
 ### Push Chain Devnet
+
 We launched the **Push Chain Devnet**, offering an exciting sneak peek into transactions confirmed with sub-second finality - all while interacting with the chain in a **chain-and wallet-agnostic** manner. 🫣
 
 ### Push Scan
+
 Also, say hello to [Push Scan](https://scan.push.org/home) 👋 - A comprehensive explorer to view and analyze all transactions on the Push Chain.
 
 ### Push Website
-Alongside, we unveiled the [Push Chain Website](https://push.org/chain/) -  your go-to hub for all things Push Chain! Whether you’re looking for insights into its vision, key innovations, ecosystem, or developer tooling, the website acts as your gateway to the **Universe of Universal Apps.**
+
+Alongside, we unveiled the [Push Chain Website](https://push.org/chain/) - your go-to hub for all things Push Chain! Whether you’re looking for insights into its vision, key innovations, ecosystem, or developer tooling, the website acts as your gateway to the **Universe of Universal Apps.**
 
 ## 15. Push Nodes are here!
 
@@ -290,23 +295,12 @@ Push Chain splits the nodes into three types - Validator, Storage and Archival a
 
 **Archival nodes** - Maintain a full snapshot of all transactions on the network.
 
-
-Push Chain also introduced  **Node Registry Smart Contracts** a key innovation that : 
-    - Registers nodes.
-    - Manage dynamic sharding.
-    - Set replication factors.
-    - Enable parallel validators that scale dynamically with the number of nodes in the network and thus achieve **True Scale**!
-
-
+Push Chain also introduced **Node Registry Smart Contracts** a key innovation that : - Registers nodes. - Manage dynamic sharding. - Set replication factors. - Enable parallel validators that scale dynamically with the number of nodes in the network and thus achieve **True Scale**!
 
 <ABlock href='https://push.org/blog/innovations-by-push-chain/' title="Push Governance Forum"> Innovations by Push Chain </ABlock>
 
-
-
-
-
 **Want a trial run and learn more about Push Nodes?**
-Checkout Push Nodes GitHub Repos: 
+Checkout Push Nodes GitHub Repos:
 
 👉 [Run Validator Node](https://github.com/push-protocol/push-vnode)
 
@@ -320,12 +314,9 @@ Push Chain incorporates **Wallet Abstraction to diminish the growing divide in o
 
 ### Push Wallet
 
-We were thrilled to introduce the [Push Wallet](https://wallet.push.org/)—a secure, user-friendly, and interoperable key management solution designed for the Push unified network. 
+We were thrilled to introduce the [Push Wallet](https://wallet.push.org/)—a secure, user-friendly, and interoperable key management solution designed for the Push unified network.
 
-Push Wallet offers:
-    - A flexible and embeddable wallet experience tailored to individual user journeys.
-    - Web2-style sign-ins.
-    - Seamless connectivity, interaction, and transactions for wallets from any chain.
+Push Wallet offers: - A flexible and embeddable wallet experience tailored to individual user journeys. - Web2-style sign-ins. - Seamless connectivity, interaction, and transactions for wallets from any chain.
 
 <ABlock href='https://wallet.push.org/' title="Push Governance Forum"> Try Push Wallet</ABlock>
 
@@ -338,12 +329,8 @@ To offer an early glimpse into transacting on Push Chain, we launched the Push S
 
 <ABlock href='https://simulate.push.org/' title="Simulate Push"> Experience Push Chain with Simulate Transactions</ABlock>
 
-
-
-
-
-***There's so much more to reveal and even more to ship! 🚀*** 
-***Can't wait for Q1 2025.***
+**_There's so much more to reveal and even more to ship! 🚀_**
+**_Can't wait for Q1 2025._**
 
 The entire Push Team is equally proud and excited to bring Push Chain to the public!
 
@@ -362,20 +349,19 @@ The boot camp gained a global outreach with over **60,000** impressions and unme
 
 → **More SDK Upgrades** - We further enhanced the Push SDK by optimizing the code to align with the new design system, added support for **ERC1155 Gated Chat Groups**, launched the **Push SDK Demo React app**, ensured **compatibility with the Base chain**, and integrated **SpaceID’s** package to resolve .arb and .bnb domains.
 
-
-→ **Say hello to the Push Alpha Community** - We created an exclusive community for long-time Push Supporters and various contest winners -  called [Push Alpha Community](https://push.org/blog/how-to-join-the-push-alpha-community/) - The Alpha Access NFT holders gain exclusive access to alpha-only events, campaigns, airdrops, and partner surprises. 
+→ **Say hello to the Push Alpha Community** - We created an exclusive community for long-time Push Supporters and various contest winners - called [Push Alpha Community](https://push.org/blog/how-to-join-the-push-alpha-community/) - The Alpha Access NFT holders gain exclusive access to alpha-only events, campaigns, airdrops, and partner surprises.
 
 → Launched exclusive [domain-gated group chats](https://push.org/blog/announcing-group-chat-from-push-unstoppable/) for 3.8M+ Unstoppable Domain users
 
 → Revamped the channel creation process for a more intuitive UX.
 
-→ Made tons of improvements to our Developer Docs to make your building journey with Push Protocol truly *Pushtastic!* 🚀
+→ Made tons of improvements to our Developer Docs to make your building journey with Push Protocol truly _Pushtastic!_ 🚀
 
 → A plethora of podcast appearances including [Hipther Podcast Show](https://www.youtube.com/watch?v=zpqP_b-ch1A), [Charlie Shrem Podcast](https://www.charlieshrem.com/pushing-crypto-to-the-edge-redefining-communication-and-security-with-ian-leviness-and-pascal-gauth/) and many more.
 
-→ Participated in major hackathons, conferences and sponsored bounties around the globe including, [Eth CC Brussels](https://x.com/pushprotocol/status/1811046959353880785), Token 2049 Singapore & Dubai, [ETH Bangkok](https://x.com/pushprotocol/status/1857365249239679134), [Eth Safari](https://x.com/pushprotocol/status/1846597335859540055), [Invisible Gardens](https://x.com/pushprotocol/status/1840669685177557334), [Binance Blockchain Week(Dubai)](https://x.com/pushprotocol/status/1849709744002630131), India Blockchain Week.
+→ Participated in major hackathons, conferences and sponsored bounties around the globe including, [Eth CC Brussels](https://x.com/PushChain/status/1811046959353880785), Token 2049 Singapore & Dubai, [ETH Bangkok](https://x.com/PushChain/status/1857365249239679134), [Eth Safari](https://x.com/PushChain/status/1846597335859540055), [Invisible Gardens](https://x.com/PushChain/status/1840669685177557334), [Binance Blockchain Week(Dubai)](https://x.com/PushChain/status/1849709744002630131), India Blockchain Week.
 
-→ Kickstarted [Write for Push](https://x.com/pushprotocol/status/1826313152176251142) initiative - aimed at enabling anyone in the Push community to contribute to the protocol’s blog repository and help shape its voice.
+→ Kickstarted [Write for Push](https://x.com/PushChain/status/1826313152176251142) initiative - aimed at enabling anyone in the Push community to contribute to the protocol’s blog repository and help shape its voice.
 
 Before looking at what's ahead this coming year, we want to take a moment to thank the entire Push team, all our partners, investors and builders. 2024 was an amazing year for Push and we are excited to share what we have planned for 2025! Stay tuned. With loads of love ❤️ from the Push team!
 

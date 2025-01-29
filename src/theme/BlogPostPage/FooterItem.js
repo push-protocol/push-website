@@ -149,7 +149,7 @@ const FooterItem = () => {
         </ResponsiveH2>
 
         {/* <Anchor
-                  // href="https://twitter.com/pushprotocol"
+                  // href="https://x.com/PushChain"
                   title="Developer Docs"
                   target="_blank"
                   bg="#DD44B9"
@@ -204,7 +204,7 @@ const FooterItem = () => {
 
       <KPIBanner>
         <BannerItem
-          onClick={() => OpenURL('https://twitter.com/pushprotocol')}
+          onClick={() => OpenURL('https://x.com/PushChain')}
           gap='18px'
           className='kpiItem'
         >
