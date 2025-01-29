@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[36624],{720619:e=>{e.exports=JSON.parse('{"label":"Polkastarter","permalink":"/push-website/pr-preview/pr-989/blog/tags/polkastarter","allTagsPath":"/push-website/pr-preview/pr-989/blog/tags","count":4,"unlisted":false}')}}]);
