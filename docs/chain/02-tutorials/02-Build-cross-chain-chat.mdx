@@ -25,19 +25,19 @@ A chat interface is often more dynamic than an email-based approach. While email
 You’ll need to install (or already have) the following libraries in your project:
 
 ```bash
-npm install @pushprotocol/push-chain viem
+npm install @pushchain/devnet viem
 ```
 
 **What’s Included?**
 
-- `@pushprotocol/push-chain`: Gives you the methods for initializing, signing, and sending transactions over Push Chain.
+- `@pushchain/devnet`: Gives you the methods for initializing, signing, and sending transactions over Push Chain.
 - `viem`: Helps manage private keys and produce signatures on Ethereum.
 
 Import installed dependencies:
 
 ```typescript
 // Import Push Chain SDK
-import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
+import { PushChain, CONSTANTS } from '@pushchain/devnet';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';

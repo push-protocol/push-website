@@ -28,19 +28,19 @@ We'll cover:
 To get started, install the required dependencies:
 
 ```shell
-npm install @pushprotocol/push-chain viem
+npm install @pushchain/devnet viem
 ```
 
 **Why These Libraries?**
 
--	`@pushprotocol/push-chain`: Core SDK for interacting with Push Chain.
+-	`@pushchain/devnet`: Core SDK for interacting with Push Chain.
 -	`viem`: Utilities for Ethereum key management and signing.
 
 Import installed dependencies:
 
 ```typescript
 // Import Push Chain SDK
-import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
+import { PushChain, CONSTANTS } from '@pushchain/devnet';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';
@@ -122,7 +122,7 @@ for (const blocks of transactions.blocks) {
 ## Complete Example Code
 
 ```typescript
-import { PushChain, CONSTANTS } from '@pushprotocol/push-chain';
+import { PushChain, CONSTANTS } from '@pushchain/devnet';
 import { hexToBytes } from 'viem';
 import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
 
