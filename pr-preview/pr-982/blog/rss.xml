@@ -4,10 +4,64 @@
         <title>Push | The Communication Protocol of Web3 Blog</title>
         <link>https://push-protocol.github.io/push-website/pr-preview/pr-982/blog</link>
         <description>Push | The Communication Protocol of Web3 Blog</description>
-        <lastBuildDate>Thu, 23 Jan 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 28 Jan 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Push Chain Joins Forces With Morph]]></title>
+            <link>https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-morph</link>
+            <guid>https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-morph</guid>
+            <pubDate>Tue, 28 Jan 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[Push Chain Joins Forces With Morph]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover image of Push Chain Join Forces With Morph " src="https://push-protocol.github.io/push-website/pr-preview/pr-982/assets/images/cover-image-187da463e3ccd5f98628e886b390a7cd.webp" width="1600" height="900" class="img_ev3q"></p>
+<p>Push Chain is about to facelift the consumer app experience by teaming up with Morph L2!</p>
+<p>Learn what this announcement means for Morph and Push Chain users, the use cases it unlocks, and how the collaboration benefits the greater Web3 ecosystem.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-morph">What is Morph?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-morph#what-is-morph" class="hash-link" aria-label="Direct link to What is Morph?" title="Direct link to What is Morph?">​</a></h2>
+<p><a href="https://www.morphl2.io/" target="_blank" rel="noopener noreferrer">Morph</a> is a consumer app focused Ethereum Layer 2 solution that combines the best of Optimistic and ZK Rollups to provide a secure and super fast consumer experience.</p>
+<p>With over 5M txns to date, Morph is rallying towards becoming the global consumer layer for empowering everyday on-chain usage for every internet user.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-push">What is Push?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-morph#what-is-push" class="hash-link" aria-label="Direct link to What is Push?" title="Direct link to What is Push?">​</a></h2>
+<p>Push Chain is a shared state blockchain for universal apps. It is a Proof of Stake (PoS) chain
+built to allow developers to create universal apps and act as a shared settlement layer for multiple L1s, L2s, and L3s enabling transactions from any chain - any app and any user.</p>
+<p><a href="https://push.org/chain/" target="_blank" rel="noopener noreferrer">Explore more about Push Chain here</a></p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="bringing-morph-to-push-chain">Bringing Morph to Push Chain<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-morph#bringing-morph-to-push-chain" class="hash-link" aria-label="Direct link to Bringing Morph to Push Chain" title="Direct link to Bringing Morph to Push Chain">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-does-this-mean-for-morph-and-push-chain-users">👥&nbsp;What does this mean for Morph and Push Chain Users?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-morph#what-does-this-mean-for-morph-and-push-chain-users" class="hash-link" aria-label="Direct link to 👥&nbsp;What does this mean for Morph and Push Chain Users?" title="Direct link to 👥&nbsp;What does this mean for Morph and Push Chain Users?">​</a></h2>
+<p><strong>Borderless consumer App experience</strong></p>
+<p>Morph users can expand their on-chain usage beyond EVMs into Solana and other nonEVMs without ever leaving Morph’s ecosystem and UX comfort.</p>
+<p><strong>Bring web2 normies to consumer crypto</strong></p>
+<p>With Push Chain’s wallet and fee abstraction - everyday internet users (web2 users) can easily experience Morph’s consumer crypto ecosystem with minimal UX overhead - simply by using their social accounts like Google, Apple, Github, X and Discord.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="️what-does-this-mean-for-builders">👷‍♂️&nbsp;What does this mean for builders?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-morph#%EF%B8%8Fwhat-does-this-mean-for-builders" class="hash-link" aria-label="Direct link to 👷‍♂️&nbsp;What does this mean for builders?" title="Direct link to 👷‍♂️&nbsp;What does this mean for builders?">​</a></h2>
+<p><strong>Build hyper scalable universal consumer apps</strong></p>
+<p>Push Chain empowers developers to build truly universal applications that work seamlessly across all blockchains.</p>
+<p>Push unlocks hyper-scalability for consumer and mixed consumer apps that have potential of handling millions of daily users with its innovative '<strong>Consumer Transactions</strong>' feature, enabling stateless and unordered processing of non-value transfers like social interactions, content sharing, and game actions.</p>
+<p><a href="https://push.org/blog/innovations-by-push-chain/" target="_blank" rel="noopener noreferrer">Learn more about Push Chain’s Innovations here</a>.</p>
+<p><strong>Read from any chain using shared settlement</strong></p>
+<p>Push Chain's shared settlement layer provides a powerful foundation for apps on Morph to unlock shaped universal experiences with its ability to read state across any blockchain through its shared settlement layer. This means developers can focus on building engaging user experiences instead of managing complex cross-chain interactions.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="usecase-unlock">🔓&nbsp;Usecase Unlock:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-morph#usecase-unlock" class="hash-link" aria-label="Direct link to 🔓&nbsp;Usecase Unlock:" title="Direct link to 🔓&nbsp;Usecase Unlock:">​</a></h2>
+<p><strong>Universal ZK AI agents</strong></p>
+<p>Privacy centric agentic networks like <a href="https://zypher.network/" target="_blank" rel="noopener noreferrer">Zypher</a> can leverage Push Chain to expand its AI agents reach to any blockchain. Ensuring a Universal, secure and verifiable execution without exposing sensitive data.</p>
+<p><strong>Universal Predication Markets</strong></p>
+<p>Prediction markets like <a href="https://soccersm.ai/ai-predictions" target="_blank" rel="noopener noreferrer">Soccersm</a> can not only house users from Morph but also from any other chains to collectively speculate on real-life events. Markets can aggregate liquidity from all chains simultaneously bringing more user traction and better yield opportunities.</p>
+<p><strong>Universally Accessible token launchpads</strong> - Like <a href="https://muffun.fun/board" target="_blank" rel="noopener noreferrer">Muffun</a> on Morph, can utilize the Push Chain and Push Wallet to enable users from any chain (EVM or non EVM) to effortlessly launch tokens on Morph without leaving their existing wallet systems or manually bridge funds.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="next-steps">Next Steps<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-morph#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
+<ol>
+<li>Follow <a href="https://x.com/PushChain" target="_blank" rel="noopener noreferrer">@pushprotocol on X</a> to get the latest updates about Push Chain</li>
+<li>Check out the&nbsp;<a href="https://whitepaper.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Whitepaper</a> for a detailed overview of the vision and the underlying technicalities.</li>
+<li>Visit the&nbsp;<a href="https://push.org/chain" target="_blank" rel="noopener noreferrer">Push Chain Website</a>&nbsp;to find a one-pager explanation of the vision.</li>
+<li><a href="https://scan.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Devnet</a>&nbsp;is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.</li>
+<li><a href="https://simulate.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Simulate Tx</a>&nbsp;already provides a way for everyone to send tx from any chain using wallet abstraction.</li>
+<li>For more questions join <a href="https://discord.com/invite/pushprotocol" target="_blank" rel="noopener noreferrer">Push Discord</a>. Our team would be glad to help you!</li>
+</ol>]]></content:encoded>
+            <category>Push Chain</category>
+            <category>Partnerships</category>
+            <category>Shared App Experience</category>
+            <category>Any Chain Tx</category>
+            <category>Universal Smart Contracts</category>
+            <category>Shared State Blockchain</category>
+            <category>Consumer Tx</category>
+            <category>Parallel Validators</category>
+            <category>Dynamic Sharding</category>
+        </item>
         <item>
             <title><![CDATA[Push Chain Joins Forces With zkPass]]></title>
             <link>https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-zkpass</link>
@@ -44,13 +98,13 @@ RWA marketplaces like <a href="https://canza.io/" target="_blank" rel="noopener 
 <p>AI &amp; Privacy centric chains like <a href="https://www.polyhedra.network/" target="_blank" rel="noopener noreferrer">Polyhedra EXP</a> can host AI data marketplaces for using zkPass, users can privately contribute data to AI models while: Proving data authenticity without exposure and receiving rewards tied to any chain.</p>
 <p>Users can optimise their on-chain data collection process by using Push Chain’s unified shared settlement layer.</p>
 <p><strong>Universal launchpads.</strong></p>
-<p>Cross chain launchpads like <a href="https://www.poolz.finance/" target="_blank" rel="noopener noreferrer">Pools Finance</a> can leverage Push Chain and zkPass to power -  universal DApp launchpads where Developers can utilize Push Chain’s Universal Shared State and Parallel txn processing to deploy dApps once and instantly reach users across all or any specified networks while maintaining privacy preservation, credential verification and compliance through zkPass.</p>
+<p>Cross chain launchpads like <a href="https://www.poolz.finance/" target="_blank" rel="noopener noreferrer">Pools Finance</a> can leverage Push Chain and zkPass to power - universal DApp launchpads where Developers can utilize Push Chain’s Universal Shared State and Parallel txn processing to deploy dApps once and instantly reach users across all or any specified networks while maintaining privacy preservation, credential verification and compliance through zkPass.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-does-this-mean-for-web3"><strong>🌌</strong>&nbsp;What does this mean for Web3?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-zkpass#what-does-this-mean-for-web3" class="hash-link" aria-label="Direct link to what-does-this-mean-for-web3" title="Direct link to what-does-this-mean-for-web3">​</a></h2>
 <p><strong>Unifying experiences by bringing users together.</strong></p>
 <p>Push Chain isn’t here to replace networks or compete with any; instead, it aims to eliminate the fragmented state of Web3 by unifying settlement across all chains under one universal shared state, unlocking a seamless, interconnected Web3 experience.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="next-steps">Next Steps<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-zkpass#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
 <ol>
-<li>Follow <a href="https://x.com/pushprotocol" target="_blank" rel="noopener noreferrer">@pushprotocol</a> on X to get the latest updates about Push Chain</li>
+<li>Follow <a href="https://x.com/PushChain" target="_blank" rel="noopener noreferrer">@pushprotocol</a> on X to get the latest updates about Push Chain</li>
 <li>Check out the&nbsp;<a href="https://whitepaper.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Whitepaper</a>&nbsp;for a detailed overview of the vision and the underlying technicalities.</li>
 <li>Visit the&nbsp;<a href="https://push.org/chain" target="_blank" rel="noopener noreferrer">Push Chain Website</a>&nbsp;to find a one-pager explanation of the vision.</li>
 <li><a href="https://scan.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Devnet</a>&nbsp;is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.</li>
@@ -116,7 +170,7 @@ For instance - A Plume native user can trade their tokenized assets with a Solan
 <p><em>Get ready! RWAfi is set to be accessible to any user from any app on any chain with Push Chain and Plume.</em></p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="next-steps">Next Steps<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-plume#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
 <ol>
-<li>Follow <a href="https://x.com/pushprotocol" target="_blank" rel="noopener noreferrer">@pushprotocol</a> on X to get the latest updates about Push Chain</li>
+<li>Follow <a href="https://x.com/PushChain" target="_blank" rel="noopener noreferrer">@pushprotocol</a> on X to get the latest updates about Push Chain</li>
 <li>Check out the&nbsp;<a href="https://whitepaper.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Whitepaper</a>for a detailed overview of the vision and the underlying technicalities.</li>
 <li>Visit the&nbsp;<a href="https://push.org/chain" target="_blank" rel="noopener noreferrer">Push Chain Website</a>&nbsp;to find a one-pager explanation of the vision.</li>
 <li><a href="https://scan.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Devnet</a>&nbsp;is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.</li>
@@ -143,7 +197,7 @@ For instance - A Plume native user can trade their tokenized assets with a Solan
 <p>Push Chain is pumped to join forces with zkLink!</p>
 <p>A significant step for propelling our mission of enabling any user from any app to interact with any chain!</p>
 <p>Learn what this announcement means for zkLink and Push Chain users, the use cases it unlocks, and how the collaboration benefits the greater Web3 ecosystem.</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is--zklink">What is  zkLink?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-zklink#what-is--zklink" class="hash-link" aria-label="Direct link to What is  zkLink?" title="Direct link to What is  zkLink?">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-zklink">What is zkLink?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-zklink#what-is-zklink" class="hash-link" aria-label="Direct link to What is zkLink?" title="Direct link to What is zkLink?">​</a></h2>
 <p><a href="https://zk.link/" target="_blank" rel="noopener noreferrer">zkLink</a> is the world’s first ZK-powered Layer 3 solution that aggregates all EVM-compatible networks.</p>
 <p>zkLink includes two prudent networks:</p>
 <p><strong><a href="https://zklink.io/" target="_blank" rel="noopener noreferrer">zkLink Nova</a></strong>: A general-purpose Layer 3 rollup designed to resolve liquidity fragmentation across Ethereum Layer 2s by providing a shared aggregated settlement layer.</p>
@@ -184,7 +238,7 @@ built to allow developers to create universal apps and act as a shared settlemen
 <p>Push Chain isn’t here to replace networks or compete with any; instead, it aims to eliminate the fragmented state of Web3 by unifying settlement across all chains under one universal shared state, unlocking a seamless, interconnected Web3 experience.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="next-steps">Next Steps<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-zklink#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
 <ol>
-<li>Follow <a href="https://x.com/pushprotocol" target="_blank" rel="noopener noreferrer">@pushprotocol</a> on X to get the latest updates about Push Chain</li>
+<li>Follow <a href="https://x.com/PushChain" target="_blank" rel="noopener noreferrer">@pushprotocol</a> on X to get the latest updates about Push Chain</li>
 <li>Check out the&nbsp;<a href="https://whitepaper.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Whitepaper</a> for a detailed overview of the vision and the underlying technicalities.</li>
 <li>Visit the&nbsp;<a href="https://push.org/chain" target="_blank" rel="noopener noreferrer">Push Chain Website</a>&nbsp;to find a one-pager explanation of the vision.</li>
 <li><a href="https://scan.push.org/?" target="_blank" rel="noopener noreferrer">Push Chain Devnet</a>&nbsp;is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.</li>
@@ -213,7 +267,7 @@ built to allow developers to create universal apps and act as a shared settlemen
 <p>Learn what this announcement means for Aptos and Push Chain users, the use cases it unlocks, and how the collaboration benefits the greater Web3 ecosystem.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-aptos">What is Aptos?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-aptos#what-is-aptos" class="hash-link" aria-label="Direct link to What is Aptos?" title="Direct link to What is Aptos?">​</a></h2>
 <p><a href="https://aptosfoundation.org/" target="_blank" rel="noopener noreferrer">Aptos</a> is a Layer 1 non-EVM blockchain renowned for its ultra-fast execution, parallel transaction processing, incredibly low gas fees, and serving as the foundation for some of the most popular consumer and financial applications.</p>
-<p>With over 38.8 Million active addresses -  Aptos is home to some of the most popular DeFi, Gaming and Consumer Apps like Stani,  Merkle.trade, Cellana Fi, Chingari, Panora, Pancake Swap and many more.</p>
+<p>With over 38.8 Million active addresses - Aptos is home to some of the most popular DeFi, Gaming and Consumer Apps like Stani, Merkle.trade, Cellana Fi, Chingari, Panora, Pancake Swap and many more.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-push-chain">What is Push Chain?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-aptos#what-is-push-chain" class="hash-link" aria-label="Direct link to What is Push Chain?" title="Direct link to What is Push Chain?">​</a></h2>
 <p>Push Chain is a shared state blockchain for universal apps. It is a Proof of Stake (PoS) chain
 built to allow developers to create universal apps and act as a shared settlement layer for multiple L1s, L2s, and L3s enabling transactions from any chain - any app and any user.</p>
@@ -229,7 +283,7 @@ built to allow developers to create universal apps and act as a shared settlemen
 <p>With Push Chain’s native Fee and Wallet abstraction support - users from these wide varieties of chains can explore the rich Aptos Ecosystem and send transactions to any Move-based Apps without navigating multiple networks or managing multiple wallets - with zero or minimal learning curve.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="️what-does-this-mean-for-builders">👷‍♂️&nbsp;What does this mean for builders?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-aptos#%EF%B8%8Fwhat-does-this-mean-for-builders" class="hash-link" aria-label="Direct link to 👷‍♂️&nbsp;What does this mean for builders?" title="Direct link to 👷‍♂️&nbsp;What does this mean for builders?">​</a></h2>
 <p><strong>Build <em>Superfast</em> Universal Apps</strong></p>
-<p>Push Chain’s flexible architecture and its ability to allow transactions from any chain with sub-zero finality opens up a plethora of possibilities to build - Consumer,  Financial and Mixed Financial Applications.</p>
+<p>Push Chain’s flexible architecture and its ability to allow transactions from any chain with sub-zero finality opens up a plethora of possibilities to build - Consumer, Financial and Mixed Financial Applications.</p>
 <p><strong>Attract Universal Users.</strong></p>
 <p>Aptos apps deployed on Push Chain can seamlessly open their doors to users from other EVM, and non-EVM chains and foster true shared experiences with Push Chain’s key innovations like - Shared State and Universal Smart Contracts.</p>
 <p><a href="https://push.org/blog/innovations-by-push-chain/" target="_blank" rel="noopener noreferrer">Learn more about Push Chain’s Innovations here</a>.</p>
@@ -253,11 +307,11 @@ built to allow developers to create universal apps and act as a shared settlemen
 <p>We’re also extending our notification support to Aptos Ecosystem enabling lightning-fast notifications to Aptos users.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="next-steps">Next Steps<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-chain-joins-forces-with-aptos#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
 <ol>
-<li>Follow <a href="https://x.com/pushprotocol" target="_blank" rel="noopener noreferrer">@pushprotocol on X</a> to get the latest updates about Push Chain</li>
-<li>Check out the&nbsp;<a href="https://whitepaper.push.org/?utm_source=pushblog&amp;utm_medium=referral&amp;utm_campaign=pcgov" target="_blank" rel="noopener noreferrer">Push Chain Whitepaper</a>**&nbsp;for a detailed overview of the vision and the underlying technicalities.</li>
-<li>Visit the&nbsp;<a href="https://push.org/chain?utm_source=pushblog&amp;utm_medium=referral&amp;utm_campaign=pcgov" target="_blank" rel="noopener noreferrer">Push Chain Website</a>&nbsp;to find a one-pager explanation of the vision.</li>
-<li><a href="https://scan.push.org/?utm_source=pushblog&amp;utm_medium=referral&amp;utm_campaign=pcgov" target="_blank" rel="noopener noreferrer">Push Chain Devnet</a>&nbsp;is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.</li>
-<li><a href="https://simulate.push.org/?utm_source=pushblog&amp;utm_medium=referral&amp;utm_campaign=pcgov" target="_blank" rel="noopener noreferrer">Push Chain Simulate Tx</a>&nbsp;already provides a way for everyone to send tx from any chain using wallet abstraction.</li>
+<li>Follow <a href="https://x.com/PushChain" target="_blank" rel="noopener noreferrer">@pushprotocol on X</a> to get the latest updates about Push Chain</li>
+<li>Check out the&nbsp;<a href="https://whitepaper.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Whitepaper</a>**&nbsp;for a detailed overview of the vision and the underlying technicalities.</li>
+<li>Visit the&nbsp;<a href="https://push.org/chain" target="_blank" rel="noopener noreferrer">Push Chain Website</a>&nbsp;to find a one-pager explanation of the vision.</li>
+<li><a href="https://scan.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Devnet</a>&nbsp;is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.</li>
+<li><a href="https://simulate.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Simulate Tx</a>&nbsp;already provides a way for everyone to send tx from any chain using wallet abstraction.</li>
 <li>For more questions join <a href="https://discord.com/invite/pushprotocol" target="_blank" rel="noopener noreferrer">Push Discord</a>. Our team would be glad to help you!</li>
 </ol>]]></content:encoded>
             <category>Push Chain</category>
@@ -290,7 +344,7 @@ built to allow developers to create universal apps and act as a shared settlemen
 <p>As of year-end - Push has sent over <strong>138+ Million notifications to its 300k+ subscribers</strong>.</p>
 <p>That’s almost <strong>3x</strong> the number of notifications sent and double the number of <a href="https://push.org/blog/push-roadmap-recap-2023/" target="_blank" rel="noopener noreferrer">subscribers from last year</a> 😱.</p>
 <p><img loading="lazy" alt="subscribers gained in 2024" src="https://push-protocol.github.io/push-website/pr-preview/pr-982/assets/images/image1-2600a2bfab9e9abdf59298254150ee02.webp" width="1600" height="840" class="img_ev3q"></p>
-<p>The Push ecosystem has expanded to <strong>500 amazing projects</strong>, including - <a href="https://app.push.org/channels/0xf198eBCc8dB86F707bAdDdBa236aB5b619c59D3c" target="_blank" rel="noopener noreferrer">QuickSwap</a>, <a href="https://app.push.org/channels/0xf1A1542Ca902AE861B59bffE77D92E8CD76146f1" target="_blank" rel="noopener noreferrer">HyperLiquid</a>,<a href="https://app.push.org/channels/0x65bB67c2416186aE3107F7c2C6728b272a579e3d" target="_blank" rel="noopener noreferrer">Revoke</a>, <a href="https://x.com/pushprotocol/status/1859145460939628803" target="_blank" rel="noopener noreferrer">ethOS</a> and many more.</p>
+<p>The Push ecosystem has expanded to <strong>500 amazing projects</strong>, including - <a href="https://app.push.org/channels/0xf198eBCc8dB86F707bAdDdBa236aB5b619c59D3c" target="_blank" rel="noopener noreferrer">QuickSwap</a>, <a href="https://app.push.org/channels/0xf1A1542Ca902AE861B59bffE77D92E8CD76146f1" target="_blank" rel="noopener noreferrer">HyperLiquid</a>,<a href="https://app.push.org/channels/0x65bB67c2416186aE3107F7c2C6728b272a579e3d" target="_blank" rel="noopener noreferrer">Revoke</a>, <a href="https://x.com/PushChain/status/1859145460939628803" target="_blank" rel="noopener noreferrer">ethOS</a> and many more.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="highlights">Highlights<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#highlights" class="hash-link" aria-label="Direct link to Highlights" title="Direct link to Highlights">​</a></h2>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-push-points-program-">1. Push Points Program ✨<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#1-push-points-program-" class="hash-link" aria-label="Direct link to 1. Push Points Program ✨" title="Direct link to 1. Push Points Program ✨">​</a></h3>
 <p><img loading="lazy" alt="push points program" src="https://push-protocol.github.io/push-website/pr-preview/pr-982/assets/images/image2-abc93e9a518d10c2741d1ed526740859.webp" width="1600" height="900" class="img_ev3q"></p>
@@ -351,18 +405,18 @@ Users can now filter and explore channels based on specific networks, such as <a
 <p>To ensure any unique (new) as well as seasoned web3 user understands the protocol’s mission, features and offerings - we’ve taken our website to the next level! This upgrade spans both Push Communications Protocol and Push Chain.</p>
 <p><em>If you’ve read so far: a. you’re the best! b. more about Push Chain, in our final section 🏁</em></p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="9-launched-wallet-to-email--telegram-notifications-">9. Launched Wallet to Email / Telegram Notifications 📧<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#9-launched-wallet-to-email--telegram-notifications-" class="hash-link" aria-label="Direct link to 9. Launched Wallet to Email / Telegram Notifications 📧" title="Direct link to 9. Launched Wallet to Email / Telegram Notifications 📧">​</a></h2>
-<p>After tapping into over 300,000 wallets and sending over 100 million notifications we thought - <em><strong>how about sending on-chain notifications directly to your email or telegram?</strong></em></p>
+<p>After tapping into over 300,000 wallets and sending over 100 million notifications we thought - <strong><em>how about sending on-chain notifications directly to your email or telegram?</em></strong></p>
 <p>This helps Push Communications to reach billions of everyday Email and TG users while paving the way for much smoother onboarding for web2 normies and budding web2 users.</p>
 <p>Now, users can receive web3 notifications from over 500 DApps straight to their Telegram or email accounts - no need to connect a wallet or endure various friction points while entering the web3 space. Simply, connect your TG and Email and receive notifs.</p>
 <p>It's that easy!</p>
-<a href="https://app.push.org/points/activity" title="Push Notifications on Telegram and Email" class="SharedStyling__ABlock-sc-1enui31-20 jVSXIg">  Connect your Tg and Email to receive instant alerts!</a>
+<a href="https://app.push.org/points/activity" title="Push Notifications on Telegram and Email" class="SharedStyling__ABlock-sc-1enui31-20 jVSXIg"> Connect your Tg and Email to receive instant alerts!</a>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="10-push-metmamask-snap-v2">10. Push Metmamask Snap V2<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#10-push-metmamask-snap-v2" class="hash-link" aria-label="Direct link to 10. Push Metmamask Snap V2" title="Direct link to 10. Push Metmamask Snap V2">​</a></h2>
 <p>In 2023, we bought Push Notifications to over 30 million Metamask users -by launching the <a href="https://app.push.org/?/snap" target="_blank" rel="noopener noreferrer">Push Metamask Snap</a>. In 2024, we upgraded the snap to <strong>support chat and snooze notifications features</strong> - to help users manage their notifications at their own pace and other forms of communication as well.</p>
 <p>Due to Metamasks limitations for supporting communications across its mobile apps, we introduced in-app chat notifications on Push Mobile App <a href="https://apps.apple.com/us/app/push-epns/id1528614910" target="_blank" rel="noopener noreferrer">iOS</a> and <a href="https://play.google.com/store/apps/details?id=io.epns.epns&amp;hl=en" target="_blank" rel="noopener noreferrer">Android</a></p>
 <a href="https://app.push.org/snap" title="Push Metamask Snap" class="SharedStyling__ABlock-sc-1enui31-20 jVSXIg"> Get notified on your Metamask Wallet </a>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="11-incredible-integrations-">11. Incredible Integrations! 🤝<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#11-incredible-integrations-" class="hash-link" aria-label="Direct link to 11. Incredible Integrations! 🤝" title="Direct link to 11. Incredible Integrations! 🤝">​</a></h2>
 <p>2024 was a year filled with incredible integrations. The Push Ecosystem has expanded to 500+ Projects!</p>
-<p>Notable mentions include - <a href="https://x.com/pushprotocol/status/1851625233654153716" target="_blank" rel="noopener noreferrer">Hyperliquid</a>, <a href="https://x.com/pushprotocol/status/1826957066520383638" target="_blank" rel="noopener noreferrer">QuickSwap</a>,<a href="https://x.com/pushprotocol/status/1844008819954970813" target="_blank" rel="noopener noreferrer">Cartesi</a>, <a href="https://x.com/pushprotocol/status/1842198518418612357" target="_blank" rel="noopener noreferrer">Revoke</a> and many more.</p>
+<p>Notable mentions include - <a href="https://x.com/PushChain/status/1851625233654153716" target="_blank" rel="noopener noreferrer">Hyperliquid</a>, <a href="https://x.com/PushChain/status/1826957066520383638" target="_blank" rel="noopener noreferrer">QuickSwap</a>,<a href="https://x.com/PushChain/status/1844008819954970813" target="_blank" rel="noopener noreferrer">Cartesi</a>, <a href="https://x.com/PushChain/status/1842198518418612357" target="_blank" rel="noopener noreferrer">Revoke</a> and many more.</p>
 <a href="https://push.org/frens/" title="Frens Of Push" class="SharedStyling__ABlock-sc-1enui31-20 jVSXIg"> Explore the Push Ecosystem here </a>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="12-push-dao-soaring-to-new-heights-">12. Push DAO soaring to new heights 🔝<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#12-push-dao-soaring-to-new-heights-" class="hash-link" aria-label="Direct link to 12. Push DAO soaring to new heights 🔝" title="Direct link to 12. Push DAO soaring to new heights 🔝">​</a></h2>
 <p>Push DAO witnessed extraordinary exposure and participation in 2024.</p>
@@ -378,7 +432,7 @@ Having achieved extraordinary growth in less than a year, we're positioned for e
 <p>With hundreds of new contributors, global exposures, quality grantees and a lot of love from the Push Fam community!</p>
 <p>To continue our journey of Push DAO towards progressive decentralisation we introduced a new DAO framework, <a href="https://gov.push.org/t/push-dao-v2-push-dao-council/1631" target="_blank" rel="noopener noreferrer">Push DAO V2</a>. This framework simplifies the process for contributors and builders to engage with the DAO, with the support of the DAO Council.</p>
 <p><img loading="lazy" alt="Push Grants Council" src="https://push-protocol.github.io/push-website/pr-preview/pr-982/assets/images/image8-fb63f99e0dde1f5b49996626d2618524.webp" width="2000" height="1127" class="img_ev3q"></p>
-<a href="https://gov.push.org/" title="Push Governance Forum" class="SharedStyling__ABlock-sc-1enui31-20 jVSXIg">  Explore Push Governance Forum </a>
+<a href="https://gov.push.org/" title="Push Governance Forum" class="SharedStyling__ABlock-sc-1enui31-20 jVSXIg"> Explore Push Governance Forum </a>
 <p><em>And now - time for the special ALPHA!</em></p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="13-gm-push-chain">13. GM Push Chain!👋<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#13-gm-push-chain" class="hash-link" aria-label="Direct link to 13. GM Push Chain!👋" title="Direct link to 13. GM Push Chain!👋">​</a></h2>
 <p>After years of building one of the first consumer apps in web3, one key takeaway we learnt, was the pressing need for a consumer app-centric chain capable of unifying the entire web3 ecosystem under a shared state.</p>
@@ -388,7 +442,7 @@ Having achieved extraordinary growth in less than a year, we're positioned for e
 The proposal then went on to SnapShot for formal voting - and we’re super stoked to announce that the community heavily participated in showing their voice and <a href="https://snapshot.box/#/s:pushdao.eth/proposal/0xa4a301c9a346356326d59e425245459d9fbde71b02aabc49a4ce191f0504f66a" target="_blank" rel="noopener noreferrer">passing the massive majority!</a> Indicating a positive alignment with the team’s and the community’s vision.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-chain-whitepaper">Push Chain WhitePaper<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#push-chain-whitepaper" class="hash-link" aria-label="Direct link to Push Chain WhitePaper" title="Direct link to Push Chain WhitePaper">​</a></h3>
 <p>If you're curious about Push Chain's philosophical and technical foundations and want to take a detailed look, dive into the <a href="https://whitepaper.push.org/" target="_blank" rel="noopener noreferrer">Push Chain Whitepaper</a>.</p>
-<p>The Whitepaper constitutes everything you need to know about  Push Chain’s Vision, Mission and all the underlying technical innovations that solve the current hardships in Web3.</p>
+<p>The Whitepaper constitutes everything you need to know about Push Chain’s Vision, Mission and all the underlying technical innovations that solve the current hardships in Web3.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-chain-litepaper">Push Chain LitePaper<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#push-chain-litepaper" class="hash-link" aria-label="Direct link to Push Chain LitePaper" title="Direct link to Push Chain LitePaper">​</a></h3>
 <p>Want a quick tour of Push Chain - And learn about the problem it solves, key innovations it brings and the usecases it unlocks - explore the <a href="https://push.org/litepaper.pdf" target="_blank" rel="noopener noreferrer">Push LitePaper</a>!</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="14-launched-push-chain-devnet--push-scan--push-chain-website-">14. Launched Push Chain Devnet + Push Scan + Push Chain Website 🌐<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#14-launched-push-chain-devnet--push-scan--push-chain-website-" class="hash-link" aria-label="Direct link to 14. Launched Push Chain Devnet + Push Scan + Push Chain Website 🌐" title="Direct link to 14. Launched Push Chain Devnet + Push Scan + Push Chain Website 🌐">​</a></h2>
@@ -397,7 +451,7 @@ The proposal then went on to SnapShot for formal voting - and we’re super stok
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-scan">Push Scan<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#push-scan" class="hash-link" aria-label="Direct link to Push Scan" title="Direct link to Push Scan">​</a></h3>
 <p>Also, say hello to <a href="https://scan.push.org/home" target="_blank" rel="noopener noreferrer">Push Scan</a> 👋 - A comprehensive explorer to view and analyze all transactions on the Push Chain.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-website">Push Website<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#push-website" class="hash-link" aria-label="Direct link to Push Website" title="Direct link to Push Website">​</a></h3>
-<p>Alongside, we unveiled the <a href="https://push.org/chain/" target="_blank" rel="noopener noreferrer">Push Chain Website</a> -  your go-to hub for all things Push Chain! Whether you’re looking for insights into its vision, key innovations, ecosystem, or developer tooling, the website acts as your gateway to the <strong>Universe of Universal Apps.</strong></p>
+<p>Alongside, we unveiled the <a href="https://push.org/chain/" target="_blank" rel="noopener noreferrer">Push Chain Website</a> - your go-to hub for all things Push Chain! Whether you’re looking for insights into its vision, key innovations, ecosystem, or developer tooling, the website acts as your gateway to the <strong>Universe of Universal Apps.</strong></p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="15-push-nodes-are-here">15. Push Nodes are here!<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#15-push-nodes-are-here" class="hash-link" aria-label="Direct link to 15. Push Nodes are here!" title="Direct link to 15. Push Nodes are here!">​</a></h2>
 <p>Push fam, we know you were extremely eager for Push Nodes, after its announcement early, this year.</p>
 <p>Unlike most of the L1s, Push Chain too is a Proof Of Stake network - but with its own innovative flavour.</p>
@@ -405,13 +459,7 @@ The proposal then went on to SnapShot for formal voting - and we’re super stok
 <p><strong>Validator nodes</strong> - Responsible for validating transactions;</p>
 <p><strong>Storage nodes</strong> - Dynamically shard data based on the hash of blockchain-agnostic addresses and store it; and</p>
 <p><strong>Archival nodes</strong> - Maintain a full snapshot of all transactions on the network.</p>
-<p>Push Chain also introduced  <strong>Node Registry Smart Contracts</strong> a key innovation that :</p>
-<ul>
-<li>Registers nodes.</li>
-<li>Manage dynamic sharding.</li>
-<li>Set replication factors.</li>
-<li>Enable parallel validators that scale dynamically with the number of nodes in the network and thus achieve <strong>True Scale</strong>!</li>
-</ul>
+<p>Push Chain also introduced <strong>Node Registry Smart Contracts</strong> a key innovation that : - Registers nodes. - Manage dynamic sharding. - Set replication factors. - Enable parallel validators that scale dynamically with the number of nodes in the network and thus achieve <strong>True Scale</strong>!</p>
 <a href="https://push.org/blog/innovations-by-push-chain/" title="Push Governance Forum" class="SharedStyling__ABlock-sc-1enui31-20 jVSXIg"> Innovations by Push Chain </a>
 <p><strong>Want a trial run and learn more about Push Nodes?</strong>
 Checkout Push Nodes GitHub Repos:</p>
@@ -422,12 +470,7 @@ Checkout Push Nodes GitHub Repos:</p>
 <p>Push Chain incorporates <strong>Wallet Abstraction to diminish the growing divide in operational level comfort experienced by Existing Web3 users and New users (Web2 normies) by creating a balanced ground for every web3 user persona.</strong></p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="push-wallet">Push Wallet<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#push-wallet" class="hash-link" aria-label="Direct link to Push Wallet" title="Direct link to Push Wallet">​</a></h3>
 <p>We were thrilled to introduce the <a href="https://wallet.push.org/" target="_blank" rel="noopener noreferrer">Push Wallet</a>—a secure, user-friendly, and interoperable key management solution designed for the Push unified network.</p>
-<p>Push Wallet offers:</p>
-<ul>
-<li>A flexible and embeddable wallet experience tailored to individual user journeys.</li>
-<li>Web2-style sign-ins.</li>
-<li>Seamless connectivity, interaction, and transactions for wallets from any chain.</li>
-</ul>
+<p>Push Wallet offers: - A flexible and embeddable wallet experience tailored to individual user journeys. - Web2-style sign-ins. - Seamless connectivity, interaction, and transactions for wallets from any chain.</p>
 <a href="https://wallet.push.org/" title="Push Governance Forum" class="SharedStyling__ABlock-sc-1enui31-20 jVSXIg"> Try Push Wallet</a>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="simulate-transactions">Simulate Transactions<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#simulate-transactions" class="hash-link" aria-label="Direct link to Simulate Transactions" title="Direct link to Simulate Transactions">​</a></h3>
 <p>To offer an early glimpse into transacting on Push Chain, we launched the Push Simulate Transactions App. This app showcases:</p>
@@ -436,8 +479,8 @@ Checkout Push Nodes GitHub Repos:</p>
 <li>Key innovations like PoS consensus, parallel validators, dynamic sharding, and wallet abstraction in action.</li>
 </ul>
 <a href="https://simulate.push.org/" title="Simulate Push" class="SharedStyling__ABlock-sc-1enui31-20 jVSXIg"> Experience Push Chain with Simulate Transactions</a>
-<p><em><strong>There's so much more to reveal and even more to ship! 🚀</strong></em>
-<em><strong>Can't wait for Q1 2025.</strong></em></p>
+<p><strong><em>There's so much more to reveal and even more to ship! 🚀</em></strong>
+<strong><em>Can't wait for Q1 2025.</em></strong></p>
 <p>The entire Push Team is equally proud and excited to bring Push Chain to the public!</p>
 <p>Push Chain is the future of an all-inclusive web3 - and we’re super humbled and honoured to build it with all of you.</p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="honorary-mentions-">Honorary mentions 🙌<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/push-year-in-review-2024#honorary-mentions-" class="hash-link" aria-label="Direct link to Honorary mentions 🙌" title="Direct link to Honorary mentions 🙌">​</a></h2>
@@ -447,13 +490,13 @@ Checkout Push Nodes GitHub Repos:</p>
 The 6-week boot camp inducted over 80 gem students amongst thousands of competing applications. Spanned over 11 sessions, the BRB boot camp was built to - Equip participants with the skills and knowledge needed to thrive in the evolving landscape of blockchain and web3 technologies, as well as essential skills in marketing, design, and startup development.</p>
 <p>The boot camp gained a global outreach with over <strong>60,000</strong> impressions and unmeasurable love!</p>
 <p>→ <strong>More SDK Upgrades</strong> - We further enhanced the Push SDK by optimizing the code to align with the new design system, added support for <strong>ERC1155 Gated Chat Groups</strong>, launched the <strong>Push SDK Demo React app</strong>, ensured <strong>compatibility with the Base chain</strong>, and integrated <strong>SpaceID’s</strong> package to resolve .arb and .bnb domains.</p>
-<p>→ <strong>Say hello to the Push Alpha Community</strong> - We created an exclusive community for long-time Push Supporters and various contest winners -  called <a href="https://push.org/blog/how-to-join-the-push-alpha-community/" target="_blank" rel="noopener noreferrer">Push Alpha Community</a> - The Alpha Access NFT holders gain exclusive access to alpha-only events, campaigns, airdrops, and partner surprises.</p>
+<p>→ <strong>Say hello to the Push Alpha Community</strong> - We created an exclusive community for long-time Push Supporters and various contest winners - called <a href="https://push.org/blog/how-to-join-the-push-alpha-community/" target="_blank" rel="noopener noreferrer">Push Alpha Community</a> - The Alpha Access NFT holders gain exclusive access to alpha-only events, campaigns, airdrops, and partner surprises.</p>
 <p>→ Launched exclusive <a href="https://push.org/blog/announcing-group-chat-from-push-unstoppable/" target="_blank" rel="noopener noreferrer">domain-gated group chats</a> for 3.8M+ Unstoppable Domain users</p>
 <p>→ Revamped the channel creation process for a more intuitive UX.</p>
 <p>→ Made tons of improvements to our Developer Docs to make your building journey with Push Protocol truly <em>Pushtastic!</em> 🚀</p>
 <p>→ A plethora of podcast appearances including <a href="https://www.youtube.com/watch?v=zpqP_b-ch1A" target="_blank" rel="noopener noreferrer">Hipther Podcast Show</a>, <a href="https://www.charlieshrem.com/pushing-crypto-to-the-edge-redefining-communication-and-security-with-ian-leviness-and-pascal-gauth/" target="_blank" rel="noopener noreferrer">Charlie Shrem Podcast</a> and many more.</p>
-<p>→ Participated in major hackathons, conferences and sponsored bounties around the globe including, <a href="https://x.com/pushprotocol/status/1811046959353880785" target="_blank" rel="noopener noreferrer">Eth CC Brussels</a>, Token 2049 Singapore &amp; Dubai, <a href="https://x.com/pushprotocol/status/1857365249239679134" target="_blank" rel="noopener noreferrer">ETH Bangkok</a>, <a href="https://x.com/pushprotocol/status/1846597335859540055" target="_blank" rel="noopener noreferrer">Eth Safari</a>, <a href="https://x.com/pushprotocol/status/1840669685177557334" target="_blank" rel="noopener noreferrer">Invisible Gardens</a>, <a href="https://x.com/pushprotocol/status/1849709744002630131" target="_blank" rel="noopener noreferrer">Binance Blockchain Week(Dubai)</a>, India Blockchain Week.</p>
-<p>→ Kickstarted <a href="https://x.com/pushprotocol/status/1826313152176251142" target="_blank" rel="noopener noreferrer">Write for Push</a> initiative - aimed at enabling anyone in the Push community to contribute to the protocol’s blog repository and help shape its voice.</p>
+<p>→ Participated in major hackathons, conferences and sponsored bounties around the globe including, <a href="https://x.com/PushChain/status/1811046959353880785" target="_blank" rel="noopener noreferrer">Eth CC Brussels</a>, Token 2049 Singapore &amp; Dubai, <a href="https://x.com/PushChain/status/1857365249239679134" target="_blank" rel="noopener noreferrer">ETH Bangkok</a>, <a href="https://x.com/PushChain/status/1846597335859540055" target="_blank" rel="noopener noreferrer">Eth Safari</a>, <a href="https://x.com/PushChain/status/1840669685177557334" target="_blank" rel="noopener noreferrer">Invisible Gardens</a>, <a href="https://x.com/PushChain/status/1849709744002630131" target="_blank" rel="noopener noreferrer">Binance Blockchain Week(Dubai)</a>, India Blockchain Week.</p>
+<p>→ Kickstarted <a href="https://x.com/PushChain/status/1826313152176251142" target="_blank" rel="noopener noreferrer">Write for Push</a> initiative - aimed at enabling anyone in the Push community to contribute to the protocol’s blog repository and help shape its voice.</p>
 <p>Before looking at what's ahead this coming year, we want to take a moment to thank the entire Push team, all our partners, investors and builders. 2024 was an amazing year for Push and we are excited to share what we have planned for 2025! Stay tuned. With loads of love ❤️ from the Push team!</p>
 <p>That’s a wrap!
 See you all in 2025 🫡</p>]]></content:encoded>
@@ -492,7 +535,7 @@ See you all in 2025 🫡</p>]]></content:encoded>
 <p>→ 1. <strong>Blockchain agnostic wallet addresses</strong></p>
 <p>→ 2. <strong>Support Txns from any chain</strong></p>
 <p>→ 3. <strong>Fee Abstraction</strong></p>
-<p>→ 4. <strong>Wallet abstractio</strong></p>
+<p>→ 4. <strong>Wallet Abstraction</strong></p>
 <p>→ 5. <strong>Consumer (Unordered) and Traditional (Ordered) Transactions</strong></p>
 <p>→ 6. <strong>True Scale: Sub Second Finality (speed)</strong></p>
 <p>→ 7. <strong>True Scale: Parallel validators (scaling write throughput)</strong></p>
@@ -614,7 +657,7 @@ This led us to create the unified Push ID, giving each user one identity that sp
 <p>Universal AI apps, Universal social apps, Unified Prediction markets and many more!
 Want to know the countless app innovations that you can make happen because of Push Chain?
 Explore our <a href="https://push.org/blog/consumer-apps-that-can-be-built-on-push-chain/" target="_blank" rel="noopener noreferrer">Innovations that can be built on Push Chain Blog</a></p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="next-steps">Next Steps​👇<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/innovations-by-push-chain#next-steps" class="hash-link" aria-label="Direct link to Next Steps​👇" title="Direct link to Next Steps​��👇">​</a></h3>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="next-steps">Next Steps​👇<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/innovations-by-push-chain#next-steps" class="hash-link" aria-label="Direct link to Next Steps​👇" title="Direct link to Next Steps​👇">​</a></h3>
 <ul>
 <li>
 <p>Check out the <a href="https://whitepaper.push.org/?utm_source=pushblog&amp;utm_medium=referral&amp;utm_campaign=pcgov" target="_blank" rel="noopener noreferrer">Push Chain Whitepaper</a> for a detailed overview of the vision and the underlying technicalities.</p>
@@ -697,7 +740,7 @@ We took the biggest and the most ambitious step in its history last week and hav
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="getting-noticed-and-spreading-the-word">Getting noticed and spreading the word<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/evolution-of-push#getting-noticed-and-spreading-the-word" class="hash-link" aria-label="Direct link to Getting noticed and spreading the word" title="Direct link to Getting noticed and spreading the word">​</a></h3>
 <p>Push started getting noticed by OGs of web3, we were so humbled by people who we view as mentors and thought leaders writing about us. Push has reached the point where it had a chance to terraform web3, one notif at a time</p>
 <p><img loading="lazy" alt="Tenth Image of Evolution of Push" src="https://push-protocol.github.io/push-website/pr-preview/pr-982/assets/images/image1-001d961bb7b8213d6b45e5c533798da9.webp" width="1600" height="900" class="img_ev3q">
-</p><div class="SharedStyling__ImageText-sc-1enui31-28 iBTxGz"><a href="https://balajis.com/p/why-india-should-buy-bitcoin" target="_blank" rel="noopener noreferrer">Why India Should Buy Bitcoin Article by BalajiS</a>  |  <a href="https://x.com/balajis/status/1336367129960931329" target="_blank" rel="noopener noreferrer">Excited to fund EPNS Tweet</a>  |  <a href="https://thedefiant.io/news/defi/unstoppable-domains-launches-token-gated-group-chats" target="_blank" rel="noopener noreferrer">Unstoppable Domains Launches Gated Groups Article</a>  |  <a href="https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation" target="_blank" rel="noopener noreferrer">EPNS Raises 10M at 131M Valuation Article</a></div><p></p>
+</p><div class="SharedStyling__ImageText-sc-1enui31-28 iBTxGz"><a href="https://balajis.com/p/why-india-should-buy-bitcoin" target="_blank" rel="noopener noreferrer">Why India Should Buy Bitcoin Article by BalajiS</a> | <a href="https://x.com/balajis/status/1336367129960931329" target="_blank" rel="noopener noreferrer">Excited to fund EPNS Tweet</a> | <a href="https://thedefiant.io/news/defi/unstoppable-domains-launches-token-gated-group-chats" target="_blank" rel="noopener noreferrer">Unstoppable Domains Launches Gated Groups Article</a> | <a href="https://www.coindesk.com/business/2022/04/14/ethereum-push-notification-service-raises-10m-at-131m-valuation" target="_blank" rel="noopener noreferrer">EPNS Raises 10M at 131M Valuation Article</a></div><p></p>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="building-one-of-the-first-consumer-app">Building one of the first consumer app<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/evolution-of-push#building-one-of-the-first-consumer-app" class="hash-link" aria-label="Direct link to Building one of the first consumer app" title="Direct link to Building one of the first consumer app">​</a></h2>
 <p>We now realize that apart from inventing the communication protocol for web3, we also were building one of the first consumer app for it which was non-financial in nature and was driven by the utility it offered to average user than the 10x other financial apps promised (and thus, user was incentivized to learn web3 broken ux).</p>
 <p>This realization helped us in paving forward an app that is useful and frictionless for the web3 user and enabled us to identify the features that we wanted as we moved towards decentralizing our notification nodes.</p>
@@ -721,7 +764,7 @@ We took the biggest and the most ambitious step in its history last week and hav
 <li>Leading us to rebrand to <b>Push</b>.</li>
 </ul>
 <p><img loading="lazy" alt="Eleventh Image of Evolution of Push" src="https://push-protocol.github.io/push-website/pr-preview/pr-982/assets/images/image6-24b60aad49ba4a18828ebc1877062e25.webp" width="1388" height="1782" class="img_ev3q">
-</p><div class="SharedStyling__ImageText-sc-1enui31-28 iBTxGz"><a href="https://x.com/pushprotocol/status/1574771582790406144" target="_blank" rel="noopener noreferrer">https://x.com/pushprotocol/status/1574771582790406144</a></div><p></p>
+</p><div class="SharedStyling__ImageText-sc-1enui31-28 iBTxGz"><a href="https://x.com/PushChain/status/1574771582790406144" target="_blank" rel="noopener noreferrer">https://x.com/PushChain/status/1574771582790406144</a></div><p></p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="becoming-the-leading-notification-protocol-for-web3">Becoming the leading notification protocol for web3<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/evolution-of-push#becoming-the-leading-notification-protocol-for-web3" class="hash-link" aria-label="Direct link to Becoming the leading notification protocol for web3" title="Direct link to Becoming the leading notification protocol for web3">​</a></h3>
 <p>Push notifications protocol came a long way from its humble beginnings to now. Today, we have powered hundreds of millions of notifications sent to web3 users across the globe.</p>
 <p>We have been integrated natively in many wallets and protocols including Unstoppable, Shapeshift, Decentraland, Metamask Snap and so many more and have been powering notifications and communication for awesome protocols such as Cowswap, 1inch, dydx, hyperliquid, lens, polygon and various others.</p>
@@ -743,7 +786,7 @@ We took the biggest and the most ambitious step in its history last week and hav
 <li>Utilizes universal smart contracts - capable of accessing the state of a wallet belonging to a different chain</li>
 </ul>
 <p><img loading="lazy" alt="Thirtheenth Image of Evolution of Push" src="https://push-protocol.github.io/push-website/pr-preview/pr-982/assets/images/image14-6eaaf73ecd74400dc1c897013ae507d0.webp" width="1128" height="1999" class="img_ev3q">
-</p><div class="SharedStyling__ImageText-sc-1enui31-28 iBTxGz"><a href="https://x.com/pushprotocol/status/1867184458631405607" target="_blank" rel="noopener noreferrer">https://x.com/pushprotocol/status/1867184458631405607</a></div><p></p>
+</p><div class="SharedStyling__ImageText-sc-1enui31-28 iBTxGz"><a href="https://x.com/PushChain/status/1867184458631405607" target="_blank" rel="noopener noreferrer">https://x.com/PushChain/status/1867184458631405607</a></div><p></p>
 <p>The evolution and the journey has been thrilling and we would love to have you, our biggest asset, the community with us as we launch Push Chain and invite developers to build universal apps!</p>
 <p>As is the norm in web3, let’s end the article with saying in its truest sense for the future of Push - We all are just getting started!!!</p>]]></content:encoded>
             <category>Push Chain</category>
@@ -1107,7 +1150,7 @@ A unified VM that enables complex universal smart contract logic that is able to
 <p>The Push DAO governance system will both evolve and expand as Push Chain launches. This is an expected process, since Push is becoming something more encompassing than the original Push Protocol. Delegates, ambassador programs, subDAOs, and everything else related to the DAO will be upgraded to reflect the key goals of achieving status as the hub for universal applications, run by all of the groups that make them possible.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-do-i-get-involved-with-push-chain-grants">How do I get involved with Push Chain Grants?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/faq-push-chain#how-do-i-get-involved-with-push-chain-grants" class="hash-link" aria-label="Direct link to How do I get involved with Push Chain Grants?" title="Direct link to How do I get involved with Push Chain Grants?">​</a></h3>
 <p>While we are thrilled with the early interest coming from developers to build universal apps, we are still in the governance phase for ratifying our evolution from Push Protocol to Push Chain and hence do not have a grants program now.</p>
-<p>This will change very soon once the community approves of Push Chain! Meanwhile, to frontrun other grantees, please drop us an email at <a href="mailto:team@push.org"></a><a href="mailto:team@push.org" target="_blank" rel="noopener noreferrer">team@push.org</a> with the subject line as <strong>Grant MEOW</strong> and your app idea. Or, simply follow <a href="https://x.com/pushprotocol" target="_blank" rel="noopener noreferrer" title="Follow Push Protocol on X">@pushprotocol</a> for more updates around the grants program and its release.</p>
+<p>This will change very soon once the community approves of Push Chain! Meanwhile, to frontrun other grantees, please drop us an email at <a href="mailto:team@push.org"></a><a href="mailto:team@push.org" target="_blank" rel="noopener noreferrer">team@push.org</a> with the subject line as <strong>Grant MEOW</strong> and your app idea. Or, simply follow <a href="https://x.com/PushChain" target="_blank" rel="noopener noreferrer" title="Follow Push Protocol on X">@pushprotocol</a> for more updates around the grants program and its release.</p>
 <hr>
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="developers-users-and-node-operators">Developers, Users and Node Operators<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/faq-push-chain#developers-users-and-node-operators" class="hash-link" aria-label="Direct link to Developers, Users and Node Operators" title="Direct link to Developers, Users and Node Operators">​</a></h2>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="is-there-a-migration-plan-for-current-applications-and-users">Is there a migration plan for current applications and users?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/faq-push-chain#is-there-a-migration-plan-for-current-applications-and-users" class="hash-link" aria-label="Direct link to Is there a migration plan for current applications and users?" title="Direct link to Is there a migration plan for current applications and users?">​</a></h3>
@@ -1126,144 +1169,10 @@ A unified VM that enables complex universal smart contract logic that is able to
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="how-can-developers-start-building-on-push-chain">How can developers start building on Push Chain?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/faq-push-chain#how-can-developers-start-building-on-push-chain" class="hash-link" aria-label="Direct link to How can developers start building on Push Chain?" title="Direct link to How can developers start building on Push Chain?">​</a></h3>
 <p>Push Chain will offer developer tools, an SDK, and comprehensive documentation. Keep tabs on our site and our main social handles for all related updates. Sign up to our email on <a title="Push Chain Email Signup" href="https://push-protocol.github.io/push-website/pr-preview/pr-982/chain/">/chain</a> to stay up to date with available resources.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="where-can-i-find-more-information-and-stay-updated-on-push-chains-progress">Where can I find more information and stay updated on Push Chain's progress?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/faq-push-chain#where-can-i-find-more-information-and-stay-updated-on-push-chains-progress" class="hash-link" aria-label="Direct link to Where can I find more information and stay updated on Push Chain's progress?" title="Direct link to Where can I find more information and stay updated on Push Chain's progress?">​</a></h3>
-<p>The best way to stay on top of Push Chain’s progress is through the official Push channels: website, <a href="https://x.com/pushprotocol" target="_blank" rel="noopener noreferrer" title="Push Protocol on X">Twitter/X</a>, <a href="https://t.me/epnsproject" target="_blank" rel="noopener noreferrer" title="Push Protocol on Telegram">Telegram</a>, and <a href="https://discord.gg/pushprotocol" target="_blank" rel="noopener noreferrer" title="Push Protocol on Discord">Discord</a>.</p>
+<p>The best way to stay on top of Push Chain’s progress is through the official Push channels: website, <a href="https://x.com/PushChain" target="_blank" rel="noopener noreferrer" title="Push Protocol on X">Twitter/X</a>, <a href="https://t.me/epnsproject" target="_blank" rel="noopener noreferrer" title="Push Protocol on Telegram">Telegram</a>, and <a href="https://discord.gg/pushprotocol" target="_blank" rel="noopener noreferrer" title="Push Protocol on Discord">Discord</a>.</p>
 <p>Always remain cautious of phishing links, websites or any scam links asking you for your crypto. All official communications will go out from our official Push handles.</p>]]></content:encoded>
             <category>Push Chain</category>
             <category>Push Chain FAQs</category>
-        </item>
-        <item>
-            <title><![CDATA[Benchmarking Push Chain : Scaling with Validator Nodes]]></title>
-            <link>https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding</link>
-            <guid>https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding</guid>
-            <pubDate>Mon, 09 Dec 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[Benchmarking Push Chain : Scaling with Validator Nodes]]></description>
-            <content:encoded><![CDATA[<p><img loading="lazy" alt="Cover Image of Benchmarking Push Chain : Scaling with Validator Nodes" src="https://push-protocol.github.io/push-website/pr-preview/pr-982/assets/images/cover-image-6113608a2ad3b73e9016d5eb7c399257.webp" width="1600" height="900" class="img_ev3q"></p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="introduction">Introduction<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding#introduction" class="hash-link" aria-label="Direct link to Introduction" title="Direct link to Introduction">​</a></h2>
-<p>The Push Chain Network, a Proof-of-Stake (PoS) blockchain designed for consumer-centric applications, offers an innovative approach to scalability and usability in the decentralized space. By leveraging features like dynamic sharding, parallel block execution, and true scale, Push Chain promises a seamless environment for universal applications. This blog explores the benchmarking results of Push Chain under varying node configurations, providing insights into how the network behaves and scales as the number of nodes increases.</p>
-<hr>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="node-types-and-roles">Node Types and Roles<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding#node-types-and-roles" class="hash-link" aria-label="Direct link to Node Types and Roles" title="Direct link to Node Types and Roles">​</a></h2>
-<ul>
-<li><strong>Validator Nodes:</strong> Responsible for handling transaction validation and serving as the primary interface for client interactions.</li>
-<li><strong>Storage Nodes:</strong> Tasked with storing validated transactions in a sharded manner for optimized data access and storage efficiency.</li>
-<li><strong>Archival Nodes:</strong> Maintain a comprehensive record of all network transactions, enabling historical data access and providing support for applications like blockchain explorers.</li>
-</ul>
-<blockquote>
-<p>💡 Note: While the roles described above provide a high-level overview, nodes in the Push Chain Network perform significantly more complex tasks, including dynamic sharding, transaction propagation, and ensuring data consistency across the network.</p>
-</blockquote>
-<hr>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benchmarking-setup">Benchmarking Setup<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding#benchmarking-setup" class="hash-link" aria-label="Direct link to Benchmarking Setup" title="Direct link to Benchmarking Setup">​</a></h2>
-<p>The benchmarking tests were conducted in controlled environments with different node configurations:</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="environment-configurations">Environment Configurations<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding#environment-configurations" class="hash-link" aria-label="Direct link to Environment Configurations" title="Direct link to Environment Configurations">​</a></h3>
-<ol>
-<li><strong>Configuration 1</strong>:<!-- -->
-<ul>
-<li><strong>5 Validator Nodes</strong>, <strong>8 Storage Nodes</strong>, <strong>5 Archival Nodes</strong>.</li>
-<li><strong>2 CPU cores</strong> allocated.</li>
-</ul>
-</li>
-<li><strong>Configuration 2</strong>:<!-- -->
-<ul>
-<li><strong>10 Validator Nodes</strong>, <strong>8 Storage Nodes</strong>, <strong>5 Archival Nodes</strong>.</li>
-<li><strong>4 CPU cores</strong> allocated.</li>
-</ul>
-</li>
-<li><strong>Configuration 3</strong>:<!-- -->
-<ul>
-<li><strong>20 Validator Nodes</strong>, <strong>8 Storage Nodes</strong>, <strong>5 Archival Nodes</strong>.</li>
-<li><strong>8 CPU cores</strong> allocated.</li>
-</ul>
-</li>
-</ol>
-<p>The benchmarks primarily evaluate the performance of the <strong>validator nodes</strong>, which serve as the gateway for client interactions. However, since validator nodes interact with storage nodes and archival nodes internally, the results effectively reflect the performance of the entire network.</p>
-<blockquote>
-<p>⚡ <strong>Note on</strong> <strong>Controlled Environment:</strong> All of these benchmarks were performed in a controlled internal network environment. As a result, any network lags or latency typically observed in real-world public networks were kept to a minimum, ensuring that the results reflect the network’s inherent capabilities rather than external factors. This setup allows for more accurate measurement of the Push Chain Network’s performance under varying configurations without the interference of significant network delays.</p>
-</blockquote>
-<blockquote>
-<p>📊 <strong>Note on CPU Scaling:</strong> In order to simulate a decentralized network more realistically, the number of CPU cores allocated scales proportionally with the number of nodes. For instance, 2 CPU cores are allocated for 5 validator nodes, 4 CPU cores for 10 nodes, and 8 CPU cores for 20 nodes. This approach mirrors how resources would likely be distributed in a decentralized system, where each node operator contributes computational resources to the network.</p>
-</blockquote>
-<blockquote>
-<p>⚙️ <strong>Note on Node Configuration:</strong> For simplicity and consistency, the number of <strong>Storage Nodes</strong> and <strong>Archival Nodes</strong> is kept constant at <strong>8</strong> and <strong>5</strong>, respectively, across all configurations. This ensures that the focus remains on evaluating the performance of the <strong>Validator Nodes</strong> and their interactions with the network, without introducing additional variables.</p>
-</blockquote>
-<p>The benchmarks primarily evaluate the performance of the <strong>validator nodes</strong>, which serve as the gateway for client interactions. However, since validator nodes interact with storage nodes and archival nodes internally, the results effectively reflect the performance of the entire network.</p>
-<hr>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="benchmark-results">Benchmark Results<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding#benchmark-results" class="hash-link" aria-label="Direct link to Benchmark Results" title="Direct link to Benchmark Results">​</a></h2>
-<p>The following tests were conducted to measure the performance of the Push Chain Network under varying configurations, focusing on the behavior of <strong>validator nodes</strong> as the number of nodes increases. Each test was performed using multiple parallel threads, simulating real-world scenarios where multiple users interact with the network simultaneously.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-ping-validator-test">1. Ping Validator Test<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding#1-ping-validator-test" class="hash-link" aria-label="Direct link to 1. Ping Validator Test" title="Direct link to 1. Ping Validator Test">​</a></h3>
-<p>This test measures the round-trip time taken by multiple threads to select and ping a random validator node, simulating basic connectivity under increasing load.</p>
-<table><thead><tr><th><strong>Threads</strong></th><th><strong>Configuration 1</strong></th><th><strong>Configuration 2</strong></th><th><strong>Configuration 3</strong></th></tr></thead><tbody><tr><td>10</td><td>21.72 ms</td><td>27.96 ms</td><td>26.43 ms</td></tr><tr><td>50</td><td>296.98 ms</td><td>94.45 ms</td><td>124.54 ms</td></tr><tr><td>100</td><td>371.32 ms</td><td>137.20 ms</td><td>151.44 ms</td></tr><tr><td>250</td><td>396.70 ms</td><td>232.06 ms</td><td>209.23 ms</td></tr><tr><td>500</td><td>497.69 ms</td><td>342.74 ms</td><td>287.24 ms</td></tr><tr><td>1000</td><td>785.19 ms</td><td>705.11 ms</td><td>545.10 ms</td></tr><tr><td>2000</td><td>1498.14 ms</td><td>1245.16 ms</td><td>1085.70 ms</td></tr><tr><td>5000</td><td>5608.33 ms</td><td>3637.42 ms</td><td>3297.24 ms</td></tr><tr><td>10000</td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td></tr></tbody></table>
-<p><strong>Observations:</strong></p>
-<ul>
-<li>As the number of validator nodes increases, the network handles higher traffic more efficiently, as seen in <strong>Configuration 3</strong>, which consistently shows the lowest response times across all thread counts.</li>
-<li>Traffic is split among more validator nodes in configurations with higher node counts, reducing the load on individual nodes and improving overall response times.</li>
-<li>At <strong>10,000 threads</strong>, all configurations errored out, indicating the upper limit of the network under the current setup. However, <strong>Configuration 3</strong> demonstrated the highest capacity before encountering errors, highlighting the benefits of increased validator nodes for scalability.</li>
-</ul>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-get-token-validator-test">2. Get Token Validator Test<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding#2-get-token-validator-test" class="hash-link" aria-label="Direct link to 2. Get Token Validator Test" title="Direct link to 2. Get Token Validator Test">​</a></h3>
-<p>This test measures the time taken for multiple threads to request an access token from a random validator node. Access tokens are essential for sending transactions and performing other write operations on the network.</p>
-<table><thead><tr><th><strong>Threads</strong></th><th><strong>Configuration 1</strong></th><th><strong>Configuration 2</strong></th><th><strong>Configuration 3</strong></th></tr></thead><tbody><tr><td>10</td><td>250.46 ms</td><td>253.37 ms</td><td>170.53 ms</td></tr><tr><td>50</td><td>969.38 ms</td><td>855.97 ms</td><td>427.89 ms</td></tr><tr><td>100</td><td>1540.05 ms</td><td>1294.32 ms</td><td>638.69 ms</td></tr><tr><td>250</td><td>2855.72 ms</td><td>2108.26 ms</td><td>1325.33 ms</td></tr><tr><td>500</td><td>4869.79 ms</td><td>3645.61 ms</td><td>3033.06 ms</td></tr><tr><td>1000</td><td>7850.41 ms</td><td>6541.31 ms</td><td>5036.91 ms</td></tr><tr><td>2000</td><td>21562.69 ms</td><td>12378.07 ms</td><td>7839.82 ms</td></tr><tr><td>5000</td><td>62539.38 ms</td><td>37642.91 ms</td><td>22250.88 ms</td></tr><tr><td>10000</td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td></tr></tbody></table>
-<p><strong>Observations:</strong></p>
-<ul>
-<li>As the number of validator nodes increases, the network demonstrates significantly improved performance under higher thread counts. <strong>Configuration 3</strong> consistently shows the lowest response times, benefiting from better load distribution.</li>
-<li>At lower thread counts (e.g., 10 or 50), the differences between configurations are minimal since the traffic does not fully utilize the network's capacity. However, at higher thread counts (e.g., 500 or more), <strong>Configuration 3</strong> outperforms the others due to its ability to handle a higher volume of concurrent requests.</li>
-<li>At <strong>10,000 threads</strong>, all configurations errored out, indicating the network’s throughput limit under the current setup. However, <strong>Configuration 3</strong> reached significantly higher performance thresholds before encountering errors.</li>
-</ul>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-send-transactions-to-validator-test">3. Send Transactions to Validator Test<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding#3-send-transactions-to-validator-test" class="hash-link" aria-label="Direct link to 3. Send Transactions to Validator Test" title="Direct link to 3. Send Transactions to Validator Test">​</a></h3>
-<p>This test measures the time taken for multiple threads to send transactions to validator nodes. Each transaction submission involves the following steps:</p>
-<ol>
-<li>Retrieving an <strong>access token</strong> from a validator node.</li>
-<li>Sending the transaction as an <strong>RPC request</strong> to the validator node using the retrieved token.</li>
-</ol>
-<p>Additionally, each transaction validation requires attestations from a subset of validator nodes.</p>
-<blockquote>
-<p>🔗 Note on Attestations: Each transaction validation includes attestations from N validator nodes, where N is a dynamic variable. For this test, N was kept constant at 4 to ensure consistent results.</p>
-</blockquote>
-<table><thead><tr><th><strong>Threads</strong></th><th><strong>Configuration 1</strong></th><th><strong>Configuration 2</strong></th><th><strong>Configuration 3</strong></th></tr></thead><tbody><tr><td>10</td><td>1052.11 ms</td><td>726.95 ms</td><td>481.58 ms</td></tr><tr><td>50</td><td>7059.86 ms</td><td>5783.53 ms</td><td>4866.28 ms</td></tr><tr><td>100</td><td>17140.02 ms</td><td>14252.35 ms</td><td>10992.26 ms</td></tr><tr><td>250</td><td><strong>Errored Out</strong></td><td>38932.29 ms</td><td>30432.74 ms</td></tr><tr><td>500</td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td></tr></tbody></table>
-<p><strong>Observations:</strong></p>
-<ul>
-<li>The network’s performance improves with an increasing number of validator nodes, as seen in <strong>Configuration 3</strong>, which consistently shows the best results under higher thread counts.</li>
-<li>At lower thread counts (e.g., 10 or 50), the differences between configurations are smaller due to minimal load. However, at higher thread counts, <strong>Configuration 3</strong> handles a significantly larger volume of transactions before encountering errors.</li>
-<li>Errors such as timeouts occurred at <strong>250 threads</strong> for <strong>Configuration 1</strong> and <strong>500 threads</strong> for <strong>Configuration 2</strong>, highlighting the limits of these setups. <strong>Configuration 3</strong> demonstrated a higher capacity before reaching its threshold.</li>
-</ul>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4-get-transactions-test">4. Get Transactions Test<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding#4-get-transactions-test" class="hash-link" aria-label="Direct link to 4. Get Transactions Test" title="Direct link to 4. Get Transactions Test">​</a></h3>
-<p>This test measures the time required for threads to retrieve transaction data of a particular blockchain address from validator nodes, simulating a typical query load where users request information about transactions. The process involves the following steps:</p>
-<ol>
-<li>The validator node determines the <strong>shard</strong> corresponding to the requested address.</li>
-<li>The validator then identifies the <strong>storage nodes</strong> responsible for that shard and queries them for the transaction data.</li>
-</ol>
-<p>Since the number of storage nodes remains constant across configurations, the performance at higher thread counts is influenced by this dependency.</p>
-<table><thead><tr><th><strong>Threads</strong></th><th><strong>Configuration 1</strong></th><th><strong>Configuration 2</strong></th><th><strong>Configuration 3</strong></th></tr></thead><tbody><tr><td>10</td><td>1727.71 ms</td><td>949.33 ms</td><td>1108.42 ms</td></tr><tr><td>50</td><td>2893.36 ms</td><td>2252.80 ms</td><td>1750.41 ms</td></tr><tr><td>100</td><td>4483.29 ms</td><td>3436.79 ms</td><td>2884.57 ms</td></tr><tr><td>250</td><td>10896.20 ms</td><td>8963.94 ms</td><td>8788.58 ms</td></tr><tr><td>500</td><td>28982.37 ms</td><td>15828.90 ms</td><td>15184.05 ms</td></tr><tr><td>1000</td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td></tr></tbody></table>
-<p><strong>Observations:</strong></p>
-<ul>
-<li>With an increasing number of validator nodes, traffic is distributed more efficiently among the nodes, leading to better response times in <strong>Configuration 3</strong>, particularly under moderate thread counts (e.g., 50–250).</li>
-<li>At lower thread counts (e.g., 10 or 50), the performance differences are less pronounced since the network does not experience significant load. However, as thread counts increase, <strong>Configuration 3</strong> handles requests more effectively due to its ability to distribute load better across a higher number of validator nodes.</li>
-<li>Errors at <strong>1000 threads</strong> in all configurations highlight the scalability limitations imposed by the constant number of storage nodes. Increasing the number of storage nodes could improve performance at these higher thread counts.</li>
-</ul>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5-get-push-id-info-test">5. Get Push ID Info Test<a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding#5-get-push-id-info-test" class="hash-link" aria-label="Direct link to 5. Get Push ID Info Test" title="Direct link to 5. Get Push ID Info Test">​</a></h3>
-<p>This test measures the time required for threads to retrieve Push ID information from validator nodes for a given blockchain address, simulating a typical query load where users request mappings of Push IDs. The process involves the following steps:</p>
-<ol>
-<li>The validator node identifies the <strong>shard</strong> corresponding to the requested address or Push ID.</li>
-<li>It then queries the <strong>storage nodes</strong> responsible for that shard to fetch the required data.</li>
-</ol>
-<p>As with other tests, the number of storage nodes remains constant, which impacts performance at higher thread counts.</p>
-<table><thead><tr><th><strong>Threads</strong></th><th><strong>Configuration 1</strong></th><th><strong>Configuration 2</strong></th><th><strong>Configuration 3</strong></th></tr></thead><tbody><tr><td>10</td><td>1589.68 ms</td><td>1180.90 ms</td><td>1062.32 ms</td></tr><tr><td>50</td><td>1551.96 ms</td><td>1924.95 ms</td><td>1139.00 ms</td></tr><tr><td>100</td><td>3168.10 ms</td><td>2280.93 ms</td><td>2784.76 ms</td></tr><tr><td>250</td><td>6141.76 ms</td><td>5376.59 ms</td><td>5170.25 ms</td></tr><tr><td>500</td><td>13462.41 ms</td><td>10437.36 ms</td><td>8337.95 ms</td></tr><tr><td>1000</td><td>23817.09 ms</td><td>18082.24 <strong>ms</strong></td><td>15132.23 ms</td></tr><tr><td>2000</td><td>59157.55 ms</td><td>42868.81 ms</td><td>35978.39 ms</td></tr><tr><td>5000</td><td><strong>Errored Out</strong></td><td>104845.75 ms</td><td>77467.87 ms</td></tr><tr><td>10000</td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td><td><strong>Errored Out</strong></td></tr></tbody></table>
-<p><strong>Observations:</strong></p>
-<ul>
-<li>As the number of validator nodes increases, the load on each individual vnode decreases, improving performance in <strong>Configuration 3</strong>, especially under moderate thread counts (e.g., 50–500).</li>
-<li>At higher thread counts (e.g., 1000 or more), the dependency on storage nodes becomes the primary bottleneck, leading to errors or significantly increased retrieval times. Increasing the number of storage nodes would help alleviate these limitations at scale.</li>
-<li><strong>Configuration 3</strong> consistently shows the best results at all thread counts before errors occur, showcasing the benefits of distributing the load across more validator nodes.</li>
-</ul>
-<hr>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conclusions"><strong>Conclusions</strong><a href="https://push-protocol.github.io/push-website/pr-preview/pr-982/blog/parallel-validators-and-dynamic-sharding#conclusions" class="hash-link" aria-label="Direct link to conclusions" title="Direct link to conclusions">​</a></h2>
-<ul>
-<li><strong>Scalability:</strong> As the number of nodes increased, the Push Chain Network demonstrated significantly improved scalability, particularly in <strong>Configuration 3</strong>. This configuration exhibited the best performance across most tests, showcasing the network’s ability to scale efficiently without sacrificing speed. The benefits of <strong>dynamic sharding</strong> ensured that even as the network grew, the system maintained fast response times, handling multiple concurrent threads effectively.</li>
-<li><strong>Performance Bottlenecks:</strong> While performance remained strong as the node count grew, the network did experience timeouts and errors at higher thread counts. This indicates that, although the system can scale, there are throughput limits at extreme loads. However, <strong>Configuration 3</strong> was able to handle a larger volume of requests compared to smaller configurations, validating the advantages of scaling up the number of validator nodes. Given that the <strong>goal of the Push Chain Network</strong> is to scale up to <strong>100,000 validator nodes</strong>, the throughput limits observed at high thread counts are just the beginning. As the network grows, these limits would become significantly larger, making the network capable of handling a vastly higher volume of requests.</li>
-<li><strong>Real-World Application:</strong> The results illustrate how the Push Chain Network becomes more scalable as nodes are added, making it a robust solution for future consumer-centric applications where network demands will increase.</li>
-</ul>
-<p>These benchmarks offer valuable insights into the scaling behaviour of the Push Chain Network, demonstrating its readiness to support growing adoption and demanding workloads. Moving forward, continued optimizations in areas like transaction propagation, parallel processing, and sharding will further enhance the network’s performance, enabling it to handle even higher loads.</p>
-<hr>]]></content:encoded>
-            <category>Push Chain</category>
-            <category>Push Chain Benchmark</category>
-            <category>Parallel Validators</category>
-            <category>Dynamic Sharding</category>
         </item>
     </channel>
 </rss>
