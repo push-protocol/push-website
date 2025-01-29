@@ -36,7 +36,7 @@ All of these features will be enabled for BNB Chain notifications starting today
 
 ### Push Chat on BNB Chain
 
-In October, Push Protocol announced our alpha for Push Chat — p2p web3 native chat between on-chain addresses. Push Chat is enabled for Ethereum and Polygon addresses, and with the BNB Chain launch, whitelisted addresses can now chat through BNB Chain as well. We’ll have more information about the continued rollout of Push Chat, so stay tuned on the [Push Protocol Twitter.](https://twitter.com/pushprotocol)
+In October, Push Protocol announced our alpha for Push Chat — p2p web3 native chat between on-chain addresses. Push Chat is enabled for Ethereum and Polygon addresses, and with the BNB Chain launch, whitelisted addresses can now chat through BNB Chain as well. We’ll have more information about the continued rollout of Push Chat, so stay tuned on the [Push Protocol Twitter.](https://x.com/PushChain)
 
 ### Existing Push Ethereum & Polygon Users
 

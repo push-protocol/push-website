@@ -73,7 +73,7 @@ November saw major ecosystem updates in this sphere, with exciting integrations 
 
 - [**Revoke Cash**](https://app.push.org/channels/0x65bB67c2416186aE3107F7c2C6728b272a579e3d) now sends real-time alerts for token approvals, ensuring users have timely prompts to revoke approvals as needed.
 - [**HyperLiquid**](https://app.push.org/channels/0xf1A1542Ca902AE861B59bffE77D92E8CD76146f1) integrated **Push notifications** to offer real-time updates on liquidations and position changes.
-- [DePerp Labs](https://x.com/pushprotocol/status/1846784886457184359) integrated Push Chat making the DePerp experience far richer than ever before.
+- [DePerp Labs](https://x.com/PushChain/status/1846784886457184359) integrated Push Chat making the DePerp experience far richer than ever before.
 - [**Unstoppable Domains**](https://x.com/unstoppableweb/status/1839653386339107064) (UD) wallet now supports **end-to-end encrypted messaging** between domain owners, leveraging Push for more secure communication.
 - Contributors at Cartesi created an [integration template](https://push.org/blog/how-developers-can-integrate-cartesi-and-push-protocol/) for developers to leverage web3 notifications for Cartesi DApps enabling DApps built on Cartesi to integrate Push’s notification services within 5 minutes or less.
 - [Fuse Network](https://news.fuse.io/fuse-partners-with-push-protocol-to-enhance-communication-for-web3-dapps/) kicked off their partnership with Push for enabling wallet-to-wallet messaging in addition to structuring and launching Push notifications for applications built on Fuse.
@@ -117,13 +117,13 @@ Our commitment to Web3 education and ecosystem expansion continued through Novem
 
 **Major Events & Sponsorships**
 
-- We sponsored the [Invisible Gardens](https://x.com/pushprotocol/status/1842082904999903367) camp in Chiang Mai, Thailand, showcasing how to build consumer-ready apps with Push Protocol SDKs.
+- We sponsored the [Invisible Gardens](https://x.com/PushChain/status/1842082904999903367) camp in Chiang Mai, Thailand, showcasing how to build consumer-ready apps with Push Protocol SDKs.
 - Harsh Rajat represented Push on a panel at [**Binance Blockchain Week**](https://www.binanceblockchainweek.com/event/b7fbe2af-9ab6-4bb2-b78b-486c4d1fa80f/websitePage:9ec1ee53-cbdd-4234-8f04-fb70d6f7ad2e) in Dubai.
 
 **Community Education & Developer Evangelism**
 
 - We conducted an [**Ekolance Workshop**](https://www.youtube.com/watch?v=60t101ro2uM), a grantee-hosted session on building Web3 DApps with Push tech.
-- Our DAO Lead, Ian LeViness, participated in a [**SocialFi panel**](https://x.com/pushprotocol/status/1849401395147055525) on X alongside partners such as **Conflux** and **Unstoppable Domains**.
+- Our DAO Lead, Ian LeViness, participated in a [**SocialFi panel**](https://x.com/PushChain/status/1849401395147055525) on X alongside partners such as **Conflux** and **Unstoppable Domains**.
 - Ian also represented the ecosystem on several podcasts, including [\*\*The Silicon Dreams](https://www.youtube.com/watch?v=Mc_wp_4zNvQ&list=PLu0fIscp1uLKza4WMSCl76C5VdK9l0Tll&index=49) Podcast** and [**Jax Dwyer’s](https://www.youtube.com/watch?v=Ysy-jV0tiUU) Podcast\*\*, promoting Push’s vision and community.
 - We also booked several more podcast appearances for November and December, which will be included in the following reports.
 

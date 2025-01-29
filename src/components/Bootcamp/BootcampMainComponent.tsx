@@ -180,7 +180,7 @@ export const BootcampMainComponent = () => {
                   <NavigationMenuItem
                     onClick={() => {
                       if (isMobileMenuOpen) toggleMobileMenu();
-                      openLink('https://twitter.com/pushprotocol');
+                      openLink('https://x.com/PushChain');
                     }}
                   >
                     <NavigationMenuHeader>
@@ -543,7 +543,7 @@ export const BootcampMainComponent = () => {
 
             <FooterBar
               style={{ cursor: 'pointer' }}
-              onClick={() => openLink('https://twitter.com/pushprotocol')}
+              onClick={() => openLink('https://x.com/PushChain')}
             >
               <i>
                 <X className='discord expand' />

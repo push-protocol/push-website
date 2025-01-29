@@ -195,7 +195,7 @@ function ChainFooter({ showPattern }) {
               >
                 <ItemH flex='0' gap='16px' className='pushLinks'>
                   <FooterAnchorIcon
-                    href='https://twitter.com/pushprotocol'
+                    href='https://x.com/PushChain'
                     title='Push Twitter'
                     target='_blank'
                   >

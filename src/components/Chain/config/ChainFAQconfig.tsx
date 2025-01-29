@@ -105,7 +105,7 @@ export const General = [
           Meanwhile, to frontrun other grantees, please drop us an email at{' '}
           <Link href='mailto:team@push.org'>team@push.org</Link> with the
           subject line as <b>Grant MEOW</b> and your app idea. Or, simply follow{' '}
-          <Link href='https://x.com/pushprotocol' target='_blank'>
+          <Link href='https://x.com/PushChain' target='_blank'>
             @pushprotocol
           </Link>{' '}
           for more updates around the grants program and its release.

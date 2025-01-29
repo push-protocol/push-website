@@ -290,7 +290,7 @@ The Push DAO governance system will both evolve and expand as Push Chain launche
 
 While we are thrilled with the early interest coming from developers to build universal apps, we are still in the governance phase for ratifying our evolution from Push Protocol to Push Chain and hence do not have a grants program now.
 
-This will change very soon once the community approves of Push Chain! Meanwhile, to frontrun other grantees, please drop us an email at <a href="mailto:team@push.org">team@push.org</a> with the subject line as **Grant MEOW** and your app idea. Or, simply follow [@pushprotocol](https://x.com/pushprotocol 'Follow Push Protocol on X') for more updates around the grants program and its release.
+This will change very soon once the community approves of Push Chain! Meanwhile, to frontrun other grantees, please drop us an email at <a href="mailto:team@push.org">team@push.org</a> with the subject line as **Grant MEOW** and your app idea. Or, simply follow [@pushprotocol](https://x.com/PushChain 'Follow Push Protocol on X') for more updates around the grants program and its release.
 
 ---
 
@@ -324,6 +324,6 @@ Push Chain will offer developer tools, an SDK, and comprehensive documentation. 
 
 ### Where can I find more information and stay updated on Push Chain's progress?
 
-The best way to stay on top of Push Chain’s progress is through the official Push channels: website, [Twitter/X](https://x.com/pushprotocol 'Push Protocol on X'), [Telegram](https://t.me/epnsproject 'Push Protocol on Telegram'), and [Discord](https://discord.gg/pushprotocol 'Push Protocol on Discord').
+The best way to stay on top of Push Chain’s progress is through the official Push channels: website, [Twitter/X](https://x.com/PushChain 'Push Protocol on X'), [Telegram](https://t.me/epnsproject 'Push Protocol on Telegram'), and [Discord](https://discord.gg/pushprotocol 'Push Protocol on Discord').
 
 Always remain cautious of phishing links, websites or any scam links asking you for your crypto. All official communications will go out from our official Push handles.
