@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[39057],{149941:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-993/blog/tags/gnosis","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[46858],{78441:e=>{e.exports=JSON.parse('{"label":"Superfluid Protocol","permalink":"/push-website/pr-preview/pr-993/blog/tags/superfluid-protocol","allTagsPath":"/push-website/pr-preview/pr-993/blog/tags","count":1,"unlisted":false}')}}]);
