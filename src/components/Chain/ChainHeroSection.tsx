@@ -179,8 +179,8 @@ const ChainHeroSection: FC = () => {
                     ).default
                   }
                   srcSet={`${require(`@site/static/assets/website/chain/${item?.imageUrl}@2x.webp`).default} 2x, ${require(`@site/static/assets/website/chain/${item?.imageUrl}@3x.webp`).default} 3x`}
-                  alt={'alt'}
-                  title={'title'}
+                  alt={'Supported Chains'}
+                  title={'Supported Chains'}
                 />
               )}
               <H3
