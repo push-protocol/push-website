@@ -62,7 +62,7 @@ Access Stacks’s rich gaming ecosystem including [ForcePrime](https://forceprim
 
 **Shared State DEX:**
 
-DEXs like [ALXE](https://app.alexlab.co/) can leverage Push Chain to provide access to Stacks and Bitcoin’s liquidity from users from any chain via their preferred wallets.
+DEXs like [ALEX](https://app.alexlab.co/) can leverage Push Chain to provide access to Stacks and Bitcoin’s liquidity from users from any chain via their preferred wallets.
 
 ## 🌌 What does this mean for Web3?
 
