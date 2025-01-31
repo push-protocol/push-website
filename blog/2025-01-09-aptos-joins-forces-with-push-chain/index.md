@@ -110,7 +110,7 @@ We’re also extending our notification support to Aptos Ecosystem enabling ligh
 
 ## Next Steps
 
-1. Follow [@pushprotocol on X](https://x.com/PushChain) to get the latest updates about Push Chain
+1. Follow [@PushChain on X](https://x.com/PushChain) to get the latest updates about Push Chain
 2. Check out the [Push Chain Whitepaper](https://whitepaper.push.org/)\*\* for a detailed overview of the vision and the underlying technicalities.
 3. Visit the [Push Chain Website](https://push.org/chain) to find a one-pager explanation of the vision.
 4. [Push Chain Devnet](https://scan.push.org/) is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.

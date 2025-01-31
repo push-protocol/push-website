@@ -114,7 +114,7 @@ This you’ll also be able to partake in and it’s running all the way up until
 
 # Who do we reach out to for assistance?
 
-During the event our team is on-ground. You Can Tweet [**@pushprotocol**](http://x.com/PushChain) and we’ll get you in touch with the team. You could also tweet the team directly as below.
+During the event our team is on-ground. You Can Tweet [**@PushChain**](http://x.com/PushChain) and we’ll get you in touch with the team. You could also tweet the team directly as below.
 
 1.  [**Jafett Sandi**](http://twitter.com/jafetsc)
 2.  [**Fabio Costa**](http://twitter.com/learn4life6)

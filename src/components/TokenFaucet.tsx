@@ -108,7 +108,8 @@ export const TokenFaucet = ({
               fontWeight='400'
               color={isFollowed ? '#25AAF5' : '#FFF'}
             >
-              {isFollowed ? 'Following' : 'Follow @pushprotocol'}
+              PushChain
+              {isFollowed ? 'Following' : 'Follow @PushChain'}
             </Span>
             {isFollowed && (
               <Icon src={XRight} height='18px' width='18px' alt='x' />
