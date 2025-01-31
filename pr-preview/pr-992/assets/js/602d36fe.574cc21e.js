@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[57019],{272534:e=>{e.exports=JSON.parse('{"label":"Airdrop","permalink":"/push-website/pr-preview/pr-992/blog/tags/airdrop","allTagsPath":"/push-website/pr-preview/pr-992/blog/tags","count":1,"unlisted":false}')}}]);

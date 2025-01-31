@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[66076],{134754:e=>{e.exports=JSON.parse('{"label":"Decentralized","permalink":"/push-website/pr-preview/pr-992/blog/tags/decentralized","allTagsPath":"/push-website/pr-preview/pr-992/blog/tags","count":2,"unlisted":false}')}}]);
