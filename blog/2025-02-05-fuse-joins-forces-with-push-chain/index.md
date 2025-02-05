@@ -92,7 +92,7 @@ Push Chain isn’t here to replace networks or compete with any; instead, it aim
 ## Next Steps
 
 1. Follow [@PushChain on X](https://x.com/PushChain) to get the latest updates about Push Chain
-2. Check out the [Push Chain Whitepaper](https://whitepaper.push.org/)\* for a detailed overview of the vision and the underlying technicalities.
+2. Check out the [Push Chain Whitepaper](https://whitepaper.push.org/) for a detailed overview of the vision and the underlying technicalities.
 3. Visit the [Push Chain Website](https://push.org/chain) to find a one-pager explanation of the vision.
 4. [Push Chain Devnet](https://scan.push.org/) is running live on Proof-of-Stake network validators, storage and archival nodes. The network already supports consumer transactions as well.
 5. [Push Chain Simulate Tx](https://simulate.push.org/) already provides a way for everyone to send tx from any chain using wallet abstraction.
