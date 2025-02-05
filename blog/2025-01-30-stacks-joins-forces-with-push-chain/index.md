@@ -50,6 +50,9 @@ Apps deployed on Stacks and Push Chain can accept transactions from users belong
 
 Push Chain’s flexible architecture and its ability to allow transactions from any chain with sub-zero finality opens up a plethora of possibilities to build - Consumer, Financial, and Mixed Financial Applications.
 
+[Learn more about Push Chain’s Innovations here](https://push.org/blog/innovations-by-push-chain/).
+
+
 ### 🔓 Usecase Unlock:
 
 **Universal NFT Marketplaces**
