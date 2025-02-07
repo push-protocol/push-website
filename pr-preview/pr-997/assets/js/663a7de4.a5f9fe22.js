@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[56537],{90316:e=>{e.exports=JSON.parse('{"label":"Boba Network","permalink":"/push-website/pr-preview/pr-997/blog/tags/boba-network","allTagsPath":"/push-website/pr-preview/pr-997/blog/tags","count":1,"unlisted":false}')}}]);
