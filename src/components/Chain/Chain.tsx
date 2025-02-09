@@ -18,6 +18,7 @@ import ChainBottomComponent from './ChainBottomComponent';
 import ChainUseCase from './ChainUseCase';
 import ChainRoadmapSection from './ChainRoadmapSection';
 import { ChainFeaturesSection } from './ChainFeaturesSection';
+import ChainCountDownFeature from './ChainCountDownFeature';
 
 // Import assets
 import StarIcon from '@site/static/assets/website/chain/StarIcon.svg';
@@ -34,6 +35,12 @@ const Chain = () => {
   return (
     <ChainWrapper>
       {/* Main Content */}
+      <CountdownWrapper>
+        <MainContent>
+          <ChainCountDownFeature />
+        </MainContent>
+      </CountdownWrapper>
+
       <MainContent>
         <ChainHeroSection />
       </MainContent>
@@ -111,4 +118,12 @@ const MainContent = styled(ItemV)`
   @media ${device.mobileL} {
     padding: 0 16px;
   }
+`;
+
+const CountdownWrapper = styled.div`
+  position: fixed;
+  width: 100%;
+  bottom: 8px;
+  left: 0;
+  z-index: 99999999;
 `;
