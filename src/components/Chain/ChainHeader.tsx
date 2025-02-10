@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React, { FC, useEffect, useState } from 'react';
@@ -19,6 +20,7 @@ import useModal from './hooks/useModal';
 import {
   Button,
   Content,
+  H3,
   ItemH,
   ItemV,
   Section,
@@ -28,16 +30,37 @@ import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
 import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
 import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 import ChainElevateModal from './ChainElevateModal';
+import { BsChevronDown } from 'react-icons/bs';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
+let lastScrollY = 0;
+const SCROLL_DELTA = 5;
+
+if (typeof window !== 'undefined') {
+  lastScrollY = window.scrollY;
+}
+
+const defaultMobileMenuState = {
+  0: false,
+  1: false,
+  2: false,
+  3: false,
+  4: false,
+  // add next [index]: false for new main Nav menu item
+};
+
 const ChainHeader: FC = () => {
-  const isMobile = useMediaQuery(device.mobileL);
+  const isMobile = useMediaQuery(device.laptopM);
   const history = useHistory();
   const location = useLocation();
+
+  const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const [scrollDirection] = useScrollDirection(isMobileMenuOpen);
   const { isOpen, open, close } = useModal();
 
@@ -47,8 +70,99 @@ const ChainHeader: FC = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
   };
 
+  // const toggleDropdown = () => setDropdownOpen((prev) => !prev);
+
   const showMobileMenu = isMobile && isMobileMenuOpen;
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
+
+  const onMobileHeaderMenuClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    menuIndex: number
+  ) => {
+    e.preventDefault();
+
+    // if (isMobile) {
+    setMobileMenuMap((oldMap) => {
+      return {
+        ...defaultMobileMenuState,
+        [menuIndex]: !oldMap[menuIndex],
+      };
+    });
+  };
+
+  useEffect(() => {
+    if (isMobileMenuOpen && isMobile) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      // Cleanup: Reset overflow when the component unmounts
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen, isMobile]);
+
+  // Use Effect
+  useEffect(() => {
+    const updateScrollDirection = () => {
+      let scrollY = 0;
+
+      if (typeof window !== 'undefined') {
+        scrollY = window.scrollY;
+      }
+
+      let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
+
+      if (
+        direction !== scrollDirection &&
+        (scrollY - lastScrollY > SCROLL_DELTA ||
+          scrollY - lastScrollY < -SCROLL_DELTA)
+      ) {
+        // check if isMobileMenuOpen then override
+        if (isMobileMenuOpen) {
+          direction = 'scrollUp';
+        }
+
+        setScrollDirection(direction);
+      }
+
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+
+    // add event listener
+    window.addEventListener('scroll', updateScrollDirection, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', updateScrollDirection); // clean up
+    };
+  }, []);
+
+  const textIds = ['text0', 'text1', 'text2', 'text3', 'text4', 'text5'];
+
+  const handleMouseEnter = (e, activeId) => {
+    textIds.forEach((id) => {
+      if (id !== activeId) {
+        const element = document.getElementById(id);
+        console.log('got here', element);
+
+        if (element) {
+          element.style.color = '#6C6C6C';
+          element.style.transitionDuration = '1s';
+        }
+      }
+    });
+  };
+
+  const handleMouseLeave = (e) => {
+    textIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.style.color = '#fff';
+        element.style.transitionDuration = '1s';
+      }
+    });
+  };
 
   const handleSectionNavigation = (item) => {
     setActiveItem(item?.id);
@@ -64,6 +178,13 @@ const ChainHeader: FC = () => {
   };
   const handleRedirect = (item) => {
     setActiveItem(item?.id);
+
+    // if (item?.subItems) {
+    //   toggleDropdown();
+    //   return;
+    // }
+
+    if (!item.url) return;
 
     // Handle external links
     if (item?.url.startsWith('https://')) {
@@ -110,13 +231,33 @@ const ChainHeader: FC = () => {
   const navItems = [
     { id: 'technology', label: 'Technology', url: '/' },
     { id: 'knowledge', label: 'Knowledge Base', url: '/knowledge' },
-    {
-      id: 'whitepaper',
-      label: 'Whitepaper',
-      url: 'https://whitepaper.push.org/',
-    },
+
+    { id: 'docs', label: 'Developers', url: '/docs' },
     { id: 'blog', label: 'Blog', url: '/blog' },
-    { id: 'faq', label: 'F.A.Q', url: '/' },
+    {
+      id: 'resources',
+      label: 'resources',
+      subItems: [
+        {
+          id: 'litepaper',
+          label: 'Litepaper',
+          sublabels: 'Push Chain Litepaper',
+          url: '/guides',
+        },
+        {
+          id: 'whitepaper',
+          label: 'Whitepaper',
+          sublabels: 'Push Chain Whitepaper',
+          url: '/tools',
+        },
+        {
+          id: 'faq',
+          label: 'FAQ',
+          sublabels: 'Frequently asked questions about Push Chain',
+          url: '/tools',
+        },
+      ],
+    },
   ];
 
   // Update the active item based on the current location
@@ -139,8 +280,9 @@ const ChainHeader: FC = () => {
         <HeaderContent
           className='contentBox'
           isMobileMenuOpen={isMobileMenuOpen}
+          showMobileMenu={showMobileMenu}
         >
-          <NavList isMobileMenuOpen={isMobileMenuOpen}>
+          <NavList showMobileMenu={showMobileMenu}>
             <MenuTop padding={isMobileMenuOpen && '16px'} flex='initial'>
               <PushLogoBlackContainer
                 className='headerlogo'
@@ -175,7 +317,7 @@ const ChainHeader: FC = () => {
                 className='navigationMenu'
                 showMobileMenu={isMobileMenuOpen}
               >
-                {navItems?.map((item) => (
+                {/* {navItems?.slice(0, 4).map((item) => (
                   <NavigationMenuItem
                     key={item.id}
                     isActive={activeItem === item.id}
@@ -187,6 +329,46 @@ const ChainHeader: FC = () => {
                       <NavigationMenuHeader isActive={activeItem === item.id}>
                         <Span fontSize='18px'>{item.label}</Span>
                       </NavigationMenuHeader>
+                    </MenuNavLink>
+                  </NavigationMenuItem>
+                ))} */}
+
+                {navItems.slice(0, 5)?.map((item, index) => (
+                  <NavigationMenuItem
+                    key={item.id}
+                    isActive={activeItem === item.id}
+                    className={activeItem === item?.id ? 'active' : ''}
+                    // onClick={() => handleRedirect(item)}
+                    onClick={(e) => onMobileHeaderMenuClick(e, index)}
+                    showMobileMenu={showMobileMenu}
+                    onMouseEnter={(e) => handleMouseEnter(e, `text${index}`)}
+                    onMouseLeave={(e) => handleMouseLeave(e, `text${index}`)}
+                    id={`text${index}`}
+                  >
+                    <MenuNavLink className='navLink'>
+                      <NavigationMenuHeader isActive={activeItem === item.id}>
+                        <Span fontSize='18px'>{item.label}</Span>
+                        {item.subItems && (
+                          <BsChevronDown size={12} className='chevronIcon' />
+                        )}
+                      </NavigationMenuHeader>
+
+                      {item.subItems && (
+                        <DropdownMenu
+                          className='menuContent'
+                          expanded={mobileMenuMap[index]}
+                        >
+                          {item.subItems?.map((subItem) => (
+                            <DropdownItem
+                              key={subItem.id}
+                              onClick={() => handleRedirect(subItem)}
+                            >
+                              <H3>{subItem.label}</H3>
+                              <Span>{subItem?.sublabels}</Span>
+                            </DropdownItem>
+                          ))}
+                        </DropdownMenu>
+                      )}
                     </MenuNavLink>
                   </NavigationMenuItem>
                 ))}
@@ -224,15 +406,16 @@ const ChainHeader: FC = () => {
 export default ChainHeader;
 
 const HeaderContent = styled(Content)`
-  height: ${(props) => (!props.isMobileMenuOpen ? '64px' : 'auto')};
-  align-self: ${(props) => (props.isMobileMenuOpen ? 'flex-start' : 'stretch')};
+  height: ${(props) => (!props.showMobileMenu ? '64px' : 'auto')};
+  align-self: ${(props) => (props.showMobileMenu ? 'flex-start' : 'stretch')};
+  overflow: visible;
 `;
 
 const NavList = styled.div`
   position: relative;
   width: 100%;
-  height: ${(props) => (!props.isMobileMenuOpen ? '64px' : '100%')};
-  max-height: ${(props) => (!props.isMobileMenuOpen ? '64px' : '100%')};
+  height: ${(props) => (!props.showMobileMenu ? '64px' : '100%')};
+  max-height: ${(props) => (!props.showMobileMenu ? '64px' : '100%')};
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -241,7 +424,7 @@ const NavList = styled.div`
   padding: 0px 23px;
   margin: 0px auto 0 auto;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     flex-direction: column;
     width: 100%;
     padding: 14px 0px 14px 0px;
@@ -261,7 +444,7 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  height: ${(props) => (props.isMobileMenuOpen ? '100vh' : 'auto')};
+  height: ${(props) => (props.showMobileMenu ? '100vh' : 'auto')};
   padding-top: 12px;
   padding-bottom: 12px;
 
@@ -308,13 +491,13 @@ const StyledHeader = styled.header`
     }
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     flex-direction: column;
     top: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
     background-color: ${(props) =>
-      props.isMobileMenuOpen ? '#000' : 'transparent'};
+      props.showMobileMenu ? '#000' : 'transparent'};
 
     &.hide {
       top: -100%;
@@ -329,7 +512,7 @@ const MenuTop = styled(ItemV)`
     cursor: pointer;
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
@@ -348,14 +531,17 @@ const PushLogoBlackContainer = styled(ItemV)`
 const MobileMenuToggleIcon = styled.span`
   display: none;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     display: flex;
     cursor: pointer;
   }
 `;
 
-const MenuNavLink = styled(ItemH)`
-  @media ${device.laptop} {
+const MenuNavLink = styled.div`
+  position: relative;
+  cursor: pointer;
+
+  @media ${device.laptopM} {
     align-self: flex-start;
     justify-content: flex-start;
   }
@@ -368,11 +554,12 @@ const HeaderNavItemV = styled(ItemV)`
   flex: 0;
   padding: 8px;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     margin: ${(props) => (props.showMobileMenu ? '24px 0px 0px 0px' : '0')};
     width: ${(props) => (props.showMobileMenu ? '100%' : 'fit-content')};
     padding: ${(props) => (props.showMobileMenu ? '0px' : '8px')};
     flex: 0;
+    background: transparent;
   }
 `;
 
@@ -380,7 +567,7 @@ const HeaderFocusItems = styled(ItemH)`
   align-self: stretch;
   flex-wrap: nowrap;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     flex-direction: column;
     align-self: flex-start;
     flex-wrap: wrap;
@@ -403,7 +590,7 @@ const NavigationMenu = styled.ul`
     background: #fff !important;
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     flex-direction: column;
     flex: 0 0 75%;
     align-self: stretch;
@@ -420,7 +607,7 @@ const IconMenu = styled.ul`
   gap: 20px;
   z-index: 999;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     flex-direction: row;
     flex: 1;
     margin: 0 0 auto 0;
@@ -465,7 +652,6 @@ const NavigationMenuItem = styled.li`
     align-items: center;
     width: 100%;
     padding: ${(props) => (props.showMobileMenu ? '16px' : '0px 24px')};
-    cursor: pointer;
   }
 
   &:hover {
@@ -479,14 +665,18 @@ const NavigationMenuItem = styled.li`
       transform: rotate(180deg);
     }
 
-    & .menuContent {
-      display: block;
-    }
+    // & .menuContent {
+    //   display: block;
+    // }
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     & span {
       font-size: 16px;
+    }
+
+    .navLink {
+      display: block;
     }
   }
 `;
@@ -495,6 +685,7 @@ const NavigationMenuHeader = styled.div`
   display: flex;
   align-items: center;
   margin: auto 0;
+  gap: 8px;
 
   & .chevronIcon {
     transition-duration: 0.4s;
@@ -505,7 +696,7 @@ const NavigationMenuHeader = styled.div`
     color: ${(props) => (props.isActive ? '#000' : '#FFF')};
   }
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     justify-content: space-between;
 
     & .chevronIcon {
@@ -513,6 +704,89 @@ const NavigationMenuHeader = styled.div`
       height: 16px;
       transform: ${(props) =>
         props.expanded ? 'rotate(180deg)' : 'none  !important'};
+    }
+  }
+`;
+
+const DropdownMenu = styled.ul`
+  list-style: none;
+
+  display: none;
+  position: absolute;
+  top: 100%;
+  // left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column;
+  z-index: 9999999999 !important;
+  padding: 12px;
+  border-radius: 24px;
+  background: rgba(11, 11, 13, 0.9);
+  min-width: 300px;
+  gap: 16px;
+
+  @media ${device.laptopM} {
+    width: 100%;
+    min-width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0 0 0;
+    padding: 0px 12px 6px 12px;
+    max-height: initial;
+    min-height: initial;
+
+    position: relative;
+    clip-path: inset(0 round 24px);
+
+    display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
+    & a {
+      justify-content: flex-start;
+    }
+  }
+
+  @media ${device.tablet} {
+    max-height: initial;
+    min-height: initial;
+  }
+`;
+
+const DropdownItem = styled.li`
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 12px;
+
+  h3 {
+    color: #fff;
+    font-family: N27;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+  }
+
+  span {
+    text-transform: capitalize;
+    color: #bbbcd0;
+    font-family: N27;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  &:hover {
+    border: 1px solid #fff;
+    background: #f4f4f4;
+    background: rgba(11, 11, 13, 0.9);
+    backdrop-filter: blur(calc(16px / 2));
+
+    h3 {
+      color: #d98aec;
     }
   }
 `;

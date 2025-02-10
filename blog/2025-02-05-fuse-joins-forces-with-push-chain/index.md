@@ -25,7 +25,7 @@ Learn what this announcement means for Fuse and Push Chain users, the use cases 
 
 [Fuse](https://www.fuse.io/) is an Ethereum compatible public blockchain built for businesses and developers to access  web3 tech and secure, verifiable global payments.
 
-Focusing on UX, ease of operation, accessibility and scalability, Fuse is built to onboard all types of enterprise users, from Web2 companies that want to integrate blockchain functionality into their apps, to Web3-native projects. 
+Focusing on UX, ease of operation, accessibility and scalability, Fuse is built to onboard all types of enterprise users, from Web2 companies that want to integrate blockchain functionality into their apps, to Web3-native projects.
 
 
 ## What is Push Chain?
@@ -71,7 +71,7 @@ Fuse apps deployed on Push Chain can seamlessly open their doors to users from o
 Tools like [Midle](https://midle.io/) can leverage Push Chain to create comprehensive growth campaigns combining both on-chain and off-chain tasks, verifiable and accessible from any blockchain. Users can participate using their preferred wallets, complete tasks on any chain, and receive instant rewards on their chosen network.
 
 
-**Universal B2B / B2C Threat Monitoring Services** 
+**Universal B2B / B2C Threat Monitoring Services**
 
 Security monitoring solutions like [Ironblocks](https://www.ironblocks.com/) and utilize Push Chain for powering a universal security monitoring system that protects assets and transactions across all blockchain ecosystems simultaneously. For instance, if a security threat is detected for a cross-chain wallet on one chain, the system could instantly broadcast alerts and implement protective measures across all connected chains creating a unified security perimeter where threats are identified, tracked, and mitigated instantly.
 

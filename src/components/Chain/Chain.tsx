@@ -18,7 +18,7 @@ import ChainBottomComponent from './ChainBottomComponent';
 import ChainUseCase from './ChainUseCase';
 import ChainRoadmapSection from './ChainRoadmapSection';
 import { ChainFeaturesSection } from './ChainFeaturesSection';
-import ChainCountDownFeature from './ChainCountDownFeature';
+// import ChainCountDownFeature from './ChainCountDownFeature';
 
 // Import assets
 import StarIcon from '@site/static/assets/website/chain/StarIcon.svg';
@@ -35,11 +35,11 @@ const Chain = () => {
   return (
     <ChainWrapper>
       {/* Main Content */}
-      <CountdownWrapper>
+      {/* <CountdownWrapper>
         <MainContent>
           <ChainCountDownFeature />
         </MainContent>
-      </CountdownWrapper>
+      </CountdownWrapper> */}
 
       <MainContent>
         <ChainHeroSection />
@@ -120,10 +120,10 @@ const MainContent = styled(ItemV)`
   }
 `;
 
-const CountdownWrapper = styled.div`
-  position: fixed;
-  width: 100%;
-  bottom: 8px;
-  left: 0;
-  z-index: 99999999;
-`;
+// const CountdownWrapper = styled.div`
+//   position: fixed;
+//   width: 100%;
+//   bottom: 8px;
+//   left: 0;
+//   z-index: 99999999;
+// `;
