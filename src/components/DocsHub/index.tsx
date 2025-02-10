@@ -337,6 +337,57 @@ export default function HomepageFeatures(): JSX.Element {
         </FluidContent>
       </HomepageSection>
 
+      {/* SDK SECTION */}
+      <HomepageSection>
+        <FluidContent>
+          <ItemH justifyContent='flex-start'>
+            <HomepageSubHeader>Push SDK</HomepageSubHeader>
+            <Link
+              to='https://www.npmjs.com/package/@pushprotocol/restapi'
+              target='_blank'
+            >
+              <Span fontSize='18px' margin='0 5px 0 10px'>
+                Explore SDK
+              </Span>
+              <Span>
+                <FiArrowUpRight size={20} />
+              </Span>
+            </Link>
+          </ItemH>
+
+          <PushSdkCardList justifyContent='flex-start'>
+            {SdkItemsList.map((item, idx) => (
+              <PushSdkCard>
+                <PushSdkContent href={item.link} target='_blank'>
+                  <PushSdkContentTitle>{item.title}</PushSdkContentTitle>
+                  <PushSdkContentArrow>
+                    <FiArrowUpRight size={24} />
+                  </PushSdkContentArrow>
+                </PushSdkContent>
+              </PushSdkCard>
+            ))}
+          </PushSdkCardList>
+
+          {/* <div className='Faqs-main-container'>
+                  <div className='sub-container'>
+                    <span className="hero_home_Faq_header">
+                      Frequently Asked Questions
+                    </span>
+                    <Link to='https://push.org/faq' target='_blank'>
+                      <div className='hero_home_explore'>
+                        <p className='hero_home_explore_link'>
+                          Explore FAQs
+                        </p>
+                        <FiArrowUpRight className='arrowUp-icon' />
+                      </div>
+                    </Link>
+                  </div>
+                  <FAQ />
+
+                </div> */}
+        </FluidContent>
+      </HomepageSection>
+
       <ChainFooter showPattern={false} />
     </Layout>
   );
