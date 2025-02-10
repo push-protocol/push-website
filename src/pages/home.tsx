@@ -41,7 +41,7 @@ function PushHomepage() {
 
         {/* <!-- Update Twitter Meta Tags --> */}
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:site' content='@pushprotocol' />
+        <meta name='twitter:site' content='@PushChain' />
         <meta
           name='twitter:title'
           content='Push Chain | Any Chain. Any User. Any App'
@@ -67,7 +67,7 @@ function PushHomepage() {
             url: 'https://push.org',
             logo: '/assets/website/favicon.ico',
             sameAs: [
-              'https://twitter.com/pushprotocol',
+              'https://x.com/PushChain',
               'https://www.linkedin.com/company/push-protocol/mycompany/',
             ],
           })}

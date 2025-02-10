@@ -74,7 +74,7 @@ const MorePosts = ({ allPosts, post }) => {
           alignItems='center'
           self={isMobile ? 'stretch' : 'self'}
           onClick={() => {
-            window.open(`https://twitter.com/pushprotocol`, '_blank');
+            window.open(`https://x.com/PushChain`, '_blank');
           }}
         >
           <BsTwitter size={23} color='#fff' style={{ marginRight: '10px' }} />

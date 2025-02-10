@@ -38,7 +38,7 @@ function PushChainKnowledgeBase() {
 
         {/* <!-- Update Twitter Meta Tags --> */}
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:site' content='@pushprotocol' />
+        <meta name='twitter:site' content='@PushChain' />
         <meta name='twitter:title' content='Push Chain | Knowledge Base' />
         <meta
           name='twitter:description'
@@ -61,7 +61,7 @@ function PushChainKnowledgeBase() {
             url: 'https://push.org',
             logo: '/assets/website/favicon.ico',
             sameAs: [
-              'https://twitter.com/pushprotocol',
+              'https://x.com/PushChain',
               'https://www.linkedin.com/company/push-protocol/mycompany/',
             ],
           })}

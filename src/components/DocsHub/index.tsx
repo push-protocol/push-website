@@ -213,7 +213,7 @@ export default function HomepageFeatures(): JSX.Element {
 
         {/* <!-- Twitter Meta Tags --> */}
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:site' content='@pushprotocol' />
+        <meta name='twitter:site' content='@PushChain' />
         <meta name='twitter:title' content='Push | Documentation Hub' />
         <meta
           name='twitter:description'
@@ -236,7 +236,7 @@ export default function HomepageFeatures(): JSX.Element {
             url: 'https://push.org',
             logo: '/assets/website/favicon.ico',
             sameAs: [
-              'https://twitter.com/pushprotocol',
+              'https://x.com/PushChain',
               'https://www.linkedin.com/company/push-protocol/mycompany/',
             ],
           })}
