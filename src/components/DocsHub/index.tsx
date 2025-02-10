@@ -343,7 +343,7 @@ export default function HomepageFeatures(): JSX.Element {
       <HomepageSection>
         <FluidContent>
           <ItemH justifyContent='flex-start'>
-            <HomepageSubHeader>Push SDK</HomepageSubHeader>
+            <HomepageSubHeader>Push Chain SDK</HomepageSubHeader>
             <Link
               to='https://www.npmjs.com/package/@pushprotocol/restapi'
               target='_blank'
