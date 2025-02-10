@@ -109,10 +109,10 @@ const tx = await pushChain.tx.send(
 
 export const SdkItemsList: ISdkListItem[] = [
   {
-    title: 'Core SDK',
+    title: 'Devnet SDK',
     Svg: require('@site/static/assets/docs/arrowupright.svg').default,
     PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://github.com/push-protocol/push-chain-sdk/tree/main/packages/core',
+    link: 'https://www.npmjs.com/package/@pushchain/devnet',
   },
   // {
   //   title: 'REST API',
