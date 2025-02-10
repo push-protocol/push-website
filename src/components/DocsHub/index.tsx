@@ -84,6 +84,8 @@ function TechDocItem({
   const baseUrl = useSiteBaseUrl();
 
   const handleOpenLink = (e, link: { e: any; link: string }) => {
+    if (!link) return;
+
     // Check if link is an absolute URL (starts with http or https)
     const isAbsoluteUrl = /^https?:\/\//i.test(link);
 
