@@ -88,15 +88,6 @@ const tx = await pushChain.tx.send(
 );`,
   },
   {
-    title: 'Push Reward Points',
-    srcref: 'rewards',
-    alt: 'Logo representing reward points of Push Protocol',
-    link: '/docs/rewards',
-    target: '_self',
-    description:
-      'Reward Points Program for contributors. Complete activities and earn points.',
-  },
-  {
     title: 'Examples',
     srcref: 'star',
     alt: 'Logo representing examples repo - Push Protocol',
@@ -104,6 +95,15 @@ const tx = await pushChain.tx.send(
     target: '_blank',
     description:
       'Examples to showcase the power of Push Protocol’s communication stack.',
+  },
+  {
+    title: 'Push Reward Points',
+    srcref: 'rewards',
+    alt: 'Logo representing reward points of Push Protocol',
+    // link: '/docs/rewards',
+    // target: '_self',
+    description:
+      'Reward Points Program for contributors. Complete activities and earn points.',
   },
 ];
 
@@ -142,7 +142,7 @@ export const SdkItemsList: ISdkListItem[] = [
     title: 'UI Kit',
     Svg: require('@site/static/assets/docs/arrowupright.svg').default,
     PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://github.com/push-protocol/push-chain-sdk/tree/main/packages/ui-kit',
+    link: 'https://github.com/push-protocol/push-chain-sdk',
   },
 ];
 
