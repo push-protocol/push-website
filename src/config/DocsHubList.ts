@@ -112,7 +112,7 @@ export const SdkItemsList: ISdkListItem[] = [
     title: 'Core SDK',
     Svg: require('@site/static/assets/docs/arrowupright.svg').default,
     PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://github.com/push-protocol/push-chain-sdk/tree/main/packages/core',
+    link: 'https://github.com/push-protocol/push-chain-sdk',
   },
   // {
   //   title: 'REST API',
@@ -142,7 +142,7 @@ export const SdkItemsList: ISdkListItem[] = [
     title: 'UI Kit',
     Svg: require('@site/static/assets/docs/arrowupright.svg').default,
     PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://github.com/push-protocol/push-chain-sdk/tree/main/packages/ui-kit',
+    link: 'https://github.com/push-protocol/push-chain-sdk',
   },
 ];
 
