@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[72686],{27755:e=>{e.exports=JSON.parse('{"label":"Bug bounty","permalink":"/push-website/pr-preview/pr-1000/blog/tags/bug-bounty","allTagsPath":"/push-website/pr-preview/pr-1000/blog/tags","count":2,"unlisted":false}')}}]);
