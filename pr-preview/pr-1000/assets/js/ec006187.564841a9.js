@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[38355],{299502:e=>{e.exports=JSON.parse('{"label":"Cryptocurrency","permalink":"/push-website/pr-preview/pr-1000/blog/tags/cryptocurrency","allTagsPath":"/push-website/pr-preview/pr-1000/blog/tags","count":17,"unlisted":false}')}}]);
