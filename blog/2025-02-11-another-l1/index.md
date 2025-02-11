@@ -45,5 +45,3 @@ Personally, what is most exciting for me is thinking about the new use-cases tha
 Yes it's an ambitious road, but we're determined.
 
 LFPush!
-
-Collapse
