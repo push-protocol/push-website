@@ -140,14 +140,6 @@ export const knowledgeBaseArticleContent = [
   // Let’s keep pushing! 🌍🚀`,
   //   },
   {
-    slug: 'partners',
-    image: 'push-chain-partners',
-    title: 'Explore Partners',
-    subtitle:
-      'Explore partnerships committed to building universal apps and unlocking chain abstraction on Push Chain..',
-    url: '/knowledge/partners',
-  },
-  {
     slug: 'why-push-chain',
     image: 'why-push-chain',
     title: 'Why Push Chain?',
@@ -162,6 +154,14 @@ export const knowledgeBaseArticleContent = [
     subtitle:
       'Unlike traditional L1 chains, Push Chain introduces ten key innovations and optimized mechanisms to unify any chain, any user, and any app. This article will help you understand - What Innovations Push Chain brings to Web3!',
     url: '/blog/innovations-by-push-chain',
+  },
+  {
+    slug: 'partners',
+    image: 'push-chain-partners',
+    title: 'Explore Partners',
+    subtitle:
+      'Explore partnerships committed to building universal apps and unlocking chain abstraction on Push Chain..',
+    url: '/knowledge/partners',
   },
   {
     slug: 'evolution-of-push',

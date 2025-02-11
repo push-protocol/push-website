@@ -12,13 +12,13 @@ export const ChainKnowledgeBaseHeader = {
     <div>
       <div>
         Push Chain is a shared state blockchain for universal applications. It
-        is designed to allow <b>transactions from any chain</b> (ETH, Solana,
-        EVM, non-EVM) enabling <b>apps from any chain</b> to be accessed by
+        enables <b>transactions from any chain</b> (ETH, Solana, EVM, non-EVM)
+        allowing <b>apps</b> to be accessed by
         <b> users of any chain</b>.
       </div>
       <div>
         <p /> <p />
-        It enables new paradigm of apps where users of all chains can come
+        Push leverages chain abstraction to enable users of all chains to come
         together for shared app experiences (universal AI agents, universal
         DeFi, universal Predication Market, universal Socials, etc).
       </div>

@@ -225,7 +225,7 @@ const ChainCountDownFeature = () => {
       <PushIconSVG />
 
       <CountDownDiv>
-        <CountDownText>Incentivized Devnet Phase 2</CountDownText>
+        <CountDownText>Incentivized Devnet v2 in</CountDownText>
         <CountDownTime>
           {timeLeft.days}D : {timeLeft.hours}H : {timeLeft.minutes}M :
           {timeLeft.seconds}S
