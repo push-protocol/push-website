@@ -67,6 +67,10 @@ export const PageMeta = {
     pageDescription:
       'Discover everything for tutorials to code base to what makes Push Chain tick at the knowledge hub.',
   },
+  PARTNERS: {
+    pageTitle: 'Push Chain | Knowledge Base Partners',
+    pageDescription: 'Meet our Pa',
+  },
   ARTICLE: {
     pageTitle: 'Push Chain | Knowledge Base',
     pageDescription:

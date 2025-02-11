@@ -104,6 +104,7 @@ const ChainKnowledgeBaseArticleWrapper = styled.div`
 
 const MarkdownSection = styled(ItemV)`
   // styles for images
+  color: #000;
   img {
     border-radius: 32px;
   }
@@ -118,8 +119,7 @@ const MarkdownSection = styled(ItemV)`
   ol {
     li {
       list-style: inherit !important;
-    }import { extractTOC } from '../utils/ExtractTableOfContent';
-
+    }
   }
 `;
 
