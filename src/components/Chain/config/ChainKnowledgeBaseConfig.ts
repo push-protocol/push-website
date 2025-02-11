@@ -173,6 +173,14 @@ export const knowledgeBaseArticleContent = [
     url: '/blog/evolution-of-push',
   },
   {
+    slug: 'another-l1',
+    title: 'Is Push Chain Another L1?',
+    image: 'another-l1',
+    subtitle:
+      'The move towards Push Chain was driven by the realisation that we had to do our bit to move the needle on interoperability, not in order to create our own fragmented ecosystem.',
+    url: '/blog/another-l1',
+  },
+  {
     slug: 'faq-push-chain',
     image: 'frequently-asked-questions',
     title: 'Push Chain’s Frequently Asked Questions',
@@ -204,13 +212,7 @@ export const knowledgeBaseArticleContent = [
       'One of the defining aspects of decentralized networks is their lack of a central authority to govern how they operate. Instead, these networks rely on a set of rules and systems to securely communicate and reach consensus on the overall state of the network.',
     url: '/blog/randomized-node-selection-push-chain',
   },
-  // {
-  //   slug: 'is-push-chain-another-layer-1',
-  //   title: 'Is Push Another L1?',
-  //   subtitle:
-  //     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget aliquet lectus. In at porttitor lacus. Morbi fermentum egestas porta.',
-  //   url: '/blog/is-push-chain-another-layer-1',
-  // },
+
   {
     slug: 'understand-proof-of-stake-and-push-chain',
     image: 'understand-proof-of-stake',
