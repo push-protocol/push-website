@@ -18,10 +18,10 @@ import useMediaQuery from '@site/src/hooks/useMediaQuery';
 import GLOBALS, { device } from '@site/src/config/globals';
 
 const CookieComponent = () => {
-  const isMobile = useMediaQuery(device.mobileL);
-
   const [cookies, setCookie] = useCookies(['pushCookies']);
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(
+    () => cookies.pushCookies === undefined
+  );
 
   const handleAccept = () => {
     setCookie('pushCookies', true, { path: '/' });
@@ -30,13 +30,16 @@ const CookieComponent = () => {
 
   const handleReject = () => {
     // Add your logic for rejecting cookies here
-    // setCookie('pushCookies', false, { path: '/' });
+    setCookie('pushCookies', false, {
+      path: '/',
+      expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
+    });
     setShowModal(false);
   };
 
   return (
     <>
-      {!cookies.pushCookies && showModal && (
+      {showModal && (
         <CookieContainer>
           <H2
             color='#000'
@@ -77,8 +80,7 @@ const CookieContainer = styled.div`
   bottom: 16px;
   right: 16px;
   width: 344px;
-  // height: 144px;
-  z-index: 999999;
+  z-index: 999999999999;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
