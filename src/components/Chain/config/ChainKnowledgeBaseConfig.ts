@@ -175,9 +175,7 @@ export const knowledgeBaseArticleContent = [
   {
     slug: 'another-l1',
     title: 'Is Push Chain Another L1?',
-    imageDirectory:
-      require('../../../../blog/2025-02-11-another-l1/cover-image.webp')
-        .default,
+    image: 'another-l1',
     subtitle:
       'The move towards Push Chain was driven by the realisation that we had to do our bit to move the needle on interoperability, not in order to create our own fragmented ecosystem.',
     url: '/blog/another-l1',
