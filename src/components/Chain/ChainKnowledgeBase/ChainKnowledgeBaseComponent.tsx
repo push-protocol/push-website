@@ -53,7 +53,6 @@ const ChainKnowledgeBaseComponent = () => {
                 height={isMobile ? '100%' : '325px'}
                 src={ChainKnowledgeBaseHeader.video.src}
                 title={ChainKnowledgeBaseHeader.video.title}
-                frameBorder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
                 referrerPolicy='strict-origin-when-cross-origin'
                 allowFullScreen

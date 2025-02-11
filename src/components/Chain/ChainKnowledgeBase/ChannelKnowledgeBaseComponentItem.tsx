@@ -21,7 +21,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       window.open(item.url, '_blank');
     } else if (item?.url.startsWith('/')) {
       const internalUrl = `${baseURL}${item.url}`;
-      window.open(internalUrl, '_blank');
+      window.open(internalUrl, item?.target || '_blank');
     } else {
       // Open internal route in a new tab
       const internalUrl = `${baseURL}/knowledge/${item?.slug}`;

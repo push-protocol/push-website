@@ -225,13 +225,14 @@ const ChainCountDownFeature = () => {
       <PushIconSVG />
 
       <CountDownDiv>
-        <CountDownText>Incentivized Devnet v2 in</CountDownText>
+        <CountDownText>Incentivized Devnet Phase 2</CountDownText>
         <CountDownTime>
           {timeLeft.days}D : {timeLeft.hours}H : {timeLeft.minutes}M :
           {timeLeft.seconds}S
         </CountDownTime>
       </CountDownDiv>
 
+      {/* comment button till tweet goes live */}
       <CountdownButton onClick={handleRedirect}>Learn More</CountdownButton>
     </CountdownWrapper>
   );
@@ -335,4 +336,5 @@ const CountdownButton = styled.button`
   background: transparent;
   cursor: pointer;
   color: #fff;
+  visibility: hidden;
 `;

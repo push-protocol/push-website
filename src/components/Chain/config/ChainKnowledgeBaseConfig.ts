@@ -162,6 +162,7 @@ export const knowledgeBaseArticleContent = [
     subtitle:
       'Explore partnerships committed to building universal apps and unlocking chain abstraction on Push Chain..',
     url: '/knowledge/partners',
+    target: '_self',
   },
   {
     slug: 'evolution-of-push',
