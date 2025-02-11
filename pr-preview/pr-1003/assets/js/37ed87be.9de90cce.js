@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[87442],{74876:e=>{e.exports=JSON.parse('{"label":"Metamask Wallet","permalink":"/push-website/pr-preview/pr-1003/blog/tags/metamask-wallet","allTagsPath":"/push-website/pr-preview/pr-1003/blog/tags","count":2,"unlisted":false}')}}]);
