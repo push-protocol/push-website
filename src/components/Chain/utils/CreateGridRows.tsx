@@ -4,7 +4,7 @@ export const createGridRows = (items) => {
   const rows = [];
   let index = 0;
 
-  while (index < items.length) {
+  while (index < items?.length) {
     const remainingItems = items.length - index;
 
     if (remainingItems === 7) {

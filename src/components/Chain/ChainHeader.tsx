@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+// /* eslint-disable @typescript-eslint/no-unused-vars */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React, { FC, useEffect, useState } from 'react';
@@ -15,6 +15,7 @@ import GLOBALS, { device, structure } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
 import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import { ChainNavBarItems } from './config/ChainNavBarItems';
 import useModal from './hooks/useModal';
 
 import {
@@ -35,13 +36,6 @@ import { BsChevronDown } from 'react-icons/bs';
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
-let lastScrollY = 0;
-const SCROLL_DELTA = 5;
-
-if (typeof window !== 'undefined') {
-  lastScrollY = window.scrollY;
-}
-
 const defaultMobileMenuState = {
   0: false,
   1: false,
@@ -59,7 +53,6 @@ const ChainHeader: FC = () => {
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
-  // const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const [scrollDirection] = useScrollDirection(isMobileMenuOpen);
   const { isOpen, open, close } = useModal();
@@ -70,24 +63,38 @@ const ChainHeader: FC = () => {
     setIsMobileMenuOpen((lastOpen) => !lastOpen);
   };
 
-  // const toggleDropdown = () => setDropdownOpen((prev) => !prev);
-
   const showMobileMenu = isMobile && isMobileMenuOpen;
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
 
   const onMobileHeaderMenuClick = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    menuIndex: number
+    menuIndex: number,
+    itemId
   ) => {
     e.preventDefault();
+    const newMenuState = {
+      ...mobileMenuMap,
+      [menuIndex]: !mobileMenuMap[menuIndex], // Toggle only the clicked menu
+    };
 
-    // if (isMobile) {
-    setMobileMenuMap((oldMap) => {
-      return {
-        ...defaultMobileMenuState,
-        [menuIndex]: !oldMap[menuIndex],
-      };
+    setMobileMenuMap(newMenuState);
+    setActiveItem(itemId);
+  };
+
+  const handleMouseEnter = (e, activeId, itemId) => {
+    setMobileMenuMap({
+      ...defaultMobileMenuState,
+      [activeId]: true,
     });
+    setActiveItem(itemId!);
+  };
+
+  const handleMouseLeave = (e, activeId) => {
+    setMobileMenuMap({
+      ...defaultMobileMenuState,
+      [activeId]: false,
+    });
+    setActiveItem(null);
   };
 
   useEffect(() => {
@@ -103,67 +110,6 @@ const ChainHeader: FC = () => {
     };
   }, [isMobileMenuOpen, isMobile]);
 
-  // Use Effect
-  useEffect(() => {
-    const updateScrollDirection = () => {
-      let scrollY = 0;
-
-      if (typeof window !== 'undefined') {
-        scrollY = window.scrollY;
-      }
-
-      let direction = scrollY > lastScrollY ? 'scrollDown' : 'scrollUp';
-
-      if (
-        direction !== scrollDirection &&
-        (scrollY - lastScrollY > SCROLL_DELTA ||
-          scrollY - lastScrollY < -SCROLL_DELTA)
-      ) {
-        // check if isMobileMenuOpen then override
-        if (isMobileMenuOpen) {
-          direction = 'scrollUp';
-        }
-
-        setScrollDirection(direction);
-      }
-
-      lastScrollY = scrollY > 0 ? scrollY : 0;
-    };
-
-    // add event listener
-    window.addEventListener('scroll', updateScrollDirection, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', updateScrollDirection); // clean up
-    };
-  }, []);
-
-  const textIds = ['text0', 'text1', 'text2', 'text3', 'text4', 'text5'];
-
-  const handleMouseEnter = (e, activeId) => {
-    textIds.forEach((id) => {
-      if (id !== activeId) {
-        const element = document.getElementById(id);
-        console.log('got here', element);
-
-        if (element) {
-          element.style.color = '#6C6C6C';
-          element.style.transitionDuration = '1s';
-        }
-      }
-    });
-  };
-
-  const handleMouseLeave = (e) => {
-    textIds.forEach((id) => {
-      const element = document.getElementById(id);
-      if (element) {
-        element.style.color = '#fff';
-        element.style.transitionDuration = '1s';
-      }
-    });
-  };
-
   const handleSectionNavigation = (item) => {
     setActiveItem(item?.id);
     if (!item.url) {
@@ -176,13 +122,9 @@ const ChainHeader: FC = () => {
       });
     }
   };
+
   const handleRedirect = (item) => {
     setActiveItem(item?.id);
-
-    // if (item?.subItems) {
-    //   toggleDropdown();
-    //   return;
-    // }
 
     if (!item.url) return;
 
@@ -227,42 +169,9 @@ const ChainHeader: FC = () => {
     history.push(targetUrl);
   };
 
-  // Dummy data for navigation items
-  const navItems = [
-    { id: 'technology', label: 'Technology', url: '/' },
-    { id: 'knowledge', label: 'Knowledge Base', url: '/knowledge' },
-
-    { id: 'docs', label: 'Developers', url: '/docs' },
-    { id: 'blog', label: 'Blog', url: '/blog' },
-    {
-      id: 'resources',
-      label: 'resources',
-      subItems: [
-        {
-          id: 'litepaper',
-          label: 'Litepaper',
-          sublabels: 'Push Chain Litepaper',
-          url: '/guides',
-        },
-        {
-          id: 'whitepaper',
-          label: 'Whitepaper',
-          sublabels: 'Push Chain Whitepaper',
-          url: '/tools',
-        },
-        {
-          id: 'faq',
-          label: 'FAQ',
-          sublabels: 'Frequently asked questions about Push Chain',
-          url: '/tools',
-        },
-      ],
-    },
-  ];
-
   // Update the active item based on the current location
   useEffect(() => {
-    const activeNavItem = navItems.find(
+    const activeNavItem = ChainNavBarItems?.find(
       (item) => location.pathname === baseURL + item.url
     );
     if (activeNavItem) {
@@ -317,33 +226,24 @@ const ChainHeader: FC = () => {
                 className='navigationMenu'
                 showMobileMenu={isMobileMenuOpen}
               >
-                {/* {navItems?.slice(0, 4).map((item) => (
+                {ChainNavBarItems?.map((item, index) => (
                   <NavigationMenuItem
                     key={item.id}
                     isActive={activeItem === item.id}
                     className={activeItem === item?.id ? 'active' : ''}
-                    onClick={() => handleRedirect(item)}
-                    showMobileMenu={isMobileMenuOpen}
-                  >
-                    <MenuNavLink className='navLink'>
-                      <NavigationMenuHeader isActive={activeItem === item.id}>
-                        <Span fontSize='18px'>{item.label}</Span>
-                      </NavigationMenuHeader>
-                    </MenuNavLink>
-                  </NavigationMenuItem>
-                ))} */}
-
-                {navItems.slice(0, 5)?.map((item, index) => (
-                  <NavigationMenuItem
-                    key={item.id}
-                    isActive={activeItem === item.id}
-                    className={activeItem === item?.id ? 'active' : ''}
-                    // onClick={() => handleRedirect(item)}
-                    onClick={(e) => onMobileHeaderMenuClick(e, index)}
+                    onClick={(e) => {
+                      if (item?.subItems) {
+                        onMobileHeaderMenuClick(e, index, item.id);
+                      } else {
+                        handleRedirect(item);
+                      }
+                    }}
                     showMobileMenu={showMobileMenu}
-                    onMouseEnter={(e) => handleMouseEnter(e, `text${index}`)}
-                    onMouseLeave={(e) => handleMouseLeave(e, `text${index}`)}
-                    id={`text${index}`}
+                    expanded={mobileMenuMap[index]}
+                    {...(item.subItems && {
+                      onMouseEnter: (e) => handleMouseEnter(e, index, item.id),
+                      onMouseLeave: (e) => handleMouseLeave(e, index, item.id),
+                    })}
                   >
                     <MenuNavLink className='navLink'>
                       <NavigationMenuHeader isActive={activeItem === item.id}>
@@ -363,7 +263,7 @@ const ChainHeader: FC = () => {
                               key={subItem.id}
                               onClick={() => handleRedirect(subItem)}
                             >
-                              <H3>{subItem.label}</H3>
+                              <H3>{subItem.label} </H3>
                               <Span>{subItem?.sublabels}</Span>
                             </DropdownItem>
                           ))}
@@ -419,7 +319,7 @@ const NavList = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-: center;
   flex: 1;
   padding: 0px 23px;
   margin: 0px auto 0 auto;
@@ -431,8 +331,8 @@ const NavList = styled.div`
     margin: 0px auto;
     box-sizing: border-box;
     align-items: center;
-    border-radius: ${(props) => (props.isMobileMenuOpen ? '32px' : '55px')};
-    min-height: ${(props) => (props.isMobileMenuOpen ? '100vh' : '100%')};
+    border-radius: ${(props) => (props.showMobileMenu ? '32px' : '55px')};
+    min-height: ${(props) => (props.showMobileMenu ? '100vh' : '100%')};
     justify-content: ${(props) =>
       props.isMobileMenuOpen ? 'flex-start' : 'space-between'};
   }
@@ -605,7 +505,7 @@ const IconMenu = styled.ul`
   padding: 0;
   display: flex;
   gap: 20px;
-  z-index: 999;
+  z-index: 9;
 
   @media ${device.laptopM} {
     flex-direction: row;
@@ -711,12 +611,10 @@ const NavigationMenuHeader = styled.div`
 const DropdownMenu = styled.ul`
   list-style: none;
 
-  display: none;
+  display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
   position: absolute;
-  top: 100%;
-  // left: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 90%;
+  left: 0;
   flex-direction: column;
   z-index: 9999999999 !important;
   padding: 12px;

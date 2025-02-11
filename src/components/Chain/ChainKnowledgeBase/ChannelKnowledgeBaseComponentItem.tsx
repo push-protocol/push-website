@@ -16,17 +16,17 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
   const isMobile = useMediaQuery(device.mobileL);
   const baseURL = useSiteBaseUrl() || '';
 
-  const openLink = (item) => {
-    // if (item?.url.startsWith('https://')) {
-    //   window.open(item.url, '_blank');
-    // } else if (item?.url.startsWith('/')) {
-    //   const internalUrl = `${baseURL}${item.url}`;
-    //   window.open(internalUrl, '_blank');
-    // } else {
-    // Open internal route in a new tab
-    const internalUrl = `${baseURL}/knowledge/${item?.slug}`;
-    window.open(internalUrl, '_blank');
-    // }
+  const openLink = (item: string) => {
+    if (item?.url.startsWith('https://')) {
+      window.open(item.url, '_blank');
+    } else if (item?.url.startsWith('/')) {
+      const internalUrl = `${baseURL}${item.url}`;
+      window.open(internalUrl, '_blank');
+    } else {
+      // Open internal route in a new tab
+      const internalUrl = `${baseURL}/knowledge/${item?.slug}`;
+      window.open(internalUrl, '_blank');
+    }
   };
 
   return (
@@ -39,7 +39,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       justifyContent='space-between'
       onClick={() => openLink(item)}
     >
-      {item?.image ? (
+      {item?.image && (
         <KnowledgeImage
           src={
             require(
@@ -49,7 +49,17 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
           alt={item?.title}
           title={item?.title}
         />
-      ) : (
+      )}
+
+      {item?.imageDirectory && (
+        <KnowledgeImage
+          src={item.imageDirectory}
+          alt={item?.title}
+          title={item?.title}
+        />
+      )}
+
+      {!item?.image && !item?.imageDirectory && (
         <div
           style={{
             height: 'auto',
@@ -99,7 +109,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
           letterSpacing='-0.64px'
           color='#D548EC'
         >
-          Read More
+          {item?.slug == 'partners' ? 'Explore Partners' : 'Read More'}
         </Span>
         <TbArrowUpRight color='#D548EC' size={24} />
       </ItemH>
