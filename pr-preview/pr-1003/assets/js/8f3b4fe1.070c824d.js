@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[89118],{866653:e=>{e.exports=JSON.parse('{"slug":"partners","image":"push-chain-partners","title":"Explore Partners","subtitle":"Explore partnerships committed to building universal apps and unlocking chain abstraction on Push Chain..","url":"/knowledge/partners"}')}}]);
