@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[94833],{792901:e=>{e.exports=JSON.parse('{"label":"Nft Collectibles","permalink":"/push-website/pr-preview/pr-1003/blog/tags/nft-collectibles","allTagsPath":"/push-website/pr-preview/pr-1003/blog/tags","count":1,"unlisted":false}')}}]);
