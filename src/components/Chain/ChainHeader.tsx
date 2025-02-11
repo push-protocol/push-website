@@ -249,7 +249,11 @@ const ChainHeader: FC = () => {
                       <NavigationMenuHeader isActive={activeItem === item.id}>
                         <Span fontSize='18px'>{item.label}</Span>
                         {item.subItems && (
-                          <BsChevronDown size={12} className='chevronIcon' />
+                          <BsChevronDown
+                            size={12}
+                            color={activeItem === item.id ? '#000' : '#fff'}
+                            className='chevronIcon'
+                          />
                         )}
                       </NavigationMenuHeader>
 
@@ -360,14 +364,6 @@ const StyledHeader = styled.header`
   &.light {
     & span {
       color: #121315;
-    }
-
-    & svg.chevronIcon {
-      fill: #121315;
-
-      & path {
-        stroke: #121315;
-      }
     }
   }
 
@@ -633,12 +629,12 @@ const DropdownMenu = styled.ul`
     display: flex;
     flex-direction: column;
     margin: 8px 0 0 0;
-    padding: 0px 12px 6px 12px;
+    padding: 12px;
     max-height: initial;
     min-height: initial;
+    border-radius: 12px;
 
     position: relative;
-    clip-path: inset(0 round 24px);
 
     display: ${(props) => (props.expanded ? 'flex' : 'none !important')};
     & a {
