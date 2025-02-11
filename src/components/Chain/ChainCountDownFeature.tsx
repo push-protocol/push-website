@@ -171,7 +171,7 @@ const PushIconSVG = () => {
 };
 
 const ChainCountDownFeature = () => {
-  const targetDate = new Date('2025-02-31T23:59:59').getTime();
+  const targetDate = new Date('2025-02-28T23:59:59').getTime();
   const [scrollDirection] = useScrollDirection(false);
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
 
@@ -190,11 +190,24 @@ const ChainCountDownFeature = () => {
     }
   };
 
+  const [isExpired, setIsExpired] = useState(false);
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      const newTimeLeft = calculateTimeLeft();
+      setTimeLeft(newTimeLeft);
+
+      // If countdown is over, set isExpired to true
+      if (
+        newTimeLeft.days === 0 &&
+        newTimeLeft.hours === 0 &&
+        newTimeLeft.minutes === 0 &&
+        newTimeLeft.seconds === 0
+      ) {
+        setIsExpired(true);
+        clearInterval(timer); // Stop the timer when countdown ends
+      }
     }, 1000);
 
     return () => clearInterval(timer); // Cleanup on unmount
@@ -203,6 +216,10 @@ const ChainCountDownFeature = () => {
   const handleRedirect = () => {
     window.open('http://push.org', '_blank');
   };
+
+  // Do not render if countdown has expired
+  if (isExpired) return null;
+
   return (
     <CountdownWrapper className={`header ${headerClass}`}>
       <PushIconSVG />
