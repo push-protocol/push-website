@@ -59,7 +59,7 @@ const tx = await pushChain.tx.send(
 
 export const TechDocItems: ITechDocItem[] = [
   {
-    title: 'Chain',
+    title: 'Push Chain',
     srcref: 'pushchain',
     alt: 'Logo representing Push Chain - Push Protocol',
     link: '/docs/chain',
@@ -104,6 +104,15 @@ const tx = await pushChain.tx.send(
     target: '_self',
     description:
       'Reward Points Program for contributors. Complete activities and earn points.',
+  },
+  {
+    title: 'Push Notification & Chat Protocol',
+    srcref: 'showrunners',
+    alt: 'Logo representing reward points of Push Protocol',
+    link: 'https://comms.push.org/docs',
+    target: '_blank',
+    description:
+      'Looking for Push Notification or Chat protocol? they have a new home over here.',
   },
 ];
 
