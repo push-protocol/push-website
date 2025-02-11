@@ -37,7 +37,7 @@ Import installed dependencies:
 
 ```typescript
 // Import Push Chain SDK
-import { PushChain, CONSTANTS } from '@pushchain/devnet';
+import { PushChain, CONSTANTS, createUniversalSigner, createUniversalAccount } from '@pushchain/devnet';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';
@@ -49,20 +49,15 @@ import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
 Before you can chat, you must authenticate yourself as the message sender. We’ll use a private key for this example (though other signing methods are possible such as using the Push Wallet):
 
 ```typescript
-const privateKey = generatePrivateKey(); // Replace with your private key
+const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
-const universalSigner = {
-  chain: CONSTANTS.CHAIN.ETHEREUM,
-  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
-  address: account.address, // Ethereum address derived from the private key
-  signMessage: async (data: Uint8Array) => {
-    const signature = await account.signMessage({
-      message: { raw: data }, // Data to be signed
-    });
-    return hexToBytes(signature); // Convert signature to byte array
-  },
-};
+// Create Signer. Defaults to Ethereum Sepolia
+const signer = createUniversalSigner({
+  address: account.address,
+  signMessage: async (data) =>
+    hexToBytes(await account.signMessage({ message: { raw: data } })),
+});
 ```
 
 ## Step 3: Initialize Push Chain
@@ -70,7 +65,7 @@ const universalSigner = {
 With your signer ready, initialize the Push Chain instance:
 
 ```typescript
-const pushChain = await PushChain.initialize(universalSigner);
+const pushChain = await PushChain.initialize(signer);
 // devnet is default, but other environments can be specified
 ```
 
@@ -79,12 +74,12 @@ const pushChain = await PushChain.initialize(universalSigner);
 Specify which accounts you want to chat with. Each recipient requires a chain name, ID and an address:
 
 ```typescript
-const recipients: UniversalAccount[] = [
-  {
+const recipients = [
+  createUniversalAccount({
     chain: CONSTANTS.CHAIN.SOLANA,
     chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
     address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-  },
+  }),
 ];
 ```
 
@@ -116,10 +111,10 @@ const tx = await pushChain.tx.send(recipients, {
 To visualize previous messages, we’ll decode them from a transaction response. Pass in the hash or a user address to retrieve transactions, then parse out the chat details:
 
 ```typescript
-const transactions = await pushChain.tx.get(tx.txHash);
-for (const blocks of transactions.blocks) {
+const results = await pushChain.tx.get(tx.txHash);
+for (const blocks of results.blocks) {
   for (const t of blocks.transactions) {
-    console.log('chat: ', t.txnData);
+    console.log('email: ', t.data);
   }
 }
 ```
@@ -127,60 +122,60 @@ for (const blocks of transactions.blocks) {
 ## Complete Example Code
 
 ```typescript
-async function main() {
-  const privateKey = generatePrivateKey();
-  const account = privateKeyToAccount(privateKey);
+// Import Push Chain SDK
+import { PushChain, CONSTANTS, createUniversalSigner, createUniversalAccount } from '@pushchain/devnet';
 
-  const universalSigner = {
-    chain: CONSTANTS.CHAIN.ETHEREUM,
-    chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
-    address: account.address, // Ethereum address derived from the private key
-    signMessage: async (data: Uint8Array) => {
-      const signature = await account.signMessage({
-        message: { raw: data }, // Data to be signed
-      });
-      return hexToBytes(signature); // Convert signature to byte array
-    },
-  };
+// Import utility functions from viem
+import { hexToBytes } from 'viem';
+import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
 
-  // 1) Initialize Push Chain
-  const pushChain = await PushChain.initialize(universalSigner);
+// Create Your Signer
+const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
+const account = privateKeyToAccount(privateKey);
 
-  // 2) Who do we chat with
-  const recipients: UniversalAccount[] = [
-    {
-      chain: CONSTANTS.CHAIN.SOLANA,
-      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
-      address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-    },
-  ];
+// Create Signer. Defaults to Ethereum Sepolia
+const signer = createUniversalSigner({
+  address: account.address,
+  signMessage: async (data) =>
+    hexToBytes(await account.signMessage({ message: { raw: data } })),
+});
 
-  // 3) Build the chat message
-  const chatMessage = {
-    sender: account.address,
-    text: 'Hello from Ethereum to Solana!',
-    timestamp: Date.now(),
-  };
+// Initialize Push Chain
+const pushChain = await PushChain.initialize(signer);
+// devnet is default, but other environments can be specified
 
-  // 4) Send the chat transaction
-  const tx = await pushChain.tx.send(recipients, {
-    category: 'CHAT_APP',
-    data: JSON.stringify(chatMessage),
-  });
+// Add Recipient
+const recipients = [
+  createUniversalAccount({
+    chain: CONSTANTS.CHAIN.SOLANA,
+    chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
+    address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+  }),
+];
 
-  // Wait a moment for finalization
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+// Compose a Chat Message
+const chatMessage = {
+  sender: account.address,
+  text: 'Hello from Ethereum to Solana!',
+  timestamp: Date.now(),
+};
 
-  // 5) Retrieve the chat message
-  const transactions = await pushChain.tx.get(tx.txHash);
-  for (const blocks of transactions.blocks) {
-    for (const t of blocks.transactions) {
-      console.log('chat: ', t.txnData);
-    }
+// Send the Chat Data
+const tx = await pushChain.tx.send(recipients, {
+  category: 'CHAT_APP',
+  data: JSON.stringify(chatMessage),
+});
+
+// Delay for 3 seconds
+
+// Fetch Chat History
+const results = await pushChain.tx.get(tx.txHash);
+for (const blocks of results.blocks) {
+  for (const t of blocks.transactions) {
+    console.log('email: ', t.data);
   }
 }
 
-void main();
 ```
 
 # Conclusion

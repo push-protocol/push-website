@@ -45,19 +45,19 @@ A namespace dedicated to converting addresses and handling **UniversalAccount** 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
   ```typescript
-  const account = Utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
+  const account = PushChain.utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
   ```
   </TabItem>
 
   <TabItem value="react" attributes={{className: "codetab react"}} default>
   ```typescript
-  const account = Utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
+  const account = PushChain.utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
   ```
   </TabItem>
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
   ```typescript
-  const account = Utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
+  const account = PushChain.utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
   ```
   </TabItem>
 </Tabs>
@@ -107,7 +107,7 @@ const universalAccount = PushChain.utils.account.toUniversal('push:devnet:push1x
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
   ```typescript
-  const universalAccount: UniversalAccount = {
+  const universalAccount = {
     chain: CONSTANTS.CHAIN.ETHEREUM,
     chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
     address: '0x35B84d6848D16415177c64D64504663b998A6ab4',
@@ -119,7 +119,7 @@ const universalAccount = PushChain.utils.account.toUniversal('push:devnet:push1x
 
   <TabItem value="react" attributes={{className: "codetab react"}} default>
   ```typescript
-  const universalAccount: UniversalAccount = {
+  const universalAccount = {
     chain: CONSTANTS.CHAIN.ETHEREUM,
     chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
     address: '0x35B84d6848D16415177c64D64504663b998A6ab4',
@@ -131,7 +131,7 @@ const universalAccount = PushChain.utils.account.toUniversal('push:devnet:push1x
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
   ```typescript
-  const universalAccount: UniversalAccount = {
+  const universalAccount = {
     chain: CONSTANTS.CHAIN.ETHEREUM,
     chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
     address: '0x35B84d6848D16415177c64D64504663b998A6ab4',
@@ -174,19 +174,19 @@ const chainAgnosticStr = PushChain.utils.account.toChainAgnostic({
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
   ```typescript
-  const pushAddr = PushChain.utils.account.evmToPush('0x35B84d6848D16415177c64D64504663b998A6ab4');
+  const pushAddr = PushChain.utils.account.evmToPushAddress('0x35B84d6848D16415177c64D64504663b998A6ab4');
   ```
   </TabItem>
 
   <TabItem value="react" attributes={{className: "codetab react"}} default>
   ```typescript
-  const pushAddr = PushChain.utils.account.evmToPush('0x35B84d6848D16415177c64D64504663b998A6ab4');
+  const pushAddr = PushChain.utils.account.evmToPushAddress('0x35B84d6848D16415177c64D64504663b998A6ab4');
   ```
   </TabItem>
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
   ```typescript
-  const pushAddr = PushChain.utils.account.evmToPush('0x35B84d6848D16415177c64D64504663b998A6ab4');
+  const pushAddr = PushChain.utils.account.evmToPushAddress('0x35B84d6848D16415177c64D64504663b998A6ab4');
   ```
   </TabItem>
 </Tabs>
@@ -211,7 +211,7 @@ push1xkuy66zg69jp29muvnty2prx8wvc5645f9y5ux
 
 ```typescript
 // A standard EVM address on Ethereum mainnet
-const pushAddr = PushChain.utils.account.evmToPush('0x35B84d6848D16415177c64D64504663b998A6ab4');
+const pushAddr = PushChain.utils.account.evmToPushAddress('0x35B84d6848D16415177c64D64504663b998A6ab4');
 // => 'push1xkuy66zg69jp29muvnty2prx8wvc5645f9y5ux'
 ```
 
@@ -258,7 +258,7 @@ const pushAddr = PushChain.utils.account.evmToPush('0x35B84d6848D16415177c64D645
 
 ```typescript
 // A standard EVM address on Ethereum mainnet
-const pushAddr = PushChain.utils.account.evmToPush('0x35B84d6848D16415177c64D64504663b998A6ab4');
+const pushAddr = PushChain.utils.account.evmToPushAddress('0x35B84d6848D16415177c64D64504663b998A6ab4');
 // => 'push1xkuy66zg69jp29muvnty2prx8wvc5645f9y5ux'
 ```
 

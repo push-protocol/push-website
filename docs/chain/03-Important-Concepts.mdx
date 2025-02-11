@@ -50,12 +50,12 @@ The **UniversalAccount** is a chain-agnostic way of representing an address, des
 Here’s an example of how to use a UniversalAccount to represent a recipient on the Solana blockchain:
 
 ```typescript
-const recipients: UniversalAccount[] = [
-  {
+const recipients = [
+  createUniversalAccount({
     chain: CONSTANTS.CHAIN.SOLANA,
     chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
-    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-  },
+    address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+  }),
 ];
 ```
 
@@ -75,15 +75,10 @@ Here’s an example of how to define a `UniversalSigner` for the Ethereum blockc
 const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
-const universalSigner = {
-  chain: CONSTANTS.CHAIN.ETHEREUM,
-  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
-  address: account.address, // Ethereum address derived from the private key
-  signMessage: async (data: Uint8Array) => {
-    const signature = await account.signMessage({
-      message: { raw: data }, // Data to be signed
-    });
-    return hexToBytes(signature); // Convert signature to a byte array
-  },
-};
+// Create Signer. Defaults to Ethereum Sepolia
+const signer = createUniversalSigner({
+  address: account.address,
+  signMessage: async (data) =>
+    hexToBytes(await account.signMessage({ message: { raw: data } })),
+});
 ```

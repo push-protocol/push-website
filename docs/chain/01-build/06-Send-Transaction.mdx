@@ -33,18 +33,14 @@ import {
 ```typescript
 const tx = await pushChain.tx.send(
   [
-    {
-      chain: CONSTANTS.CHAIN.SOLANA,
-      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
-      account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-    },
+    // Defaults to the Ethereum Sepolia chain
+    createUniversalAccount({
+      address: '0x22B173e0596c6723dD1A95817052D96b97176Dd8',
+    }),
   ],
   {
     category: 'MY_CUSTOM_CATEGORY',
-    data: JSON.stringify({
-      title: 'Hello old friend from Solana!',
-      message: 'Greetings from Ethereum world.',
-    }),
+    data: 'Hello world',
   }
 );
 ```
@@ -54,18 +50,14 @@ const tx = await pushChain.tx.send(
 ```typescript
 const tx = await pushChain.tx.send(
   [
-    {
-      chain: CONSTANTS.CHAIN.SOLANA,
-      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
-      account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-    },
+    // Defaults to the Ethereum Sepolia chain
+    createUniversalAccount({
+      address: '0x22B173e0596c6723dD1A95817052D96b97176Dd8',
+    }),
   ],
   {
     category: 'MY_CUSTOM_CATEGORY',
-    data: JSON.stringify({
-      title: 'Hello old friend from Solana!',
-      message: 'Greetings from Ethereum world.',
-    }),
+    data: 'Hello world',
   }
 );
 ```
@@ -75,18 +67,14 @@ const tx = await pushChain.tx.send(
 ```typescript
 const tx = await pushChain.tx.send(
   [
-    {
-      chain: CONSTANTS.CHAIN.SOLANA,
-      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
-      account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-    },
+    // Defaults to the Ethereum Sepolia chain
+    createUniversalAccount({
+      address: '0x22B173e0596c6723dD1A95817052D96b97176Dd8',
+    }),
   ],
   {
     category: 'MY_CUSTOM_CATEGORY',
-    data: JSON.stringify({
-      title: 'Hello old friend from Solana!',
-      message: 'Greetings from Ethereum world.',
-    }),
+    data: 'Hello world',
   }
 );
 ```
@@ -126,23 +114,22 @@ Response properties description:
 Here below is an example of sending an Email to a Solana address. The payload is a simply JSON object with a title and message.
 
 ```typescript
-const email = {
-  title: 'Hello from Ethereum!',
-  message: 'This is a cross-chain email to Solana.',
-};
-
-const recipients = [
-  {
-    chain: CONSTANTS.CHAIN.SOLANA,
-    chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
-    account: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-  },
-];
-
-const tx = await pushChain.tx.send(recipients, 
+const tx = await pushChain.tx.send(
+  // We will send the transaction to a Solana address
+  [
+    createUniversalAccount({
+      chain: CONSTANTS.CHAIN.SOLANA,
+      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
+      address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+    }),
+  ],
   {
     category: 'MY_EMAIL_APP',
-    data: JSON.stringify(email),
+    // Sample email payload
+    data: JSON.stringify({
+      title: 'Hello old friend from Solana!',
+      message: 'Greetings from Ethereum world.',
+    }),
   }
 );
 ```
