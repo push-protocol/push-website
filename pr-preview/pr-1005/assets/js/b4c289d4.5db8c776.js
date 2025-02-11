@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[62667],{892705:e=>{e.exports=JSON.parse('{"label":"Bzx Protocol","permalink":"/push-website/pr-preview/pr-1005/blog/tags/bzx-protocol","allTagsPath":"/push-website/pr-preview/pr-1005/blog/tags","count":2,"unlisted":false}')}}]);
