@@ -25,88 +25,70 @@ import Details from '@theme/Details';
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
-// Import required modules
-import { PushChain, CONSTANTS } from '@pushchain/devnet';
-import { hexToBytes } from 'viem';
-import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
+// Import Push Chain SDK for blockchain interactions
+import { PushChain, CONSTANTS, createUniversalSigner, createUniversalAccount } from '@pushchain/devnet';
 
-// Import private key
-const privateKey = generatePrivateKey(); // Replace with your private key
+// Import utility functions from viem
+import { hexToBytes } from 'viem';
+import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
+
+const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
-// Create Universal Signer
-const universalSigner = {
-  chain: CONSTANTS.CHAIN.ETHEREUM,
-  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
-  address: account.address, // Ethereum address derived from the private key
-  signMessage: async (data: Uint8Array) => {
-    const signature = await account.signMessage({
-      message: { raw: data }, // Data to be signed
-    });
-    return hexToBytes(signature); // Convert signature to a byte array
-  },
-};
+// Create Signer. Defaults to Ethereum Sepolia
+const signer = createUniversalSigner({
+  address: account.address,
+  signMessage: async (data) =>
+    hexToBytes(await account.signMessage({ message: { raw: data } })),
+});
 
-// Initialize the SDK with the Universal Signer
-const pushChain = await PushChain.initialize(universalSigner);
+const pushChain = await PushChain.initialize(signer);
 ```
   </TabItem>
 
       <TabItem value="react" attributes={{className: "codetab react"}} default>
 ```typescript
-// Import required modules
-import { PushChain, CONSTANTS } from '@pushchain/devnet';
-import { hexToBytes } from 'viem';
-import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
+// Import Push Chain SDK for blockchain interactions
+import { PushChain, CONSTANTS, createUniversalSigner, createUniversalAccount } from '@pushchain/devnet';
 
-// Import private key
-const privateKey = generatePrivateKey(); // Replace with your private key
+// Import utility functions from viem
+import { hexToBytes } from 'viem';
+import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
+
+const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
-// Create Universal Signer
-const universalSigner = {
-  chain: CONSTANTS.CHAIN.ETHEREUM,
-  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
-  address: account.address, // Ethereum address derived from the private key
-  signMessage: async (data: Uint8Array) => {
-    const signature = await account.signMessage({
-      message: { raw: data }, // Data to be signed
-    });
-    return hexToBytes(signature); // Convert signature to a byte array
-  },
-};
+// Create Signer. Defaults to Ethereum Sepolia
+const signer = createUniversalSigner({
+  address: account.address,
+  signMessage: async (data) =>
+    hexToBytes(await account.signMessage({ message: { raw: data } })),
+});
 
-// Initialize the SDK with the Universal Signer
-const pushChain = await PushChain.initialize(universalSigner);
+const pushChain = await PushChain.initialize(signer);
 ```
   </TabItem>
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 ```typescript
-// Import required modules
-import { PushChain, CONSTANTS } from '@pushchain/devnet';
-import { hexToBytes } from 'viem';
-import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts';
+// Import Push Chain SDK for blockchain interactions
+import { PushChain, CONSTANTS, createUniversalSigner, createUniversalAccount } from '@pushchain/devnet';
 
-// Import private key
-const privateKey = generatePrivateKey(); // Replace with your private key
+// Import utility functions from viem
+import { hexToBytes } from 'viem';
+import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
+
+const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
-// Create Universal Signer
-const universalSigner = {
-  chain: CONSTANTS.CHAIN.ETHEREUM,
-  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
-  address: account.address, // Ethereum address derived from the private key
-  signMessage: async (data: Uint8Array) => {
-    const signature = await account.signMessage({
-      message: { raw: data }, // Data to be signed
-    });
-    return hexToBytes(signature); // Convert signature to a byte array
-  },
-};
+// Create Signer. Defaults to Ethereum Sepolia
+const signer = createUniversalSigner({
+  address: account.address,
+  signMessage: async (data) =>
+    hexToBytes(await account.signMessage({ message: { raw: data } })),
+});
 
-// Initialize the SDK with the Universal Signer
-const pushChain = await PushChain.initialize(universalSigner);
+const pushChain = await PushChain.initialize(signer);
 ```
   </TabItem>
 </Tabs>

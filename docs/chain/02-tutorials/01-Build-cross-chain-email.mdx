@@ -40,7 +40,7 @@ Import installed dependencies:
 
 ```typescript
 // Import Push Chain SDK
-import { PushChain, CONSTANTS } from '@pushchain/devnet';
+import { PushChain, CONSTANTS, createUniversalSigner, createUniversalAccount } from '@pushchain/devnet';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';
@@ -52,20 +52,15 @@ import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
 Let's create now the signer object that is responsible for proving ownership of the sender’s account by signing the transaction.
 
 ```typescript
-const privateKey = generatePrivateKey(); // Replace with your private key
+const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const account = privateKeyToAccount(privateKey);
 
-const universalSigner = {
-  chain: CONSTANTS.CHAIN.ETHEREUM,
-  chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
-  address: account.address, // Ethereum address derived from the private key
-  signMessage: async (data: Uint8Array) => {
-    const signature = await account.signMessage({
-      message: { raw: data }, // Data to be signed
-    });
-    return hexToBytes(signature); // Convert signature to byte array
-  },
-};
+// Create Signer. Defaults to Ethereum Sepolia
+const signer = createUniversalSigner({
+  address: account.address,
+  signMessage: async (data) =>
+    hexToBytes(await account.signMessage({ message: { raw: data } })),
+});
 ```
 
 ## 3. Initialize Push Chain
@@ -73,7 +68,7 @@ const universalSigner = {
 Initialize the Push Chain SDK using the signer object. The default environment is `devnet`:
 
 ```typescript
-const pushChain = await PushChain.initialize(universalSigner);
+const pushChain = await PushChain.initialize(signer);
 ```
 
 ## 4. Recipient Addresses
@@ -81,12 +76,12 @@ const pushChain = await PushChain.initialize(universalSigner);
 For this example, we’ll use Ethereum as the sender’s blockchain and Solana as the recipient’s. Here’s how to configure the recipient Solana address:
 
 ```typescript
-const recipients: UniversalAccount[] = [
-  {
+const recipients = [
+  createUniversalAccount({
     chain: CONSTANTS.CHAIN.SOLANA,
     chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
     address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-  },
+  }),
 ];
 ```
 
@@ -111,10 +106,10 @@ Now, let's fetch all the emails that a particular user has sent and received.
 For fetching the emails sent, we use the function `get` function from the `tx` class.
 
 ```typescript
-const transactions = await pushChain.tx.get(tx.txHash);
-for (const blocks of transactions.blocks) {
+const results = await pushChain.tx.get(tx.txHash);
+for (const blocks of results.blocks) {
   for (const t of blocks.transactions) {
-    console.log('email: ', t.txnData);
+    console.log('email: ', t.data);
   }
 }
 ```
@@ -122,56 +117,49 @@ for (const blocks of transactions.blocks) {
 ## Complete Example Code
 
 ```typescript
-import { PushChain, CONSTANTS } from '@pushchain/devnet';
+// Import Push Chain SDK
+import { PushChain, CONSTANTS, createUniversalSigner, createUniversalAccount } from '@pushchain/devnet';
+
+// Import utility functions from viem
 import { hexToBytes } from 'viem';
 import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
 
-async function main() {
-  const privateKey = generatePrivateKey();
-  const account = privateKeyToAccount(privateKey);
+const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
+const account = privateKeyToAccount(privateKey);
 
-  const universalSigner = {
-    chain: CONSTANTS.CHAIN.ETHEREUM,
-    chainId: CONSTANTS.CHAIN_ID.ETHEREUM.SEPOLIA,
-    address: account.address,
-    signMessage: async (data: Uint8Array) => {
-      const signature = await account.signMessage({
-        message: { raw: data },
-      });
-      return hexToBytes(signature);
-    },
-  };
+// Create Signer. Defaults to Ethereum Sepolia
+const signer = createUniversalSigner({
+  address: account.address,
+  signMessage: async (data) =>
+    hexToBytes(await account.signMessage({ message: { raw: data } })),
+});
 
-  const pushChain = await PushChain.initialize(universalSigner);
+const pushChain = await PushChain.initialize(signer);
 
-  const recipients: UniversalAccount[] = [
-    {
-      chain: CONSTANTS.CHAIN.SOLANA,
-      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
-      address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-    },
-  ];
+const recipients = [
+  createUniversalAccount({
+    chain: CONSTANTS.CHAIN.SOLANA,
+    chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
+    address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+  }),
+];
 
-  const tx = await pushChain.tx.send(recipients, {
-    category: 'MY_EMAIL_APP',
-    data: JSON.stringify({
-      title: 'Hello from Ethereum!',
-      message: 'This is a cross-chain email to Solana.',
-    }),
-  });
+const tx = await pushChain.tx.send(recipients, {
+  category: 'MY_EMAIL_APP',
+  data: JSON.stringify({
+    title: 'Hello from Ethereum!',
+    message: 'This is a cross-chain email to Solana.',
+  }),
+});
 
+// Delay for 3 seconds
 
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-
-  const transactions = await pushChain.tx.get(tx.txHash);
-  for (const blocks of transactions.blocks) {
-    for (const t of blocks.transactions) {
-      console.log('email: ', t.txnData);
-    }
+const results = await pushChain.tx.get(tx.txHash);
+for (const blocks of results.blocks) {
+  for (const t of blocks.transactions) {
+    console.log('email: ', t.data);
   }
 }
-
-void main();
 ```
 
 # Conclusion
