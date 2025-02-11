@@ -40,6 +40,7 @@ import { FiArrowUpRight } from 'react-icons/fi';
 
 // Internal Configs
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Spinner, {
   SPINNER_TYPE,
 } from '@site/src/components/reusables/spinners/SpinnerUnit';
@@ -51,7 +52,6 @@ import {
 } from '@site/src/config/DocsHubList';
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from '@site/src/config/pageMeta';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
 function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
@@ -268,10 +268,11 @@ export default function HomepageFeatures(): JSX.Element {
               >
                 Get started with building shared state apps for any chain.
               </Span>
-              <HeroButton disabled={true}>
+              <HeroButton onClick={() => (window.location.href = '#techdocs')}>
                 <Span padding='0 10px 0 0' fontSize='18px'>
-                  Coming Soon
-                </Span>
+                  Explore Docs
+                </Span>{' '}
+                ↗
               </HeroButton>
             </ItemV>
 
@@ -300,7 +301,9 @@ export default function HomepageFeatures(): JSX.Element {
       {/* QUICKSTART SECTION */}
       <HomepageSection alignItems='flex-start'>
         <FluidContent>
-          <HomepageSubHeader>Popular Quickstart</HomepageSubHeader>
+          <HomepageSubHeader id='quickstart'>
+            Popular Quickstart
+          </HomepageSubHeader>
 
           <PopularQuickiesList>
             {QuickstartItems.map((item, idx) => {
@@ -438,7 +441,6 @@ const HeroButton = styled(Button)`
   padding: 12px 30px;
   text-decoration: none;
   transition: all 0.1s ease-in-out;
-  opacity: 0.8;
 
   &:hover {
     transform: scale(1.05);

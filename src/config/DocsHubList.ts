@@ -100,8 +100,8 @@ const tx = await pushChain.tx.send(
     title: 'Push Reward Points',
     srcref: 'rewards',
     alt: 'Logo representing reward points of Push Protocol',
-    // link: '/docs/rewards',
-    // target: '_self',
+    link: '/docs/rewards',
+    target: '_self',
     description:
       'Reward Points Program for contributors. Complete activities and earn points.',
   },
