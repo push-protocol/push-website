@@ -84,6 +84,8 @@ function TechDocItem({
   const baseUrl = useSiteBaseUrl();
 
   const handleOpenLink = (e, link: { e: any; link: string }) => {
+    if (!link) return;
+
     // Check if link is an absolute URL (starts with http or https)
     const isAbsoluteUrl = /^https?:\/\//i.test(link);
 
@@ -295,6 +297,99 @@ export default function HomepageFeatures(): JSX.Element {
         </Content>
       </DocsHeroSection>
 
+      {/* QUICKSTART SECTION */}
+      <HomepageSection alignItems='flex-start'>
+        <FluidContent>
+          <HomepageSubHeader>Popular Quickstart</HomepageSubHeader>
+
+          <PopularQuickiesList>
+            {QuickstartItems.map((item, idx) => {
+              return (
+                <PopularQuickiesCard key={idx}>
+                  <PopularQuickiesHeader>
+                    <PopularQuickiesTitle>{`${item.title}`}</PopularQuickiesTitle>
+                  </PopularQuickiesHeader>
+
+                  <PopularQuickiesContent>
+                    <PopularQuickiesCodeBlock
+                      language='jsx'
+                      showLineNumbers={true}
+                    >
+                      {item.codeblock}
+                    </PopularQuickiesCodeBlock>
+                  </PopularQuickiesContent>
+                </PopularQuickiesCard>
+              );
+            })}
+          </PopularQuickiesList>
+        </FluidContent>
+      </HomepageSection>
+
+      {/* TECH DOCS SECTION */}
+      <HomepageSection>
+        <FluidContent>
+          <HomepageSubHeader id='techdocs'>
+            Technical Documentation
+          </HomepageSubHeader>
+          <TechDocCardList>
+            {TechDocItems.map((props, idx) => (
+              <TechDocItem key={idx} docutheme={colorMode} {...props} />
+            ))}
+          </TechDocCardList>
+        </FluidContent>
+      </HomepageSection>
+
+      {/* SDK SECTION */}
+      <HomepageSection>
+        <FluidContent>
+          <ItemH justifyContent='flex-start'>
+            <HomepageSubHeader>Push Chain SDK</HomepageSubHeader>
+            <Link
+              to='https://www.npmjs.com/package/@pushprotocol/restapi'
+              target='_blank'
+            >
+              <Span fontSize='18px' margin='0 5px 0 10px'>
+                Explore SDK
+              </Span>
+              <Span>
+                <FiArrowUpRight size={20} />
+              </Span>
+            </Link>
+          </ItemH>
+
+          <PushSdkCardList justifyContent='flex-start'>
+            {SdkItemsList.map((item, idx) => (
+              <PushSdkCard>
+                <PushSdkContent href={item.link} target='_blank'>
+                  <PushSdkContentTitle>{item.title}</PushSdkContentTitle>
+                  <PushSdkContentArrow>
+                    <FiArrowUpRight size={24} />
+                  </PushSdkContentArrow>
+                </PushSdkContent>
+              </PushSdkCard>
+            ))}
+          </PushSdkCardList>
+
+          {/* <div className='Faqs-main-container'>
+                  <div className='sub-container'>
+                    <span className="hero_home_Faq_header">
+                      Frequently Asked Questions
+                    </span>
+                    <Link to='https://push.org/faq' target='_blank'>
+                      <div className='hero_home_explore'>
+                        <p className='hero_home_explore_link'>
+                          Explore FAQs
+                        </p>
+                        <FiArrowUpRight className='arrowUp-icon' />
+                      </div>
+                    </Link>
+                  </div>
+                  <FAQ />
+
+                </div> */}
+        </FluidContent>
+      </HomepageSection>
+
       <ChainFooter showPattern={false} />
     </Layout>
   );
@@ -352,7 +447,7 @@ const HeroButton = styled(Button)`
 `;
 
 const pulseStaticAnim = keyframes`
-  100% { 
+  100% {
     opacity: 0.25;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
   }
@@ -378,7 +473,7 @@ const Pulse = styled.div`
 `;
 
 const pulsateAnim = keyframes`
-  100% { 
+  100% {
     opacity: 0;
     transform: scale(12);
   }
@@ -450,9 +545,7 @@ const PopularQuickiesList = styled(ItemH)`
 const PopularQuickiesCard = styled(ItemV)`
   margin: 0px;
   align-self: flex-start;
-  flex: 0 0 calc(50% - 21.33px);
-  min-width: 280px;
-  max-width: calc(50% - 21.33px);
+  flex: 1;
   overflow: auto;
   width: 100%;
 

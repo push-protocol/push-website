@@ -82,27 +82,10 @@ const config = {
         fromExtensions: ['html', 'htm'], // /myPage.html -> /myPage
         toExtensions: ['exe', 'zip'], // /myAsset -> /myAsset.zip (if latter exists)
         redirects: [
-          // {
-          //   from: '/docs/chat/build/stream-chats/',
-          //   to: '/docs/chat/build/stream-chat/',
-          // },
-          // {
-          //   from: '/docs/chat/build/types-of-recipient/',
-          //   to: '/docs/chat/supported-wallet-standards/',
-          // },
-          // {
-          //   from: '/docs/chat/tutorials/push-sdk-playground/',
-          //   to: '/docs/chat/playground/push-sdk-playground/',
-          // },
-          // {
-          //   from: '/docs/chat/tutorials/push-react-component-playground-example/',
-          //   to: '/docs/chat/playground/push-react-component-playground-example/',
-          // },
-          // // Redirect from multiple old paths to the new path
-          // {
-          //   to: '/docs/newDoc2',
-          //   from: ['/docs/oldDocFrom2019', '/docs/legacyDocFrom2016'],
-          // },
+          {
+            from: '/docs/chat/build/get-started/',
+            to: 'https://comms.push.org/docs',
+          },
         ],
         createRedirects(existingPath) {
           if (existingPath.includes('/docs/dev')) {
