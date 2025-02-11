@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[1644],{71527:e=>{e.exports=JSON.parse('{"label":"Liquidity Pool","permalink":"/push-website/pr-preview/pr-1005/blog/tags/liquidity-pool","allTagsPath":"/push-website/pr-preview/pr-1005/blog/tags","count":3,"unlisted":false}')}}]);
