@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[22870],{43245:e=>{e.exports=JSON.parse('{"label":"EthGlobal","permalink":"/push-website/pr-preview/pr-993/blog/tags/eth-global","allTagsPath":"/push-website/pr-preview/pr-993/blog/tags","count":7,"unlisted":false}')}}]);

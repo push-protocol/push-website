@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[28143],{986219:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-983/blog/tags/jobs","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

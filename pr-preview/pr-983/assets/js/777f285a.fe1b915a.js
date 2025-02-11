@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[62834],{775317:e=>{e.exports=JSON.parse('{"label":"Aave","permalink":"/push-website/pr-preview/pr-983/blog/tags/aave","allTagsPath":"/push-website/pr-preview/pr-983/blog/tags","count":2,"unlisted":false}')}}]);
