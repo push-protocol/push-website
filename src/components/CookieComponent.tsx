@@ -29,10 +29,8 @@ const CookieComponent = () => {
   };
 
   const handleReject = () => {
-    // Add your logic for rejecting cookies here
     setCookie('pushCookies', false, {
       path: '/',
-      expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
     });
     setShowModal(false);
   };

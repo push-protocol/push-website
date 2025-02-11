@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+import { useScrollDirection } from '@site/src/hooks/useScrollDirection';
+
 const PushIconSVG = () => {
   return (
     <svg
@@ -170,6 +172,8 @@ const PushIconSVG = () => {
 
 const ChainCountDownFeature = () => {
   const targetDate = new Date('2025-02-31T23:59:59').getTime();
+  const [scrollDirection] = useScrollDirection(false);
+  const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
 
   const calculateTimeLeft = () => {
     const difference = targetDate - new Date().getTime();
@@ -195,8 +199,12 @@ const ChainCountDownFeature = () => {
 
     return () => clearInterval(timer); // Cleanup on unmount
   }, []);
+
+  const handleRedirect = () => {
+    window.open('http://push.org', '_blank');
+  };
   return (
-    <CountdownWrapper>
+    <CountdownWrapper className={`header ${headerClass}`}>
       <PushIconSVG />
 
       <CountDownDiv>
@@ -207,7 +215,7 @@ const ChainCountDownFeature = () => {
         </CountDownTime>
       </CountDownDiv>
 
-      <CountdownButton>Learn More</CountdownButton>
+      <CountdownButton onClick={handleRedirect}>Learn More</CountdownButton>
     </CountdownWrapper>
   );
 };
@@ -216,7 +224,7 @@ export default ChainCountDownFeature;
 
 const CountdownWrapper = styled.div`
   width: 100%;
-  background: red;
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -224,10 +232,22 @@ const CountdownWrapper = styled.div`
   background: #000;
   align-items: center;
   border-radius: 24px;
+  position: fixed;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &.hide {
+    top: 100%;
+  }
 
   svg {
     width: 104px;
     height: auto;
+  }
+
+  @media (max-width: 1300px) {
+    max-width: calc(100% - 48px);
   }
 
   @media (max-width: 768px) {
@@ -237,6 +257,10 @@ const CountdownWrapper = styled.div`
     svg {
       display: none;
     }
+  }
+
+  @media (max-width: 425px) {
+    max-width: calc(100% - 32px);
   }
 `;
 

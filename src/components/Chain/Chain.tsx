@@ -36,9 +36,7 @@ const Chain = () => {
     <ChainWrapper>
       {/* Main Content */}
       <CountdownWrapper>
-        <MainContent>
-          <ChainCountDownFeature />
-        </MainContent>
+        <ChainCountDownFeature />
       </CountdownWrapper>
 
       <MainContent>
@@ -121,9 +119,6 @@ const MainContent = styled(ItemV)`
 `;
 
 const CountdownWrapper = styled.div`
-  position: fixed;
   width: 100%;
-  bottom: 8px;
-  left: 0;
   z-index: 99999999;
 `;
