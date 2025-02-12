@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[33027],{374036:e=>{e.exports=JSON.parse('{"label":"Staking","permalink":"/push-website/pr-preview/pr-1012/blog/tags/staking","allTagsPath":"/push-website/pr-preview/pr-1012/blog/tags","count":1,"unlisted":false}')}}]);

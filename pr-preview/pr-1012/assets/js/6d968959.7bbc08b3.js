@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[33207],{248855:e=>{e.exports=JSON.parse('{"label":"Mainnet","permalink":"/push-website/pr-preview/pr-1012/blog/tags/mainnet","allTagsPath":"/push-website/pr-preview/pr-1012/blog/tags","count":4,"unlisted":false}')}}]);
