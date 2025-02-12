@@ -56,8 +56,8 @@ function PushChainKnowledgeBase() {
           {JSON.stringify({
             '@context': 'https://schema.org/',
             '@type': 'Organization',
-            name: 'Push Protocol',
-            description: 'The Communication Protocol of Web3',
+            name: 'Push Chain',
+            description: 'Any Chain. Any User. Any App',
             url: 'https://push.org',
             logo: '/assets/website/favicon.ico',
             sameAs: [

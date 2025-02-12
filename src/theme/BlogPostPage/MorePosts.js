@@ -57,7 +57,7 @@ const MorePosts = ({ allPosts, post }) => {
           lineHeight='110%'
           color='#00000'
         >
-          More from Push Protocol
+          More from Push Chain
         </ResponsiveH2>
 
         <MoreButton
