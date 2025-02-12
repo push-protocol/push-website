@@ -1,0 +1,12 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[6605],{990177:(t,e,s)=>{s.r(e),s.d(e,{assets:()=>p,contentTitle:()=>d,default:()=>m,frontMatter:()=>h,metadata:()=>l,toc:()=>u});var i=s(474848),a=s(296540),r=s(944404),c=s(3386),n=s(307320),o=s(113490);const h={id:"chat",title:"Push Chat",hide_title:!0,displayed_sidebar:"pushChatSidebar",slug:"./",sidebar_position:1,image:"/assets/docs/previews/chat--push_chat.png"},d=void 0,l={id:"chat/chat",title:"Push Chat",description:"const Container = styled.div`  display: flex;",source:"@site/docs/chat/chat.mdx",sourceDirName:"chat",slug:"/chat/",permalink:"/push-website/pr-preview/pr-1010/docs/chat/",draft:!1,unlisted:!1,editUrl:"https://github.com/push-protocol/push-website/blob/main/docs/chat/chat.mdx",tags:[],version:"current",sidebarPosition:1,frontMatter:{id:"chat",title:"Push Chat",hide_title:!0,displayed_sidebar:"pushChatSidebar",slug:"./",sidebar_position:1,image:"/assets/docs/previews/chat--push_chat.png"},sidebar:"pushChatSidebar"},p={},u=[],x=function(){(0,a.useEffect)((()=>{window.location.href="https://comms.push.org/docs/chat"}),[]);const t=r.Ay.div`  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: white;
+  text-align: center;`,e=(0,r.Ay)(o.y8)`  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #fff;`,s=r.Ay.p` font-size: 18px;
+color: var(--ifm-color-primary-text);
+margin-top: 8px;`;return(0,i.jsxs)(t,{children:[(0,i.jsxs)(e,{className:"headerlogo",flex:"initial",children:[(0,i.jsx)(c.A,{style:{margin:"0px 9px 0px 4px"}}),(0,i.jsx)(n.A,{})]}),(0,i.jsx)(s,{children:"Redirecting..."})]})};function f(t){return(0,i.jsx)(i.Fragment,{})}function m(t={}){return(0,i.jsx)(x,{...t,children:(0,i.jsx)(f,{...t})})}}}]);
