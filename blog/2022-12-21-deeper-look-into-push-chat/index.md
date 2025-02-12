@@ -48,7 +48,7 @@ Their main task is to validate that:
 - the payload is following the corresponding payload standard,
 - the sender can actually send the message, and signature validation,
 - if the payload is valid, the Push Nodes will store the message on IPFS and then send a notification to the receiver of the message.
-  <i>Note: Push Nodes are in alpha right now and are currently run by the push protocol team with an alpha version of these nodes scheduled to come out around Q1 / Q2 of 2023.</i>
+  <i>Note: Push Nodes are in alpha right now and are currently run by the Push Chain team with an alpha version of these nodes scheduled to come out around Q1 / Q2 of 2023.</i>
 
 ## Who is currently running Push Nodes?
 
