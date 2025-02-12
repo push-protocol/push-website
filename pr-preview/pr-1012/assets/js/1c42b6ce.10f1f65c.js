@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[24961],{658938:e=>{e.exports=JSON.parse('{"label":"Truefi","permalink":"/push-website/pr-preview/pr-1012/blog/tags/truefi","allTagsPath":"/push-website/pr-preview/pr-1012/blog/tags","count":1,"unlisted":false}')}}]);
