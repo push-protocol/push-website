@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[63043],{273074:e=>{e.exports=JSON.parse('{"label":"Any Chain Tx","permalink":"/push-website/pr-preview/pr-1010/blog/tags/any-chain-tx","allTagsPath":"/push-website/pr-preview/pr-1010/blog/tags","count":8,"unlisted":false}')}}]);
