@@ -233,7 +233,7 @@ export default function HomepageFeatures(): JSX.Element {
           {JSON.stringify({
             '@context': 'https://schema.org/',
             '@type': 'Organization',
-            name: 'Push Protocol',
+            name: 'Push Chain',
             description: 'The Communication Protocol of Web3',
             url: 'https://push.org',
             logo: '/assets/website/favicon.ico',

@@ -1,24 +1,23 @@
 export const PageMeta = {
   HOME: {
     pageTitle: 'Home',
-    pageDescription:
-      'Homepage of Push Protocol - The communication protocol of Web3',
+    pageDescription: 'Homepage of Push Chain - Any Chain. Any User. Any App',
   },
   TOS: {
     pageTitle: 'Terms of Service',
-    pageDescription: 'Terms of Service of Push Protocol',
+    pageDescription: 'Terms of Service of Push Chain',
   },
   PRIVACY: {
     pageTitle: 'Privacy Policy',
-    pageDescription: 'Privacy Policy of Push Protocol',
+    pageDescription: 'Privacy Policy of Push Chain',
   },
   PRIVACYFORMOBILE: {
     pageTitle: 'Mobile Apps Privacy Policy',
-    pageDescription: 'Mobile Apps Privacy Policy of Push Protocol',
+    pageDescription: 'Mobile Apps Privacy Policy of Push Chain',
   },
   FAQS: {
     pageTitle: 'FAQ',
-    pageDescription: 'Frequently Asked Questions of Push Protocol',
+    pageDescription: 'Frequently Asked Questions of Push Chain',
   },
   FRENS: {
     pageTitle: 'Frens',
@@ -35,7 +34,7 @@ export const PageMeta = {
   },
   ABOUTUS: {
     pageTitle: 'About Us',
-    pageDescription: "Learn what makes Push Protocol tick... it's the team",
+    pageDescription: "Learn what makes Push Chain tick... it's the team",
   },
   BRB: {
     pageTitle: 'Billion Reasons to Build (BRB)',
@@ -45,12 +44,11 @@ export const PageMeta = {
   DOCS: {
     pageTitle: 'Documentation Hub',
     pageDescription:
-      'One stop shop for all your Push Protocol documentation needs',
+      'One stop shop for all your Push Chain documentation needs',
   },
   BLOG: {
     pageTitle: 'Push Blog',
-    pageDescription:
-      'Learn about the latest updates and news from Push Protocol',
+    pageDescription: 'Learn about the latest updates and news from Push Chain',
   },
   BOOTCAMP: {
     pageTitle: 'BRB Bootcamp Campaign',

@@ -35,7 +35,7 @@ export default function BlogLayout(props) {
           <meta property='og:title' content='Push Blog' />
           <meta
             property='og:description'
-            content='Discover the latest trends, insights, and tips about Push Protocol in our blog! Stay informed and inspired with our expert articles, guides, and resources.'
+            content='Discover the latest trends, insights, and tips about Push Chain in our blog! Stay informed and inspired with our expert articles, guides, and resources.'
           />
           <meta
             property='og:image'
@@ -50,7 +50,7 @@ export default function BlogLayout(props) {
           <meta name='twitter:title' content='Push Blog' />
           <meta
             name='twitter:description'
-            content='Discover the latest trends, insights, and tips about Push Protocol in our blog! Stay informed and inspired with our expert articles, guides, and resources.'
+            content='Discover the latest trends, insights, and tips about Push Chain in our blog! Stay informed and inspired with our expert articles, guides, and resources.'
           />
           <meta
             name='twitter:image'
@@ -66,8 +66,8 @@ export default function BlogLayout(props) {
             {JSON.stringify({
               '@context': 'https://schema.org/',
               '@type': 'Organization',
-              name: 'Push Protocol',
-              description: 'The Communication Protocol of Web3',
+              name: 'Push Chain',
+              description: 'Any Chain. Any User. Any App',
               url: 'https://push.org',
               logo: '/assets/website/favicon.ico',
               sameAs: [
