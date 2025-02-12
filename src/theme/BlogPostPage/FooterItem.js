@@ -176,7 +176,7 @@ const FooterItem = () => {
       {open && <LinkModal />}
 
       <AboutSection>
-        <AboutTitle>About Push Protocol</AboutTitle>
+        <AboutTitle>About Push Chain</AboutTitle>
         <AboutSpan
           fontFamily='Strawford'
           textAlign='center'
