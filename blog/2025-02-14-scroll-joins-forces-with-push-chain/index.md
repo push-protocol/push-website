@@ -39,7 +39,7 @@ Push Chain is a shared state blockchain for universal apps, powered by **Chain A
 
 - Any Chain Tx (Solana, Eth, EVM, or non-EVM)
 
-- Sub-second finality**  
+- Sub-second finality 
 
 - True Scale and Universal Smart Contracts
 
