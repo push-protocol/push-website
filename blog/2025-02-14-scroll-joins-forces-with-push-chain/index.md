@@ -39,7 +39,7 @@ Push Chain is a shared state blockchain for universal apps, powered by **Chain A
 
 - Any Chain Tx (Solana, Eth, EVM, or non-EVM)
 
-- Sub-second finality**  
+- Sub-second finality
 
 - True Scale and Universal Smart Contracts
 
@@ -57,13 +57,13 @@ Scroll users can interact with DApps across Solana, Aptos, Bitcoin L2s or any ot
 
 Exploring an open and universal web3 economy requires a universal passport.
 
-This is where Push ID makes a difference- Provides a universal identity system that seamlessly connects all their wallets (EVM and non-EVM) into one profile. 
+This is where Push ID makes a difference- Provides a universal identity system that seamlessly connects all their wallets (EVM and non-EVM) into one profile.
 Enabling users to track their web3 activity, across Scroll, Ethereum, Solana or any other chain in a unified manner.
 
 The opportunities with Push ID are endless:
 Think about gated applications - where you’re universal passport gives you access based on your web3 repetition. Or  instances where an app requires you to KYC to prove cross-chain asset ownership.
 
-Additionally, with this partnership - Developers get an opportunity to lean on Scroll’s decentralized prover network and work on fascinating new areas such as post-danksharding blob markets, hardware-friendly ZK algorithms and new ZK primitives. With Push Chain - Devs will be able to take these innovations one notch higher by unlocking the states of other layer 1s and layer 2s, in order to build truly scalable consumer-friendly apps.  
+Additionally, with this partnership - Developers get an opportunity to lean on Scroll’s decentralized prover network and work on fascinating new areas such as post-danksharding blob markets, hardware-friendly ZK algorithms and new ZK primitives. With Push Chain - Devs will be able to take these innovations one notch higher by unlocking the states of other layer 1s and layer 2s, in order to build truly scalable consumer-friendly apps.
 
 
 
@@ -77,7 +77,7 @@ Use [Push Chain’s Universal SDK](https://push.org/docs) to bring these apps to
 
 **Build hyper-scalable consumer apps**
 
-Using Scroll’s inherent scalability strength and Push Chain’s **Sharded Storage and Parallel txn processing** - Devs can build *hyperscalable consumer apps*  that can be executed with sub-second finality using Push’s  borderless & stateless consumer txns. 
+Using Scroll’s inherent scalability strength and Push Chain’s **Sharded Storage and Parallel txn processing** - Devs can build *hyperscalable consumer apps*  that can be executed with sub-second finality using Push’s  borderless & stateless consumer txns.
 
 *This is the era of Consumer DApps thriving with millions of users!*
 
@@ -90,21 +90,21 @@ Additionally, with this partnership - Developers get an opportunity to lean on S
 
 ## 🔓 Use case unlock
 
-**Universally playable games:** 
-MMORPG games like [Omnikingdoms](https://www.omnikingdoms.io/) can support users from any non-evm chain supporting in game purchases, state transitions and much more. 
+**Universally playable games:**
+MMORPG games like [Omnikingdoms](https://www.omnikingdoms.io/) can support users from any non-evm chain supporting in game purchases, state transitions and much more.
 
 Even Multiplayer games like roulette, casinos and RPG games on Scroll can utilize Push Chain to bring users across different chains to compete together in a unified manner.
-    
-**Universal NFTs:** 
 
-*Shared state + universal smart contracts = true multi-chain magic!* 
+**Universal NFTs:**
+
+*Shared state + universal smart contracts = true multi-chain magic!*
 
 Imagine launching Univeral NFT collections using launchpads like [Omnihub](https://omnihub.xyz/) and [NFTs2Me](https://nfts2me.com/) seamlessly across different L1s which can be traded and transfered across any chain!
-    
-**Universal Privacy:** 
 
-ZK tech has solved one of the biggest problems plaguing today’s internet, i.e. the trade-off between privacy and transparency. We are fast moving towards a world where every bit of valuable user-data will be ZK proved. With the Push x Scroll partnership, this important primitive will become truly universal and can be integrated with cross-chain applications as well as liquidity.  
-    
+**Universal Privacy:**
+
+ZK tech has solved one of the biggest problems plaguing today’s internet, i.e. the trade-off between privacy and transparency. We are fast moving towards a world where every bit of valuable user-data will be ZK proved. With the Push x Scroll partnership, this important primitive will become truly universal and can be integrated with cross-chain applications as well as liquidity.
+
 
 **Chain Agnostic AI Agents:**
 
