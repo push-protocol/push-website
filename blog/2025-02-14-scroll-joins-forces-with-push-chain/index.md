@@ -66,6 +66,28 @@ Think about gated applications - where you’re universal passport gives you acc
 Additionally, with this partnership - Developers get an opportunity to lean on Scroll’s decentralized prover network and work on fascinating new areas such as post-danksharding blob markets, hardware-friendly ZK algorithms and new ZK primitives. With Push Chain - Devs will be able to take these innovations one notch higher by unlocking the states of other layer 1s and layer 2s, in order to build truly scalable consumer-friendly apps.  
 
 
+
+## 👷‍♂️ What does this mean for builders?
+
+**Build Apps that enable Txns from Any Chain**
+
+Push Chain supports transactions from any wallet, regardless of the originating chain—be it Ethereum, Solana, or any other L1s, L2s or L3s.
+
+Use [Push Chain’s Universal SDK](https://push.org/docs) to bring these apps to life - opening doors to craft chain abstracted experiences.
+
+**Build hyper-scalable consumer apps**
+
+Using Scroll’s inherent scalability strength and Push Chain’s **Sharded Storage and Parallel txn processing** - Devs can build *hyperscalable consumer apps*  that can be executed with sub-second finality using Push’s  borderless & stateless consumer txns. 
+
+*This is the era of Consumer DApps thriving with millions of users!*
+
+Additionally, with this partnership - Developers get an opportunity to lean on Scroll’s decentralized prover network and work on fascinating new areas such as post-danksharding blob markets, hardware-friendly ZK algorithms and new ZK primitives. With Push Chain - Devs will be able to take these innovations one notch higher by unlocking the states of other layer 1s and layer 2s, in order to build truly scalable consumer-friendly apps.
+
+
+
+
+
+
 ## 🔓 Use case unlock
 
 **Universally playable games:** 
