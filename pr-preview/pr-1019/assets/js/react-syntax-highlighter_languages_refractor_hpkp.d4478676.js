@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[92281],{618359:e=>{function p(e){e.languages.hpkp={directive:{pattern:/\b(?:includeSubDomains|max-age|pin-sha256|preload|report-to|report-uri|strict)(?=[\s;=]|$)/i,alias:"property"},operator:/=/,punctuation:/;/}}e.exports=p,p.displayName="hpkp",p.aliases=[]}}]);
