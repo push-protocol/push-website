@@ -21,6 +21,7 @@ import styles from './styles.module.css';
 import ChainHeader from '@site/src/components/Chain/ChainHeader';
 import ChainFooter from '@site/src/components/Chain/ChainFooter';
 import { ItemH } from '@site/src/css/SharedStyling';
+import RewardsHeader from '@site/src/components/Rewards/RewardsHeader';
 
 export default function Layout(props) {
   const {
@@ -44,6 +45,7 @@ export default function Layout(props) {
       {(showNavbar === undefined || showNavbar === 'docusaurus') && <Navbar />}
       {/* navbar for chain pages and sub pages */}
       {showNavbar === 'chain' && <ChainHeader />}
+      {showNavbar === 'rewards' && <RewardsHeader />}
       <div
         id={SkipToContentFallbackId}
         className={clsx(

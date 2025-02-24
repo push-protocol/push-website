@@ -78,4 +78,8 @@ export const PageMeta = {
     pageTitle: 'Push Template',
     pageDescription: 'Push Template',
   },
+  REWARDS: {
+    pageTitle: 'Push Reward Points',
+    pageDescription: 'Push Reward Point',
+  },
 };

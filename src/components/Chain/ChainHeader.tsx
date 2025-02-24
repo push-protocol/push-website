@@ -27,7 +27,6 @@ import {
   Section,
   Span,
 } from '../../../src/css/SharedStyling';
-import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
 import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
 import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 import ChainElevateModal from './ChainElevateModal';
@@ -198,8 +197,6 @@ const ChainHeader: FC = () => {
                 flex='initial'
                 onClick={openHomePage}
               >
-                <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
-
                 {isMobileMenuOpen ? <ChainLogoDark /> : <ChainLogo />}
               </PushLogoBlackContainer>
 
