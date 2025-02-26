@@ -8,7 +8,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 // Internal Components
-import { Section, Content } from '@site/src/css/SharedStyling';
+import { Content } from '@site/src/css/SharedStyling';
 
 type HybridSectionProps = {
   curve?: 'both' | 'bottom' | undefined;

@@ -3,12 +3,15 @@ import styled from 'styled-components';
 import RewardsDashboard from './RewardsDashboard';
 import RewardsContent from './RewardsContent';
 import ReferralSection from './ReferralSection';
+import RewardsActivities from './RewardsActivities';
 import { device } from '@site/src/config/globals';
 
 const Rewards: FC = () => {
   return (
     <RewardsWrapper>
       <RewardsDashboard />
+
+      <RewardsActivities />
 
       <RewardsContent />
 

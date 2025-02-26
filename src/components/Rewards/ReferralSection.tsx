@@ -17,7 +17,7 @@ import { css } from 'styled-components';
 import { Box, Button, Copy, Text, Referral } from '../../blocks';
 
 export type ReferralSectionProps = {
-  handleUnlockProfile: () => void;
+  // handleUnlockProfile: () => void;
 };
 
 const ReferralSection: FC<ReferralSectionProps> = () => {
