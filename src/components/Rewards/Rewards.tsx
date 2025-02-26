@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+// import { usePushWalletContext } from '@pushprotocol/pushchain-ui-kit';
 
 import { device } from '@site/src/config/globals';
 
@@ -10,6 +11,8 @@ import RewardsActivities from './RewardsActivities';
 import RewardsFooter from './RewardsFooter';
 
 const Rewards: FC = () => {
+  // const { universalAddress } = usePushWalletContext();
+
   return (
     <RewardsWrapper>
       <RewardsDashboard />

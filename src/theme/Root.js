@@ -5,6 +5,7 @@ import { useLocation } from '@docusaurus/router';
 // External Components
 import i18nInitialize from '@site/src/utils/i18n';
 import styled, { createGlobalStyle } from 'styled-components';
+import { PushWalletProvider, CONSTANTS } from '@pushprotocol/pushchain-ui-kit';
 
 // Internal Components
 // import Footer from '@site/src/segments/Footer';
@@ -14,13 +15,14 @@ import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 import { Notification } from '../hooks/useRewardsNotification';
 import { blocksColors, getBlocksCSSVariables } from '@site/src/blocks';
 import { ThemeProviderWrapper } from '../context/themeContext';
+import { AccountProvider } from '../context/accountContext';
 
 // Initialize Internalization
 i18nInitialize();
 
 const GlobalStyle = createGlobalStyle`
   body {
-    // background: ${(props) => props.theme.header.bg} !important;
+    background: ${(props) => props.theme.header.bg} !important;
     padding-right: 0 !important;
   }
   :root{
@@ -179,25 +181,29 @@ export default function Root({ children }) {
 
   return (
     <ThemeProviderWrapper>
-      <PageContainer
-        className={returnAdditionalClasses(superimposedConditions)}
-      >
-        <ServerStyle from={children} />
+      <PushWalletProvider env={CONSTANTS.ENV.DEV}>
+        <AccountProvider>
+          <PageContainer
+            className={returnAdditionalClasses(superimposedConditions)}
+          >
+            <ServerStyle from={children} />
 
-        {/* Global style */}
-        <GlobalStyle />
+            {/* Global style */}
+            <GlobalStyle />
 
-        {/* Main react children */}
-        <Content>{children}</Content>
-        <Notification />
+            {/* Main react children */}
+            <Content>{children}</Content>
+            <Notification />
 
-        {shouldRenderFooter && (
-          <>
-            {/* <Footer /> */}
-            <CookieComponent />
-          </>
-        )}
-      </PageContainer>
+            {shouldRenderFooter && (
+              <>
+                {/* <Footer /> */}
+                <CookieComponent />
+              </>
+            )}
+          </PageContainer>
+        </AccountProvider>
+      </PushWalletProvider>
     </ThemeProviderWrapper>
   );
 }

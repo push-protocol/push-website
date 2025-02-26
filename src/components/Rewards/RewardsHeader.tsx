@@ -4,8 +4,12 @@ import { useHistory } from 'react-router-dom';
 
 import { useTheme } from '@site/src/context/themeContext';
 import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import {
+  PushWalletButton,
+  usePushWalletContext,
+} from '@pushprotocol/pushchain-ui-kit';
 
-import { Box, Button, LightFilled, MoonFilled } from '@site/src/blocks';
+import { Box, LightFilled, MoonFilled } from '@site/src/blocks';
 import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
 import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 
@@ -13,6 +17,8 @@ const RewardsHeader: FC = () => {
   const baseURL = useSiteBaseUrl() || '';
   const history = useHistory();
   const { darkMode, toggleTheme } = useTheme();
+
+  const { universalAddress } = usePushWalletContext();
 
   const GoToHome = () => {
     const targetUrl = baseURL;
@@ -48,7 +54,31 @@ const RewardsHeader: FC = () => {
         )}
       </Box>
 
-      <Button
+      <Box
+        display='flex'
+        alignItems='center'
+        justifyContent='center'
+        width='fit-content'
+        css={css`
+          button {
+            font-family: FK Grotesk Neue !important;
+          }
+
+          @media (max-width: 768px) {
+            display: none;
+          }
+        `}
+      >
+        <PushWalletButton
+          universalAddress={universalAddress}
+          title='Connect Push Wallet'
+          styling={{
+            width: 'inherit',
+          }}
+        />
+      </Box>
+
+      {/* <Button
         variant='primary'
         css={css`
           @media (max-width: 768px) {
@@ -57,7 +87,7 @@ const RewardsHeader: FC = () => {
         `}
       >
         Login using Push Wallet
-      </Button>
+      </Button> */}
     </Box>
   );
 };
