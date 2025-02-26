@@ -1,10 +1,13 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
+
+import { device } from '@site/src/config/globals';
+
 import RewardsDashboard from './RewardsDashboard';
 import RewardsContent from './RewardsContent';
 import ReferralSection from './ReferralSection';
 import RewardsActivities from './RewardsActivities';
-import { device } from '@site/src/config/globals';
+import RewardsFooter from './RewardsFooter';
 
 const Rewards: FC = () => {
   return (
@@ -16,6 +19,8 @@ const Rewards: FC = () => {
       <RewardsContent />
 
       <ReferralSection />
+
+      <RewardsFooter />
     </RewardsWrapper>
   );
 };
