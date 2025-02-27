@@ -1,5 +1,21 @@
 // React + Web3 Essentials
 import * as ethers from 'ethers';
+import Resolution from '@unstoppabledomains/resolution';
+
+const infuraAPIKey = 'dd262cc008764b29bd6a15249db4772e';
+
+export const allowedNetworks = [
+  1, //for ethereum mainnet
+  137, //for polygon mainnet
+  56, // for bnb mainnet
+  // 10, // for optimism mainnet
+  42161, // arbitrum mainnet
+  1101, // polygon zkevm mainnet
+  122, // fuse mainnet
+  7560, // Cyber mainnet
+  8453, //base mainnet
+  59144, // Linea mainnet
+];
 
 export enum ENV {
   PROD = 'prod',
@@ -94,6 +110,41 @@ export const walletToPCAIP10 = (account: string): string => {
 };
 
 export const pCAIP10ToWallet = (wallet: string): string => {
-  wallet = wallet.replace('eip155:', '');
+  wallet = wallet?.replace('eip155:', '');
   return wallet;
+};
+
+export const shortenText = (
+  str: string,
+  substringLengthStart: number,
+  substringLengthEnd?: number
+): string => {
+  return `${str?.substring(0, substringLengthStart)}...${str?.substring(
+    str?.length - (substringLengthEnd ?? substringLengthStart)
+  )}`;
+};
+
+export const getUdResolver = (): Resolution => {
+  const l1ChainId = 1;
+  const l2ChainId = 137;
+  return Resolution.fromEthersProvider({
+    uns: {
+      locations: {
+        Layer1: {
+          network: 'mainnet', // add config for sepolia once it's supported by UD
+          provider: new ethers.providers.InfuraProvider(
+            l1ChainId,
+            infuraAPIKey
+          ),
+        },
+        Layer2: {
+          network: 'polygon-mainnet',
+          provider: new ethers.providers.InfuraProvider(
+            l2ChainId,
+            infuraAPIKey
+          ),
+        },
+      },
+    },
+  });
 };
