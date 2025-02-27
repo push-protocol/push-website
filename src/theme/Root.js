@@ -196,12 +196,12 @@ export default function Root({ children }) {
             <GlobalStyle />
 
             {/* Main react children */}
-           <Content>
-            <QueryClientProvider client={queryClient}>
-              {children}
-              <ReactQueryDevtools initialIsOpen={false} />
-            </QueryClientProvider>
-          </Content>
+            <Content>
+              <QueryClientProvider client={queryClient}>
+                {children}
+                <ReactQueryDevtools initialIsOpen={false} />
+              </QueryClientProvider>
+            </Content>
 
             <Notification />
 
@@ -214,7 +214,6 @@ export default function Root({ children }) {
           </PageContainer>
         </AccountProvider>
       </PushWalletProvider>
-
     </ThemeProviderWrapper>
   );
 }
