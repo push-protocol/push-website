@@ -5,7 +5,8 @@ import { useLocation } from '@docusaurus/router';
 // External Components
 import i18nInitialize from '@site/src/utils/i18n';
 import styled, { createGlobalStyle } from 'styled-components';
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 // Internal Components
 // import Footer from '@site/src/segments/Footer';
 import ServerStyle from '@site/src/theme/ServerStyle';
@@ -84,6 +85,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
 `;
+
+const queryClient = new QueryClient({});
 
 export default function Root({ children }) {
   // superimposed conditions
@@ -188,7 +191,12 @@ export default function Root({ children }) {
         <GlobalStyle />
 
         {/* Main react children */}
-        <Content>{children}</Content>
+        <Content>
+          <QueryClientProvider client={queryClient}>
+            {children}
+            <ReactQueryDevtools initialIsOpen={false} />
+          </QueryClientProvider>
+        </Content>
         <Notification />
 
         {shouldRenderFooter && (

@@ -82,4 +82,8 @@ export const PageMeta = {
     pageTitle: 'Push Reward Points',
     pageDescription: 'Push Reward Point',
   },
+  LEADERBOARD: {
+    pageTitle: 'Push Rewards Leaderboard',
+    pageDescription: 'Push Rewards Leaderboard',
+  },
 };
