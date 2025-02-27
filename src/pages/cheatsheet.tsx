@@ -2,7 +2,6 @@
 // @ts-nocheck
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
 import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 
 import { ItemV } from '../../src/css/SharedStyling';
@@ -16,7 +15,6 @@ function Cheatsheet() {
   return (
     <Container>
       <PushLogoBlackContainer className='headerlogo' flex='initial'>
-        <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
         <ChainLogoDark />
       </PushLogoBlackContainer>
       <Message>Redirecting...</Message>

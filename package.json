@@ -40,6 +40,8 @@
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.8.1",
     "@mdx-js/react": "^3.0.0",
+    "@pushprotocol/push-chain": "^0.1.7",
+    "@pushprotocol/pushchain-ui-kit": "^1.0.5",
     "@pushprotocol/restapi": "1.7.20",
     "@pushprotocol/uiweb": "1.7.1",
     "@radix-ui/react-dialog": "^1.1.2",
