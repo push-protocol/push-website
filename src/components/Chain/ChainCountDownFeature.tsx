@@ -171,7 +171,7 @@ const PushIconSVG = () => {
 };
 
 const ChainCountDownFeature = () => {
-  const targetDate = new Date('2025-03-04T23:59:59').getTime();
+  const targetDate = new Date('2025-03-11T23:59:59').getTime();
   const [scrollDirection] = useScrollDirection(false);
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
 
