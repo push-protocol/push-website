@@ -4,7 +4,7 @@ title: 'Push Chain Joins Forces With Scroll'
 authors: [push]
 image: './cover-image.webp'
 description: 'Push Chain Joins Forces With Scroll'
-text: "Scroll is coming to Push Chain! Learn what usecases does this collaboration unlocks and how devs and users can make the best of it!."
+text: "Scroll is coming to Push Chain! Learn what usecases does this collaboration unlocks and how devs and users can make the best of it!"
 tags: [Push Chain, Partnerships]
 ---
 
@@ -39,7 +39,7 @@ Push Chain is a shared state blockchain for universal apps, powered by **Chain A
 
 - Any Chain Tx (Solana, Eth, EVM, or non-EVM)
 
-- Sub-second finality
+- Sub-second finality**  
 
 - True Scale and Universal Smart Contracts
 
