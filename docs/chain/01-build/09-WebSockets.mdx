@@ -1,0 +1,285 @@
+---
+id: docs-websocket
+title: WebSocket
+hide_title: true
+slug: ./websocket
+displayed_sidebar: pushChainSidebar
+sidebar_position: 9
+image: "/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png"
+---
+
+# WebSocket
+
+The Push Chain network supports WebSocket connections for real-time transactions. This section provides an overview of the WebSocket protocol and how to use it to interact with the Push Chain network.
+
+<head>
+  <title>{`WebSocket | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AFocus,
+} from '@site/src/css/SharedStyling';
+
+## Initialize
+
+To use the WebSocket client, you first need to initialize the Push Chain SDK if you haven't already.
+
+> You can instantiate the Push Chain SDK with write mode if you want to send transactions. In the example below we will instantiate the Push Chain SDK with `read-only` mode.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+const pushChain = await PushChain.initialize();
+```
+  </TabItem>
+
+      <TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+const pushChain = await PushChain.initialize();
+```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+const pushChain = await PushChain.initialize();
+```
+  </TabItem>
+</Tabs>
+
+## Connecting to the WebSocket Server
+
+To start a websocket connection, first you will need to connect to the Push Chain network.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+await pushChain.ws.connect();
+```
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+await pushChain.ws.connect();
+```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+await pushChain.ws.connect();
+```
+  </TabItem>
+</Tabs>
+
+## Subscribing to Transaction Updates
+
+This function subscribes to block updates with optional filters. It takes a callback function to handle incoming block updates and returns a promise that resolves with a subscription ID.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+const subscriptionId = await pushChain.ws.subscribe((block) => {
+  console.log(block);
+});
+```
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+const subscriptionId = await pushChain.ws.subscribe((block) => {
+  console.log(block);
+});
+```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+const subscriptionId = await pushChain.ws.subscribe((block) => {
+  console.log(block);
+});
+```
+  </TabItem>
+</Tabs>
+
+### Subscribe parameters
+
+| Param       | Type               | Remarks                               | 
+|-------------|--------------------|---------------------------------------|
+| `callback`      | `function`       | A callback function to handle incoming block updates. | 
+| `filters`      | `{type: 'CATEGORY' or 'FROM' or 'RECIPIENTS' or 'WILDCARD', value: string[]}[]`       | An array of filters for the subscription. | 
+
+<Details summary="Expected response - Subscription ID">
+```typescript
+{ subscriptionId: 'sub_1740084008318_6mnhj8u' }
+```
+</Details>
+
+<Details summary="Expected response - Block">
+```typescript
+{
+  blockHash: 'd56137b6b2969a19da53130d11e3bc0b26dfebdebb4a5fb4a9e11a871afdc806',
+  transactions: [
+    {
+      hash: 'af6a0a3d0c33164b271ad5801e2ae52256c41ed6027b8cda168008c987e2c9f6',
+      category: 'CUSTOM:CORE_SDK',
+      from: 'eip155:11155111:0xea3ee66EaF0e504603708a1E36603F1CA3916005',
+      recipients: [
+        'eip155:11155111:0x59f07d4130513c767e10C7fE3F1A7A45388A133f',
+        'eip155:11155111:0x644972F4309B840ed3a7aC6044F71A0721b93cc9',
+        'eip155:11155111:0xB87B4bBfD86cEB41363e87D4517fb9055AD570e4'
+      ]
+    }
+  ]
+}
+```
+
+Block Data Structure:
+
+| Param      | Type                     |  Remarks                                                                                                                                                                         |
+| ---------- | ------------------------ |  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `blockHash` | `string` | The hash of the block. |
+|  `transactions`   | `Transaction[]`  | An array containing transaction objects present within the block. |
+
+Transaction Data Structure:
+
+| Param      | Type                     |  Remarks                                                                                                                                                                         |
+| ---------- | ------------------------ |  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `hash` | `string` | The hash of the transaction. |
+|  `category`   | `string`  | The category of the transaction. |
+|  `from`   | `string`  | The sender of the transaction. |
+|  `recipients`   | `string[]`  | An array of recipients of the transaction. |
+
+
+
+</Details>
+
+## Unsubscribing from Transaction Updates
+
+This function unsubscribes from transaction updates using the provided subscription ID. It returns a promise that resolves when the unsubscription is acknowledged.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+await pushChain.ws.unsubscribe(subscriptionId);
+```
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+await pushChain.ws.unsubscribe(subscriptionId);
+```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+await pushChain.ws.unsubscribe(subscriptionId);
+```
+  </TabItem>
+</Tabs>
+
+## Disconnecting from the WebSocket Server
+
+This function disconnects from the WebSocket server. It returns a promise that resolves when the disconnection is acknowledged.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+pushChain.ws.disconnect();
+```
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+pushChain.ws.disconnect();
+```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+pushChain.ws.disconnect();
+```
+  </TabItem>
+</Tabs>
+
+## Checking Connection Status
+
+This function checks the connection status of the WebSocket server. It returns a boolean value indicating whether the connection is active.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+const isConnected = pushChain.ws.isConnected();
+```
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+const isConnected = pushChain.ws.isConnected();
+```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+const isConnected = pushChain.ws.isConnected();
+```
+  </TabItem>
+</Tabs>
+
+<Details summary="Expected response">
+```typescript
+true
+```
+</Details>
+
+## Example: Retrieving Transactions filtered by category
+
+This example demonstrates how to retrieve transactions filtered by category using the WebSocket client, then fetch the full transaction details using the transaction hash.
+
+```typescript
+const pushChain = await PushChain.initialize();
+
+// Connect to the WebSocket server
+await pushChain.ws.connect();
+console.log('WebSocket connected.');
+
+// Define a custom filter to only subscribe to blocks that include transactions with the category 'CUSTOM:SAMPLE_TX'
+const customFilters: SubscriptionFilter[] = [
+  { type: 'CATEGORY', value: ['CUSTOM:SAMPLE_TX'] },
+];
+
+// Subscribe to block updates using the custom filter
+await pushChain.ws.subscribe(async (block) => {
+  console.log('New block received:', block.blockHash);
+
+  // Iterate over each transaction in the block
+  for (const tx of block.transactions) {
+    // Check if the transaction category matches our filter
+    if (tx.category === 'CUSTOM:SAMPLE_TX') {
+      console.log(
+        `Found transaction with hash ${tx.hash} and category ${tx.category}`
+      );
+
+      try {
+        // Fetch the full transaction details using the transaction hash
+        const txDetails = await pushChain.tx.get(tx.hash);
+
+        // Assume the fetched result contains a list of blocks and each block contains an array of transactions
+        if (txDetails.blocks && txDetails.blocks.length > 0) {
+          const fetchedTx = txDetails.blocks[0].transactions[0];
+          // Log the transaction data from the fetched transaction details
+          console.log('Transaction Data:', fetchedTx.data);
+        } else {
+          console.log(`No details found for transaction hash ${tx.hash}`);
+        }
+      } catch (error) {
+        console.error('Error fetching transaction details:', error);
+      }
+    }
+  }
+}, customFilters);
+```
