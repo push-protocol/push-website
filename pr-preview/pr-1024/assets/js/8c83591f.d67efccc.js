@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[90416],{550028:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-1024/blog/tags/token-sale","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

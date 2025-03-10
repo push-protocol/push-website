@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[89921],{599593:e=>{e.exports=JSON.parse('{"label":"Consumer Apps","permalink":"/push-website/pr-preview/pr-1024/blog/tags/consumer-apps","allTagsPath":"/push-website/pr-preview/pr-1024/blog/tags","count":1,"unlisted":false}')}}]);
