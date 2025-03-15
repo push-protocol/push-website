@@ -24,7 +24,7 @@ export const QuickstartItems: IQuickstartItem[] = [
   {
     title: 'Push Chain Quickstart',
     codeblock: `// Import Push Chain SDK
-import { PushChain, CONSTANTS, createUniversalAccount, createUniversalSigner } from '@pushchain/devnet';
+import { PushChain, createUniversalAccount, createUniversalSigner, CONSTANTS } from '@pushchain/devnet';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';
@@ -36,7 +36,7 @@ const account = privateKeyToAccount(generatePrivateKey());
 // Create Signer. Defaults to the Ethereum Sepolia chain
 const signer = createUniversalSigner({
   address: account.address,
-  signMessage: async (data: Uint8Array) =>
+  signMessage: async (data) =>
     hexToBytes(await account.signMessage({ message: { raw: data } })),
 });
 
@@ -69,7 +69,7 @@ export const TechDocItems: ITechDocItem[] = [
     codeblock: `// Create Signer. Defaults to the Ethereum Sepolia chain
 const signer = createUniversalSigner({
   address: account.address,
-  signMessage: async (data: Uint8Array) =>
+  signMessage: async (data) =>
     hexToBytes(await account.signMessage({ message: { raw: data } })),
 });
 
