@@ -7,12 +7,12 @@ import Layout from '@theme/Layout';
 import React from 'react';
 
 // Internal Component
-import ChainKnowledgeBasePartners from '../../components/Chain/ChainKnowledgeBasePartners/ChainKnowledgeBasePartners';
+import ChainKnowledgeBase101 from '../../components/Chain/ChainKnowledgeBasePartners/ChainKnowledgeBase101';
 
 // Internal Configs
 import { PageMeta } from '@site/src/config/pageMeta';
 
-function PushChainKnowledgeBase() {
+function PushChainKnowledgeBase(metadata) {
   return (
     <Layout
       title={PageMeta.PARTNERS.pageTitle}
@@ -68,7 +68,7 @@ function PushChainKnowledgeBase() {
         </script>
       </Head>
 
-      <ChainKnowledgeBasePartners />
+      <ChainKnowledgeBase101 item={metadata.metadata} />
     </Layout>
   );
 }
