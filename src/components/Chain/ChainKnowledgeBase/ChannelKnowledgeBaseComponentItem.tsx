@@ -17,7 +17,6 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
   const baseURL = useSiteBaseUrl() || '';
 
   const openLink = (item: string) => {
-    console.log(item, 'item item');
     if (item?.url.startsWith('https://')) {
       window.open(item.url, '_blank');
     } else if (item?.url?.startsWith('/')) {

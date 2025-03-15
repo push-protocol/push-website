@@ -150,10 +150,18 @@ export const knowledgeBaseArticleContent = [
   },
   {
     slug: 'push-101',
-    image: 'push-chain-partners',
+    image: '',
     title: 'Push 101',
     subtitle: '',
     url: '/knowledge/101',
+    target: '_self',
+  },
+  {
+    slug: 'deep-dives',
+    image: '',
+    title: 'Push Deep Dives',
+    subtitle: 'Explore all articles related to Push Deep Dives',
+    url: '/knowledge/deep-dives',
     target: '_self',
   },
   {
@@ -164,14 +172,7 @@ export const knowledgeBaseArticleContent = [
       'Unlike traditional L1 chains, Push Chain introduces ten key innovations and optimized mechanisms to unify any chain, any user, and any app. This article will help you understand - What Innovations Push Chain brings to Web3!',
     url: '/blog/innovations-by-push-chain',
   },
-  {
-    slug: '101',
-    image: 'push-chain-partners',
-    title: 'Push 101',
-    subtitle: 'Explore all articles related to Push 101',
-    url: '/knowledge/101',
-    target: '_self',
-  },
+
   {
     slug: 'partners',
     image: 'push-chain-partners',

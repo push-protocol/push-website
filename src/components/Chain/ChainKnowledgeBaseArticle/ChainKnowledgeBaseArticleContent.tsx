@@ -24,8 +24,6 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
 
   const toc = extractTOC(content);
 
-  console.log(content, ' content');
-
   return (
     <ChainKnowledgeBaseArticleWrapper>
       <ItemH flexDirection={isTablet && 'column'} gap='100px' flexWrap='nowrap'>
@@ -75,7 +73,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
         </ItemV>
 
         <MarkdownSection alignItems='flex-start' alignSelf='flex-start'>
-          {/* <Markdown
+          <Markdown
             remarkPlugins={[remarkGfm]} // Enable GitHub Flavored Markdown
             rehypePlugins={[rehypeSlug, rehypeRaw, rehypeSanitize]} // Allow raw HTML rendering and sanitizing
             components={{
@@ -85,21 +83,6 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
                 </a>
               ),
             }}
-          >
-            {content}
-          </Markdown> */}
-          <Markdown
-            remarkPlugins={[remarkGfm]}
-            rehypePlugins={[rehypeRaw, rehypeSanitize]} // No rehypeRaw
-            // components={{
-            //   code({ node, inline, className, children, ...props }) {
-            //     return inline ? (
-            //       <code {...props}>{children}</code>
-            //     ) : (
-            //       <span {...props}>{children}</span> // Forces non-inline code to be normal text
-            //     );
-            //   },
-            // }}
           >
             {content}
           </Markdown>
@@ -122,6 +105,7 @@ const ChainKnowledgeBaseArticleWrapper = styled.div`
 
 const MarkdownSection = styled.div`
   width: 70%;
+  background-color: transparent !important;
   // styles for images
   color: #000;
   img {

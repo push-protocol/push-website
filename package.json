@@ -60,6 +60,7 @@
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.1",
     "jimp": "0.22.10",
+    "marked": "^15.0.7",
     "matter-js": "^0.19.0",
     "os-browserify": "^0.3.0",
     "path": "0.12.7",
