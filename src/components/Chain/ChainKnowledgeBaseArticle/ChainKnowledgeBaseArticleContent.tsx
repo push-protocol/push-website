@@ -24,6 +24,8 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
 
   const toc = extractTOC(content);
 
+  console.log(content, ' content');
+
   return (
     <ChainKnowledgeBaseArticleWrapper>
       <ItemH flexDirection={isTablet && 'column'} gap='100px' flexWrap='nowrap'>
@@ -51,7 +53,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
             letterSpacing='-1.04px'
             color='#000'
           >
-            Why Push Chain?
+            {item?.title}
           </H3>
 
           {!isTablet && (
@@ -73,7 +75,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
         </ItemV>
 
         <MarkdownSection alignItems='flex-start' alignSelf='flex-start'>
-          <Markdown
+          {/* <Markdown
             remarkPlugins={[remarkGfm]} // Enable GitHub Flavored Markdown
             rehypePlugins={[rehypeSlug, rehypeRaw, rehypeSanitize]} // Allow raw HTML rendering and sanitizing
             components={{
@@ -83,6 +85,21 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
                 </a>
               ),
             }}
+          >
+            {content}
+          </Markdown> */}
+          <Markdown
+          // remarkPlugins={[remarkGfm]}
+          // rehypePlugins={[rehypeSlug, rehypeSanitize]} // No rehypeRaw
+          // components={{
+          //   code({ node, inline, className, children, ...props }) {
+          //     return inline ? (
+          //       <code {...props}>{children}</code>
+          //     ) : (
+          //       <span {...props}>{children}</span> // Forces non-inline code to be normal text
+          //     );
+          //   },
+          // }}
           >
             {content}
           </Markdown>
@@ -96,13 +113,15 @@ export default ChainKnowledgeBaseArticleContent;
 
 const ChainKnowledgeBaseArticleWrapper = styled.div`
   margin: 213px auto 0 auto;
+  width: 100%;
 
   @media ${device.mobileL} {
     margin: 153px auto 0 auto;
   }
 `;
 
-const MarkdownSection = styled(ItemV)`
+const MarkdownSection = styled.div`
+  width: 70%;
   // styles for images
   color: #000;
   img {
@@ -120,6 +139,10 @@ const MarkdownSection = styled(ItemV)`
     li {
       list-style: inherit !important;
     }
+  }
+
+  @media ${device.tablet} {
+    width: 100%;
   }
 `;
 

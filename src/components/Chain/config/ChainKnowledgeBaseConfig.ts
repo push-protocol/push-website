@@ -149,6 +149,14 @@ export const knowledgeBaseArticleContent = [
     url: '/blog/why-push-chain',
   },
   {
+    slug: 'push-101',
+    image: 'push-chain-partners',
+    title: 'Push 101',
+    subtitle: '',
+    url: '/knowledge/101',
+    target: '_self',
+  },
+  {
     slug: 'innovations-by-push-chain',
     image: 'innovations-by-push-chain',
     title: 'Innovations by Push Chain',

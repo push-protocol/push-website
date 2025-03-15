@@ -8,6 +8,7 @@ import { visit } from 'unist-util-visit';
 import rehypeSlug from 'rehype-slug';
 
 export const extractTOC = (markdownContent, headingLevels = [1, 2, 3]) => {
+  console.log('extreact', markdownContent);
   const toc = [];
 
   const processor = unified()

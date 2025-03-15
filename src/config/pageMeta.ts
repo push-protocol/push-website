@@ -67,7 +67,7 @@ export const PageMeta = {
   },
   PARTNERS: {
     pageTitle: 'Push Chain | Knowledge Base Partners',
-    pageDescription: 'Meet our Pa',
+    pageDescription: 'Meet our Partners',
   },
   ARTICLE: {
     pageTitle: 'Push Chain | Knowledge Base',
