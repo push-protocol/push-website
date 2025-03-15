@@ -89,17 +89,17 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
             {content}
           </Markdown> */}
           <Markdown
-          // remarkPlugins={[remarkGfm]}
-          // rehypePlugins={[rehypeSlug, rehypeSanitize]} // No rehypeRaw
-          // components={{
-          //   code({ node, inline, className, children, ...props }) {
-          //     return inline ? (
-          //       <code {...props}>{children}</code>
-          //     ) : (
-          //       <span {...props}>{children}</span> // Forces non-inline code to be normal text
-          //     );
-          //   },
-          // }}
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw, rehypeSanitize]} // No rehypeRaw
+            // components={{
+            //   code({ node, inline, className, children, ...props }) {
+            //     return inline ? (
+            //       <code {...props}>{children}</code>
+            //     ) : (
+            //       <span {...props}>{children}</span> // Forces non-inline code to be normal text
+            //     );
+            //   },
+            // }}
           >
             {content}
           </Markdown>
