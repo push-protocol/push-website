@@ -11,6 +11,7 @@ export default function myPlugin() {
         knowledgeBase101: Push101Content?.ChainKnowledgeBase101Config || [],
         knowledgeBaseDeepdives:
           PushDeepdivesContent?.ChainKnowledgeBaseDeepdivesConfig || [],
+
       };
     },
     async contentLoaded({ content, actions }) {
@@ -40,6 +41,7 @@ export default function myPlugin() {
         content.knowledgeBase101.map(async (item, index) => {
           const metadata = await createData(
             `one-on-one-metadata-${index}.json`,
+
             JSON.stringify(item)
           );
 
@@ -47,6 +49,7 @@ export default function myPlugin() {
             path: process.env.GITHUB_ACTIONS
               ? `${process.env.REACT_APP_BASE_URL}/knowledge/101/${item.slug}`
               : `/knowledge/101/${item.slug}`,
+
             exact: true,
             component: '@site/src/pages/knowledge/101/[slug].tsx',
             modules: { metadata },
@@ -72,6 +75,7 @@ export default function myPlugin() {
           });
         })
       );
+
     },
   };
 }

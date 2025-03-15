@@ -11,11 +11,13 @@ import { H2, ItemV } from '../../../css/SharedStyling';
 import { ChainKnowledgeBase101Config } from '../config/ChainKnowledgeBase101Config';
 import ChannelKnowledgeBaseComponentItem from '../ChainKnowledgeBase/ChannelKnowledgeBaseComponentItem';
 
+
 const ChainKnowledgeBaseGrid101 = () => {
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
 
   const gridRows = createGridRows(ChainKnowledgeBase101Config);
+
 
   return (
     <ChainKnowledgeBaseGridWrapper>
@@ -28,7 +30,8 @@ const ChainKnowledgeBaseGrid101 = () => {
           letterSpacing='-0.8px'
           textAlign='center'
         >
-          Hey! Meet our 101
+          101
+
         </H2>
       </ItemV>
 
