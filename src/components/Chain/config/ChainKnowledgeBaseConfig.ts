@@ -10,6 +10,7 @@
 export const knowledgeBaseArticleContent = [
   {
     slug: 'partnerships',
+    url: 'partnerships',
     image: '',
     title: 'Partnerships',
     subtitle:
