@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React, { FC } from 'react';
@@ -16,17 +17,21 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
   const isMobile = useMediaQuery(device.mobileL);
   const baseURL = useSiteBaseUrl() || '';
 
-  const openLink = (item: string) => {
-    if (item?.url.startsWith('https://')) {
-      window.open(item.url, '_blank');
-    } else if (item?.url?.startsWith('/')) {
-      const internalUrl = `${baseURL}${item.url}`;
-      window.open(internalUrl, item?.target || '_blank');
+  const openLink = (item: any) => {
+    if (!item?.url && !item?.slug) return;
+    let targetUrl = '';
+
+    if (item.url?.startsWith('https://')) {
+      targetUrl = item.url;
+    } else if (item.url?.startsWith('/')) {
+      targetUrl = `${baseURL}${item.url}`;
+    } else if (item.parentSlug) {
+      targetUrl = `${baseURL}/knowledge/${item.parentSlug}/${item.slug}`;
     } else {
-      // Open internal route in a new tab
-      const internalUrl = `${baseURL}/knowledge/${item?.slug}`;
-      window.open(internalUrl, '_blank');
+      targetUrl = `${baseURL}/knowledge/${item.url || item.slug}`;
     }
+
+    window.open(targetUrl, '_blank');
   };
 
   return (

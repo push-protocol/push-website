@@ -7,15 +7,20 @@ export const ChainKnowledgeBase101Config = [
     title: 'First',
     subtitle:
       'Push Chain powers dApps and decentralized messaging, connecting blockchains seamlessly',
-    content: `
-  ### **First**
+    content: [
+      {
+        type: 'text',
+        value: `
+        ### **First**
 
-  ![Cover Image of Push Protocol Monthly Updates - October](/assets/previews/brbpreview.png)
+        ![Cover Image of Push Protocol Monthly Updates - October](/assets/previews/brbpreview.png)
 
-  ### **Protocol Milestones:**
+        ### **Protocol Milestones:**
 
-  ### **Push Points Program Launch 🚀**
-  `,
+        ### **Push Points Program Launch 🚀**
+        `,
+      },
+    ],
   },
   {
     slug: 'second',
@@ -24,11 +29,16 @@ export const ChainKnowledgeBase101Config = [
     title: 'Second',
     subtitle:
       'Push Chain is about to facelift the consumer app experience by teaming up with Morph L2!. Learn everything about our collaboration with Morph - what it means for Push and Morph...',
-    content: `
-  ### **Second**
+    content: [
+      {
+        type: 'text',
+        value: `
+        ### **Second**
 
-  Generate random stuff 🚀
-  `,
+        Generate random stuff 🚀
+        `,
+      },
+    ],
   },
   {
     slug: 'third',
@@ -37,12 +47,17 @@ export const ChainKnowledgeBase101Config = [
     title: 'Third',
     subtitle:
       'Push Chain is about to facelift the consumer app experience by teaming up with Morph L2!. Learn everything about our collaboration with Morph - what it means for Push and Morph...',
-    content: `
-  ### **Third**
+    content: [
+      {
+        type: 'text',
+        value: `
+        ### **Third**
 
-  Testing Certain Things - let's see as it goes'
+        Testing Certain Things - let's see as it goes'
 
-  Here’s a recap of our latest updates 👇
-  `,
+        Here’s a recap of our latest updates 👇
+        `,
+      },
+    ],
   },
 ];
