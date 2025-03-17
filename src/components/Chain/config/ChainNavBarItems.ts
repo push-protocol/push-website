@@ -36,6 +36,12 @@ export const ChainNavBarItems = [
         url: `https://push.org/litepaper.pdf`,
       },
       {
+        id: 'tokenomics',
+        label: 'Tokenomics',
+        sublabels: 'Deep dive into tokenomics',
+        url: '/blog/push-chain-tokenomics/',
+      },
+      {
         id: 'faq',
         label: 'FAQ',
         sublabels: 'Frequently asked questions',

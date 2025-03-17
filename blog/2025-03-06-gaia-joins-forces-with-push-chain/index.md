@@ -4,7 +4,7 @@ title: 'Push Chain Joins Forces With Gaia Network'
 authors: [push]
 image: './cover-image.webp'
 description: 'Push Chain Joins Forces With Scroll'
-text: "Gaia is coming to Push Chain! Learn how this collaboration unlocks cross-chain autonomous intelligence and how devs and users can make the best of it!"
+text: 'Gaia is coming to Push Chain! Learn how this collaboration unlocks cross-chain autonomous intelligence and how devs and users can make the best of it!'
 tags: [Push Chain, Partnerships]
 ---
 
@@ -15,14 +15,13 @@ tags: [Push Chain, Partnerships]
 It’s time to make on-chain AI Agents go Universal!
 Push Chain is joining forces with Gaia Network to make chain abstracted AI Agents accessible to anyone via any chain, any wallet.
 
-
 ## What is Gaia?
+
 [Gaia](https://www.gaianet.ai/) is an autonomous agents marketplace that enables anyone to build, deploy and utilize AI agents with unique expertise, & personalized capabilities.
 
 As a decentralized computing network, Gaia powers its nodes with every essential component - required to seamlessly configure and operate AI agents.
 
 Gaia node includes - a powerful cross-platform runtime, fine-tuned LLM, vectorDB and embedding models, prompt manager and much more.
-
 
 ## What is Push Chain?
 
@@ -34,7 +33,7 @@ Push Chain is a shared state blockchain for universal apps, powered by Chain Abs
 
 - Any Chain Tx (Solana, Eth, EVM, or non-EVM)
 
-- Sub-second finality**  
+- Sub-second finality\*\*  
 
 - True Scale and Universal Smart Contracts
 
@@ -42,13 +41,11 @@ Push Chain is a shared state blockchain for universal apps, powered by Chain Abs
 
 [Explore more about Push Chain here](https://push.org)
 
-
 ## 👥 What does this mean for Gaia and Push Chain Users?
 
 **Interact with Universally operable AI Agents**
 
 With Push’s Universal capabilities - users operating AI agents built on Gaia can conveniently perform autonomous tasks across any chain!
-
 
 ## 👷‍♂️ What does this mean for Builders?
 
@@ -56,11 +53,9 @@ With Push’s Universal capabilities - users operating AI agents built on Gaia c
 
 With Gaia and Push, Builders can create borderless ai agents - that can perform financial, mixed financial and consumer read/write operations across any chain in an autonomous manner.
 
-
 **Build Agents with Universal Identities**
 
 Leveraging PushID ( A unified user identity by Push Chain that spans across every user wallet, both EVM and non-EVM). Instances of Gaia agents can carry a unified identity that aggregates their activity across all chains - simplifying agent tracking, history collection and analysis.
-
 
 ## 🔓Usecase unlock
 
@@ -74,7 +69,7 @@ Data Layers like [Oxscope](https://www.0xscope.com/) can utilize Push Chain’s 
 
 **Chain Agnostic Autonomous Actions**
 
-Autonomous agents like [Eliza](https://github.com/elizaOS/eliza) can extend its support for Push Chain, opening opportunities for chain-abstracted interoperable communications and actions. 
+Autonomous agents like [Eliza](https://github.com/elizaOS/eliza) can extend its support for Push Chain, opening opportunities for chain-abstracted interoperable communications and actions.
 
 Example: rebalance a user's DeFi positions on Ethereum, list NFTs on Polygon, and communicate status updates to the user via a messaging app on another chain, all through one unified settlement layer
 
