@@ -174,11 +174,6 @@ const config = {
             label: 'Docs',
           },
           {
-            to: 'https://github.com/push-protocol',
-            label: 'GitHub',
-            position: 'right',
-          },
-          {
             to: '/blog',
             label: 'Blog',
             position: 'right',
@@ -189,8 +184,8 @@ const config = {
             position: 'right',
           },
           {
-            to: 'https://app.push.org/',
-            label: 'Launch App',
+            to: 'https://portal.push.org/',
+            label: 'Push Portal',
             position: 'right',
           },
         ],

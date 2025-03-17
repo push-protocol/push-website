@@ -2,9 +2,9 @@
 // @ts-nocheck
 
 // React + Web3 Essentials
+import { useLocation } from '@docusaurus/router';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useLocation } from '@docusaurus/router';
 
 // External Components
 import { BsTwitterX } from 'react-icons/bs';
@@ -12,6 +12,7 @@ import styled from 'styled-components';
 import Typewriter from 'typewriter-effect';
 
 // Internal Components
+import FeaturedList from '@site/src/components/Featured/FeaturedList';
 import {
   A,
   Content,
@@ -22,18 +23,17 @@ import {
   Section,
   Span,
 } from '@site/src/css/SharedStyling';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
+import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
 import DiscordSVG from '@site/static/assets/website/shared/discord.svg';
 import GithubSVG from '@site/static/assets/website/shared/github.svg';
-import useMediaQuery from '@site/src/hooks/useMediaQuery';
-import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
-import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
-import FeaturedList from '@site/src/components/Featured/FeaturedList';
 
 // Internal Configs
-import { device } from '@site/src/config/globals';
-import { ChainFooterList } from './config/ChainFooterList';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import { device } from '@site/src/config/globals';
 import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
+import { ChainFooterList } from './config/ChainFooterList';
 
 const tosPrivacyLinks = [
   { href: '/tos', text: 'Terms of service' },
@@ -123,7 +123,7 @@ function ChainFooter({ showPattern }) {
                       justifyContent={isMobile ? 'center' : 'flex-start'}
                       padding='0px 0px'
                     >
-                      <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
+                      <ChainLogoDark style={{ margin: '0px 9px 0px 4px' }} />
                     </LinkTo>
 
                     <Span fontWeight='500' fontSize='16px' lineHeight='142%'>

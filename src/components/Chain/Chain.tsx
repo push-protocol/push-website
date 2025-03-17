@@ -12,23 +12,23 @@ import {
 } from './config/ChainMarqueeList';
 
 // Internal Components
+import ChainBottomComponent from './ChainBottomComponent';
+import ChainCountDownFeature from './ChainCountDownFeature';
+import { ChainFeaturesSection } from './ChainFeaturesSection';
 import ChainHeroSection from './ChainHeroSection';
 import ChainMarqueeSection from './ChainMarqueeSection';
-import ChainBottomComponent from './ChainBottomComponent';
-import ChainUseCase from './ChainUseCase';
 import ChainRoadmapSection from './ChainRoadmapSection';
-import { ChainFeaturesSection } from './ChainFeaturesSection';
-import ChainCountDownFeature from './ChainCountDownFeature';
+import ChainUseCase from './ChainUseCase';
 
 // Import assets
 import StarIcon from '@site/static/assets/website/chain/StarIcon.svg';
 import UnionIcon from '@site/static/assets/website/chain/Union.svg';
-import NoteIcon from '@site/static/assets/website/chain/note.svg';
-import SmileIcon from '@site/static/assets/website/chain/smile.svg';
-import EmailIcon from '@site/static/assets/website/chain/email.svg';
-import SpadeIcon from '@site/static/assets/website/chain/spades.svg';
 import BellIcon from '@site/static/assets/website/chain/bellicon.svg';
 import DCAIcon from '@site/static/assets/website/chain/dcaicon.svg';
+import EmailIcon from '@site/static/assets/website/chain/email.svg';
+import NoteIcon from '@site/static/assets/website/chain/note.svg';
+import SmileIcon from '@site/static/assets/website/chain/smile.svg';
+import SpadeIcon from '@site/static/assets/website/chain/spades.svg';
 import TechnologyIcon from '@site/static/assets/website/chain/technology.svg';
 
 const Chain = () => {
@@ -120,5 +120,5 @@ const MainContent = styled(ItemV)`
 
 const CountdownWrapper = styled.div`
   width: 100%;
-  z-index: 99999999;
+  z-index: 9999; // need to be lower than header
 `;

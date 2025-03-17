@@ -3,21 +3,24 @@
 // @ts-nocheck
 import React, { FC, useEffect, useState } from 'react';
 
-import styled from 'styled-components';
+import { useLocation } from '@docusaurus/router';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useLocation } from '@docusaurus/router';
-import { useHistory } from 'react-router-dom';
 import { AiOutlineClose } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 
+import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 import GLOBALS, { device, structure } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
-import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 import { ChainNavBarItems } from './config/ChainNavBarItems';
 import useModal from './hooks/useModal';
 
+import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
+import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
+import { BsChevronDown } from 'react-icons/bs';
 import {
   Button,
   Content,
@@ -27,11 +30,7 @@ import {
   Section,
   Span,
 } from '../../../src/css/SharedStyling';
-import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
-import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
-import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 import ChainElevateModal from './ChainElevateModal';
-import { BsChevronDown } from 'react-icons/bs';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -41,7 +40,6 @@ const defaultMobileMenuState = {
   1: false,
   2: false,
   3: false,
-  4: false,
   // add next [index]: false for new main Nav menu item
 };
 
@@ -198,8 +196,6 @@ const ChainHeader: FC = () => {
                 flex='initial'
                 onClick={openHomePage}
               >
-                <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
-
                 {isMobileMenuOpen ? <ChainLogoDark /> : <ChainLogo />}
               </PushLogoBlackContainer>
 
@@ -367,7 +363,7 @@ const StyledHeader = styled.header`
     }
   }
 
-  z-index: 999;
+  z-index: 999999;
 
   display: flex;
   flex-direction: column;
@@ -413,6 +409,7 @@ const MenuTop = styled(ItemV)`
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 15px 10px 10px;
   }
 `;
 
@@ -421,7 +418,12 @@ const PushLogoBlackContainer = styled(ItemV)`
   flex-direction: row;
   align-items: center;
   height: 100%;
+  width: 150px;
   color: #fff;
+
+  @media ${device.tablet} {
+    width: 100px;
+  }
 `;
 
 const MobileMenuToggleIcon = styled.span`
@@ -496,7 +498,7 @@ const NavigationMenu = styled.ul`
 
 const IconMenu = styled.ul`
   list-style: none;
-  margin: 0 20px 0 0;
+  margin: 0 0 0 0;
   justify-content: flex-start;
   padding: 0;
   display: flex;

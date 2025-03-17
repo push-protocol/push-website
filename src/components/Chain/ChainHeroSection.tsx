@@ -153,8 +153,9 @@ const ChainHeroSection: FC = () => {
         />
       </ItemV>
       <SectionText>
-        Applications that work from any chain. Push Chain is the Full Stack
-        Interop for everyone.
+        Applications that work from any chain.
+        <br />
+        Push Chain is the Full Stack Interop for everyone.
       </SectionText>
 
       <CountSection>
@@ -329,6 +330,7 @@ const HeroText = styled.div`
   line-height: 140%;
   color: #000;
   letter-spacing: -1.44px;
+  margin-top: 20px;
 
   @media ${device.tablet} {
     font-size: 54px;

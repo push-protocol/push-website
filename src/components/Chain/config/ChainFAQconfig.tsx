@@ -50,7 +50,7 @@ export const General = [
           liquidity fragmentation and more.
         </Span>
 
-        <Span>It introduces some ground breaking innovations such as -</Span>
+        <Span>It introduces some ground breaking innovations such as:</Span>
 
         <Span>
           <b>Fee and Wallet abstraction</b> - allowing wallets/users of any
