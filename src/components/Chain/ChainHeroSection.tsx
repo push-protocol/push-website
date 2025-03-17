@@ -102,7 +102,8 @@ const ChainHeroSection: FC = () => {
       <HeroSubText>
         Push Chain is a shared state L1 blockchain that allows all chains to
         unify, enabling apps of any chain to be accessed by users of any chain.{' '}
-        <br /> <b>Push is the layer 1 for all the web3 app ecosystem.</b>
+        <br />
+        <br /> <b>Push is the L1 made for every project... on every chain...</b>
       </HeroSubText>
       <HeroButtons>
         <Button
