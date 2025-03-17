@@ -16,11 +16,18 @@ export const General = [
     renderAnswer: () => (
       <Answer>
         <Span>
-          Push Chain is a shared state blockchain for universal applications. It
-          is designed to allow <b>transactions from any chain</b> (ETH, Solana,
-          EVM, non-EVM), has <b>1s fast finality</b> and has{' '}
-          <b>true scalability</b> (read and write throughput increases as the
-          number of nodes increases).
+          We are building Push Chain, a <b>shared state L1</b> blockchain for
+          <b>Universal Apps</b>. Push Chain enables txs from any chain (Eth,
+          Solana, EVM, or non-EVM) enabling apps from any chain to be accessed
+          by the users of any chain (polymarket from any chain, pump.fun from
+          any chain, etc).
+        </Span>
+        <Span>
+          It enables apps to be completely interoperable by allowing developers
+          to deploy a single universal smart contract on Push Chain. It also
+          enables new paradigm of apps where users of all chains can come
+          together for shared app experiences (universal AI agents, socials,
+          etc).
         </Span>
         <Span>
           It introduces some ground breaking innovations such as consumer txs

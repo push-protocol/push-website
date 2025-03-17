@@ -2,21 +2,21 @@
 // @ts-nocheck
 import React, { FC, useEffect, useRef, useState } from 'react';
 
-import ReactPlayer from 'react-player';
-import styled from 'styled-components';
-import { TbArrowUpRight } from 'react-icons/tb';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TbArrowUpRight } from 'react-icons/tb';
+import ReactPlayer from 'react-player';
+import styled from 'styled-components';
 import Typewriter from 'typewriter-effect';
 
 import { device, size } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
 import useModal from './hooks/useModal';
 
+import ImageHolder from '../../../src/components/ImageHolder';
 import { A, Button, H2, H3, ItemH, ItemV } from '../../css/SharedStyling';
 import ChainAlertBar from './ChainAlertBar';
 import ChainElevateModal from './ChainElevateModal';
-import ImageHolder from '../../../src/components/ImageHolder';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -100,9 +100,9 @@ const ChainHeroSection: FC = () => {
         <span>Apps</span>
       </HeroText>
       <HeroSubText>
-        Push Chain is a shared-state blockchain that allows all chains to unify,
-        enabling consumer apps that function from any chain. <br />{' '}
-        <b>Push is the layer 1 for the web3 app ecosystem.</b>
+        Push Chain is a shared state L1 blockchain that allows all chains to
+        unify, enabling apps of any chain to be accessed by users of any chain.{' '}
+        <br /> <b>Push is the layer 1 for all the web3 app ecosystem.</b>
       </HeroSubText>
       <HeroButtons>
         <Button
@@ -152,8 +152,8 @@ const ChainHeroSection: FC = () => {
         />
       </ItemV>
       <SectionText>
-        Consumer applications that work from any chain, reach instant finality,
-        and achieve true scalability.
+        Applications that work from any chain. Push Chain is the Full Stack
+        Interop for everyone.
       </SectionText>
 
       <CountSection>
@@ -196,13 +196,12 @@ const ChainHeroSection: FC = () => {
         </GridSection>
 
         <GridText>
-          Create shared app experiences, eliminating chain boundaries for your
-          users, allowing them to just simply <b>use your application</b>.
+          Wallet abstraction, fee abstraction, shared state and programmable
+          solvers work together to bring you <b>Universal Smart Contract</b>.
           <br />
           <br />
-          Linear scalability and dynamic sharding ensure read and write
-          transactions continue to increase as more nodes are added to the
-          network.
+          Allowing read and write on any chain from a single smart contract on
+          Push Chain. Let's build <b>universal app experiences!</b>
           <TextDiv
             alignItems='flex-start'
             gap='40px'
