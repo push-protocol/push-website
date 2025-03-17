@@ -16,7 +16,7 @@ export const General = [
     renderAnswer: () => (
       <Answer>
         <Span>
-          We are building Push Chain, a <b>shared state L1</b> blockchain for
+          We are building Push Chain, a <b>shared state L1</b> blockchain for{' '}
           <b>Universal Apps</b>. Push Chain enables txs from any chain (Eth,
           Solana, EVM, or non-EVM) enabling apps from any chain to be accessed
           by the users of any chain (polymarket from any chain, pump.fun from
@@ -29,12 +29,6 @@ export const General = [
           together for shared app experiences (universal AI agents, socials,
           etc).
         </Span>
-        <Span>
-          It introduces some ground breaking innovations such as consumer txs
-          (order not important), parallel validators and dynamic sharding and
-          universal smart contracts. The result is a layer 1 with the ability to
-          become a shared settlement layer for all L1s 🤝 L2s 🤝 L3.
-        </Span>
       </Answer>
     ),
   },
@@ -44,24 +38,57 @@ export const General = [
     renderAnswer: () => (
       <Answer>
         <Span>
-          Push Chain is a sharded, Proof-of-Stake (PoS) blockchain that features
-          different types of nodes—validators, storage nodes, and archival
-          nodes—each optimized for specific roles and responsibilities to ensure
-          high efficiency. This design gives the chain fast finality of less
-          than one second.
+          Push Chain is a Proof-of-Stake (PoS) L1 blockchain that is designed to
+          eliminate fragmentation across all chains.
         </Span>
+
         <Span>
-          Push Chain also introduces several key innovations in web3. At launch,
-          these include <b>consumer transactions</b> (these are txs where order
-          is not critical), <b>Push ID</b>, which maps multiple EVM and non-EVM
-          accounts to a single user and <b>wallet and fees abstraction</b>.
+          It leverages on several innovations such as specialized validators,
+          off-chain relayers and generalized solvers working in tandem to ensure
+          a user or developer is able to read and write on any chain. This
+          eliminates the silos of different chains, wallet conventions,
+          liquidity fragmentation and more.
         </Span>
+
+        <Span>It introduces some ground breaking innovations such as -</Span>
+
         <Span>
-          In later phases, Push Chain will introduce <b>shared state</b> and{' '}
-          <b>universal smart contracts</b>. These features will enable smart
-          contracts deployed on Push Chain to access the state of both EVM and{' '}
-          non-EVM wallets connected to a single user.
+          <b>Fee and Wallet abstraction</b> - allowing wallets/users of any
+          chain to interact natively while being on the chain of their choice.
         </Span>
+
+        <Span>
+          <b>Universal Wallet</b> - ensuring user can login via social or email
+          and still have non-custodial wallets created for them for all chains
+          (Ethereum, Bitcoin, Solana, etc).
+        </Span>
+
+        <Span>
+          <b>Shared State</b> - enabling developers to read the state of any
+          wallet or smart contract of any other blockchain via smart contract on
+          Push Chain.
+        </Span>
+
+        <Span>
+          Allowing them the freedom to use that logic to create a basic path for
+          solvers allowing users of any chain to interact with their app. Or,
+          create universal/omni products such as any chain DeFi, any chain
+          governance, any chain NFT, etc.
+        </Span>
+
+        <Span>
+          <b>Programmable Generalized Solvers</b> - ensures that a developer can
+          create a basic path for cross chain actions (write actions) based on
+          the shared state.
+        </Span>
+
+        <Span>
+          <b>Universal Smart Contracts</b> - giving developers ability to use
+          shared state and generalized solvers for read and write action in
+          chain agnostic fashion. And enables users to use fees and wallet
+          abstraction to access any app or any chain without any hassle.
+        </Span>
+
         <Span>
           This results in <b>universal applications</b> for web3. In this
           paradigm, instead of being a user of "Uniswap on Ethereum," "Uniswap
@@ -78,10 +105,10 @@ export const General = [
       <Answer>
         <Span>
           Push Chain addresses specific gaps in the existing blockchains, such
-          as interoperability, shared app experiences, enabling new app
-          experiences, and scalability. While existing blockchains are robust,
-          they operate in their own eco-system and an aggregator to unite these
-          chains are needed.
+          as interoperability, universal app experiences, full stack interop,
+          and scalability. While existing blockchains are robust, they operate
+          in their own eco-system and an aggregator to unite these chains are
+          needed.
         </Span>
         <Span>
           Push Chain’s focus is on being a <b>shared state chain</b> for
@@ -91,7 +118,7 @@ export const General = [
         </Span>
         <Span>
           PC offers a new paradigm of web3 that works from <b>Any Chain.</b> For{' '}
-          <b>Any User.</b> And is suitable for <b>Any App.</b>
+          <b>Any Wallet/User.</b> And is suitable for <b>Any App.</b>
         </Span>
       </Answer>
     ),
@@ -138,6 +165,28 @@ export const General = [
           integration not only enables these protocols to accrue value but also
           marks the beginning of a new chapter in their evolution, further
           enhancing their utility and impact within the web3 ecosystem.
+        </Span>
+      </Answer>
+    ),
+  },
+  {
+    question: 'I want to learn more?',
+    section: 'General',
+    renderAnswer: () => (
+      <Answer>
+        <Span>
+          That's awesome! you can head to our{' '}
+          <Link href='/knowledge' target='_self'>
+            Knowledge Base
+          </Link>{' '}
+          section to learn everything in depth.
+        </Span>
+        <Span>
+          If you are a FAQ type of a person, then simply head to our{' '}
+          <Link href='/blog/faq-push-chain/' target='_self'>
+            Detailed FAQ
+          </Link>{' '}
+          for more info.
         </Span>
       </Answer>
     ),
