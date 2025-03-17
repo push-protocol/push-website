@@ -1,10 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 // React + Web3 Essentials
-import React from 'react';
 import Head from '@docusaurus/Head';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
+import React from 'react';
 
 // Internal Component
 import Chain from '../components/Chain/Chain';
@@ -25,11 +25,11 @@ function PushHomepage() {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content='Push Chain | Any Chain. Any User. Any App'
+          content='Push Chain | Any Chain. Any Wallet. Any App'
         />
         <meta
           name='og:description'
-          content='Push Chain is a shared state blockchain for shared app experience. Capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability.'
+          content='Push Chain is a shared state L1 blockchain for Universal Apps. Capable of doing transactions from any chain, unifying L1s & L2s and enabling apps from any chain to be accessed by the users of any chain.'
         />
         <meta
           property='og:image'
@@ -48,7 +48,7 @@ function PushHomepage() {
         />
         <meta
           name='twitter:description'
-          content='Push Chain is a shared state blockchain for shared app experience. Capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability.'
+          content='Push Chain is a shared state L1 blockchain for Universal Apps. Capable of doing transactions from any chain, unifying L1s & L2s and enabling apps from any chain to be accessed by the users of any chain.'
         />
         <meta
           name='twitter:image'
@@ -63,12 +63,12 @@ function PushHomepage() {
             '@context': 'https://schema.org/',
             '@type': 'Organization',
             name: 'Push Chain',
-            description: 'Any Chain. Any User. Any App',
+            description: 'Any Chain. Any Wallet. Any App',
             url: 'https://push.org',
             logo: '/assets/website/favicon.ico',
             sameAs: [
               'https://x.com/PushChain',
-              'https://www.linkedin.com/company/push-protocol/mycompany/',
+              'https://www.linkedin.com/company/push-chain',
             ],
           })}
         </script>

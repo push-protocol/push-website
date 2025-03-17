@@ -3,19 +3,19 @@
 // @ts-nocheck
 import React, { FC, useEffect, useRef, useState } from 'react';
 
-import ReactPlayer from 'react-player';
 import Link from '@docusaurus/Link';
-import { useHistory } from 'react-router-dom';
-import styled from 'styled-components';
-import { TbArrowUpRight } from 'react-icons/tb';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TbArrowUpRight } from 'react-icons/tb';
+import ReactPlayer from 'react-player';
+import { useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 
 import { device, size } from '../../../src/config/globals';
 import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
 
-import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
 import { Button } from '@site/src/css/SharedStyling';
+import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
 import CustomReactPlayer from '../../utils/CustomReactPlayer';
 
 // Register GSAP plugins
@@ -70,7 +70,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
               <br />
               experiences for users on any chain
             </Header>
-            <Link href='https://whitepaper.push.org/' target='_blank'>
+            <Link href='https://push.org/litepaper.pdf' target='_blank'>
               <Button
                 background='#D548EC'
                 borderRadius='16px'
@@ -80,7 +80,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                 display='flex'
                 gap='12px'
               >
-                Read Whitepaper
+                Read Litepaper
                 <TbArrowUpRight size={24} />
               </Button>
             </Link>
@@ -95,14 +95,14 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                     ).default
                   }
                   playing={canPlayVideo}
-                  link={'instant-finality'}
-                  title='Instant Finality'
-                  alt='Instant Finality'
+                  link={'universal-smart-contract'}
+                  title='Universal Smart Contracts'
+                  alt='Universal Smart Contracts'
                 />
 
                 <FeatureTextHeading>
-                  Instant
-                  <span className='breakpoint'> Finality</span>
+                  Universal
+                  <span className='breakpoint'> Smart Contracts</span>
                 </FeatureTextHeading>
               </FinalityContainer>
 
@@ -116,16 +116,16 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                         ).default
                       }
                       playing={canPlayVideo}
-                      link={'seamless-instant'}
-                      title='Seamless Instant'
-                      alt='Seamless Instant'
+                      link={'shared-state'}
+                      title='Shared State'
+                      alt='Shared State'
                     />
                   </div>
 
                   <FeatureTextSubHeading>
-                    Seamless, Instant
+                    Shared State
                     <br />
-                    Onboarding
+                    Across Chains
                   </FeatureTextSubHeading>
                 </OnboardingContainer>
 
@@ -139,17 +139,17 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                           ).default
                         }
                         playing={canPlayVideo}
-                        link={'cheap-storage'}
-                        title='Cheap Storage'
-                        alt='Cheap Storage'
+                        link={'fee-wallet-abstraction'}
+                        title='Fee & Wallet Abstraction'
+                        alt='Fee & Wallet Abstraction'
                       />
                     </div>
 
                     <FeatureTextSubHeading style={{ color: 'white' }}>
-                      Cheap
+                      Fee &
                       <br />
-                      Storage &<br />
-                      Tx Fee
+                      Wallet <br />
+                      Abstraction
                     </FeatureTextSubHeading>
                   </TxFeeContainer>
 
@@ -163,17 +163,17 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                             ).default
                           }
                           playing={canPlayVideo}
-                          link={'cheap-storage'}
-                          title='Cheap Storage'
-                          alt='Cheap Storage'
+                          link={'fee-wallet-abstraction'}
+                          title='Fee & Wallet Abstraction'
+                          alt='Fee & Wallet Abstraction'
                         />
                       </div>
 
                       <FeatureTextSubHeading style={{ color: 'white' }}>
-                        Cheap
+                        Fee &
                         <br />
-                        Storage &<br />
-                        Tx Fee
+                        Wallet <br />
+                        Abstraction
                       </FeatureTextSubHeading>
                     </TxFeeContainerMobile>
 
@@ -186,16 +186,16 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                             ).default
                           }
                           playing={canPlayVideo}
-                          link={'infinitely-scalable'}
-                          title='Infinitely Scalable'
-                          alt='Infinitely Scalable'
+                          link={'programmable-solvers'}
+                          title='Programmable Solvers'
+                          alt='Programmable Solvers'
                         />
                       </div>
 
                       <FeatureTextSubHeading>
-                        Infinitely
+                        Programmable
                         <br />
-                        Scalable
+                        Solvers
                       </FeatureTextSubHeading>
                     </ScalableContainerMobile>
                   </StorageAndScalableContainerMobile>
@@ -272,15 +272,15 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                       ).default
                     }
                     playing={canPlayVideo}
-                    link={'infinitely-scalable'}
-                    title='Infinitely Scalable'
-                    alt='Infinitely Scalable'
+                    link={'programmable-solvers'}
+                    title='Programmable Solvers'
+                    alt='Programmable Solvers'
                   />
                 </div>
                 <FeatureTextSubHeading>
-                  Infinitely
+                  Programmable
                   <br />
-                  Scalable
+                  Solvers
                 </FeatureTextSubHeading>
               </ScalableContainer>
             </FeatureSubContainer>
@@ -437,7 +437,7 @@ const FeatureTextHeading = styled.h2`
   margin: 0;
 
   display: inline;
-  white-space: nowrap;
+  white-space: normal;
 
   @media ${device.tablet} {
     font-size: 28px;
@@ -458,7 +458,7 @@ const FeatureTextSubHeading = styled.span`
   letter-spacing: -0.72px;
 
   display: inline;
-  white-space: nowrap;
+  white-space: normal;
 
   @media ${device.tablet} {
     font-size: 24px;

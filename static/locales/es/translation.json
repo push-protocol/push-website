@@ -393,6 +393,18 @@
       "article8": {
         "text": "Push Protocol, completó recientemente la Fase 1 de su gira de desarrollo (BRB) en India. Un participante del hackathon resolvió con éxito un desafío presentado por nuestro equipo: cuentas Ethereum de prueba cuántica.",
         "link-text": "Leer Artículo"
+      },
+      "article9": {
+        "text": "Push Chain, una blockchain de Capa 1 enfocada en la abstracción de cadenas y la construcción de aplicaciones web3 accesibles a través de diferentes redes. Push Chain busca abordar las experiencias de usuario fragmentadas y los problemas de escalabilidad.",
+        "link-text": "Leer Artículo"
+      },
+      "article10": {
+        "text": "Push Chain tiene como objetivo resolver los problemas de experiencia de usuario fragmentada y escalabilidad.",
+        "link-text": "Leer Artículo"
+      },
+      "article11": {
+        "text": "La arquitectura admite interacciones entre ecosistemas EVM y no EVM, lo que permite a los desarrolladores acceder a los estados de las billeteras desde redes distintas sin depender de una infraestructura fragmentada.",
+        "link-text": "Leer Artículo"
       }
     },
     "bg-section": {

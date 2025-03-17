@@ -13,19 +13,19 @@ const ChainRoadmapSection: FC = () => {
   const isMobile = useMediaQuery(device.mobileL);
   const completedList = [
     'Proof Of Stake',
-    'Dynamic Sharding',
-    'Parallel Validators',
-    'Any Chain Transactions',
     'Wallet Abstraction',
+    'Universal Wallet',
+    'Any Chain Transactions',
+    'Consumer(unordered) Transactions',
+    'Devnet',
   ];
 
   const inProgressList = [
-    'Mapping Multiple Web3 Wallets',
-    'Smart Contracts/Virtual Machine',
     'Fees Abstraction',
-    'Seamless Interoperability',
-    'Wallet State on any Chain',
+    'Shared State across Chains',
     'Universal Smart Contracts',
+    'Programmable Solvers',
+    'Testnet & Mainnet',
   ];
 
   return (
