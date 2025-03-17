@@ -69,13 +69,20 @@ export const knowledgeBaseArticleContent = [
     slug: 'push-101',
     url: 'push-101',
     image: '',
-    title: 'Partnerships',
+    title: 'Push 101',
     subtitle:
       'Push Chain powers dApps and decentralized messaging, connecting blockchains seamlessly',
     content: [
       {
         type: 'text',
-        value: `### Push 101-test`,
+        value: `
+        ### Push 101-test
+
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
+
+        Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
+
+        Lorem [ipsum](https://test.com) dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis. Nulla convallis egestas rhoncus. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero.`,
       },
       {
         type: 'list',
@@ -120,22 +127,22 @@ export const knowledgeBaseArticleContent = [
       'Push Protocol recently announced its governance proposal of launching Push Chain. Push Protocol envisions the creation of Push Chain which enables a shared state L1 chain designed to support truly scalable consumer applications and universal applications.',
     url: '/blog/why-push-chain',
   },
-  {
-    slug: 'push-101',
-    image: '',
-    title: 'Push 101',
-    subtitle: '',
-    url: '/knowledge/101',
-    target: '_self',
-  },
-  {
-    slug: 'deep-dives',
-    image: '',
-    title: 'Push Deep Dives',
-    subtitle: 'Explore all articles related to Push Deep Dives',
-    url: '/knowledge/deep-dives',
-    target: '_self',
-  },
+  // {
+  //   slug: 'push-101',
+  //   image: '',
+  //   title: 'Push 101',
+  //   subtitle: '',
+  //   url: '/knowledge/101',
+  //   target: '_self',
+  // },
+  // {
+  //   slug: 'deep-dives',
+  //   image: '',
+  //   title: 'Push Deep Dives',
+  //   subtitle: 'Explore all articles related to Push Deep Dives',
+  //   url: '/knowledge/deep-dives',
+  //   target: '_self',
+  // },
   {
     slug: 'innovations-by-push-chain',
     image: 'innovations-by-push-chain',
