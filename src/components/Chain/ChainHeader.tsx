@@ -322,9 +322,8 @@ const NavList = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-: center;
+  align: center;
   flex: 1;
-  padding: 0px 23px;
   margin: 0px auto 0 auto;
 
   @media ${device.laptopM} {
