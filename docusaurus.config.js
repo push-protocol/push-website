@@ -6,8 +6,9 @@ const darkCodeTheme = require('prism-react-renderer').themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Push | The Communication Protocol of Web3',
-  tagline: 'One place to learn about everything Push Protocol!',
+  title: 'Push Chain | Any Chain. Any Wallet. Any App.',
+  tagline:
+    'Push Chain is a shared state L1 blockchain for Universal/Interopable Apps. Capable of doing transactions from any chain, unifying all L1s, L2s and enabling apps from any chain to be accessed by the users of any chain.',
   favicon: '/assets/website/favicon.ico',
 
   // Set the production url of your site here

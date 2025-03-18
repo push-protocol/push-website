@@ -9,213 +9,202 @@
 
 export const knowledgeBaseArticleContent = [
   {
-    slug: 'partnerships',
-    url: 'partnerships',
-    image: '',
-    title: 'Partnerships',
-    subtitle:
-      'Push Chain powers dApps and decentralized messaging, connecting blockchains seamlessly',
-    content: [
-      {
-        type: 'text',
-        value: `### **First**
-
-        ![Cover Image of Push Protocol Monthly Updates - October](/assets/previews/brbpreview.png)
-
-        ### **Protocol Milestones**
-
-        ### **Push Points Program Launch 🚀**`,
-      },
-      {
-        type: 'list',
-        items: [
-          {
-            title: 'Push Points Program Launch 🚀',
-            url: 'https://push.org/blog/introducing-the-push-points-program/',
-            subtitle:
-              'A reputation-based system designed to reward our community members and reinforce ties with our ecosystem partners.',
-          },
-          {
-            slug: 'evolution-of-push',
-            title: 'Abstracting Chains for Better UX',
-            parentSlug: 'partnerships',
-            url: 'evolution-of-push',
-            subtitle:
-              'Exploring CCR features that enhance Web3 user experience by simplifying chain interactions.',
-            content: [
-              {
-                type: 'text',
-                value:
-                  'October has been another outstanding month for Push Protocol, showcasing significant advancements across development, integrations, and community engagement.',
-              },
-            ],
-          },
-        ],
-      },
-      {
-        type: 'text',
-        value: `
-
-        ### **Protocol Milestonessss**
-
-        ### **Test**
-
-        We’re thrilled to push the boundaries of Web3 communication as we approach the new year. Stay tuned for December updates!`,
-      },
-    ],
-  },
-
-  {
-    slug: 'push-101',
-    url: 'push-101',
-    image: '',
+    slug: 'push101',
+    url: 'push101',
+    ctatitle: 'Explore More',
+    target: '_self',
+    image: 'knowledge_101',
     title: 'Push 101',
     subtitle:
-      'Push Chain powers dApps and decentralized messaging, connecting blockchains seamlessly',
+      'Learn about basics of Push Chain. The innovations it introduces, what makes it tick and why is it required!',
     content: [
       {
         type: 'text',
-        value: `
-        ### Push 101-test
+        value: `# Why Push Chain?
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
+        Push Chain addresses specific gaps in the existing blockchains, such as interoperability, state access across chains, programmable solvers and wallet abstraction resulting in a **full stack interop**. While existing blockchains are robust, they operate in their own eco-system and an aggregator to unite these chains are needed.<p />
+        
+        While existing blockchains are robust, they operate in their own eco-system and an aggregator to unite these chains are needed.<p />
+        
+        Push Chain’s focus is on being a **shared state chain** for universal applications acting as a unifying layer where all chains can come together and use PC as universal hub or do settlement between them.<p />
+PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet/User.** And is suitable for **Any App.**`,
+      },
+      {
+        type: 'text',
+        value: `# What is Push Chain?
 
-        Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.
+        Push Chain is a Proof-of-Stake (PoS) L1 blockchain that is designed to eliminate fragmentation across all chains.<p />
 
-        Lorem [ipsum](https://test.com) dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis. Nulla convallis egestas rhoncus. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero.`,
+        It is a **shared state L1** blockchain for **Universal (Interoperable) Apps** across chains. Push Chain enables txs from any chain (Eth, Solana, EVM, or non-EVM) enabling apps from any chain to be accessed by the users of any chain (**polymarket** from any chain, **pump.fun** from any chain, etc).`,
+      },
+      {
+        type: 'text',
+        value: `# Innovations of Push Chain
+        
+        Push Chain introduces some ground breaking innovations such as:<p />
+        
+        **Fee and Wallet abstraction** - allowing wallets/users of any chain to interact natively while being on the chain of their choice.<p />
+
+        **Universal Wallet** - ensuring user can login via social or email and still have non-custodial wallets created for them for all chains (Ethereum, Bitcoin, Solana, etc).<p />
+
+        **Shared State** - enabling developers to read the state of any wallet or smart contract of any other blockchain via smart contract on Push Chain.<p />
+
+        **Programmable Generalized Solvers** - ensures that a developer can create a basic path for cross chain actions (write actions) based on the shared state.<p />
+
+        **Universal Smart Contracts** - giving developers ability to use shared state and generalized solvers for read and write action in chain agnostic fashion. And enables users to use fees and wallet abstraction to access any app or any chain without any hassle.<p />
+        
+        This results in **fully interoperable applications** for web3. In this paradigm, instead of being a user of "Uniswap on Ethereum," "Uniswap on Polygon," or "Uniswap on Arbitrum," a person simply becomes a **user of Uniswap.**`,
+      },
+      {
+        type: 'text',
+        value: `# Curated Reads 👇`,
       },
       {
         type: 'list',
         items: [
           {
-            title: 'Push Points Program Launch 🚀',
-            url: 'https://push.org/blog/introducing-the-push-points-program/',
+            slug: 'evolution-of-push',
+            image: 'evolution-of-push',
+            title: 'Evolution of Push',
             subtitle:
-              'A reputation-based system designed to reward our community members and reinforce ties with our ecosystem partners.',
+              'Push Protocol has come a long way! We’ve delivered over 140M notifications, built a community of 500K aggregate users, powered notifications for 500+ projects, and are known as the de facto leader in notifications and communications for web3.',
+            url: '/blog/evolution-of-push',
+            target: '_self',
           },
           {
-            slug: 'evolution-of-push',
-            title: 'Abstracting Chains for Better UX',
-            parentSlug: 'push-101',
-            url: 'evolution-of-push',
+            slug: 'innovations-by-push-chain',
+            image: 'innovations-by-push-chain',
+            title: 'Innovations by Push Chain',
             subtitle:
-              'Exploring CCR features that enhance Web3 user experience by simplifying chain interactions.',
-            content: [
-              {
-                type: 'text',
-                value:
-                  'October has been another outstanding month for Push Protocol, showcasing significant advancements across development, integrations, and community engagement.',
-              },
-            ],
+              'Unlike traditional L1 chains, Push Chain introduces ten key innovations and optimized mechanisms to unify any chain, any user, and any app. This article will help you understand - What Innovations Push Chain brings to Web3!',
+            url: '/blog/innovations-by-push-chain',
+            target: '_self',
+          },
+          {
+            slug: 'another-l1',
+            title: 'Is Push Chain Another L1?',
+            image: 'another-l1',
+            subtitle:
+              'The move towards Push Chain was driven by the realisation that we had to do our bit to move the needle on interoperability, not in order to create our own fragmented ecosystem.',
+            url: '/blog/another-l1',
+            target: '_self',
           },
         ],
       },
       {
-        type: 'text',
-        value: `
-        Push 101 Test
-        We’re thrilled to push the boundaries of Web3 communication as we approach the new year. Stay tuned for December updates!`,
+        type: 'list',
+        items: [
+          {
+            slug: 'faq-push-chain',
+            image: 'frequently-asked-questions',
+            title: 'Push Chain’s Frequently Asked Questions',
+            subtitle:
+              'The place to find answers to all the popular questions the community has asked about Push Chain. Crowdsourced from Push Fam ❤️ and curated by the Push team 💪.',
+            url: '/blog/faq-push-chain/',
+            target: '_self',
+          },
+          {
+            slug: 'consumer-apps-that-can-be-built-on-push-chain',
+            image: 'consumer-apps',
+            title: 'Consumer Apps 🫶🏽 Push Chain?',
+            subtitle:
+              'Web 3 is growing at lightning speed!Hundreds of L1s, Thousands of L2s and soon Tens of thousands of L3s!! While striving to make systems more scalable, decentralized and secure, we risk overlooking a crucial goal...',
+            url: '/blog/consumer-apps-that-can-be-built-on-push-chain/',
+            target: '_self',
+          },
+          {
+            slug: 'why-push-chain',
+            image: 'why-push-chain',
+            title: 'Why Push Chain?',
+            subtitle:
+              'Push Protocol recently announced its governance proposal of launching Push Chain. Push Protocol envisions the creation of Push Chain which enables a shared state L1 chain designed to support truly scalable consumer applications and universal applications.',
+            url: '/blog/why-push-chain',
+            target: '_self',
+          },
+        ],
       },
     ],
   },
 
   {
-    slug: 'why-push-chain',
-    image: 'why-push-chain',
-    title: 'Why Push Chain?',
+    slug: 'deepdives',
+    url: 'deepdives',
+    ctatitle: 'See it Tick',
+    target: '_self',
+    image: 'knowledge_deepdives',
+    title: 'Deep Dives',
     subtitle:
-      'Push Protocol recently announced its governance proposal of launching Push Chain. Push Protocol envisions the creation of Push Chain which enables a shared state L1 chain designed to support truly scalable consumer applications and universal applications.',
-    url: '/blog/why-push-chain',
-  },
-  // {
-  //   slug: 'push-101',
-  //   image: '',
-  //   title: 'Push 101',
-  //   subtitle: '',
-  //   url: '/knowledge/101',
-  //   target: '_self',
-  // },
-  // {
-  //   slug: 'deep-dives',
-  //   image: '',
-  //   title: 'Push Deep Dives',
-  //   subtitle: 'Explore all articles related to Push Deep Dives',
-  //   url: '/knowledge/deep-dives',
-  //   target: '_self',
-  // },
-  {
-    slug: 'innovations-by-push-chain',
-    image: 'innovations-by-push-chain',
-    title: 'Innovations by Push Chain',
-    subtitle:
-      'Unlike traditional L1 chains, Push Chain introduces ten key innovations and optimized mechanisms to unify any chain, any user, and any app. This article will help you understand - What Innovations Push Chain brings to Web3!',
-    url: '/blog/innovations-by-push-chain',
+      'Want to know the intricate working of Push? or just a curious fellow? If so, this section is for you ❤️',
+    content: [
+      {
+        type: 'text',
+        value: `# Curated Reads 👇
+        
+        Deep dive into the inner working of Push Chain and how everything comes together to create a universal, fully interoperable chain that unites all L1s 🤝 L2s 🤝 L3s.`,
+      },
+      {
+        type: 'list',
+        items: [
+          {
+            slug: 'understand-proof-of-stake-and-push-chain',
+            image: 'understand-proof-of-stake',
+            title: 'Understand Proof of Stake (POS) and Push Chain PoS',
+            subtitle:
+              'In a globally distributed computing environment, achieving collective agreement on the true state of the system has always been a complex challenge. Fortunately, there are algorithms (specialized instructions) that assist in preserving this ‘single-truth-state’ while...',
+            url: '/blog/understand-proof-of-stake-and-push-chain/',
+            target: '_self',
+          },
+          {
+            slug: 'randomized-node-selection-push-chain',
+            image: 'randomized-parallel',
+            title: 'Node Randomization',
+            subtitle:
+              'One of the defining aspects of decentralized networks is their lack of a central authority to govern how they operate. Instead, these networks rely on a set of rules and systems to securely communicate and reach consensus on the overall state of the network.',
+            url: '/blog/randomized-node-selection-push-chain',
+            target: '_self',
+          },
+          {
+            slug: 'parallel-validators-and-dynamic-sharding',
+            image: 'benchmarking-push-chain-nodes',
+            title: 'Benchmark of Push Chain',
+            subtitle:
+              'The Push Chain Network, a Proof-of-Stake (PoS) blockchain designed for consumer-centric applications, offers an innovative approach to scalability and usability in the decentralized space. By leveraging features like dynamic sharding, parallel block execution, and true scale, Push Chain...',
+            url: '/blog/parallel-validators-and-dynamic-sharding',
+            target: '_self',
+          },
+        ],
+      },
+    ],
   },
 
   {
-    slug: 'partners',
-    image: 'push-chain-partners',
-    title: 'Explore Partners',
-    subtitle:
-      'Explore partnerships committed to building universal apps and unlocking chain abstraction on Push Chain..',
-    url: '/knowledge/partners',
+    slug: 'devdocs',
+    image: 'knowledge_devdocs',
+    title: 'Developer Docs',
+    subtitle: `Let's come straight to the point! I am universal chain... and you are a dev, let's make it official!`,
+    url: '/docs',
     target: '_self',
+    ctatitle: 'Build Now',
   },
+
   {
-    slug: 'evolution-of-push',
-    image: 'evolution-of-push',
-    title: 'Evolution of Push',
-    subtitle:
-      'Push Protocol has come a long way! We’ve delivered over 140M notifications, built a community of 500K aggregate users, powered notifications for 500+ projects, and are known as the de facto leader in notifications and communications for web3.',
-    url: '/blog/evolution-of-push',
+    slug: 'tokenomics',
+    image: 'knowledge_tokenomics',
+    title: 'Explore Tokenomics',
+    subtitle: `Learn how Push Chain's tokenomics incentivizes all actors and ensures sustainable network that's built to last`,
+    url: '/blog/push-chain-tokenomics/',
+    target: '_self',
+    ctatitle: 'Learn Token Design',
   },
-  {
-    slug: 'another-l1',
-    title: 'Is Push Chain Another L1?',
-    image: 'another-l1',
-    subtitle:
-      'The move towards Push Chain was driven by the realisation that we had to do our bit to move the needle on interoperability, not in order to create our own fragmented ecosystem.',
-    url: '/blog/another-l1',
-  },
+
   {
     slug: 'faq-push-chain',
     image: 'frequently-asked-questions',
     title: 'Push Chain’s Frequently Asked Questions',
     subtitle:
-      'The place to find answers to all the popular questions the community has asked about Push Chain. Crowdsourced from Push Fam ❤️ and curated by the Push team 💪.',
+      'The place to find answers to all the popular questions the community has asked. Crowdsourced from Push Fam ❤️ and curated by the Push team 💪.',
     url: '/blog/faq-push-chain/',
-  },
-  {
-    slug: 'consumer-apps-that-can-be-built-on-push-chain',
-    image: 'consumer-apps',
-    title: 'Consumer Apps 🫶🏽 Push Chain?',
-    subtitle:
-      'Web 3 is growing at lightning speed!Hundreds of L1s, Thousands of L2s and soon Tens of thousands of L3s!! While striving to make systems more scalable, decentralized and secure, we risk overlooking a crucial goal...',
-    url: '/blog/consumer-apps-that-can-be-built-on-push-chain/',
-  },
-  {
-    slug: 'parallel-validators-and-dynamic-sharding',
-    image: 'benchmarking-push-chain-nodes',
-    title: 'Benchmark of Push Chain',
-    subtitle:
-      'The Push Chain Network, a Proof-of-Stake (PoS) blockchain designed for consumer-centric applications, offers an innovative approach to scalability and usability in the decentralized space. By leveraging features like dynamic sharding, parallel block execution, and true scale, Push Chain...',
-    url: '/blog/parallel-validators-and-dynamic-sharding',
-  },
-  {
-    slug: 'randomized-node-selection-push-chain',
-    image: 'randomized-parallel',
-    title: 'Node Randomization',
-    subtitle:
-      'One of the defining aspects of decentralized networks is their lack of a central authority to govern how they operate. Instead, these networks rely on a set of rules and systems to securely communicate and reach consensus on the overall state of the network.',
-    url: '/blog/randomized-node-selection-push-chain',
-  },
-
-  {
-    slug: 'understand-proof-of-stake-and-push-chain',
-    image: 'understand-proof-of-stake',
-    title: 'Understand Proof of Stake (POS) and Push Chain PoS',
-    subtitle:
-      'In a globally distributed computing environment, achieving collective agreement on the true state of the system has always been a complex challenge. Fortunately, there are algorithms (specialized instructions) that assist in preserving this ‘single-truth-state’ while...',
-    url: '/blog/understand-proof-of-stake-and-push-chain/',
+    target: '_self',
+    ctatitle: 'Read More',
   },
 ];

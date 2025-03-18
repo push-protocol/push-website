@@ -105,16 +105,16 @@ export const General = [
       <Answer>
         <Span>
           Push Chain addresses specific gaps in the existing blockchains, such
-          as interoperability, universal app experiences, full stack interop,
-          and scalability. While existing blockchains are robust, they operate
-          in their own eco-system and an aggregator to unite these chains are
-          needed.
+          as interoperability, state access across chains, programmable solvers
+          and wallet abstraction resulting in a <b>full stack interop</b>. While
+          existing blockchains are robust, they operate in their own eco-system
+          and an aggregator to unite these chains are needed.
         </Span>
         <Span>
           Push Chain’s focus is on being a <b>shared state chain</b> for
-          universal applications acting as a unifying layer where all chains can
-          come together and use PC as universal hub or do settlement between
-          them.
+          universal (interoperable) applications acting as a unifying layer
+          where all chains can come together and use PC as universal hub or do
+          settlement between them.
         </Span>
         <Span>
           PC offers a new paradigm of web3 that works from <b>Any Chain.</b> For{' '}

@@ -7,10 +7,10 @@ import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import useModal from '../hooks/useModal';
 
-import { Button, H2, H3, ItemH, ItemV } from '../../../css/SharedStyling';
-import { ChainKnowledgeBaseHeader } from '../config/ChainKnowledgeBaseHeader';
 import ImageHolder from '../../../../src/components/ImageHolder';
+import { Button, H2, H3, ItemH, ItemV } from '../../../css/SharedStyling';
 import ChainElevateModal from '../ChainElevateModal';
+import { ChainKnowledgeBaseHeader } from '../config/ChainKnowledgeBaseHeader';
 
 const ChainKnowledgeBaseComponent = () => {
   const isMobile = useMediaQuery(device.mobileL);
@@ -83,8 +83,8 @@ const ChainKnowledgeBaseComponent = () => {
               color='#000'
               flex='1'
             >
-              Craft seamless, consumer-focused experiences for users on any
-              chain
+              Craft seamless, user-friendly experiences for you app on any
+              blockchain with Push Chain.
             </H3>
             <Button
               background='#D548EC'

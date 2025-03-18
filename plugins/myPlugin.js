@@ -1,6 +1,4 @@
 const ArticleContent = require('../src/components/Chain/config/ChainKnowledgeBaseConfig');
-const Push101Content = require('../src/components/Chain/config/ChainKnowledgeBase101Config');
-const PushDeepdivesContent = require('../src/components/Chain/config/ChainKnowledgeBaseDeepdivesConfig');
 
 export default function myPlugin() {
   return {
@@ -8,9 +6,6 @@ export default function myPlugin() {
     async loadContent() {
       return {
         knowledgeBase: ArticleContent?.knowledgeBaseArticleContent || [],
-        knowledgeBase101: Push101Content?.ChainKnowledgeBase101Config || [],
-        knowledgeBaseDeepdives:
-          PushDeepdivesContent?.ChainKnowledgeBaseDeepdivesConfig || [],
       };
     },
     async contentLoaded({ content, actions }) {
@@ -61,20 +56,12 @@ export default function myPlugin() {
       };
 
       await Promise.all(content.knowledgeBase.map((item) => processItem(item)));
-      await Promise.all(
-        content.knowledgeBase101.map((item) => processItem(item, '101'))
-      );
-      await Promise.all(
-        content.knowledgeBaseDeepdives.map((item) =>
-          processItem(item, 'deep-dives')
-        )
-      );
     },
   };
 }
 
 // const ArticleContent = require('../src/components/Chain/config/ChainKnowledgeBaseConfig');
-// const Push101Content = require('../src/components/Chain/config/ChainKnowledgeBase101Config');
+// const Push101Content = require('../src/components/Chain/config/ChainKnowledgeBase102Config');
 // const PushDeepdivesContent = require('../src/components/Chain/config/ChainKnowledgeBaseDeepdivesConfig');
 
 // export default function myPlugin() {
@@ -83,7 +70,7 @@ export default function myPlugin() {
 //     async loadContent() {
 //       return {
 //         knowledgeBase: ArticleContent?.knowledgeBaseArticleContent || [],
-//         knowledgeBase101: Push101Content?.ChainKnowledgeBase101Config || [],
+//         knowledgeBase101: Push101Content?.ChainKnowledgeBase102Config || [],
 //         knowledgeBaseDeepdives:
 //           PushDeepdivesContent?.ChainKnowledgeBaseDeepdivesConfig || [],
 

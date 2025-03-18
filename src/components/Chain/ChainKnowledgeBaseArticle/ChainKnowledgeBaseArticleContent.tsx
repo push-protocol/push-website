@@ -3,21 +3,21 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React from 'react';
-import styled from 'styled-components';
 import Markdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
-import remarkGfm from 'remark-gfm';
-import rehypeSlug from 'rehype-slug';
 import rehypeSanitize from 'rehype-sanitize';
+import rehypeSlug from 'rehype-slug';
+import remarkGfm from 'remark-gfm';
+import styled from 'styled-components';
 import { extractTOC } from '../utils/ExtractTableOfContent';
 
 import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 
-import { H3, ItemH, ItemV, Span } from '../../../css/SharedStyling';
 import Link from '@docusaurus/Link';
-import ChainKnowledgeBaseArticle from './ChainKnowledgeBaseArticle';
+import { H3, ItemH, ItemV, Span } from '../../../css/SharedStyling';
 import ChannelKnowledgeBaseComponentItem from '../ChainKnowledgeBase/ChannelKnowledgeBaseComponentItem';
+import ChainKnowledgeBaseArticle from './ChainKnowledgeBaseArticle';
 
 const ChainKnowledgeBaseArticleContent = ({ item }) => {
   const isMobile = useMediaQuery(device.mobileL);
@@ -64,8 +64,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
                 lineHeight='120%'
                 color='#000'
               >
-                <Breadcrumb to={'/chain/knowledge'}>Home</Breadcrumb>
-                {`  > Knowledge Base`}
+                <Breadcrumb to={'/chain/knowledge'}>Knowledge Base</Breadcrumb>
               </Span>
               <H3
                 fontSize={isMobile ? '36px' : '54px'}
@@ -209,6 +208,11 @@ const ChainKnowledgeGrid = styled.div`
 const TextItem = styled.div`
   max-width: calc(100% - 400px);
   margin: 20px 0 20px auto;
+  width: inherit;
+
+  p {
+    font-size: larger;
+  }
 
   @media ${device.tablet} {
     max-width: 100%;

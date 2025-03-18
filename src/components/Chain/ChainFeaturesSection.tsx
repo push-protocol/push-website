@@ -66,9 +66,9 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
         <InnerContainer>
           <HeaderContainer>
             <Header>
-              Craft seamless, consumer-focused
+              Effortlessly deliver seamless, user-focused
               <br />
-              experiences for users on any chain
+              experiences for your app on any chain
             </Header>
             <Link href='https://push.org/litepaper.pdf' target='_blank'>
               <Button

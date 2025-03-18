@@ -31,7 +31,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       targetUrl = `${baseURL}/knowledge/${item.url || item.slug}`;
     }
 
-    window.open(targetUrl, '_blank');
+    window.open(targetUrl, !item.target ? '_self' : item.target);
   };
 
   return (
@@ -114,7 +114,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
           letterSpacing='-0.64px'
           color='#D548EC'
         >
-          {item?.slug == 'partners' ? 'Explore Partners' : 'Read More'}
+          {item?.ctatitle ? item?.ctatitle : 'Read More'}
         </Span>
         <TbArrowUpRight color='#D548EC' size={24} />
       </ItemH>
