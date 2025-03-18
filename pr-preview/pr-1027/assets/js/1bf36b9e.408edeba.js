@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[36725],{930085:e=>{e.exports=JSON.parse('{"label":"Commonwealth","permalink":"/push-website/pr-preview/pr-1027/blog/tags/commonwealth","allTagsPath":"/push-website/pr-preview/pr-1027/blog/tags","count":1,"unlisted":false}')}}]);
