@@ -50,7 +50,7 @@ export const General = [
           liquidity fragmentation and more.
         </Span>
 
-        <Span>It introduces some ground breaking innovations such as:</Span>
+        <Span>It introduces some groundbreaking innovations such as:</Span>
 
         <Span>
           <b>Fee and Wallet abstraction</b> - allowing wallets/users of any
@@ -70,16 +70,9 @@ export const General = [
         </Span>
 
         <Span>
-          Allowing them the freedom to use that logic to create a basic path for
-          solvers allowing users of any chain to interact with their app. Or,
-          create universal/omni products such as any chain DeFi, any chain
-          governance, any chain NFT, etc.
-        </Span>
-
-        <Span>
-          <b>Programmable Generalized Solvers</b> - ensures that a developer can
-          create a basic path for cross chain actions (write actions) based on
-          the shared state.
+          <b>Programmable Solvers</b> - ensures that a developer can create a
+          basic path for cross chain actions (write actions) based on the shared
+          state.
         </Span>
 
         <Span>
@@ -87,6 +80,15 @@ export const General = [
           shared state and generalized solvers for read and write action in
           chain agnostic fashion. And enables users to use fees and wallet
           abstraction to access any app or any chain without any hassle.
+        </Span>
+
+        <Span>
+          Push Chain uses all these innovations to enable reading (shared state)
+          or writing to different chains (programmable solvers), all controlled
+          by the universal smart contract. The fee and wallet abstraction
+          further enables a seamless, user centric approach as the learnings for
+          a user is abstracted away no matter from what chain they chose to
+          interact.
         </Span>
 
         <Span>

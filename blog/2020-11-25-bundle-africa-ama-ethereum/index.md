@@ -112,7 +112,7 @@ Richa : **What does the future looks like ?**:
 
 The future of ETH is only bound by the imaginations of the developers building on top of it. You can practically build anything on top of it and most of the time it will always be better than what we have in terms of current technology services which relies on the server/client technology model, where in we as client are always dependent on the whims of the server to provide us with access and trust what we see.
 
-The future of ground breaking tech though really depends on scalability and speed. Both of which is what we see ETH 2.0 and several Layer 2 services on ETH trying to tackle. This race has actually always been chasing the Blockchain Trilemma, where it has been dictated that you can only choose to have two out of three things in your blockchain: Security, Scalability and Decentralization.
+The future of groundbreaking tech though really depends on scalability and speed. Both of which is what we see ETH 2.0 and several Layer 2 services on ETH trying to tackle. This race has actually always been chasing the Blockchain Trilemma, where it has been dictated that you can only choose to have two out of three things in your blockchain: Security, Scalability and Decentralization.
 
 The one to achieve this blockchain trilemma is going to be the one that changes the entire web 3.0 landscape and Ethereum is well poised to do so. Another shameless plug, so apart from the blockchain trilemma, we also feel that communication as in services coming to users instead of other way round (like how it is currently in blockchain) is another thing which will help a blockchain win, that’s us btw ;).
 

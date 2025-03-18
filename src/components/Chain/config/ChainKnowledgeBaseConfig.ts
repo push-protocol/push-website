@@ -41,7 +41,7 @@ PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet
         type: 'text',
         value: `# Innovations of Push Chain
         
-        Push Chain introduces some ground breaking innovations such as:<p />
+        Push Chain introduces some groundbreaking innovations such as:<p />
         
         **Fee and Wallet abstraction** - allowing wallets/users of any chain to interact natively while being on the chain of their choice.<p />
 
@@ -49,9 +49,11 @@ PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet
 
         **Shared State** - enabling developers to read the state of any wallet or smart contract of any other blockchain via smart contract on Push Chain.<p />
 
-        **Programmable Generalized Solvers** - ensures that a developer can create a basic path for cross chain actions (write actions) based on the shared state.<p />
+        **Programmable Solvers** - ensures that a developer can create a basic path for cross chain actions (write actions) based on the shared state.<p />
 
         **Universal Smart Contracts** - giving developers ability to use shared state and generalized solvers for read and write action in chain agnostic fashion. And enables users to use fees and wallet abstraction to access any app or any chain without any hassle.<p />
+        
+        Push Chain uses all these innovations to enable reading (shared state) or writing to different chains (programmable solvers), all controlled by the universal smart contract. The fee and wallet abstraction further enables a seamless, user centric approach as the learnings for a user is abstracted away no matter from what chain they chose to interact. <p/>
         
         This results in **fully interoperable applications** for web3. In this paradigm, instead of being a user of "Uniswap on Ethereum," "Uniswap on Polygon," or "Uniswap on Arbitrum," a person simply becomes a **user of Uniswap.**`,
       },
