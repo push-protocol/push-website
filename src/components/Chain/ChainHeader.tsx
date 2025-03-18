@@ -236,10 +236,13 @@ const ChainHeader: FC = () => {
                     }}
                     showMobileMenu={showMobileMenu}
                     expanded={mobileMenuMap[index]}
-                    {...(item.subItems && {
-                      onMouseEnter: (e) => handleMouseEnter(e, index, item.id),
-                      onMouseLeave: (e) => handleMouseLeave(e, index, item.id),
-                    })}
+                    {...(item.subItems &&
+                      !isMobileMenuOpen && {
+                        onMouseEnter: (e) =>
+                          handleMouseEnter(e, index, item.id),
+                        onMouseLeave: (e) =>
+                          handleMouseLeave(e, index, item.id),
+                      })}
                   >
                     <MenuNavLink className='navLink'>
                       <NavigationMenuHeader isActive={activeItem === item.id}>
