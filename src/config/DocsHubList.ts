@@ -24,7 +24,8 @@ export const QuickstartItems: IQuickstartItem[] = [
   {
     title: 'Push Chain Quickstart',
     codeblock: `// Import Push Chain SDK
-import { PushChain, createUniversalAccount, createUniversalSigner } from '@pushchain/devnet';
+
+import { PushChain, createUniversalAccount, createUniversalSigner, CONSTANTS } from '@pushchain/devnet';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';

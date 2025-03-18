@@ -10,8 +10,7 @@ import { device } from '@site/src/config/globals';
 import useMediaQuery from '../../hooks/useMediaQuery';
 
 import { H3, ItemH, Span } from '@site/src/css/SharedStyling';
-import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
-import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
+import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 import ChainCanvas from './ChainCanvas';
 import { ChainEmailSignup } from './ChainEmailSignup';
 
@@ -31,9 +30,7 @@ const ChainElevateModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
           </CloseButton>
           <ModalBody>
             <PushLogoBlackContainer className='headerlogo' flex='initial'>
-              <PushLogo style={{ margin: '0px 9px 0px 4px' }} />
-
-              <ChainLogo />
+              <ChainLogoDark />
             </PushLogoBlackContainer>
             <ElevateSection>
               <ItemH maxWidth='850px' margin='0 auto'>
@@ -184,4 +181,5 @@ const PushLogoBlackContainer = styled.div`
   flex-direction: row;
   align-items: center;
   color: #fff;
+  width: 150px;
 `;

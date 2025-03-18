@@ -22,9 +22,11 @@ The place to find answers to all the popular questions the community has asked a
 
 ### What is Push Chain?
 
-Push Chain is a shared state blockchain for universal applications. It is designed to allow **transactions from any chain** (ETH, Solana, EVM, non-EVM), has **&lt;1s fast finality** and has **true scalability** (read and write throughput increases as the number of nodes increases).
+Push Chain is a shared-state L1 blockchain designed for universal (interoperable) applications.
 
-It introduces some ground breaking innovations such as **consumer txs** (order not important), **parallel validators and dynamic sharding** and **universal smart contracts**. The result is a layer 1 with the ability to become a shared settlement layer for all L1s 🤝 L2s 🤝 L3.
+By enabling seamless **transactions from any chain** (Eth, Solana, EVM, or non-EVM), **abstracting away gas** and **wallet** complexities, and **fostering interoperability** across L1s, L2s, and L3s, Push Chain ensures a frictionless web3 experience for users and developers alike.
+
+Push Chain enables **full stack interop** enabling apps from any chain to be accessed by the users of any chain (polymarket from any chain, pump.fun from any chain, etc). The result is a layer 1 that unites all L1s 🤝 L2s 🤝 L3.
 
 ---
 
@@ -32,27 +34,35 @@ It introduces some ground breaking innovations such as **consumer txs** (order n
 
 ![Push Chain Architecture](./pcoverview.webp 'Push Chain Architecture')
 
-Push Chain is a sharded, Proof-of-Stake (PoS) blockchain that features different types of nodes—validators, storage nodes, and archival nodes—each optimized for specific roles and responsibilities to ensure high efficiency. This design gives the chain fast finality of less than one second.
+Push Chain is a Proof-of-Stake (PoS) L1 blockchain that is designed to eliminate fragmentation across all chains.
 
-In brief, **Validator** nodes handle the role of writing transactions and are able to do so in parallel. **Storage** nodes, which are dynamically sharded, fetch transactions from the network. And **Archival** nodes provide a complete snapshot of the blockchain.
+It leverages on several innovations such as specialized validators, off-chain relayers and generalized solvers working in tandem to ensure a user or developer is able to read and write on any chain. This eliminates the silos of different chains, wallet conventions, liquidity fragmentation and more.
 
-Push Chain also introduces several key innovations in web3. At launch, these include **consumer transactions** (these are txs where order is not critical), **Push ID**, which maps multiple EVM and non-EVM accounts and **wallet and fees abstraction**.
+It introduces some groundbreaking innovations such as:
 
-In later phases, Push Chain will introduce **shared state** and **universal smart contracts**. These features will enable smart contracts on Push Chain to access the state of both EVM and non-EVM wallets connected to a single user.
+**Fee and Wallet abstraction** \- allowing wallets/users of any chain to interact natively while being on the chain of their choice.
 
-The result is **universal applications** for web3. In this paradigm, instead of being a user of "Uniswap on Ethereum," "Uniswap on Polygon," or "Uniswap on Arbitrum," a person simply becomes a **user of Uniswap**.
+**Universal Wallet** \- ensuring user can login via social or email and still have non-custodial wallets created for them for all chains (Ethereum, Bitcoin, Solana, etc).
 
-These innovations make Push Chain suitable for creating new experiences or cross-deploying existing consumer-centric apps tied to specific blockchains, making them accessible to any web3 user.
+**Shared State** \- enabling developers to read the state of any wallet or smart contract of any other blockchain via smart contract on Push Chain.
+
+**Programmable Solvers** \- ensures that a developer can create a basic path for cross chain actions (write actions) based on the shared state.
+
+**Universal Smart Contracts** \- giving developers ability to use shared state and generalized solvers for read and write action in chain agnostic fashion. And enables users to use fees and wallet abstraction to access any app or any chain without any hassle.
+
+Push Chain uses all these innovations to enable reading (shared state) or writing to different chains (programmable solvers), all controlled by the universal smart contract. The fee and wallet abstraction further enables a seamless, user centric approach as the learnings for a user is abstracted away no matter from what chain they chose to interact.
+
+This results in universal applications for web3. In this paradigm, instead of being a user of "Uniswap on Ethereum," "Uniswap on Polygon," or "Uniswap on Arbitrum," a person simply becomes a **user of Uniswap**.
 
 ---
 
 ### Why is Push Chain unique for users?
 
-Push Chain addresses specific gaps in the existing blockchains, such as interoperability, shared app experiences, enabling new app experiences, and scalability. While existing blockchains are robust, they operate in their own eco-system and an aggregator to unite these chains are needed.
+Push Chain addresses specific gaps in the existing blockchains, such as interoperability, state access across chains, programmable solvers and wallet abstraction resulting in a **full stack interop**. While existing blockchains are robust, they operate in their own eco-system and an aggregator to unite these chains are needed.
 
-Push Chain’s focus is on being a **shared state chain** for universal applications acting as a unifying layer where all chains can come together and use PC as universal hub or do settlement between them.
+Push Chain’s focus is on being a **shared state chain** for universal (interoperable) applications acting as a unifying layer where all chains can come together and use PC as universal hub or do settlement between them.
 
-PC offers a new paradigm of web3 that works from **any chain.** for **any user.** and is suitable for **any app.**
+PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet/User.** And is suitable for **Any App.**
 
 ---
 
@@ -290,7 +300,7 @@ The Push DAO governance system will both evolve and expand as Push Chain launche
 
 While we are thrilled with the early interest coming from developers to build universal apps, we are still in the governance phase for ratifying our evolution from Push Protocol to Push Chain and hence do not have a grants program now.
 
-This will change very soon once the community approves of Push Chain! Meanwhile, to frontrun other grantees, please drop us an email at <a href="mailto:team@push.org">team@push.org</a> with the subject line as **Grant MEOW** and your app idea. Or, simply follow [@PushChain](https://x.com/PushChain 'Follow Push Protocol on X') for more updates around the grants program and its release.
+This will change very soon once the community approves of Push Chain! Meanwhile, to frontrun other grantees, please drop us an email at <a href="mailto:team@push.org">team@push.org</a> with the subject line as **Grant MEOW** and your app idea. Or, simply follow [@PushChain](https://x.com/PushChain 'Follow Push Chain on X') for more updates around the grants program and its release.
 
 ---
 

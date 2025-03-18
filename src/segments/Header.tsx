@@ -3,9 +3,9 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
+import { useLocation } from '@docusaurus/router';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useLocation } from '@docusaurus/router';
 
 // External Components
 import { gsap } from 'gsap';
@@ -37,10 +37,10 @@ import { BsChevronDown } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 // Internal Configs
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { SupportedLanguagesList } from '@site/src/config/SupportedLanguagesList';
 import GLOBALS, { device, structure } from '@site/src/config/globals';
 import { HeaderList } from '../config/HeaderList';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 
 // Register GSAP plugins

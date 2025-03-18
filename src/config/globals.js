@@ -108,7 +108,7 @@ const GLOBALS = {
   },
 
   STRUCTURE: {
-    MAX_WIDTH: size.laptopM,
+    MAX_WIDTH: size.laptopL,
     PADDING: {
       DESKTOP: `${structure.PADDING.DESKTOP.TOP}px ${structure.PADDING.DESKTOP.RIGHT}px ${structure.PADDING.DESKTOP.BOTTOM}px ${structure.PADDING.DESKTOP.LEFT}px`,
       TABLET: `${structure.PADDING.TABLET.TOP}px ${structure.PADDING.TABLET.RIGHT}px ${structure.PADDING.TABLET.BOTTOM}px ${structure.PADDING.TABLET.LEFT}px`,

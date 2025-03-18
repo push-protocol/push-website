@@ -3,8 +3,8 @@
 import React from 'react';
 
 // External Components
-import styled from 'styled-components';
 import { BsArrowRight } from 'react-icons/bs';
+import styled from 'styled-components';
 
 // Internal Components
 import { Button, H2 } from '../../../src/css/SharedStyling';
@@ -88,7 +88,7 @@ const HeroButton = styled(Button)<{
 
   &:hover {
     background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
   }
 
   h2 {

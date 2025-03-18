@@ -19,11 +19,16 @@ export const ChainNavBarItems = [
       },
     ],
   },
-  { id: 'blog', label: 'Blog', url: '/blog' },
   {
     id: 'resources',
     label: 'resources',
     subItems: [
+      {
+        id: 'blog',
+        label: 'Blog',
+        sublabels: 'Juicy details about Push',
+        url: '/blog',
+      },
       {
         id: 'litepaper',
         label: 'Litepaper',
@@ -31,16 +36,16 @@ export const ChainNavBarItems = [
         url: `https://push.org/litepaper.pdf`,
       },
       {
-        id: 'whitepaper',
-        label: 'Whitepaper',
-        sublabels: 'Push Chain Whitepaper',
-        url: 'https://whitepaper.push.org/',
+        id: 'tokenomics',
+        label: 'Tokenomics',
+        sublabels: 'Deep dive into tokenomics',
+        url: '/blog/push-chain-tokenomics/',
       },
       {
         id: 'faq',
         label: 'FAQ',
-        sublabels: 'Frequently asked questions about Push Chain',
-        url: '/',
+        sublabels: 'Frequently asked questions',
+        url: '/blog/faq-push-chain/',
       },
     ],
   },

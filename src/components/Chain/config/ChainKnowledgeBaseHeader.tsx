@@ -7,20 +7,19 @@ import React from 'react';
 // If you want to use a youtube link or video, attach the embed link url in the video field
 
 export const ChainKnowledgeBaseHeader = {
-  title: 'Introducing Push Chain',
+  title: 'Knowledge Base',
   description: () => (
     <div>
       <div>
-        Push Chain is a shared state blockchain for universal applications. It
-        enables <b>transactions from any chain</b> (ETH, Solana, EVM, non-EVM)
-        allowing <b>apps</b> to be accessed by
-        <b> users of any chain</b>.
+        Push Chain is a shared-state blockchain designed for universal
+        (interoperable) applications.
       </div>
       <div>
         <p /> <p />
-        Push leverages chain abstraction to enable users of all chains to come
-        together for shared app experiences (universal AI agents, universal
-        DeFi, universal Predication Market, universal Socials, etc).
+        By enabling seamless transactions from any chain, abstracting away gas
+        and wallet complexities, and fostering interoperability across L1s, L2s,
+        and L3s, Push Chain ensures a frictionless web3 experience for users and
+        developers alike.
       </div>
     </div>
   ),

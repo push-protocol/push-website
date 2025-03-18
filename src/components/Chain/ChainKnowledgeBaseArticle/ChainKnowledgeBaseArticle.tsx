@@ -6,7 +6,6 @@ import styled from 'styled-components';
 
 import { ItemV } from '../../../css/SharedStyling';
 import ChainBottomComponent from '../ChainBottomComponent';
-import ChainKnowledgeBaseGrid from '../ChainKnowledgeBase/ChainKnowledgeGrid';
 import ChainKnowledgeBaseArticleContent from './ChainKnowledgeBaseArticleContent';
 
 import { device } from '../../../config/globals';
@@ -16,7 +15,6 @@ const ChainKnowledgeBaseArticle = ({ item }) => {
     <ChainWrapper>
       <ChainInnerWrapper>
         <ChainKnowledgeBaseArticleContent item={item} />
-        <ChainKnowledgeBaseGrid />
         <ChainBottomComponent />
       </ChainInnerWrapper>
     </ChainWrapper>
