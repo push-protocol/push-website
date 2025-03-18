@@ -56,9 +56,9 @@ export const PageMeta = {
       'BRB Bootcamp is the go-to place to learn every aspect of the web3 ecosystem from fundamentals to shipping your first project',
   },
   CHAIN: {
-    pageTitle: 'Push Chain | Any Chain. Any User. Any App',
+    pageTitle: 'Push Chain | Any Chain. Any Wallet. Any App',
     pageDescription:
-      'Push Chain is a shared state blockchain for shared app experience. Capable of doing tx from any chain and connecting L1s, L2s, & L3s with <1 second finality with linear scalability.',
+      'Push Chain is a shared state L1 blockchain for Universal Apps. Capable of doing transactions from any chain, unifying L1s & L2s and enabling apps from any chain to be accessed by the users of any chain.',
   },
   KNOWLEDGE: {
     pageTitle: 'Push Chain | Knowledge Base',
@@ -67,7 +67,7 @@ export const PageMeta = {
   },
   PARTNERS: {
     pageTitle: 'Push Chain | Knowledge Base Partners',
-    pageDescription: 'Meet our Pa',
+    pageDescription: 'Meet our Partners',
   },
   ARTICLE: {
     pageTitle: 'Push Chain | Knowledge Base',

@@ -336,5 +336,5 @@ const CountdownButton = styled.button`
   background: transparent;
   cursor: pointer;
   color: #fff;
-  visibility: hidden;
+  display: none;
 `;

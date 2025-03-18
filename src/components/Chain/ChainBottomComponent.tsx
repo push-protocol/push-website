@@ -2,18 +2,18 @@
 // @ts-nocheck
 import React, { FC } from 'react';
 
-import styled from 'styled-components';
 import { TbArrowUpRight } from 'react-icons/tb';
+import styled from 'styled-components';
 
 import { device } from '@site/src/config/globals';
 import useMediaQuery from '../../hooks/useMediaQuery';
 
-import { A, H2, H3, ItemH, ItemV, Span } from '../../css/SharedStyling';
 import Accordion from '@site/src/components/Accordion';
-import { General } from './config/ChainFAQconfig';
 import DiscordSVG from '@site/static/assets/website/shared/discord.svg';
-import { ChainEmailSignup } from './ChainEmailSignup';
+import { A, H2, H3, ItemH, ItemV, Span } from '../../css/SharedStyling';
 import ChainCanvas from './ChainCanvas';
+import { ChainEmailSignup } from './ChainEmailSignup';
+import { General } from './config/ChainFAQconfig';
 
 type ChainBottomComponentProps = {
   showFaq?: boolean;
@@ -88,7 +88,10 @@ const ChainBottomComponent: FC<ChainBottomComponentProps> = ({ showFaq }) => {
             lineHeight='120%'
             letterSpacing='-0.72px'
           >
-            Elevate your app with the most powerful universal chain for web3
+            Any Chain. Any Wallet. Any App.
+            <br />
+            <hr />
+            One Push Chain
           </H3>
         </ItemH>
 

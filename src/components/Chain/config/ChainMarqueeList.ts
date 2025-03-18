@@ -1,24 +1,24 @@
 export const ChainMarqueeList = [
   {
-    title: 'consumer first approach',
+    title: 'consumer first',
   },
   {
-    title: 'truly scalable',
+    title: 'shared state across chains',
   },
   {
-    title: 'shared state',
+    title: 'universal apps',
   },
   {
-    title: 'shared app experience',
+    title: 'fee abstraction',
   },
   {
-    title: 'instant finality',
+    title: 'wallet abstraction',
   },
   {
-    title: 'any chain',
+    title: 'programmable solvers',
   },
   {
-    title: 'dynamic sharding',
+    title: 'universal smart contracts',
   },
   {
     title: 'any app',
@@ -27,25 +27,25 @@ export const ChainMarqueeList = [
 
 export const ChainMarqueeSecondList = [
   {
-    title: 'market prediction',
+    title: 'universal prediction market',
   },
   {
     title: 'omni chain poker',
   },
   {
-    title: 'any chain email',
+    title: 'any chain DEX',
   },
   {
-    title: 'social apps',
+    title: 'universal DeFi',
   },
   {
-    title: 'notifications',
+    title: 'omni chain social',
   },
   {
-    title: 'rumors',
+    title: 'universal NFTs',
   },
   {
-    title: 'crypto dca',
+    title: 'omni governance',
   },
   {
     title: 'chain agnostic ai agents',

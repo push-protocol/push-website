@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/ban-types */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import styled from 'styled-components';
+import React from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
+import styled from 'styled-components';
 
 import { device } from '@site/src/config/globals';
 import useMediaQuery from '../../hooks/useMediaQuery';
 
 import { H3, ItemH, Span } from '@site/src/css/SharedStyling';
-import ChainCanvas from './ChainCanvas';
-import { ChainEmailSignup } from './ChainEmailSignup';
 import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
 import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
+import ChainCanvas from './ChainCanvas';
+import { ChainEmailSignup } from './ChainEmailSignup';
 
 const ChainElevateModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
   isOpen,
@@ -46,8 +46,10 @@ const ChainElevateModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
                   lineHeight='120%'
                   letterSpacing='-0.72px'
                 >
-                  Elevate your app with the most powerful Universal Chain for
-                  web3
+                  Any Chain. Any Wallet. Any App.
+                  <br />
+                  <hr />
+                  One Push Chain
                 </H3>
               </ItemH>
 

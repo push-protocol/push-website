@@ -1,28 +1,29 @@
-import React, { useEffect, useRef, useState } from 'react';
-import styled from 'styled-components';
-import Matter from 'matter-js';
 import { device } from '@site/src/config/globals';
-import { useInView } from 'react-intersection-observer';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import Matter from 'matter-js';
+import React, { useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
+import styled from 'styled-components';
 
 const COLORS = ['#4B75FF', '#FC564A', '#2EC780', '#E3B92D', '#E492FF'];
 
 const TAGS = [
-  'gaming',
-  'nft',
-  'social',
-  'consumer apps',
-  'defi',
-  'infrastructure',
-  'dao',
-  'messaging',
-  'blockchain',
-  'market prediction',
+  'universal dex',
+  'universal defi',
+  'unified social',
+  'universal ai agents',
+  'omni dao',
+  'unified gaming',
+  'universal marketplace',
+  'any chain naming service',
+  'any chain chess',
+  'universal prediction market',
   'omni chain poker',
-  'social apps',
-  'notifications',
-  'rumors',
-  'crypto dca',
+  'any chain public funding',
+  'omni NFTs',
+  'omni governance',
+  'omni notifications',
+  'unified web3 chat',
 ];
 
 export default function ChainCanvas() {
