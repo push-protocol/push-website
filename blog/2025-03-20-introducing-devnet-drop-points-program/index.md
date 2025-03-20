@@ -4,7 +4,7 @@ title: 'Introducing Push Chain Devnet Drop Points Program S2'
 authors: [push]
 image: './cover-image.webp'
 description: 'Introducing Push Chain Devnet Drop Points Program S2'
-text: "Say Hello to Points Program S2 - Earn Points for Exploring Push Chain Devnet's Early Ecosystem Apps. Level Up, Climb Leaderboards and Secure Your Drop Elligibility!"
+text: "Say Hello to Points Program S2 - Earn Points for Exploring Push Chain Devnet's Early Ecosystem Apps. Level Up, Climb Leaderboards and Secure Your Drop Eligibility!"
 tags: [Push Chain, Push Points, Rewards, Announcements]
 ---
 
@@ -46,12 +46,12 @@ Quite Straightforward..
 
 1) **Join the program at [https://portal.push.org/rewards](https://portal.push.org/rewards?utm_source=blog&utm_medium=referral&utm_campaign=push_rewards)**
 
-2) **Connect using Push Wallet** 
+2) **Connect using Push Wallet**
 
 *Push Wallet is an in-browser wallet, which opens in a new tab.Thus, no downloads required.*
 *You can connect using your existing Solana, EVM wallets to it - OR - Simply Login via Google & Email.*
 
-3) **Validate your socials (X & Discord)** *(we hate bots🤖, we love fair play🤝)* 
+3) **Validate your socials (X & Discord)** *(we hate bots🤖, we love fair play🤝)*
 
 4) **Tweet about Push Chain**
 
@@ -110,23 +110,23 @@ Claim an exclusive headstart boost **20k points + 4x Multiplier** just by loggin
 ## Extra Perks:
 
 1. **⚡️ Multipliers:**
-    
+
     Multipliers allow users to boost their Points by performing special activities. For e.g. if you have 100 points, after earning a 2x Multiplier, you will now have 200 Points. Multipliers also apply to any points earned after activating the Multiplier making it a permanent feature.
-    
+
     The best part,
-    
+
     **Multipliers are additive**. A 2X + 2X Multiplier will make the account multiplier 4X. Collect more multipliers to earn mega rewards.
-    
+
 2. **✅ Daily Reward CheckIns:**
-    
+
     Users can also check-in daily on [Points Portal](https://portal.push.org/rewards?utm_source=blog&utm_medium=referral&utm_campaign=push_rewards) to claim points. Check-in for 7 days to earn bonus points.
-    
+
     → Check in daily at [portal.push.org](https://portal.push.org/rewards?utm_source=blog&utm_medium=referral&utm_campaign=push_rewards) to earn **bonus 5,500 Points!**
-    
+
     → Use Devnet Apps Daily to earn an additional **1000 XPs boost.**
-    
+
 3. **🤝 Referrals:**
-    
+
     Onboard your loved ones to the S2 program & earn **+12%** of any Points your invites earn and **+2%** of any Points your invitee’s invites earn.
 
 

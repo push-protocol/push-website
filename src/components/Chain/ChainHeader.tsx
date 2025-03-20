@@ -16,7 +16,6 @@ import GLOBALS, { device, structure } from '../../../src/config/globals';
 import useMediaQuery from '../../../src/hooks/useMediaQuery';
 import { useScrollDirection } from '../../hooks/useScrollDirection';
 import { ChainNavBarItems } from './config/ChainNavBarItems';
-import useModal from './hooks/useModal';
 
 import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
 import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
@@ -30,7 +29,6 @@ import {
   Section,
   Span,
 } from '../../../src/css/SharedStyling';
-import ChainElevateModal from './ChainElevateModal';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -53,7 +51,6 @@ const ChainHeader: FC = () => {
   const [activeItem, setActiveItem] = useState(null);
 
   const [scrollDirection] = useScrollDirection(isMobileMenuOpen);
-  const { isOpen, open, close } = useModal();
 
   const baseURL = useSiteBaseUrl() || '';
 
@@ -165,6 +162,10 @@ const ChainHeader: FC = () => {
   const openHomePage = () => {
     const targetUrl = baseURL;
     history.push(targetUrl);
+  };
+
+  const GoToPushPortal = () => {
+    window.open('https://portal.push.org/rewards', '_blank');
   };
 
   // Update the active item based on the current location
@@ -290,18 +291,15 @@ const ChainHeader: FC = () => {
                   fontWeight='500'
                   fontSize='18px'
                   flex={isMobileMenuOpen && '1'}
-                  onClick={open}
+                  onClick={GoToPushPortal}
                 >
-                  Get Notified
+                  Push Portal
                 </Button>
               </IconMenu>
             </HeaderFocusItems>
           </NavList>
         </HeaderContent>
       </Section>
-
-      {/* modal */}
-      <ChainElevateModal isOpen={isOpen} onClose={close} />
     </StyledHeader>
   );
 };
