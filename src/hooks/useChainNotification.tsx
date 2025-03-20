@@ -153,7 +153,7 @@ export const useChainNotification = () => {
           position='bottom-left'
           onClick={() => {
             localStorage.setItem('chainNotificationShown', 'true');
-            window.open('https://x.com/PushChain', '_blank');
+            window.open('https://portal.push.org/rewards', '_blank');
             toast.dismiss(toastId);
           }}
           onClose={() => {
