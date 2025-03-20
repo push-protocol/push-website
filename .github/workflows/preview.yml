@@ -49,9 +49,6 @@ jobs:
           node-version: 18.x
           cache: yarn
 
-      - name: Clean yarn cache
-        run: yarn cache clean --force
-
       - name: Install and Build
         if: github.event.action != 'closed' # You might want to skip the build if the PR has been closed
         run: |
