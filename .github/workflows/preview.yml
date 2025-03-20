@@ -42,6 +42,12 @@ jobs:
           node-version: 18.x
           cache: yarn
 
+      - name: Install Corepack & Yarn 4.2.2
+        run: |
+          corepack enable
+          corepack prepare yarn@4.2.2 --activate
+          yarn --version
+
       - name: Clean yarn cache
         run: yarn cache clean --force
 
