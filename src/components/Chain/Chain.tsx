@@ -13,7 +13,7 @@ import {
 
 // Internal Components
 import ChainBottomComponent from './ChainBottomComponent';
-import ChainCountDownFeature from './ChainCountDownFeature';
+// import ChainCountDownFeature from './ChainCountDownFeature';
 import { ChainFeaturesSection } from './ChainFeaturesSection';
 import ChainHeroSection from './ChainHeroSection';
 import ChainMarqueeSection from './ChainMarqueeSection';
@@ -35,9 +35,7 @@ const Chain = () => {
   return (
     <ChainWrapper>
       {/* Main Content */}
-      <CountdownWrapper>
-        <ChainCountDownFeature />
-      </CountdownWrapper>
+      <CountdownWrapper>{/* <ChainCountDownFeature /> */}</CountdownWrapper>
 
       <MainContent>
         <ChainHeroSection />
