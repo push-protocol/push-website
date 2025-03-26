@@ -30,7 +30,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
   const canPlayVideo =
     isPlaying &&
     typeof window !== 'undefined' &&
-    window.innerWidth > size.tablet;
+    window.innerWidth > size.laptop;
 
   const history = useHistory();
   const baseURL = useSiteBaseUrl() || '';
@@ -201,21 +201,22 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
                   </StorageAndScalableContainerMobile>
 
                   <AnyChainContainer>
-                    <CustomReactPlayer
-                      url={
-                        require(
-                          `@site/static/assets/website/chain/any_chain.webm`
-                        ).default
-                      }
-                      playing={canPlayVideo}
-                      link={'any-chain'}
-                      title='Any Chain'
-                      alt='Any Chain'
-                    />
+                    <div className='video'>
+                      <CustomReactPlayer
+                        url={
+                          require(
+                            `@site/static/assets/website/chain/any_chain.webm`
+                          ).default
+                        }
+                        playing={canPlayVideo}
+                        link={'any-chain'}
+                        title='Any Chain'
+                        alt='Any Chain'
+                      />
+                    </div>
 
                     <FeatureTextSubHeading style={{ color: '#000' }}>
-                      Any Chain
-                      <span className='breakpoint'>Transactions</span>
+                      Any Chain <span className='breakpoint'>Transactions</span>
                     </FeatureTextSubHeading>
                   </AnyChainContainer>
                 </FeatureContainerSecondSegregator>
@@ -371,7 +372,7 @@ const InnerContainer = styled.div`
     width: 100%;
   }
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     padding: 0 24px;
   }
 
@@ -385,7 +386,7 @@ const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     flex-direction: column;
     align-items: center;
     gap: 24px;
@@ -401,7 +402,7 @@ const Header = styled.span`
   line-height: 120%;
   letter-spacing: -0.96px;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     text-align: center;
   }
 `;
@@ -412,7 +413,7 @@ const FeatureContainer = styled.div`
   margin-top: 100px;
   flex-direction: column;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     margin-top: 40px;
   }
 `;
@@ -421,7 +422,7 @@ const FeatureSubContainer = styled.div`
   display: flex;
   gap: 16px;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     flex-direction: column;
   }
 `;
@@ -439,7 +440,11 @@ const FeatureTextHeading = styled.h2`
   display: inline;
   white-space: normal;
 
-  @media ${device.tablet} {
+  @media ${device.laptopM} {
+    font-size: 45px;
+  }
+
+  @media ${device.laptop} {
     font-size: 28px;
 
     .breakpoint {
@@ -460,7 +465,11 @@ const FeatureTextSubHeading = styled.span`
   display: inline;
   white-space: normal;
 
-  @media ${device.tablet} {
+  @media ${device.laptopM} {
+    font-size: 28px;
+  }
+
+  @media ${device.laptop} {
     font-size: 24px;
 
     .breakpoint {
@@ -487,7 +496,7 @@ const FinalityContainer = styled.div`
     width: calc(50% - 8px);
   }
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     width: 100%;
     height: fit-content;
     padding: 24px;
@@ -513,7 +522,7 @@ const FeatureContainerSegregator = styled.div`
     width: calc(50% - 8px);
   }
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     flex-direction: column;
     width: -webkit-fill-available;
   }
@@ -524,7 +533,7 @@ const FeatureContainerSecondSegregator = styled.div`
   width: -webkit-fill-available;
   gap: 16px;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     flex-direction: column;
   }
 `;
@@ -554,7 +563,7 @@ const TxFeeContainer = styled.div`
     object-fit: contain;
   }
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: none;
     border-radius: 16px;
     height: 275px;
@@ -572,8 +581,9 @@ const TxFeeContainer = styled.div`
 const TxFeeContainerMobile = styled(TxFeeContainer)`
   display: none;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: flex;
+    width: calc((100% / 2) - 8px);
 
     .video {
       height: 120px !important;
@@ -586,6 +596,10 @@ const TxFeeContainerMobile = styled(TxFeeContainer)`
       width: auto !important;
       object-fit: contain;
     }
+  }
+
+  @media ${device.mobileL} {
+    width: 100%;
   }
 `;
 
@@ -606,7 +620,7 @@ const OnboardingContainer = styled.div`
     height: 169px;
   }
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     width: 100%;
     height: fit-content;
     overflow: hidden;
@@ -634,7 +648,12 @@ const AnyChainContainer = styled.div`
   border-radius: 48px;
   background: #ffff;
 
-  @media ${device.tablet} {
+  .video {
+    height: 140px !important;
+    width: auto !important;
+  }
+
+  @media ${device.laptop} {
     width: 100%;
     height: 246px;
     overflow: hidden;
@@ -667,19 +686,24 @@ const ScalableContainer = styled.div`
     height: 250px;
   }
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: none;
   }
 `;
 
 const ScalableContainerMobile = styled(ScalableContainer)`
   display: none;
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: flex;
-    width: 47%;
+    width: calc((100% / 2) - 8px);
     border-radius: 16px;
     height: 275px;
     overflow: hidden;
+
+    .video {
+      width: auto;
+      height: 169px;
+    }
 
     img {
       display: block;
@@ -687,6 +711,10 @@ const ScalableContainerMobile = styled(ScalableContainer)`
       height: 150px;
       object-fit: contain;
     }
+  }
+
+  @media ${device.mobileL} {
+    width: 100%;
   }
 `;
 
@@ -733,7 +761,7 @@ const KnowledgeBaseContainer = styled.div`
     line-height: 125%; /* 30px */
     letter-spacing: -0.48px;
 
-    @media ${device.tablet} {
+    @media ${device.laptop} {
       font-size: 14px;
     }
   }
@@ -751,7 +779,7 @@ const KnowledgeBaseContainer = styled.div`
     }
   }
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     width: 100%;
     height: fit-content;
     overflow: hidden;
@@ -780,29 +808,35 @@ const KnowledgeBaseTextContainer = styled.div`
   align-items: flex-end;
   width: -webkit-fill-available;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     align-items: flex-start;
   }
 `;
 
 const KnowledgeBaseIcon = styled(TbArrowUpRight)`
   display: flex;
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: none;
   }
 `;
 
 const KnowledgeBaseIconMobile = styled(TbArrowUpRight)`
   display: none;
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: flex;
   }
 `;
 
 const StorageAndScalableContainerMobile = styled.div`
   display: none;
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     display: flex;
+    gap: 16px;
+  }
+
+  @media ${device.mobileL} {
+    display: flex;
+    flex-direction: column;
     gap: 16px;
   }
 `;
@@ -815,7 +849,7 @@ const HeaderTwoContainer = styled.div`
   margin: 300px auto 0 auto;
   gap: 20px;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     margin-top: 120px;
   }
 `;
