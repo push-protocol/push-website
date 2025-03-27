@@ -43,8 +43,10 @@ const ChainUseCaseWrapper = styled.div`
   align-items: center;
   margin-top: 0px;
   gap: 222px;
+  box-sizinbg: border-box;
+  width: 100%;
 
-  @media ${device.laptop} {
+  @media ${device.laptopM} {
     flex-direction: column;
     align-items: center;
     gap: 48px;
@@ -61,7 +63,7 @@ const StyledH3 = styled(H3)`
     text-align: center;
   }
 
-  @media ${device.mobileL} {
+  @media (max-width: 530px) {
     width: 100%;
   }
 `;
