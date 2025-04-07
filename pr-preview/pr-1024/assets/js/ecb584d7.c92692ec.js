@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[17531],{791366:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-1024/blog/tags/web-3-development","page":1,"postsPerPage":10,"totalPages":1,"totalCount":3,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

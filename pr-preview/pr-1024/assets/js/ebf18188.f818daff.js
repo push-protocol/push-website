@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[82128],{511205:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-1024/blog/tags/crosschain","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
