@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[67843],{500217:e=>{e.exports=JSON.parse('{"label":"Design Research","permalink":"/push-website/pr-preview/pr-1022/blog/tags/design-research","allTagsPath":"/push-website/pr-preview/pr-1022/blog/tags","count":1,"unlisted":false}')}}]);
