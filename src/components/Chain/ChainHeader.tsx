@@ -21,7 +21,7 @@ import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
 import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 import { BsChevronDown } from 'react-icons/bs';
 import {
-  Button,
+  A,
   Content,
   H3,
   ItemH,
@@ -29,6 +29,7 @@ import {
   Section,
   Span,
 } from '../../../src/css/SharedStyling';
+import Link from '@docusaurus/Link';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -45,13 +46,10 @@ const ChainHeader: FC = () => {
   const isMobile = useMediaQuery(device.laptopM);
   const history = useHistory();
   const location = useLocation();
-
   const [mobileMenuMap, setMobileMenuMap] = useState(defaultMobileMenuState);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
-
   const [scrollDirection] = useScrollDirection(isMobileMenuOpen);
-
   const baseURL = useSiteBaseUrl() || '';
 
   const toggleMobileMenu = () => {
@@ -71,7 +69,6 @@ const ChainHeader: FC = () => {
       ...mobileMenuMap,
       [menuIndex]: !mobileMenuMap[menuIndex], // Toggle only the clicked menu
     };
-
     setMobileMenuMap(newMenuState);
     setActiveItem(itemId);
   };
@@ -98,9 +95,7 @@ const ChainHeader: FC = () => {
     } else {
       document.body.style.overflow = '';
     }
-
     return () => {
-      // Cleanup: Reset overflow when the component unmounts
       document.body.style.overflow = '';
     };
   }, [isMobileMenuOpen, isMobile]);
@@ -109,7 +104,6 @@ const ChainHeader: FC = () => {
     setActiveItem(item?.id);
     if (!item.url) {
       if (showMobileMenu) toggleMobileMenu();
-
       // Scroll to the section if no URL exists
       gsap.to(window, {
         duration: 0.75,
@@ -123,7 +117,6 @@ const ChainHeader: FC = () => {
 
     if (!item.url) return;
 
-    // Handle external links
     if (item?.url.startsWith('https://')) {
       setIsMobileMenuOpen(false);
       window.open(item?.url, '_blank');
@@ -132,40 +125,28 @@ const ChainHeader: FC = () => {
 
     if (item?.url == '/blog') {
       const targetUrl = baseURL + item?.url;
-
-      // Navigate to the new URL
       history.push(targetUrl);
       setIsMobileMenuOpen(false);
       return;
     }
 
-    // Handle internal links
     if (item?.url.startsWith('/')) {
       const targetUrl = baseURL + item?.url;
-
-      // Navigate to the new URL
       history.push(targetUrl);
       setIsMobileMenuOpen(false);
 
-      // Scroll to the section
       gsap.to(window, {
         duration: 0.75,
         scrollTo: { y: `#${item?.id}` },
       });
       return;
     }
-
-    // Handle in-page navigation
     handleSectionNavigation(item);
   };
 
   const openHomePage = () => {
     const targetUrl = baseURL;
     history.push(targetUrl);
-  };
-
-  const GoToPushPortal = () => {
-    window.open('https://portal.push.org/rewards', '_blank');
   };
 
   // Update the active item based on the current location
@@ -262,15 +243,31 @@ const ChainHeader: FC = () => {
                           className='menuContent'
                           expanded={mobileMenuMap[index]}
                         >
-                          {item.subItems?.map((subItem) => (
-                            <DropdownItem
-                              key={subItem.id}
-                              onClick={() => handleRedirect(subItem)}
-                            >
-                              <H3>{subItem.label} </H3>
-                              <Span>{subItem?.sublabels}</Span>
-                            </DropdownItem>
-                          ))}
+                          {item.subItems?.map((subItem) =>
+                            subItem?.url.startsWith('https') ? (
+                              <DropdownItem
+                                key={subItem.id}
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  window.location.href = `${subItem.url}`;
+                                }}
+                                href={subItem.url}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                              >
+                                <H3>{subItem.label}</H3>
+                                <Span>{subItem?.sublabels}</Span>
+                              </DropdownItem>
+                            ) : (
+                              <DropdownLink
+                                key={subItem.id}
+                                to={`${baseURL}${subItem.url}`}
+                              >
+                                <H3>{subItem.label}</H3>
+                                <Span>{subItem?.sublabels}</Span>
+                              </DropdownLink>
+                            )
+                          )}
                         </DropdownMenu>
                       )}
                     </MenuNavLink>
@@ -285,16 +282,13 @@ const ChainHeader: FC = () => {
                 className='navigationMenu'
                 showMobileMenu={isMobileMenuOpen}
               >
-                <Button
-                  background='#D548EC'
-                  fontFamily='N27'
-                  fontWeight='500'
-                  fontSize='18px'
-                  flex={isMobileMenuOpen && '1'}
-                  onClick={GoToPushPortal}
+                <ButtonLink
+                  href='https://portal.push.org/rewards'
+                  target='_blank'
+                  showMobileMenu={isMobileMenuOpen}
                 >
                   Push Portal
-                </Button>
+                </ButtonLink>
               </IconMenu>
             </HeaderFocusItems>
           </NavList>
@@ -650,11 +644,15 @@ const DropdownMenu = styled.ul`
   }
 `;
 
-const DropdownItem = styled.li`
+const DropdownItem = styled(A)`
   padding: 8px;
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 12px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   h3 {
     color: #fff;
@@ -684,5 +682,65 @@ const DropdownItem = styled.li`
     h3 {
       color: #d98aec;
     }
+  }
+`;
+
+const DropdownLink = styled(Link)`
+  padding: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h3 {
+    color: #fff;
+    font-family: N27;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+  }
+
+  span {
+    text-transform: capitalize;
+    color: #bbbcd0;
+    font-family: N27;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  &:hover {
+    border: 1px solid #fff;
+    background: #f4f4f4;
+    background: rgba(11, 11, 13, 0.9);
+    backdrop-filter: blur(calc(16px / 2));
+
+    h3 {
+      color: #d98aec;
+    }
+  }
+`;
+
+const ButtonLink = styled(Link)`
+  background: #d548ec;
+  color: #fff;
+  font-family: N27;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 14px 32px;
+  border-radius: 16px;
+  text-align: center;
+
+  @media ${device.laptop} {
+    flex: ${(props) => (props.showMobileMenu ? '1' : '0')};
+  }
+
+  &:hover {
+    color: #fff;
   }
 `;
