@@ -75,14 +75,15 @@ export const extractTOC = (contentArray) => {
 
     if (insideCodeBlock && node.tagName === 'code') {
       const codeContent = extractText(node);
-      const headerMatches = codeContent.match(/###\s*(.*)/g);
-      if (headerMatches) {
-        headerMatches.forEach((match) => {
-          const text = match.replace(/(#+|\*)/g, '').trim();
-          const id = generateIdFromText(text);
-          toc.push({ text, id, level: 3 });
-        });
-      }
+
+      const matches = [...(codeContent.match(/^#{1,6}\s+.*$/gm) || [])];
+
+      matches.forEach((match) => {
+        const level = match.match(/^#+/)[0].length;
+        const text = match.replace(/^#+\s*/, '').trim();
+        const id = generateIdFromText(text);
+        toc.push({ text, id, level });
+      });
     }
   });
 

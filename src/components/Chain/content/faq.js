@@ -10,8 +10,7 @@ export const faqContent = {
   content: [
     {
       type: 'text',
-      value: `![Cover Image of Push Chain’s Frequently Asked Questions](/assets/images/cover-image-cd2255df54913750cccc2fe1014061eb.webp)
-
+      value: `
   # Frequently Asked Questions
 
   The place to find answers to all the popular questions the community has asked about Push Chain. Crowdsourced from Push Fam 🫶 and curated by the Push team 💪.
@@ -32,7 +31,7 @@ export const faqContent = {
 
   ### How does Push Chain work?
 
-  ![Push Chain Architecture](/assets/images/pcoverview-d33d0ec5feb42f5fea2e83d71ba4f2f1.webp)
+  ![Push Chain Architecture](/assets/website/chain/knowledge/faq/pcoverview.webp)
 
   Push Chain is a Proof-of-Stake (PoS) L1 blockchain that is designed to eliminate fragmentation across all chains.
 
@@ -198,7 +197,7 @@ export const faqContent = {
 
   ### How does Push Chain achieve shared state?
 
-  ![Push Chain Universal App](/assets/images/pcuniversalapp-1c216014abf254e664cc3969243391ed.webp)
+  ![Push Chain Universal App](/assets/website/chain/knowledge/faq/pcuniversalapp.webp)
 
   Push Chain achieves shared state by leveraging Push ID, which maps multiple EVM and non-EVM wallets to a single identity. This allows for a single user to have a single state across all chains, enabling true shared state.
 

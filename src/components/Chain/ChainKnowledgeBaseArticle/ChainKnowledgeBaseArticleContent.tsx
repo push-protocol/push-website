@@ -91,15 +91,19 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
                   alignItems='flex-start'
                   margin='12px 0 0 0'
                 >
-                  {toc.map((item, index) => (
-                    <ListItem
-                      key={index}
-                      href={`#${item.id}`}
-                      level={item.level}
-                    >
-                      {item.text}
-                    </ListItem>
-                  ))}
+                  {toc?.map((item, index) => {
+                    const highestLevel = Math.min(...toc.map((t) => t.level));
+                    return (
+                      <ListItem
+                        key={index}
+                        href={`#${item.id}`}
+                        level={item.level}
+                        highestLevel={highestLevel}
+                      >
+                        {item.text}
+                      </ListItem>
+                    );
+                  })}
                 </ItemV>
               )}
             </ItemV>
@@ -245,7 +249,8 @@ const ListItem = styled.a`
   font-family: N27;
   font-size: ${({ level }) =>
     level === 1 ? '20px' : level === 2 ? '18px' : '16px'};
-  margin-left: ${({ level }) => `${(level - 1) * 15}px`};
+  margin-left: ${({ level, highestLevel }) =>
+    level === highestLevel ? '0' : `${(level - 1) * 15}px`};
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
