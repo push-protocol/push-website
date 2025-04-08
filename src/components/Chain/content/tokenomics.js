@@ -17,12 +17,10 @@ export const tokenomicsContent = {
 
     Push Chain is a purpose-built layer that connects L1s, L2s, and L3s with near-instant finality and true scalability, which solves the fundamental issue with web3 applications: fragmentation. With the successful voting of the governance proposal, the Push Chain mission is now on its way toward building **any chain, any user, and any app.**
 
-    :::caution
-    The Push Chain token is not live, nor is any presale live. The Push Chain token is not yet named. The migration from Push Protocol $PUSH to the Push Chain token is not live.
-
-    Do not believe anyone offering early access or early migration to the Push Chain token. All communications regarding Push Chain will be announced simultaneously from official Push channels — [Twitter / X](https://x.com/PushChain 'X handle of Push Chain'), [Discord](https://discord.gg/pushprotocol 'Discord of Push Chain'), [Telegram](https://t.me/epnsproject 'Telegram of Push Chain'), [Website](https://push.org 'Push Website').
-    :::
-    &nbsp;
+    > ⚠️ Caution <br/>
+    > The Push Chain token is not live, nor is any presale live. The Push Chain token is not yet named. The migration from Push Protocol $PUSH to the Push Chain token is not live.
+    >
+    > Do not believe anyone offering early access or early migration to the Push Chain token. All communications regarding Push Chain will be announced simultaneously from official Push channels — [Twitter / X](https://x.com/PushChain 'X handle of Push Chain'), [Discord](https://discord.gg/pushprotocol 'Discord of Push Chain'), [Telegram](https://t.me/epnsproject 'Telegram of Push Chain'), [Website](https://push.org 'Push Website').
 
     ## What is the Vision of Push Chain?
 
@@ -45,9 +43,9 @@ export const tokenomicsContent = {
     - **Universal Smart Contract** (enables devs to deploy universal interop apps in hours)
     - **Shared App Experience** (any user from any chain can access any app of any chain)
 
-    :::info
-    **Full Stack Interop (Universal Apps)** = Universal Wallet + Generalized Programmable Solvers + Shared State + Universal Smart Contracts
-    :::
+    >  &#9432; Info <br/>
+    > **Full Stack Interop (Universal Apps)** = Universal Wallet + Generalized Programmable Solvers + Shared State + Universal Smart Contracts
+
 
     ### Where does Push Chain fit in?
 

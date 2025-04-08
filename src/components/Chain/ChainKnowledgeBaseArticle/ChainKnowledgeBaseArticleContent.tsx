@@ -222,6 +222,15 @@ const TextItem = styled.div`
   width: inherit;
   color: #000;
 
+  blockquote {
+    border-left: 6px solid #d548ec;
+    background: #010209;
+    border-radius: 4px;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 10px 0;
+  }
+
   ol li {
     list-style-type: decimal;
   }
