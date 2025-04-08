@@ -102,8 +102,9 @@ When initializing your Push Chain instance, you can customize the process using 
 | Param      | Type                     |  Default       | Remarks                                                                                                                                                                         |
 | ---------- | ------------------------ |  ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _`universalSigner`_ | `UniversalSigner`             |  null             | Signer responsible for signing when sending transactions. Only used for `send` function                                                                                         |
-|  `options.network`   | `ENV`         | `devnet`     | Push Chain environment                                                                                                                                        |
-
+|  `options.network`   | `ENV`         | `ENV.DEVNET`     | Push Chain environment                                                                                                                                        |
+|  `options.rpcUrl`   | `string`         | `''`     | Custom RPC URL to use. If not provided, the default RPC URL for the network will be used.                                                                                                                                        |
+|  `options.printTraces`   | `boolean`         | `false`     | When true, console logs the requests to nodes                                                                                                                                        |
 
 <Details summary="Expected response">
 
