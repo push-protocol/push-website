@@ -110,45 +110,40 @@ When initializing your Push Chain instance, you can customize the process using 
 
 ```typescript
 {
+  tx: Tx {
+    validator: Validator {
+      activeValidatorURL: 'https://vv10.dev.push.org',
+      env: 'DEVNET',
+      validatorContractClient: [Object],
+      ReqModifier: [Function (anonymous)],
+      call: [Function (anonymous)]
+    },
+    signer: null,
+    get: [Function (anonymous)],
+    send: [Function (anonymous)],
+    tokenCache: TokenCache {
+      validator: [Validator],
+      printTraces: false,
+      TOKEN_EXPIRE_SECONDS: 60,
+      cachedToken: null,
+      cachedTokenTs: 0
+    }
+  },
   block: Block {
     validator: Validator {
-      activeValidatorURL: 'https://vv3.dev.push.org',
-      env: 1,
+      activeValidatorURL: 'https://vv10.dev.push.org',
+      env: 'DEVNET',
       validatorContractClient: [Object],
       ReqModifier: [Function (anonymous)],
       call: [Function (anonymous)]
     },
     get: [Function (anonymous)]
   },
-  tx: Tx {
-    validator: Validator {
-      activeValidatorURL: 'https://vv3.dev.push.org',
-      env: 1,
-      validatorContractClient: [Object],
-      ReqModifier: [Function (anonymous)],
-      call: [Function (anonymous)]
-    },
-    env: 1,
-    signer: null,
-    get: [Function (anonymous)],
-    send: [Function (anonymous)],
-    tokenCache: TokenCache {
-      validator: [Validator],
-      TOKEN_EXPIRE_SECONDS: 60,
-      cachedToken: [Object],
-      cachedTokenTs: 1736287769818
-    }
-  },
-  wallet: Wallet {
-    env: 1,
-    walletWindow: null,
-    connect: [Function (anonymous)],
-    sign: [Function (anonymous)],
-    appConnectionStatus: [Function (anonymous)],
-    requestAppConnection: [Function (anonymous)],
-    openWalletWindow: [Function (anonymous)],
-    requestWalletAddress: [Function (anonymous)],
-    walletUrl: 'https://wallet.push.org'
+  ws: WebSocketClient {
+    url: 'wss://vv10.dev.push.org/ws',
+    ws: null,
+    clientId: null,
+    blockHandlers: Map(0) {}
   }
 }
 ```
