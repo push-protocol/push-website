@@ -31,7 +31,16 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
   console.log(toc, 'toc');
 
   const cleanMarkdown = (text) => {
-    return text.replace(/^\s+/gm, '').trim(); // Trim any extra spaces
+    return text
+      .split('\n')
+      .map((line) => {
+        if (line.trim() !== '---') {
+          return line.replace(/^\s+/gm, '');
+        }
+        return line;
+      })
+      .join('\n')
+      .trim();
   };
 
   return (
@@ -209,8 +218,21 @@ const TextItem = styled.div`
   width: inherit;
   color: #000;
 
+  ol li {
+    list-style-type: decimal;
+  }
+
+  ul li {
+    list-style-type: disc;
+  }
+
   p {
     font-size: larger;
+  }
+
+  p img,
+  img {
+    border-radius: 32px;
   }
 
   @media ${device.tablet} {
