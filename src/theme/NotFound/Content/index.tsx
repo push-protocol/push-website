@@ -15,7 +15,7 @@ import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 import { Content, ItemH, ItemV, Section } from '../../../css/SharedStyling';
 import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
 import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
-import ChainFooter from '@site/src/components/Chain/ChainFooter';
+import Footer from '@site/src/segments/Footer';
 
 export default function NotFoundContent({ className }: Props): ReactElement {
   const location = useLocation();
@@ -103,7 +103,7 @@ export default function NotFoundContent({ className }: Props): ReactElement {
 
           {isDocsOrBlogsPage && (
             <ItemH background='#e8eff8'>
-              <ChainFooter showPattern={false} />
+              <Footer showPattern={false} />
             </ItemH>
           )}
         </PageContainer>

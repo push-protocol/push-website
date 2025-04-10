@@ -209,6 +209,7 @@ const TextItem = styled.div`
   max-width: calc(100% - 400px);
   margin: 20px 0 20px auto;
   width: inherit;
+  color: #000;
 
   p {
     font-size: larger;

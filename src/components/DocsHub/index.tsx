@@ -32,7 +32,7 @@ import {
   Section,
   Span,
 } from '@site/src/css/SharedStyling';
-import ChainFooter from '../Chain/ChainFooter';
+import Footer from '../../segments/Footer';
 
 // Import Assets
 import ArrowUp from '@site/static/assets/docs/ArrowUpRight-pink.svg';
@@ -393,7 +393,7 @@ export default function HomepageFeatures(): JSX.Element {
         </FluidContent>
       </HomepageSection>
 
-      <ChainFooter showPattern={false} />
+      <Footer showPattern={false} />
     </Layout>
   );
 }
