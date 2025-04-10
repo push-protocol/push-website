@@ -99,6 +99,7 @@ function PushHomepage() {
 
       <div style={{ background: '#e8eff8' }}>
         <ChainWrapper>
+          {/* Main Content */}
           <MainContent>
             <ChainHeroSection />
           </MainContent>
