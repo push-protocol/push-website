@@ -241,7 +241,6 @@ const TextItem = styled.div`
     list-style-type: disc;
   }
 
-
   p {
     font-size: larger;
   }
