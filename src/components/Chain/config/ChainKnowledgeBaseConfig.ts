@@ -23,9 +23,9 @@ export const knowledgeBaseArticleContent = [
         value: `# Why Push Chain?
 
         Push Chain addresses specific gaps in the existing blockchains, such as interoperability, state access across chains, programmable solvers and wallet abstraction resulting in a **full stack interop**. While existing blockchains are robust, they operate in their own eco-system and an aggregator to unite these chains are needed.<p />
-        
+
         While existing blockchains are robust, they operate in their own eco-system and an aggregator to unite these chains are needed.<p />
-        
+
         Push Chain’s focus is on being a **shared state chain** for universal applications acting as a unifying layer where all chains can come together and use PC as universal hub or do settlement between them.<p />
 PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet/User.** And is suitable for **Any App.**`,
       },
@@ -40,9 +40,9 @@ PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet
       {
         type: 'text',
         value: `# Innovations of Push Chain
-        
+
         Push Chain introduces some groundbreaking innovations such as:<p />
-        
+
         **Fee and Wallet abstraction** - allowing wallets/users of any chain to interact natively while being on the chain of their choice.<p />
 
         **Universal Wallet** - ensuring user can login via social or email and still have non-custodial wallets created for them for all chains (Ethereum, Bitcoin, Solana, etc).<p />
@@ -52,9 +52,9 @@ PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet
         **Programmable Solvers** - ensures that a developer can create a basic path for cross chain actions (write actions) based on the shared state.<p />
 
         **Universal Smart Contracts** - giving developers ability to use shared state and generalized solvers for read and write action in chain agnostic fashion. And enables users to use fees and wallet abstraction to access any app or any chain without any hassle.<p />
-        
+
         Push Chain uses all these innovations to enable reading (shared state) or writing to different chains (programmable solvers), all controlled by the universal smart contract. The fee and wallet abstraction further enables a seamless, user centric approach as the learnings for a user is abstracted away no matter from what chain they chose to interact. <p/>
-        
+
         This results in **fully interoperable applications** for web3. In this paradigm, instead of being a user of "Uniswap on Ethereum," "Uniswap on Polygon," or "Uniswap on Arbitrum," a person simply becomes a **user of Uniswap.**`,
       },
       {
@@ -141,7 +141,7 @@ PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet
       {
         type: 'text',
         value: `# Curated Reads 👇
-        
+
         Deep dive into the inner working of Push Chain and how everything comes together to create a universal, fully interoperable chain that unites all L1s 🤝 L2s 🤝 L3s.`,
       },
       {
@@ -172,6 +172,15 @@ PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet
             subtitle:
               'The Push Chain Network, a Proof-of-Stake (PoS) blockchain designed for consumer-centric applications, offers an innovative approach to scalability and usability in the decentralized space. By leveraging features like dynamic sharding, parallel block execution, and true scale, Push Chain...',
             url: '/blog/parallel-validators-and-dynamic-sharding',
+            target: '_self',
+          },
+          {
+            slug: 'interop-spectrum',
+            image: 'interop-spectrum',
+            title: 'Interop as a Spectrum',
+            subtitle:
+              'Understand how Push Chain flips the script on the Interop Trilemma but turning it into a Design Choice Spectrum for Universal App developers.',
+            url: '/blog/interop-spectrum',
             target: '_self',
           },
         ],

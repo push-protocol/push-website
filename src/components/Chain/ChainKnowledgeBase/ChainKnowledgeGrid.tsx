@@ -16,6 +16,7 @@ const ChainKnowledgeBaseGrid = () => {
   const isTablet = useMediaQuery(device.tablet);
 
   const gridRows = createGridRows(knowledgeBaseArticleContent);
+  console.log(gridRows, 'grid');
 
   return (
     <ChainKnowledgeBaseGridWrapper>
