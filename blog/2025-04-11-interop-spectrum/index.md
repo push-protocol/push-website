@@ -118,7 +118,7 @@ This approach solves a lot of issues that hamper the adoption of solvers in web3
 
 - **Eliminates the need for having an external oracle or underlying infrastructure**: Shared state within Push Chain enables developers to logically code what their solvers need to do given different circumstances.
 
-For example, if someone wants to swap [$TRUMP](https://\frac{x.com}{search?q=%24TRUMP&src=cashtag_click) from Solana and they have USDT on BNB, they will be able to read the BNB-USDT value from PancakeSwap, the SOL-USDT value from Raydium, and thus calculate the [$TRUMP](https://x.com/search?q=%24TRUMP&src=cashtag_click)-USDT value from Raydium; all from a single smart contract deployed on Push Chain!
+For example, if someone wants to swap $TRUMP from Solana and they have USDT on BNB, they will be able to read the BNB-USDT value from PancakeSwap, the SOL-USDT value from Raydium, and thus calculate the $TRUMP-USDT value from Raydium; all from a single smart contract deployed on Push Chain!
 
 Once you have these values, just provide basic(atomic) solver instructions from your smart contract (still on Push Chain) and then let the solver network do its magic.
 
