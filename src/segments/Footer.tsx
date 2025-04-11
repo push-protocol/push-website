@@ -393,9 +393,7 @@ const FooterAnchorSecondary = styled(A)`
   &:hover {
     color: #fff !important;
     background: transparent !important;
-  }import { ChainFooterList } from './config/ChainFooterList';
-import { useTranslation } from 'react-i18next';
-
+  }
 
   &:before {
     background: transparent;
