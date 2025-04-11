@@ -2,8 +2,8 @@
 slug: interop-spectrum
 title: 'Interop as a Spectrum'
 authors: [push]
-image: ./cover-image.webp
-description: How Web3 Interop Started and Where its Going
+image: './cover-image.webp'
+description: 'How Web3 Interop Started and Where its Going'
 text: "Understand how Push Chain flips the script on the Interop Trilemma but turning it into a Design Choice Spectrum for Universal App developers."
 tags: [Push Chain, Interop, Intent Solvers, Bridges, Deep dives]
 ---
