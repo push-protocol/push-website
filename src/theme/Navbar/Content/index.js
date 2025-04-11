@@ -35,7 +35,7 @@ import { BsChevronDown } from 'react-icons/bs';
 import styled from 'styled-components';
 import { HeaderList } from '../../../config/HeaderList';
 import styles from './styles.module.css';
-import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
 
 const defaultMobileMenuState = {
   0: false,
