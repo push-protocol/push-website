@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[87664],{328320:e=>{e.exports=JSON.parse('{"label":"Universal Apps","permalink":"/push-website/pr-preview/pr-1044/blog/tags/universal-apps","allTagsPath":"/push-website/pr-preview/pr-1044/blog/tags","count":1,"unlisted":false}')}}]);
