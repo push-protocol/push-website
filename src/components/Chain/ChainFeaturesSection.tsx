@@ -12,7 +12,7 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { device, size } from '../../../src/config/globals';
-import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '../../hooks/useSiteBaseUrl';
 
 import { Button } from '@site/src/css/SharedStyling';
 import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';

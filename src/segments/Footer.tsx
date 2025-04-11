@@ -31,7 +31,7 @@ import GithubSVG from '@site/static/assets/website/shared/github.svg';
 
 // Internal Configs
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '../hooks/useSiteBaseUrl';
 import { device } from '@site/src/config/globals';
 import { ChainFooterList } from '../components/Chain/config/ChainFooterList';
 

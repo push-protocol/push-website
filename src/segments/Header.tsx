@@ -12,7 +12,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
 import GLOBALS, { device, structure } from '../../src/config/globals';
 import useMediaQuery from '../hooks/useMediaQuery';
 import { useScrollDirection } from '../hooks/useScrollDirection';

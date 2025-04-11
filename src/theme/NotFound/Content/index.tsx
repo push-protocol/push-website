@@ -10,7 +10,7 @@ import Translate from '@docusaurus/Translate';
 import type { Props } from '@theme/NotFound/Content';
 import Heading from '@theme/Heading';
 
-import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
 
 import { Content, ItemH, ItemV, Section } from '../../../css/SharedStyling';
 import PushLogo from '@site/static/assets/website/brb/pushIcon.svg';
