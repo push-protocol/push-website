@@ -224,7 +224,7 @@
         "imagetitle": "Integrate Push Protocol in less than 4 minutes and 2 lines of code",
         "titletext": "<4 mins",
         "buttontext": "Start building",
-        "buttonlink": "/docs/notifications/quickstart",
+        "buttonlink": "https://comms.push.org/docs/notifications/quickstart",
         "buttontitle": "Documentation for instant integration of notifications via Push Protocol in your dapp."
       },
       "box5": {
@@ -273,7 +273,7 @@
         "imagetitle": "Integrate Push Chat in 2 mins and with 2 lines of code",
         "titletext": "<2 mins",
         "buttontext": "Start building",
-        "buttonlink": "/docs/chat/quickstart",
+        "buttonlink": "https://comms.push.org/docs/chat/quickstart",
         "buttontitle": "Explore the documentation for instant integration of chat via Push Protocol in your dapp"
       },
       "box5": {
@@ -392,6 +392,18 @@
       },
       "article8": {
         "text": "Push Protocol, recently completed Phase 1 of its (BRB) dev tour in India. A hackathon participant successfully solved a challenge brought forth by our team: Quantum Proofing Ethereum accounts.",
+        "link-text": "Read More"
+      },
+      "article9": {
+        "text": "Push Chain, a Layer 1 blockchain focused on chain abstraction and building web3 applications accessible across different networks. Push Chain aims to address fragmented user experiences and scalability issues.",
+        "link-text": "Read More"
+      },
+      "article10": {
+        "text": "Push Chain aims to solve the problems of fragmented user experience and scalability.",
+        "link-text": "Read More"
+      },
+      "article11": {
+        "text": "Architecture supports interactions across EVM and non-EVM ecosystems, allowing developers to access wallet states from distinct networks without relying on fragmented infrastructure.",
         "link-text": "Read More"
       }
     },

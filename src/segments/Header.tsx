@@ -3,9 +3,9 @@
 /* eslint-disable */
 
 // React + Web3 Essentials
+import { useLocation } from '@docusaurus/router';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useLocation } from '@docusaurus/router';
 
 // External Components
 import { gsap } from 'gsap';
@@ -37,10 +37,10 @@ import { BsChevronDown } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 // Internal Configs
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import { SupportedLanguagesList } from '@site/src/config/SupportedLanguagesList';
 import GLOBALS, { device, structure } from '@site/src/config/globals';
 import { HeaderList } from '../config/HeaderList';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
 
 // Register GSAP plugins
@@ -260,6 +260,10 @@ function Header() {
     });
   };
 
+  const openChainLink = () => {
+    history.push(baseURL + '/chain');
+  };
+
   return (
     <StyledHeader
       showMobileMenu={showMobileMenu}
@@ -354,6 +358,24 @@ function Header() {
                   className='navigationMenu'
                   showMobileMenu={isMobileMenuOpen}
                 >
+                  <NavigationMenuItem>
+                    <NavigationMenuHeader
+                      onClick={() => openChainLink()}
+                      id='text5'
+                    >
+                      <Span
+                        fontSize='18px'
+                        fontWeight='500'
+                        letterSpacing='-0.03em'
+                        lineHeight='142%'
+                        padding='16px'
+                        color='inherit'
+                      >
+                        Push Chain
+                      </Span>
+                    </NavigationMenuHeader>
+                  </NavigationMenuItem>
+
                   <NavigationMenuItem>
                     <NavigationMenuHeader
                       onClick={(e) => onMobileHeaderMenuClick(e, 0)}

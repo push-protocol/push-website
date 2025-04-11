@@ -20,10 +20,29 @@ jobs:
           echo "REACT_APP_PUBLIC_URL=https://push-protocol.github.io" >> $GITHUB_ENV
           echo "GITHUB_PR_NUMBER=${{ github.event.pull_request.number }}" >> $GITHUB_ENV
           echo "REACT_APP_BASE_URL=/push-website/pr-preview/pr-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
+
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+
+      - name: Install Corepack & Yarn 4.2.2
+        run: |
+          corepack enable
+          corepack prepare yarn@4.2.2 --activate
+          yarn --version
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -43,7 +62,8 @@ jobs:
           umbrella-dir: pr-preview
 
       - uses: rossjrw/pr-preview-action@v1.4.7
-        if: github.event.action == 'closed' && !github.event.pull_request.merged
+        if: github.event.action == 'closed' || github.event.pull_request.merged
         with:
+          umbrella-dir: pr-preview
           source-dir: ./build/
           action: remove
