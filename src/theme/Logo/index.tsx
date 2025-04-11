@@ -13,7 +13,7 @@ import { useThemeConfig, type NavbarLogo } from '@docusaurus/theme-common';
 import ThemedImage from '@theme/ThemedImage';
 import type { Props } from '@theme/Logo';
 import { useLocation } from '@docusaurus/router';
-import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
 
 function LogoThemedImage({
   logo,

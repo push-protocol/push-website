@@ -4,6 +4,7 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { TbArrowUpRight } from 'react-icons/tb';
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
@@ -19,7 +20,7 @@ import ChainAlertBar from './ChainAlertBar';
 import ChainElevateModal from './ChainElevateModal';
 
 // Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const ChainHeroSection: FC = () => {
   const playerRef = useRef<ReactPlayer | null>(null);

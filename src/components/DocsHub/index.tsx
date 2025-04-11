@@ -32,7 +32,7 @@ import {
   Section,
   Span,
 } from '@site/src/css/SharedStyling';
-import ChainFooter from '../Chain/ChainFooter';
+import Footer from '../../segments/Footer';
 
 // Import Assets
 import ArrowUp from '@site/static/assets/docs/ArrowUpRight-pink.svg';
@@ -52,7 +52,7 @@ import {
 } from '@site/src/config/DocsHubList';
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from '@site/src/config/pageMeta';
-import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
 
 function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   return (
@@ -393,7 +393,7 @@ export default function HomepageFeatures(): JSX.Element {
         </FluidContent>
       </HomepageSection>
 
-      <ChainFooter showPattern={false} />
+      <Footer showPattern={false} />
     </Layout>
   );
 }

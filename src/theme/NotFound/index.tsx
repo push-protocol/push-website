@@ -11,7 +11,7 @@ import { PageMetadata } from '@docusaurus/theme-common';
 import Layout from '@theme/Layout';
 import NotFoundContent from '@theme/NotFound/Content';
 import { useLocation } from '@docusaurus/router';
-import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
 
 export default function Index(): ReactElement {
   const location = useLocation();

@@ -9,7 +9,7 @@ import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 // Internal Components
 import { H2, H3 } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
-import { useSiteBaseUrl } from '../../utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '../../hooks/useSiteBaseUrl';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';

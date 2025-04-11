@@ -1,6 +1,7 @@
 /* eslint-disable */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+import React from 'react';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import {
   PageMetadata,
@@ -8,18 +9,15 @@ import {
   ThemeClassNames,
 } from '@docusaurus/theme-common';
 import { useKeyboardNavigation } from '@docusaurus/theme-common/internal';
-import Header from '@site/src/segments/Header';
 import AnnouncementBar from '@theme/AnnouncementBar';
 import ErrorPageContent from '@theme/ErrorPageContent';
-import Footer from '@theme/Footer';
 import LayoutProvider from '@theme/Layout/Provider';
 import Navbar from '@theme/Navbar';
 import SkipToContent from '@theme/SkipToContent';
 import clsx from 'clsx';
-import React from 'react';
 import styles from './styles.module.css';
-import ChainHeader from '@site/src/components/Chain/ChainHeader';
-import ChainFooter from '@site/src/components/Chain/ChainFooter';
+import Header from '../../segments/Header';
+import Footer from '../../segments/Footer';
 import { ItemH } from '@site/src/css/SharedStyling';
 
 export default function Layout(props) {
@@ -43,7 +41,7 @@ export default function Layout(props) {
       {/* navbar for docs/blogs */}
       {(showNavbar === undefined || showNavbar === 'docusaurus') && <Navbar />}
       {/* navbar for chain pages and sub pages */}
-      {showNavbar === 'chain' && <ChainHeader />}
+      {showNavbar === 'chain' && <Header />}
       <div
         id={SkipToContentFallbackId}
         className={clsx(
@@ -57,10 +55,9 @@ export default function Layout(props) {
         </ErrorBoundary>
       </div>
 
-      {!noFooter && <Footer />}
       {showNavbar === 'chain' && (
         <ItemH background='#e8eff8'>
-          <ChainFooter showPattern={true} />
+          <Footer showPattern={true} />
         </ItemH>
       )}
     </LayoutProvider>

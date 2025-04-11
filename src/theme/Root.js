@@ -10,7 +10,7 @@ import styled from 'styled-components';
 // import Footer from '@site/src/segments/Footer';
 import ServerStyle from '@site/src/theme/ServerStyle';
 import CookieComponent from '../components/CookieComponent';
-import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '../hooks/useSiteBaseUrl';
 import { Notification } from '../hooks/useRewardsNotification';
 import { useChainNotification } from '../hooks/useChainNotification';
 
