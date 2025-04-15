@@ -3,6 +3,9 @@
   "extends": "@tsconfig/docusaurus/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "forceConsistentCasingInFileNames": true
-  }
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node"
+  },
+  "include": ["src"]
 }
