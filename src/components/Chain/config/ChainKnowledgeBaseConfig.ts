@@ -7,6 +7,7 @@
 //   - `url`: For external links, provide the full URL instead of using `content`.
 //NOTE: , cause we use a plugin to get this to work, you have to restart your local server to see the code changes after editing a blog article(TODO: add hot-reload functionality)
 
+
 import { push101Content } from '../content/push101';
 import { deepDivesContent } from '../content/deepdives';
 import { faqContent } from '../content/faq';
@@ -18,5 +19,5 @@ export const knowledgeBaseArticleContent = [
   deepDivesContent,
   devDocsContent,
   tokenomicsContent,
-  faqContent,
+  faqContent
 ];

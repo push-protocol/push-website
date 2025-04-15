@@ -28,7 +28,6 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
   }
 
   const toc = extractTOC(item?.content);
-  console.log(toc, 'toc');
 
   const cleanMarkdown = (text) => {
     return text
@@ -153,7 +152,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
             if (contentItem.type === 'list') {
               return (
                 <ChainKnowledgeGridWrapper key={index}>
-                  <ChainKnowledgeGrid>
+                  <ChainKnowledgeGrid length={contentItem.items.length}>
                     {contentItem?.items.map((item, index) => (
                       <ChannelKnowledgeBaseComponentItem
                         item={item}
@@ -206,10 +205,13 @@ const ChainKnowledgeGridWrapper = styled.div`
 
 const ChainKnowledgeGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 24px;
   width: 100%;
   justify-content: center;
+
+  grid-template-columns: ${({ length }) =>
+    length === 4 ? 'repeat(2, 1fr)' : 'repeat(auto-fit, minmax(200px, 1fr))'};
 
   @media ${device.mobileL} {
     grid-template-columns: 1fr;
@@ -238,6 +240,7 @@ const TextItem = styled.div`
   ul li {
     list-style-type: disc;
   }
+
 
   p {
     font-size: larger;
