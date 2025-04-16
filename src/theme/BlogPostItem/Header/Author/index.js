@@ -8,7 +8,7 @@ import Link from '@docusaurus/Link';
 import BlogPostItemHeaderInfo from '@theme/BlogPostItem/Header/Info';
 import React from 'react';
 import styled from 'styled-components';
-import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
 
 function MaybeLink(props) {
   if (props.href) {

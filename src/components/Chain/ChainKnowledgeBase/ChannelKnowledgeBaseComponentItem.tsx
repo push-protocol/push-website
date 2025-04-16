@@ -8,7 +8,7 @@ import { TbArrowUpRight } from 'react-icons/tb';
 
 import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
-import { useSiteBaseUrl } from '../../../utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '../../../hooks/useSiteBaseUrl';
 
 import { H3, Image, ItemH, ItemV, Span } from '../../../css/SharedStyling';
 
