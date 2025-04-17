@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 // Internal Configs
 import GLOBALS, { device, structure } from '@site/src/config/globals';
-import EasterEggImg from '@site/static/assets/docs/Easter-Egg.png';
 /**
  * Usage Hierarchy
  *
