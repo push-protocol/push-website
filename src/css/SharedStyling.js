@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 // Internal Configs
 import GLOBALS, { device, structure } from '@site/src/config/globals';
-import EasterEggImg from '@site/static/assets/docs/Easter-Egg.png';
 /**
  * Usage Hierarchy
  *
@@ -810,14 +809,14 @@ export const FeatureImage = styled.img`
   border-radius: 8px;
 `;
 
-export const EasterEgg = () => {
+export const EasterEgg = ({ src, alt = 'Easter Egg' }) => {
   return (
     <img
-      src={EasterEggImg}
-      alt='Easter Eggs'
+      src={src}
+      alt={alt}
       style={{
         width: '100%',
-        maxWidth: '35px',
+        maxWidth: '30px',
         display: 'inline-block',
         verticalAlign: 'middle',
         marginLeft: '4px',
