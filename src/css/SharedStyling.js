@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 // Internal Configs
 import GLOBALS, { device, structure } from '@site/src/config/globals';
+import EasterEggImg from '@site/static/assets/docs/Easter-Egg.png';
 /**
  * Usage Hierarchy
  *
@@ -812,7 +813,7 @@ export const FeatureImage = styled.img`
 export const EasterEgg = () => {
   return (
     <img
-      src={require('../../static/assets/docs/Easter-Egg.png').default}
+      src={EasterEggImg}
       alt='Easter Eggs'
       style={{
         width: '100%',
