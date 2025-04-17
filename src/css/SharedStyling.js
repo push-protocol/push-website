@@ -812,7 +812,7 @@ export const FeatureImage = styled.img`
 export const EasterEgg = () => {
   return (
     <img
-      src={require('/static/assets/docs/Easter-Egg.png').default}
+      src={require('../../static/assets/docs/Easter-Egg.png').default}
       alt='Easter Eggs'
       style={{
         width: '100%',
