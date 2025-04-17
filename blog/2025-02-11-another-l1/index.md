@@ -8,6 +8,9 @@ text: 'The move towards Push Chain was driven by the realisation that we had to 
 tags: [Push, Chain, Insights, Vision]
 ---
 
+import { EasterEgg } from '@site/src/css/SharedStyling';
+import EasterEggImg from '@site/static/assets/docs/eggs/Easter-Egg-1.png';
+
 ![Cover image of Is Push Chain Another L1?](./cover-image.webp)
 
 <!--truncate-->
@@ -36,7 +39,7 @@ Now if this were a real city the citizens would petition the Mayor and get thing
 
 In crypto, the reason why interoperability is an especially difficult problem to crack is because it requires unbroken coordination and synchronicity between different ecosystems. With every new chain that is added to the mix, the patchwork expands and becomes more unwieldy. It is therefore legitimate for people to wonder whether we are ‘another L1’ which is ultimately going to increase this messiness.
 
-The short answer is no: Push is not building its own separate municipality in its own corner of the city. Instead we are building systems (such as [solver networks and fees quotas](https://whitepaper.push.org/)) through which bridge-operators can communicate and coordinate. Imagine if a [tourist](https://www.notion.so/189188aea7f480faaba5f80052406759?pvs=21) was visiting the city and wanted to pass through three different bridges in a single drive. The bridge-operators would need to reach consensus on various things including: (a) does he have enough money for all the tolls? (2) is he a legitimate (non-malicious) actor, and (c) has he received necessary permissions from the respective Mayors of the source and destination cities, etc.
+The short answer is no: Push is not building its own separate municipality in its own corner of the city. Instead we are building systems (such as [solver networks and fees quotas](https://whitepaper.push.org/)) through which bridge-operators can communicate and coordinate. <EasterEgg src={EasterEggImg} /> Imagine if a [tourist](https://www.notion.so/189188aea7f480faaba5f80052406759?pvs=21) was visiting the city and wanted to pass through three different bridges in a single drive. The bridge-operators would need to reach consensus on various things including: (a) does he have enough money for all the tolls? (2) is he a legitimate (non-malicious) actor, and (c) has he received necessary permissions from the respective Mayors of the source and destination cities, etc.
 
 In the context of crypto these steps are reducible to verifiable cross-chain communications, and because Push has been working on this problem from its origin, it is uniquely positioned to create such a system. In other words, the move towards Push Chain was driven by the realisation that we had to do our bit to move the needle on interoperability, not in order to create our own fragmented ecosystem.
 

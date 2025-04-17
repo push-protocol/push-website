@@ -194,7 +194,6 @@ const ChainKnowledgeGridWrapper = styled.div`
 
 const ChainKnowledgeGrid = styled.div`
   display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 24px;
   width: 100%;
   justify-content: center;
@@ -212,6 +211,13 @@ const TextItem = styled.div`
   margin: 20px 0 20px auto;
   width: inherit;
   color: #000;
+
+  img[alt='Easter Egg'] {
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
 
   p {
     font-size: larger;

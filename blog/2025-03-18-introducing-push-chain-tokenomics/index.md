@@ -7,6 +7,8 @@ description: 'Push Chain Tokenomics - Details and Deepdive'
 text: 'A deepdive into the tokenomics of Push Chain, vesting details and how it will power and unify all blockchains!'
 tags: [Push Chain, Tokenomics]
 ---
+import { EasterEgg } from '@site/src/css/SharedStyling';
+import EasterEggImg from '@site/static/assets/docs/eggs/Easter-Egg-8.png';
 
 ![Cover image of Push Chain Tokenomics](./cover-image.webp)
 
@@ -68,7 +70,7 @@ Or you can better web3 and create innovations:
 
 ![Consumer use cases of Push Chain](./consumerusecases.webp)
 
-Or you can see some popular app examples and to take inspiration from:
+Or you can see some popular app examples and to take inspiration from: <EasterEgg src={EasterEggImg} />
 
 ![Universal app use cases of Push Chain](./appusecases.webp)
 
