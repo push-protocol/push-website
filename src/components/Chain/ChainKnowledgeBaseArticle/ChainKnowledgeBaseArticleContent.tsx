@@ -18,10 +18,12 @@ import Link from '@docusaurus/Link';
 import { H3, ItemH, ItemV, Span } from '../../../css/SharedStyling';
 import ChannelKnowledgeBaseComponentItem from '../ChainKnowledgeBase/ChannelKnowledgeBaseComponentItem';
 import ChainKnowledgeBaseArticle from './ChainKnowledgeBaseArticle';
+import { useSiteBaseUrl } from '../../../hooks/useSiteBaseUrl';
 
 const ChainKnowledgeBaseArticleContent = ({ item }) => {
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
+  const baseUrl = useSiteBaseUrl();
 
   if (!item || !item.content) {
     return <p>Loading...</p>; // or some fallback UI
@@ -35,6 +37,15 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
       .replace(/^\s+/gm, '')
       .trim();
   };
+
+  function resolveImageUrls(md: string) {
+    return md.replace(
+      /!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g,
+      (match, alt, src) => {
+        return `![${alt}](${baseUrl}${src})`;
+      }
+    );
+  }
 
   return (
     <ChainKnowledgeBaseArticleWrapper>
@@ -108,7 +119,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
                     ),
                   }}
                 >
-                  {cleanMarkdown(item?.content[0].value)}
+                  {resolveImageUrls(cleanMarkdown(item?.content[0].value))}
                 </Markdown>
               </TextItem>
             )}
@@ -130,7 +141,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
                       ),
                     }}
                   >
-                    {cleanMarkdown(contentItem.value)}
+                    {resolveImageUrls(cleanMarkdown(contentItem.value))}
                   </Markdown>
                 </TextItem>
               );
