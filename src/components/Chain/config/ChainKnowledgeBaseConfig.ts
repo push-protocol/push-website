@@ -41,7 +41,7 @@ PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet
         type: 'text',
         value: `# Innovations of Push Chain
 
-        ![Easter Egg](/assets/docs/eggs/Easter-Egg-5.png) Push Chain introduces some groundbreaking innovations such as:<p />
+        ![Easter Egg](/assets/website/chain/knowledge/Easter-Egg-5.webp) Push Chain introduces some groundbreaking innovations such as:<p />
 
         **Fee and Wallet abstraction** - allowing wallets/users of any chain to interact natively while being on the chain of their choice.<p />
 
