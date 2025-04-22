@@ -12,18 +12,6 @@ export const HeaderList = {
       srcrefoff: 'chat-icon-off',
       id: 'chat',
     },
-    {
-      title: 'header.products.link3.title',
-      subtitle: 'header.products.link3.subtitle',
-      srcrefoff: 'video-icon-off',
-      id: 'otherfeatures',
-    },
-    {
-      title: 'header.products.link4.title',
-      subtitle: 'header.products.link4.subtitle',
-      srcrefoff: 'spaces-icon-off',
-      id: 'otherfeatures',
-    },
   ],
   developers: [
     {
@@ -107,7 +95,7 @@ export const HeaderList = {
     {
       title: 'header.resources.link1.title',
       subtitle: 'header.resources.link1.subtitle',
-      href: '/blog',
+      href: 'https://push.org/blog',
       target: '_self',
     },
     {
@@ -133,40 +121,33 @@ export const HeaderList = {
   ],
   docshub: [
     {
-      title: 'Push Chain Docs',
-      subtitle: 'Infrastructure for universal, scalable Web3 apps',
-      srcrefoff: 'pushchain-icon-off',
-      href: '/docs/chain',
+      title: 'Notification Docs',
+      subtitle: 'Web3 native notification alerts',
+      srcrefoff: 'inbox-icon-off',
+      href: '/docs/notifications',
       target: '_self',
     },
-    // {
-    //   title: 'Notification Docs',
-    //   subtitle: 'Web3 native notification alerts',
-    //   srcrefoff: 'inbox-icon-off',
-    //   href: '/docs/notifications',
-    //   target: '_self',
-    // },
-    // {
-    //   title: 'Chat Docs',
-    //   subtitle: 'Web3 native chat protocol with groups',
-    //   srcrefoff: 'chat-icon-off',
-    //   href: '/docs/chat',
-    //   target: '_self',
-    // },
-    // {
-    //   title: 'Video Docs',
-    //   subtitle: 'Decentralized video calls',
-    //   srcrefoff: 'video-icon-off',
-    //   href: '/docs/video',
-    //   target: '_self',
-    // },
-    // {
-    //   title: 'Spaces Docs',
-    //   subtitle: 'Decentralized audio streaming',
-    //   srcrefoff: 'spaces-icon-off',
-    //   href: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
-    //   target: '_blank',
-    // },
+    {
+      title: 'Chat Docs',
+      subtitle: 'Web3 native chat protocol with groups',
+      srcrefoff: 'chat-icon-off',
+      href: '/docs/chat',
+      target: '_self',
+    },
+    {
+      title: 'Video Docs',
+      subtitle: 'Decentralized video calls',
+      srcrefoff: 'video-icon-off',
+      href: '/docs/video',
+      target: '_self',
+    },
+    {
+      title: 'Spaces Docs',
+      subtitle: 'Decentralized audio streaming',
+      srcrefoff: 'spaces-icon-off',
+      href: 'https://www.npmjs.com/package/@pushprotocol/restapi#for-spaces',
+      target: '_blank',
+    },
     {
       title: 'Push Home',
       subtitle: 'Back to Push Homepage',
