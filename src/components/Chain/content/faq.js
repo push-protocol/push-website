@@ -10,17 +10,21 @@ export const faqContent = {
   content: [
     {
       type: 'text',
-      value: `
-  # Frequently Asked Questions
+      value: `# Frequently Asked Questions
 
   The place to find answers to all the popular questions the community has asked about Push Chain. Crowdsourced from Push Fam 🫶 and curated by the Push team 💪.
 
-  ## Overview
+  ## Overview`,
+    },
+    {
+      type: 'text',
+      value: `### What is Push Chain?
 
-  ---
-
-  ### What is Push Chain?
-
+  `,
+    },
+    {
+      type: 'text',
+      value: `
   Push Chain is a shared-state L1 blockchain designed for universal (interoperable) applications.
 
   By enabling seamless **transactions from any chain** (Eth, Solana, EVM, or non-EVM), **abstracting away gas** and **wallet** complexities, and **fostering interoperability** across L1s, L2s, and L3s, Push Chain ensures a frictionless web3 experience for users and developers alike.

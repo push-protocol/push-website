@@ -1,7 +1,6 @@
-/* eslint-disable @docusaurus/no-html-links */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+/* eslint-disable @docusaurus/no-html-links, @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any, @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
+//
 import React from 'react';
 import Markdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -15,11 +14,13 @@ import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 
 import Link from '@docusaurus/Link';
-import { H3, ItemH, ItemV, Span } from '../../../css/SharedStyling';
+import { H1, ItemH, ItemV, Span } from '../../../css/SharedStyling';
 import ChannelKnowledgeBaseComponentItem from '../ChainKnowledgeBase/ChannelKnowledgeBaseComponentItem';
 import { useSiteBaseUrl } from '../../../hooks/useSiteBaseUrl';
+import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 
 const ChainKnowledgeBaseArticleContent = ({ item }) => {
+  const [showFullMobileTOC, setShowFullMobileTOC] = React.useState(false);
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
   const baseUrl = useSiteBaseUrl();
@@ -30,10 +31,10 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
 
   const toc = extractTOC(item?.content);
 
-  const cleanMarkdown = (text) => {
+  const cleanMarkdown = (text: string): string => {
     return text
       .split('\n')
-      .map((line) => {
+      .map((line: string) => {
         if (line.trim() !== '---') {
           return line.replace(/^\s+/gm, '');
         }
@@ -43,10 +44,10 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
       .trim();
   };
 
-  function resolveImageUrls(md: string) {
+  function resolveImageUrls(md: string): string {
     return md.replace(
       /!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g,
-      (match, alt, src) => {
+      (_match, alt, src) => {
         return `![${alt}](${baseUrl}${src})`;
       }
     );
@@ -56,89 +57,123 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
     <ChainKnowledgeBaseArticleWrapper>
       <ItemH
         flexDirection={isTablet ? 'column' : 'row'}
-        gap='100px'
+        gap={isTablet ? '32px' : '100px'}
         flexWrap='nowrap'
       >
-        <ItemV flex='1' alignItems='flex-start' width='100%'>
-          <ItemH
-            flexDirection={isTablet && 'column'}
+        <ItemH
+          flexDirection={isTablet && 'column'}
+          alignItems='flex-start'
+          gap='32px'
+        >
+          {/* Left Section: TOC and Title */}
+          <ItemV
+            maxWidth={isTablet ? '100%' : '300px'}
+            minWidth={isTablet ? '100%' : '300px'}
             alignItems='flex-start'
-            gap='32px'
+            alignSelf='flex-start'
+            flexShrink={0}
           >
-            {/* Left Section: TOC and Title */}
-            <ItemV
-              maxWidth='350px'
-              alignItems='flex-start'
-              alignSelf='flex-start'
-              flexShrink={0}
+            <Span
+              fontSize={isMobile ? '16px' : '20px'}
+              fontWeight='400'
+              fontFamily='N27'
+              lineHeight='120%'
+              color='#000'
             >
-              <Span
-                fontSize={isMobile ? '16px' : '20px'}
-                fontWeight='400'
-                fontFamily='N27'
-                lineHeight='120%'
-                color='#000'
-              >
-                <Breadcrumb to={'/chain/knowledge'}>Knowledge Base</Breadcrumb>
-              </Span>
-              <H3
-                fontSize={isMobile ? '36px' : '54px'}
-                fontWeight='500'
-                fontFamily='N27'
-                lineHeight='120%'
-                letterSpacing='-1.04px'
-                color='#000'
-              >
-                {item?.title}
-              </H3>
+              <Breadcrumb to={'/chain/knowledge'}>
+                Knowledge Base {'>'} {item?.title}
+              </Breadcrumb>
+            </Span>
+            <H1
+              fontSize={isMobile ? '36px' : '54px'}
+              fontWeight='500'
+              fontFamily='N27'
+              lineHeight='120%'
+              letterSpacing='-1.04px'
+              color='#000'
+            >
+              {item?.title}
+            </H1>
 
-              {!isTablet && toc.length > 0 && (
-                <ItemV
-                  background='#FFF'
-                  padding='32px'
-                  borderRadius='32px'
-                  alignItems='flex-start'
-                  margin='12px 0 0 0'
-                >
-                  {toc?.map((item, index) => {
-                    const highestLevel = Math.min(...toc.map((t) => t.level));
-                    return (
-                      <ListItem
-                        key={index}
-                        href={`#${item.id}`}
-                        level={item.level}
-                        highestLevel={highestLevel}
-                      >
-                        {item.text}
-                      </ListItem>
-                    );
-                  })}
-                </ItemV>
+            {isTablet &&
+              toc.length > 0 &&
+              item.content.length > 0 &&
+              item.content[0].type === 'text' && (
+                <MobileTOCWrapper>
+                  {(showFullMobileTOC ? toc : toc.slice(0, 2)).map(
+                    (item, index) => {
+                      const highestLevel = Math.min(...toc.map((t) => t.level));
+                      return (
+                        <ListItem
+                          key={index}
+                          href={`#${item.id}`}
+                          level={item.level}
+                          highestLevel={highestLevel}
+                        >
+                          {item.text}
+                        </ListItem>
+                      );
+                    }
+                  )}
+
+                  {/* Toggle Icon */}
+                  {toc.length > 2 && (
+                    <ToggleIcon
+                      onClick={() => setShowFullMobileTOC(!showFullMobileTOC)}
+                    >
+                      {showFullMobileTOC ? <BsChevronUp /> : <BsChevronDown />}
+                    </ToggleIcon>
+                  )}
+                </MobileTOCWrapper>
               )}
-            </ItemV>
-
-            {/* First Text Item (Markdown) */}
-            {item.content.length > 0 && item.content[0].type === 'text' && (
-              <TextItem>
-                <Markdown
-                  remarkPlugins={[remarkGfm]}
-                  rehypePlugins={[rehypeSlug, rehypeRaw, rehypeSanitize]}
-                  components={{
-                    a: ({ node, ...props }) => (
-                      <a {...props} target='_blank' rel='noopener noreferrer'>
-                        {props.children}
-                      </a>
-                    ),
-                  }}
-                >
-                  {resolveImageUrls(cleanMarkdown(item?.content[0].value))}
-                </Markdown>
-              </TextItem>
+            {!isTablet && toc.length > 0 && (
+              <ItemV
+                background='#FFF'
+                padding='32px'
+                borderRadius='32px'
+                alignItems='flex-start'
+                margin='12px 0 0 0'
+              >
+                {toc?.map((item, index) => {
+                  const highestLevel = Math.min(...toc.map((t) => t.level));
+                  return (
+                    <ListItem
+                      key={index}
+                      href={`#${item.id}`}
+                      level={item.level}
+                      highestLevel={highestLevel}
+                    >
+                      {item.text}
+                    </ListItem>
+                  );
+                })}
+              </ItemV>
             )}
-          </ItemH>
+          </ItemV>
+        </ItemH>
+
+        <div>
+          {/* First Text Item (Markdown) */}
+          {item.content.length > 0 && item.content[0].type === 'text' && (
+            <TextItem>
+              <Markdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeSlug, rehypeRaw, rehypeSanitize]}
+                components={{
+                  a: ({ node, ...props }) => (
+                    <a {...props} target='_blank' rel='noopener noreferrer'>
+                      {props.children}
+                    </a>
+                  ),
+                }}
+              >
+                {resolveImageUrls(cleanMarkdown(item?.content[0].value))}
+              </Markdown>
+            </TextItem>
+          )}
 
           {/* Render remaining content */}
-          {item.content.slice(1).map((contentItem, index) => {
+          {item.content.slice(1).map((contentItem: any, index: number) => {
             if (contentItem.type === 'text') {
               return (
                 <TextItem key={index}>
@@ -162,8 +197,8 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
             if (contentItem.type === 'list') {
               return (
                 <ChainKnowledgeGridWrapper key={index}>
-                  <ChainKnowledgeGrid length={contentItem.items.length}>
-                    {contentItem?.items.map((item, index) => (
+                  <ChainKnowledgeGrid>
+                    {contentItem?.items.map((item: any, index: number) => (
                       <ChannelKnowledgeBaseComponentItem
                         item={item}
                         index={index}
@@ -177,7 +212,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
 
             return null;
           })}
-        </ItemV>
+        </div>
       </ItemH>
     </ChainKnowledgeBaseArticleWrapper>
   );
@@ -219,8 +254,7 @@ const ChainKnowledgeGrid = styled.div`
   width: 100%;
   justify-content: center;
 
-  grid-template-columns: ${({ length }) =>
-    length === 4 ? 'repeat(2, 1fr)' : 'repeat(auto-fit, minmax(200px, 1fr))'};
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   @media ${device.mobileL} {
     grid-template-columns: 1fr;
@@ -228,7 +262,7 @@ const ChainKnowledgeGrid = styled.div`
 `;
 
 const TextItem = styled.div`
-  max-width: calc(100% - 400px);
+  // max-width: calc(100% - 400px);
   margin: 12px 0 0 auto;
   width: inherit;
   color: #000;
@@ -272,21 +306,39 @@ const TextItem = styled.div`
 `;
 
 const ListItem = styled.a`
+  display: block;
   color: #757d8d;
   font-family: N27;
   font-size: ${({ level }) =>
     level === 1 ? '20px' : level === 2 ? '18px' : '16px'};
   margin-left: ${({ level, highestLevel }) =>
-    level === highestLevel ? '0' : `${(level - 1) * 15}px`};
+    level === highestLevel ? '0' : `${(level - highestLevel) * 15}px`};
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
   letter-spacing: -0.4px;
-  &:not(:first-child) {
-    margin-top: 20px;
-  }
+
+  margin-top: 12px;
 
   &:hover {
     color: #cf59e2;
   }
+`;
+
+const MobileTOCWrapper = styled.div`
+  margin-top: 16px;
+  padding: 20px;
+  border-radius: 24px;
+  background: #f8f8f8;
+  width: 100%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+`;
+
+const ToggleIcon = styled.div`
+  font-size: 24px;
+  text-align: center;
+  margin-top: 12px;
+  cursor: pointer;
+  color: #757d8d;
+  font-weight: bold;
 `;

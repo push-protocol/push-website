@@ -81,11 +81,6 @@ PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet
           url: '/blog/another-l1',
           target: '_self',
         },
-      ],
-    },
-    {
-      type: 'list',
-      items: [
         {
           slug: 'faq-push-chain',
           image: 'frequently-asked-questions',
