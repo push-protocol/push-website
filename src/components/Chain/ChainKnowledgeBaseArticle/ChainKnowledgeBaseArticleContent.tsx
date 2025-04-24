@@ -73,17 +73,15 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
             alignSelf='flex-start'
             flexShrink={0}
           >
-            <Span
+            <H1
               fontSize={isMobile ? '16px' : '20px'}
               fontWeight='400'
               fontFamily='N27'
               lineHeight='120%'
               color='#000'
             >
-              <Breadcrumb to={'/chain/knowledge'}>
-                Knowledge Base {'>'} {item?.title}
-              </Breadcrumb>
-            </Span>
+              <Breadcrumb to={'/chain/knowledge'}>Knowledge Base</Breadcrumb>
+            </H1>
             <H1
               fontSize={isMobile ? '36px' : '54px'}
               fontWeight='500'
@@ -100,54 +98,64 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
               item.content.length > 0 &&
               item.content[0].type === 'text' && (
                 <MobileTOCWrapper>
-                  {(showFullMobileTOC ? toc : toc.slice(0, 2)).map(
-                    (item, index) => {
-                      const highestLevel = Math.min(...toc.map((t) => t.level));
-                      return (
-                        <ListItem
-                          key={index}
-                          href={`#${item.id}`}
-                          level={item.level}
-                          highestLevel={highestLevel}
-                        >
-                          {item.text}
-                        </ListItem>
-                      );
-                    }
-                  )}
+                  <ul>
+                    {(showFullMobileTOC ? toc : toc.slice(0, 2)).map(
+                      (item, index) => {
+                        const highestLevel = Math.min(
+                          ...toc.map((t) => t.level)
+                        );
+                        return (
+                          <ListItem
+                            key={index}
+                            href={`#${item.id}`}
+                            level={item.level}
+                            highestLevel={highestLevel}
+                          >
+                            {item.text}
+                          </ListItem>
+                        );
+                      }
+                    )}
 
-                  {/* Toggle Icon */}
-                  {toc.length > 2 && (
-                    <ToggleIcon
-                      onClick={() => setShowFullMobileTOC(!showFullMobileTOC)}
-                    >
-                      {showFullMobileTOC ? <BsChevronUp /> : <BsChevronDown />}
-                    </ToggleIcon>
-                  )}
+                    {/* Toggle Icon */}
+                    {toc.length > 2 && (
+                      <ToggleIcon
+                        onClick={() => setShowFullMobileTOC(!showFullMobileTOC)}
+                      >
+                        {showFullMobileTOC ? (
+                          <BsChevronUp />
+                        ) : (
+                          <BsChevronDown />
+                        )}
+                      </ToggleIcon>
+                    )}
+                  </ul>
                 </MobileTOCWrapper>
               )}
             {!isTablet && toc.length > 0 && (
-              <ItemV
+              <DesktopTOC
                 background='#FFF'
                 padding='32px'
                 borderRadius='32px'
                 alignItems='flex-start'
                 margin='12px 0 0 0'
               >
-                {toc?.map((item, index) => {
-                  const highestLevel = Math.min(...toc.map((t) => t.level));
-                  return (
-                    <ListItem
-                      key={index}
-                      href={`#${item.id}`}
-                      level={item.level}
-                      highestLevel={highestLevel}
-                    >
-                      {item.text}
-                    </ListItem>
-                  );
-                })}
-              </ItemV>
+                <ul>
+                  {toc?.map((item, index) => {
+                    const highestLevel = Math.min(...toc.map((t) => t.level));
+                    return (
+                      <ListItem
+                        key={index}
+                        href={`#${item.id}`}
+                        level={item.level}
+                        highestLevel={highestLevel}
+                      >
+                        {item.text}
+                      </ListItem>
+                    );
+                  })}
+                </ul>
+              </DesktopTOC>
             )}
           </ItemV>
         </ItemH>
@@ -305,7 +313,7 @@ const TextItem = styled.div`
   }
 `;
 
-const ListItem = styled.a`
+const ListItem = styled.li`
   display: block;
   color: #757d8d;
   font-family: N27;
@@ -332,6 +340,20 @@ const MobileTOCWrapper = styled.div`
   background: #f8f8f8;
   width: 100%;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+`;
+
+const DesktopTOC = styled(ItemV)`
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
 `;
 
 const ToggleIcon = styled.div`
