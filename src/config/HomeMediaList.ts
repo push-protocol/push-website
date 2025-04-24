@@ -1,23 +1,5 @@
 export const MediaList = [
   {
-    url: 'https://www.theblock.co/post/330507/protocol-push-layer-1',
-    urltranslatedtitle: 'home.featured-section.article9.link-text',
-    translatedtitle: 'home.featured-section.article9.text',
-    srcref: 'theblock',
-  },
-  {
-    url: 'https://www.theblockbeats.info/flash/274057',
-    urltranslatedtitle: 'home.featured-section.article10.link-text',
-    translatedtitle: 'home.featured-section.article10.text',
-    srcref: 'blockbeats',
-  },
-  {
-    url: 'https://cryptoslate.com/push-protocol-launches-push-chain-to-unify-blockchain-communication-and-transactions/',
-    urltranslatedtitle: 'home.featured-section.article11.link-text',
-    translatedtitle: 'home.featured-section.article11.text',
-    srcref: 'cryptoslate',
-  },
-  {
     url: 'https://blog.ethereum.org/2020/08/19/esp-beyond-grants',
     urltranslatedtitle: 'home.featured-section.article1.link-text',
     translatedtitle: 'home.featured-section.article1.text',
