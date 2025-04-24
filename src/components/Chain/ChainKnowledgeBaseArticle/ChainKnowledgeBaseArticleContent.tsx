@@ -313,7 +313,7 @@ const TextItem = styled.div`
   }
 `;
 
-const ListItem = styled.li`
+const ListItem = styled.a`
   display: block;
   color: #757d8d;
   font-family: N27;
