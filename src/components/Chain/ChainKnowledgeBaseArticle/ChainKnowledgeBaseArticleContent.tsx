@@ -332,7 +332,6 @@ const ListItem = styled.li`
     color: #cf59e2;
   }
 `;
-<<<<<<< HEAD
 
 const MobileTOCWrapper = styled.div`
   margin-top: 16px;
@@ -365,5 +364,3 @@ const ToggleIcon = styled.div`
   color: #757d8d;
   font-weight: bold;
 `;
-=======
->>>>>>> 1c6a2e2144b (chore: remove more unused)
