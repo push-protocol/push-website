@@ -22,11 +22,12 @@ import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
 import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 import { BsChevronDown } from 'react-icons/bs';
 import {
-  Button,
+  A,
   Content,
   H3,
   ItemH,
   ItemV,
+  // LI,
   Section,
   Span,
 } from '../../src/css/SharedStyling';
@@ -62,20 +63,20 @@ const Header: FC = () => {
   const showMobileMenu = isMobile && isMobileMenuOpen;
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
 
-  const onMobileHeaderMenuClick = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    menuIndex: number,
-    itemId
-  ) => {
-    e.preventDefault();
-    const newMenuState = {
-      ...mobileMenuMap,
-      [menuIndex]: !mobileMenuMap[menuIndex], // Toggle only the clicked menu
-    };
+  // const onMobileHeaderMenuClick = (
+  //   e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  //   menuIndex: number,
+  //   itemId
+  // ) => {
+  //   e.preventDefault();
+  //   const newMenuState = {
+  //     ...mobileMenuMap,
+  //     [menuIndex]: !mobileMenuMap[menuIndex], // Toggle only the clicked menu
+  //   };
 
-    setMobileMenuMap(newMenuState);
-    setActiveItem(itemId);
-  };
+  //   setMobileMenuMap(newMenuState);
+  //   setActiveItem(itemId);
+  // };
 
   const handleMouseEnter = (e, activeId, itemId) => {
     setMobileMenuMap({
@@ -165,10 +166,6 @@ const Header: FC = () => {
     history.push(targetUrl);
   };
 
-  const GoToPushPortal = () => {
-    window.open('https://portal.push.org/rewards', '_blank');
-  };
-
   // Update the active item based on the current location
   useEffect(() => {
     const activeNavItem = ChainNavBarItems?.find(
@@ -229,13 +226,6 @@ const Header: FC = () => {
                     key={item.id}
                     isActive={activeItem === item.id}
                     className={activeItem === item?.id ? 'active' : ''}
-                    onClick={(e) => {
-                      if (item?.subItems) {
-                        onMobileHeaderMenuClick(e, index, item.id);
-                      } else {
-                        handleRedirect(item);
-                      }
-                    }}
                     showMobileMenu={showMobileMenu}
                     expanded={mobileMenuMap[index]}
                     {...(item.subItems &&
@@ -247,6 +237,7 @@ const Header: FC = () => {
                       })}
                   >
                     <MenuNavLink className='navLink'>
+                      {/* <A padding='0px' background='transparent'> */}
                       <NavigationMenuHeader isActive={activeItem === item.id}>
                         <Span fontSize='18px'>{item.label}</Span>
                         {item.subItems && (
@@ -257,6 +248,7 @@ const Header: FC = () => {
                           />
                         )}
                       </NavigationMenuHeader>
+                      {/* </A> */}
 
                       {item.subItems && (
                         <DropdownMenu
@@ -264,12 +256,15 @@ const Header: FC = () => {
                           expanded={mobileMenuMap[index]}
                         >
                           {item.subItems?.map((subItem) => (
-                            <DropdownItem
-                              key={subItem.id}
-                              onClick={() => handleRedirect(subItem)}
-                            >
-                              <H3>{subItem.label} </H3>
-                              <Span>{subItem?.sublabels}</Span>
+                            <DropdownItem key={subItem.id}>
+                              <A
+                                href={subItem.url}
+                                onClick={() => handleRedirect(subItem)}
+                                padding='0px'
+                              >
+                                <H3>{subItem.label} </H3>
+                                <Span>{subItem?.sublabels}</Span>
+                              </A>
                             </DropdownItem>
                           ))}
                         </DropdownMenu>
@@ -286,16 +281,17 @@ const Header: FC = () => {
                 className='navigationMenu'
                 showMobileMenu={isMobileMenuOpen}
               >
-                <Button
+                <RedirectButton
                   background='#D548EC'
                   fontFamily='N27'
                   fontWeight='500'
                   fontSize='18px'
                   flex={isMobileMenuOpen && '1'}
-                  onClick={GoToPushPortal}
+                  href='https://portal.push.org/rewards'
+                  target='_blank'
                 >
                   Push Portal
-                </Button>
+                </RedirectButton>
               </IconMenu>
             </HeaderFocusItems>
           </NavList>
@@ -580,7 +576,7 @@ const NavigationMenuItem = styled.li`
   }
 `;
 
-const NavigationMenuHeader = styled.div`
+const NavigationMenuHeader = styled.a`
   display: flex;
   align-items: center;
   margin: auto 0;
@@ -686,4 +682,8 @@ const DropdownItem = styled.li`
       color: #d98aec;
     }
   }
+`;
+
+const RedirectButton = styled(A)`
+  text-align: center;
 `;
