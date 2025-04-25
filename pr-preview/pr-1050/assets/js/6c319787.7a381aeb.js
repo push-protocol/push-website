@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[36769],{320050:e=>{e.exports=JSON.parse('{"label":"Rewards","permalink":"/push-website/pr-preview/pr-1050/blog/tags/rewards","allTagsPath":"/push-website/pr-preview/pr-1050/blog/tags","count":4,"unlisted":false}')}}]);

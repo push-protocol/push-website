@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[82241],{855587:e=>{e.exports=JSON.parse('{"label":"Devops","permalink":"/push-website/pr-preview/pr-1050/blog/tags/devops","allTagsPath":"/push-website/pr-preview/pr-1050/blog/tags","count":1,"unlisted":false}')}}]);
