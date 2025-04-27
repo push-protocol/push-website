@@ -54,26 +54,26 @@ function Footer({ showPattern }) {
     document.documentElement.scrollTo(0, 0);
   };
 
-  const handleNavigation = (e, href, id, target) => {
-    e.stopPropagation();
-    if (href) {
-      const fullHref = href.includes('http') ? href : `${baseURL}${href}`;
-      target === '_self'
-        ? (window.location.href = fullHref)
-        : window.open(fullHref, target || '_blank');
-    } else if (id) {
-      const scrollTarget = document.getElementById(id);
-      if (location?.pathname !== `${baseURL}/`) {
-        history.push(`${baseURL}/`);
-        setTimeout(
-          () => scrollTarget?.scrollIntoView({ behavior: 'smooth' }),
-          300
-        );
-      } else {
-        scrollTarget?.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
+  // const handleNavigation = (e, href, id, target) => {
+  //   e.stopPropagation();
+  //   if (href) {
+  //     const fullHref = href.includes('http') ? href : `${baseURL}${href}`;
+  //     target === '_self'
+  //       ? (window.location.href = fullHref)
+  //       : window.open(fullHref, target || '_blank');
+  //   } else if (id) {
+  //     const scrollTarget = document.getElementById(id);
+  //     if (location?.pathname !== `${baseURL}/`) {
+  //       history.push(`${baseURL}/`);
+  //       setTimeout(
+  //         () => scrollTarget?.scrollIntoView({ behavior: 'smooth' }),
+  //         300
+  //       );
+  //     } else {
+  //       scrollTarget?.scrollIntoView({ behavior: 'smooth' });
+  //     }
+  //   }
+  // };
 
   // Determine if the pathname starts with '/docs' or Blog
   const isDocsOrBlogsPage =
@@ -162,23 +162,60 @@ function Footer({ showPattern }) {
                         >
                           {key}
                         </Span>
-                        {ChainFooterList[key]?.map((item) => (
-                          <FooterAnchorSecondary
-                            as='div'
-                            key={item.title}
-                            title={item.title}
-                            onClick={(e) =>
-                              handleNavigation(
-                                e,
-                                item.href,
-                                item.id,
-                                item.target
-                              )
-                            }
-                          >
-                            {item.title}
-                          </FooterAnchorSecondary>
-                        ))}
+                        {ChainFooterList[key]?.map((item) => {
+                          const fullHref = item.href
+                            ? item.href.includes('http')
+                              ? item.href
+                              : `${baseURL}${item.href}`
+                            : item.id
+                              ? `/#${item.id}`
+                              : '#'; // fallback
+
+                          return (
+                            <FooterAnchorSecondary
+                              key={item.title}
+                              href={fullHref}
+                              target={
+                                item.target || (item.href ? '_blank' : '_self')
+                              }
+                              rel='noopener noreferrer'
+                              onClick={(e) => {
+                                if (!item.href && item.id) {
+                                  e.preventDefault(); // prevent default <a> behavior
+                                  const scrollTarget = document.getElementById(
+                                    item.id
+                                  );
+
+                                  if (location?.pathname !== `${baseURL}/`) {
+                                    history.push(`${baseURL}/`);
+                                    setTimeout(() => {
+                                      scrollTarget?.scrollIntoView({
+                                        behavior: 'smooth',
+                                      });
+                                    }, 300);
+                                  } else {
+                                    scrollTarget?.scrollIntoView({
+                                      behavior: 'smooth',
+                                    });
+                                  }
+                                }
+                              }}
+                              // as='div'
+                              // key={item.title}
+                              // title={item.title}
+                              // onClick={(e) =>
+                              //   handleNavigation(
+                              //     e,
+                              //     item.href,
+                              //     item.id,
+                              //     item.target
+                              //   )
+                              // }
+                            >
+                              {item.title}
+                            </FooterAnchorSecondary>
+                          );
+                        })}
                       </FooterLinks>
                     </FooterColumn>
                   ))}
