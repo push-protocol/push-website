@@ -161,11 +161,6 @@ const Header: FC = () => {
     handleSectionNavigation(item);
   };
 
-  const openHomePage = () => {
-    const targetUrl = baseURL;
-    history.push(targetUrl);
-  };
-
   // Update the active item based on the current location
   useEffect(() => {
     const activeNavItem = ChainNavBarItems?.find(
@@ -193,7 +188,8 @@ const Header: FC = () => {
               <PushLogoBlackContainer
                 className='headerlogo'
                 flex='initial'
-                onClick={openHomePage}
+                href={baseURL}
+                rel='noopener noreferrer'
               >
                 {isMobileMenuOpen ? <ChainLogoDark /> : <ChainLogo />}
               </PushLogoBlackContainer>
@@ -436,13 +432,19 @@ const MenuTop = styled(ItemV)`
   }
 `;
 
-const PushLogoBlackContainer = styled(ItemV)`
+const PushLogoBlackContainer = styled.a`
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 100%;
   width: 150px;
   color: #fff;
+  background: transparent;
+  padding: 0px;
+
+  &:hover {
+    background: transparent;
+  }
 
   @media ${device.tablet} {
     width: 100px;
