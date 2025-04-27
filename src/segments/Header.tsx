@@ -11,6 +11,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import Link from '@docusaurus/Link';
 
 import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
 import GLOBALS, { device, structure } from '../../src/config/globals';
@@ -27,7 +28,6 @@ import {
   H3,
   ItemH,
   ItemV,
-  // LI,
   Section,
   Span,
 } from '../../src/css/SharedStyling';
@@ -63,20 +63,20 @@ const Header: FC = () => {
   const showMobileMenu = isMobile && isMobileMenuOpen;
   const headerClass = `${scrollDirection === 'scrollDown' ? 'hide' : 'show'}`;
 
-  // const onMobileHeaderMenuClick = (
-  //   e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-  //   menuIndex: number,
-  //   itemId
-  // ) => {
-  //   e.preventDefault();
-  //   const newMenuState = {
-  //     ...mobileMenuMap,
-  //     [menuIndex]: !mobileMenuMap[menuIndex], // Toggle only the clicked menu
-  //   };
+  const onMobileHeaderMenuClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    menuIndex: number,
+    itemId
+  ) => {
+    e.preventDefault();
+    const newMenuState = {
+      ...mobileMenuMap,
+      [menuIndex]: !mobileMenuMap[menuIndex], // Toggle only the clicked menu
+    };
 
-  //   setMobileMenuMap(newMenuState);
-  //   setActiveItem(itemId);
-  // };
+    setMobileMenuMap(newMenuState);
+    setActiveItem(itemId);
+  };
 
   const handleMouseEnter = (e, activeId, itemId) => {
     setMobileMenuMap({
@@ -221,57 +221,83 @@ const Header: FC = () => {
                 className='navigationMenu'
                 showMobileMenu={isMobileMenuOpen}
               >
-                {ChainNavBarItems?.map((item, index) => (
-                  <NavigationMenuItem
-                    key={item.id}
-                    isActive={activeItem === item.id}
-                    className={activeItem === item?.id ? 'active' : ''}
-                    showMobileMenu={showMobileMenu}
-                    expanded={mobileMenuMap[index]}
-                    {...(item.subItems &&
-                      !isMobileMenuOpen && {
-                        onMouseEnter: (e) =>
-                          handleMouseEnter(e, index, item.id),
-                        onMouseLeave: (e) =>
-                          handleMouseLeave(e, index, item.id),
-                      })}
-                  >
-                    <MenuNavLink className='navLink'>
-                      {/* <A padding='0px' background='transparent'> */}
-                      <NavigationMenuHeader isActive={activeItem === item.id}>
-                        <Span fontSize='18px'>{item.label}</Span>
-                        {item.subItems && (
-                          <BsChevronDown
-                            size={12}
-                            color={activeItem === item.id ? '#000' : '#fff'}
-                            className='chevronIcon'
-                          />
-                        )}
-                      </NavigationMenuHeader>
-                      {/* </A> */}
+                {ChainNavBarItems?.map((item, index) => {
+                  const isExternal = item?.url?.startsWith('http');
+                  const itemHref = item?.url
+                    ? isExternal
+                      ? item.url
+                      : `${baseURL}${item.url}`
+                    : '#';
 
-                      {item.subItems && (
-                        <DropdownMenu
-                          className='menuContent'
-                          expanded={mobileMenuMap[index]}
-                        >
-                          {item.subItems?.map((subItem) => (
-                            <DropdownItem key={subItem.id}>
-                              <A
-                                href={subItem.url}
-                                onClick={() => handleRedirect(subItem)}
-                                padding='0px'
-                              >
-                                <H3>{subItem.label} </H3>
-                                <Span>{subItem?.sublabels}</Span>
-                              </A>
-                            </DropdownItem>
-                          ))}
-                        </DropdownMenu>
-                      )}
-                    </MenuNavLink>
-                  </NavigationMenuItem>
-                ))}
+                  const handleClick = (
+                    e: React.MouseEvent<HTMLAnchorElement>
+                  ) => {
+                    if (item.subItems) {
+                      e.preventDefault();
+                      onMobileHeaderMenuClick(e, index, item.id);
+                      return;
+                    }
+
+                    if (item.url) {
+                      e.preventDefault();
+                      handleRedirect(item);
+                    }
+                  };
+
+                  return (
+                    <NavigationMenuItem
+                      key={item.id}
+                      isActive={activeItem === item.id}
+                      className={activeItem === item?.id ? 'active' : ''}
+                      to={itemHref}
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                      showMobileMenu={showMobileMenu}
+                      expanded={mobileMenuMap[index]}
+                      onClick={handleClick}
+                      {...(item.subItems &&
+                        !isMobileMenuOpen && {
+                          onMouseEnter: (e) =>
+                            handleMouseEnter(e, index, item.id),
+                          onMouseLeave: (e) =>
+                            handleMouseLeave(e, index, item.id),
+                        })}
+                    >
+                      <MenuNavLink className='navLink'>
+                        <NavigationMenuHeader isActive={activeItem === item.id}>
+                          <Span fontSize='18px'>{item.label}</Span>
+                          {item.subItems && (
+                            <BsChevronDown
+                              size={12}
+                              color={activeItem === item.id ? '#000' : '#fff'}
+                              className='chevronIcon'
+                            />
+                          )}
+                        </NavigationMenuHeader>
+
+                        {item.subItems && (
+                          <DropdownMenu
+                            className='menuContent'
+                            expanded={mobileMenuMap[index]}
+                          >
+                            {item.subItems?.map((subItem) => (
+                              <DropdownItem key={subItem.id}>
+                                <Link
+                                  to={subItem.url}
+                                  onClick={() => handleRedirect(subItem)}
+                                  padding='0px'
+                                >
+                                  <H3>{subItem.label} </H3>
+                                  <Span>{subItem?.sublabels}</Span>
+                                </Link>
+                              </DropdownItem>
+                            ))}
+                          </DropdownMenu>
+                        )}
+                      </MenuNavLink>
+                    </NavigationMenuItem>
+                  );
+                })}
               </NavigationMenu>
             </HeaderNavItemV>
 
@@ -514,7 +540,7 @@ const IconMenu = styled.ul`
 /**
  * HOVER happens on this element
  */
-const NavigationMenuItem = styled.li`
+const NavigationMenuItem = styled(Link)`
   position: relative;
   font-family: N27, sans-serif;
   border-radius: 16px;
@@ -649,9 +675,20 @@ const DropdownMenu = styled.ul`
 
 const DropdownItem = styled.li`
   padding: 8px;
-  cursor: pointer;
   border: 1px solid transparent;
   border-radius: 12px;
+
+  a {
+    display: block;
+    background: none;
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      cursor: pointer !important;
+    }
+  }
 
   h3 {
     color: #fff;
@@ -673,6 +710,7 @@ const DropdownItem = styled.li`
   }
 
   &:hover {
+    cursor: pointer !important;
     border: 1px solid #fff;
     background: #f4f4f4;
     background: rgba(11, 11, 13, 0.9);
