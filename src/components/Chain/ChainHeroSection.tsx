@@ -50,10 +50,6 @@ const ChainHeroSection: FC = () => {
     });
   };
 
-  const openComms = () => {
-    window.open('https://comms.push.org', '_blank');
-  };
-
   useEffect(() => {
     ScrollTrigger.create({
       trigger: playerRef.current?.wrapper, // The video wrapper element
@@ -293,16 +289,18 @@ const ChainHeroSection: FC = () => {
       </ItemV>
 
       <ItemV width='100%'>
-        <Button
+        <A
           background='#D548EC'
           fontFamily='N27'
           fontWeight='500'
           fontSize='18px'
-          onClick={openComms}
+          href={'https://comms.push.org'}
+          target='_blank'
+          rel='noopener noreferrer'
           margin='20px auto 0 auto'
         >
           Explore Communications Protocol
-        </Button>
+        </A>
       </ItemV>
     </ChainHeroSectionWrapper>
   );

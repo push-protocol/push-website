@@ -8,7 +8,7 @@ import useMediaQuery from '../../../hooks/useMediaQuery';
 import useModal from '../hooks/useModal';
 
 import ImageHolder from '../../../../src/components/ImageHolder';
-import { Button, H2, H3, ItemH, ItemV } from '../../../css/SharedStyling';
+import { H2, H3, ItemH, ItemV } from '../../../css/SharedStyling';
 import ChainElevateModal from '../ChainElevateModal';
 import { ChainKnowledgeBaseHeader } from '../config/ChainKnowledgeBaseHeader';
 
@@ -86,15 +86,9 @@ const ChainKnowledgeBaseComponent = () => {
               Craft seamless, user-friendly experiences for you app on any
               blockchain with Push Chain.
             </H3>
-            <Button
-              background='#D548EC'
-              fontFamily='N27'
-              fontWeight='500'
-              fontSize='18px'
-              onClick={open}
-            >
+            <ButtonLink to='' onClick={open}>
               Get Notified about Testnet
-            </Button>
+            </ButtonLink>
           </IframeContent>
         </IFrameItem>
       </ItemH>
@@ -147,5 +141,20 @@ const IframeContent = styled.div`
     button {
       width: 100%;
     }
+  }
+`;
+
+const ButtonLink = styled.a`
+  background: #d548ec;
+  font-family: N27;
+  font-size: 18px;
+  color: #fff;
+  font-weight: 500;
+  padding: 14px 32px;
+  border-radius: 16px;
+
+  &:hover {
+    color: #fff;
+    cursor: pointer;
   }
 `;

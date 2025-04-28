@@ -2,7 +2,7 @@ export const ChainFooterList = {
   resources: [
     {
       title: 'Knowledge Base',
-      href: '/chain/knowledge',
+      href: '/knowledge',
       target: '_blank',
     },
     {
