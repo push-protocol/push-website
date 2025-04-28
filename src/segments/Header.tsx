@@ -171,6 +171,13 @@ const Header: FC = () => {
     }
   }, [location]);
 
+  const spanStyle = {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    display: 'block',
+  };
+
   return (
     <StyledHeader
       showMobileMenu={showMobileMenu}
@@ -263,9 +270,20 @@ const Header: FC = () => {
                             handleMouseLeave(e, index, item.id),
                         })}
                     >
-                      <MenuNavLink className='navLink'>
+                      <MenuNavLink
+                        className='navLink'
+                        showMobileMenu={showMobileMenu}
+                      >
                         <NavigationMenuHeader isActive={activeItem === item.id}>
-                          <Span fontSize='18px'>{item.label}</Span>
+                          <Span
+                            textTransform='uppercase'
+                            fontSize='14px'
+                            fontWeight='500'
+                            lineHeight='140%'
+                            style={spanStyle}
+                          >
+                            {item.label}
+                          </Span>
                           {item.subItems && (
                             <BsChevronDown
                               size={12}
@@ -467,6 +485,13 @@ const MobileMenuToggleIcon = styled.span`
 const MenuNavLink = styled.div`
   position: relative;
   cursor: pointer;
+
+  flex: 1;
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: ${(props) => (props.showMobileMenu ? '16px' : '0px 24px')};
 
   @media ${device.laptopM} {
     align-self: flex-start;
