@@ -245,9 +245,13 @@ const Header: FC = () => {
                       key={item.id}
                       isActive={activeItem === item.id}
                       className={activeItem === item?.id ? 'active' : ''}
-                      to={itemHref}
-                      target={isExternal ? '_blank' : undefined}
-                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                      as={item?.subItems ? 'div' : 'a'}
+                      {...(!item.subItems && {
+                        href: itemHref,
+                        target: isExternal ? '_blank' : undefined,
+                        rel: isExternal ? 'noopener noreferrer' : undefined,
+                        onClick: handleClick,
+                      })}
                       showMobileMenu={showMobileMenu}
                       expanded={mobileMenuMap[index]}
                       onClick={handleClick}

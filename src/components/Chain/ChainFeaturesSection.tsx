@@ -2,17 +2,15 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import React, { FC, useEffect, useRef, useState } from 'react';
-
 import Link from '@docusaurus/Link';
+
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TbArrowUpRight } from 'react-icons/tb';
 import ReactPlayer from 'react-player';
-import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { device, size } from '../../../src/config/globals';
-import { useSiteBaseUrl } from '../../hooks/useSiteBaseUrl';
 
 import { Button } from '@site/src/css/SharedStyling';
 import ImageBg from '@site/static/assets/website/chain/chainFeaturesDivider@3x.png';
@@ -31,14 +29,6 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
     isPlaying &&
     typeof window !== 'undefined' &&
     window.innerWidth > size.laptop;
-
-  const history = useHistory();
-  const baseURL = useSiteBaseUrl() || '';
-
-  const handleClick = () => {
-    const targetUrl = `${baseURL}/chain/knowledge`;
-    history.push(targetUrl);
-  };
 
   useEffect(() => {
     ScrollTrigger.create({
@@ -224,7 +214,7 @@ const ChainFeaturesSection: FC<ChainFeaturesSectionProps> = () => {
             </FeatureSubContainer>
 
             <FeatureSubContainer>
-              <KnowledgeBaseContainer onClick={handleClick}>
+              <KnowledgeBaseContainer to='/knowledge'>
                 <div ref={playerRef} className='video'>
                   <CustomReactPlayer
                     url={
@@ -718,7 +708,7 @@ const ScalableContainerMobile = styled(ScalableContainer)`
   }
 `;
 
-const KnowledgeBaseContainer = styled.div`
+const KnowledgeBaseContainer = styled(Link)`
   display: flex;
   width: 75.2%;
   height: 413.56px;
@@ -730,6 +720,7 @@ const KnowledgeBaseContainer = styled.div`
   flex-shrink: 0;
   border-radius: 48px;
   background: #e492ff;
+  color: #fff;
 
   img {
     display: block;
