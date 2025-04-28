@@ -7,7 +7,7 @@ import { BsArrowRight } from 'react-icons/bs';
 import styled from 'styled-components';
 
 // Internal Components
-import { Button, H2 } from '../../../src/css/SharedStyling';
+import { A, H2 } from '../../../src/css/SharedStyling';
 
 // Import Assets
 import StarColoredIcon from '../../../static/assets/website/illustrations/starColoredIcon.svg';
@@ -38,9 +38,9 @@ const ChainAlertBar = ({
 }: AlertBarProps) => {
   return (
     <HeroButton
-      onClick={() => {
-        if (url) window.open(url, '_blank');
-      }}
+      href={url}
+      target='_blank'
+      rel='noopener noreferrer'
       textColor={textColor}
       backgroundColor={backgroundColor}
       borderColor={borderColor}
@@ -55,7 +55,7 @@ const ChainAlertBar = ({
   );
 };
 
-const HeroButton = styled(Button)<{
+const HeroButton = styled(A)<{
   textColor: string;
   backgroundColor: string;
   borderColor: string;
@@ -68,6 +68,7 @@ const HeroButton = styled(Button)<{
   justify-content: space-between;
   padding: 12px 16px;
   gap: 8px;
+  width: fit-content;
 
   ${(props) => (props.center ? 'margin: 0 auto;' : 'margin: 0;')}
 
