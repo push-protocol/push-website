@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[32204],{661504:e=>{e.exports=JSON.parse('{"label":"Lite Paper","permalink":"/push-website/pr-preview/pr-1051/blog/tags/lite-paper","allTagsPath":"/push-website/pr-preview/pr-1051/blog/tags","count":1,"unlisted":false}')}}]);
