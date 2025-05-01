@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[45021],{824972:e=>{e.exports=JSON.parse('{"label":"Plotx","permalink":"/push-website/pr-preview/pr-1054/blog/tags/plotx","allTagsPath":"/push-website/pr-preview/pr-1054/blog/tags","count":1,"unlisted":false}')}}]);
