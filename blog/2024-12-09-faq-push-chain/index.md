@@ -8,8 +8,6 @@ text: 'The place to find answers to all the popular questions the community has 
 tags: [Push Chain, Push Chain FAQs]
 ---
 
-import { EasterEgg } from '@site/src/css/SharedStyling';
-import EasterEggImg from '@site/static/assets/docs/eggs/Easter-Egg-4.png';
 
 ![Cover Image of Push Chain’s Frequently Asked Questions](./cover-image.webp)
 
@@ -180,7 +178,6 @@ Yes, Push Chain is designed to support both EVM and non-EVM chains, ensuring max
 
 ---
 
-### Why create a new blockchain when existing ones like Ethereum and Solana already exist? <EasterEgg src={EasterEggImg} />
 
 Push Chain addresses pervasive gaps in the existing blockchains; specifically interoperability, shared app experiences, and scalability. While existing blockchains are robust, they operate in silos and lack the ability to unify state across multiple blockchains. Push Chain’s focus is on being a **shared state chain for universal applications**, offering seamless cross-chain interactions and unparalleled scalability.
 

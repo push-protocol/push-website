@@ -8,8 +8,6 @@ text: "Say Hello to Points Program S2 - Earn Points for Exploring Push Chain Dev
 tags: [Push Chain, Push Points, Rewards, Announcements]
 ---
 
-import { EasterEgg } from '@site/src/css/SharedStyling';
-import EasterEggImg from '@site/static/assets/docs/eggs/Easter-Egg-2.png';
 
 ![Cover Image of Introducing the Push Points Program S2](./cover-image.webp)
 
@@ -130,7 +128,7 @@ Claim an exclusive headstart boost **20k points + 4x Multiplier** just by loggin
 
 3. **🤝 Referrals:**
 
-    Onboard your loved ones to the S2 program & earn **+20%** of any Points your invites earn and **+5%** of any Points your invitee’s invites earn. <EasterEgg src={EasterEggImg} />
+    Onboard your loved ones to the S2 program & earn **+20%** of any Points your invites earn and **+5%** of any Points your invitee’s invites earn.
 
 
 ## Why is Push Chain Awesome?
