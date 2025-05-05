@@ -11,6 +11,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import Link from '@docusaurus/Link';
 
 import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
 import GLOBALS, { device, structure } from '../../src/config/globals';
@@ -22,7 +23,7 @@ import ChainLogo from '@site/static/assets/website/chain/ChainLogo.svg';
 import ChainLogoDark from '@site/static/assets/website/chain/ChainLogoDark.svg';
 import { BsChevronDown } from 'react-icons/bs';
 import {
-  Button,
+  A,
   Content,
   H3,
   ItemH,
@@ -160,15 +161,6 @@ const Header: FC = () => {
     handleSectionNavigation(item);
   };
 
-  const openHomePage = () => {
-    const targetUrl = baseURL;
-    history.push(targetUrl);
-  };
-
-  const GoToPushPortal = () => {
-    window.open('https://portal.push.org/rewards', '_blank');
-  };
-
   // Update the active item based on the current location
   useEffect(() => {
     const activeNavItem = ChainNavBarItems?.find(
@@ -178,6 +170,13 @@ const Header: FC = () => {
       setActiveItem(activeNavItem.id);
     }
   }, [location]);
+
+  const spanStyle = {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    display: 'block',
+  };
 
   return (
     <StyledHeader
@@ -196,7 +195,8 @@ const Header: FC = () => {
               <PushLogoBlackContainer
                 className='headerlogo'
                 flex='initial'
-                onClick={openHomePage}
+                href={baseURL}
+                rel='noopener noreferrer'
               >
                 {isMobileMenuOpen ? <ChainLogoDark /> : <ChainLogo />}
               </PushLogoBlackContainer>
@@ -224,59 +224,98 @@ const Header: FC = () => {
                 className='navigationMenu'
                 showMobileMenu={isMobileMenuOpen}
               >
-                {ChainNavBarItems?.map((item, index) => (
-                  <NavigationMenuItem
-                    key={item.id}
-                    isActive={activeItem === item.id}
-                    className={activeItem === item?.id ? 'active' : ''}
-                    onClick={(e) => {
-                      if (item?.subItems) {
-                        onMobileHeaderMenuClick(e, index, item.id);
-                      } else {
-                        handleRedirect(item);
-                      }
-                    }}
-                    showMobileMenu={showMobileMenu}
-                    expanded={mobileMenuMap[index]}
-                    {...(item.subItems &&
-                      !isMobileMenuOpen && {
-                        onMouseEnter: (e) =>
-                          handleMouseEnter(e, index, item.id),
-                        onMouseLeave: (e) =>
-                          handleMouseLeave(e, index, item.id),
-                      })}
-                  >
-                    <MenuNavLink className='navLink'>
-                      <NavigationMenuHeader isActive={activeItem === item.id}>
-                        <Span fontSize='18px'>{item.label}</Span>
-                        {item.subItems && (
-                          <BsChevronDown
-                            size={12}
-                            color={activeItem === item.id ? '#000' : '#fff'}
-                            className='chevronIcon'
-                          />
-                        )}
-                      </NavigationMenuHeader>
+                {ChainNavBarItems?.map((item, index) => {
+                  const isExternal = item?.url?.startsWith('http');
+                  const itemHref = item?.url
+                    ? isExternal
+                      ? item.url
+                      : `${baseURL}${item.url}`
+                    : '#';
 
-                      {item.subItems && (
-                        <DropdownMenu
-                          className='menuContent'
-                          expanded={mobileMenuMap[index]}
-                        >
-                          {item.subItems?.map((subItem) => (
-                            <DropdownItem
-                              key={subItem.id}
-                              onClick={() => handleRedirect(subItem)}
-                            >
-                              <H3>{subItem.label} </H3>
-                              <Span>{subItem?.sublabels}</Span>
-                            </DropdownItem>
-                          ))}
-                        </DropdownMenu>
-                      )}
-                    </MenuNavLink>
-                  </NavigationMenuItem>
-                ))}
+                  const handleClick = (
+                    e: React.MouseEvent<HTMLAnchorElement>
+                  ) => {
+                    if (item.subItems) {
+                      e.preventDefault();
+                      onMobileHeaderMenuClick(e, index, item.id);
+                      return;
+                    }
+
+                    if (item.url) {
+                      e.preventDefault();
+                      handleRedirect(item);
+                    }
+                  };
+
+                  return (
+                    <NavigationMenuItem
+                      key={item.id}
+                      isActive={activeItem === item.id}
+                      className={activeItem === item?.id ? 'active' : ''}
+                      as={item?.subItems ? 'div' : 'a'}
+                      {...(!item.subItems && {
+                        href: itemHref,
+                        target: isExternal ? '_blank' : undefined,
+                        rel: isExternal ? 'noopener noreferrer' : undefined,
+                        onClick: handleClick,
+                      })}
+                      showMobileMenu={showMobileMenu}
+                      expanded={mobileMenuMap[index]}
+                      onClick={handleClick}
+                      {...(item.subItems &&
+                        !isMobileMenuOpen && {
+                          onMouseEnter: (e) =>
+                            handleMouseEnter(e, index, item.id),
+                          onMouseLeave: (e) =>
+                            handleMouseLeave(e, index, item.id),
+                        })}
+                    >
+                      <MenuNavLink
+                        className='navLink'
+                        showMobileMenu={showMobileMenu}
+                      >
+                        <NavigationMenuHeader isActive={activeItem === item.id}>
+                          <Span
+                            textTransform='uppercase'
+                            fontSize='14px'
+                            fontWeight='500'
+                            lineHeight='140%'
+                            style={spanStyle}
+                          >
+                            {item.label}
+                          </Span>
+                          {item.subItems && (
+                            <BsChevronDown
+                              size={12}
+                              color={activeItem === item.id ? '#000' : '#fff'}
+                              className='chevronIcon'
+                            />
+                          )}
+                        </NavigationMenuHeader>
+
+                        {item.subItems && (
+                          <DropdownMenu
+                            className='menuContent'
+                            expanded={mobileMenuMap[index]}
+                          >
+                            {item.subItems?.map((subItem) => (
+                              <DropdownItem key={subItem.id}>
+                                <Link
+                                  to={subItem.url}
+                                  onClick={() => handleRedirect(subItem)}
+                                  padding='0px'
+                                >
+                                  <H3>{subItem.label} </H3>
+                                  <Span>{subItem?.sublabels}</Span>
+                                </Link>
+                              </DropdownItem>
+                            ))}
+                          </DropdownMenu>
+                        )}
+                      </MenuNavLink>
+                    </NavigationMenuItem>
+                  );
+                })}
               </NavigationMenu>
             </HeaderNavItemV>
 
@@ -286,16 +325,17 @@ const Header: FC = () => {
                 className='navigationMenu'
                 showMobileMenu={isMobileMenuOpen}
               >
-                <Button
+                <RedirectButton
                   background='#D548EC'
                   fontFamily='N27'
                   fontWeight='500'
                   fontSize='18px'
                   flex={isMobileMenuOpen && '1'}
-                  onClick={GoToPushPortal}
+                  href='https://portal.push.org/rewards'
+                  target='_blank'
                 >
                   Push Portal
-                </Button>
+                </RedirectButton>
               </IconMenu>
             </HeaderFocusItems>
           </NavList>
@@ -414,13 +454,19 @@ const MenuTop = styled(ItemV)`
   }
 `;
 
-const PushLogoBlackContainer = styled(ItemV)`
+const PushLogoBlackContainer = styled.a`
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 100%;
   width: 150px;
   color: #fff;
+  background: transparent;
+  padding: 0px;
+
+  &:hover {
+    background: transparent;
+  }
 
   @media ${device.tablet} {
     width: 100px;
@@ -439,6 +485,13 @@ const MobileMenuToggleIcon = styled.span`
 const MenuNavLink = styled.div`
   position: relative;
   cursor: pointer;
+
+  flex: 1;
+  margin: auto 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: ${(props) => (props.showMobileMenu ? '16px' : '0px 24px')};
 
   @media ${device.laptopM} {
     align-self: flex-start;
@@ -518,7 +571,7 @@ const IconMenu = styled.ul`
 /**
  * HOVER happens on this element
  */
-const NavigationMenuItem = styled.li`
+const NavigationMenuItem = styled(Link)`
   position: relative;
   font-family: N27, sans-serif;
   border-radius: 16px;
@@ -580,7 +633,7 @@ const NavigationMenuItem = styled.li`
   }
 `;
 
-const NavigationMenuHeader = styled.div`
+const NavigationMenuHeader = styled.a`
   display: flex;
   align-items: center;
   margin: auto 0;
@@ -653,9 +706,20 @@ const DropdownMenu = styled.ul`
 
 const DropdownItem = styled.li`
   padding: 8px;
-  cursor: pointer;
   border: 1px solid transparent;
   border-radius: 12px;
+
+  a {
+    display: block;
+    background: none;
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      cursor: pointer !important;
+    }
+  }
 
   h3 {
     color: #fff;
@@ -677,6 +741,7 @@ const DropdownItem = styled.li`
   }
 
   &:hover {
+    cursor: pointer !important;
     border: 1px solid #fff;
     background: #f4f4f4;
     background: rgba(11, 11, 13, 0.9);
@@ -686,4 +751,8 @@ const DropdownItem = styled.li`
       color: #d98aec;
     }
   }
+`;
+
+const RedirectButton = styled(A)`
+  text-align: center;
 `;

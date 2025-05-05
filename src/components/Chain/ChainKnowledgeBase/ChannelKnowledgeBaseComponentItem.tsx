@@ -10,7 +10,7 @@ import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import { useSiteBaseUrl } from '../../../hooks/useSiteBaseUrl';
 
-import { H3, Image, ItemH, ItemV, Span } from '../../../css/SharedStyling';
+import { H3, Image, ItemH, Span } from '../../../css/SharedStyling';
 
 const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
   // for navigation
@@ -34,6 +34,20 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
     window.open(targetUrl, !item.target ? '_self' : item.target);
   };
 
+  const getHref = (item: any) => {
+    if (!item?.url && !item?.slug) return '#';
+
+    if (item.url?.startsWith('https://') || item.url?.startsWith('http://')) {
+      return item.url;
+    } else if (item.url?.startsWith('/')) {
+      return `${baseURL}${item.url}`;
+    } else if (item.parentSlug) {
+      return `${baseURL}/knowledge/${item.parentSlug}/${item.slug}`;
+    } else {
+      return `${baseURL}/knowledge/${item.url || item.slug}`;
+    }
+  };
+
   return (
     <Card
       key={index}
@@ -42,6 +56,8 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       alignItems='flex-start'
       borderRadius='32px'
       justifyContent='space-between'
+      href={getHref(item)}
+      rel='noopener noreferrer'
       onClick={() => openLink(item)}
     >
       {item?.image && (
@@ -122,8 +138,11 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
   );
 };
 
-const Card = styled(ItemV)`
+const Card = styled.a`
   cursor: pointer;
+  background: #fff;
+  padding: 24px;
+  border-radius: 32px;
 `;
 
 const KnowledgeImage = styled(Image)`

@@ -808,19 +808,3 @@ export const FeatureImage = styled.img`
   height: auto;
   border-radius: 8px;
 `;
-
-export const EasterEgg = ({ src, alt = 'Easter Egg' }) => {
-  return (
-    <img
-      src={src}
-      alt={alt}
-      style={{
-        width: '100%',
-        maxWidth: '30px',
-        display: 'inline-block',
-        verticalAlign: 'middle',
-        marginLeft: '4px',
-      }}
-    />
-  );
-};
