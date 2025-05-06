@@ -209,8 +209,7 @@ const ChainKnowledgeGrid = styled.div`
   width: 100%;
   justify-content: center;
 
-  grid-template-columns: ${({ length }) =>
-    length === 4 ? 'repeat(2, 1fr)' : 'repeat(auto-fit, minmax(200px, 1fr))'};
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
 
   @media ${device.mobileL} {
     grid-template-columns: 1fr;
