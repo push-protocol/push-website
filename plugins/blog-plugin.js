@@ -31,9 +31,9 @@ async function blogPluginExtended(...pluginArgs) {
           metadata: await actions.createData(
             `home-page-recent-post-metadata-${index}.json`,
             JSON.stringify({
-              title: blogPost.metadata.title,
-              description: blogPost.metadata.description,
-              frontMatter: blogPost.metadata.frontMatter,
+              title: blogPost?.metadata.title,
+              description: blogPost?.metadata.description,
+              frontMatter: blogPost?.metadata.frontMatter,
               content: blogPost,
             })
           ),
@@ -43,7 +43,7 @@ async function blogPluginExtended(...pluginArgs) {
           Preview: {
             __import: true,
             // The markdown file for the blog post will be loaded by webpack
-            path: blogPost.metadata.source,
+            path: blogPost?.metadata.source,
             query: {
               truncated: true,
             },
@@ -57,9 +57,9 @@ async function blogPluginExtended(...pluginArgs) {
           metadata: await actions.createData(
             `blog-page-more-post-metadata-${index}.json`,
             JSON.stringify({
-              title: blogPost.metadata.title,
-              description: blogPost.metadata.description,
-              frontMatter: blogPost.metadata.frontMatter,
+              title: blogPost?.metadata.title,
+              description: blogPost?.metadata.description,
+              frontMatter: blogPost?.metadata.frontMatter,
               content: blogPost,
             })
           ),
@@ -69,7 +69,7 @@ async function blogPluginExtended(...pluginArgs) {
           Preview: {
             __import: true,
             // The markdown file for the blog post will be loaded by webpack
-            path: blogPost.metadata.source,
+            path: blogPost?.metadata.source,
             // query: {
             // truncated: false,
             // },
@@ -109,7 +109,7 @@ async function blogPluginExtended(...pluginArgs) {
         actions.addRoute({
           // Add route for the blog page
           // path: "/blog/:slug",
-          path: `${blogPost.metadata.permalink}`,
+          path: `${blogPost?.metadata.permalink}`,
           exact: true,
 
           // The component to use for the "blog" page route

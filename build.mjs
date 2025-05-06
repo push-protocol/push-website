@@ -83,13 +83,13 @@ async function checkFileContent(filePath) {
   // Parse the front matter content
   const metadata = extractFrontMatter(frontMatterText);
 
-  if (metadata && metadata.title && metadata.image) {
+  if (metadata && metadata?.title && metadata?.image) {
     // Transform title to expected image name format: lowercase with underscores
     const expectedImageName =
-      metadata.title.toLowerCase().split(' ').join('_') + '.webp'; // Assuming the extension is always .webp
+      metadata?.title.toLowerCase().split(' ').join('_') + '.webp'; // Assuming the extension is always .webp
 
     // Extract the actual image file name from the path
-    const actualImageName = metadata.image
+    const actualImageName = metadata?.image
       .split('/')
       .pop()
       .replace(/['"]+/g, '');
