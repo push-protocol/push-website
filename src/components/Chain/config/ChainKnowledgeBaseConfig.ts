@@ -183,6 +183,15 @@ PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet
             url: '/blog/interop-spectrum',
             target: '_self',
           },
+          {
+            slug: 'apps-only-possible-with-shared-state-v1/',
+            image: 'apps-only-possible-with-shared-state-v1',
+            title: 'Apps Possible Only with Shared State - Vol.1',
+            subtitle:
+              'Learn about 5 super helpful use cases that are only only possible with shared state blockchains like Push Chain',
+            url: '/blog/apps-only-possible-with-shared-state-v1',
+            target: '_self',
+          },
         ],
       },
     ],
