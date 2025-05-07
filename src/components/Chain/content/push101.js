@@ -1,12 +1,5 @@
 export const push101Content = {
-  slug: 'push101',
-  url: 'push101',
-  ctatitle: 'Explore More',
-  target: '_self',
-  image: 'knowledge_101',
   title: 'Push 101',
-  subtitle:
-    'Learn about basics of Push Chain. The innovations it introduces, what makes it tick and why is it required!',
   content: [
     {
       type: 'text',

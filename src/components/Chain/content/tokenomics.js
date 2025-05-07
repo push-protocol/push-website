@@ -1,11 +1,5 @@
 export const tokenomicsContent = {
-  slug: 'push-chain-tokenomics',
-  image: 'knowledge_tokenomics',
   title: 'Explore Tokenomics',
-  subtitle: `Learn how Push Chain's tokenomics incentivizes all actors and ensures sustainable network that's built to last`,
-  url: 'push-chain-tokenomics',
-  target: '_self',
-  ctatitle: 'Learn Token Design',
   content: [
     {
       type: 'text',

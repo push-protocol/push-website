@@ -1,12 +1,5 @@
 export const deepDivesContent = {
-  slug: 'deepdives',
-  url: 'deepdives',
-  ctatitle: 'See it Tick',
-  target: '_self',
-  image: 'knowledge_deepdives',
   title: 'Deep Dives',
-  subtitle:
-    'Want to know the intricate working of Push? or just a curious fellow? If so, this section is for you ❤️',
   content: [
     {
       type: 'text',
