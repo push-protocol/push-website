@@ -29,8 +29,9 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
     return <p>Loading...</p>; // or some fallback UI
   }
 
-  const toc = extractTOC(item?.content);
-
+  // Cleans up markdown text by removing leading spaces from each line,
+  // except for lines that contain only '---', which are preserved as-is.
+  // Also trims leading and trailing whitespace from the final output.
   const cleanMarkdown = (text: string): string => {
     return text
       .split('\n')
@@ -44,6 +45,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
       .trim();
   };
 
+  // Resolve images by adding the base url to the srs provided from content file
   function resolveImageUrls(md: string): string {
     return md.replace(
       /!\[([^\]]*)\]\((?!https?:\/\/)([^)]+)\)/g,
@@ -53,11 +55,13 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
     );
   }
 
+  // Removes emojis, numbering and spaces from header texts
+  // so it can generates an id for the header
   function generateIdFromHeadingText(text: React.ReactNode): string {
-    const plain = String(text).replace(
-      /[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu,
-      ''
-    );
+    const plain = String(text)
+      .replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu, '')
+      .replace(/^\d+\.\s*/, '');
+
     return (
       'user-content-' +
       plain
@@ -101,8 +105,6 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
           const rawMarkdown = texts?.map((t) => t.value).join('\n\n');
           const toc = extractTOC(block?.value);
 
-          console.log(block?.value, block, toc);
-
           return (
             <ItemH
               key={blockIndex}
@@ -111,7 +113,6 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
               alignItems='flex-start'
               margin='16px 0 32px 0'
             >
-              {/* TOC (left) for this indexlist */}
               <ItemV
                 maxWidth={isTablet ? '100%' : '300px'}
                 minWidth={isTablet ? '100%' : '300px'}
@@ -273,17 +274,6 @@ const BreadcrumbLink = styled(Link)`
   }
   &:hover {
     color: #cf59e2;
-  }
-`;
-
-const ChainKnowledgeGridWrapper = styled.div`
-  width: 100%;
-  margin: 28px 0px;
-
-  @media ${device.tablet} {
-    width: 100%;
-    margin-left: 0;
-    padding: 0;
   }
 `;
 
