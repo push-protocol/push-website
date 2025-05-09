@@ -2,8 +2,11 @@ export const tokenomicsContent = {
   title: 'Explore Tokenomics',
   content: [
     {
-      type: 'text',
-      value: `
+      type: 'indexlist',
+      value: [
+        {
+          type: 'text',
+          value: `
 
     ## Overview
 
@@ -126,6 +129,8 @@ export const tokenomicsContent = {
     5. Investors have 24-month linear vesting.
     6. Community and Ecosystem Reserves has a 13.5% unlock at TGE, followed by 36-month vesting.
 `,
+        },
+      ],
     },
   ],
 };

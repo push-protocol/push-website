@@ -2,11 +2,17 @@ export const deepDivesContent = {
   title: 'Deep Dives',
   content: [
     {
-      type: 'text',
-      value: `# Curated Reads 👇
+      type: 'indexlist',
+      value: [
+        {
+          type: 'text',
+          value: `## Curated Reads 👇
 
-    Deep dive into the inner working of Push Chain and how everything comes together to create a universal, fully interoperable chain that unites all L1s 🤝 L2s 🤝 L3s.`,
+            Deep dive into the inner working of Push Chain and how everything comes together to create a universal, fully interoperable chain that unites all L1s 🤝 L2s 🤝 L3s.`,
+        },
+      ],
     },
+
     {
       type: 'list',
       items: [

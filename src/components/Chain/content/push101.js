@@ -2,8 +2,11 @@ export const push101Content = {
   title: 'Push 101',
   content: [
     {
-      type: 'text',
-      value: `# Why Push Chain?
+      type: 'indexlist',
+      value: [
+        {
+          type: 'text',
+          value: `## Why Push Chain?
 
     Push Chain addresses specific gaps in the existing blockchains, such as interoperability, state access across chains, programmable solvers and wallet abstraction resulting in a **full stack interop**. While existing blockchains are robust, they operate in their own eco-system and an aggregator to unite these chains are needed.<p />
 
@@ -11,18 +14,18 @@ export const push101Content = {
 
     Push Chain’s focus is on being a **shared state chain** for universal applications acting as a unifying layer where all chains can come together and use PC as universal hub or do settlement between them.<p />
 PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet/User.** And is suitable for **Any App.**`,
-    },
-    {
-      type: 'text',
-      value: `## What is Push Chain?
+        },
+        {
+          type: 'text',
+          value: `## What is Push Chain?
 
     Push Chain is a Proof-of-Stake (PoS) L1 blockchain that is designed to eliminate fragmentation across all chains.<p />
 
     It is a **shared state L1** blockchain for **Universal (Interoperable) Apps** across chains. Push Chain enables txs from any chain (Eth, Solana, EVM, or non-EVM) enabling apps from any chain to be accessed by the users of any chain (**polymarket** from any chain, **pump.fun** from any chain, etc).`,
-    },
-    {
-      type: 'text',
-      value: `## Innovations of Push Chain
+        },
+        {
+          type: 'text',
+          value: `## Innovations of Push Chain
 
     Push Chain introduces some groundbreaking innovations such as:<p />
 
@@ -39,10 +42,8 @@ PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet
     Push Chain uses all these innovations to enable reading (shared state) or writing to different chains (programmable solvers), all controlled by the universal smart contract. The fee and wallet abstraction further enables a seamless, user centric approach as the learnings for a user is abstracted away no matter from what chain they chose to interact. <p/>
 
     This results in **fully interoperable applications** for web3. In this paradigm, instead of being a user of "Uniswap on Ethereum," "Uniswap on Polygon," or "Uniswap on Arbitrum," a person simply becomes a **user of Uniswap.**`,
-    },
-    {
-      type: 'text',
-      value: `# Curated Reads 👇`,
+        },
+      ],
     },
     {
       type: 'list',

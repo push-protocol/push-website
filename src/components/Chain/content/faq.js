@@ -2,22 +2,25 @@ export const faqContent = {
   title: 'Push Chain’s Frequently Asked Questions',
   content: [
     {
-      type: 'text',
-      value: `# Frequently Asked Questions
+      type: 'indexlist',
+      value: [
+        {
+          type: 'text',
+          value: `# Frequently Asked Questions
 
   The place to find answers to all the popular questions the community has asked about Push Chain. Crowdsourced from Push Fam 🫶 and curated by the Push team 💪.
 
   ## Overview`,
-    },
-    {
-      type: 'text',
-      value: `### What is Push Chain?
+        },
+        {
+          type: 'text',
+          value: `### What is Push Chain?
 
   `,
-    },
-    {
-      type: 'text',
-      value: `
+        },
+        {
+          type: 'text',
+          value: `
   Push Chain is a shared-state L1 blockchain designed for universal (interoperable) applications.
 
   By enabling seamless **transactions from any chain** (Eth, Solana, EVM, or non-EVM), **abstracting away gas** and **wallet** complexities, and **fostering interoperability** across L1s, L2s, and L3s, Push Chain ensures a frictionless web3 experience for users and developers alike.
@@ -329,6 +332,8 @@ export const faqContent = {
   The best way to stay on top of Push Chain’s progress is through the official Push channels: website, [Twitter/X](https://x.com/PushChain), [Telegram](https://t.me/epnsproject), and [Discord](https://discord.gg/pushprotocol).
 
   Always remain cautious of phishing links, websites or any scam links asking you for your crypto. All official communications will go out from our official Push handles.`,
+        },
+      ],
     },
   ],
 };

@@ -7,21 +7,20 @@ import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import { createGridRows } from '../utils/CreateGridRows';
 
-import { H2, ItemV } from '../../../css/SharedStyling';
+import { H3, ItemV } from '../../../css/SharedStyling';
 import { knowledgeBaseArticleContent } from '../config/ChainKnowledgeBaseConfig';
 import ChannelKnowledgeBaseComponentItem from './ChannelKnowledgeBaseComponentItem';
 
-const ChainKnowledgeBaseGrid = () => {
+const ChainKnowledgeBaseGrid = ({ items }) => {
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
 
-  const gridRows = createGridRows(knowledgeBaseArticleContent);
-  console.log(gridRows, 'grid');
+  const gridRows = createGridRows(items ?? knowledgeBaseArticleContent);
 
   return (
-    <ChainKnowledgeBaseGridWrapper>
+    <ChainKnowledgeBaseGridWrapper addBottomMargin={items}>
       <ItemV>
-        <H2
+        <H3
           fontSize={isMobile ? '32px' : '40px'}
           fontWeight='500'
           fontFamily='N27'
@@ -30,7 +29,7 @@ const ChainKnowledgeBaseGrid = () => {
           textAlign='center'
         >
           Hey! Want to learn more about Push Chain?
-        </H2>
+        </H3>
       </ItemV>
 
       <ChainKnowledgeGridWrapper>
@@ -57,10 +56,12 @@ const ChainKnowledgeBaseGrid = () => {
 export default ChainKnowledgeBaseGrid;
 
 const ChainKnowledgeBaseGridWrapper = styled.div`
-  margin: 200px auto 0 auto;
+  margin: ${({ addBottomMargin }) =>
+    addBottomMargin ? '120px auto' : '200px auto 0 auto'};
 
   @media ${device.mobileL} {
-    margin: 153px auto 0 auto;
+    margin: ${({ addBottomMargin }) =>
+      addBottomMargin ? '120x auto' : '153px auto 0 auto'};
   }
 `;
 

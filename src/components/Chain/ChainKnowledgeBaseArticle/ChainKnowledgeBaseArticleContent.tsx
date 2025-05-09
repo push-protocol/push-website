@@ -1,6 +1,5 @@
 /* eslint-disable @docusaurus/no-html-links, @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any, @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
-//
 import React from 'react';
 import Markdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -8,14 +7,15 @@ import rehypeSanitize from 'rehype-sanitize';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import styled from 'styled-components';
-import { extractTOC } from '../utils/ExtractTableOfContent';
+import Link from '@docusaurus/Link';
 
+import { extractTOC } from '../utils/ExtractTableOfContent';
 import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
+import { H1, ItemH, ItemV, Span, UL, LI } from '../../../css/SharedStyling';
 
-import Link from '@docusaurus/Link';
-import { H1, ItemH, ItemV, Span } from '../../../css/SharedStyling';
 import ChannelKnowledgeBaseComponentItem from '../ChainKnowledgeBase/ChannelKnowledgeBaseComponentItem';
+import ChainKnowledgeBaseGrid from '../ChainKnowledgeBase/ChainKnowledgeBaseGrid';
 import { useSiteBaseUrl } from '../../../hooks/useSiteBaseUrl';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
 
@@ -53,138 +53,145 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
     );
   }
 
+  function generateIdFromHeadingText(text: React.ReactNode): string {
+    const plain = String(text).replace(
+      /[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu,
+      ''
+    );
+    return (
+      'user-content-' +
+      plain
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+$/, '')
+    );
+  }
+
   return (
     <ChainKnowledgeBaseArticleWrapper>
-      <ItemH
-        flexDirection={isTablet ? 'column' : 'row'}
-        gap={isTablet ? '32px' : '100px'}
-        flexWrap='nowrap'
-      >
-        <ItemH
-          flexDirection={isTablet && 'column'}
-          alignItems='flex-start'
-          gap='32px'
-        >
-          {/* Left Section: TOC and Title */}
-          <ItemV
-            maxWidth={isTablet ? '100%' : '300px'}
-            minWidth={isTablet ? '100%' : '300px'}
-            alignItems='flex-start'
-            alignSelf='flex-start'
-            flexShrink={0}
-          >
-            <H1
-              fontSize={isMobile ? '16px' : '20px'}
-              fontWeight='400'
-              fontFamily='N27'
-              lineHeight='120%'
-              color='#000'
-            >
-              <Breadcrumb to={'/chain/knowledge'}>Knowledge Base</Breadcrumb>
-            </H1>
-            <H1
-              fontSize={isMobile ? '36px' : '54px'}
-              fontWeight='500'
-              fontFamily='N27'
-              lineHeight='120%'
-              letterSpacing='-1.04px'
-              color='#000'
-            >
-              {item?.title}
-            </H1>
+      <ItemV alignItems='flex-start' gap='0px'>
+        <BreadcrumbList>
+          <LI>
+            <BreadcrumbLink to='/'>Home</BreadcrumbLink>
+          </LI>
+          <LI>
+            <span>{'>'}</span>
+          </LI>
+          <LI>
+            <BreadcrumbLink to='/knowledge'>Knowledge Base</BreadcrumbLink>
+          </LI>
+        </BreadcrumbList>
 
-            {isTablet &&
-              toc.length > 0 &&
-              item.content.length > 0 &&
-              item.content[0].type === 'text' && (
-                <MobileTOCWrapper>
-                  <ul>
-                    {(showFullMobileTOC ? toc : toc.slice(0, 2)).map(
-                      (item, index) => {
+        <H1
+          fontSize={isMobile ? '36px' : '54px'}
+          fontWeight='500'
+          fontFamily='N27'
+          lineHeight='120%'
+          letterSpacing='-1.04px'
+          color='#000'
+        >
+          {item?.title}
+        </H1>
+      </ItemV>
+
+      {item.content?.map((block, blockIndex) => {
+        if (block.type === 'indexlist') {
+          const texts = block?.value.filter((v) => v.type === 'text');
+          const rawMarkdown = texts?.map((t) => t.value).join('\n\n');
+          const toc = extractTOC(block?.value);
+
+          console.log(block?.value, block, toc);
+
+          return (
+            <ItemH
+              key={blockIndex}
+              flexDirection={isTablet ? 'column' : 'row'}
+              gap={isTablet ? '32px' : '165px'}
+              alignItems='flex-start'
+              margin='16px 0 32px 0'
+            >
+              {/* TOC (left) for this indexlist */}
+              <ItemV
+                maxWidth={isTablet ? '100%' : '300px'}
+                minWidth={isTablet ? '100%' : '300px'}
+                alignItems='flex-start'
+                alignSelf='flex-start'
+                flexShrink={0}
+              >
+                {isTablet && toc?.length > 0 && (
+                  <MobileTOCWrapper>
+                    <UL>
+                      {(showFullMobileTOC ? toc : toc.slice(0, 2)).map(
+                        (item, index) => {
+                          const highestLevel = Math.min(
+                            ...toc.map((t) => t.level)
+                          );
+                          return (
+                            <LI>
+                              <ListItem
+                                key={index}
+                                href={`#${item.id}`}
+                                level={item.level}
+                                highestLevel={highestLevel}
+                              >
+                                {item.text}
+                              </ListItem>
+                            </LI>
+                          );
+                        }
+                      )}
+
+                      {toc.length > 2 && (
+                        <ToggleIcon
+                          onClick={() =>
+                            setShowFullMobileTOC(!showFullMobileTOC)
+                          }
+                        >
+                          {showFullMobileTOC ? (
+                            <BsChevronUp />
+                          ) : (
+                            <BsChevronDown />
+                          )}
+                        </ToggleIcon>
+                      )}
+                    </UL>
+                  </MobileTOCWrapper>
+                )}
+
+                {!isTablet && toc.length > 0 && (
+                  <DesktopTOC
+                    background='#FFF'
+                    padding='32px'
+                    borderRadius='32px'
+                    alignItems='flex-start'
+                    margin='0'
+                  >
+                    <UL>
+                      {toc?.map((item, index) => {
                         const highestLevel = Math.min(
                           ...toc.map((t) => t.level)
                         );
                         return (
-                          <ListItem
-                            key={index}
-                            href={`#${item.id}`}
-                            level={item.level}
-                            highestLevel={highestLevel}
-                          >
-                            {item.text}
-                          </ListItem>
+                          <LI>
+                            <ListItem
+                              key={index}
+                              href={`#${item.id}`}
+                              level={item.level}
+                              highestLevel={highestLevel}
+                            >
+                              {item.text}
+                            </ListItem>
+                          </LI>
                         );
-                      }
-                    )}
+                      })}
+                    </UL>
+                  </DesktopTOC>
+                )}
+              </ItemV>
 
-                    {/* Toggle Icon */}
-                    {toc.length > 2 && (
-                      <ToggleIcon
-                        onClick={() => setShowFullMobileTOC(!showFullMobileTOC)}
-                      >
-                        {showFullMobileTOC ? (
-                          <BsChevronUp />
-                        ) : (
-                          <BsChevronDown />
-                        )}
-                      </ToggleIcon>
-                    )}
-                  </ul>
-                </MobileTOCWrapper>
-              )}
-            {!isTablet && toc.length > 0 && (
-              <DesktopTOC
-                background='#FFF'
-                padding='32px'
-                borderRadius='32px'
-                alignItems='flex-start'
-                margin='12px 0 0 0'
-              >
-                <ul>
-                  {toc?.map((item, index) => {
-                    const highestLevel = Math.min(...toc.map((t) => t.level));
-                    return (
-                      <ListItem
-                        key={index}
-                        href={`#${item.id}`}
-                        level={item.level}
-                        highestLevel={highestLevel}
-                      >
-                        {item.text}
-                      </ListItem>
-                    );
-                  })}
-                </ul>
-              </DesktopTOC>
-            )}
-          </ItemV>
-        </ItemH>
-
-        <div>
-          {/* First Text Item (Markdown) */}
-          {item.content.length > 0 && item.content[0].type === 'text' && (
-            <TextItem>
-              <Markdown
-                remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeSlug, rehypeRaw, rehypeSanitize]}
-                components={{
-                  a: ({ node, ...props }) => (
-                    <a {...props} target='_blank' rel='noopener noreferrer'>
-                      {props.children}
-                    </a>
-                  ),
-                }}
-              >
-                {resolveImageUrls(cleanMarkdown(item?.content[0].value))}
-              </Markdown>
-            </TextItem>
-          )}
-
-          {/* Render remaining content */}
-          {item.content.slice(1).map((contentItem: any, index: number) => {
-            if (contentItem.type === 'text') {
-              return (
-                <TextItem key={index}>
+              <ItemV flex={1}>
+                <TextItem>
                   <Markdown
                     remarkPlugins={[remarkGfm]}
                     rehypePlugins={[rehypeSlug, rehypeRaw, rehypeSanitize]}
@@ -194,34 +201,40 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
                           {props.children}
                         </a>
                       ),
+                      ...Object.fromEntries(
+                        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((tag) => [
+                          tag,
+                          ({ node, ...props }) => {
+                            const id = generateIdFromHeadingText(
+                              props.children
+                            );
+                            return React.createElement(
+                              tag,
+                              {
+                                id,
+                                className: `${tag}-text`,
+                              },
+                              props.children
+                            );
+                          },
+                        ])
+                      ),
                     }}
                   >
-                    {resolveImageUrls(cleanMarkdown(contentItem.value))}
+                    {resolveImageUrls(cleanMarkdown(rawMarkdown))}
                   </Markdown>
                 </TextItem>
-              );
-            }
+              </ItemV>
+            </ItemH>
+          );
+        }
 
-            if (contentItem.type === 'list') {
-              return (
-                <ChainKnowledgeGridWrapper key={index}>
-                  <ChainKnowledgeGrid>
-                    {contentItem?.items.map((item: any, index: number) => (
-                      <ChannelKnowledgeBaseComponentItem
-                        item={item}
-                        index={index}
-                        key={index}
-                      />
-                    ))}
-                  </ChainKnowledgeGrid>
-                </ChainKnowledgeGridWrapper>
-              );
-            }
+        if (block.type === 'list') {
+          return <ChainKnowledgeBaseGrid items={block?.items} />;
+        }
 
-            return null;
-          })}
-        </div>
-      </ItemH>
+        return null;
+      })}
     </ChainKnowledgeBaseArticleWrapper>
   );
 };
@@ -237,9 +250,27 @@ const ChainKnowledgeBaseArticleWrapper = styled.div`
   }
 `;
 
-const Breadcrumb = styled(Link)`
+const BreadcrumbList = styled(UL)`
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  color: #000;
+`;
+
+const BreadcrumbLink = styled(Link)`
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'N27', sans-serif;
+  line-height: 140%;
   color: #000;
 
+  @media ${device.tablet} {
+    font-size: 16px;
+  }
   &:hover {
     color: #cf59e2;
   }
@@ -256,25 +287,33 @@ const ChainKnowledgeGridWrapper = styled.div`
   }
 `;
 
-const ChainKnowledgeGrid = styled.div`
-  display: grid;
-  gap: 24px;
-  width: 100%;
-  justify-content: center;
-
-
-  grid-template-columns: repeat(3, minmax(200px, 1fr));
-
-  @media ${device.mobileL} {
-    grid-template-columns: 1fr;
-  }
-`;
-
 const TextItem = styled.div`
-  // max-width: calc(100% - 400px);
-  margin: 12px 0 0 auto;
   width: inherit;
   color: #000;
+
+  &:not(:first-of-type) {
+    margin: 12px 0 0 auto;
+  }
+
+  h2 {
+    color: #000;
+    font-family: N27;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 48px */
+    letter-spacing: -0.8px;
+  }
+
+  h3 {
+    color: #000;
+    font-family: N27;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 44.8px */
+    letter-spacing: -0.64px;
+  }
 
   blockquote {
     border-left: 6px solid #d548ec;
@@ -327,8 +366,6 @@ const ListItem = styled.a`
   line-height: 120%;
   letter-spacing: -0.4px;
 
-  margin-top: 12px;
-
   &:hover {
     color: #cf59e2;
   }
@@ -354,6 +391,13 @@ const DesktopTOC = styled(ItemV)`
     padding: 0;
     margin: 0;
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  li {
+    margin: 0 !important;
   }
 `;
 

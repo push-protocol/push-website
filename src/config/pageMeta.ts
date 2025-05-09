@@ -92,6 +92,11 @@ export const PageMeta = {
     pageTitle: 'Push Chain | Knowledge Base | Push Chain FAQ',
     pageDescription: `The place to find answers to all the popular questions the community has asked. Crowdsourced from Push Fam ❤️ and curated by the Push team 💪.`,
   },
+  NEWPAGE: {
+    pageTitle: 'Push Chain | Knowledge Base | Deepdives',
+    pageDescription:
+      'Want to know the intricate working of Push? or just a curious fellow? If so, this section is for you ❤️',
+  },
   TEMPLATE: {
     pageTitle: 'Push Template',
     pageDescription: 'Push Template',

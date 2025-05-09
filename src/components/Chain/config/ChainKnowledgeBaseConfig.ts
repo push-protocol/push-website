@@ -11,6 +11,7 @@ import { deepDivesContent } from '../content/deepdives';
 import { faqContent } from '../content/faq';
 import { devDocsContent } from '../content/devdocs';
 import { tokenomicsContent } from '../content/tokenomics';
+import { newPageContent } from '../content/new-page';
 
 export const knowledgeBaseArticleContent = [
   {
@@ -60,5 +61,15 @@ export const knowledgeBaseArticleContent = [
     target: '_self',
     ctatitle: 'Read More',
     ...faqContent,
+  },
+  {
+    id: 'new-page',
+    url: 'new-page',
+    ctatitle: 'See it Tick',
+    target: '_self',
+    image: 'knowledge_deepdives',
+    subtitle:
+      'Want to know the intricate working of Push? or just a curious fellow? If so, this section is for you ❤️',
+    ...newPageContent,
   },
 ];

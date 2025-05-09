@@ -2,21 +2,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import rehypeSlug from 'rehype-slug';
-import rehypeStringify from 'rehype-stringify';
+/* eslint-disable no-useless-escape */
+import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
-import { unified } from 'unified';
+import rehypeSlug from 'rehype-slug';
+import rehypeStringify from 'rehype-stringify';
 import { visit } from 'unist-util-visit';
-
-const extractText = (node) => {
-  if (!node) return '';
-  if (node.type === 'text') return node.value;
-  if (node.type === 'element' && node.children) {
-    return node.children.map(extractText).join('');
-  }
-  return '';
-};
 
 const generateIdFromText = (text) => {
   return (
@@ -29,15 +21,50 @@ const generateIdFromText = (text) => {
   );
 };
 
+const extractText = (node) => {
+  if (!node) return '';
+  if (typeof node === 'string') return node;
+  if (Array.isArray(node.children)) {
+    return node.children.map(extractText).join('');
+  }
+  if (typeof node.value === 'string') return node.value;
+  return node.children ? extractText(node.children) : '';
+};
+
+// Normalize whitespace and remove indentation
+const normalizeMarkdown = (str) =>
+  str
+    .split('\n')
+    .map((line) => line.trimStart())
+    .join('\n')
+    .trim();
+
+const flattenTextContent = (contentArray) => {
+  const result = [];
+
+  contentArray.forEach((item) => {
+    if (item.type === 'text' && typeof item.value === 'string') {
+      result.push(normalizeMarkdown(item.value));
+    } else if (item.type === 'indexlist' && Array.isArray(item.value)) {
+      result.push(...flattenTextContent(item.value));
+    }
+  });
+
+  return result;
+};
+
+const cleanHeadingText = (text) => {
+  return text.replace(/^\d+[\.\)]\s*/, ''); // Remove "1. ", "2) ", etc.
+};
+
 export const extractTOC = (contentArray) => {
   if (!Array.isArray(contentArray)) {
     console.error('❌ extractTOC received invalid contentArray:', contentArray);
     return [];
   }
 
-  const markdownContent = contentArray
-    .filter((item) => item.type === 'text' && item.value.trim() !== '')
-    .map((item) => item.value)
+  const markdownContent = flattenTextContent(contentArray)
+    .filter((str) => str.trim() !== '')
     .join('\n\n');
 
   if (!markdownContent.trim()) {
@@ -64,26 +91,14 @@ export const extractTOC = (contentArray) => {
     }
 
     if (node.tagName && /^h[1-6]$/.test(node.tagName) && !insideCodeBlock) {
-      const text = extractText(node).trim();
+      const rawText = extractText(node).trim();
+      const text = cleanHeadingText(rawText);
       const id = generateIdFromText(text);
       const level = parseInt(node.tagName.charAt(1), 10);
 
       if (text) {
         toc.push({ text, id, level });
       }
-    }
-
-    if (insideCodeBlock && node.tagName === 'code') {
-      const codeContent = extractText(node);
-
-      const matches = [...(codeContent.match(/^#{1,6}\s+.*$/gm) || [])];
-
-      matches.forEach((match) => {
-        const level = match.match(/^#+/)[0].length;
-        const text = match.replace(/^#+\s*/, '').trim();
-        const id = generateIdFromText(text);
-        toc.push({ text, id, level });
-      });
     }
   });
 
