@@ -143,7 +143,7 @@ const transactionByCategory = await pushChain.tx.get('*', {
 We will fetch transactions sent by this CAIP-10 address: `push:devnet:pushconsumer1l8wd6ucrwf43stuavxwfc9jmr5emlkr66guml6`.
 
 ```typescript
-const transctionBySender = await pushChain.tx.get(
+const transactionBySender = await pushChain.tx.get(
   {
     chain: CONSTANTS.Chain.Push.devnet.name,
     chainId: CONSTANTS.Chain.Push.devnet.chainId,
@@ -158,7 +158,7 @@ const transctionBySender = await pushChain.tx.get(
 We will fetch transactions received by this CAIP-10 address: `push:devnet:pushconsumer1l8wd6ucrwf43stuavxwfc9jmr5emlkr66guml6`.
 
 ```typescript
-const transctionBySender = await pushChain.tx.get(
+const transactionBySender = await pushChain.tx.get(
   {
     chain: CONSTANTS.Chain.Push.devnet.name,
     chainId: CONSTANTS.Chain.Push.devnet.chainId,
