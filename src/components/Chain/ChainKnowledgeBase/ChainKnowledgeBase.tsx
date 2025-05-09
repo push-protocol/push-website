@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { ItemV } from '../../../css/SharedStyling';
 import ChainBottomComponent from '../ChainBottomComponent';
 import ChainKnowledgeBaseComponent from './ChainKnowledgeBaseComponent';
-import ChainKnowledgeBaseGrid from './ChainKnowledgeGrid';
+import ChainKnowledgeBaseGrid from './ChainKnowledgeBaseGrid';
 
 import { device } from '../../../config/globals';
 

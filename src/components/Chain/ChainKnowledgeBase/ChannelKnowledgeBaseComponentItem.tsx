@@ -10,7 +10,7 @@ import { device } from '../../../config/globals';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import { useSiteBaseUrl } from '../../../hooks/useSiteBaseUrl';
 
-import { H3, Image, ItemH, Span } from '../../../css/SharedStyling';
+import { H3, Image, ItemH, Span, P } from '../../../css/SharedStyling';
 
 const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
   // for navigation
@@ -102,7 +102,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
         {item?.title}
       </H3>
       <ItemH margin='0 0 auto 0' alignItems='flex-start' alignSelf='flex-start'>
-        <Span
+        <P
           margin='8px 0 0 0'
           fontSize={isMobile ? '16px' : '18px'}
           fontWeight='400'
@@ -112,7 +112,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
           color='#757D8D'
         >
           {item?.subtitle}
-        </Span>
+        </P>
       </ItemH>
 
       <ItemH
@@ -143,6 +143,20 @@ const Card = styled.a`
   background: #fff;
   padding: 24px;
   border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+
+  &:focus,
+  &:active {
+    outline: none;
+    background: #fff;
+    color: inherit;
+  }
+
+  user-select: none;
+  * {
+    user-select: none;
+  }
 `;
 
 const KnowledgeImage = styled(Image)`
