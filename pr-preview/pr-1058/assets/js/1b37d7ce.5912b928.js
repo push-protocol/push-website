@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[29631],{908446:e=>{e.exports=JSON.parse('{"label":"Multichain","permalink":"/push-website/pr-preview/pr-1058/blog/tags/multichain","allTagsPath":"/push-website/pr-preview/pr-1058/blog/tags","count":1,"unlisted":false}')}}]);
