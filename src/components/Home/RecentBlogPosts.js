@@ -5,27 +5,26 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Internal Components
-import { Button, H2, ItemH, Span } from '@site/src/css/SharedStyling';
+import { Button, H2, ItemH, Span, Image } from '@site/src/css/SharedStyling';
 
 // Internal Configs
 import GLOBALS, { device } from '@site/src/config/globals';
+import useMediaQuery from '@site/src/hooks/useMediaQuery';
+import useFetchRecentBlogs from './hooks/useFetchRecentBlogs';
 
 import {
   Date,
   ReadingTime,
   Spacer,
 } from '@site/src/components/reusables/date.tsx';
-import useMediaQuery from '@site/src/hooks/useMediaQuery';
-import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
 
-const RecentBlogPosts = ({ recentPosts = [] }) => {
+const RecentBlogPosts = () => {
   const isTablet = useMediaQuery(device.laptop);
-  const baseUrl = useSiteBaseUrl();
+  const { recentBlogs } = useFetchRecentBlogs();
 
   return (
     <BlogPostList>
-      {/* <BlogPostCardContainer> */}
-      {recentPosts.slice(0, 1).map((postItem, index) => {
+      {recentBlogs?.slice(0, 1).map((postItem, index) => {
         // Docusaurus loads the actual content lazily;
         // hence the .default to get the actual component.
         return (
@@ -33,14 +32,11 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
             key={index}
             className='item-3'
             onClick={() => {
-              window.open(
-                `${baseUrl}/blog/${postItem?.metadata.frontMatter.slug}`,
-                '_self'
-              );
+              window.open(`${postItem?.link}`, '_blank');
             }}
-            alt={`Read blog post - ${postItem?.metadata.frontMatter.title}`}
+            alt={`Read blog post - ${postItem?.title}`}
           >
-            <postItem.Preview loading='lazy' />
+            <Image src={postItem?.imageUrl} width='100%' loading='lazy' />
 
             <BodyItem>
               <ItemH
@@ -51,17 +47,14 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 display={isTablet && 'none'}
               >
                 <Date
-                  date={postItem?.Preview?.metadata.date}
-                  formattedDate={postItem?.Preview?.metadata.formattedDate}
+                  date={postItem?.pubDate}
+                  formattedDate={postItem?.pubDate}
                   mr={'3px'}
                 />
-                {typeof postItem.Preview.metadata.readingTime !==
-                  'undefined' && (
+                {typeof postItem?.readingTime !== 'undefined' && (
                   <>
                     <Spacer />
-                    <ReadingTime
-                      readingTime={postItem?.Preview?.metadata.readingTime}
-                    />
+                    <ReadingTime readingTime={postItem?.readingTime} />
                   </>
                 )}
               </ItemH>
@@ -74,17 +67,15 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 fontFamily='FK Grotesk Neue'
                 letterSpacing='normal'
               >
-                {postItem?.metadata.title}
+                {postItem?.title}
               </H2>
 
-              <TextSpan>{postItem?.metadata.frontMatter.text}</TextSpan>
+              <TextSpan>{postItem?.description}</TextSpan>
             </BodyItem>
           </BlogPostCardPrimary>
         );
       })}
-      {/* </BlogPostCardContainer> */}
-      {/* <BlogPostCardContainer> */}
-      {recentPosts.slice(1, 4).map((postItem, index) => {
+      {recentBlogs?.slice(1, 4).map((postItem, index) => {
         // Docusaurus loads the actual content lazily;
         // hence the .default to get the actual component.
         return (
@@ -92,14 +83,12 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
             key={index}
             className={`item-${index}`}
             onClick={() => {
-              window.open(
-                `${baseUrl}/blog/${postItem?.metadata.frontMatter.slug}`,
-                '_self'
-              );
+              window.open(`${postItem?.link}`, '_blank');
             }}
-            alt={`Read blog post - ${postItem?.metadata.frontMatter.title}`}
+            alt={`Read blog post - ${postItem?.title}`}
           >
-            <postItem.Preview loading='lazy' />
+            <Image src={postItem?.imageUrl} width='100%' loading='lazy' />
+
             <TitleItem>
               <H2
                 margin='auto 0'
@@ -110,13 +99,12 @@ const RecentBlogPosts = ({ recentPosts = [] }) => {
                 fontFamily='FK Grotesk Neue'
                 letterSpacing='normal'
               >
-                {postItem?.metadata.title}
+                {postItem?.title}
               </H2>
             </TitleItem>
           </BlogPostCardSecondary>
         );
       })}
-      {/* </BlogPostCardContainer> */}
     </BlogPostList>
   );
 };

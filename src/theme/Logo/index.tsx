@@ -13,7 +13,7 @@ import { useThemeConfig, type NavbarLogo } from '@docusaurus/theme-common';
 import ThemedImage from '@theme/ThemedImage';
 import type { Props } from '@theme/Logo';
 import { useLocation } from '@docusaurus/router';
-import { useSiteBaseUrl } from '@site/src/utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
 
 function LogoThemedImage({
   logo,
@@ -71,13 +71,7 @@ export default function Logo(props: Props): JSX.Element {
 
   // Using useMemo to memoize the logoLink value
   const logoLink = useMemo(() => {
-    if (pathname.startsWith(baseURL + '/docs')) {
-      return baseURL + '/docs';
-    } else if (pathname.startsWith(baseURL + '/blog')) {
-      return baseURL + '/blog';
-    } else {
-      return baseURL || '/';
-    }
+    return baseURL || '/';
   }, [pathname]);
 
   return (

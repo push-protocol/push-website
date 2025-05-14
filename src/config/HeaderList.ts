@@ -12,18 +12,6 @@ export const HeaderList = {
       srcrefoff: 'chat-icon-off',
       id: 'chat',
     },
-    {
-      title: 'header.products.link3.title',
-      subtitle: 'header.products.link3.subtitle',
-      srcrefoff: 'video-icon-off',
-      id: 'otherfeatures',
-    },
-    {
-      title: 'header.products.link4.title',
-      subtitle: 'header.products.link4.subtitle',
-      srcrefoff: 'spaces-icon-off',
-      id: 'otherfeatures',
-    },
   ],
   developers: [
     {
@@ -107,7 +95,7 @@ export const HeaderList = {
     {
       title: 'header.resources.link1.title',
       subtitle: 'header.resources.link1.subtitle',
-      href: '/blog',
+      href: 'https://push.org/blog',
       target: '_self',
     },
     {

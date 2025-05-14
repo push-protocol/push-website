@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom';
 // Internal Components
 import { Image } from '../../src/css/SharedStyling';
 import CrossSVG from '../../static/assets/website/illustrations/Cross.svg';
-import { useSiteBaseUrl } from '../utils/useSiteBaseUrl';
+import { useSiteBaseUrl } from './useSiteBaseUrl';
 
 type NotificationProps = {
   image?: ReactNode;

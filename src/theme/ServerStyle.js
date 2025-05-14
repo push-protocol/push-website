@@ -10,8 +10,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import { ServerStyleSheet } from 'styled-components';
 
 // Internal Components
-import Footer from '@site/src/segments/Footer';
-import Header from '@site/src/segments/Header';
+// import Footer from '@site/src/segments/Footer';
+// import Header from '@site/src/segments/Header';
 import { CookiesProvider } from 'react-cookie';
 
 function ServerStyle({ from: children }) {
@@ -28,9 +28,9 @@ function ServerStyle({ from: children }) {
           <StaticRouter location={location}>
             <CookiesProvider>
               <DocusaurusContext.Provider value={context}>
-                <Header />
+                {/* <Header /> */}
                 {children}
-                <Footer />
+                {/* <Footer /> */}
               </DocusaurusContext.Provider>
             </CookiesProvider>
           </StaticRouter>
