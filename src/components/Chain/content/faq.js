@@ -1,5 +1,5 @@
 export const faqContent = {
-  title: 'Push Chain’s Frequently Asked Questions',
+  title: 'Frequently Asked Questions',
   content: [
     {
       type: 'indexlist',

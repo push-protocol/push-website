@@ -11,7 +11,22 @@ import { H3, ItemV } from '../../../css/SharedStyling';
 import { knowledgeBaseArticleContent } from '../config/ChainKnowledgeBaseConfig';
 import ChannelKnowledgeBaseComponentItem from './ChannelKnowledgeBaseComponentItem';
 
-const ChainKnowledgeBaseGrid = ({ items }) => {
+interface KnowledgeBaseItem {
+  id: string;
+  title: string;
+  description: string;
+  link: string;
+}
+
+interface ChainKnowledgeBaseGridProps {
+  items?: KnowledgeBaseItem[];
+  title?: string | null;
+}
+
+const ChainKnowledgeBaseGrid: React.FC<ChainKnowledgeBaseGridProps> = ({
+  items,
+  title,
+}) => {
   const isMobile = useMediaQuery(device.mobileL);
   const isTablet = useMediaQuery(device.tablet);
 
@@ -28,7 +43,7 @@ const ChainKnowledgeBaseGrid = ({ items }) => {
           letterSpacing='-0.8px'
           textAlign='center'
         >
-          Hey! Want to learn more about Push Chain?
+          {title ? title : 'Hey! Want to learn more about Push Chain?'}
         </H3>
       </ItemV>
 

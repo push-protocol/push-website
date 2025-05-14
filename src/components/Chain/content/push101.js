@@ -47,6 +47,7 @@ PC offers a new paradigm of web3 that works from **Any Chain.** For **Any Wallet
     },
     {
       type: 'list',
+      title: 'Curated Reads',
       items: [
         {
           slug: 'evolution-of-push',

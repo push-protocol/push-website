@@ -1,5 +1,6 @@
 /* eslint-disable @docusaurus/no-html-links, @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any, @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
+import Link from '@docusaurus/Link';
 import React from 'react';
 import Markdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
@@ -7,17 +8,16 @@ import rehypeSanitize from 'rehype-sanitize';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import styled from 'styled-components';
-import Link from '@docusaurus/Link';
 
-import { extractTOC } from '../utils/ExtractTableOfContent';
 import { device } from '../../../config/globals';
+import { H1, ItemH, ItemV, LI, Span, UL } from '../../../css/SharedStyling';
 import useMediaQuery from '../../../hooks/useMediaQuery';
-import { H1, ItemH, ItemV, Span, UL, LI } from '../../../css/SharedStyling';
+import { extractTOC } from '../utils/ExtractTableOfContent';
 
-import ChannelKnowledgeBaseComponentItem from '../ChainKnowledgeBase/ChannelKnowledgeBaseComponentItem';
-import ChainKnowledgeBaseGrid from '../ChainKnowledgeBase/ChainKnowledgeBaseGrid';
-import { useSiteBaseUrl } from '../../../hooks/useSiteBaseUrl';
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs';
+import { useSiteBaseUrl } from '../../../hooks/useSiteBaseUrl';
+import ChainKnowledgeBaseGrid from '../ChainKnowledgeBase/ChainKnowledgeBaseGrid';
+import ChannelKnowledgeBaseComponentItem from '../ChainKnowledgeBase/ChannelKnowledgeBaseComponentItem';
 
 const ChainKnowledgeBaseArticleContent = ({ item }) => {
   const [showFullMobileTOC, setShowFullMobileTOC] = React.useState(false);
@@ -231,7 +231,9 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
         }
 
         if (block.type === 'list') {
-          return <ChainKnowledgeBaseGrid items={block?.items} />;
+          return (
+            <ChainKnowledgeBaseGrid items={block?.items} title={block?.title} />
+          );
         }
 
         return null;
