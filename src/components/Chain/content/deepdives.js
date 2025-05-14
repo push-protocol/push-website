@@ -43,6 +43,33 @@ export const deepDivesContent = {
           url: '/blog/parallel-validators-and-dynamic-sharding',
           target: '_self',
         },
+        {
+          slug: 'interop-spectrum',
+          image: 'interop-spectrum',
+          title: 'Interop as a Spectrum',
+          subtitle:
+            'Understand how Push Chain flips the script on the Interop Trilemma but turning it into a Design Choice Spectrum for Universal App developers.',
+          url: '/blog/interop-spectrum',
+          target: '_self',
+        },
+        {
+          slug: 'apps-only-possible-with-shared-state-v1/',
+          image: 'apps-only-possible-with-shared-state-v1',
+          title: 'Apps Possible Only with Shared State - Vol.1',
+          subtitle:
+            'Learn about 5 super helpful use cases that are only only possible with shared state blockchains like Push Chain',
+          url: '/blog/apps-only-possible-with-shared-state-v1',
+          target: '_self',
+        },
+        {
+          slug: 'apps-only-possible-with-shared-state-v2/',
+          image: 'apps-only-possible-with-shared-state-v2',
+          title: 'Apps Possible Only with Shared State - Vol.2',
+          subtitle:
+            'Welcome to the 2nd Volume of  - Apps that are only possible with Push Chain’s shared state architecture!',
+          url: '/blog/apps-only-possible-with-shared-state-v2',
+          target: '_self',
+        },
       ],
     },
   ],
