@@ -74,6 +74,29 @@ export const PageMeta = {
     pageDescription:
       'Discover everything for tutorials to code base to what makes Push Chain tick at the knowledge hub.',
   },
+  PUSH101: {
+    pageTitle: 'Push Chain | Knowledge Base | Push101',
+    pageDescription:
+      'Learn about basics of Push Chain. The innovations it introduces, what makes it tick and why is it required!',
+  },
+  DEEPDIVES: {
+    pageTitle: 'Push Chain | Knowledge Base | Deepdives',
+    pageDescription:
+      'Want to know the intricate working of Push? or just a curious fellow? If so, this section is for you ❤️',
+  },
+  TOKENOMICS: {
+    pageTitle: 'Push Chain | Knowledge Base | Tokenomics',
+    pageDescription: `Learn how Push Chain's tokenomics incentivizes all actors and ensures sustainable network that's built to last`,
+  },
+  FAQ: {
+    pageTitle: 'Push Chain | Knowledge Base | Push Chain FAQ',
+    pageDescription: `The place to find answers to all the popular questions the community has asked. Crowdsourced from Push Fam ❤️ and curated by the Push team 💪.`,
+  },
+  NEWPAGE: {
+    pageTitle: 'Push Chain | Knowledge Base | Deepdives',
+    pageDescription:
+      'Want to know the intricate working of Push? or just a curious fellow? If so, this section is for you ❤️',
+  },
   TEMPLATE: {
     pageTitle: 'Push Template',
     pageDescription: 'Push Template',

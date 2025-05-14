@@ -76,7 +76,6 @@ const config = {
       },
     ],
     require.resolve('./plugins/custom-webpack-plugin'),
-    require.resolve('./plugins/myPlugin'),
     [
       '@docusaurus/plugin-client-redirects',
       {
