@@ -55,13 +55,4 @@ export const knowledgeBaseArticleContent = [
     target: '_self',
     ctatitle: 'Read More',
   },
-  {
-    id: 'new-page',
-    url: 'new-page',
-    ctatitle: 'See it Tick',
-    target: '_self',
-    image: 'knowledge_deepdives',
-    subtitle:
-      'Want to know the intricate working of Push? or just a curious fellow? If so, this section is for you ❤️',
-  },
 ];
