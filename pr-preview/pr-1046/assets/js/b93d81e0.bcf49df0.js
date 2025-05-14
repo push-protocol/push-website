@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[77687],{877440:e=>{e.exports=JSON.parse('{"label":"Game Theory","permalink":"/push-website/pr-preview/pr-1046/blog/tags/game-theory","allTagsPath":"/push-website/pr-preview/pr-1046/blog/tags","count":2,"unlisted":false}')}}]);
