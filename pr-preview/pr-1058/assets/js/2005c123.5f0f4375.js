@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[81293],{491889:e=>{e.exports=JSON.parse('{"slug":"devdocs","image":"knowledge_devdocs","title":"Developer Docs","subtitle":"Let\'s come straight to the point! I am universal chain... and you are a dev, let\'s make it official!","url":"/docs","target":"_self","ctatitle":"Build Now"}')}}]);
