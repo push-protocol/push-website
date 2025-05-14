@@ -9,7 +9,7 @@ tags: [Push Chain, Deep dives, Shared App Experience, Shared State Blockchain, U
 ---
 
 
-![Cover Image of Interop as a Spectrum](./cover-image.webp)
+![Cover Image of Apps Possible Only with Shared State - Vol.1](./cover-image.webp)
 
 <!--truncate-->
 
@@ -48,16 +48,16 @@ For building universal apps we need to:
 
 The first of these innovations -- i.e. the ability of developers on Push Chain *to read and utilise the state of other chains* via smart contracts -- is what we mean by a **shared-state blockchain**.
 
-# What kind of apps does this enable? 
+# What kind of apps does this enable?
 
 ![movie reference 1](./image3.webp)
 
 ## 1. Universal DeFi & Payments
 
 DeFi today is fractured by:
-1. chain-bound liquidity, 
-2. cumbersome bridging, 
-3. and inconsistent pricing. 
+1. chain-bound liquidity,
+2. cumbersome bridging,
+3. and inconsistent pricing.
 
 Our shared-state model tackles these problems by **unifying access to assets and data across all networks.**
 
