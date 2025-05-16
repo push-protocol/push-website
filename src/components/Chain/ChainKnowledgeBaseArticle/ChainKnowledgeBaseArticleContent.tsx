@@ -266,14 +266,13 @@ const BreadcrumbList = styled(UL)`
 
 const BreadcrumbLink = styled(Link)`
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.25em;
   font-weight: 400;
   font-family: 'N27', sans-serif;
   line-height: 140%;
   color: #000;
-
   @media ${device.tablet} {
-    font-size: 16px;
+    font-size: 1em;
   }
   &:hover {
     color: #cf59e2;
@@ -283,31 +282,27 @@ const BreadcrumbLink = styled(Link)`
 const TextItem = styled.div`
   width: inherit;
   color: #000;
-
   &:not(:first-of-type) {
     margin: 12px 0 0 auto;
   }
-
   h2 {
     color: #000;
     font-family: N27;
-    font-size: 40px;
+    font-size: 2.5em;
     font-style: normal;
     font-weight: 500;
-    line-height: 120%; /* 48px */
+    line-height: 120%;
     letter-spacing: -0.8px;
   }
-
   h3 {
     color: #000;
     font-family: N27;
-    font-size: 32px;
+    font-size: 2em;
     font-style: normal;
     font-weight: 500;
-    line-height: 140%; /* 44.8px */
+    line-height: 140%;
     letter-spacing: -0.64px;
   }
-
   /* Apply margin-top to all h tags except the first one */
   h1:not(:first-child),
   h2:not(:first-child),
@@ -317,7 +312,6 @@ const TextItem = styled.div`
   h6:not(:first-child) {
     margin-top: 24px;
   }
-
   /* Ensure the first heading has no top margin */
   h1:first-child,
   h2:first-child,
@@ -327,7 +321,6 @@ const TextItem = styled.div`
   h6:first-child {
     margin-top: 0;
   }
-
   blockquote {
     border-left: 6px solid #d548ec;
     background: #fff;
@@ -337,31 +330,25 @@ const TextItem = styled.div`
     box-sizing: border-box;
     margin: 10px 0;
   }
-
   ol li {
     list-style-type: decimal;
   }
-
   ul li {
     list-style-type: disc;
   }
-
   img[alt='Easter Egg'] {
     width: 30px;
     display: inline-block;
     vertical-align: middle;
     margin-left: 4px;
   }
-
   p {
     font-size: larger;
   }
-
   p img,
   img {
     border-radius: 32px;
   }
-
   @media ${device.tablet} {
     max-width: 100%;
   }
@@ -372,14 +359,13 @@ const ListItem = styled.a`
   color: #757d8d;
   font-family: N27;
   font-size: ${({ level }) =>
-    level === 1 ? '20px' : level === 2 ? '18px' : '16px'};
+    level === 1 ? '1.25em' : level === 2 ? '1.125em' : '1em'};
   margin-left: ${({ level, highestLevel }) =>
     level === highestLevel ? '0' : `${(level - highestLevel) * 15}px`};
   font-style: normal;
   font-weight: 500;
   line-height: 120%;
   letter-spacing: -0.4px;
-
   &:hover {
     color: #cf59e2;
   }
@@ -392,7 +378,6 @@ const MobileTOCWrapper = styled.div`
   background: #f8f8f8;
   width: 100%;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-
   ul {
     padding: 0;
     margin: 0;
@@ -409,14 +394,13 @@ const DesktopTOC = styled(ItemV)`
     flex-direction: column;
     gap: 32px;
   }
-
   li {
     margin: 0 !important;
   }
 `;
 
 const ToggleIcon = styled.div`
-  font-size: 24px;
+  font-size: 1.5em;
   text-align: center;
   margin-top: 12px;
   cursor: pointer;
