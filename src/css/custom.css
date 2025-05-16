@@ -1005,3 +1005,20 @@ sup strong {
 /* ------------------ */
 /* DOCUSAURUS ROADMAP OVERRIDE ENDS */
 /* ------------------ */
+
+/* artivle styles */
+.PushDocs {
+  font-family: Inter, sans-serif !important;
+
+  * {
+    font-family: Inter, sans-serif !important;
+  }
+}
+
+.PushBlog {
+  font-family: Inter, sans-serif !important;
+
+  * {
+    font-family: Inter, sans-serif !important;
+  }
+}
