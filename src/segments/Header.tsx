@@ -195,7 +195,7 @@ const Header: FC = () => {
               <PushLogoBlackContainer
                 className='headerlogo'
                 flex='initial'
-                href={baseURL}
+                href={'/'}
                 rel='noopener noreferrer'
               >
                 {isMobileMenuOpen ? <ChainLogoDark /> : <ChainLogo />}
