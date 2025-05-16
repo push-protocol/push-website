@@ -119,6 +119,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
                 alignItems='flex-start'
                 alignSelf='flex-start'
                 flexShrink={0}
+                margin={!isMobile && '12px 0 0 0'}
               >
                 {isTablet && toc?.length > 0 && (
                   <MobileTOCWrapper>
@@ -307,10 +308,31 @@ const TextItem = styled.div`
     letter-spacing: -0.64px;
   }
 
+  /* Apply margin-top to all h tags except the first one */
+  h1:not(:first-child),
+  h2:not(:first-child),
+  h3:not(:first-child),
+  h4:not(:first-child),
+  h5:not(:first-child),
+  h6:not(:first-child) {
+    margin-top: 24px;
+  }
+
+  /* Ensure the first heading has no top margin */
+  h1:first-child,
+  h2:first-child,
+  h3:first-child,
+  h4:first-child,
+  h5:first-child,
+  h6:first-child {
+    margin-top: 0;
+  }
+
   blockquote {
     border-left: 6px solid #d548ec;
-    background: #010209;
-    border-radius: 4px;
+    background: #fff;
+    color: #000;
+    border-radius: 12px;
     padding: 15px;
     box-sizing: border-box;
     margin: 10px 0;
