@@ -1,0 +1,161 @@
+---
+id: docs-chain-ui-components-push-universal-account-button
+title: Push Universal Account Button
+hide_title: true
+slug: ./push-universal-account-button
+displayed_sidebar: pushChainSidebar
+sidebar_position: 5
+---
+
+# PushUniversalAccountButton
+
+## Overview
+
+`PushUniversalAccountButton` is a versatile, state-aware button component for wallet connections in the Push Chain ecosystem. It handles the complete user journey from connection initiation through authentication to displaying the connected account state, with extensive customization options for each state.
+
+## Installation
+
+```bash
+npm install @pushprotocol/pushchain-ui-kit
+# or
+yarn add @pushprotocol/pushchain-ui-kit
+```
+
+## Usage
+
+Place the button in your UI where users should be able to connect. The button must be used within a `PushWalletProvider`:
+
+```jsx
+import { PushUniversalAccountButton } from '@pushprotocol/pushchain-ui-kit';
+
+function Header() {
+  return (
+           <Box
+             display="flex"
+             alignItems="center"
+             justifyContent="center"
+             width="-webkit-fill-available"
+           >
+             <PushUniversalAccountButton />
+           </Box>
+  );
+}
+```
+
+## Button States
+
+The button transitions between three main states:
+
+1. **Disconnected**: Login button prompting users to connect
+2. **Loading**: Connection/authentication in progress
+3. **Connected**: Displays the connected account with dropdown menu
+
+Each state can be fully customized through props.
+
+## Props
+
+### Instance Targeting
+
+| Property | Type | Description | Default |
+|----------|------|-------------|---------|
+| `uid` | string | Target provider instance, matches `config.uid` | Uses default provider |
+
+### Disconnected State Customization
+
+| Property | Type | Description | Default |
+|----------|------|-------------|---------|
+| `loginText` | string | Text for the connect button | From `buttonDefaults` |
+| `loginBgColor` | string | Background color for the connect button | From `buttonDefaults` |
+| `loginTextColor` | string | Text color for the connect button | From `buttonDefaults` |
+| `loginStyle` | React.CSSProperties | Inline style overrides for connect button | From `buttonDefaults` |
+| `loginCustom` | React.ReactNode | Completely replace the default button | None |
+
+### Loading State Customization
+
+| Property | Type | Description | Default |
+|----------|------|-------------|---------|
+| `loadingComponent` | React.ReactNode | Custom loading indicator | From `buttonDefaults` |
+
+### Connected State Customization
+
+| Property | Type | Description | Default |
+|----------|------|-------------|---------|
+| `walletBgColor` | string | Background color for connected button | From `buttonDefaults` |
+| `walletTextColor` | string | Text color for connected button | From `buttonDefaults` |
+| `walletStyle` | React.CSSProperties | Inline style overrides for connected button | From `buttonDefaults` |
+| `walletCustom` | React.ReactNode | Completely replace the connected UI | - |
+
+### App Preview Overrides
+
+| Property | Type | Description | Default |
+|----------|------|-------------|---------|
+| `modalAppOverride` | Object | Override app preview in the wrapper iframe | From `app` |
+| `modalAppOverride.logoURL` | string | Override app logo | From `app.logoURL` |
+| `modalAppOverride.title` | string | Override app title | From `app.title` |
+| `modalAppOverride.description` | string | Override app description | From `app.description` |
+| `loginAppOverride` | Object | Override app preview inside hosted iframe | From `app` |
+| `loginAppOverride.logoURL` | string | Override app logo in iframe | From `app.logoURL` |
+| `loginAppOverride.title` | string | Override app title in iframe | From `app.title` |
+| `loginAppOverride.description` | string | Override app description in iframe | From `app.description` |
+
+
+## Live playground
+```jsx live customPropMinimized = 'true'
+// DO NOT FORGET TO IMPORT LIBRARIES
+// NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
+// import { PushWalletProvider, PushUniversalAccountButton, usePushWalletContext } from '@pushprotocol/pushchain-ui-kit';
+
+function App() {
+
+  const walletConfig = {
+    env: PushWalletConstants.ENV.TESTNET,
+    login: {
+      email: true,
+      google: true,
+      wallet: {
+        enabled: true,
+        chains: [PushWalletConstants.CHAIN.SOLANA, PushWalletConstants.CHAIN.ETHEREUM]
+      },
+      appPreview: true
+    }
+  };
+
+  const appMetadata = {
+    logoUrl: "https://plus.unsplash.com/premium_photo-1746731481770-08b2f71661d0?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: 'Test App Title',
+    description: 'Test App Description',
+  };
+
+  const modalDefaults = {
+    loginLayout: PushWalletConstants.LOGIN.SPLIT,
+    showModalAppPreview: true,
+    bgColor: '#000'
+  };
+
+  const buttonDefaults = {
+    accountMenuVariant: 'hover'
+  };
+
+  function WalletUI() {
+    const { universalAddress } = usePushWalletContext();
+
+    return (
+      <div style={{ padding: '15px', borderRadius: '8px', background: '#2a2a3a', color: 'white' }}>
+        <PushUniversalAccountButton />
+      </div>
+    );
+  }
+
+  return (
+    <PushWalletProvider
+      config={walletConfig}
+      themeMode={PushWalletConstants.THEME.DARK}
+      app={appMetadata}
+      modalDefaults={modalDefaults}
+      buttonDefaults={buttonDefaults}
+    >
+      <WalletUI />
+    </PushWalletProvider>
+  );
+}
+```
