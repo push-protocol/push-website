@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[70018],{547243:e=>{e.exports=JSON.parse('{"label":"Wazirx","permalink":"/push-website/pr-preview/pr-1061/blog/tags/wazirx","allTagsPath":"/push-website/pr-preview/pr-1061/blog/tags","count":1,"unlisted":false}')}}]);
