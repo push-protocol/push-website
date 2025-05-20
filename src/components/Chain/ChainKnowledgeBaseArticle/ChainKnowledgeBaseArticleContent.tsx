@@ -285,6 +285,11 @@ const TextItem = styled.div`
   &:not(:first-of-type) {
     margin: 12px 0 0 auto;
   }
+
+  * {
+    font-size: 1.25rem;
+  }
+
   h2 {
     color: #000;
     font-family: N27;

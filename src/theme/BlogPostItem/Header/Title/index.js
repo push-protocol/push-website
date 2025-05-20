@@ -5,10 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
-import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { useBlogPost } from '@docusaurus/theme-common/internal';
-import styles from './styles.module.css';
 import styled from 'styled-components';
 
 // Internal Configs
@@ -17,9 +15,9 @@ import { device } from '@site/src/config/globals';
 export default function BlogPostItemHeaderTitle({ className }) {
   const { metadata, isBlogPostPage } = useBlogPost();
   const { permalink, title } = metadata;
-  const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
+  console.log(className);
   return (
-    <TitleHeading className={clsx(styles.title, className)} itemProp='headline'>
+    <>
       {isBlogPostPage ? (
         <PostTitle>{title}</PostTitle>
       ) : (
@@ -27,11 +25,11 @@ export default function BlogPostItemHeaderTitle({ className }) {
           <LinkText>{title}</LinkText>
         </Link>
       )}
-    </TitleHeading>
+    </>
   );
 }
 
-const LinkText = styled.div`
+const LinkText = styled.h1`
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -40,7 +38,7 @@ const LinkText = styled.div`
   color: var(--ifm-color-primary-blog) !important;
 
   font-family: Strawford;
-  font-size: 25px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
   line-height: 36px;
@@ -50,11 +48,11 @@ const LinkText = styled.div`
   }
 `;
 
-const PostTitle = styled.div`
+const PostTitle = styled.h1`
   color: var(--ifm-color-primary-blog) !important;
 
   font-family: Strawford;
-  font-size: 40px;
+  font-size: 2.625rem;
   font-style: normal;
   font-weight: 700;
   line-height: 55.5px;

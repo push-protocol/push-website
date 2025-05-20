@@ -12,14 +12,12 @@ import {
   BlogPostProvider,
   useBlogPost,
 } from '@docusaurus/theme-common/internal';
-import GLOBALS, { device } from '@site/src/config/globals';
+import GLOBALS from '@site/src/config/globals';
 import BlogLayout from '@theme/BlogLayout';
 import BlogPostItem from '@theme/BlogPostItem';
 import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
-import BlogPostPaginator from '@theme/BlogPostPaginator';
 import TOC from '@theme/TOC';
 import clsx from 'clsx';
-import React from 'react';
 import styled from 'styled-components';
 import FooterItem from './FooterItem';
 import MorePosts from './MorePosts';
@@ -27,7 +25,7 @@ import MorePosts from './MorePosts';
 function BlogPostPageContent({ allPosts, post, children }) {
   const { metadata, toc } = useBlogPost();
 
-  const { nextItem, prevItem, frontMatter, unlisted } = metadata;
+  const { frontMatter } = metadata;
   const {
     hide_table_of_contents: hideTableOfContents,
     toc_min_heading_level: tocMinHeadingLevel,
@@ -49,10 +47,6 @@ function BlogPostPageContent({ allPosts, post, children }) {
       <BlogItem>
         <BlogPostItem>{children}</BlogPostItem>
 
-        {/* {(nextItem || prevItem) && (
-          <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
-        )} */}
-
         <FooterItem />
         <MorePosts allPosts={allPosts} post={post} />
       </BlogItem>
@@ -70,7 +64,6 @@ export default function BlogPostPage(props) {
   )[0];
   const BlogPostContent = contentName?.Preview;
 
-  // const BlogPostContent = props.content;
   return (
     <BlogPostProvider content={contentName?.Preview} isBlogPostPage>
       <HtmlClassNameProvider
@@ -91,6 +84,37 @@ export default function BlogPostPage(props) {
 const BlogItem = styled.div`
   width: 800px !important;
   margin: 0 auto;
+
+  & article .markdown {
+    * {
+      font-size: 1.25rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700px;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 700px;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 700px;
+    }
+
+    h5 {
+      font-size: 1rem;
+      font-weight: 700px;
+    }
+  }
 
   @media (max-width: 820px) {
     width: 100% !important;
