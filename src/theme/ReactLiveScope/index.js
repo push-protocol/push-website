@@ -25,6 +25,12 @@ function loadClientSideLibraryPushProtocolUIWeb(constantName) {
     : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
 }
 
+function loadClientSideLibraryPushChainUIKit(constantName) {
+  return typeof window !== 'undefined'
+    ? require('@pushprotocol/pushchain-ui-kit')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
 // For @pushprotocol/UIWeb components, we will dynamically load them in the BrowserOnly component.
 function createBrowserOnlyLibComponentUIWeb(componentExportName) {
   return function LibComponentBrowserOnly(props) {
@@ -73,11 +79,19 @@ const ReactLiveScope = {
   ChatPreviewList: createBrowserOnlyLibComponentUIWeb('ChatPreviewList'),
   darkChatTheme: createBrowserOnlyLibComponentUIWeb('darkChatTheme'),
   lightChatTheme: createBrowserOnlyLibComponentUIWeb('lightChatTheme'),
-  NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
+  // NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
   SubscriptionManager: createBrowserOnlyLibComponentUIWeb(
     'SubscriptionManager'
   ),
   WidgetUIProvider: createBrowserOnlyLibComponentUIWeb('WidgetUIProvider'),
+  PushWalletProvider: loadClientSideLibraryPushChainUIKit('PushWalletProvider'),
+  PushUniversalAccountButton: loadClientSideLibraryPushChainUIKit(
+    'PushUniversalAccountButton'
+  ),
+  usePushWalletContext: loadClientSideLibraryPushChainUIKit(
+    'usePushWalletContext'
+  ),
+  PushWalletConstants: loadClientSideLibraryPushChainUIKit('CONSTANTS'),
 };
 
 export default ReactLiveScope;

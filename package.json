@@ -38,6 +38,7 @@
     "@docusaurus/theme-live-codeblock": "3.0.1",
     "@docusaurus/theme-mermaid": "3.0.1",
     "@mdx-js/react": "^3.0.0",
+    "@pushprotocol/pushchain-ui-kit": "1.0.7-alpha.1",
     "@pushprotocol/restapi": "1.7.20",
     "@pushprotocol/uiweb": "1.7.1",
     "@radix-ui/react-dialog": "^1.1.2",
