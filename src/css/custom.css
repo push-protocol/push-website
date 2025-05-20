@@ -454,21 +454,6 @@ article ul > li strong {
 /* ----- */
 
 /* ----- */
-/* Markdown CSS Overrides */
-/* ----- */
-article .markdown > p {
-  font-size: 18px;
-}
-
-article .markdown > p > code {
-  font-size: 1em;
-  color: var(--ifm-color-primary);
-}
-/* ----- */
-/* Markdown CSS Overrides Ends*/
-/* ----- */
-
-/* ----- */
 /* Tabs CodeBlock CSS Overrids */
 /* ----- */
 .codetabs li {
@@ -1006,7 +991,10 @@ sup strong {
 /* DOCUSAURUS ROADMAP OVERRIDE ENDS */
 /* ------------------ */
 
-/* artivle styles */
+/* ----- */
+/* Markdown CSS(Docs and Blogs Fonts) Overrides */
+/* ----- */
+
 .PushDocs {
   font-family: Inter, sans-serif !important;
 
@@ -1022,3 +1010,24 @@ sup strong {
     font-family: Inter, sans-serif !important;
   }
 }
+
+/* ----- */
+/* Markdown CSS(Docs and Blogs Fonts) Overrides Ends*/
+/* ----- */
+
+/* ----- */
+/* Markdown CSS Overrides */
+/* ----- */
+article .markdown > p,
+article .markdown > ul > li,
+article .markdown > ol > li {
+  font-size: 1.25rem;
+}
+
+article .markdown > p > code {
+  font-size: 1em;
+  color: var(--ifm-color-primary);
+}
+/* ----- */
+/* Markdown CSS Overrides Ends*/
+/* ----- */
