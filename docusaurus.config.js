@@ -19,7 +19,7 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: process.env.GITHUB_ACTIONS
     ? `/push-website/pr-preview/${process.env.REACT_APP_PREVIEW_BASE}`
-    : '/',
+    : '/push-website/pr-preview',
   trailingSlash: true,
 
   // GitHub pages deployment config.
