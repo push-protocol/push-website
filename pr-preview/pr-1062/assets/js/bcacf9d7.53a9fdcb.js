@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[79922],{887602:e=>{e.exports=JSON.parse('{"label":"Universal Smart Contracts","permalink":"/push-website/pr-preview/pr-1062/blog/tags/universal-smart-contracts","allTagsPath":"/push-website/pr-preview/pr-1062/blog/tags","count":10,"unlisted":false}')}}]);

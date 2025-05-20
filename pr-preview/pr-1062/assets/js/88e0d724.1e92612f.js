@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[17629],{803964:e=>{e.exports=JSON.parse('{"label":"Token Economics","permalink":"/push-website/pr-preview/pr-1062/blog/tags/token-economics","allTagsPath":"/push-website/pr-preview/pr-1062/blog/tags","count":1,"unlisted":false}')}}]);

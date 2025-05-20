@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[71148],{404684:e=>{e.exports=JSON.parse('{"label":"Boardroom","permalink":"/push-website/pr-preview/pr-1062/blog/tags/boardroom","allTagsPath":"/push-website/pr-preview/pr-1062/blog/tags","count":1,"unlisted":false}')}}]);
