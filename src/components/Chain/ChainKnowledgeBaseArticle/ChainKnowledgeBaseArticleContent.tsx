@@ -293,16 +293,17 @@ const TextItem = styled.div`
   h2 {
     color: #000;
     font-family: N27;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
     letter-spacing: -0.8px;
   }
+
   h3 {
     color: #000;
     font-family: N27;
-    font-size: 2em;
+    font-size: 2rem;
     font-style: normal;
     font-weight: 500;
     line-height: 140%;

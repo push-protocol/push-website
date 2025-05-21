@@ -91,17 +91,17 @@ const BlogItem = styled.div`
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.65rem;
       font-weight: 700px;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: 700px;
     }
 
     h3 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 700px;
     }
 
