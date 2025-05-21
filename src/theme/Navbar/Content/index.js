@@ -372,7 +372,7 @@ const NavigationMenuHeader = styled.div`
 const NavigationMenuContent = styled.ul`
   list-style: none;
 
-  font-family: 'Strawford', 'Manrope', sans-serif;
+  font-family: Inter, sans-serif;
   display: none;
   position: absolute;
 

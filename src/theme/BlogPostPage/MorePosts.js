@@ -171,7 +171,7 @@ const TextView = styled.div`
 
 const TextSpan = styled.div`
   color: var(--ifm-color-secondary-blog);
-  font-family: Strawford;
+  font-family: Inter, sans-serif;
   font-size: 19px;
   font-style: normal;
   font-weight: 300;
@@ -192,7 +192,7 @@ const LinkText = styled.div`
 
   color: var(--ifm-color-primary-blog) !important;
 
-  font-family: Strawford;
+  font-family: Inter, sans-serif;
   font-size: 22px;
   font-style: normal;
   font-weight: 700;
