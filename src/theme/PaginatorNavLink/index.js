@@ -1,3 +1,4 @@
+/* eslint-disable no-unsafe-optional-chaining */
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -43,7 +44,7 @@ const NavLink = styled.div`
   font-size: 15px;
   font-weight: 500;
 
-  font-family: Strawford;
+  font-family: Inter sans-serif;
   border: 1px solid #bac4d6;
   width: fit-content;
   cursor: pointer;

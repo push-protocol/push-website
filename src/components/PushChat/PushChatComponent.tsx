@@ -59,9 +59,9 @@ export const ChatComponent = () => {
       </Header>
 
       <PlayGround>
-        {/* 
+        {/*
           b8e068e02fe12d7136bc2f24408835573f30c6fbf0b65ea26ab4c7055a2c85f1 -> test group
-          4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 -> brb group 
+          4ac5ab85c9c3d57adbdf2dba79357e56b2f9ef0256befe750d9f93af78d2ca68 -> brb group
           */}
         <BrowserOnly
           fallback={
@@ -211,7 +211,7 @@ const BrandA = styled(A)`
 `;
 
 const PlayGround = styled(Section)`
-  font-family: 'Strawford', sans-serif;
+  font-family: 'Inter', sans-serif;
   flex-direction: column;
   background-image: url(${PlaygroundBg});
   background-position: center;

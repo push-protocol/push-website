@@ -23,7 +23,7 @@
   --ifm-color-primary-preferred: #d53a94;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: 'Strawford', sans-serif;
+  --ifm-font-family-base: 'Inter', sans-serif;
   --ifm-font-family-brbprimary: 'Glancyr', sans-serif;
   --ifm-font-family-brbsecondary: 'Green Brooks', sans-serif;
   --ifm-font-family-homepage: 'FK Grotesk Neue';
@@ -995,7 +995,7 @@ sup strong {
 /* Markdown CSS(Docs and Blogs Fonts) Overrides */
 /* ----- */
 
-.PushDocs {
+/* .PushDocs {
   font-family: Inter, sans-serif !important;
 
   * {
@@ -1009,7 +1009,7 @@ sup strong {
   * {
     font-family: Inter, sans-serif !important;
   }
-}
+} */
 
 /* ----- */
 /* Markdown CSS(Docs and Blogs Fonts) Overrides Ends*/

@@ -37,7 +37,7 @@ const LinkText = styled.h1`
 
   color: var(--ifm-color-primary-blog) !important;
 
-  font-family: Strawford;
+  font-family: Inter;
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
@@ -51,7 +51,7 @@ const LinkText = styled.h1`
 const PostTitle = styled.h1`
   color: var(--ifm-color-primary-blog) !important;
 
-  font-family: Strawford;
+  font-family: Inter;
   font-size: 2.625rem;
   font-style: normal;
   font-weight: 700;

@@ -93,7 +93,7 @@ const TextView = styled.div`
 
 const TextSpan = styled.div`
   color: var(--ifm-color-secondary-blog);
-  font-family: Strawford;
+  font-family: Inter, sans-serif;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 300;
