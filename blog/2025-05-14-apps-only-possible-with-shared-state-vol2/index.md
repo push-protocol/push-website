@@ -25,7 +25,7 @@ In this iteration, we will amp up the utility scale and explore few of the most 
 Before we begin, if you’re new to the concept of Shared Sates and Push Chain, here’s a quick recap:
 Feel free to skip down to the use cases section if you’re already aware of these concepts.
 
-# What is Push Chain? - Super Quick Recap:
+## What is Push Chain? - Super Quick Recap:
 Push Chain is an all-purpose universal chain that unites every existing and forthcoming chain together (under one roof).
 
 <b>It is a shared-state L1 blockchain designed to function as a universal app layer for users across any chain, any wallet and any app.</b>
@@ -35,7 +35,7 @@ Combining this with the innovation of cross-chain fees and wallet abstraction, w
 ![First Image of Apps Possible Only with Shared State - Vol.2](./image-1.webp)
 
 
-# What is a 'shared state' blockchain?
+## What is a 'shared state' blockchain?
 ![Second Image of Apps Possible Only with Shared State - Vol.2](./image-2.webp)
 
 
@@ -51,8 +51,8 @@ For building universal apps we need to:
 
 The first of these innovations -- i.e. the ability of developers on Push Chain <i>to read and utilise the state of other chains via smart contracts</i> -- is what we mean by a <b>shared-state blockchain.</b>
 
-# Apps that are only possible with Shared States:
-## 1) Competitive Cross Chain Gaming
+## Apps that are only possible with Shared States:
+### 1) Competitive Cross Chain Gaming
 
 <b>Shared-state makes ‘chain wars’ real!</b>
 It allows players from any blockchain ecosystem to come together and play their favourite games with (or against) each other by leveraging Push Chain as a shared settlement layer.
@@ -78,7 +78,7 @@ By removing the biggest barriers to on-chain game adoption, i.e. UX and asset fr
 - Chain-neutral playgrounds require seamless state synchronizations, player state to be unified in one trusted environment - in order to track individual as well as relational game data (points, damage, skills, assets etc.).
 - Without shared-state, cross-chain games would need <b>custom bridges</b> and complex game synchronization measures per game, which would be expensive and damaging for the UX.
 
-## 2) Multichain DAOs
+### 2) Multichain DAOs
 Protocol tokens are increasingly becoming available cross-chain. For example, Uniswap’s UNI exists on Ethereum, Polygon and Base among others. <b>With shared-state, apps can aggregate a member’s voting power across chains by reading and bundling his tokens.</b>
 
 ### 🌌 What this enables:
@@ -88,7 +88,7 @@ Protocol tokens are increasingly becoming available cross-chain. For example, Un
 ### 🤔Why it needs shared-state:
 - ‘Voting power’ is a combined function of a protocol’s real and synthetic assets held across chains.
 
-## 3) Universal AI Agents:
+### 3) Universal AI Agents:
 
 Shared state capabilities of Push Chain act as the missing coordination layer for enabling universal AI agents to operate across multiple independent chains autonomously, reliably, and with a unified memory.
 
@@ -111,7 +111,7 @@ Build <b>chain-agnostic AI agents</b> that can:
 - Unified State Access: AI agents need real-time visibility into user balances, transactions, and positions <b>across all chains.</b>
 
 
-## 4) Universal (Multi-chain) Safes
+### 4) Universal (Multi-chain) Safes
 Today, managing assets across multiple chains is a logistical nightmare.
 
 Users must juggle separate wallets, track balances individually, and manually bridge funds — a process that’s both error-prone and inefficient. While ‘safes’ are a reliable way for groups to pool and manage assets (e.g. for DAOs, investment clubs, or even families), they face additional challenges due to multisig barriers.
@@ -157,7 +157,7 @@ This turns the chaos of fragmented assets into a streamlined, interoperable syst
 - Recovery mechanisms need to verify on-chain activity (e.g., "Check last transaction timestamps on all chains before triggering inheritance").
 
 
-## 5) Embeddable Prediction Markets
+### 5) Embeddable Prediction Markets
 
 Prediction markets are great tools for building alignment, coordination and conviction within groups. They can unlock a bunch of utility when combined with other on-chain activities such as DeFi, voting, gaming and content creation.
 
@@ -196,7 +196,7 @@ b. on specific moves/cards,
 
 
 
-# End Game
+## End Game
 
 Push Chain’s shared-state architecture finally delivers <b>the universal blockchain trifecta</b> — unifying user needs, developer needs, and cross-chain data unification – all in a single layer.
 

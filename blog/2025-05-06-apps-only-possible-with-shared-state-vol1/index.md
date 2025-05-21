@@ -22,7 +22,7 @@ Here are 5 super innovative use cases the industry could immensely benefit from 
 These use cases cover various bases, including but not limited to Defi, Degen Defi(iykyk), Art, Airdrops, DAOs and even Gaming.
 
 
-# What is Push Chain?
+## What is Push Chain?
 
 Push Chain is an all-purpose universal chain that unites every existing and forthcoming chain together (under one roof).
 
@@ -32,7 +32,7 @@ Combining this with the innovation of cross-chain fees and wallet abstraction, w
 
 ![push chain vein diagram](./image1.webp)
 
-# What is a 'shared state' blockchain?
+## What is a 'shared state' blockchain?
 
 ![shared state overview](./image2.webp)
 
@@ -48,11 +48,11 @@ For building universal apps we need to:
 
 The first of these innovations -- i.e. the ability of developers on Push Chain *to read and utilise the state of other chains* via smart contracts -- is what we mean by a **shared-state blockchain**.
 
-# What kind of apps does this enable?
+## What kind of apps does this enable?
 
 ![movie reference 1](./image3.webp)
 
-## 1. Universal DeFi & Payments
+### 1. Universal DeFi & Payments
 
 DeFi today is fractured by:
 1. chain-bound liquidity,
@@ -107,7 +107,7 @@ In the traditional web3 world, if a payee (like a merchant) wants to receive a p
 - Collateral managers and liquidation protectors cannot link different balances to the same user without fetching the state.
 - Price oracles need to aggregate and verify data from multiple sources.
 
-## 2. Yield Aggregators
+### 2. Yield Aggregators
 
 Shared-state apps built on Push Chain can also function as **universal yield aggregators**. They can collect and show APYs from various chains, allowing the user to execute the most profitable staking transactions across any network without worrying about native reconversions or swaps.
 
@@ -125,7 +125,7 @@ Shared-state apps built on Push Chain can also function as **universal yield agg
 - Yields are a dynamic function of various on-chain data points (e.g. total staked supply, network inflation rules, validator slashing and reward metrics, gas fees and MEV protections). Their aggregation is impossible without accurate and verifiable cross-chain read capabilities.
 - Combined capital and ULSTs require proof of ownership of underlying assets.
 
-## 3. Customizable Universal Exchanges
+### 3. Customizable Universal Exchanges
 
 A customizable universal exchange is one where you can trade any asset (fungible or non-fungible) against any other asset on any chain, with no need for both assets to exist in the same chain.
 
@@ -161,7 +161,7 @@ Currently, ‘trading pairs’ on exchanges are limited to recognized tokens, wh
 *Coming very soon…*
 
 
-## 4 Universal Airdrops
+### 4 Universal Airdrops
 
 Traditionally, Airdrops are localized to a specific chain(Solana, Ethereum, Arbitrum etc). The eligibility checks usually work only within the chain of the drop.
 
@@ -202,7 +202,7 @@ A **universal drop,** in this case, can:
 - Without shared-state, projects must deploy separate scripts/contracts/oracles per chain, leading to fragmentation, delays, and higher infra costs.
 
 
-## 5 Universal NFTs
+### 5 Universal NFTs
 
 Today’s NFTs are trapped in single-chain ecosystems with rigid formats. (An NFT on Ethereum can’t natively interact with Solana or Aptos.).
 
@@ -231,7 +231,7 @@ This not only makes them *universal* (i.e.  capable of existing natively on all
 - Reading and writing of NFT metadata across chains.
 - Elimination of artificial "chain walls" that restrict creative evolution.
 
-# End Game
+## End Game
 
 Push Chain’s shared-state architecture finally delivers **the universal blockchain trifecta** - unifying user needs, developer needs, and cross-chain data unification - all in a single layer.
 
@@ -246,7 +246,7 @@ For developers, shared-state unlocks an entirely new paradigm: universal apps th
 ***When you could build for them all?***
 
 
-# It's not over yet!
+## It's not over yet!
 
 We have just scratched the surface.
 
