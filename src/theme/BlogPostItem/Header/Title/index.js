@@ -12,10 +12,9 @@ import styled from 'styled-components';
 // Internal Configs
 import { device } from '@site/src/config/globals';
 
-export default function BlogPostItemHeaderTitle({ className }) {
+export default function BlogPostItemHeaderTitle() {
   const { metadata, isBlogPostPage } = useBlogPost();
   const { permalink, title } = metadata;
-  console.log(className);
   return (
     <>
       {isBlogPostPage ? (

@@ -119,7 +119,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
                 alignItems='flex-start'
                 alignSelf='flex-start'
                 flexShrink={0}
-                margin={!isMobile && '12px 0 0 0'}
+                margin={!isMobile ? '12px 0 0 0' : ''}
               >
                 {isTablet && toc?.length > 0 && (
                   <MobileTOCWrapper>
