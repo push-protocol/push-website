@@ -92,32 +92,32 @@ const BlogItem = styled.div`
 
     h1 {
       font-size: 2.65rem;
-      font-weight: 700px;
+      font-weight: 700;
     }
 
     h2 {
       font-size: 2rem;
-      font-weight: 700px;
+      font-weight: 700;
     }
 
     h3 {
       font-size: 1.5rem;
-      font-weight: 700px;
+      font-weight: 700;
     }
 
     h4 {
       font-size: 1.25rem;
-      font-weight: 700px;
+      font-weight: 700;
     }
 
     h5 {
-      font-size: 1rem;
-      font-weight: 700px;
+      font-size: 1.15rem;
+      font-weight: 700;
     }
 
     h6 {
       font-size: 1rem;
-      font-weight: 700px;
+      font-weight: 700;
     }
   }
 
