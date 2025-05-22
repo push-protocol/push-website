@@ -36,7 +36,7 @@ const ChainKnowledgeBaseGrid: React.FC<ChainKnowledgeBaseGridProps> = ({
     <ChainKnowledgeBaseGridWrapper addBottomMargin={items}>
       <ItemV>
         <H3
-          fontSize={isMobile ? '32px' : '40px'}
+          fontSize='2.5rem'
           fontWeight='500'
           fontFamily='N27'
           lineHeight={isMobile ? '100%' : '140%'}

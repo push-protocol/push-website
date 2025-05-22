@@ -93,7 +93,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       )}
       <H3
         margin='24px 0 0 0'
-        fontSize={isMobile ? '24px' : '28px'}
+        fontSize='2rem'
         fontWeight='500'
         fontFamily='N27'
         lineHeight={isMobile ? '100%' : '140%'}
@@ -104,10 +104,10 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
       <ItemH margin='0 0 auto 0' alignItems='flex-start' alignSelf='flex-start'>
         <P
           margin='8px 0 0 0'
-          fontSize={isMobile ? '16px' : '18px'}
+          fontSize='1.125rem'
           fontWeight='400'
           fontFamily='N27'
-          lineHeight={isMobile ? '140%' : '140%'}
+          lineHeight='140%'
           letterSpacing='-0.64px'
           color='#757D8D'
         >
@@ -123,7 +123,7 @@ const ChannelKnowledgeBaseComponentItem: FC = ({ item, index }) => {
         flex='0'
       >
         <Span
-          fontSize={isMobile ? '16px' : '18px'}
+          fontSize='1.125rem'
           fontWeight='500'
           fontFamily='N27'
           lineHeight={isMobile ? '100%' : '140%'}

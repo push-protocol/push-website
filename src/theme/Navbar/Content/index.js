@@ -238,7 +238,7 @@ export default function NavbarContent() {
               </NavItem>
             ))}
 
-          {!isLaptopM && pathname?.startsWith(baseURL + '/blog') && (
+          {!isLaptopM && (
             <NavigationMenuItem>
               <NavigationMenuHeader
                 onClick={(e) => onMobileHeaderMenuClick(e, 0)}
@@ -372,7 +372,7 @@ const NavigationMenuHeader = styled.div`
 const NavigationMenuContent = styled.ul`
   list-style: none;
 
-  font-family: 'Strawford', 'Manrope', sans-serif;
+  font-family: Inter, sans-serif;
   display: none;
   position: absolute;
 

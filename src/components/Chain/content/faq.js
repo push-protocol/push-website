@@ -6,7 +6,7 @@ export const faqContent = {
       value: [
         {
           type: 'text',
-          value: `# Frequently Asked Questions
+          value: `## Frequently Asked Questions
 
   The place to find answers to all the popular questions the community has asked about Push Chain. Crowdsourced from Push Fam 🫶 and curated by the Push team 💪.
 

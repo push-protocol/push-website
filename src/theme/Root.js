@@ -62,7 +62,6 @@ export default function Root({ children }) {
       }
     }
 
-    // return result
     return result;
   }
 
