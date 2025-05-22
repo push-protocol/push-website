@@ -386,6 +386,7 @@ const TextItem = styled.div`
   p {
     margin: 0;
     padding: 0;
+    line-height: 170%;
   }
 
   p img,
