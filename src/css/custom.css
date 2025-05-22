@@ -1023,7 +1023,7 @@ sup strong {
 article .markdown > p,
 article .markdown > ul > li,
 article .markdown > ol > li {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 article .markdown > p > code {
