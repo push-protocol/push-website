@@ -57,6 +57,7 @@
   --ifm-navbar-dropdown-hover: rgba(0, 0, 0, 0.05);
   --ifm-navbar-dropdown-image: grayscale(100%) brightness(70%) contrast(130%);
   --ifm-docs-hero-bg: #efefef;
+  --ifm-paragraph-margin-bottom: 0;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -102,6 +103,7 @@
   --ifm-navbar-dropdown-hover: rgba(255, 255, 255, 0.05);
   --ifm-navbar-dropdown-image: 'none';
   --ifm-docs-hero-bg: #0d0c0f;
+  --ifm-paragraph-margin-bottom: 0;
 }
 
 /* ----- */
