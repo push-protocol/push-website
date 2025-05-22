@@ -87,7 +87,7 @@ const BlogItem = styled.div`
 
   & article .markdown {
     * {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
     }
 
     h1 {
@@ -111,6 +111,11 @@ const BlogItem = styled.div`
     }
 
     h5 {
+      font-size: 1rem;
+      font-weight: 700px;
+    }
+
+    h6 {
       font-size: 1rem;
       font-weight: 700px;
     }
