@@ -88,7 +88,7 @@ const ChainKnowledgeBaseArticleContent = ({ item }) => {
         </BreadcrumbList>
 
         <H1
-          fontSize={isMobile ? '36px' : '54px'}
+          fontSize='3.375rem'
           fontWeight='500'
           fontFamily='N27'
           lineHeight='120%'
@@ -290,6 +290,17 @@ const TextItem = styled.div`
     font-size: 1.25rem;
   }
 
+  h1 {
+    color: #000;
+    font-family: N27;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.8px;
+    margin: 64px 0 24px 0;
+  }
+
   h2 {
     color: #000;
     font-family: N27;
@@ -298,6 +309,7 @@ const TextItem = styled.div`
     font-weight: 500;
     line-height: 120%;
     letter-spacing: -0.8px;
+    margin: 64px 0 24px 0;
   }
 
   h3 {
@@ -308,16 +320,41 @@ const TextItem = styled.div`
     font-weight: 500;
     line-height: 140%;
     letter-spacing: -0.64px;
+    margin: 0 0 16px 0;
   }
+
+  h4 {
+    color: #000;
+    font-family: N27;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -0.64px;
+    margin: 0 0 16px 0;
+  }
+
+  h5 {
+    color: #000;
+    font-family: N27;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    letter-spacing: -0.64px;
+    margin: 0 0 16px 0;
+  }
+
   /* Apply margin-top to all h tags except the first one */
-  h1:not(:first-child),
-  h2:not(:first-child),
-  h3:not(:first-child),
-  h4:not(:first-child),
-  h5:not(:first-child),
-  h6:not(:first-child) {
-    margin-top: 24px;
-  }
+  // h1:not(:first-child),
+  // h2:not(:first-child),
+  // h3:not(:first-child),
+  // h4:not(:first-child),
+  // h5:not(:first-child),
+  // h6:not(:first-child) {
+  //   margin-top: 24px;
+  // }
+
   /* Ensure the first heading has no top margin */
   h1:first-child,
   h2:first-child,
@@ -327,6 +364,7 @@ const TextItem = styled.div`
   h6:first-child {
     margin-top: 0;
   }
+
   blockquote {
     border-left: 6px solid #d548ec;
     background: #fff;
@@ -336,24 +374,24 @@ const TextItem = styled.div`
     box-sizing: border-box;
     margin: 10px 0;
   }
+
   ol li {
     list-style-type: decimal;
   }
+
   ul li {
     list-style-type: disc;
   }
-  img[alt='Easter Egg'] {
-    width: 30px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 4px;
-  }
+
   p {
-    font-size: larger;
+    margin: 0;
+    padding: 0;
   }
+
   p img,
   img {
     border-radius: 32px;
+    margin: 16px 0;
   }
   @media ${device.tablet} {
     max-width: 100%;
