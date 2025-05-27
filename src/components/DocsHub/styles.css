@@ -180,10 +180,9 @@
   display: flex;
 }
 
-
-
 /* v4 style target */
-.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module .theme-back-to-top-button {
+.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module
+  .theme-back-to-top-button {
   margin-right: 10px;
 }
 
@@ -214,52 +213,40 @@
   min-width: 100vw;
 }
 
-.docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module  {
+.docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module {
   width: 85%;
   align-self: center;
   margin: 0 auto;
-  /* background-color: ; */
 }
-
-/* .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module  {
-  width: 100%;
-} */
-
-/* .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module,
-.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module main {
-  max-width: 100%;
-} */
-
 
 .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
   .container
   .row,
-.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module main .container .row {
+.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module
+  main
+  .container
+  .row {
   display: flex;
   margin-left: 5px;
 }
-
-/* .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
-  .container
-  .row
-  .col,
-  .docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module main .container .row .col {
-  padding: 0;
-  max-width: initial !important;
-  width: 100%;
-} */
 
 .skipToContent_node_modules-\@docusaurus-theme-classic-lib-theme-SkipToContent-styles-module,
 .skipToContent_fXgn {
   display: none;
 }
 
-
-.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module .theme-doc-sidebar-container li li {
+.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module
+  .theme-doc-sidebar-container
+  li
+  li {
   margin-right: 10px;
 }
 
-.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module .theme-doc-sidebar-container li a svg {
+.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module
+  .theme-doc-sidebar-container
+  li
+  a
+  svg {
   margin-right: 0;
   margin-left: 10px !important;
   margin-bottom: 3px;
