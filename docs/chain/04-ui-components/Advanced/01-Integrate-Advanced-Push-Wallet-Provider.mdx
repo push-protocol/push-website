@@ -1,10 +1,10 @@
 ---
-id: docs-chain-ui-components-push-wallet-provider
+id: docs-chain-ui-components-advanced-push-wallet-provider
 title: Push Wallet Provider
 hide_title: true
 slug: ./push-wallet-provider
 displayed_sidebar: pushChainSidebar
-sidebar_position: 4
+sidebar_position: 1
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -31,52 +31,20 @@ Wrap your application with `PushWalletProvider` to make wallet functionality ava
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```typescript
-import { AppMetadata,
-ButtonDefaultsProps,
-CONSTANTS,
-ModalDefaultsProps,
-PushWalletProvider,
-PushWalletProviderConfig } from '@pushprotocol/pushchain-ui-kit';
+import { CONSTANTS, PushWalletProvider, PushWalletProviderConfig } from '@pushprotocol/pushchain-ui-kit';
 
 const walletConfig: PushWalletProviderConfig = {
-  env: CONSTANTS.ENV.LOCAL,
-  login: {
-    email: true,
-    google: true,
-    wallet: {
-      enabled: true,
-      chains: [CONSTANTS.CHAIN.SOLANA, CONSTANTS.CHAIN.ETHEREUM]
-    },
-    appPreview: true
-  },
+  env: CONSTANTS.ENV.TESTNET,
 }
 
-const appMetadata: AppMetadata = {
-  logoUrl: "https://plus.unsplash.com/premium_photo-1746731481770-08b2f71661d0?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  title: 'Simulate',
-  description: 'Push Chain is a shared state L1 blockchain that allows all chains to unify, enabling apps of any chain to be accessed by users of any chain.'
-}
-
-const modalDefaults: ModalDefaultsProps = {
-  loginLayout: CONSTANTS.LOGIN.SPLIT,
-  showModalAppPreview: true,
-}
-
-const buttonDefaults: ButtonDefaultsProps = {
-  accountMenuVariant: 'hover',
-}
 
 function App() {
   return (
     <PushWalletProvider
       config={walletConfig}
       themeMode={CONSTANTS.THEME.DARK}
-      app={appMetadata}
-      modalDefaults={modalDefaults}
-      buttonDefaults={buttonDefaults}
     >
-      {/* Your app */}
-      <YourApp />
+      <Component />
     </PushWalletProvider>
   );
 }
@@ -158,34 +126,3 @@ Global defaults for all login modal instances.
 | `fgColor` | string | Text color | Theme default |
 
 > Note: Parameters _`in this style`_ are mandatory.
-
-### `usePushWalletContext`
-
-The `usePushWalletContext` hook provides access to the current wallet state and methods to interact with the Push Wallet. This hook must be used within a component that's wrapped by a `PushWalletProvider`.
-
-```jsx
-import { usePushWalletContext } from '@pushprotocol/pushchain-ui-kit';
-
-function Component() {
-  const {
-    connectionStatus,
-    universalAddress,
-    handleConnectToPushWallet,
-    handleUserLogOutEvent,
-    handleSignMessage
-  } = usePushWalletContext(uid); // Optional: uid parameter for targeting a specific wallet instance
-
-  // Use these values to interact with wallet state
-}
-```
-
-
-#### Return Values
-
-| Property | Type | Description |
-|----------|------|-------------|
-| `connectionStatus` | string | Current connection state of the wallet. Possible values: `"notConnected"`, `"connecting"`, `"authenticating"`, `"connected"`, `"retry"` |
-| `universalAddress` | object | Information about the connected blockchain address with properties: `chainId` (string), `chain` (string), and `address` (string) |
-| `handleConnectToPushWallet` | function | Call this function to initiate the wallet connection process |
-| `handleUserLogOutEvent` | function | Call this function to disconnect the current wallet and log out the user |
-| `handleSignMessage` | function | Async function that accepts a `Uint8Array` of data to be signed and returns a `Promise` resolving to the signed message as a `Uint8Array` |
