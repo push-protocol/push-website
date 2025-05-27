@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpush_website=self.webpackChunkpush_website||[]).push([[83197],{76596:e=>{e.exports=JSON.parse('{"permalink":"/push-website/pr-preview/pr-1062/blog/tags/communication","page":1,"postsPerPage":10,"totalPages":1,"totalCount":5,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
