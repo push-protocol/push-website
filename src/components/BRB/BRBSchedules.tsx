@@ -327,10 +327,6 @@ const Image = styled.img`
   object-fit: cover;
   overflow: hidden;
 `;
-const Icon = styled.img`
-  width: 50px;
-  height: 50px;
-`;
 
 const ScheduleData = styled(ItemV)`
   width: 100%;

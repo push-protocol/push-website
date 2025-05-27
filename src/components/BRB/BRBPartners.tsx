@@ -9,7 +9,6 @@ import styled from 'styled-components';
 
 // Internal Components
 import { Button, Image, ItemH, ItemV } from '@site/src/css/SharedStyling';
-import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
 import { brbPartnersList } from '@site/src/config/BRBPartnersList';

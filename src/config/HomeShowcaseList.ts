@@ -380,8 +380,8 @@ export const ShowcaseList = {
       ],
       lower: [
         {
-          srcref: 'lensprotocol',
-          alt: 'Powered by Push Protocol - Lens Protocol Logo',
+          srcref: 'diamante',
+          alt: 'Powered by Push Protocol - Diamante Logo',
           width: '178px',
           height: '178px',
           margin: '14px',
@@ -454,8 +454,8 @@ export const ShowcaseResponsiveList = {
   ],
   bottom: [
     {
-      srcref: 'lensprotocol',
-      alt: 'Powered by Push Protocol - Lens Protocol Logo',
+      srcref: 'diamante',
+      alt: 'Powered by Push Protocol - Diamante Logo',
       width: '96px',
       height: '96px',
       class: '',

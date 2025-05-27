@@ -7,7 +7,8 @@ export const size = {
   laptop: 1024,
   laptopM: 1260,
   laptopL: 1440,
-  desktop: 2560,
+  desktop: 2100,
+  desktopL: 2560,
 };
 
 export const device = {
@@ -19,7 +20,7 @@ export const device = {
   laptopM: `(max-width: ${size.laptopM}px)`,
   laptopL: `(max-width: ${size.laptopL}px)`,
   desktop: `(max-width: ${size.desktop}px)`,
-  desktopL: `(max-width: ${size.desktop}px)`,
+  desktopL: `(max-width: ${size.desktopL}px)`,
 };
 
 // Define Margin
@@ -107,7 +108,7 @@ const GLOBALS = {
   },
 
   STRUCTURE: {
-    MAX_WIDTH: size.laptopM,
+    MAX_WIDTH: size.laptopL,
     PADDING: {
       DESKTOP: `${structure.PADDING.DESKTOP.TOP}px ${structure.PADDING.DESKTOP.RIGHT}px ${structure.PADDING.DESKTOP.BOTTOM}px ${structure.PADDING.DESKTOP.LEFT}px`,
       TABLET: `${structure.PADDING.TABLET.TOP}px ${structure.PADDING.TABLET.RIGHT}px ${structure.PADDING.TABLET.BOTTOM}px ${structure.PADDING.TABLET.LEFT}px`,

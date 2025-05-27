@@ -8,11 +8,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Internal Components
-import { Button, Image, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
+import { Image, ItemH } from '@site/src/css/SharedStyling';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
-
-// Import Assets
-import Arrow from '@site/static/assets/website/brb/schedules/arrow.svg';
 
 // Internal Configs
 import { brbOnlineList } from '@site/src/config/BRBOnlineList';
@@ -162,39 +159,6 @@ const PartnersLogo = styled(Image)`
   max-width: 150px;
 `;
 
-const ViewBountyText = styled(Span)`
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 12px;
-  color: var(--ifm-color-primary-inverse);
-
-  @media ${device.mobileS} {
-    flex: 1;
-  }
-`;
-
-const BountyButton = styled.div`
-  min-width: 114px;
-  max-width: ${(props) => props.maxWidth || '114px'};
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 0px 0px;
-  border: 1px solid ${(props) => props.borderColor || '#e64de9'};
-  background: ${(props) => props.background || 'transparent'};
-  border-radius: 8px;
-  cursor: pointer;
-`;
-
-const ArrowSmall = styled(Arrow)`
-  width: 8px;
-  position: relative;
-  top: 0.1em;
-`;
-
 const BountyDescription = styled(Span)`
   font-weight: 200;
   font-size: 15px;
@@ -212,16 +176,6 @@ const DateSpan = styled(Span)`
   font-style: normal;
   font-weight: 200;
   font-family: Glancyr;
-  line-height: normal;
-`;
-
-const TimeSpan = styled(Span)`
-  color: #959caa;
-
-  font-family: Glancyr;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 200;
   line-height: normal;
 `;
 

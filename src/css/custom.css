@@ -23,10 +23,11 @@
   --ifm-color-primary-preferred: #d53a94;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-font-family-base: 'Strawford', sans-serif;
+  --ifm-font-family-base: 'Inter', sans-serif;
   --ifm-font-family-brbprimary: 'Glancyr', sans-serif;
   --ifm-font-family-brbsecondary: 'Green Brooks', sans-serif;
   --ifm-font-family-homepage: 'FK Grotesk Neue';
+  --ifm-font-family-chainpage: 'N27', sans-serif;
   --ifm-navbar-link-color: #000;
   --ifm-button-background-color: #dd44b9;
   --ifm-custom-base: rgba(59, 59, 59, 0.75);
@@ -56,6 +57,7 @@
   --ifm-navbar-dropdown-hover: rgba(0, 0, 0, 0.05);
   --ifm-navbar-dropdown-image: grayscale(100%) brightness(70%) contrast(130%);
   --ifm-docs-hero-bg: #efefef;
+  --ifm-paragraph-margin-bottom: 0;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -101,6 +103,7 @@
   --ifm-navbar-dropdown-hover: rgba(255, 255, 255, 0.05);
   --ifm-navbar-dropdown-image: 'none';
   --ifm-docs-hero-bg: #0d0c0f;
+  --ifm-paragraph-margin-bottom: 0;
 }
 
 /* ----- */
@@ -202,6 +205,39 @@
     url('../../static/fonts/FKGroteskNeue-Bold.woff2') format('woff2'),
     url('../../static/fonts/FKGroteskNeue-Bold.woff') format('woff'),
     url('../../static/fonts/FKGroteskNeue-Bold.otf') format('opentype');
+  font-weight: 700 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'N27';
+  src:
+    url('../../static/fonts/n27-regular-webfont.woff2') format('woff2'),
+    url('../../static/fonts/n27-regular-webfont.woff') format('woff'),
+    url('../../static/fonts/n27-regular-webfont.ttf') format('ttf');
+  font-weight: 300 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'N27';
+  src:
+    url('../../static/fonts/n27-medium-webfont.woff2') format('woff2'),
+    url('../../static/fonts/n27-medium-webfont.woff') format('woff'),
+    url('../../static/fonts/n27-medium-webfont.ttf') format('ttf');
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'N27';
+  src:
+    url('../../static/fonts/n27-bold-webfont.woff2') format('woff2'),
+    url('../../static/fonts/n27-bold-webfont.woff') format('woff'),
+    url('../../static/fonts/n27-bold-webfont.ttf') format('ttf');
   font-weight: 700 800;
   font-style: normal;
   font-display: swap;
@@ -417,21 +453,6 @@ article ul > li strong {
 
 /* ----- */
 /* Tabs CodeBlock CSS Overrids */
-/* ----- */
-
-/* ----- */
-/* Markdown CSS Overrides */
-/* ----- */
-article .markdown > p {
-  font-size: 18px;
-}
-
-article .markdown > p > code {
-  font-size: 1em;
-  color: var(--ifm-color-primary);
-}
-/* ----- */
-/* Markdown CSS Overrides Ends*/
 /* ----- */
 
 /* ----- */
@@ -971,3 +992,44 @@ sup strong {
 /* ------------------ */
 /* DOCUSAURUS ROADMAP OVERRIDE ENDS */
 /* ------------------ */
+
+/* ----- */
+/* Markdown CSS(Docs and Blogs Fonts) Overrides */
+/* ----- */
+
+/* .PushDocs {
+  font-family: Inter, sans-serif !important;
+
+  * {
+    font-family: Inter, sans-serif !important;
+  }
+}
+
+.PushBlog {
+  font-family: Inter, sans-serif !important;
+
+  * {
+    font-family: Inter, sans-serif !important;
+  }
+} */
+
+/* ----- */
+/* Markdown CSS(Docs and Blogs Fonts) Overrides Ends*/
+/* ----- */
+
+/* ----- */
+/* Markdown CSS Overrides */
+/* ----- */
+article .markdown > p,
+article .markdown > ul > li,
+article .markdown > ol > li {
+  font-size: 1.15rem;
+}
+
+article .markdown > p > code {
+  font-size: 1em;
+  color: var(--ifm-color-primary);
+}
+/* ----- */
+/* Markdown CSS Overrides Ends*/
+/* ----- */

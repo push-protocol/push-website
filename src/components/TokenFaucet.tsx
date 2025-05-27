@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 // React + Web3 Essentials
 import React, { useRef, useState } from 'react';
@@ -9,14 +10,7 @@ import { useClickAway } from 'react-use';
 import styled from 'styled-components';
 
 // Internal Components
-import {
-  A,
-  Button,
-  Image,
-  ItemH,
-  ItemV,
-  Span,
-} from '@site/src/css/SharedStyling';
+import { Button, Image, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
 
 // Import Assets
 import Discord from '@site/static/assets/website/brb/Discord-BRB.svg';
@@ -99,7 +93,7 @@ export const TokenFaucet = ({
             background={isFollowed ? '#FFF' : '#25AAF5'}
             border='1px solid #25AAF5'
             padding='6.5px 8.5px'
-            onClick={() => openLink('https://twitter.com/pushprotocol')}
+            onClick={() => openLink('https://x.com/PushChain')}
           >
             {!isPosted && <X />}
             {isPosted && <XCompleted />}
@@ -108,7 +102,7 @@ export const TokenFaucet = ({
               fontWeight='400'
               color={isFollowed ? '#25AAF5' : '#FFF'}
             >
-              {isFollowed ? 'Following' : 'Follow @pushprotocol'}
+              {isFollowed ? 'Following' : 'Follow @PushChain'}
             </Span>
             {isFollowed && (
               <Icon src={XRight} height='18px' width='18px' alt='x' />
@@ -250,18 +244,6 @@ const Label = styled.label`
   margin-bottom: 8px;
 `;
 
-const Input = styled.input`
-  box-sizing: border-box;
-  height: 48px;
-  width: 100%;
-  padding: 12px 23px;
-  border-radius: 61px;
-  border: 1px solid #5a5a75;
-  outline: none;
-  background: transparent;
-  color: #b6bcd6;
-`;
-
 const ButtonItem = styled(Button)`
   font-size: 13px;
   font-style: normal;
@@ -286,10 +268,4 @@ const ButtonItem = styled(Button)`
   @media ${device.mobileL} {
     width: fit-content;
   }
-`;
-
-const ImportantText = styled(Span)`
-  font-size: 10px;
-  color: #b5bcd6;
-  font-weight: 400;
 `;

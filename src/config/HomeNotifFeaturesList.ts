@@ -298,7 +298,7 @@ export const NotifUseCasesList = [
     title: 'Blockchain',
   },
   {
-    url: 'https://twitter.com/pushprotocol/status/1336359832081768448',
+    url: 'https://x.com/PushChain/status/1336359832081768448',
     title: 'Gaming',
   },
   {

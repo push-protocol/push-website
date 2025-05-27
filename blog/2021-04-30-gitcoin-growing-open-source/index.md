@@ -5,15 +5,8 @@ description: 'Gitcoin Growing Open Source with Web3 Notifs'
 authors: [push]
 image: './cover-image.webp'
 text: "Without a doubt the driving force behind the success of the Ethereum blockchain is and will be the community behind it."
-tags: [ Announcements
-,Bzx Protocol
-,Ethereum
-,Blockchain
-,Partnerships
-]
+tags: [ Announcements, Bzx Protocol ,Ethereum ,Blockchain ,Partnerships]
 ---
-
-import { ImageText } from '@site/src/css/SharedStyling';
 
 ![Cover Image of Gitcoin Growing Open Source with Web3 Notifs](./cover-image.webp)
 

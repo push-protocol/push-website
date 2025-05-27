@@ -1,18 +1,9 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import React, { useState } from 'react';
 
-import styles from './styles.module.css';
 import styled from 'styled-components';
-import {
-  Button,
-  Content,
-  H2,
-  H3,
-  Image,
-  ItemH,
-  ItemV,
-  Section,
-  Span,
-} from '@site/src/css/SharedStyling';
+import { H2, H3, ItemH, ItemV, Span } from '@site/src/css/SharedStyling';
 
 import {
   BsCalendar,
@@ -21,7 +12,7 @@ import {
   BsClock,
 } from 'react-icons/bs';
 import useMediaQuery from '@site/src/hooks/useMediaQuery';
-import GLOBALS, { device } from '@site/src/config/globals';
+import { device } from '@site/src/config/globals';
 import { bootcampCurriculum } from '@site/src/config/BootcampCurriculum';
 
 const BootcampCurriculum = () => {
@@ -32,7 +23,7 @@ const BootcampCurriculum = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const CurriculumSession = ({ session, index }) => {
+  const CurriculumSession = ({ session }) => {
     return (
       <ItemV gap='24px' justifyContent='flex-start'>
         <H3

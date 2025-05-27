@@ -224,7 +224,7 @@
         "imagetitle": "Integrate Push Protocol in less than 4 minutes and 2 lines of code",
         "titletext": "<4 minutos",
         "buttontext": "Comenzar a construir",
-        "buttonlink": "/docs/notifications/quickstart",
+        "buttonlink": "https://comms.push.org/docs/notifications/quickstart",
         "buttontitle": "Documentation for instant integration of notifications via Push Protocol in your dapp."
       },
       "box5": {
@@ -273,7 +273,7 @@
         "imagetitle": "Integra Push Chat en 2 minutos y con 2 líneas de código",
         "titletext": "<2 minutos",
         "buttontext": "Comenzar a construir",
-        "buttonlink": "/docs/chat/quickstart",
+        "buttonlink": "https://comms.push.org/docs/chat/quickstart",
         "buttontitle": "Explora la documentación para la integración instantánea del chat mediante el Protocolo Push en tu dapp"
       },
       "box5": {
@@ -392,6 +392,18 @@
       },
       "article8": {
         "text": "Push Protocol, completó recientemente la Fase 1 de su gira de desarrollo (BRB) en India. Un participante del hackathon resolvió con éxito un desafío presentado por nuestro equipo: cuentas Ethereum de prueba cuántica.",
+        "link-text": "Leer Artículo"
+      },
+      "article9": {
+        "text": "Push Chain, una blockchain de Capa 1 enfocada en la abstracción de cadenas y la construcción de aplicaciones web3 accesibles a través de diferentes redes. Push Chain busca abordar las experiencias de usuario fragmentadas y los problemas de escalabilidad.",
+        "link-text": "Leer Artículo"
+      },
+      "article10": {
+        "text": "Push Chain tiene como objetivo resolver los problemas de experiencia de usuario fragmentada y escalabilidad.",
+        "link-text": "Leer Artículo"
+      },
+      "article11": {
+        "text": "La arquitectura admite interacciones entre ecosistemas EVM y no EVM, lo que permite a los desarrolladores acceder a los estados de las billeteras desde redes distintas sin depender de una infraestructura fragmentada.",
         "link-text": "Leer Artículo"
       }
     },

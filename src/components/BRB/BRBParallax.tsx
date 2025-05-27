@@ -16,7 +16,6 @@ import useMediaQuery from '@site/src/hooks/useMediaQuery';
 
 // Import Assets
 import ParallaxBRB from '@site/static/assets/website/brb/mainbg.svg';
-import ParallaxBRBMobile from '@site/static/assets/website/brb/mainbgmobile.svg';
 
 // Internal Configs
 import { device } from '@site/src/config/globals';

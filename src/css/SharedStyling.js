@@ -16,8 +16,7 @@ import GLOBALS, { device, structure } from '@site/src/config/globals';
  */
 
 export const HeroHeader = styled.h1`
-  font-family: ${(props) =>
-    props.fontFamily || 'Strawford, Helvetica, sans-serif'};
+  font-family: ${(props) => props.fontFamily || 'Inter, sans-serif'};
   color: ${(props) => props.color || GLOBALS.COLORS.FONT_LIGHT};
   font-size: 68px;
   line-height: 110%;
@@ -194,8 +193,7 @@ export const H1 = styled.h1`
   margin: ${(props) => props.margin || '0px'};
   padding: ${(props) => props.padding || '0px'};
   letter-spacing: ${(props) => props.letterSpacing || '-0.03em'};
-  font-family: ${(props) =>
-    props.fontFamily || 'Strawford, Helvetica, sans-serif'};
+  font-family: ${(props) => props.fontFamily || 'Inter, sans-serif'};
   text-align: ${(props) => props.textAlign || 'inherit'};
   line-height: ${(props) => props.lineHeight || '110%'};
   text-shadow: none;
@@ -221,8 +219,7 @@ export const H2 = styled.h2`
   margin: ${(props) => props.margin || '0px'};
   padding: ${(props) => props.padding || '0px'};
   letter-spacing: ${(props) => props.letterSpacing || '-0.02em'};
-  font-family: ${(props) =>
-    props.fontFamily || 'Strawford, Helvetica, sans-serif'};
+  font-family: ${(props) => props.fontFamily || 'Inter, sans-serif'};
   text-align: ${(props) => props.textAlign || 'inherit'};
   line-height: ${(props) => props.lineHeight || '110%'};
   text-shadow: none;
@@ -248,8 +245,7 @@ export const H3 = styled.h3`
   margin: ${(props) => props.margin || '0px'};
   padding: ${(props) => props.padding || '0px'};
   letter-spacing: ${(props) => props.letterSpacing || '-0.02em'};
-  font-family: ${(props) =>
-    props.fontFamily || 'Strawford, Helvetica, sans-serif'};
+  font-family: ${(props) => props.fontFamily || 'Inter, sans-serif'};
   text-align: ${(props) => props.textAlign || 'inherit'};
   line-height: ${(props) => props.lineHeight || '110%'};
   text-shadow: none;
@@ -329,8 +325,8 @@ export const Button = styled.button`
   z-index: ${(props) => props.zIndex || '3'};
   pointer: ${(props) => props.pointer || 'hand'};
   cursor: ${(props) => props.cursor || 'pointer'};
-  font-family: ${(props) =>
-    props.fontFamily || 'Strawford, Helvetica, sans-serif'};
+  gap: ${(props) => props.gap};
+  font-family: ${(props) => props.fontFamily || 'Inter, sans-serif'};
 
   @media ${device.laptop} {
     font-size: ${(props) =>
