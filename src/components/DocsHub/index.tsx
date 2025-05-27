@@ -83,30 +83,19 @@ function TechDocItem({
   const [content, setContent] = useState<number>(0);
   const baseUrl = useSiteBaseUrl();
 
-  const handleOpenLink = (e, link: { e: any; link: string }) => {
-    if (!link) return;
-
-    // Check if link is an absolute URL (starts with http or https)
+  const getFullLink = (link: string) => {
+    if (!link) return '#';
     const isAbsoluteUrl = /^https?:\/\//i.test(link);
-
-    // If the link is not an absolute URL and baseUrl is defined, prepend the baseUrl
-    const fullLink = isAbsoluteUrl ? link : baseUrl ? baseUrl + link : link;
-    console.log(
-      fullLink,
-      isAbsoluteUrl ? 'absolute link' : 'full link with baseUrl'
-    );
-
-    // Navigate to the constructed fullLink or the absolute link
-    target === '_self'
-      ? (window.location.href = fullLink)
-      : window.open(fullLink, target);
+    return isAbsoluteUrl ? link : baseUrl ? baseUrl + link : link;
   };
 
   return (
     <TechDocCard>
       {/* <Link to={link} target='_blank'> */}
       <TechDocContent
-        onClick={(e) => handleOpenLink(e, link)}
+        href={getFullLink(link)}
+        target='_self'
+        rel='noopener noreferrer'
         hoverBackground='transparent'
       >
         <ItemV alignSelf='stretch' margin='0px 8%'>
@@ -661,7 +650,7 @@ const TechDocCard = styled(ItemV)`
   }
 `;
 
-const TechDocContent = styled.div`
+const TechDocContent = styled.a`
   margin-top: 24px;
   position: relative;
   border-radius: 24px;
