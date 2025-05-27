@@ -21,11 +21,12 @@
 <p>In this iteration, we will amp up the utility scale and explore few of the most popular areas - loved by both - devs &amp; users.</p>
 <p>Before we begin, if you’re new to the concept of Shared Sates and Push Chain, here’s a quick recap:
 Feel free to skip down to the use cases section if you’re already aware of these concepts.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-push-chain---super-quick-recap">What is Push Chain? - Super Quick Recap:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#what-is-push-chain---super-quick-recap" class="hash-link" aria-label="Direct link to What is Push Chain? - Super Quick Recap:" title="Direct link to What is Push Chain? - Super Quick Recap:">​</a></h2>
 <p>Push Chain is an all-purpose universal chain that unites every existing and forthcoming chain together (under one roof).</p>
 <b>It is a shared-state L1 blockchain designed to function as a universal app layer for users across any chain, any wallet and any app.</b>
 <p>Combining this with the innovation of cross-chain fees and wallet abstraction, what you get is a blockchain able to read any other chain and… is accessible by users from any chain.</p>
 <p><img loading="lazy" alt="First Image of Apps Possible Only with Shared State - Vol.2" src="https://push-protocol.github.io/push-website/pr-preview/pr-1061/assets/images/image-1-e3682ce78fc7e7e3e72acdeac0c60ab4.webp" width="1394" height="1156" class="img_ev3q"></p>
-<h1>What is a 'shared state' blockchain?</h1>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-a-shared-state-blockchain">What is a 'shared state' blockchain?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#what-is-a-shared-state-blockchain" class="hash-link" aria-label="Direct link to What is a 'shared state' blockchain?" title="Direct link to What is a 'shared state' blockchain?">​</a></h2>
 <p><img loading="lazy" alt="Second Image of Apps Possible Only with Shared State - Vol.2" src="https://push-protocol.github.io/push-website/pr-preview/pr-1061/assets/images/image-2-e636b0c2d2e38ef580d5a4ddc34b3fc6.webp" width="1178" height="526" class="img_ev3q"></p>
 <p>At its core, a blockchain maintains a database tracking the state of all wallets and smart contracts (token balances, data, code, etc.). But these states are siloed within their respective chains, even <i>within the same ecosystem.</i></p>
 <p>For example, a wallet's ETH balance on Ethereum differs from its ETH balance on Base because each of these chains maintains its own state.</p>
@@ -36,15 +37,15 @@ Feel free to skip down to the use cases section if you’re already aware of the
 <li><b>Support wallets</b> across all networks.</li>
 </ul>
 <p>The first of these innovations -- i.e. the ability of developers on Push Chain <i>to read and utilise the state of other chains via smart contracts</i> -- is what we mean by a <b>shared-state blockchain.</b></p>
-<h1>Apps that are only possible with Shared States:</h1>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-competitive-cross-chain-gaming">1) Competitive Cross Chain Gaming<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#1-competitive-cross-chain-gaming" class="hash-link" aria-label="Direct link to 1) Competitive Cross Chain Gaming" title="Direct link to 1) Competitive Cross Chain Gaming">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="apps-that-are-only-possible-with-shared-states">Apps that are only possible with Shared States:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#apps-that-are-only-possible-with-shared-states" class="hash-link" aria-label="Direct link to Apps that are only possible with Shared States:" title="Direct link to Apps that are only possible with Shared States:">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-competitive-cross-chain-gaming">1) Competitive Cross Chain Gaming<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#1-competitive-cross-chain-gaming" class="hash-link" aria-label="Direct link to 1) Competitive Cross Chain Gaming" title="Direct link to 1) Competitive Cross Chain Gaming">​</a></h3>
 <p><b>Shared-state makes ‘chain wars’ real!</b>
 It allows players from any blockchain ecosystem to come together and play their favourite games with (or against) each other by leveraging Push Chain as a shared settlement layer.</p>
 <p>Think ‘<a href="https://chess.push.org/" target="_blank" rel="noopener noreferrer">Universal Chess</a>’ tournaments between Ethereum and Solana tribes, with a cross-chain betting widget for viewers and game NFTs for players. The perfect degen chess experience!</p>
 <p>But it doesn’t stop there. Think Poker, Blackjack, Monopoly, RPGs and more, available to and accessible by users of all chains!</p>
 <p>By removing the biggest barriers to on-chain game adoption, i.e. UX and asset fragmentation, <b>Push Chain allows gamers to bring their chain-specific identities to chain-neutral playgrounds.</b></p>
 <p><img loading="lazy" alt="Third Image of Apps Possible Only with Shared State - Vol.2" src="https://push-protocol.github.io/push-website/pr-preview/pr-1061/assets/images/image-3-13516c7df773f42da08f7d685b56a96d.webp" width="1920" height="800" class="img_ev3q"></p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-this-enables">🌌What this enables:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#what-this-enables" class="hash-link" aria-label="Direct link to 🌌What this enables:" title="Direct link to 🌌What this enables:">​</a></h3>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-this-enables">🌌What this enables:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#what-this-enables" class="hash-link" aria-label="Direct link to 🌌What this enables:" title="Direct link to 🌌What this enables:">​</a></h4>
 <ul>
 <li>Game developers can design experiences for the entire web3 userbase.</li>
 <li>Chain agnostic user onboarding - users can join from any chain they already use.</li>
@@ -52,25 +53,25 @@ It allows players from any blockchain ecosystem to come together and play their 
 e.g., Player 2 moves to Arbitrum but keeps their character's skills and assets intact.</li>
 <li>Multiplayer games can allow users to join from any chain, or switch in the middle without losing access to their points and/or in-game assets.</li>
 </ul>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-it-needs-shared-state">🤔Why it needs shared state:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#why-it-needs-shared-state" class="hash-link" aria-label="Direct link to 🤔Why it needs shared state:" title="Direct link to 🤔Why it needs shared state:">​</a></h3>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-it-needs-shared-state">🤔Why it needs shared state:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#why-it-needs-shared-state" class="hash-link" aria-label="Direct link to 🤔Why it needs shared state:" title="Direct link to 🤔Why it needs shared state:">​</a></h4>
 <ul>
 <li>Chain-neutral playgrounds require seamless state synchronizations, player state to be unified in one trusted environment - in order to track individual as well as relational game data (points, damage, skills, assets etc.).</li>
 <li>Without shared-state, cross-chain games would need <b>custom bridges</b> and complex game synchronization measures per game, which would be expensive and damaging for the UX.</li>
 </ul>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-multichain-daos">2) Multichain DAOs<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#2-multichain-daos" class="hash-link" aria-label="Direct link to 2) Multichain DAOs" title="Direct link to 2) Multichain DAOs">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-multichain-daos">2) Multichain DAOs<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#2-multichain-daos" class="hash-link" aria-label="Direct link to 2) Multichain DAOs" title="Direct link to 2) Multichain DAOs">​</a></h3>
 <p>Protocol tokens are increasingly becoming available cross-chain. For example, Uniswap’s UNI exists on Ethereum, Polygon and Base among others. <b>With shared-state, apps can aggregate a member’s voting power across chains by reading and bundling his tokens.</b></p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-what-this-enables">🌌 What this enables:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#-what-this-enables" class="hash-link" aria-label="Direct link to 🌌 What this enables:" title="Direct link to 🌌 What this enables:">​</a></h3>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-what-this-enables">🌌 What this enables:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#-what-this-enables" class="hash-link" aria-label="Direct link to 🌌 What this enables:" title="Direct link to 🌌 What this enables:">​</a></h4>
 <ul>
 <li>DAOs can launch tokens <b>across multiple chains</b> without fracturing governance.</li>
 <li>The community can participate in decentralized decision-making through <b>cross-chain coordination</b> (e.g. delegated votes, comments on proposals, commitment pools, temperature checks etc.)</li>
 </ul>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-it-needs-shared-state-1">🤔Why it needs shared-state:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#why-it-needs-shared-state-1" class="hash-link" aria-label="Direct link to 🤔Why it needs shared-state:" title="Direct link to 🤔Why it needs shared-state:">​</a></h3>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-it-needs-shared-state-1">🤔Why it needs shared-state:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#why-it-needs-shared-state-1" class="hash-link" aria-label="Direct link to 🤔Why it needs shared-state:" title="Direct link to 🤔Why it needs shared-state:">​</a></h4>
 <ul>
 <li>‘Voting power’ is a combined function of a protocol’s real and synthetic assets held across chains.</li>
 </ul>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-universal-ai-agents">3) Universal AI Agents:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#3-universal-ai-agents" class="hash-link" aria-label="Direct link to 3) Universal AI Agents:" title="Direct link to 3) Universal AI Agents:">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-universal-ai-agents">3) Universal AI Agents:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#3-universal-ai-agents" class="hash-link" aria-label="Direct link to 3) Universal AI Agents:" title="Direct link to 3) Universal AI Agents:">​</a></h3>
 <p>Shared state capabilities of Push Chain act as the missing coordination layer for enabling universal AI agents to operate across multiple independent chains autonomously, reliably, and with a unified memory.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-this-enables-1">🌌What this enables:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#what-this-enables-1" class="hash-link" aria-label="Direct link to 🌌What this enables:" title="Direct link to 🌌What this enables:">​</a></h3>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-this-enables-1">🌌What this enables:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#what-this-enables-1" class="hash-link" aria-label="Direct link to 🌌What this enables:" title="Direct link to 🌌What this enables:">​</a></h4>
 <p>Build <b>chain-agnostic AI agents</b> that can:</p>
 <ul>
 <li>Read user states, assets, activities, and preferences across all chains.</li>
@@ -84,72 +85,72 @@ e.g., Player 2 moves to Arbitrum but keeps their character's skills and assets i
 <li>Notices idle assets on Base and recommends moving them into a higher-yield protocol on Polygon.</li>
 <li>Automatically constructs and <b>executes a cross-chain investment action</b> via Push Chain's programmable solvers.</li>
 </ul>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-it-needs-shared-state-2">🤔Why it needs shared-state:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#why-it-needs-shared-state-2" class="hash-link" aria-label="Direct link to 🤔Why it needs shared-state:" title="Direct link to 🤔Why it needs shared-state:">​</a></h3>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-it-needs-shared-state-2">🤔Why it needs shared-state:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#why-it-needs-shared-state-2" class="hash-link" aria-label="Direct link to 🤔Why it needs shared-state:" title="Direct link to 🤔Why it needs shared-state:">​</a></h4>
 <ul>
 <li>Unified State Access: AI agents need real-time visibility into user balances, transactions, and positions <b>across all chains.</b></li>
 </ul>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4-universal-multi-chain-safes">4) Universal (Multi-chain) Safes<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#4-universal-multi-chain-safes" class="hash-link" aria-label="Direct link to 4) Universal (Multi-chain) Safes" title="Direct link to 4) Universal (Multi-chain) Safes">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4-universal-multi-chain-safes">4) Universal (Multi-chain) Safes<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#4-universal-multi-chain-safes" class="hash-link" aria-label="Direct link to 4) Universal (Multi-chain) Safes" title="Direct link to 4) Universal (Multi-chain) Safes">​</a></h3>
 <p>Today, managing assets across multiple chains is a logistical nightmare.</p>
 <p>Users must juggle separate wallets, track balances individually, and manually bridge funds — a process that’s both error-prone and inefficient. While ‘safes’ are a reliable way for groups to pool and manage assets (e.g. for DAOs, investment clubs, or even families), they face additional challenges due to multisig barriers.</p>
 <p>Shared-state solves this by enabling <b>safes with multi-chain signers</b>, i.e. chain-agnostic vaults that can natively pool, manage and utilise assets across all chains.</p>
 <p>This turns the chaos of fragmented assets into a streamlined, interoperable system — for individuals, DAOs, and institutions. With shared-state, Push Chain makes cross-chain asset-management as simple as using a single shared wallet.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-what-it-enables">🌌 What it enables:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#-what-it-enables" class="hash-link" aria-label="Direct link to 🌌 What it enables:" title="Direct link to 🌌 What it enables:">​</a></h3>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="unified-asset-management">Unified Asset Management<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#unified-asset-management" class="hash-link" aria-label="Direct link to Unified Asset Management" title="Direct link to Unified Asset Management">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-what-it-enables">🌌 What it enables:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#-what-it-enables" class="hash-link" aria-label="Direct link to 🌌 What it enables:" title="Direct link to 🌌 What it enables:">​</a></h4>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="unified-asset-management">Unified Asset Management<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#unified-asset-management" class="hash-link" aria-label="Direct link to Unified Asset Management" title="Direct link to Unified Asset Management">​</a></h5>
 <ul>
 <li>Users can deposit assets from any chain (e.g., ETH on Ethereum, SOL on Solana, GNO on Gnosis) into a single safe, with real-time visibility of their total portfolio.</li>
 <li>Groups (DAOs, hedge funds, guilds) can collectively manage cross-chain treasuries without requiring manual bridging or chain-specific multisigs.</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conditional-cross-chain-spending">Conditional Cross-Chain Spending<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#conditional-cross-chain-spending" class="hash-link" aria-label="Direct link to Conditional Cross-Chain Spending" title="Direct link to Conditional Cross-Chain Spending">​</a></h4>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="conditional-cross-chain-spending">Conditional Cross-Chain Spending<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#conditional-cross-chain-spending" class="hash-link" aria-label="Direct link to Conditional Cross-Chain Spending" title="Direct link to Conditional Cross-Chain Spending">​</a></h5>
 <ul>
 <li>Define rules like: "Allow withdrawals only if 3/5 signers approve, and only up to 10% of the safe's TVA (Total Value Across chains)."</li>
 <li>Automate cross-chain rebalancing (e.g., "If $CLANKER on Base drops below 20% of the safe's TVA, sell $TRUMP on Solana to equalize").</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="shared-ownership-without-bridging">Shared Ownership Without Bridging<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#shared-ownership-without-bridging" class="hash-link" aria-label="Direct link to Shared Ownership Without Bridging" title="Direct link to Shared Ownership Without Bridging">​</a></h4>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="shared-ownership-without-bridging">Shared Ownership Without Bridging<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#shared-ownership-without-bridging" class="hash-link" aria-label="Direct link to Shared Ownership Without Bridging" title="Direct link to Shared Ownership Without Bridging">​</a></h5>
 <ul>
 <li>A DAO can hold ETH on Ethereum, stSOL on Solana, and USDC on Base — all in the same safe, governed by the same rules.</li>
 <li>Families or investment clubs can pool assets across chains while maintaining granular permissions (e.g., "Kids can only spend from the Optimism portion").</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="cross-chain-inheritance--recovery">Cross-Chain Inheritance &amp; Recovery<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#cross-chain-inheritance--recovery" class="hash-link" aria-label="Direct link to Cross-Chain Inheritance &amp; Recovery" title="Direct link to Cross-Chain Inheritance &amp; Recovery">​</a></h4>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="cross-chain-inheritance--recovery">Cross-Chain Inheritance &amp; Recovery<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#cross-chain-inheritance--recovery" class="hash-link" aria-label="Direct link to Cross-Chain Inheritance &amp; Recovery" title="Direct link to Cross-Chain Inheritance &amp; Recovery">​</a></h5>
 <ul>
 <li>Set up programmable inheritance (e.g., "If inactive for 12 months, transfer all assets — regardless of chain — to this backup wallet").</li>
 <li>Social recovery mechanisms can pull verification from multiple chains (e.g., "Recover safe if 5/7 friends from Ethereum, Solana, and Polygon sign").</li>
 </ul>
 <p><img loading="lazy" alt="Fifth Image of Apps Possible Only with Shared State - Vol.2" src="https://push-protocol.github.io/push-website/pr-preview/pr-1061/assets/images/image-5-48b511f626359221448f3318697630f8.webp" width="1474" height="626" class="img_ev3q"></p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-it-needs-shared-state-3">Why it needs shared-state:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#why-it-needs-shared-state-3" class="hash-link" aria-label="Direct link to Why it needs shared-state:" title="Direct link to Why it needs shared-state:">​</a></h3>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="real-time-portfolio-tracking">Real-Time Portfolio Tracking<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#real-time-portfolio-tracking" class="hash-link" aria-label="Direct link to Real-Time Portfolio Tracking" title="Direct link to Real-Time Portfolio Tracking">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="why-it-needs-shared-state-3">Why it needs shared-state:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#why-it-needs-shared-state-3" class="hash-link" aria-label="Direct link to Why it needs shared-state:" title="Direct link to Why it needs shared-state:">​</a></h4>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="real-time-portfolio-tracking">Real-Time Portfolio Tracking<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#real-time-portfolio-tracking" class="hash-link" aria-label="Direct link to Real-Time Portfolio Tracking" title="Direct link to Real-Time Portfolio Tracking">​</a></h5>
 <ul>
 <li>A safe’s TVA (Total Value Across chains) can only be calculated if the contract can read balances from all connected chains.</li>
 <li>Without shared-state, we’d need to manually bridge assets to a single chain—defeating the purpose of a true ‘multi-chain’ safe.</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="cross-chain-transaction-execution">Cross-Chain Transaction Execution<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#cross-chain-transaction-execution" class="hash-link" aria-label="Direct link to Cross-Chain Transaction Execution" title="Direct link to Cross-Chain Transaction Execution">​</a></h4>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="cross-chain-transaction-execution">Cross-Chain Transaction Execution<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#cross-chain-transaction-execution" class="hash-link" aria-label="Direct link to Cross-Chain Transaction Execution" title="Direct link to Cross-Chain Transaction Execution">​</a></h5>
 <ul>
 <li>Spending from a multi-chain safe requires verifying ownership and permissions across chains (e.g., "Does this wallet have approval on Ethereum to trigger a withdrawal on Solana?").</li>
 <li>Shared-state enables this via atomic cross-chain actions (e.g., selling ETH on Arbitrum to buy SOL on Solana in one transaction).</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="dynamic-rule-enforcement">Dynamic Rule Enforcement<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#dynamic-rule-enforcement" class="hash-link" aria-label="Direct link to Dynamic Rule Enforcement" title="Direct link to Dynamic Rule Enforcement">​</a></h4>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="dynamic-rule-enforcement">Dynamic Rule Enforcement<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#dynamic-rule-enforcement" class="hash-link" aria-label="Direct link to Dynamic Rule Enforcement" title="Direct link to Dynamic Rule Enforcement">​</a></h5>
 <ul>
 <li>Conditions like "Only spend if the safe’s total stablecoin holdings exceed $1M" require aggregating balances from multiple chains.</li>
 <li>Recovery mechanisms need to verify on-chain activity (e.g., "Check last transaction timestamps on all chains before triggering inheritance").</li>
 </ul>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5-embeddable-prediction-markets">5) Embeddable Prediction Markets<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#5-embeddable-prediction-markets" class="hash-link" aria-label="Direct link to 5) Embeddable Prediction Markets" title="Direct link to 5) Embeddable Prediction Markets">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5-embeddable-prediction-markets">5) Embeddable Prediction Markets<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#5-embeddable-prediction-markets" class="hash-link" aria-label="Direct link to 5) Embeddable Prediction Markets" title="Direct link to 5) Embeddable Prediction Markets">​</a></h3>
 <p>Prediction markets are great tools for building alignment, coordination and conviction within groups. They can unlock a bunch of utility when combined with other on-chain activities such as DeFi, voting, gaming and content creation.</p>
 <p>Today, however, they operate as isolated betting shops which are limited to specific chains, acceptable tokens and capacity to verify events (off or on-chain).</p>
 <b>Shared-state changes all of this.</b>
 <p>Push Chain enables <b>universally embeddable prediction markets</b> that can be attached to any cross-chain app, game, or event and can be used by users from any chain and any token.</p>
 <p>Seamless routing liquidity across chains, without bridging.</p>
 <p>Thus, turning fragmented cross-chain activities into a unified playground for probabilistic thinking.</p>
-<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-this-enables-2">🌌What this enables:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#what-this-enables-2" class="hash-link" aria-label="Direct link to 🌌What this enables:" title="Direct link to 🌌What this enables:">​</a></h3>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="app-based-prediction-widgets-developers-can-create-internal-markets-that-can-be-attached-to-any-cross-chain-app-game-or-events">App-based prediction widgets: developers can create internal markets that can be attached to any cross-chain app, game, or events:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#app-based-prediction-widgets-developers-can-create-internal-markets-that-can-be-attached-to-any-cross-chain-app-game-or-events" class="hash-link" aria-label="Direct link to App-based prediction widgets: developers can create internal markets that can be attached to any cross-chain app, game, or events:" title="Direct link to App-based prediction widgets: developers can create internal markets that can be attached to any cross-chain app, game, or events:">​</a></h4>
+<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-this-enables-2">🌌What this enables:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#what-this-enables-2" class="hash-link" aria-label="Direct link to 🌌What this enables:" title="Direct link to 🌌What this enables:">​</a></h4>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="app-based-prediction-widgets-developers-can-create-internal-markets-that-can-be-attached-to-any-cross-chain-app-game-or-events">App-based prediction widgets: developers can create internal markets that can be attached to any cross-chain app, game, or events:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#app-based-prediction-widgets-developers-can-create-internal-markets-that-can-be-attached-to-any-cross-chain-app-game-or-events" class="hash-link" aria-label="Direct link to App-based prediction widgets: developers can create internal markets that can be attached to any cross-chain app, game, or events:" title="Direct link to App-based prediction widgets: developers can create internal markets that can be attached to any cross-chain app, game, or events:">​</a></h5>
 <ul>
 <li>e.g.: during a board/card game on one chain, a widget allows viewers from any chain to create ‘internal bets’:
 a. on the outcome of the game,
 b. on specific moves/cards,</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="event-driven-derivatives-time-sensitive-markets-that-spin-up-whenever-certain-conditions-are-met">Event-driven derivatives: time-sensitive markets that spin up whenever certain conditions are met:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#event-driven-derivatives-time-sensitive-markets-that-spin-up-whenever-certain-conditions-are-met" class="hash-link" aria-label="Direct link to Event-driven derivatives: time-sensitive markets that spin up whenever certain conditions are met:" title="Direct link to Event-driven derivatives: time-sensitive markets that spin up whenever certain conditions are met:">​</a></h4>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="event-driven-derivatives-time-sensitive-markets-that-spin-up-whenever-certain-conditions-are-met">Event-driven derivatives: time-sensitive markets that spin up whenever certain conditions are met:<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#event-driven-derivatives-time-sensitive-markets-that-spin-up-whenever-certain-conditions-are-met" class="hash-link" aria-label="Direct link to Event-driven derivatives: time-sensitive markets that spin up whenever certain conditions are met:" title="Direct link to Event-driven derivatives: time-sensitive markets that spin up whenever certain conditions are met:">​</a></h5>
 <ul>
 <li>e.g. for the duration of Trump’s golf game, will the price of $Trump rise or fall? (Such a market can be programmed to spin up automatically on credible news of Trump playing golf, and disappear when the game ends).</li>
 </ul>
-<h4 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="deeper-community-engagement-local-prediction-markets-embedded-in-apps--high-engagement-attraction">Deeper community engagement: Local prediction markets embedded in apps = high engagement attraction.<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#deeper-community-engagement-local-prediction-markets-embedded-in-apps--high-engagement-attraction" class="hash-link" aria-label="Direct link to Deeper community engagement: Local prediction markets embedded in apps = high engagement attraction." title="Direct link to Deeper community engagement: Local prediction markets embedded in apps = high engagement attraction.">​</a></h4>
+<h5 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="deeper-community-engagement-local-prediction-markets-embedded-in-apps--high-engagement-attraction">Deeper community engagement: Local prediction markets embedded in apps = high engagement attraction.<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#deeper-community-engagement-local-prediction-markets-embedded-in-apps--high-engagement-attraction" class="hash-link" aria-label="Direct link to Deeper community engagement: Local prediction markets embedded in apps = high engagement attraction." title="Direct link to Deeper community engagement: Local prediction markets embedded in apps = high engagement attraction.">​</a></h5>
 <p><img loading="lazy" alt="Sixth Image of Apps Possible Only with Shared State - Vol.2" src="https://push-protocol.github.io/push-website/pr-preview/pr-1061/assets/images/image-6-7e85564cf58113d1d5892ba66b6af2f9.webp" width="1600" height="900" class="img_ev3q"></p>
 <b>🤔Why it needs shared-state:</b>
 <ul>
@@ -157,7 +158,7 @@ b. on specific moves/cards,</li>
 <li><b>Cross-chain settlement proofs</b> are required to resolve outcomes trustlessly.</li>
 <li>Dynamic odds calculation requires unified liquidity across all prediction pools.</li>
 </ul>
-<h1>End Game</h1>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="end-game">End Game<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v2#end-game" class="hash-link" aria-label="Direct link to End Game" title="Direct link to End Game">​</a></h2>
 <p>Push Chain’s shared-state architecture finally delivers <b>the universal blockchain trifecta</b> — unifying user needs, developer needs, and cross-chain data unification – all in a single layer.</p>
 <p>For users, it leads to seamless cross-chain interactions: no more juggling bridges, fragmented balances or chain-locked assets. Your entire on-chain identity — DeFi positions, NFTs, agentic memories, game assets etc. — becomes portable and composable across all networks.</p>
 <p>For developers, shared-state unlocks an entirely new paradigm: read and unify fragmented assets without worrying about latency, cost, security or interoperability.</p>
@@ -181,11 +182,12 @@ When you could build for them all? <br></p></b>]]></content:encoded>
 And so has the extent of innovations that continue to make this space more adaptive, smooooth and fun!</p>
 <p>Here are 5 super innovative use cases the industry could immensely benefit from using Shared State chains like Push Chain.</p>
 <p>These use cases cover various bases, including but not limited to Defi, Degen Defi(iykyk), Art, Airdrops, DAOs and even Gaming.</p>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-push-chain">What is Push Chain?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#what-is-push-chain" class="hash-link" aria-label="Direct link to What is Push Chain?" title="Direct link to What is Push Chain?">​</a></h2>
 <p>Push Chain is an all-purpose universal chain that unites every existing and forthcoming chain together (under one roof).</p>
 <p><strong>It is a shared-state L1 blockchain designed to function as a universal app layer for users across any chain, any wallet and any app.</strong></p>
 <p>Combining this with the innovation of cross-chain fees and wallet abstraction, what you get is a <strong>blockchain able to read any other chain and… is accessible by users from any chain.</strong></p>
 <p><img loading="lazy" alt="push chain vein diagram" src="https://push-protocol.github.io/push-website/pr-preview/pr-1061/assets/images/image1-cd596484c7f06eaa8ef9c27a95f8b8ec.webp" width="1394" height="1156" class="img_ev3q"></p>
-<h1>What is a 'shared state' blockchain?</h1>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-is-a-shared-state-blockchain">What is a 'shared state' blockchain?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#what-is-a-shared-state-blockchain" class="hash-link" aria-label="Direct link to What is a 'shared state' blockchain?" title="Direct link to What is a 'shared state' blockchain?">​</a></h2>
 <p><img loading="lazy" alt="shared state overview" src="https://push-protocol.github.io/push-website/pr-preview/pr-1061/assets/images/image2-ab926e71982b6721fcec2bc71f744803.webp" width="1601" height="900" class="img_ev3q"></p>
 <p>At its core, a blockchain maintains a database tracking the state of all wallets and smart contracts (token balances, data, code, etc.). But these states are siloed within their respective chains, even within the same ecosystem.</p>
 <p>For example, a wallet's ETH balance on Ethereum differs from its ETH balance on Base because each of these chains maintains its own state.</p>
@@ -196,9 +198,9 @@ And so has the extent of innovations that continue to make this space more adapt
 <li><strong>Support</strong> <strong>wallets</strong> across all networks.</li>
 </ul>
 <p>The first of these innovations -- i.e. the ability of developers on Push Chain <em>to read and utilise the state of other chains</em> via smart contracts -- is what we mean by a <strong>shared-state blockchain</strong>.</p>
-<h1>What kind of apps does this enable?</h1>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-kind-of-apps-does-this-enable">What kind of apps does this enable?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#what-kind-of-apps-does-this-enable" class="hash-link" aria-label="Direct link to What kind of apps does this enable?" title="Direct link to What kind of apps does this enable?">​</a></h2>
 <p><img loading="lazy" alt="movie reference 1" src="https://push-protocol.github.io/push-website/pr-preview/pr-1061/assets/images/image3-e803bbd60903fd746ece4e376b4d6a98.webp" width="1920" height="800" class="img_ev3q"></p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-universal-defi--payments">1. Universal DeFi &amp; Payments<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#1-universal-defi--payments" class="hash-link" aria-label="Direct link to 1. Universal DeFi &amp; Payments" title="Direct link to 1. Universal DeFi &amp; Payments">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="1-universal-defi--payments">1. Universal DeFi &amp; Payments<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#1-universal-defi--payments" class="hash-link" aria-label="Direct link to 1. Universal DeFi &amp; Payments" title="Direct link to 1. Universal DeFi &amp; Payments">​</a></h3>
 <p>DeFi today is fractured by:</p>
 <ol>
 <li>chain-bound liquidity,</li>
@@ -259,7 +261,7 @@ And so has the extent of innovations that continue to make this space more adapt
 <li>Collateral managers and liquidation protectors cannot link different balances to the same user without fetching the state.</li>
 <li>Price oracles need to aggregate and verify data from multiple sources.</li>
 </ul>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-yield-aggregators">2. Yield Aggregators<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#2-yield-aggregators" class="hash-link" aria-label="Direct link to 2. Yield Aggregators" title="Direct link to 2. Yield Aggregators">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="2-yield-aggregators">2. Yield Aggregators<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#2-yield-aggregators" class="hash-link" aria-label="Direct link to 2. Yield Aggregators" title="Direct link to 2. Yield Aggregators">​</a></h3>
 <p>Shared-state apps built on Push Chain can also function as <strong>universal yield aggregators</strong>. They can collect and show APYs from various chains, allowing the user to execute the most profitable staking transactions across any network without worrying about native reconversions or swaps.</p>
 <h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="what-this-enables-1"><em><strong>What this enables</strong></em><a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#what-this-enables-1" class="hash-link" aria-label="Direct link to what-this-enables-1" title="Direct link to what-this-enables-1">​</a></h3>
 <ul>
@@ -273,7 +275,7 @@ And so has the extent of innovations that continue to make this space more adapt
 <li>Yields are a dynamic function of various on-chain data points (e.g. total staked supply, network inflation rules, validator slashing and reward metrics, gas fees and MEV protections). Their aggregation is impossible without accurate and verifiable cross-chain read capabilities.</li>
 <li>Combined capital and ULSTs require proof of ownership of underlying assets.</li>
 </ul>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-customizable-universal-exchanges">3. Customizable Universal Exchanges<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#3-customizable-universal-exchanges" class="hash-link" aria-label="Direct link to 3. Customizable Universal Exchanges" title="Direct link to 3. Customizable Universal Exchanges">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="3-customizable-universal-exchanges">3. Customizable Universal Exchanges<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#3-customizable-universal-exchanges" class="hash-link" aria-label="Direct link to 3. Customizable Universal Exchanges" title="Direct link to 3. Customizable Universal Exchanges">​</a></h3>
 <p>A customizable universal exchange is one where you can trade any asset (fungible or non-fungible) against any other asset on any chain, with no need for both assets to exist in the same chain.</p>
 <p>Currently, ‘trading pairs’ on exchanges are limited to recognized tokens, which have two limitations:</p>
 <ul>
@@ -308,7 +310,7 @@ And so has the extent of innovations that continue to make this space more adapt
 <p><em>Want to experience Universal DEXs?</em></p>
 <p><em>Stay tuned for <strong>Push Chain Testnet V1</strong></em></p>
 <p><em>Coming very soon…</em></p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4-universal-airdrops">4 Universal Airdrops<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#4-universal-airdrops" class="hash-link" aria-label="Direct link to 4 Universal Airdrops" title="Direct link to 4 Universal Airdrops">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="4-universal-airdrops">4 Universal Airdrops<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#4-universal-airdrops" class="hash-link" aria-label="Direct link to 4 Universal Airdrops" title="Direct link to 4 Universal Airdrops">​</a></h3>
 <p>Traditionally, Airdrops are localized to a specific chain(Solana, Ethereum, Arbitrum etc). The eligibility checks usually work only within the chain of the drop.</p>
 <p>Shared-state chains like Push Chain allow us to query on-chain data from different chains, enabling the flexibility for crafting complex eligibility conditions spanning ecosystems, in a very convenient and unified manner.</p>
 <p><em><strong>For example:</strong></em></p>
@@ -342,7 +344,7 @@ And so has the extent of innovations that continue to make this space more adapt
 <li>Eligibility verification requires <strong>live access</strong> to wallet activity across multiple chains.</li>
 <li>Without shared-state, projects must deploy separate scripts/contracts/oracles per chain, leading to fragmentation, delays, and higher infra costs.</li>
 </ul>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5-universal-nfts">5 Universal NFTs<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#5-universal-nfts" class="hash-link" aria-label="Direct link to 5 Universal NFTs" title="Direct link to 5 Universal NFTs">​</a></h2>
+<h3 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="5-universal-nfts">5 Universal NFTs<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#5-universal-nfts" class="hash-link" aria-label="Direct link to 5 Universal NFTs" title="Direct link to 5 Universal NFTs">​</a></h3>
 <p>Today’s NFTs are trapped in single-chain ecosystems with rigid formats. (An NFT on Ethereum can’t natively interact with Solana or Aptos.).</p>
 <p>It is virtually unheard of to have an NFT on one chain with its tokens on another (although projects such as Pudgy Penguins are pioneering this approach).</p>
 <p>Moreover, at present, an NFT can neither be launched on different chains at once, nor can its attributes be natively read from them.</p>
@@ -371,14 +373,14 @@ And so has the extent of innovations that continue to make this space more adapt
 <li>Reading and writing of NFT metadata across chains.</li>
 <li>Elimination of artificial "chain walls" that restrict creative evolution.</li>
 </ul>
-<h1>End Game</h1>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="end-game">End Game<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#end-game" class="hash-link" aria-label="Direct link to End Game" title="Direct link to End Game">​</a></h2>
 <p>Push Chain’s shared-state architecture finally delivers <strong>the universal blockchain trifecta</strong> - unifying user needs, developer needs, and cross-chain data unification - all in a single layer.</p>
 <p>For users, it leads to seamless cross-chain interactions: no more juggling bridges, fragmented balances or chain-locked assets. Your entire on-chain identity - DeFi positions, NFTs, agentic memories, game assets etc. becomes portable and composable across all networks.</p>
 <p>For developers, shared-state unlocks an entirely new paradigm: universal apps that can natively read and write across all chains as if they were one.</p>
 <p><em><strong>Seriously..</strong></em></p>
 <p><em><strong>Why build for one chain anymore</strong></em></p>
 <p><em><strong>When you could build for them all?</strong></em></p>
-<h1>It's not over yet!</h1>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="its-not-over-yet">It's not over yet!<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/apps-only-possible-with-shared-state-v1#its-not-over-yet" class="hash-link" aria-label="Direct link to It's not over yet!" title="Direct link to It's not over yet!">​</a></h2>
 <p>We have just scratched the surface.</p>
 <p>Vol. 2 of this article&nbsp;will be even more mind-bending, covering use cases across AI agents, DAOs, Gaming and much more!</p>
 <p>Stay Tuned!</p>
@@ -728,7 +730,7 @@ Push Chain is joining forces with Gaia Network to make chain abstracted AI Agent
 <h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="-what-does-this-mean-for-gaia-and-push-chain-users">👥 What does this mean for Gaia and Push Chain Users?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/push-chain-joins-forces-with-gaia#-what-does-this-mean-for-gaia-and-push-chain-users" class="hash-link" aria-label="Direct link to 👥 What does this mean for Gaia and Push Chain Users?" title="Direct link to 👥 What does this mean for Gaia and Push Chain Users?">​</a></h2>
 <p><strong>Interact with Universally operable AI Agents</strong></p>
 <p>With Push’s Universal capabilities - users operating AI agents built on Gaia can conveniently perform autonomous tasks across any chain!</p>
-<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="️-what-does-this-mean-for-builders">👷‍♂️ What does this mean for Builders?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/push-chain-joins-forces-with-gaia#%EF%B8%8F-what-does-this-mean-for-builders" class="hash-link" aria-label="Direct link to 👷‍♂️ What does this mean for Builders?" title="Direct link to 👷‍♂️ What does this mean for Builders?">​</a></h2>
+<h2 class="anchor anchorWithHideOnScrollNavbar_WYt5" id="️-what-does-this-mean-for-builders">👷‍♂️ What does this mean for Builders?<a href="https://push-protocol.github.io/push-website/pr-preview/pr-1061/blog/push-chain-joins-forces-with-gaia#%EF%B8%8F-what-does-this-mean-for-builders" class="hash-link" aria-label="Direct link to 👷‍♂️ What does this mean for Builders?" title="Direct link to 👷�‍♂️ What does this mean for Builders?">​</a></h2>
 <p><strong>Develop Universally Operable AI Agents</strong></p>
 <p>With Gaia and Push, Builders can create borderless ai agents - that can perform financial, mixed financial and consumer read/write operations across any chain in an autonomous manner.</p>
 <p><strong>Build Agents with Universal Identities</strong></p>
