@@ -6,6 +6,7 @@ slug: ./push-wallet-provider
 displayed_sidebar: pushChainSidebar
 sidebar_position: 1
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -34,7 +35,7 @@ Wrap your application with `PushWalletProvider` to make wallet functionality ava
 import { CONSTANTS, PushWalletProvider, PushWalletProviderConfig } from '@pushprotocol/pushchain-ui-kit';
 
 const walletConfig: PushWalletProviderConfig = {
-  env: CONSTANTS.ENV.TESTNET,
+  env: CONSTANTS.ENV.DEVNET,
 }
 
 
@@ -49,6 +50,7 @@ function App() {
   );
 }
 ```
+
  </TabItem>
 </Tabs>
 
@@ -58,71 +60,61 @@ function App() {
 
 Core configuration object for connections and login settings.
 
-| Property | Type | Description | Default |
-|----------|------|-------------|---------|
-| `uid` | string | Unique identifier for this provider instance | 'default' |
-| _`env`_ | CONSTANTS.ENV | Chain environment to connect to | Required |
-| `rpcURL` | string | Custom JSON-RPC endpoint for supported chains | Public endpoints |
-| `login` | Object | Login method configuration | See below |
+| Property | Type          | Description                                             | Default          |
+| -------- | ------------- | ------------------------------------------------------- | ---------------- |
+| `uid`    | string        | Unique identifier for this provider instance            | 'default'        |
+| _`env`_  | CONSTANTS.ENV | Chain environment to connect to                         | Required         |
+| `rpcURL` | string        | Custom JSON-RPC endpoint for supported chains           | Public endpoints |
+| `login`  | Object        | Login method configuration                              | See below        |
+| `modal`  | Object        | Global defaults for login and connected modal instances | See below        |
 
 #### `config.login` Options
 
-| Property | Type | Description | Default |
-|----------|------|-------------|---------|
-| `email` | boolean | Enable email/password login | `true` |
-| `google` | boolean | Enable Google OAuth login | `true` |
-| `wallet` | Object | External wallet configuration | See below |
-| `appPreview` | boolean | Show app preview inside iframe | `false` |
+| Property     | Type    | Description                    | Default   |
+| ------------ | ------- | ------------------------------ | --------- |
+| `email`      | boolean | Enable email/password login    | `true`    |
+| `google`     | boolean | Enable Google OAuth login      | `true`    |
+| `wallet`     | Object  | External wallet configuration  | See below |
+| `appPreview` | boolean | Show app preview inside iframe | `false`   |
 
 #### `config.login.wallet` Options
 
-| Property | Type | Description | Default |
-|----------|------|-------------|---------|
-| `enabled` | boolean | Allow external wallet connections | `true` |
-| `chains` | CONSTANTS.CHAIN[] | Specific chains to enable | All supported chains |
+| Property  | Type              | Description                       | Default              |
+| --------- | ----------------- | --------------------------------- | -------------------- |
+| `enabled` | boolean           | Allow external wallet connections | `true`               |
+| `chains`  | CONSTANTS.CHAIN[] | Specific chains to enable         | All supported chains |
+
+#### `config.modal` Options
+
+Global defaults for all login modal instances.
+
+| Property          | Type                                                  | Description                          | Default                |
+| ----------------- | ----------------------------------------------------- | ------------------------------------ | ---------------------- |
+| `loginLayout`     | CONSTANTS.LOGIN.SPLIT \| CONSTANTS.LOGIN.SIMPLE       | Login modal layout type              | CONSTANTS.LOGIN.SIMPLE |
+| `appPreview`      | boolean                                               | Show app preview in modal            | `false`                |
+| `bgImage`         | string                                                | Background image for the login modal | None                   |
+| `connectedLayout` | CONSTANTS.CONNECTED.FULL \| CONSTANTS.CONNECTED.HOVER | Connected modal layout type          | None                   |
 
 ### `app`
 
 Application metadata used for branding in login screens and preview panes.
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `logoURL` | string | URL to application logo or icon |
-| `title` | string | Application name or title |
+| Property      | Type   | Description                          |
+| ------------- | ------ | ------------------------------------ |
+| `logoURL`     | string | URL to application logo or icon      |
+| `title`       | string | Application name or title            |
 | `description` | string | Brief description of the application |
 
 ### `themeMode`
 
-| Type | Description | Default |
-|------|-------------|---------|
+| Type            | Description                | Default                |
+| --------------- | -------------------------- | ---------------------- |
 | CONSTANTS.THEME | Theme mode (LIGHT or DARK) | `CONSTANTS.THEME.DARK` |
 
-### `buttonDefaults`
+### `themeOverride`
 
-Global defaults for all `PushUniversalAccountButton` instances.
-
-| Property | Type | Description | Default |
-|----------|------|-------------|---------|
-| `loginText` | string | Default text for connect button | "Connect Push Wallet" |
-| `loginBgColor` | string | Default background color for connect button | Theme default |
-| `loginTextColor` | string | Default text color for connect button | Theme default |
-| `loginStyle` | React.CSSProperties | Default inline styles for connect button | `{}` |
-| `loadingComponent` | React.ReactNode | Custom loading indicator | Default spinner |
-| `walletBgColor` | string | Default background color for connected button | Theme default |
-| `walletTextColor` | string | Default text color for connected button | Theme default |
-| `walletStyle` | React.CSSProperties | Default inline styles for connected button | `{}` |
-| `accountMenuVariant` | 'full' \| 'hover' | How the account menu appears | 'hover' |
-
-### `modalDefaults`
-
-Global defaults for all login modal instances.
-
-| Property | Type | Description | Default |
-|----------|------|-------------|---------|
-| `loginLayout` | CONSTANTS.LOGIN.SPLIT \| CONSTANTS.LOGIN.SIMPLE | Modal layout type | CONSTANTS.LOGIN.SIMPLE |
-| `showModalAppPreview` | boolean | Show app preview in modal | `false` |
-| `bgImage` | string | Background image CSS value | None |
-| `bgColor` | string | Background color | Theme default |
-| `fgColor` | string | Text color | Theme default |
+| Type           | Description                 | Default |
+| -------------- | --------------------------- | ------- |
+| ThemeOverrides | Override the theme settings | `{}`    |
 
 > Note: Parameters _`in this style`_ are mandatory.

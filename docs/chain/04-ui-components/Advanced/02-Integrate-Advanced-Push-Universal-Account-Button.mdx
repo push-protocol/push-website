@@ -30,14 +30,14 @@ import { PushUniversalAccountButton } from '@pushprotocol/pushchain-ui-kit';
 
 function Header() {
   return (
-           <Box
-             display="flex"
-             alignItems="center"
-             justifyContent="center"
-             width="-webkit-fill-available"
-           >
-             <PushUniversalAccountButton />
-           </Box>
+    <Box
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+      width='-webkit-fill-available'
+    >
+      <PushUniversalAccountButton />
+    </Box>
   );
 }
 ```
@@ -56,46 +56,39 @@ Each state can be fully customized through props.
 
 ### Instance Targeting
 
-| Property | Type | Description | Default |
-|----------|------|-------------|---------|
-| `uid` | string | Target provider instance, matches `config.uid` | Uses default provider |
+| Property | Type   | Description                                    | Default               |
+| -------- | ------ | ---------------------------------------------- | --------------------- |
+| `uid`    | string | Target provider instance, matches `config.uid` | Uses default provider |
 
 ### Disconnected State Customization
 
-| Property | Type | Description | Default |
-|----------|------|-------------|---------|
-| `loginText` | string | Text for the connect button | From `buttonDefaults` |
-| `loginBgColor` | string | Background color for the connect button | From `buttonDefaults` |
-| `loginTextColor` | string | Text color for the connect button | From `buttonDefaults` |
-| `loginStyle` | React.CSSProperties | Inline style overrides for connect button | From `buttonDefaults` |
-| `loginCustom` | React.ReactNode | Completely replace the default button | None |
+| Property            | Type   | Description                 | Default               |
+| ------------------- | ------ | --------------------------- | --------------------- |
+| `connectButtonText` | string | Text for the connect button | `Connect Push Wallet` |
 
 ### Loading State Customization
 
-| Property | Type | Description | Default |
-|----------|------|-------------|---------|
-| `loadingComponent` | React.ReactNode | Custom loading indicator | From `buttonDefaults` |
-
-### Connected State Customization
-
-| Property | Type | Description | Default |
-|----------|------|-------------|---------|
-| `walletBgColor` | string | Background color for connected button | From `buttonDefaults` |
-| `walletTextColor` | string | Text color for connected button | From `buttonDefaults` |
-| `walletStyle` | React.CSSProperties | Inline style overrides for connected button | From `buttonDefaults` |
-| `walletCustom` | React.ReactNode | Completely replace the connected UI | - |
+| Property           | Type            | Description              | Default             |
+| ------------------ | --------------- | ------------------------ | ------------------- |
+| `loadingComponent` | React.ReactNode | Custom loading indicator | Uses default loader |
 
 ### App Preview Overrides
 
-| Property | Type | Description | Default |
-|----------|------|-------------|---------|
-| `modalAppOverride` | Object | Override app preview in the wrapper iframe | From `app` |
-| `modalAppOverride.logoURL` | string | Override app logo | From `app.logoURL` |
-| `modalAppOverride.title` | string | Override app title | From `app.title` |
-| `modalAppOverride.description` | string | Override app description | From `app.description` |
-| `loginAppOverride` | Object | Override app preview inside hosted iframe | From `app` |
-| `loginAppOverride.logoURL` | string | Override app logo in iframe | From `app.logoURL` |
-| `loginAppOverride.title` | string | Override app title in iframe | From `app.title` |
-| `loginAppOverride.description` | string | Override app description in iframe | From `app.description` |
+| Property                       | Type   | Description                                | Default                |
+| ------------------------------ | ------ | ------------------------------------------ | ---------------------- |
+| `modalAppOverride`             | Object | Override app preview in the wrapper iframe | From `app`             |
+| `modalAppOverride.logoURL`     | string | Override app logo                          | From `app.logoURL`     |
+| `modalAppOverride.title`       | string | Override app title                         | From `app.title`       |
+| `modalAppOverride.description` | string | Override app description                   | From `app.description` |
+| `loginAppOverride`             | Object | Override app preview inside hosted iframe  | From `app`             |
+| `loginAppOverride.logoURL`     | string | Override app logo in iframe                | From `app.logoURL`     |
+| `loginAppOverride.title`       | string | Override app title in iframe               | From `app.title`       |
+| `loginAppOverride.description` | string | Override app description in iframe         | From `app.description` |
+
+### Button Theme Settings Override
+
+| Property         | Type           | Description            | Default |
+| ---------------- | -------------- | ---------------------- | ------- |
+| `themeOverrides` | ThemeOverrides | Button theme overrides | `{}`    |
 
 > Note: Parameters _`in this style`_ are mandatory.
