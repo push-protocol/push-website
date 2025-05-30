@@ -22,7 +22,7 @@ interface ISdkListItem {
 
 export const QuickstartItems: IQuickstartItem[] = [
   {
-    title: 'Push Chain Quickstart',
+    title: 'Core SDK Quickstart',
     codeblock: `// Import Push Chain SDK
 
 import { PushChain, createUniversalAccount, createUniversalSigner, CONSTANTS } from '@pushchain/devnet';
@@ -54,6 +54,11 @@ const tx = await pushChain.tx.send(
   ],
   { category: 'MY_CUSTOM_CATEGORY', data: 'Hello world!' }
 );
+`,
+  },
+  {
+    title: 'UI-Kit Quickstart',
+    codeblock: ` //Add to content
 `,
   },
 ];
@@ -119,7 +124,7 @@ const tx = await pushChain.tx.send(
 
 export const SdkItemsList: ISdkListItem[] = [
   {
-    title: 'Devnet SDK',
+    title: 'Core SDK',
     Svg: require('@site/static/assets/docs/arrowupright.svg').default,
     PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
     link: 'https://www.npmjs.com/package/@pushchain/devnet',

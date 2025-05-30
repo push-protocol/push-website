@@ -2,21 +2,18 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 /* eslint-disable */
+import React, { useState } from 'react';
 
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
-import { useLocation } from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import CodeBlock from '@theme/CodeBlock';
 import Layout from '@theme/Layout';
-import React, { useState } from 'react';
 import './styles.css';
 
 // External Components
-import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
 
 // Internal Components
@@ -35,15 +32,10 @@ import {
 import Footer from '../../segments/Footer';
 
 // Import Assets
-import ArrowUp from '@site/static/assets/docs/ArrowUpRight-pink.svg';
 import { FiArrowUpRight } from 'react-icons/fi';
 
 // Internal Configs
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Spinner, {
-  SPINNER_TYPE,
-} from '@site/src/components/reusables/spinners/SpinnerUnit';
 import {
   ITechDocItem,
   QuickstartItems,
@@ -53,6 +45,7 @@ import {
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from '@site/src/config/pageMeta';
 import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
+import { BsArrowUpRight } from 'react-icons/bs';
 
 function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   return (
@@ -248,7 +241,7 @@ export default function HomepageFeatures(): JSX.Element {
           <HeroHeader>
             <ItemV zIndex='1'>
               <H1 color='var(--ifm-color-primary-text)' margin='0 !important'>
-                Push Chain Documentation Hub
+                Documentation Hub
               </H1>
               <Span
                 color='var(--ifm-color-primary-text)'
@@ -260,8 +253,8 @@ export default function HomepageFeatures(): JSX.Element {
               <HeroButton onClick={() => (window.location.href = '#techdocs')}>
                 <Span padding='0 10px 0 0' fontSize='18px'>
                   Explore Docs
-                </Span>{' '}
-                ↗
+                </Span>
+                <BsArrowUpRight />
               </HeroButton>
             </ItemV>
 

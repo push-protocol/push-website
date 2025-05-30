@@ -12,5 +12,93 @@ sidebar_position: 2
 
 This example demonstrates a multiple wallet integration with the Push Universal Wallet.
 
-<!-- TODO: Complete the examples -->
+## Live playground
+```jsx live customPropMinimized = 'true'
+// DO NOT FORGET TO IMPORT LIBRARIES
+// NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
+// import { PushWalletProvider, PushUniversalAccountButton, usePushWalletContext, CONSTANTS } from '@pushchain/ui-kit';
+
+function App() {
+
+  const walletConfig = {
+    uid:'wallet',
+    env: CONSTANTS.ENV.DEVNET,
+    login: {
+      email: true,
+      google: true,
+      wallet: {
+        enabled: true,
+      },
+      appPreview: true,
+    },
+    modal: {
+      loginLayout: CONSTANTS.LOGIN.SPLIT,
+      connectedLayout: CONSTANTS.CONNECTED.HOVER,
+      appPreview: true,
+    },
+  };
+
+  const secondWalletConfig = {
+    uid:'secondWallet',
+    env: CONSTANTS.ENV.DEVNET,
+    login: {
+      email: true,
+      google: true,
+      wallet: {
+        enabled: true,
+      },
+      appPreview: true,
+    },
+    modal: {
+      loginLayout: CONSTANTS.LOGIN.SPLIT,
+      connectedLayout: CONSTANTS.CONNECTED.HOVER,
+      appPreview: true,
+    },
+  };
+
+  const appMetadata = {
+    logoUrl: "https://plus.unsplash.com/premium_photo-1746731481770-08b2f71661d0?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: 'Test App Title',
+    description: 'Test App Description',
+  };
+
+  const secondAppMetadata = {
+    logoUrl: "https://plus.unsplash.com/premium_photo-1746731481770-08b2f71661d0?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: 'Test App Title',
+    description: 'Test App Description',
+  };
+
+
+  function WalletUI() {
+    const { universalAddress } = usePushWalletContext('wallet');
+    const { universalAddress: secondAddress } = usePushWalletContext('secondWallet');
+
+    return (
+      <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '2rem',
+      }}>
+        <PushUniversalAccountButton uid='wallet' />
+        <PushUniversalAccountButton uid='secondWallet' />
+      </div>
+    );
+  }
+
+  return (
+    <PushWalletProvider
+      config={walletConfig}
+      app={appMetadata}
+    >
+    <PushWalletProvider
+      config={secondWalletConfig}
+      app={secondAppMetadata}
+    >
+      <WalletUI />
+    </PushWalletProvider>
+    </PushWalletProvider>
+  );
+}
 ```

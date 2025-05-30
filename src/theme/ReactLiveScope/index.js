@@ -27,7 +27,7 @@ function loadClientSideLibraryPushProtocolUIWeb(constantName) {
 
 function loadClientSideLibraryPushChainUIKit(constantName) {
   return typeof window !== 'undefined'
-    ? require('@pushprotocol/pushchain-ui-kit')[constantName]
+    ? require('@pushchain/ui-kit')[constantName]
     : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
 }
 
@@ -59,7 +59,7 @@ const ReactLiveScope = {
   // Asynchronously import ethers and PushAPI only on the client side
   ethers: loadClientSideLibraryEthers('ethers'),
   PushAPI: loadClientSideLibraryPushProtocolRestAPI('PushAPI'),
-  CONSTANTS: loadClientSideLibraryPushProtocolRestAPI('CONSTANTS'),
+  // CONSTANTS: loadClientSideLibraryPushProtocolRestAPI('CONSTANTS'),
   MODAL_POSITION_TYPE: loadClientSideLibraryPushProtocolUIWeb(
     'MODAL_POSITION_TYPE'
   ),
@@ -91,7 +91,7 @@ const ReactLiveScope = {
   usePushWalletContext: loadClientSideLibraryPushChainUIKit(
     'usePushWalletContext'
   ),
-  PushWalletConstants: loadClientSideLibraryPushChainUIKit('CONSTANTS'),
+  CONSTANTS: loadClientSideLibraryPushChainUIKit('CONSTANTS'),
 };
 
 export default ReactLiveScope;
