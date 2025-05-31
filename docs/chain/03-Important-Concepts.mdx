@@ -10,7 +10,7 @@ image: "/assets/docs/previews/docs_notifications--important_concepts.png"
 
 # Important Concepts
 
-Before diving into the SDK and how you can integrate Push Chain to build the new wave of consumer-centric applications, let's review what Push Chain is.
+Before diving into the SDK and integrating Push Chain to build the next wave of consumer-centric applications, let's review some fundamental concepts unique to Push Chain.
 
 <head>
   <title>
@@ -18,67 +18,98 @@ Before diving into the SDK and how you can integrate Push Chain to build the new
   </title>
 </head>
 
-## What is the Transaction Category?
+## Wallet Interactions from Any Layer 1
 
-The transaction category in Push Chain refers to the type of operation the transaction represents, such as email, blog, notifications, or other specific use cases.
+Push Chain introduces groundbreaking support for wallets from different Layer 1 blockchains, enabling them to transact directly on Push Chain. Users can leverage their existing wallets, whether Ethereum-based (MetaMask), Solana-based (Phantom), or wallets from other chains, to execute transactions seamlessly on Push Chain. This cross-chain wallet integration is part of Push Chain's broader vision for universal interoperability.
 
-It helps identify and organize transactions within the network, allowing precise handling and retrieval tailored to their purpose.
+## Account Types on Push Chain
 
-**Note**: Each transaction must have *one* category assigned to it.
+As an EVM-compatible Universal Layer 1 blockchain, Push Chain naturally supports standard Ethereum accounts:
 
-## How many recipients can a transaction have?
+- **Externally Owned Accounts (EOAs)**: Traditional wallet addresses controlled by private keys.
 
-A transaction can have **at least 1 recipient**, but there is no upper limit to the number of recipients.
+- **Smart Contract Accounts (Smart Accounts)**: Addresses controlled by deployed smart contracts, enabling programmable logic and complex interactions.
 
-Recipients can be wallets on **multiple chains** and do not need to all be on the same chain. For example, a transaction can include recipients on Ethereum, Solana, or other supported blockchains.
+Additionally, Push Chain innovates by introducing:
 
-## What can the transaction payload contain?
+- **Universal External Accounts (UEAs)**: These accounts uniquely allow wallets from different Layer 1 chains (like Ethereum, Solana, and others) to interact and transact on Push Chain seamlessly. UEAs enable users to execute smart contracts on Push Chain without needing a native Push Chain wallet, significantly enhancing accessibility and user experience.
 
-The transaction payload can be **anything**, as long as it is represented in bytes.
+## Fee Abstraction and Cross-Chain Execution
 
-The data payload can include any information that suits your application's needs, provided it is associated with a valid **transaction category**. For example:
-- An **email** as part of a messaging application.
-- A **social media post**, like a text, image, or video.
-- A **notification** or event trigger for your application.
-- **Game state data** for a gaming app.
+Push Chain lets users execute contracts without holding PUSH tokens. Instead, users can initiate transactions from their source chains, such as Goerli or Solana Devnet, and pay gas fees in their native tokens like ETH or SOL.
+
+When a user signs a transaction from a source chain such as Goerli or Solana Devnet, the orchestrator deploys a smart wallet (NMSC) on Push Chain for that user, locks the required gas fees in their native tokens, and executes the contract on Push Chain using the signed payload. This allows the user to interact with Push Chain entirely from their original chain, using only their existing wallet and tokens.
+
 
 ## What is `UniversalAccount`?
 
-The **UniversalAccount** is a chain-agnostic way of representing an address, designed to work seamlessly across multiple blockchain ecosystems. It abstracts the details of the underlying blockchain, enabling developers to interact with addresses in a unified manner, regardless of the chain they belong to.
+The `UniversalAccount` is a chain-agnostic way of representing an address, designed to work seamlessly across multiple blockchain ecosystems. It abstracts the details of the underlying blockchain, enabling developers to interact with addresses in a unified manner, regardless of the chain they belong to.
+
+### Interface Structure
+
+The UniversalAccount interface consists of two key properties:
+
+- `chain`: A fully qualified chain identifier that combines both the blockchain type and specific network (e.g., `CHAIN.ETHEREUM_SEPOLIA`, `CHAIN.SOLANA_DEVNET`, `CHAIN.PUSH_TESTNET`)
+- `address`: The address on the respective chain, formatted according to chain standards (EVM addresses are checksummed, Solana addresses are base58-encoded, etc.)
 
 ### Example Usage
-Here's an example of how to use a UniversalAccount to represent a recipient on the Solana blockchain:
+Here are examples of how to use the `createUniversalAccount` utility function to represent recipients on different blockchain networks:
 
 ```typescript
-const recipients = [
-  createUniversalAccount({
-    chain: CONSTANTS.CHAIN.SOLANA,
-    chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
-    address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-  }),
-];
+import { CONSTANTS, createUniversalAccount } from '@pushchain/core';
+
+const ethereumAccount = createUniversalAccount({
+  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  address: '0x742d35Cc6370C742Fc60f8b67da6c68F091C42b5',
+});
+
+const solanaAccount = createUniversalAccount({
+  chain: CONSTANTS.CHAIN.SOLANA_DEVNET,
+  address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+});
 ```
 
 ## What is `UniversalSigner`?
 
-The **UniversalSigner** is a chain-agnostic way of representing a signer, designed to facilitate signing operations across multiple blockchain ecosystems. It abstracts the underlying blockchain-specific details, providing a unified approach to handle signing logic, regardless of the chain involved.
+The `UniversalSigner` is a chain-agnostic way of representing a signer, designed to facilitate signing operations across multiple blockchain ecosystems. It abstracts the underlying blockchain-specific details, providing a unified approach to handle signing logic, regardless of the chain involved.
 
-### Key Features of `UniversalSigner`
-1. **Chain-Agnostic Design**: Supports multiple blockchains like Ethereum, Solana, Push Chain, or any other chain, enabling a consistent signing experience across chains.
-2. **Unified Signing Interface**: Offers a standardized `signMessage` function, making it easy to sign messages in a multi-chain environment.
-3. **Extensibility**: Its structure allows for integrating new chains without changing the existing implementation.
+### Interface Structure
+
+The UniversalSigner interface extends UniversalAccount and includes the following key properties:
+
+- `chain`: A fully qualified chain identifier (e.g., `CHAIN.ETHEREUM_SEPOLIA`, `CHAIN.SOLANA_DEVNET`, `CHAIN.PUSH_TESTNET`)
+- `address`: The signer's address, formatted according to chain standards
+- `signMessage`: Function to sign arbitrary binary data (Uint8Array)
+- `signTransaction`: Function to sign transaction bytes
 
 ### Example Usage
-Here's an example of how to define a `UniversalSigner` for the Ethereum blockchain using the `viem` library:
+
+Here are examples of how to create signers for different blockchain networks using the helper functions:
+
+For Ethereum using `viem` library:
 
 ```typescript
-const privateKey = generatePrivateKey(); // Replace it with your private key generation logic
-const account = privateKeyToAccount(privateKey);
+import { PushChain, CONSTANTS } from '@pushchain/core';
+import { privateKeyToAccount } from 'viem/accounts';
 
-// Create Signer. Defaults to Ethereum Sepolia
-const signer = createUniversalSigner({
-  address: account.address,
-  signMessage: async (data) =>
-    hexToBytes(await account.signMessage({ message: { raw: data } })),
-});
+const account = privateKeyToAccount('0x...');
+const ethereumSigner = await PushChain.utils.signer.toUniversalFromViem(
+  account,
+  CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
+);
+```
+
+For Solana using `@solana/web3.js` library:
+
+```typescript
+import { PushChain, CONSTANTS } from '@pushchain/core';
+import { Keypair } from '@solana/web3.js';
+
+const privateKeyHex = '...';
+const privateKey = Uint8Array.from(Buffer.from(privateKeyHex, 'hex'));
+const keypair = Keypair.fromSecretKey(privateKey);
+const solanaSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
+  keypair,
+  CONSTANTS.CHAIN.SOLANA_DEVNET
+);
 ```
