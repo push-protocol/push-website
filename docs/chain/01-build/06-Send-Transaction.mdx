@@ -10,7 +10,7 @@ image: "/assets/docs/previews/docs_notifications_develop_fetch_chats--create_cha
 
 # Send Transaction Overview
 
-We will go over how you can use the Push Chain SDK to send transactions to the network.
+Push Chain provides two primary ways to send transactions: using the **Push Chain SDK** and using the **Viem library**. Both methods are fully supported since Push Chain is an EVM-compatible blockchain.
 
 <head>
   <title>{`Send Transaction | Push Chain | Push Documentation`}</title>
@@ -26,57 +26,48 @@ import {
   AFocus,
 } from '@site/src/css/SharedStyling';
 
-## Send Transaction API
+## Send Transaction Using Push Chain SDK
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
-const tx = await pushChain.tx.send(
-  [
-    // Defaults to the Ethereum Sepolia chain
-    createUniversalAccount({
-      address: '0x22B173e0596c6723dD1A95817052D96b97176Dd8',
-    }),
-  ],
-  {
-    category: 'MY_CUSTOM_CATEGORY',
-    data: 'Hello world',
-  }
-);
+const txHash = await pushChain.sendTransaction({
+  target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479',
+  value: BigInt(0),
+  data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312',
+  gasLimit: BigInt(50000000000000000),
+  maxFeePerGas: BigInt(50000000000000000),
+  maxPriorityFeePerGas: BigInt(200000000),
+  deadline: BigInt(9999999999),
+});
 ```
   </TabItem>
 
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 ```typescript
-const tx = await pushChain.tx.send(
-  [
-    // Defaults to the Ethereum Sepolia chain
-    createUniversalAccount({
-      address: '0x22B173e0596c6723dD1A95817052D96b97176Dd8',
-    }),
-  ],
-  {
-    category: 'MY_CUSTOM_CATEGORY',
-    data: 'Hello world',
-  }
-);
+const txHash = await pushChain.sendTransaction({
+  target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479',
+  value: BigInt(0),
+  data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312',
+  gasLimit: BigInt(50000000000000000),
+  maxFeePerGas: BigInt(50000000000000000),
+  maxPriorityFeePerGas: BigInt(200000000),
+  deadline: BigInt(9999999999),
+});
 ```
   </TabItem>
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 ```typescript
-const tx = await pushChain.tx.send(
-  [
-    // Defaults to the Ethereum Sepolia chain
-    createUniversalAccount({
-      address: '0x22B173e0596c6723dD1A95817052D96b97176Dd8',
-    }),
-  ],
-  {
-    category: 'MY_CUSTOM_CATEGORY',
-    data: 'Hello world',
-  }
-);
+const txHash = await pushChain.sendTransaction({
+  target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479',
+  value: BigInt(0),
+  data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312',
+  gasLimit: BigInt(50000000000000000),
+  maxFeePerGas: BigInt(50000000000000000),
+  maxPriorityFeePerGas: BigInt(200000000),
+  deadline: BigInt(9999999999),
+});
 ```
   </TabItem>
 </Tabs>
@@ -87,49 +78,131 @@ const tx = await pushChain.tx.send(
 
 | **Param**     | **Type**                | **Remarks**                                                                                       |
 |---------------|-------------------------|---------------------------------------------------------------------------------------------------|
-| `recipients`  | `UniversalAccount[]`   | An array of recipient addresses in a chain-agnostic format. Each address specifies the destination for the transaction. |
-| `options.category`    | `string`               | The category of the transaction, used to classify or tag the transaction (e.g., `example-category`). |
-| `options.data`        | `Uint8Array`           | Serialized data payload for the transaction.                                                      |
+| `target`  | `string`   | The address of the recipient. |
+| `value`    | `BigInt`               | The value to send in wei. |
+| `data`        | `string`           | The data to send.                                                      |
+| `gasLimit`        | `BigInt`           | The gas limit for the transaction.                                                      |
+| `maxFeePerGas`        | `BigInt`           | The maximum fee per gas for the transaction.                                                      |
+| `maxPriorityFeePerGas`        | `BigInt`           | The maximum priority fee per gas for the transaction.                                                      |
+| `deadline`        | `BigInt`           | The deadline for the transaction.                                                      |
 
 --------
 
 <Details summary="Expected response">
 
 ```typescript
-{
-  "txHash": "8bff4e865dfb9d4b028ed1924f9151d7a104787617abc0eac3b0869be59db6ad"
-}
+"0x491695a337b0fca5dd24f626bf2595ca16281ae92b2807b611b115e66d42b3c2"
 ```
-
-Response properties description:
-
-| **Property**             | **Type**                 | **Description**                                                                                     |
-|---------------------------|--------------------------|-----------------------------------------------------------------------------------------------------|
-| `txHash`             | `string`                | Transaction Hash |
 
 </Details>
 
-## Example: send an email to a Solana address
+## Send Transaction Using Viem
 
-Here below is an example of sending an Email to a Solana address. The payload is a simply JSON object with a title and message.
+You can also interact with Push Chain using the standard Viem library since Push Chain is an EVM-compatible blockchain.
 
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
-const tx = await pushChain.tx.send(
-  // We will send the transaction to a Solana address
-  [
-    createUniversalAccount({
-      chain: CONSTANTS.CHAIN.SOLANA,
-      chainId: CONSTANTS.CHAIN_ID.SOLANA.DEVNET,
-      address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-    }),
-  ],
-  {
-    category: 'MY_EMAIL_APP',
-    // Sample email payload
-    data: JSON.stringify({
-      title: 'Hello old friend from Solana!',
-      message: 'Greetings from Ethereum world.',
-    }),
-  }
-);
+import { createWalletClient, defineChain, http, parseEther } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+
+const pushTestnet = defineChain({
+  id: 9000,
+  name: 'Push Testnet',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'nPUSH',
+    symbol: 'nPUSH',
+  },
+  rpcUrls: { default: { http: ['https://evm.pn1.dev.push.org'] } },
+  blockExplorers: {
+    default: { name: 'Push Explorer', url: 'https://explorer.dev.push.org/' },
+  },
+});
+
+const privateKey = 'YOUR_PRIVATE_KEY';
+const account = privateKeyToAccount(privateKey);
+
+const walletClient = createWalletClient({
+  account,
+  chain: pushTestnet,
+  transport: http('https://evm.pn1.dev.push.org'),
+});
+
+const txHash = await walletClient.sendTransaction({
+  to: '0xRecipientAddressHere',
+  value: parseEther('0.1'),
+});
 ```
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+import { createWalletClient, defineChain, http, parseEther } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+
+const pushTestnet = defineChain({
+  id: 9000,
+  name: 'Push Testnet',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'nPUSH',
+    symbol: 'nPUSH',
+  },
+  rpcUrls: { default: { http: ['https://evm.pn1.dev.push.org'] } },
+  blockExplorers: {
+    default: { name: 'Push Explorer', url: 'https://explorer.dev.push.org/' },
+  },
+});
+
+const privateKey = 'YOUR_PRIVATE_KEY';
+const account = privateKeyToAccount(privateKey);
+
+const walletClient = createWalletClient({
+  account,
+  chain: pushTestnet,
+  transport: http('https://evm.pn1.dev.push.org'),
+});
+
+const txHash = await walletClient.sendTransaction({
+  to: '0xRecipientAddressHere',
+  value: parseEther('0.1'),
+});
+```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+import { createWalletClient, defineChain, http, parseEther } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+
+const pushTestnet = defineChain({
+  id: 9000,
+  name: 'Push Testnet',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'nPUSH',
+    symbol: 'nPUSH',
+  },
+  rpcUrls: { default: { http: ['https://evm.pn1.dev.push.org'] } },
+  blockExplorers: {
+    default: { name: 'Push Explorer', url: 'https://explorer.dev.push.org/' },
+  },
+});
+
+const privateKey = 'YOUR_PRIVATE_KEY';
+const account = privateKeyToAccount(privateKey);
+
+const walletClient = createWalletClient({
+  account,
+  chain: pushTestnet,
+  transport: http('https://evm.pn1.dev.push.org'),
+});
+
+const txHash = await walletClient.sendTransaction({
+  to: '0xRecipientAddressHere',
+  value: parseEther('0.1'),
+});
+```
+  </TabItem>
+</Tabs>
