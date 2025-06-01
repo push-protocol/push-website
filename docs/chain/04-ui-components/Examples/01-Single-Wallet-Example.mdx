@@ -12,13 +12,13 @@ sidebar_position: 1
 This example demonstrates a basic wallet integration with the Push Universal Wallet.
 
 ## Live playground
+
 ```jsx live customPropMinimized = 'true'
 // DO NOT FORGET TO IMPORT LIBRARIES
 // NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
 // import { PushWalletProvider, PushUniversalAccountButton, usePushWalletContext, CONSTANTS } from '@pushchain/ui-kit';
 
 function App() {
-
   const walletConfig = {
     env: CONSTANTS.ENV.DEVNET,
     login: {
@@ -37,11 +37,11 @@ function App() {
   };
 
   const appMetadata = {
-    logoUrl: "https://plus.unsplash.com/premium_photo-1746731481770-08b2f71661d0?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    logoUrl:
+      'https://plus.unsplash.com/premium_photo-1746731481770-08b2f71661d0?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     title: 'Test App Title',
     description: 'Test App Description',
   };
-
 
   function WalletUI() {
     const { universalAddress } = usePushWalletContext();
@@ -54,10 +54,7 @@ function App() {
   }
 
   return (
-    <PushWalletProvider
-      config={walletConfig}
-      app={appMetadata}
-    >
+    <PushWalletProvider config={walletConfig} app={appMetadata}>
       <WalletUI />
     </PushWalletProvider>
   );
