@@ -15,9 +15,12 @@ This example demonstrates a basic wallet integration with the basic account butt
 
 ```jsx live
 // customPropMinimized = 'true'
-// DO NOT FORGET TO IMPORT LIBRARIES
-// NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
-// import { PushWalletProvider, PushUniversalAccountButton, usePushWalletContext, CONSTANTS } from '@pushchain/ui-kit';
+import {
+  PushWalletProvider,
+  PushUniversalAccountButton,
+  usePushWalletContext,
+  CONSTANTS,
+} from '@pushchain/ui-kit';
 
 function App() {
   const walletConfig = {

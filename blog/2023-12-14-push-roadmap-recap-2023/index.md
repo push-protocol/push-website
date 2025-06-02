@@ -89,8 +89,6 @@ Push launched frontend components for web3 developers to easily integrate Push p
 
 ```jsx live
 // customPropMinimized = 'true'
-// DO NOT FORGET TO IMPORT LIBRARIES
-// NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
 import { ChatUIProvider, ChatView } from @pushprotocol/uiweb;
 
 function App(props) {
