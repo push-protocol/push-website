@@ -125,41 +125,53 @@ export default function Playground({ children, transformCode, ...props }) {
   const prismTheme = usePrismTheme();
   const noInline = props.metastring?.includes('noInline') ?? false;
 
-  // Look for customPropMinimized, customPropHidden
+  console.debug('Original children content:', children);
+  // Look for customPropMinimized in the first line
   let minimized = false;
-
-  let pattern = /customPropMinimized="([^"]+)"/;
-  let match = children.match(pattern);
-  console.log(match, pattern);
-
-  if (match) {
-    const customProp = match[1];
-    if (customProp === 'true') {
-      minimized = true;
-
-      // remove the first match
-      children = children.replace(pattern, '');
+  const lines = children.split('\n');
+  if (lines.length > 0) {
+    const firstLine = lines[0];
+    console.debug('First line:', firstLine);
+    if (firstLine.includes('// customPropMinimized=')) {
+      // Define regex patterns
+      const minimizedPattern = /\/\/\s*customPropMinimized=['"]([^'"]+)['"]/;
+      const match = firstLine.match(minimizedPattern);
+      console.debug('customPropMinimized match:', match);
+      if (match && match[1] === 'true') {
+        minimized = true;
+        lines[0] = firstLine.replace(
+          /\s*\/\/\s*customPropMinimized=['"][^'"]+['"]/g,
+          ''
+        );
+        children = lines.join('\n');
+      }
     }
   }
 
   // Look for customPropHidden
   let hidden = false;
-
-  pattern = /customPropHidden="([^"]+)"\n/;
-  match = children.match(pattern);
-
-  if (match) {
-    const customProp = match[1];
-    if (customProp === 'true') {
-      hidden = true;
-
-      // remove the first match
-      children = children.replace(pattern, '');
+  if (lines.length > 0) {
+    const firstLine = lines[0];
+    if (firstLine.includes('// customPropHidden=')) {
+      // Define regex pattern
+      const hiddenPattern = /\/\/\s*customPropHidden=['"]([^'"]+)['"]/;
+      const match = firstLine.match(hiddenPattern);
+      console.debug('customPropHidden match:', match);
+      if (match && match[1] === 'true') {
+        hidden = true;
+        // Remove the customPropHidden from the first line
+        lines[0] = firstLine.replace(
+          /\s*\/\/\s*customPropHidden=['"][^'"]+['"]/g,
+          ''
+        );
+        children = lines.join('\n');
+      }
     }
   }
 
   // finally replace if new line is there in the start
   children = children.replace(/\n/, '');
+  console.debug('Final children content passed to LiveProvider:', children);
 
   return (
     <div className={styles.playgroundContainer}>
