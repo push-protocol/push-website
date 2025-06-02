@@ -22,9 +22,9 @@ You can effortlessly integrate the Push Universal Wallet into your root applicat
 
 The Push Universal Wallet operates on a simple provider-consumer pattern:
 
-1. **Provider Setup**: Wrap your application with `PushWalletProvider` to initialize wallet functionality
-2. **Button Integration**: Add `PushUniversalAccountButton` components where users should connect
-3. **State Management**: Use the `usePushWalletContext` hook to access wallet state and methods throughout your app
+1. **Provider Setup**: Wrap your application with _`PushWalletProvider`_ to initialize wallet functionality
+2. **Button Integration**: Add _`PushUniversalAccountButton`_ components where users should connect
+3. **State Management**: Use the _`usePushWalletContext`_ hook to access wallet state and methods throughout your app
 
 The Push Universal Wallet provides a unified interface for connecting to multiple blockchains, automatically handling authentication and cross-chain interactions without complex blockchain-specific implementations.
 
@@ -40,14 +40,15 @@ yarn add @pushchain/ui-kit
 
 ```jsx live
 // customPropMinimized='false'
+// Import necessary components from @pushchain/ui-kit
 import {
   PushWalletProvider,
   PushUniversalAccountButton,
-  usePushWalletContext,
   CONSTANTS,
 } from '@pushchain/ui-kit';
 
 function App() {
+  // Define Wallet Config
   const walletConfig = {
     env: CONSTANTS.ENV.DEVNET,
     login: {
@@ -65,6 +66,7 @@ function App() {
     },
   };
 
+  // Define Your App Preview
   const appMetadata = {
     logoUrl:
       'https://plus.unsplash.com/premium_photo-1746731481770-08b2f71661d0?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -72,19 +74,9 @@ function App() {
     description: 'Test App Description',
   };
 
-  function WalletUI() {
-    const { universalAddress } = usePushWalletContext();
-
-    return (
-      <div>
-        <PushUniversalAccountButton />
-      </div>
-    );
-  }
-
   return (
     <PushWalletProvider config={walletConfig} app={appMetadata}>
-      <WalletUI />
+      <PushUniversalAccountButton />
     </PushWalletProvider>
   );
 }

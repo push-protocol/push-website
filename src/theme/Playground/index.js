@@ -127,23 +127,31 @@ export default function Playground({ children, transformCode, ...props }) {
   const noInline = props.metastring?.includes('noInline') ?? false;
 
   console.debug('Original children content:', children);
-  // Look for customPropMinimized in the first line
+  // Look for customPropMinimized
+
   let minimized = false;
   const lines = children.split('\n');
+
   if (lines.length > 0) {
     const firstLine = lines[0];
-    console.debug('First line:', firstLine);
     if (firstLine.includes('// customPropMinimized=')) {
       // Define regex patterns
       const minimizedPattern = /\/\/\s*customPropMinimized=['"]([^'"]+)['"]/;
       const match = firstLine.match(minimizedPattern);
       console.debug('customPropMinimized match:', match);
-      if (match && match[1] === 'true') {
-        minimized = true;
+
+      if (match) {
+        // if ture then mark minimized as true
+        if (match && match[1] === 'true') {
+          minimized = true;
+        }
+
+        // remove the customPropMinimized from the first line
         lines[0] = firstLine.replace(
           /\s*\/\/\s*customPropMinimized=['"][^'"]+['"]/g,
           ''
         );
+
         children = lines.join('\n');
       }
     }
@@ -161,13 +169,19 @@ export default function Playground({ children, transformCode, ...props }) {
       const hiddenPattern = /\/\/\s*customPropHidden=['"]([^'"]+)['"]/;
       const match = firstLine.match(hiddenPattern);
       console.debug('customPropHidden match:', match);
-      if (match && match[1] === 'true') {
-        hidden = true;
+
+      if (match) {
+        // if true then mark hidden as true
+        if (match[1] === 'true') {
+          hidden = true;
+        }
+
         // Remove the customPropHidden from the first line
         lines[0] = firstLine.replace(
           /\s*\/\/\s*customPropHidden=['"][^'"]+['"]/g,
           ''
         );
+
         children = lines.join('\n');
       }
     }
