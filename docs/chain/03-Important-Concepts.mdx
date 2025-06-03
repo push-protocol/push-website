@@ -51,7 +51,7 @@ The `UniversalAccount` is a chain-agnostic way of representing an address, desig
 
 The UniversalAccount interface consists of two key properties:
 
-- `chain`: A fully qualified chain identifier that combines both the blockchain type and specific network (e.g., `CHAIN.ETHEREUM_SEPOLIA`, `CHAIN.SOLANA_DEVNET`, `CHAIN.PUSH_TESTNET`)
+- `chain`: A fully qualified chain identifier that combines both the blockchain type and specific network (e.g., `CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `CONSTANTS.CHAIN.SOLANA_TESTNET`, `CONSTANTS.CHAIN.PUSH_TESTNET`)
 - `address`: The address on the respective chain, formatted according to chain standards (EVM addresses are checksummed, Solana addresses are base58-encoded, etc.)
 
 ### Example Usage
@@ -66,7 +66,7 @@ const ethereumAccount = createUniversalAccount({
 });
 
 const solanaAccount = createUniversalAccount({
-  chain: CONSTANTS.CHAIN.SOLANA_DEVNET,
+  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
   address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
 });
 ```
@@ -79,7 +79,7 @@ The `UniversalSigner` is a chain-agnostic way of representing a signer, designed
 
 The UniversalSigner interface extends UniversalAccount and includes the following key properties:
 
-- `chain`: A fully qualified chain identifier (e.g., `CHAIN.ETHEREUM_SEPOLIA`, `CHAIN.SOLANA_DEVNET`, `CHAIN.PUSH_TESTNET`)
+- `chain`: A fully qualified chain identifier (e.g., `CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `CONSTANTS.CHAIN.SOLANA_TESTNET`, `CONSTANTS.CHAIN.PUSH_TESTNET`)
 - `address`: The signer's address, formatted according to chain standards
 - `signMessage`: Function to sign arbitrary binary data (Uint8Array)
 - `signTransaction`: Function to sign transaction bytes
@@ -112,7 +112,7 @@ const privateKey = Uint8Array.from(Buffer.from(privateKeyHex, 'hex'));
 const keypair = Keypair.fromSecretKey(privateKey);
 const solanaSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
   keypair,
-  CONSTANTS.CHAIN.SOLANA_DEVNET
+  CONSTANTS.CHAIN.SOLANA_TESTNET
 );
 ```
 

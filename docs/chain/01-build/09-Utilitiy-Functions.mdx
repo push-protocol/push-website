@@ -250,7 +250,7 @@ Response properties description:
   const keypair = Keypair.generate();
   const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
     keypair,
-    CHAIN.SOLANA_DEVNET
+    CHAIN.SOLANA_TESTNET
   );
   ```
   </TabItem>
@@ -263,7 +263,7 @@ Response properties description:
   const keypair = Keypair.generate();
   const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
     keypair,
-    CONSTANTS.CHAIN.SOLANA_DEVNET
+    CONSTANTS.CHAIN.SOLANA_TESTNET
   );
   ```
   </TabItem>
@@ -276,7 +276,7 @@ Response properties description:
   const keypair = Keypair.generate();
   const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
     keypair,
-    CONSTANTS.CHAIN.SOLANA_DEVNET
+    CONSTANTS.CHAIN.SOLANA_TESTNET
   );
   ```
   </TabItem>
@@ -295,7 +295,7 @@ Response properties description:
 
 ```typescript
 {
-  chain: CONSTANTS.CHAIN.SOLANA_DEVNET,
+  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
   address: 'Base58PublicKey...',
   signMessage: (data: Uint8Array) => Promise<Uint8Array>,
   signTransaction: (data: Uint8Array) => Promise<Uint8Array>
@@ -327,7 +327,7 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromViem(
 );
 
 // Initialize the PushChain SDK
-const pushChain = await PushChain.initialize(universalSigner, {
+const pushChainClient = await PushChain.initialize(universalSigner, {
   network: CONSTANTS.NETWORK.TESTNET,
   printTraces: true,
 });

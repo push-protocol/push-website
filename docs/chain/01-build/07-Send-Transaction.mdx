@@ -31,7 +31,7 @@ import {
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
-const txHash = await pushChainClient.sendTransaction({
+const txHash = await pushChainClient.Universal.sendTransaction({
   target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479',
   value: BigInt(0),
   data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312',
@@ -45,7 +45,7 @@ const txHash = await pushChainClient.sendTransaction({
 
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 ```typescript
-const txHash = await pushChainClient.sendTransaction({
+const txHash = await pushChainClient.Universal.sendTransaction({
   target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479',
   value: BigInt(0),
   data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312',
@@ -59,7 +59,7 @@ const txHash = await pushChainClient.sendTransaction({
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 ```typescript
-const txHash = await pushChainClient.sendTransaction({
+const txHash = await pushChainClient.Universal.sendTransaction({
   target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479',
   value: BigInt(0),
   data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312',
@@ -100,7 +100,7 @@ const txHash = await pushChainClient.sendTransaction({
 
 You can also interact with Push Chain using the standard Viem library since Push Chain is an EVM-compatible blockchain.
 
-To see how to initialize the Push Chain SDK with a viem client, please refer to the [Initialize Viem SDK](../initialize-viem-chain) documentation.
+To learn how to connect `viem` to Push Chain, check out the [Initialize Viem SDK](../initialize-viem-chain) page.
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
