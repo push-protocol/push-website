@@ -23,37 +23,50 @@ interface ISdkListItem {
 export const QuickstartItems: IQuickstartItem[] = [
   {
     title: 'Push Chain Quickstart',
-    codeblock: `// Import Push Chain SDK
+    codeblock: `// Import Push Chain SDK for blockchain interactions
+import { PushChain, CONSTANTS } from '@pushchain/core';
 
-import { PushChain, createUniversalAccount, createUniversalSigner, CONSTANTS } from '@pushchain/devnet';
-
-// Import utility functions from viem
+// For Ethereum: Import utility functions from viem
 import { hexToBytes } from 'viem';
 import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
 
-// Generate viem Account
-const account = privateKeyToAccount(generatePrivateKey());
+// For Solana: Import utility functions from @solana/web3.js
+import { Keypair } from '@solana/web3.js';
 
-// Create Signer. Defaults to the Ethereum Sepolia chain
-const signer = createUniversalSigner({
-  address: account.address,
-  signMessage: async (data) =>
-    hexToBytes(await account.signMessage({ message: { raw: data } })),
+// For Ethereum: Generate a new random private key 
+const ethereumPrivateKey = generatePrivateKey(); // Replace it with your private key generation logic
+const ethereumAccount = privateKeyToAccount(ethereumPrivateKey);
+
+// For Solana: Generate a new random Solana keypair
+const solanaAccount = Keypair.generate(); // Replace it with your private key generation logic
+
+// For Ethereum: Create universal signer from viem account
+const ethereumUniversalSigner = await PushChain.utils.signer.toUniversalFromViem(
+  ethereumAccount,
+  CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
+);
+
+// For Solana: Create universal signer from Solana keypair
+const solanaUniversalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
+  solanaAccount,
+  CONSTANTS.CHAIN.SOLANA_DEVNET
+);
+
+// Initialize Push Chain SDK on Testnet for Ethereum. You could also initialize it with solanaUniversalSigner for Solana.
+const pushChainClient = await PushChain.initialize(ethereumUniversalSigner, {
+  network: CONSTANTS.NETWORK.TESTNET,
 });
 
-// Initialize SDK
-const pushChain = await PushChain.initialize(signer);
-
-// Send Transaction
-const tx = await pushChain.tx.send(
-  [
-    // Defaults to the Ethereum Sepolia chain
-    createUniversalAccount({
-      address: '0x22B173e0596c6723dD1A95817052D96b97176Dd8',
-    }),
-  ],
-  { category: 'MY_CUSTOM_CATEGORY', data: 'Hello world!' }
-);
+// Send a cross-chain transaction
+const txHash = await pushChainClient.sendTransaction({
+  target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479', // Target contract address on Push Chain
+  value: BigInt(0), // ETH value to send
+  data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312', // Contract call data
+  gasLimit: BigInt(50000000000000000),
+  maxFeePerGas: BigInt(50000000000000000),
+  maxPriorityFeePerGas: BigInt(200000000),
+  deadline: BigInt(9999999999), // Transaction deadline (optional for some chains)
+});
 `,
   },
 ];
@@ -67,26 +80,31 @@ export const TechDocItems: ITechDocItem[] = [
     target: '_self',
     description:
       'Explore Push Chain and learn how to integrate it for building universal Apps.',
-    codeblock: `// Create Signer. Defaults to the Ethereum Sepolia chain
-const signer = createUniversalSigner({
-  address: account.address,
-  signMessage: async (data) =>
-    hexToBytes(await account.signMessage({ message: { raw: data } })),
+    codeblock: `// For Ethereum: Generate a new random private key 
+const ethereumPrivateKey = generatePrivateKey(); // Replace it with your private key generation logic
+const ethereumAccount = privateKeyToAccount(ethereumPrivateKey);
+
+const ethereumUniversalSigner = await PushChain.utils.signer.toUniversalFromViem(
+  ethereumAccount,
+  CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
+);
+
+// Initialize Push Chain SDK on Testnet for Ethereum. 
+const pushChainClient = await PushChain.initialize(ethereumUniversalSigner, {
+  network: CONSTANTS.NETWORK.TESTNET,
 });
 
-// Initialize SDK
-const pushChain = await PushChain.initialize(signer);
-
-// Send Transaction
-const tx = await pushChain.tx.send(
-  [
-    // Defaults to the Ethereum Sepolia chain
-    createUniversalAccount({
-      address: '0x22B173e0596c6723dD1A95817052D96b97176Dd8',
-    }),
-  ],
-  { category: 'MY_CUSTOM_CATEGORY', data: 'Hello world!' }
-);`,
+// Send a cross-chain transaction
+const txHash = await pushChainClient.sendTransaction({
+  target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479', // Target contract address on Push Chain
+  value: BigInt(0), // ETH value to send
+  data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312', // Contract call data
+  gasLimit: BigInt(50000000000000000),
+  maxFeePerGas: BigInt(50000000000000000),
+  maxPriorityFeePerGas: BigInt(200000000),
+  deadline: BigInt(9999999999), // Transaction deadline (optional for some chains)
+});
+`,
   },
   {
     title: 'Examples',
