@@ -31,7 +31,7 @@ import {
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
-const txHash = await pushChain.sendTransaction({
+const txHash = await pushChainClient.sendTransaction({
   target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479',
   value: BigInt(0),
   data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312',
@@ -45,7 +45,7 @@ const txHash = await pushChain.sendTransaction({
 
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 ```typescript
-const txHash = await pushChain.sendTransaction({
+const txHash = await pushChainClient.sendTransaction({
   target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479',
   value: BigInt(0),
   data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312',
@@ -59,7 +59,7 @@ const txHash = await pushChain.sendTransaction({
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 ```typescript
-const txHash = await pushChain.sendTransaction({
+const txHash = await pushChainClient.sendTransaction({
   target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479',
   value: BigInt(0),
   data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312',

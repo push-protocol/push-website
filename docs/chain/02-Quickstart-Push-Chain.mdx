@@ -184,7 +184,7 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromViem(
 );
 
 // Initialize Push Chain SDK on Testnet
-const pushChain = await PushChain.initialize(universalSigner, {
+const pushChainClient = await PushChain.initialize(universalSigner, {
   network: CONSTANTS.NETWORK.TESTNET,
 });
 ```
@@ -201,7 +201,7 @@ const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
 );
 
 // Initialize Push Chain SDK on Devnet
-const pushChain = await PushChain.initialize(universalSigner, {
+const pushChainClient = await PushChain.initialize(universalSigner, {
   network: CONSTANTS.NETWORK.TESTNET,
 });
 ```
@@ -223,7 +223,7 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromViem(
 );
 
 // Initialize Push Chain SDK on Testnet
-const pushChain = await PushChain.initialize(universalSigner, {
+const pushChainClient = await PushChain.initialize(universalSigner, {
   network: CONSTANTS.NETWORK.TESTNET,
 });
 ```
@@ -240,8 +240,8 @@ const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
 );
 
 // Initialize Push Chain SDK on Devnet
-const pushChain = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.NETWORK.DEVNET,
+const pushChainClient = await PushChain.initialize(universalSigner, {
+  network: CONSTANTS.NETWORK.TESTNET,
 });
 ```
 
@@ -262,7 +262,7 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromViem(
 );
 
 // Initialize Push Chain SDK on Testnet
-const pushChain = await PushChain.initialize(universalSigner, {
+const pushChainClient = await PushChain.initialize(universalSigner, {
   network: CONSTANTS.NETWORK.TESTNET,
 });
 ```
@@ -279,7 +279,7 @@ const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
 );
 
 // Initialize Push Chain SDK on Devnet
-const pushChain = await PushChain.initialize(universalSigner, {
+const pushChainClient = await PushChain.initialize(universalSigner, {
   network: CONSTANTS.NETWORK.DEVNET,
 });
 ```
@@ -294,7 +294,7 @@ const pushChain = await PushChain.initialize(universalSigner, {
 
 ```typescript
 // Send a cross-chain transaction
-const txHash = await pushChain.sendTransaction({
+const txHash = await pushChainClient.sendTransaction({
   target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479', // Target contract address on Push Chain
   value: BigInt(0), // ETH value to send
   data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312', // Contract call data
@@ -313,7 +313,7 @@ console.log('Transaction sent:', txHash);
 
 ```typescript
 // Send a cross-chain transaction
-const txHash = await pushChain.sendTransaction({
+const txHash = await pushChainClient.sendTransaction({
   target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479', // Target contract address on Push Chain
   value: BigInt(0), // ETH value to send
   data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312', // Contract call data
@@ -332,7 +332,7 @@ console.log('Transaction sent:', txHash);
 
 ```typescript
 // Send a cross-chain transaction
-const txHash = await pushChain.sendTransaction({
+const txHash = await pushChainClient.sendTransaction({
   target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479', // Target contract address on Push Chain
   value: BigInt(0), // ETH value to send
   data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312', // Contract call data
@@ -354,7 +354,7 @@ console.log('Transaction sent:', txHash);
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 
 ```typescript
-const nmscInfo = await pushChain.getNMSCAddress();
+const nmscInfo = await pushChainClient.getNMSCAddress();
 console.log('NMSC Address:', nmscInfo.address);
 ```
 
@@ -363,7 +363,7 @@ console.log('NMSC Address:', nmscInfo.address);
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```typescript
-const nmscInfo = await pushChain.getNMSCAddress();
+const nmscInfo = await pushChainClient.getNMSCAddress();
 console.log('NMSC Address:', nmscInfo.address);
 ```
 
@@ -372,7 +372,7 @@ console.log('NMSC Address:', nmscInfo.address);
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 
 ```typescript
-const nmscInfo = await pushChain.getNMSCAddress();
+const nmscInfo = await pushChainClient.getNMSCAddress();
 console.log('NMSC Address:', nmscInfo.address);
 ```
 
