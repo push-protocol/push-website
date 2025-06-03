@@ -7,7 +7,7 @@ displayed_sidebar: pushChainSidebar
 sidebar_position: 3
 ---
 
-### `usePushWalletContext`
+## `usePushWalletContext`
 
 The `usePushWalletContext` hook provides access to the current wallet state and methods to interact with the Push Wallet. This hook must be used within a component that's wrapped by a `PushWalletProvider`.
 
@@ -27,6 +27,12 @@ function Component() {
 }
 ```
 
+
+### Parameters
+
+| Parameter | Type | Required | Description |
+| --------- | ---- | -------- | ----------- |
+| `uid` | `string` | No | Optional user identifier for wallet context |
 
 #### Return Values
 
