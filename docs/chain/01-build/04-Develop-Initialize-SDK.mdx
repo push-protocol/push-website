@@ -235,3 +235,62 @@ When initializing your Push Chain instance, you can customize the process using 
 | `pushClient` | `PushClient` | Internal Push client instance containing publicClient, pushChainInfo, and signer credentials for Push Chain operations. |
 
 </Details>
+
+## Example
+
+Here is an example of how to initialize the Push Chain SDK with a universal signer and a custom RPC URL.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+const pushChainClient = await PushChain.initialize(
+  universalSigner, // Your universal signer instance
+  {
+    network: NETWORK.TESTNET,
+    rpcUrl: {
+      [CHAIN.ETHEREUM_SEPOLIA]: 'https://sepolia.infura.io/v3/YOUR-PROJECT-ID',
+      [CHAIN.SOLANA_TESTNET]: 'https://api.testnet.solana.com'
+    },
+    printTraces: false
+  }
+);
+```
+
+  </TabItem>
+    <TabItem value="react" attributes={{className: "codetab react"}} default>
+
+```typescript
+const pushChainClient = await PushChain.initialize(
+  universalSigner, // Your universal signer instance
+  {
+    network: NETWORK.TESTNET,
+    rpcUrl: {
+      [CHAIN.ETHEREUM_SEPOLIA]: 'https://sepolia.infura.io/v3/YOUR-PROJECT-ID',
+      [CHAIN.SOLANA_TESTNET]: 'https://api.testnet.solana.com'
+    },
+    printTraces: false
+  }
+);
+```
+
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+
+```typescript
+const pushChainClient = await PushChain.initialize(
+  universalSigner, // Your universal signer instance
+  {
+    network: NETWORK.TESTNET,
+    rpcUrl: {
+      [CHAIN.ETHEREUM_SEPOLIA]: 'https://sepolia.infura.io/v3/YOUR-PROJECT-ID',
+      [CHAIN.SOLANA_TESTNET]: 'https://api.testnet.solana.com'
+    },
+    printTraces: false
+  }
+);
+```
+
+  </TabItem>
+</Tabs>
