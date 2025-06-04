@@ -398,6 +398,8 @@ a:hover {
 /* Article CSS Overrids */
 /* ----- */
 article .markdown > p > code,
+article .markdown > ul > li > code,
+article .markdown > ol > li > code,
 article tr > td > code,
 article ul > li > code,
 article em > code {
@@ -520,7 +522,7 @@ article ul > li strong {
 /* ----- */
 
 .menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
-  padding: 0px !important;
+  padding: 0px 10px 0px 0px !important;
 }
 
 /* Footer Styling */
@@ -768,8 +770,8 @@ li {
     font-size: 16px !important;
     line-height: 142% !important;
     letter-spacing: -0.03em !important;
-    padding: 10px 15px !important;
-    margin: 0px 10px 0px 0px;
+    padding: 10px 10px 10px 15px !important;
+    margin: 0px 2px 0px 0px;
   }
 
   .menu__list_item {
@@ -1026,7 +1028,9 @@ article .markdown > ol > li {
   font-size: 1.15rem;
 }
 
-article .markdown > p > code {
+article .markdown > p > code,
+article .markdown > ul > li > code,
+article .markdown > ol > li > code {
   font-size: 1em;
   color: var(--ifm-color-primary);
 }
