@@ -178,10 +178,10 @@ const privateKey = generatePrivateKey(); // Replace it by importing your private
 const account = privateKeyToAccount(privateKey);
 
 // Create universal signer from viem account
-const universalSigner = await PushChain.utils.signer.toUniversalFromViem(
-  account,
-  CONSTANTS.CHAIN.ETHEREUM_SEPOLIA // Origin chain
-);
+const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+});
 
 // Initialize Push Chain SDK on Testnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
@@ -195,10 +195,10 @@ For Solana:
 const account = Keypair.generate(); // Replace it by importing your private key
 
 // Create universal signer from Solana keypair
-const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
-  account,
-  CONSTANTS.CHAIN.SOLANA_TESTNET // Origin chain
-);
+const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+});
 
 // Initialize Push Chain SDK on Devnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
@@ -217,10 +217,10 @@ const privateKey = generatePrivateKey(); // Replace it by importing your private
 const account = privateKeyToAccount(privateKey);
 
 // Create universal signer from viem account
-const universalSigner = await PushChain.utils.signer.toUniversalFromViem(
-  account,
-  CONSTANTS.CHAIN.ETHEREUM_SEPOLIA // Origin chain
-);
+const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+});
 
 // Initialize Push Chain SDK on Testnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
@@ -234,10 +234,10 @@ For Solana:
 const account = Keypair.generate(); // Replace it by importing your private key
 
 // Create universal signer from Solana keypair
-const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
-  account,
-  CONSTANTS.CHAIN.SOLANA_TESTNET // Origin chain
-);
+const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+});
 
 // Initialize Push Chain SDK on Devnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
@@ -256,10 +256,10 @@ const privateKey = generatePrivateKey(); // Replace it by importing your private
 const account = privateKeyToAccount(privateKey);
 
 // Create universal signer from viem account
-const universalSigner = await PushChain.utils.signer.toUniversalFromViem(
-  account,
-  CONSTANTS.CHAIN.ETHEREUM_SEPOLIA // Origin chain
-);
+const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+});
 
 // Initialize Push Chain SDK on Testnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
@@ -273,14 +273,14 @@ For Solana:
 const account = Keypair.generate(); // Replace it by importing your private key
 
 // Create universal signer from Solana keypair
-const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
-  account,
-  CONSTANTS.CHAIN.SOLANA_TESTNET // Origin chain
-);
+const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+});
 
 // Initialize Push Chain SDK on Devnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.NETWORK.DEVNET,
+  network: CONSTANTS.NETWORK.TESTNET,
 });
 ```
 

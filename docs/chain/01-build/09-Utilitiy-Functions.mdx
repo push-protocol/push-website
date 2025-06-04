@@ -163,57 +163,103 @@ const chainAgnosticStr = PushChain.utils.account.toChainAgnostic({
 
 A namespace for creating `UniversalSigner` objects from different wallet types.
 
-### 2.1 Create UniversalSigner from Viem Wallet
+### 2.1 Create UniversalSigner from Viem Wallet or Solana Keypair
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
+  For Ethereum:
+
   ```typescript
   import { privateKeyToAccount } from 'viem/accounts';
   import { CONSTANTS } from '@pushchain/core';
 
   const account = privateKeyToAccount('0x...');
-  const universalSigner = await PushChain.utils.signer.toUniversalFromViem(
-    account, 
-    CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
-  );
+  const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+    library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+  });
+  ```
+
+  For Solana:
+
+  ```typescript
+  import { Keypair } from '@solana/web3.js';
+  import { CONSTANTS } from '@pushchain/core';
+
+  const keypair = Keypair.generate();
+  const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
+    chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
+    library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+  });
   ```
   </TabItem>
 
   <TabItem value="react" attributes={{className: "codetab react"}} default>
+  For Ethereum:
+
   ```typescript
   import { privateKeyToAccount } from 'viem/accounts';
   import { CONSTANTS } from '@pushchain/core';
 
   const account = privateKeyToAccount('0x...');
-  const universalSigner = await PushChain.utils.signer.toUniversalFromViem(
-    account, 
-    CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
-  );
+  const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+    library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+  });
+  ```
+
+  For Solana:
+
+  ```typescript
+  import { Keypair } from '@solana/web3.js';
+  import { CONSTANTS } from '@pushchain/core';
+
+  const keypair = Keypair.generate();
+  const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
+    chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
+    library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+  });
   ```
   </TabItem>
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+  For Ethereum:
+
   ```typescript
   import { privateKeyToAccount } from 'viem/accounts';
   import { CONSTANTS } from '@pushchain/core';
 
   const account = privateKeyToAccount('0x...');
-  const universalSigner = await PushChain.utils.signer.toUniversalFromViem(
-    account, 
-    CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
-  );
+  const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+    library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+  });
+  ```
+
+  For Solana:
+
+  ```typescript
+  import { Keypair } from '@solana/web3.js';
+  import { CONSTANTS } from '@pushchain/core';
+
+  const keypair = Keypair.generate();
+  const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
+    chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
+    library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+  });
   ```
   </TabItem>
 </Tabs>
 
 ---
 
-### `toUniversalFromViem` parameters
+### `toUniversal` parameters
 
 | **Param**     | **Type**                | **Remarks**                                                                                       |
 |---------------|-------------------------|---------------------------------------------------------------------------------------------------|
 | `account`  | `Account`   | A viem Account instance (e.g., from privateKeyToAccount). |
-| `chain`  | `CHAIN`   | The target chain for the signer. |
+| `options.chain`  | `CHAIN`   | The target chain for the signer. Possible values: `ETHEREUM_MAINNET`, `ETHEREUM_SEPOLIA`, `SOLANA_MAINNET`, `SOLANA_TESTNET`, `SOLANA_DEVNET` |
+| `options.library`  | `LIBRARY`   | The library for the signer. Possible values: `ETHEREUM_VIEM` ('viem'), `SOLANA_WEB3` ('@solana/web3.js') |
 
 <Details summary="Expected response">
 
@@ -239,80 +285,6 @@ Response properties description:
 
 </Details>
 
-### 2.2 Create UniversalSigner from Solana Keypair
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-  ```typescript
-  import { Keypair } from '@solana/web3.js';
-  import { CONSTANTS } from '@pushchain/core';
-
-  const keypair = Keypair.generate();
-  const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
-    keypair,
-    CHAIN.SOLANA_TESTNET
-  );
-  ```
-  </TabItem>
-
-  <TabItem value="react" attributes={{className: "codetab react"}} default>
-  ```typescript
-  import { Keypair } from '@solana/web3.js';
-  import { CONSTANTS } from '@pushchain/core';
-
-  const keypair = Keypair.generate();
-  const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
-    keypair,
-    CONSTANTS.CHAIN.SOLANA_TESTNET
-  );
-  ```
-  </TabItem>
-
-  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
-  ```typescript
-  import { Keypair } from '@solana/web3.js';
-  import { CONSTANTS } from '@pushchain/core';
-
-  const keypair = Keypair.generate();
-  const universalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
-    keypair,
-    CONSTANTS.CHAIN.SOLANA_TESTNET
-  );
-  ```
-  </TabItem>
-</Tabs>
-
----
-
-### `toUniversalFromSolanaKeypair` parameters
-
-| **Param**     | **Type**                | **Remarks**                                                                                       |
-|---------------|-------------------------|---------------------------------------------------------------------------------------------------|
-| `keypair`  | `Keypair`   | A Solana Keypair instance. |
-| `chain`  | `CHAIN`   | The target chain for the signer. |
-
-<Details summary="Expected response">
-
-```typescript
-{
-  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
-  address: 'Base58PublicKey...',
-  signMessage: (data: Uint8Array) => Promise<Uint8Array>,
-  signTransaction: (data: Uint8Array) => Promise<Uint8Array>
-}
-```
-
-Response properties description:
-
-| **Property**             | **Type**                 | **Description**                                                                                     |
-|---------------------------|--------------------------|-----------------------------------------------------------------------------------------------------|
-| `chain`             | `CHAIN`                | The chain identifier |
-| `address`             | `string`                | The signer's Solana address (base58) |
-| `signMessage`             | `function`                | Function to sign arbitrary messages |
-| `signTransaction`             | `function`                | Function to sign transactions |
-
-</Details>
-
 ## Example: Complete SDK Initialization
 
 ```typescript
@@ -321,10 +293,10 @@ import { privateKeyToAccount } from 'viem/accounts';
 
 // Create a universal signer from a viem account
 const account = privateKeyToAccount('0x...');
-const universalSigner = await PushChain.utils.signer.toUniversalFromViem(
-  account,
-  CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
-);
+const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+});
 
 // Initialize the PushChain SDK
 const pushChainClient = await PushChain.initialize(universalSigner, {

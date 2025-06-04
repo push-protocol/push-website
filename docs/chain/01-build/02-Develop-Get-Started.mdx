@@ -53,16 +53,16 @@ const ethereumAccount = privateKeyToAccount(ethereumPrivateKey);
 const solanaAccount = Keypair.generate(); // Replace it with your private key generation logic
 
 // For Ethereum: Create universal signer from viem account
-const ethereumUniversalSigner = await PushChain.utils.signer.toUniversalFromViem(
-  ethereumAccount,
-  CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
-);
+const ethereumUniversalSigner = await PushChain.utils.signer.toUniversal(ethereumAccount, {
+  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+});
 
 // For Solana: Create universal signer from Solana keypair
-const solanaUniversalSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
-  solanaAccount,
-  CONSTANTS.CHAIN.SOLANA_TESTNET
-);
+const solanaUniversalSigner = await PushChain.utils.signer.toUniversal(solanaAccount, {
+  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+});
 
 // Initialize Push Chain SDK on Testnet for Ethereum. You could also initialize it with solanaUniversalSigner for Solana.
 const pushChainClient = await PushChain.initialize(ethereumUniversalSigner, {

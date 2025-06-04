@@ -95,10 +95,10 @@ import { PushChain, CONSTANTS } from '@pushchain/core';
 import { privateKeyToAccount } from 'viem/accounts';
 
 const account = privateKeyToAccount('0x...');
-const ethereumSigner = await PushChain.utils.signer.toUniversalFromViem(
-  account,
-  CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
-);
+const ethereumSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+});
 ```
 
 For Solana using `@solana/web3.js` library:
@@ -110,10 +110,11 @@ import { Keypair } from '@solana/web3.js';
 const privateKeyHex = '...';
 const privateKey = Uint8Array.from(Buffer.from(privateKeyHex, 'hex'));
 const keypair = Keypair.fromSecretKey(privateKey);
-const solanaSigner = PushChain.utils.signer.toUniversalFromSolanaKeypair(
-  keypair,
-  CONSTANTS.CHAIN.SOLANA_TESTNET
-);
+
+const solanaSigner = await PushChain.utils.signer.toUniversal(keypair, {
+  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+});
 ```
 
 ## Learn More
