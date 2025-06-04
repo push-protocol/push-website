@@ -23,18 +23,26 @@ You can effortlessly integrate the Push Universal Wallet into your root applicat
 The Push Universal Wallet operates on a simple provider-consumer pattern:
 
 1. **Provider Setup**: Wrap your application with `PushWalletProvider` to initialize wallet functionality
-2. **Button Integration**: Add _`PushUniversalAccountButton`_ components where users should connect
-3. **State Management**: Use the _`usePushWalletContext`_ hook to access wallet state and methods throughout your app
+2. **Button Integration**: Add `PushUniversalAccountButton` components where users should connect
+3. **State Management**: Use the `usePushWalletContext` hook to access wallet state and methods throughout your app
 
 The Push Universal Wallet provides a unified interface for connecting to multiple blockchains, automatically handling authentication and cross-chain interactions without complex blockchain-specific implementations.
 
 ## Installation
 
-```bash
-npm install @pushchain/ui-kit
-# or
-yarn add @pushchain/ui-kit
-```
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="npm" attributes={{className: "codetab npm"}} default>
+    ```bash
+    npm install @pushchain/ui-kit
+    ```
+  </TabItem>
+
+  <TabItem value="yarn" attributes={{className: "codetab yarn"}} default>
+    ```bash
+    yarn add @pushchain/ui-kit
+    ```
+  </TabItem>
+</Tabs>
 
 ## Usage and Playground
 
