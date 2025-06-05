@@ -1,0 +1,318 @@
+---
+id: docs-utility-functions
+title: Utility Functions
+hide_title: true
+slug: ./utility-functions
+displayed_sidebar: pushChainSidebar
+sidebar_position: 9
+image: "/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png"
+---
+
+# Utility Functions Overview
+
+This page documents the **Utils** class, which provides a set of helper methods for:
+
+1. **Account/Address Conversion** (CAIP-10 ↔ UniversalAccount)
+2. **Universal Signer Creation** (from `viem` and `@solana/web3.js` signers)
+
+Below is a complete breakdown of each function in the **Utils** class.
+
+<head>
+  <title>{`Utility Functions | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AFocus,
+} from '@site/src/css/SharedStyling';
+
+---
+
+## 1. `PushChain.utils.account`
+
+A namespace dedicated to converting addresses and handling **UniversalAccount** objects. Each method helps you work with different address formats.
+
+### 1.1 From CAIP-10 to UniversalAccount
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+  ```typescript
+  const account = PushChain.utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
+  ```
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+  ```typescript
+  const account = PushChain.utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
+  ```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+  ```typescript
+  const account = PushChain.utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
+  ```
+  </TabItem>
+</Tabs>
+
+---
+
+### `toUniversal` parameters
+
+| **Param**     | **Type**                | **Remarks**                                                                                       |
+|---------------|-------------------------|---------------------------------------------------------------------------------------------------|
+| `caip`  | `string`   | A CAIP-10 address string (e.g., 'eip155:1:0xabc...'). |
+
+<Details summary="Expected response">
+
+```typescript
+{
+  chain: 'ETHEREUM_SEPOLIA',
+  address: '0x35B84d6848D16415177c64D64504663b998A6ab4'
+}
+```
+
+Response properties description:
+
+| **Property**             | **Type**                 | **Description**                                                                                     |
+|---------------------------|--------------------------|-----------------------------------------------------------------------------------------------------|
+| `chain`             | `CHAIN`                | The chain identifier from the CHAIN enum |
+| `address`             | `string`                | The formatted address for the chain |
+
+</Details>
+
+### Example: Convert Ethereum Sepolia CAIP-10 to UniversalAccount
+
+```typescript
+// A CAIP-10 formatted address for Ethereum Sepolia
+const universalAccount = PushChain.utils.account.toUniversal('eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4');
+// {
+//   chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+//   address: '0x35B84d6848D16415177c64D64504663b998A6ab4'
+// }
+```
+
+### 1.2 From UniversalAccount to CAIP-10
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+  ```typescript
+  const universalAccount = {
+    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+    address: '0x35B84d6848D16415177c64D64504663b998A6ab4',
+  };
+
+  const result = PushChain.utils.account.toChainAgnostic(universalAccount);
+  ```
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+  ```typescript
+  const universalAccount = {
+    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+    address: '0x35B84d6848D16415177c64D64504663b998A6ab4',
+  };
+
+  const result = PushChain.utils.account.toChainAgnostic(universalAccount);
+  ```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+  ```typescript
+  const universalAccount = {
+    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+    address: '0x35B84d6848D16415177c64D64504663b998A6ab4',
+  };
+
+  const result = PushChain.utils.account.toChainAgnostic(universalAccount);
+  ```
+  </TabItem>
+</Tabs>
+
+---
+
+### `toChainAgnostic` parameters
+
+| **Param**     | **Type**                | **Remarks**                                                                                       |
+|---------------|-------------------------|---------------------------------------------------------------------------------------------------|
+| `account`  | `UniversalAccount`   | A UniversalAccount object with chain and address. |
+
+<Details summary="Expected response">
+
+```typescript
+eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4
+```
+
+</Details>
+
+### Example: Convert Ethereum UniversalAccount to CAIP-10
+
+```typescript
+const chainAgnosticStr = PushChain.utils.account.toChainAgnostic({
+  chain: CONSTANTS.CHAIN.ETHEREUM_MAINNET,
+  address: '0xabc123...'
+});
+// => 'eip155:1:0xabc123...'
+```
+
+## 2. `PushChain.utils.signer`
+
+A namespace for creating `UniversalSigner` objects from different wallet types.
+
+### 2.1 Create UniversalSigner from Viem Wallet or Solana Keypair
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+  For Ethereum:
+
+  ```typescript
+  import { privateKeyToAccount } from 'viem/accounts';
+  import { CONSTANTS } from '@pushchain/core';
+
+  const account = privateKeyToAccount('0x...');
+  const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+    library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+  });
+  ```
+
+  For Solana:
+
+  ```typescript
+  import { Keypair } from '@solana/web3.js';
+  import { CONSTANTS } from '@pushchain/core';
+
+  const keypair = Keypair.generate();
+  const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
+    chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
+    library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+  });
+  ```
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+  For Ethereum:
+
+  ```typescript
+  import { privateKeyToAccount } from 'viem/accounts';
+  import { CONSTANTS } from '@pushchain/core';
+
+  const account = privateKeyToAccount('0x...');
+  const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+    library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+  });
+  ```
+
+  For Solana:
+
+  ```typescript
+  import { Keypair } from '@solana/web3.js';
+  import { CONSTANTS } from '@pushchain/core';
+
+  const keypair = Keypair.generate();
+  const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
+    chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
+    library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+  });
+  ```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+  For Ethereum:
+
+  ```typescript
+  import { privateKeyToAccount } from 'viem/accounts';
+  import { CONSTANTS } from '@pushchain/core';
+
+  const account = privateKeyToAccount('0x...');
+  const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+    library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+  });
+  ```
+
+  For Solana:
+
+  ```typescript
+  import { Keypair } from '@solana/web3.js';
+  import { CONSTANTS } from '@pushchain/core';
+
+  const keypair = Keypair.generate();
+  const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
+    chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
+    library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+  });
+  ```
+  </TabItem>
+</Tabs>
+
+---
+
+### `toUniversal` parameters
+
+| **Param**     | **Type**                | **Remarks**                                                                                       |
+|---------------|-------------------------|---------------------------------------------------------------------------------------------------|
+| `account`  | `Account`   | A viem Account instance (e.g., from privateKeyToAccount). |
+| `options.chain`  | `CHAIN`   | The target chain for the signer. Possible values: `ETHEREUM_MAINNET`, `ETHEREUM_SEPOLIA`, `SOLANA_MAINNET`, `SOLANA_TESTNET`, `SOLANA_DEVNET` |
+| `options.library`  | `LIBRARY`   | The library for the signer. Possible values: `ETHEREUM_VIEM` ('viem'), `SOLANA_WEB3` ('@solana/web3.js') |
+
+<Details summary="Expected response">
+
+```typescript
+{
+  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  address: '0x...',
+  signMessage: (data: Uint8Array) => Promise<Uint8Array>,
+  signTransaction: (data: Uint8Array) => Promise<Uint8Array>,
+  signTypedData: (data: any) => Promise<Uint8Array>
+}
+```
+
+Response properties description:
+
+| **Property**             | **Type**                 | **Description**                                                                                     |
+|---------------------------|--------------------------|-----------------------------------------------------------------------------------------------------|
+| `chain`             | `CHAIN`                | The chain identifier |
+| `address`             | `string`                | The signer's address |
+| `signMessage`             | `function`                | Function to sign arbitrary messages |
+| `signTransaction`             | `function`                | Function to sign transactions |
+| `signTypedData`             | `function`                | Function to sign EIP-712 typed data |
+
+</Details>
+
+## Example: Complete SDK Initialization
+
+```typescript
+import { PushChain, CONSTANTS } from '@pushchain/core';
+import { privateKeyToAccount } from 'viem/accounts';
+
+// Create a universal signer from a viem account
+const account = privateKeyToAccount('0x...');
+const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+});
+
+// Initialize the PushChain SDK
+const pushChainClient = await PushChain.initialize(universalSigner, {
+  network: CONSTANTS.NETWORK.TESTNET,
+  printTraces: true,
+});
+
+// Convert addresses between formats
+const caipAddress = PushChain.utils.account.toChainAgnostic({
+  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  address: account.address
+});
+console.log('CAIP-10 address:', caipAddress);
+// => 'eip155:11155111:0x...'
+
+const universalAccount = PushChain.utils.account.toUniversal(caipAddress);
+console.log('UniversalAccount:', universalAccount);
+// => { chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA, address: '0x...' }
+```
