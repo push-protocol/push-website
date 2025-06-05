@@ -37,124 +37,91 @@ import {
 
 A namespace dedicated to converting addresses and handling **UniversalAccount** objects. Each method helps you work with different address formats.
 
-### 1.1 From CAIP-10 to UniversalAccount
+### 1.1 `PushChain.utils.account.fromChainAgnostic`
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
   ```typescript
-  const account = PushChain.utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
-  ```
-  </TabItem>
-
-  <TabItem value="react" attributes={{className: "codetab react"}} default>
-  ```typescript
-  const account = PushChain.utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
-  ```
-  </TabItem>
-
-  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
-  ```typescript
-  const account = PushChain.utils.account.toUniversal('eip155:1:0x35B84d6848D16415177c64D64504663b998A6ab4');
+  const universalAccount = PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress)
   ```
   </TabItem>
 </Tabs>
 
----
-
-### `toUniversal` parameters
+### `fromChainAgnostic` parameters
 
 | **Param**     | **Type**                | **Remarks**                                                                                       |
 |---------------|-------------------------|---------------------------------------------------------------------------------------------------|
-| `caip`  | `string`   | A CAIP-10 address string (e.g., 'eip155:1:0xabc...'). |
+| `chainAgnosticAddress`  | `string`   | A full chain agnostic address string (e.g., `eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4`). |
 
-<Details summary="Expected response">
-
-```typescript
-{
-  chain: 'ETHEREUM_SEPOLIA',
-  address: '0x35B84d6848D16415177c64D64504663b998A6ab4'
-}
-```
-
-Response properties description:
-
-| **Property**             | **Type**                 | **Description**                                                                                     |
-|---------------------------|--------------------------|-----------------------------------------------------------------------------------------------------|
-| `chain`             | `CHAIN`                | The chain identifier from the CHAIN enum |
-| `address`             | `string`                | The formatted address for the chain |
-
-</Details>
-
-### Example: Convert Ethereum Sepolia CAIP-10 to UniversalAccount
+#### Example: Convert Ethereum Sepolia CAIP-10 to UniversalAccount
 
 ```typescript
-// A CAIP-10 formatted address for Ethereum Sepolia
-const universalAccount = PushChain.utils.account.toUniversal('eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4');
+const universalAccount = PushChain.utils.account.fromChainAgnostic('eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4');
+console.log(universalAccount);
 // {
 //   chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
 //   address: '0x35B84d6848D16415177c64D64504663b998A6ab4'
 // }
 ```
 
-### 1.2 From UniversalAccount to CAIP-10
+### 1.2 `PushChain.utils.account.toUniversal`
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
   ```typescript
-  const universalAccount = {
+  const universalAccount = PushChain.utils.account.toUniversal(address, {
     chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-    address: '0x35B84d6848D16415177c64D64504663b998A6ab4',
-  };
-
-  const result = PushChain.utils.account.toChainAgnostic(universalAccount);
-  ```
-  </TabItem>
-
-  <TabItem value="react" attributes={{className: "codetab react"}} default>
-  ```typescript
-  const universalAccount = {
-    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-    address: '0x35B84d6848D16415177c64D64504663b998A6ab4',
-  };
-
-  const result = PushChain.utils.account.toChainAgnostic(universalAccount);
-  ```
-  </TabItem>
-
-  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
-  ```typescript
-  const universalAccount = {
-    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-    address: '0x35B84d6848D16415177c64D64504663b998A6ab4',
-  };
-
-  const result = PushChain.utils.account.toChainAgnostic(universalAccount);
+  });
   ```
   </TabItem>
 </Tabs>
 
----
+### `toUniversal` parameters
+
+| **Param**     | **Type**                | **Remarks**                                                                                       |
+|---------------|-------------------------|---------------------------------------------------------------------------------------------------|
+| `address`  | `string`   | An address string (e.g., `0xabc...`). |
+| `options.chain`  | `CHAIN`   | The target chain for the signer. Here are some possible values: `CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `CONSTANTS.CHAIN.SOLANA_MAINNET` |
+
+
+#### Example: Convert Ethereum Sepolia Address to UniversalAccount
+
+```typescript
+const universalAccount = PushChain.utils.account.toUniversal('0x35B84d6848D16415177c64D64504663b998A6ab4', {
+  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+});
+console.log(universalAccount);
+// {
+//   chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+//   address: '0x35B84d6848D16415177c64D64504663b998A6ab4'
+// }
+```
+
+### 1.3 `PushChain.utils.account.toChainAgnostic`
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+  ```typescript
+  const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(address, {
+    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  });
+  ```
+  </TabItem>
+</Tabs>
 
 ### `toChainAgnostic` parameters
 
 | **Param**     | **Type**                | **Remarks**                                                                                       |
 |---------------|-------------------------|---------------------------------------------------------------------------------------------------|
-| `account`  | `UniversalAccount`   | A UniversalAccount object with chain and address. |
+| `address`  | `string`   | An address string (e.g., `0xabc...`). |
+| `options.chain`  | `CHAIN`   | The target chain for the signer. Here are some possible values: `CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `CONSTANTS.CHAIN.SOLANA_MAINNET` |
 
-<Details summary="Expected response">
 
-```typescript
-eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4
-```
-
-</Details>
-
-### Example: Convert Ethereum UniversalAccount to CAIP-10
+#### Example: Convert Ethereum Address to CAIP-10
 
 ```typescript
-const chainAgnosticStr = PushChain.utils.account.toChainAgnostic({
+const chainAgnosticStr = PushChain.utils.account.toChainAgnostic('0xabc123...', {
   chain: CONSTANTS.CHAIN.ETHEREUM_MAINNET,
-  address: '0xabc123...'
 });
 // => 'eip155:1:0xabc123...'
 ```
