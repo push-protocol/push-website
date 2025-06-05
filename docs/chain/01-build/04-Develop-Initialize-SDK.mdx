@@ -47,7 +47,7 @@ const ethereumUniversalSigner = await PushChain.utils.signer.toUniversal(ethereu
 
 // Initialize Push Chain SDK on Testnet for Ethereum
 const pushChainClient = await PushChain.initialize(ethereumUniversalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -71,7 +71,7 @@ const solanaUniversalSigner = await PushChain.utils.signer.toUniversal(solanaAcc
 
 // Initialize Push Chain SDK on Testnet for Solana
 const pushChainClient = await PushChain.initialize(solanaUniversalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -100,7 +100,7 @@ const ethereumUniversalSigner = await PushChain.utils.signer.toUniversal(ethereu
 
 // Initialize Push Chain SDK on Testnet for Ethereum
 const pushChainClient = await PushChain.initialize(ethereumUniversalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -124,7 +124,7 @@ const solanaUniversalSigner = await PushChain.utils.signer.toUniversal(solanaAcc
 
 // Initialize Push Chain SDK on Testnet for Solana
 const pushChainClient = await PushChain.initialize(solanaUniversalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
   </TabItem>
@@ -152,7 +152,7 @@ const ethereumUniversalSigner = await PushChain.utils.signer.toUniversal(ethereu
 
 // Initialize Push Chain SDK on Testnet for Ethereum
 const pushChainClient = await PushChain.initialize(ethereumUniversalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -176,7 +176,7 @@ const solanaUniversalSigner = await PushChain.utils.signer.toUniversal(solanaAcc
 
 // Initialize Push Chain SDK on Testnet for Solana
 const pushChainClient = await PushChain.initialize(solanaUniversalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
   </TabItem>
@@ -189,7 +189,7 @@ When initializing your Push Chain instance, you can customize the process using 
 | Param      | Type                     |  Default       | Remarks                                                                                                                                                                         |
 | ---------- | ------------------------ |  ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | _`universalSigner`_ | `UniversalSigner`             |  -             | Chain-agnostic signer responsible for signing transactions and messages.                                                                                         |
-|  `options.network`   | `NETWORK`         | `CONSTANTS.NETWORK.TESTNET`     | Push Chain environment. Options: MAINNET, TESTNET, LOCALNET                                                                                                                                        |
+|  `options.network`   | `NETWORK`         | `CONSTANTS.PUSH_NETWORK.TESTNET_DONUT`     | Push Chain environment. Options: MAINNET, TESTNET_DONUT, LOCALNET                                                                                                                                        |
 |  `options.rpcUrls`   | `Partial<Record<CHAIN, string>>`         | `{}`     | Custom RPC URLs mapped by chain IDs. If not provided, the default RPC URLs for the network will be used. Example: `{ [CHAIN.ETHEREUM_SEPOLIA]: 'https://sepolia.infura.io/v3/YOUR-PROJECT-ID' }`                                                                                                                                        |
 |  `options.printTraces`   | `boolean`         | `false`     | When true, console logs the internal trace logs for debugging requests to nodes                                                                                                                                        |
 
@@ -270,7 +270,7 @@ Here is an example of how to initialize the Push Chain SDK with a universal sign
 const pushChainClient = await PushChain.initialize(
   universalSigner, // Your universal signer instance
   {
-    network: CONSTANTS.NETWORK.TESTNET,
+    network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
     rpcUrls: {
       [CONSTANTS.CHAIN.ETHEREUM_SEPOLIA]: 'https://sepolia.infura.io/v3/YOUR-PROJECT-ID',
       [CONSTANTS.CHAIN.SOLANA_TESTNET]: 'https://api.testnet.solana.com'
@@ -287,7 +287,7 @@ const pushChainClient = await PushChain.initialize(
 const pushChainClient = await PushChain.initialize(
   universalSigner, // Your universal signer instance
   {
-    network: CONSTANTS.NETWORK.TESTNET,
+    network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
     rpcUrls: {
       [CONSTANTS.CHAIN.ETHEREUM_SEPOLIA]: 'https://sepolia.infura.io/v3/YOUR-PROJECT-ID',
       [CONSTANTS.CHAIN.SOLANA_TESTNET]: 'https://api.testnet.solana.com'
@@ -305,7 +305,7 @@ const pushChainClient = await PushChain.initialize(
 const pushChainClient = await PushChain.initialize(
   universalSigner, // Your universal signer instance
   {
-    network: CONSTANTS.NETWORK.TESTNET,
+    network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
     rpcUrls: {
       [CONSTANTS.CHAIN.ETHEREUM_SEPOLIA]: 'https://sepolia.infura.io/v3/YOUR-PROJECT-ID',
       [CONSTANTS.CHAIN.SOLANA_TESTNET]: 'https://api.testnet.solana.com'

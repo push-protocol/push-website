@@ -300,7 +300,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(account, {
 
 // Initialize the PushChain SDK
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
   printTraces: true,
 });
 

@@ -66,7 +66,7 @@ const solanaUniversalSigner = await PushChain.utils.signer.toUniversal(solanaAcc
 
 // Initialize Push Chain SDK on Testnet for Ethereum. You could also initialize it with solanaUniversalSigner for Solana.
 const pushChainClient = await PushChain.initialize(ethereumUniversalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 
 // Send a cross-chain transaction

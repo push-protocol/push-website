@@ -185,7 +185,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(account, {
 
 // Initialize Push Chain SDK on Testnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -202,7 +202,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(account, {
 
 // Initialize Push Chain SDK on Devnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -224,7 +224,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(account, {
 
 // Initialize Push Chain SDK on Testnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -241,7 +241,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(account, {
 
 // Initialize Push Chain SDK on Devnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -263,7 +263,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(account, {
 
 // Initialize Push Chain SDK on Testnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -280,7 +280,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(account, {
 
 // Initialize Push Chain SDK on Devnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.NETWORK.TESTNET,
+  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -348,33 +348,52 @@ console.log('Transaction sent:', txHash);
   </TabItem>
 </Tabs>
 
-### Check NMSC Address
+### Get Universal Executor Account (UEA) Address
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
-
 ```typescript
-const nmscInfo = await pushChainClient.Universal.getNMSCAddress();
-console.log('NMSC Address:', nmscInfo.address);
+const ueaAccount = await pushChainClient.universal.account.getUEA();
+console.log('UEA Address:', ueaAccount.address);
 ```
-
   </TabItem>
 
   <TabItem value="react" attributes={{className: "codetab react"}} default>
-
 ```typescript
-const nmscInfo = await pushChainClient.Universal.getNMSCAddress();
-console.log('NMSC Address:', nmscInfo.address);
+const ueaAccount = await pushChainClient.universal.account.getUEA();
+console.log('UEA Address:', ueaAccount.address);
 ```
-
   </TabItem>
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
-
 ```typescript
-const nmscInfo = await pushChainClient.Universal.getNMSCAddress();
-console.log('NMSC Address:', nmscInfo.address);
+const ueaAccount = await pushChainClient.universal.account.getUEA();
+console.log('UEA Address:', ueaAccount.address);
 ```
+  </TabItem>
+</Tabs>
 
+### Get Universal Origin Account (UOA) Address
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+const uoaAccount = await pushChainClient.universal.account.getUOA();
+console.log('UOA Address:', uoaAccount.address);
+```
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+const uoaAccount = await pushChainClient.universal.account.getUOA();
+console.log('UOA Address:', uoaAccount.address);
+```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+const uoaAccount = await pushChainClient.universal.account.getUOA();
+console.log('UOA Address:', uoaAccount.address);
+```
   </TabItem>
 </Tabs>
