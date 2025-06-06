@@ -1,7 +1,7 @@
 ---
 id: docs-chain-quickstart
 title: Quickstart
-hide_title: false
+hide_title: true
 slug: ./quickstart
 displayed_sidebar: pushChainSidebar
 sidebar_position: 2
@@ -78,10 +78,7 @@ For Ethereum:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import {
-  PushChain,
-  CONSTANTS,
-} from '@pushchain/core';
+import { PushChain, CONSTANTS } from '@pushchain/core';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';
@@ -92,10 +89,7 @@ For Solana:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import {
-  PushChain,
-  CONSTANTS,
-} from '@pushchain/core';
+import { PushChain, CONSTANTS } from '@pushchain/core';
 
 // Import utility functions from @solana/web3.js
 import { Keypair } from '@solana/web3.js';
@@ -109,10 +103,7 @@ For Ethereum:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import {
-  PushChain,
-  CONSTANTS,
-} from '@pushchain/core';
+import { PushChain, CONSTANTS } from '@pushchain/core';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';
@@ -123,10 +114,7 @@ For Solana:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import {
-  PushChain,
-  CONSTANTS,
-} from '@pushchain/core';
+import { PushChain, CONSTANTS } from '@pushchain/core';
 
 // Import utility functions from @solana/web3.js
 import { Keypair } from '@solana/web3.js';
@@ -140,10 +128,7 @@ For Ethereum:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import {
-  PushChain,
-  CONSTANTS,
-} from '@pushchain/core';
+import { PushChain, CONSTANTS } from '@pushchain/core';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';
@@ -154,10 +139,7 @@ For Solana:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import {
-  PushChain,
-  CONSTANTS,
-} from '@pushchain/core';
+import { PushChain, CONSTANTS } from '@pushchain/core';
 
 // Import utility functions from @solana/web3.js
 import { Keypair } from '@solana/web3.js';
@@ -358,12 +340,10 @@ console.log('UEA Address:', ueaAccount.address);
 ```
   </TabItem>
 
-  <TabItem value="react" attributes={{className: "codetab react"}} default>
-```typescript
-const ueaAccount = await pushChainClient.universal.account
-console.log('UEA Address:', ueaAccount.address);
-```
-  </TabItem>
+<TabItem value='react' attributes={{ className: 'codetab react' }} default>
+  ```typescript const ueaAccount = await pushChainClient.universal.account
+  console.log('UEA Address:', ueaAccount.address); ```
+</TabItem>
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 ```typescript
@@ -383,12 +363,10 @@ console.log('UOA Address:', uoaAccount.address);
 ```
   </TabItem>
 
-  <TabItem value="react" attributes={{className: "codetab react"}} default>
-```typescript
-const uoaAccount = await pushChainClient.universal.origin
-console.log('UOA Address:', uoaAccount.address);
-```
-  </TabItem>
+<TabItem value='react' attributes={{ className: 'codetab react' }} default>
+  ```typescript const uoaAccount = await pushChainClient.universal.origin
+  console.log('UOA Address:', uoaAccount.address); ```
+</TabItem>
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
 ```typescript
