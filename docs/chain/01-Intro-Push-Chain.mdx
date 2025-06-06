@@ -5,12 +5,18 @@ hide_title: true
 slug: ./
 displayed_sidebar: pushChainSidebar
 sidebar_position: 1
-image: "/assets/docs/previews/notifications--intro_to_push_notification.png"
+image: '/assets/docs/previews/notifications--intro_to_push_notification.png'
 ---
 
 # Intro to Push Chain
 
-Push Chain is a True Universal Layer 1 Proof of Stake (PoS) blockchain enabling universal applications with seamless interoperability, user-friendly wallet abstractions, and robust shared state architecture.
+Push Chain is the first **True Universal Layer 1** blockchain. It is a **100% EVM compatible**, proof of stake(PoS) chain built on top of the Cosmos SDK.
+
+It enables applications to be built once and used by users across multiple blockchains (including non-EVM chains). This allows developers to create a single universal application that is unlimited in interoperability across all chains.
+
+Under the hood, it utilizes wallet abstraction and universal fee abstraction to **enable users of any chain** (Etherem, Solana, etc) to **use the same app deployed on Push Chain**.
+
+![Universal App Venn Diagram](/assets/docs/chain/build/venn-diagram-push.png)
 
 <head>
   <title>Introduction | Push Chain | Push Documentation</title>
@@ -23,28 +29,30 @@ import {
   ModalWrapper,
   ModalMidEqual,
 } from '@site/src/css/SharedStyling';
+import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
 
-## What is a True Universal Layer 1?
+## Push Chain Innovations
 
-A True Universal Layer 1 blockchain like Push Chain is designed to abstract away the complexity of blockchain fragmentation. Instead of focusing on chain-specific deployment, developers can create universal apps that are accessible by any wallet, regardless of the originating chain. Push Chain accomplishes this through a shared state architecture, enabling apps to read from and write to various chains, while maintaining a unified user experience. This architecture is illustrated on diagram below.
+Push Chain is designed to abstract away the complexity of blockchain fragmentation.
 
-![Universal App Venn Diagram](../../static/assets/docs/chain/build/venn-diagram-push.png)
+It introduces several innovations to abstract away developer's pain points, allowing them to multiply their userbase manifold by enabling compatibility with several L1s. Innovations include:
 
-## Why Push Chain?
+- **Zero EVM Code Changes**: Developers can deploy their EVM smart contract with zero changes to enable universal interoperability.
+- **Wallet Abstraction**: Enables any wallet (Metamask, Phantom, etc) to be compatible with apps on Push Chain. Also allows email or social login for normies.
+- **Universal Fee Abstraction**: Enables users of any chain to fund transactions natively from any other chain. For instance: ETH users can fund their tx using native ETH balance or any ERC-20 balances without the need to switch networks. This is true for Solana users or for any other supported chains.
+- **True Mapping and Attribution of Txs across chains**: Each transaction done by users of different chains are mapped and attributed, enabling shared app experience among users of all chains.
+- **Universal Smart Contract**: Enables smart contract of Push Chain to recognize users of other chains for any arbitary logic.
+- **Shared State and Programmable Solvers**: Future features that will also enable reading from other chains and writing to other chains.
 
-Push Chain focuses on consumer-centric, universal applications, delivering seamless UX, scalability, and simplified interactions across multiple blockchain ecosystems. Push Chain uniquely enables:
+## Why Build on Push Chain?
 
-- **Empowering Universal Applications**: Supports seamless integration of financial (DeFi) and non-financial use cases.
-- **Wallet Interactions Made Easy**: Users can seamlessly interact using their existing wallets without needing a new Push Wallet.
+Developers should build on Push Chain for the following reasons:
+
+- **Expand your userbase instantly**: If you have an EVM app, you can deploy it on Push Chain with zero changes to enable universal interoperability. non-EVM apps are supported as well.
+- **Deploy without audits or friction**: No changes in your solidity codebase needed, just deploy and use our wrapped SDKs to enable universal access.
+- **Smoother, unfragmented user experience**: Users now use a single app no matter what chain they come from, creating apps that are accessible from any wallet on any chain.
 - **Fee and Wallet Abstraction**: Fees can be paid in native tokens or handled by applications, removing friction for users.
-- **Unified User Identity (Push ID)**: Consolidates multiple wallet interactions into one user identity.
 - **Comprehensive Wallet Abstraction**: Simplifies onboarding for Web3 enthusiasts, newcomers, and traditional Web2 users.
-
-## How Push Chain works?
-
-Push Chain architecture is composed of modular layers, each responsible for enabling the key primitives required for universal applications. As described in the [Push Chain Litepaper](https://push.org/litepaper.pdf), the architecture includes wallet and fee abstraction, shared state access across multiple chains, a programmable solver layer, and a consensus system that supports both traditional and consumer transactions. These layers collectively power universal apps that are accessible from any wallet on any chain, as shown below.
-
-![Push Chain Architecture](../../static/assets/docs/chain/build/how-push-chain-works.png)
 
 ## SDKs
 
@@ -85,7 +93,7 @@ Push Chain architecture is composed of modular layers, each responsible for enab
     </ModalWrapper>
   </ModalSmall>
 
-  <ModalSmall
+<ModalSmall
   onClick={() =>
     window.open('https://github.com/push-protocol/push-chain-sdk', '_blank')
   }
@@ -158,7 +166,7 @@ Push Chain architecture is composed of modular layers, each responsible for enab
 ## Use Cases
 
 <ModalContainer>
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#6-universal-marketplaces', '_self')}>
+  <ModalSmall>
     <img
       src={require('/static/assets/docs/chain/usecases/marketplaces.png').default}
       srcSet={`${
@@ -170,54 +178,55 @@ Push Chain architecture is composed of modular layers, each responsible for enab
     <span>DeFi</span>
   </ModalSmall>
 
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#5-utility-and-productivity-apps', '_self')}>
-    <img
-      src={require('/static/assets/docs/chain/usecases/productivity.png').default}
-      srcSet={`${
-        require('/static/assets/docs/chain/usecases/productivity@2x.png').default
-      } 2x, ${
-        require('/static/assets/docs/chain/usecases/productivity@3x.png').default
-      } 3x`}
-    />
-    <span>Universal App Experience</span>
-  </ModalSmall>
+<ModalSmall>
+  <img
+    src={require('/static/assets/docs/chain/usecases/gaming.png').default}
+    srcSet={`${
+      require('/static/assets/docs/chain/usecases/gaming@2x.png').default
+    } 2x, ${require('/static/assets/docs/chain/usecases/gaming@3x.png').default} 3x`}
+  />
+  <span>Gaming</span>
+</ModalSmall>
 
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#3-gaming-applications', '_self')}>
-    <img
-      src={require('/static/assets/docs/chain/usecases/gaming.png').default}
-      srcSet={`${
-        require('/static/assets/docs/chain/usecases/gaming@2x.png').default
-      } 2x, ${require('/static/assets/docs/chain/usecases/gaming@3x.png').default} 3x`}
-    />
-    <span>Gaming</span>
-  </ModalSmall>
+<ModalSmall>
+  <img
+    src={require('/static/assets/docs/chain/usecases/AI.png').default}
+    srcSet={`${
+      require('/static/assets/docs/chain/usecases/AI@2x.png').default
+    } 2x, ${require('/static/assets/docs/chain/usecases/AI@3x.png').default} 3x`}
+  />
+  <span>AI</span>
+</ModalSmall>
 
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#4-ai-powered-applications', '_self')}>
-    <img
-      src={require('/static/assets/docs/chain/usecases/AI.png').default}
-      srcSet={`${
-        require('/static/assets/docs/chain/usecases/AI@2x.png').default
-      } 2x, ${require('/static/assets/docs/chain/usecases/AI@3x.png').default} 3x`}
-    />
-    <span>AI</span>
-  </ModalSmall>
+<ModalSmall>
+  <img
+    src={require('/static/assets/docs/chain/usecases/social.png').default}
+    srcSet={`${
+      require('/static/assets/docs/chain/usecases/social@2x.png').default
+    } 2x, ${require('/static/assets/docs/chain/usecases/social@3x.png').default} 3x`}
+  />
+  <span>Social</span>
+</ModalSmall>
 
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#1-decentralized-social-platforms', '_self')}>
-    <img
-      src={require('/static/assets/docs/chain/usecases/social.png').default}
-      srcSet={`${
-        require('/static/assets/docs/chain/usecases/social@2x.png').default
-      } 2x, ${require('/static/assets/docs/chain/usecases/social@3x.png').default} 3x`}
-    />
-    <span>Social</span>
-  </ModalSmall>
+<ModalSmall>
+  <img
+    src={require('/static/assets/docs/chain/usecases/productivity.png').default}
+    srcSet={`${
+      require('/static/assets/docs/chain/usecases/productivity@2x.png').default
+    } 2x, ${
+      require('/static/assets/docs/chain/usecases/productivity@3x.png').default
+    } 3x`}
+  />
+  <span>Universal App Experiences</span>
+</ModalSmall>
 
 </ModalContainer>
 
-## Try Push Chain
+## Experience Push Chain
 
-Experience Push Chain firsthand:
+The best way to see Push Chain in action is by interacting with it. You can:
 
 1. Visit [simulate.push.org](https://simulate.push.org) to interact directly. You can log in with your existing wallet, email, or even your social accounts, and send a transaction on Push Chain with just a few clicks.
-2. Alternatively, use our Playground to experiment with code and see live updates within our documentation.
-3. Learn more about Push Chain fundamentals, deep dives, and developer resources in our comprehensive [Knowledge Base](https://push.org/knowledge).
+   <IFrameModal url='https://simulate.push.org' maxHeight='1000px' />
+2. Alternatively, use our live playgrounds to experiment with code and see live updates within our documentation.
+3. Learn more about Push Chain fundamentals, how it works, deep dives, and developer resources in our comprehensive [Knowledge Base](https://push.org/knowledge).

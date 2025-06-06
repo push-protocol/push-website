@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export default function RemixIDEFullScreen({ examples = {} }) {
+export default function RemixIDE({ examples = {} }) {
   const exampleKeys = Object.keys(examples);
   const defaultRemixURL = 'https://remix.ethereum.org';
   const [selected, setSelected] = useState(exampleKeys[0] || null);
