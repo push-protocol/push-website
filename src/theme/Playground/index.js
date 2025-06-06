@@ -126,7 +126,7 @@ export default function Playground({ children, transformCode, ...props }) {
   const prismTheme = usePrismTheme();
   const noInline = props.metastring?.includes('noInline') ?? false;
 
-  console.debug('Original children content:', children);
+  // console.debug('Original children content:', children);
   // Look for customPropMinimized
 
   let minimized = false;
@@ -209,7 +209,7 @@ export default function Playground({ children, transformCode, ...props }) {
 
   // finally replace if new line is there in the start
   children = children.replace(/\n/, '');
-  console.debug('Final children content passed to LiveProvider:', children);
+  // console.debug('Final children content passed to LiveProvider:', children);
 
   return (
     <div className={styles.playgroundContainer}>
