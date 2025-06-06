@@ -9,10 +9,9 @@ sidebar_position: 4
 
 ## `usePushChainClient`
 
-The `usePushChainClient` hook initializes and manages a Push Chain client instance for blockchain interactions. It integrates with your wallet connection and handles network configuration automatically. Like `usePushWalletContext`. This hook must also be used within a component that's wrapped by a `PushWalletProvider`.
+The `usePushChainClient` hook initializes and manages a Push Chain client instance for blockchain interactions. It integrates with your wallet connection and handles network configuration automatically. Like `usePushWalletContext`. This hook must also be used within a component that's wrapped by a `PushUniversalWalletProvider`.
 
 ### Usage
-
 
 ```typescript
 import { usePushChainClient } from '@pushchain/ui-kit';
@@ -53,14 +52,14 @@ function MyComponent() {
 
 ### Parameters
 
-| Parameter | Type | Required | Description |
-| --------- | ---- | -------- | ----------- |
-| `uid` | `string` | No | Optional user identifier for wallet context |
+| Parameter | Type     | Required | Description                                 |
+| --------- | -------- | -------- | ------------------------------------------- |
+| `uid`     | `string` | No       | Optional user identifier for wallet context |
 
 ### Return Values
 
-| Property | Type | Description |
-| -------- | ---- | ----------- |
+| Property    | Type                | Description                           |
+| ----------- | ------------------- | ------------------------------------- |
 | `pushChain` | `PushChain \| null` | Initialized PushChain client instance |
-| `error` | `Error \| null` | Error object if initialization failed |
-| `isLoading` | `boolean` | Loading state during initialization |
+| `error`     | `Error \| null`     | Error object if initialization failed |
+| `isLoading` | `boolean`           | Loading state during initialization   |

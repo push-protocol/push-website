@@ -16,7 +16,7 @@ This example demonstrates a basic wallet integration with the Push Universal Wal
 ```jsx live
 // customPropMinimized = 'true'
 import {
-  PushWalletProvider,
+  PushUniversalWalletProvider,
   PushUniversalAccountButton,
   usePushWalletContext,
   CONSTANTS,
@@ -58,9 +58,9 @@ function App() {
   }
 
   return (
-    <PushWalletProvider config={walletConfig} app={appMetadata}>
+    <PushUniversalWalletProvider config={walletConfig} app={appMetadata}>
       <WalletUI />
-    </PushWalletProvider>
+    </PushUniversalWalletProvider>
   );
 }
 ```

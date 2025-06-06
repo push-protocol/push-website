@@ -59,7 +59,7 @@ const tx = await pushChain.tx.send(
   {
     title: 'UI-Kit Quickstart',
     codeblock: `
-import { PushWalletProvider, PushUniversalAccountButton, usePushWalletContext, CONSTANTS } from '@pushchain/ui-kit';
+import { PushUniversalWalletProvider, PushUniversalAccountButton, usePushWalletContext, CONSTANTS } from '@pushchain/ui-kit';
 
 function App() {
 
@@ -78,11 +78,11 @@ function WalletUI() {
 }
 
 return (
-  <PushWalletProvider
+  <PushUniversalWalletProvider
     config={walletConfig}
   >
     <WalletUI />
-  </PushWalletProvider>
+  </PushUniversalWalletProvider>
  );
 }
 `,

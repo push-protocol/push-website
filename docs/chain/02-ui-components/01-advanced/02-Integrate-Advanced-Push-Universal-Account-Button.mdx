@@ -23,7 +23,7 @@ yarn add @pushchain/ui-kit
 
 ## Usage
 
-Place the button in your UI where users should be able to connect. The button must be used within a `PushWalletProvider`:
+Place the button in your UI where users should be able to connect. The button must be used within a `PushUniversalWalletProvider`:
 
 ```jsx
 import { PushUniversalAccountButton } from '@pushchain/ui-kit';
@@ -62,9 +62,9 @@ Each state can be fully customized through props.
 
 ### Disconnected State Customization
 
-| Property            | Type   | Description                 | Default               |
-| ------------------- | ------ | --------------------------- | --------------------- |
-| `connectButtonText` | string | Text for the connect button | `Connect Push Wallet` |
+| Property            | Type   | Description                 | Default           |
+| ------------------- | ------ | --------------------------- | ----------------- |
+| `connectButtonText` | string | Text for the connect button | `Connect Account` |
 
 ### Loading State Customization
 

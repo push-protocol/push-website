@@ -16,7 +16,7 @@ This example demonstrates a basic wallet integration with the theme overrides fo
 ```jsx live
 // customPropMinimized = 'true'
 import {
-  PushWalletProvider,
+  PushUniversalWalletProvider,
   PushUniversalAccountButton,
   usePushWalletContext,
   CONSTANTS,
@@ -58,7 +58,7 @@ function App() {
   }
 
   return (
-    <PushWalletProvider
+    <PushUniversalWalletProvider
       config={walletConfig}
       app={appMetadata}
       themeMode={CONSTANTS.THEME.LIGHT}
@@ -73,7 +73,7 @@ function App() {
       }}
     >
       <WalletUI />
-    </PushWalletProvider>
+    </PushUniversalWalletProvider>
   );
 }
 ```
