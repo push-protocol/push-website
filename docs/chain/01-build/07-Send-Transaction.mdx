@@ -5,7 +5,7 @@ hide_title: true
 slug: ./send-transaction
 displayed_sidebar: pushChainSidebar
 sidebar_position: 7
-image: "/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png"
+image: '/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png'
 ---
 
 # Send Transaction Overview
@@ -76,22 +76,22 @@ const txHash = await pushChainClient.Universal.sendTransaction({
 
 ### Send Transaction parameters
 
-| **Param**     | **Type**                | **Remarks**                                                                                       |
-|---------------|-------------------------|---------------------------------------------------------------------------------------------------|
-| `target`  | `string`   | The address of the recipient. |
-| `value`    | `BigInt`               | The value to send in wei. |
-| `data`        | `string`           | The data to send.                                                      |
-| `gasLimit`        | `BigInt`           | The gas limit for the transaction.                                                      |
-| `maxFeePerGas`        | `BigInt`           | The maximum fee per gas for the transaction.                                                      |
-| `maxPriorityFeePerGas`        | `BigInt`           | The maximum priority fee per gas for the transaction.                                                      |
-| `deadline`        | `BigInt`           | The deadline for the transaction.                                                      |
+| **Param**              | **Type** | **Remarks**                                           |
+| ---------------------- | -------- | ----------------------------------------------------- |
+| `target`               | `string` | The address of the recipient.                         |
+| `value`                | `BigInt` | The value to send in wei.                             |
+| `data`                 | `string` | The data to send.                                     |
+| `gasLimit`             | `BigInt` | The gas limit for the transaction.                    |
+| `maxFeePerGas`         | `BigInt` | The maximum fee per gas for the transaction.          |
+| `maxPriorityFeePerGas` | `BigInt` | The maximum priority fee per gas for the transaction. |
+| `deadline`             | `BigInt` | The deadline for the transaction.                     |
 
---------
+---
 
 <Details summary="Expected response">
 
 ```typescript
-"0x491695a337b0fca5dd24f626bf2595ca16281ae92b2807b611b115e66d42b3c2"
+'0x491695a337b0fca5dd24f626bf2595ca16281ae92b2807b611b115e66d42b3c2';
 ```
 
 </Details>
@@ -113,16 +113,17 @@ const privateKey = 'YOUR_PRIVATE_KEY';
 const account = privateKeyToAccount(privateKey);
 
 const walletClient = createWalletClient({
-  account,
-  chain: CONSTANTS.VIEM_PUSH_TESTNET,
-  transport: http(),
+account,
+chain: PushChain.CONSTANTS.VIEM_PUSH_TESTNET,
+transport: http(),
 });
 
 const txHash = await walletClient.sendTransaction({
-  to: '0xRecipientAddressHere',
-  value: parseEther('0.1'),
+to: '0xRecipientAddressHere',
+value: parseEther('0.1'),
 });
-```
+
+````
   </TabItem>
 
   <TabItem value="react" attributes={{className: "codetab react"}} default>
@@ -136,7 +137,7 @@ const account = privateKeyToAccount(privateKey);
 
 const walletClient = createWalletClient({
   account,
-  chain: CONSTANTS.VIEM_PUSH_TESTNET,
+  chain: PushChain.CONSTANTS.VIEM_PUSH_TESTNET,
   transport: http(),
 });
 
@@ -144,7 +145,8 @@ const txHash = await walletClient.sendTransaction({
   to: '0xRecipientAddressHere',
   value: parseEther('0.1'),
 });
-```
+````
+
   </TabItem>
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
@@ -157,15 +159,17 @@ const privateKey = 'YOUR_PRIVATE_KEY';
 const account = privateKeyToAccount(privateKey);
 
 const walletClient = createWalletClient({
-  account,
-  chain: CONSTANTS.VIEM_PUSH_TESTNET,
-  transport: http(),
+account,
+chain: PushChain.CONSTANTS.VIEM_PUSH_TESTNET,
+transport: http(),
 });
 
 const txHash = await walletClient.sendTransaction({
-  to: '0xRecipientAddressHere',
-  value: parseEther('0.1'),
+to: '0xRecipientAddressHere',
+value: parseEther('0.1'),
 });
+
 ```
   </TabItem>
 </Tabs>
+```

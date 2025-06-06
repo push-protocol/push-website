@@ -5,7 +5,7 @@ hide_title: true
 slug: ./utility-functions
 displayed_sidebar: pushChainSidebar
 sidebar_position: 9
-image: "/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png"
+image: '/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png'
 ---
 
 # Utility Functions Overview
@@ -39,27 +39,28 @@ A namespace dedicated to converting addresses and handling **UniversalAccount** 
 
 ### 1.1 `PushChain.utils.account.fromChainAgnostic`
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-  ```typescript
-  const universalAccount = PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress)
-  ```
+<Tabs className='codetabs' groupId='code-examples'>
+  <TabItem value='js' attributes={{ className: 'codetab js' }} default>
+    ```typescript const universalAccount =
+    PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress) ```
   </TabItem>
 </Tabs>
 
 ### `fromChainAgnostic` parameters
 
-| **Param**     | **Type**                | **Remarks**                                                                                       |
-|---------------|-------------------------|---------------------------------------------------------------------------------------------------|
-| `chainAgnosticAddress`  | `string`   | A full chain agnostic address string (e.g., `eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4`). |
+| **Param**              | **Type** | **Remarks**                                                                                                |
+| ---------------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| `chainAgnosticAddress` | `string` | A full chain agnostic address string (e.g., `eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4`). |
 
 #### Example: Convert Ethereum Sepolia CAIP-10 to UniversalAccount
 
 ```typescript
-const universalAccount = PushChain.utils.account.fromChainAgnostic('eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4');
+const universalAccount = PushChain.utils.account.fromChainAgnostic(
+  'eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4'
+);
 console.log(universalAccount);
 // {
-//   chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+//   chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
 //   address: '0x35B84d6848D16415177c64D64504663b998A6ab4'
 // }
 ```
@@ -70,7 +71,7 @@ console.log(universalAccount);
   <TabItem value="js" attributes={{className: "codetab js"}} default>
   ```typescript
   const universalAccount = PushChain.utils.account.toUniversal(address, {
-    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
   });
   ```
   </TabItem>
@@ -78,21 +79,23 @@ console.log(universalAccount);
 
 ### `toUniversal` parameters
 
-| **Param**     | **Type**                | **Remarks**                                                                                       |
-|---------------|-------------------------|---------------------------------------------------------------------------------------------------|
-| `address`  | `string`   | An address string (e.g., `0xabc...`). |
-| `options.chain`  | `CHAIN`   | The target chain for the signer. Here are some possible values: `CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `CONSTANTS.CHAIN.SOLANA_MAINNET` |
-
+| **Param**       | **Type** | **Remarks**                                                                                                                                                                                            |
+| --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `address`       | `string` | An address string (e.g., `0xabc...`).                                                                                                                                                                  |
+| `options.chain` | `CHAIN`  | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET` |
 
 #### Example: Convert Ethereum Sepolia Address to UniversalAccount
 
 ```typescript
-const universalAccount = PushChain.utils.account.toUniversal('0x35B84d6848D16415177c64D64504663b998A6ab4', {
-  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-});
+const universalAccount = PushChain.utils.account.toUniversal(
+  '0x35B84d6848D16415177c64D64504663b998A6ab4',
+  {
+    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  }
+);
 console.log(universalAccount);
 // {
-//   chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+//   chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
 //   address: '0x35B84d6848D16415177c64D64504663b998A6ab4'
 // }
 ```
@@ -103,7 +106,7 @@ console.log(universalAccount);
   <TabItem value="js" attributes={{className: "codetab js"}} default>
   ```typescript
   const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(address, {
-    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
   });
   ```
   </TabItem>
@@ -111,21 +114,25 @@ console.log(universalAccount);
 
 ### `toChainAgnostic` parameters
 
-| **Param**     | **Type**                | **Remarks**                                                                                       |
-|---------------|-------------------------|---------------------------------------------------------------------------------------------------|
-| `address`  | `string`   | An address string (e.g., `0xabc...`). |
-| `options.chain`  | `CHAIN`   | The target chain for the signer. Here are some possible values: `CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `CONSTANTS.CHAIN.SOLANA_MAINNET` |
-
+| **Param**       | **Type** | **Remarks**                                                                                                                                                                                            |
+| --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `address`       | `string` | An address string (e.g., `0xabc...`).                                                                                                                                                                  |
+| `options.chain` | `CHAIN`  | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET` |
 
 #### Example: Convert Ethereum Address to CAIP-10
 
 ```typescript
-const chainAgnosticStr = PushChain.utils.account.toChainAgnostic('0xabc123...', {
-  chain: CONSTANTS.CHAIN.ETHEREUM_MAINNET,
-});
+const chainAgnosticStr = PushChain.utils.account.toChainAgnostic(
+  '0xabc123...',
+  {
+    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET,
+  }
+);
 // => 'eip155:1:0xabc123...'
 ```
-{/* 
+
+{/\*
+
 ## 2. `PushChain.utils.signer`
 
 A namespace for creating `UniversalSigner` objects from different wallet types.
@@ -136,85 +143,88 @@ A namespace for creating `UniversalSigner` objects from different wallet types.
   <TabItem value="js" attributes={{className: "codetab js"}} default>
   For Ethereum:
 
-  ```typescript
-  import { privateKeyToAccount } from 'viem/accounts';
-  import { CONSTANTS } from '@pushchain/core';
+```typescript
+import { privateKeyToAccount } from 'viem/accounts';
+import { CONSTANTS } from '@pushchain/core';
 
-  const account = privateKeyToAccount('0x...');
-  const universalSigner = await PushChain.utils.signer.toUniversal(account, {
-    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-    library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
-  });
-  ```
+const account = privateKeyToAccount('0x...');
+const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+});
+```
 
-  For Solana:
+For Solana:
 
-  ```typescript
-  import { Keypair } from '@solana/web3.js';
-  import { CONSTANTS } from '@pushchain/core';
+```typescript
+import { Keypair } from '@solana/web3.js';
+import { CONSTANTS } from '@pushchain/core';
 
-  const keypair = Keypair.generate();
-  const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
-    chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
-    library: CONSTANTS.LIBRARY.SOLANA_WEB3,
-  });
-  ```
+const keypair = Keypair.generate();
+const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
+  chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3,
+});
+```
+
   </TabItem>
 
   <TabItem value="react" attributes={{className: "codetab react"}} default>
   For Ethereum:
 
-  ```typescript
-  import { privateKeyToAccount } from 'viem/accounts';
-  import { CONSTANTS } from '@pushchain/core';
+```typescript
+import { privateKeyToAccount } from 'viem/accounts';
+import { CONSTANTS } from '@pushchain/core';
 
-  const account = privateKeyToAccount('0x...');
-  const universalSigner = await PushChain.utils.signer.toUniversal(account, {
-    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-    library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
-  });
-  ```
+const account = privateKeyToAccount('0x...');
+const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+});
+```
 
-  For Solana:
+For Solana:
 
-  ```typescript
-  import { Keypair } from '@solana/web3.js';
-  import { CONSTANTS } from '@pushchain/core';
+```typescript
+import { Keypair } from '@solana/web3.js';
+import { CONSTANTS } from '@pushchain/core';
 
-  const keypair = Keypair.generate();
-  const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
-    chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
-    library: CONSTANTS.LIBRARY.SOLANA_WEB3,
-  });
-  ```
+const keypair = Keypair.generate();
+const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
+  chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3,
+});
+```
+
   </TabItem>
 
   <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
   For Ethereum:
 
-  ```typescript
-  import { privateKeyToAccount } from 'viem/accounts';
-  import { CONSTANTS } from '@pushchain/core';
+```typescript
+import { privateKeyToAccount } from 'viem/accounts';
+import { CONSTANTS } from '@pushchain/core';
 
-  const account = privateKeyToAccount('0x...');
-  const universalSigner = await PushChain.utils.signer.toUniversal(account, {
-    chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-    library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
-  });
-  ```
+const account = privateKeyToAccount('0x...');
+const universalSigner = await PushChain.utils.signer.toUniversal(account, {
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+});
+```
 
-  For Solana:
+For Solana:
 
-  ```typescript
-  import { Keypair } from '@solana/web3.js';
-  import { CONSTANTS } from '@pushchain/core';
+```typescript
+import { Keypair } from '@solana/web3.js';
+import { CONSTANTS } from '@pushchain/core';
 
-  const keypair = Keypair.generate();
-  const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
-    chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
-    library: CONSTANTS.LIBRARY.SOLANA_WEB3,
-  });
-  ```
+const keypair = Keypair.generate();
+const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
+  chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3,
+});
+```
+
   </TabItem>
 </Tabs>
 
@@ -222,17 +232,17 @@ A namespace for creating `UniversalSigner` objects from different wallet types.
 
 ### `toUniversal` parameters
 
-| **Param**     | **Type**                | **Remarks**                                                                                       |
-|---------------|-------------------------|---------------------------------------------------------------------------------------------------|
-| `account`  | `Account`   | A viem Account instance (e.g., from privateKeyToAccount). |
-| `options.chain`  | `CHAIN`   | The target chain for the signer. Possible values: `ETHEREUM_MAINNET`, `ETHEREUM_SEPOLIA`, `SOLANA_MAINNET`, `SOLANA_TESTNET`, `SOLANA_DEVNET` |
-| `options.library`  | `LIBRARY`   | The library for the signer. Possible values: `ETHEREUM_VIEM` ('viem'), `SOLANA_WEB3` ('@solana/web3.js') |
+| **Param**         | **Type**  | **Remarks**                                                                                                                                   |
+| ----------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `account`         | `Account` | A viem Account instance (e.g., from privateKeyToAccount).                                                                                     |
+| `options.chain`   | `CHAIN`   | The target chain for the signer. Possible values: `ETHEREUM_MAINNET`, `ETHEREUM_SEPOLIA`, `SOLANA_MAINNET`, `SOLANA_TESTNET`, `SOLANA_DEVNET` |
+| `options.library` | `LIBRARY` | The library for the signer. Possible values: `ETHEREUM_VIEM` ('viem'), `SOLANA_WEB3` ('@solana/web3.js')                                      |
 
 <Details summary="Expected response">
 
 ```typescript
 {
-  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
   address: '0x...',
   signMessage: (data: Uint8Array) => Promise<Uint8Array>,
   signTransaction: (data: Uint8Array) => Promise<Uint8Array>,
@@ -242,38 +252,38 @@ A namespace for creating `UniversalSigner` objects from different wallet types.
 
 Response properties description:
 
-| **Property**             | **Type**                 | **Description**                                                                                     |
-|---------------------------|--------------------------|-----------------------------------------------------------------------------------------------------|
-| `chain`             | `CHAIN`                | The chain identifier |
-| `address`             | `string`                | The signer's address |
-| `signMessage`             | `function`                | Function to sign arbitrary messages |
-| `signTransaction`             | `function`                | Function to sign transactions |
-| `signTypedData`             | `function`                | Function to sign EIP-712 typed data |
+| **Property**      | **Type**   | **Description**                     |
+| ----------------- | ---------- | ----------------------------------- |
+| `chain`           | `CHAIN`    | The chain identifier                |
+| `address`         | `string`   | The signer's address                |
+| `signMessage`     | `function` | Function to sign arbitrary messages |
+| `signTransaction` | `function` | Function to sign transactions       |
+| `signTypedData`   | `function` | Function to sign EIP-712 typed data |
 
 </Details>
 
 ## Example: Complete SDK Initialization
 
-```typescript
-import { PushChain, CONSTANTS } from '@pushchain/core';
+````typescript
+import { PushChain } from '@pushchain/core';
 import { privateKeyToAccount } from 'viem/accounts';
 
 // Create a universal signer from a viem account
 const account = privateKeyToAccount('0x...');
 const universalSigner = await PushChain.utils.signer.toUniversal(account, {
-  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
 });
 
 // Initialize the PushChain SDK
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
   printTraces: true,
 });
 
 // Convert addresses between formats
 const caipAddress = PushChain.utils.account.toChainAgnostic({
-  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
   address: account.address
 });
 console.log('CAIP-10 address:', caipAddress);
@@ -281,5 +291,6 @@ console.log('CAIP-10 address:', caipAddress);
 
 const universalAccount = PushChain.utils.account.toUniversal(caipAddress);
 console.log('UniversalAccount:', universalAccount);
-// => { chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA, address: '0x...' }
+// => { chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA, address: '0x...' }
 ``` */}
+````

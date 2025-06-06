@@ -78,7 +78,7 @@ For Ethereum:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import { PushChain, CONSTANTS } from '@pushchain/core';
+import { PushChain } from '@pushchain/core';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';
@@ -89,7 +89,7 @@ For Solana:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import { PushChain, CONSTANTS } from '@pushchain/core';
+import { PushChain } from '@pushchain/core';
 
 // Import utility functions from @solana/web3.js
 import { Keypair } from '@solana/web3.js';
@@ -103,7 +103,7 @@ For Ethereum:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import { PushChain, CONSTANTS } from '@pushchain/core';
+import { PushChain } from '@pushchain/core';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';
@@ -114,7 +114,7 @@ For Solana:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import { PushChain, CONSTANTS } from '@pushchain/core';
+import { PushChain } from '@pushchain/core';
 
 // Import utility functions from @solana/web3.js
 import { Keypair } from '@solana/web3.js';
@@ -128,7 +128,7 @@ For Ethereum:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import { PushChain, CONSTANTS } from '@pushchain/core';
+import { PushChain } from '@pushchain/core';
 
 // Import utility functions from viem
 import { hexToBytes } from 'viem';
@@ -139,7 +139,7 @@ For Solana:
 
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import { PushChain, CONSTANTS } from '@pushchain/core';
+import { PushChain } from '@pushchain/core';
 
 // Import utility functions from @solana/web3.js
 import { Keypair } from '@solana/web3.js';
@@ -161,13 +161,13 @@ const account = privateKeyToAccount(privateKey);
 
 // Create universal signer from viem account
 const universalSigner = await PushChain.utils.signer.toUniversal(account, {
-  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
 });
 
 // Initialize Push Chain SDK on Testnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -178,13 +178,13 @@ const account = Keypair.generate(); // Replace it by importing your private key
 
 // Create universal signer from Solana keypair
 const universalSigner = await PushChain.utils.signer.toUniversal(account, {
-  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
-  library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+  chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3,
 });
 
 // Initialize Push Chain SDK on Devnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -200,13 +200,13 @@ const account = privateKeyToAccount(privateKey);
 
 // Create universal signer from viem account
 const universalSigner = await PushChain.utils.signer.toUniversal(account, {
-  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
 });
 
 // Initialize Push Chain SDK on Testnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -217,13 +217,13 @@ const account = Keypair.generate(); // Replace it by importing your private key
 
 // Create universal signer from Solana keypair
 const universalSigner = await PushChain.utils.signer.toUniversal(account, {
-  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
-  library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+  chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3,
 });
 
 // Initialize Push Chain SDK on Devnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -239,13 +239,13 @@ const account = privateKeyToAccount(privateKey);
 
 // Create universal signer from viem account
 const universalSigner = await PushChain.utils.signer.toUniversal(account, {
-  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
 });
 
 // Initialize Push Chain SDK on Testnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 
@@ -256,13 +256,13 @@ const account = Keypair.generate(); // Replace it by importing your private key
 
 // Create universal signer from Solana keypair
 const universalSigner = await PushChain.utils.signer.toUniversal(account, {
-  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
-  library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+  chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3,
 });
 
 // Initialize Push Chain SDK on Devnet
 const pushChainClient = await PushChain.initialize(universalSigner, {
-  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 ```
 

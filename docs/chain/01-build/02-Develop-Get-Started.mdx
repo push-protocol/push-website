@@ -5,7 +5,7 @@ hide_title: true
 slug: ./get-started
 displayed_sidebar: pushChainSidebar
 sidebar_position: 2
-image: "/assets/docs/previews/docs_notifications_develop--get_started.png"
+image: '/assets/docs/previews/docs_notifications_develop--get_started.png'
 ---
 
 # Get started
@@ -36,7 +36,7 @@ The following speed run is designed to give you a quick overview of usage and de
   <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
 // Import Push Chain SDK for blockchain interactions
-import { PushChain, CONSTANTS } from '@pushchain/core';
+import { PushChain } from '@pushchain/core';
 
 // For Ethereum: Import utility functions from viem
 import { hexToBytes } from 'viem';
@@ -45,7 +45,7 @@ import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
 // For Solana: Import utility functions from @solana/web3.js
 import { Keypair } from '@solana/web3.js';
 
-// For Ethereum: Generate a new random private key 
+// For Ethereum: Generate a new random private key
 const ethereumPrivateKey = generatePrivateKey(); // Replace it with your private key generation logic
 const ethereumAccount = privateKeyToAccount(ethereumPrivateKey);
 
@@ -54,34 +54,35 @@ const solanaAccount = Keypair.generate(); // Replace it with your private key ge
 
 // For Ethereum: Create universal signer from viem account
 const ethereumUniversalSigner = await PushChain.utils.signer.toUniversal(ethereumAccount, {
-  chain: CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-  library: CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
 });
 
 // For Solana: Create universal signer from Solana keypair
 const solanaUniversalSigner = await PushChain.utils.signer.toUniversal(solanaAccount, {
-  chain: CONSTANTS.CHAIN.SOLANA_TESTNET,
-  library: CONSTANTS.LIBRARY.SOLANA_WEB3,
+chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3,
 });
 
 // Initialize Push Chain SDK on Testnet for Ethereum. You could also initialize it with solanaUniversalSigner for Solana.
 const pushChainClient = await PushChain.initialize(ethereumUniversalSigner, {
-  network: CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
 
 // Send a cross-chain transaction
 const txHash = await pushChainClient.Universal.sendTransaction({
-  target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479', // Target contract address on Push Chain
-  value: BigInt(0), // ETH value to send
-  data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312', // Contract call data
-  gasLimit: BigInt(50000000000000000),
-  maxFeePerGas: BigInt(50000000000000000),
-  maxPriorityFeePerGas: BigInt(200000000),
-  deadline: BigInt(9999999999), // Transaction deadline (optional for some chains)
+target: '0x2FE70447492307108Bdc7Ff6BaB33Ff37Dacc479', // Target contract address on Push Chain
+value: BigInt(0), // ETH value to send
+data: '0x2ba2ed980000000000000000000000000000000000000000000000000000000000000312', // Contract call data
+gasLimit: BigInt(50000000000000000),
+maxFeePerGas: BigInt(50000000000000000),
+maxPriorityFeePerGas: BigInt(200000000),
+deadline: BigInt(9999999999), // Transaction deadline (optional for some chains)
 });
 
 console.log('Transaction sent:', txHash);
-```
+
+````
 
   </TabItem>
 </Tabs>
@@ -93,7 +94,7 @@ console.log('Transaction sent:', txHash);
 
 ```bash
 npm install @pushchain/core viem @solana/web3.js
-```
+````
 
   </TabItem>
 </Tabs>
@@ -137,7 +138,7 @@ npm install @pushchain/core viem @solana/web3.js
     </ModalWrapper>
   </ModalSmall>
 
-  <ModalSmall
+<ModalSmall
   onClick={() =>
     window.open('https://github.com/push-protocol/push-chain-sdk', '_blank')
   }

@@ -41,7 +41,7 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
     ```typescript
     // Import Push Chain SDK and Ethers
     // You can use other library like ethers as well
-    import { PushChain, CONSTANTS } from '@pushchain/core';
+    import { PushChain } from '@pushchain/core';
     import { ethers } from 'ethers';
 
     async function example() {
@@ -59,7 +59,7 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
 
       // Initialize Push Chain SDK for use from Push Chain account
       const pushChainClient = await PushChain.initialize(universalSigner, {
-        network: CONSTANTS.PUSH_NETWORK.TESTNET,
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
       });
 
       // Send a universal transaction (from any chain to Push Chain)
@@ -81,7 +81,7 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
     ```typescript
     // Import Push Chain SDK and Viem
     // You can use other library like ethers as well
-    import { PushChain, CONSTANTS } from '@pushchain/core';
+    import { PushChain } from '@pushchain/core';
     import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
     import { createWalletClient } from 'viem';
 
@@ -102,7 +102,7 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
 
       // Initialize Push Chain SDK for use from Ethereum account
       const pushChainClient = await PushChain.initialize(universalSigner, {
-        network: CONSTANTS.PUSH_NETWORK.TESTNET,
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
       });
 
       // Send a universal transaction (from any chain to Push Chain)
@@ -124,7 +124,7 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
     ```typescript
     // Import Push Chain SDK and Solana Web3.js
     // You can use other library like @solana/kit as well
-    import { PushChain, CONSTANTS } from '@pushchain/core';
+    import { PushChain } from '@pushchain/core';
     import { Keypair } from '@solana/web3.js';
 
     async function example() {
@@ -137,14 +137,14 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
       const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
         solKeypair,
         {
-          chain: CONSTANTS.CHAIN.SOLANA_MAINNET,
-          library: CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+          chain: PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET,
+          library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
         }
       );
 
       // 3. Initialize Push Chain SDK
       const pushChainClient = await PushChain.initialize(universalSigner, {
-        network: CONSTANTS.PUSH_NETWORK.TESTNET,
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
       });
 
       // Send a universal transaction (from any chain to Push Chain)
@@ -185,8 +185,6 @@ Push Chain provides a unified toolkit to build truly universal dApps. Without cu
 - **Shared State and Programmable Solvers (Roadmap)**  
   Read from and write to external chains and coordinate multi-chain workflows using a distributed solver network (coming soon).
   <!-- Optional: link to “Roadmap” or “Shared State” page -->
-
-<hr />
 
 ## Why Build on Push Chain?
 
