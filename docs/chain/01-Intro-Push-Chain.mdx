@@ -10,7 +10,7 @@ image: "/assets/docs/previews/notifications--intro_to_push_notification.png"
 
 # Intro to Push Chain
 
-Push Chain is a Proof of Stake (PoS) layer 1 blockchain network designed to revolutionize web3 by addressing scalability, interoperability, and user experience challenges. With a roadmap spanning three phases, Push Chain aims to empower developers to create universal applications that blend financial and non-financial use cases, making blockchain accessible to everyone.
+Push Chain is a True Universal Layer 1 Proof of Stake (PoS) blockchain enabling universal applications with seamless interoperability, user-friendly wallet abstractions, and robust shared state architecture.
 
 <head>
   <title>Introduction | Push Chain | Push Documentation</title>
@@ -24,19 +24,27 @@ import {
   ModalMidEqual,
 } from '@site/src/css/SharedStyling';
 
+## What is a True Universal Layer 1?
+
+A True Universal Layer 1 blockchain like Push Chain is designed to abstract away the complexity of blockchain fragmentation. Instead of focusing on chain-specific deployment, developers can create universal apps that are accessible by any wallet, regardless of the originating chain. Push Chain accomplishes this through a shared state architecture, enabling apps to read from and write to various chains, while maintaining a unified user experience. This architecture is illustrated on diagram below.
+
+![Universal App Venn Diagram](../../static/assets/docs/chain/build/venn-diagram-push.png)
+
 ## Why Push Chain?
 
-Push Chain focuses on consumer-centric applications with seamless UX, scalability, and simplified interactions. Unlike finance-focused blockchains, it enables unique innovations like parallel block execution and dynamic sharding, enhancing usability. Push Chain enables:
+Push Chain focuses on consumer-centric, universal applications, delivering seamless UX, scalability, and simplified interactions across multiple blockchain ecosystems. Push Chain uniquely enables:
 
-- **Empowering Consumer Applications**: Supports financial and non-financial use cases with seamless cross-chain functionality.
-- **Wallet Interactions Made Easy**: Users can interact using existing wallets without creating a new Push Wallet.
-- **Fee Abstraction for User Convenience**: Transaction fees can be paid in native tokens or covered by applications for a seamless experience.
--	**Unified User Identity (Push ID)**: Links multiple wallets under one identifier for a unified view of assets and activities.
--	**Comprehensive Wallet Abstraction**: Provides easy onboarding for Web3 users, newcomers, and Web2 users alike.
+- **Empowering Universal Applications**: Supports seamless integration of financial (DeFi) and non-financial use cases.
+- **Wallet Interactions Made Easy**: Users can seamlessly interact using their existing wallets without needing a new Push Wallet.
+- **Fee and Wallet Abstraction**: Fees can be paid in native tokens or handled by applications, removing friction for users.
+- **Unified User Identity (Push ID)**: Consolidates multiple wallet interactions into one user identity.
+- **Comprehensive Wallet Abstraction**: Simplifies onboarding for Web3 enthusiasts, newcomers, and traditional Web2 users.
 
 ## How Push Chain works?
 
-All communication with Push Chain is signed and validated by a set of nodes, including validator nodes for transaction verification, storage nodes for efficient data handling, and archival nodes for maintaining complete transaction history. Read the <AImp href="https://whitepaper.push.org/" title="Push Chain Whitepaper">Push Chain Whitepaper</AImp> for an overview of its architecture, node roles, and decentralization efforts.
+Push Chain architecture is composed of modular layers, each responsible for enabling the key primitives required for universal applications. As described in the [Push Chain Litepaper](https://push.org/litepaper.pdf), the architecture includes wallet and fee abstraction, shared state access across multiple chains, a programmable solver layer, and a consensus system that supports both traditional and consumer transactions. These layers collectively power universal apps that are accessible from any wallet on any chain, as shown below.
+
+![Push Chain Architecture](../../static/assets/docs/chain/build/how-push-chain-works.png)
 
 ## SDKs
 
@@ -150,14 +158,28 @@ All communication with Push Chain is signed and validated by a set of nodes, inc
 ## Use Cases
 
 <ModalContainer>
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#1-decentralized-social-platforms', '_self')}>
+  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#6-universal-marketplaces', '_self')}>
     <img
-      src={require('/static/assets/docs/chain/usecases/social.png').default}
+      src={require('/static/assets/docs/chain/usecases/marketplaces.png').default}
       srcSet={`${
-        require('/static/assets/docs/chain/usecases/social@2x.png').default
-      } 2x, ${require('/static/assets/docs/chain/usecases/social@3x.png').default} 3x`}
+        require('/static/assets/docs/chain/usecases/marketplaces@2x.png').default
+      } 2x, ${
+        require('/static/assets/docs/chain/usecases/marketplaces@3x.png').default
+      } 3x`}
     />
-    <span>Social</span>
+    <span>DeFi</span>
+  </ModalSmall>
+
+  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#5-utility-and-productivity-apps', '_self')}>
+    <img
+      src={require('/static/assets/docs/chain/usecases/productivity.png').default}
+      srcSet={`${
+        require('/static/assets/docs/chain/usecases/productivity@2x.png').default
+      } 2x, ${
+        require('/static/assets/docs/chain/usecases/productivity@3x.png').default
+      } 3x`}
+    />
+    <span>Universal App Experience</span>
   </ModalSmall>
 
   <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#3-gaming-applications', '_self')}>
@@ -179,38 +201,23 @@ All communication with Push Chain is signed and validated by a set of nodes, inc
     />
     <span>AI</span>
   </ModalSmall>
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#5-utility-and-productivity-apps', '_self')}>
+
+  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#1-decentralized-social-platforms', '_self')}>
     <img
-      src={require('/static/assets/docs/chain/usecases/productivity.png').default}
+      src={require('/static/assets/docs/chain/usecases/social.png').default}
       srcSet={`${
-        require('/static/assets/docs/chain/usecases/productivity@2x.png').default
-      } 2x, ${
-        require('/static/assets/docs/chain/usecases/productivity@3x.png').default
-      } 3x`}
+        require('/static/assets/docs/chain/usecases/social@2x.png').default
+      } 2x, ${require('/static/assets/docs/chain/usecases/social@3x.png').default} 3x`}
     />
-    <span>Productivity Apps</span>
+    <span>Social</span>
   </ModalSmall>
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#6-universal-marketplaces', '_self')}>
-    <img
-      src={require('/static/assets/docs/chain/usecases/marketplaces.png').default}
-      srcSet={`${
-        require('/static/assets/docs/chain/usecases/marketplaces@2x.png').default
-      } 2x, ${
-        require('/static/assets/docs/chain/usecases/marketplaces@3x.png').default
-      } 3x`}
-    />
-    <span>Marketplaces</span>
-  </ModalSmall>
+
 </ModalContainer>
 
 ## Try Push Chain
 
-Best way to understand Push Chain is to interact with it directly. To get started —
+Experience Push Chain firsthand:
 
-1. Head to [https://simulate.push.org/](https://simulate.push.org/)  
-2. Login with your **email** or **existing wallet**. Push Chain supports **multiple login options** including —  
-
-  - **Email Login** — Use your email for quick and easy onboarding.  
-  - **Wallet Addresses** — Connect with wallets like MetaMask or any compatible Web3 wallet.  
-3. Submit a transaction to the Push Chain.  
-4. View your transaction live on **Push Scan**, the blockchain explorer for Push Chain: [https://scan.push.org/transactions](https://scan.push.org/transactions).  
+1. Visit [simulate.push.org](https://simulate.push.org) to interact directly. You can log in with your existing wallet, email, or even your social accounts, and send a transaction on Push Chain with just a few clicks.
+2. Alternatively, use our Playground to experiment with code and see live updates within our documentation.
+3. Learn more about Push Chain fundamentals, deep dives, and developer resources in our comprehensive [Knowledge Base](https://push.org/knowledge).

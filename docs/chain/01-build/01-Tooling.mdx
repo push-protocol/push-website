@@ -1,0 +1,173 @@
+---
+id: docs-chain-tooling
+title: Tooling
+hide_title: true
+slug: ./tooling
+displayed_sidebar: pushChainSidebar
+sidebar_position: 1
+image: "/assets/docs/previews/docs_notifications_develop--get_started.png"
+---
+
+# Tooling
+
+This section provides an overview of the tooling available for Push Chain developers.
+
+<head>
+  <title>{`Start Building | Push Notifications | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ReactPlayer from 'react-player';
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  ModalMidEqual,
+  AFocus,
+  AImp,
+} from '@site/src/css/SharedStyling';
+
+## Connect Metamask to Push Chain
+
+To interact with Push Chain via MetaMask, add a custom network in MetaMask using the settings below:
+
+| Field           | Value                        |
+| --------------- | ---------------------------- |
+| **Network Name**      | `Push Chain Testnet` |
+| **RPC URL**           | `https://evm.pn1.dev.push.org`   |
+| **Chain ID**          | `9000`                           |
+| **Currency Symbol**   | `nPUSH`                           |
+
+![Metamask PushChain Configuration](../../../static/assets/docs/chain/build/Metamask-Push-Chain.png)
+
+## Block Explorer
+
+To explore the Push Chain blockchain, you can use the [Push Explorer](https://explorer.dev.push.org/).
+
+## Hardhat Configuration
+
+To deploy smart contracts to Push Chain using Hardhat, add a custom network entry to your `hardhat.config` file. Below is an example showing only the necessary configuration for the `pushchain` network.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{ className: "codetab js" }} default>
+  ```typescript
+  import { HardhatUserConfig } from "hardhat/config";
+  import "@nomiclabs/hardhat-waffle";
+  import * as dotenv from "dotenv";
+  dotenv.config();
+
+  const config: HardhatUserConfig = {
+    solidity: "0.8.4",
+    networks: {
+      pushchain: {
+        url: "https://evm.pn1.dev.push.org",
+        chainId: 9000,
+        accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      },
+    },
+  };
+
+  export default config;
+  ```
+  </TabItem>
+</Tabs>
+
+## Viem Configuration
+
+Use the [Viem](https://viem.sh/) library to interact with Push Chain just like any other EVM chain. You’ll define Push Chain as a custom chain object and then create a `PublicClient`. Below are TypeScript examples showcasing how to query blocks and transactions.
+
+:::tip
+To learn how to connect `viem` to Push Chain, check out the [Initialize Viem SDK](../initialize-viem-sdk) page****.
+:::
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem value="js" attributes={{ className: "codetab js" }} default>
+```typescript
+import { createPublicClient, http } from "viem";
+import { CONSTANTS } from '@pushchain/core'
+
+// 1. Initialize a PublicClient using the HTTP transport
+const client = createPublicClient({
+  chain: CONSTANTS.VIEM_PUSH_TESTNET,
+  transport: http(),
+});
+
+// 2. Fetch the latest block
+async function getLatestBlock() {
+  const block = await client.getBlock({ blockNumber: "latest" });
+  console.log("Latest block:", block);
+}
+
+// 3. Fetch a transaction by its hash
+async function getTransaction(txHash) {
+  const tx = await client.getTransaction({ hash: txHash });
+  console.log("Transaction:", tx);
+}
+```
+  </TabItem>
+</Tabs>
+
+## Ethers v6 Configuration
+
+To interact with Push Chain using Ethers v6, you can use the `ethers` library to connect to the network and send transactions. Below is an example showing how to connect to Push Chain and send a transaction.
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem value="js" attributes={{ className: "codetab js" }} default>
+```typescript
+import { ethers } from 'ethers'
+
+// 1. Initialize a JsonRpcProvider pointing at Push Chain
+const RPC_URL = 'https://evm.pn1.dev.push.org'
+const provider = new ethers.JsonRpcProvider(RPC_URL)
+
+// 2. Fetch the latest block
+async function getLatestBlock() {
+  try {
+    const block = await provider.getBlock('latest')
+    console.log('Latest block:', block)
+  } catch (err) {
+    console.error('Error fetching latest block:', err)
+  }
+}
+
+// 3. Fetch a transaction by its hash
+async function getTransaction(txHash: string) {
+  try {
+    const tx = await provider.getTransaction(txHash)
+    console.log('Transaction:', tx)
+  } catch (err) {
+    console.error('Error fetching transaction (v6):', err)
+  }
+}
+```
+</TabItem>
+</Tabs>
+
+## Ethers v5 Configuration
+
+To interact with Push Chain using Ethers v5, you can use the `ethers` library to connect to the network and send transactions. Below is an example showing how to connect to Push Chain and send a transaction.
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem value="js" attributes={{ className: "codetab js" }} default>
+```typescript
+import { ethers } from 'ethers'
+
+// 1. Connect to Push Chain
+const RPC_URL = 'https://evm.pn1.dev.push.org'
+const provider = new ethers.providers.JsonRpcProvider(RPC_URL)
+
+// 2. Fetch the latest block
+async function fetchLatestBlock() {
+  const block = await provider.getBlock('latest')
+  console.log('Latest block:', block)
+}
+
+// 3. Fetch a transaction by hash
+async function fetchTransaction(txHash: string) {
+  const tx = await provider.getTransaction(txHash)
+  console.log('Transaction:', tx)
+}
+```
+</TabItem>
+</Tabs>

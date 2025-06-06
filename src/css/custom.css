@@ -1063,6 +1063,7 @@ article .markdown > ol > li {
 article .markdown > p > code,
 article .markdown > ul > li > code,
 article .markdown > ol > li > code {
+
   font-size: 1em;
   color: var(--ifm-color-primary);
 }

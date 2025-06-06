@@ -1,0 +1,173 @@
+---
+id: docs-chain-fetch-transaction
+title: Fetch Transactions and Blocks
+hide_title: true
+slug: ./fetch-transaction
+displayed_sidebar: pushChainSidebar
+sidebar_position: 6
+image: "/assets/docs/previews/docs_notifications_develop--manage_user.png"
+---
+
+# Fetch Transactions and Blocks Overview
+
+Push Chain is an EVM-compatible blockchain, allowing developers to easily interact using standard Ethereum tools. For fetching transactions and blocks, you can simply utilize the popular `viem` library, a powerful and efficient Ethereum client for JavaScript/TypeScript.
+
+If you need more information about how to use `viem`, please refer to the official `viem` documentation.
+
+<head>
+  <title>{`Fetch Transaction | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
+
+## Initialize Viem Client
+
+To learn how to connect `viem` to Push Chain, check out the [Initialize Viem SDK](../initialize-viem-sdk) page.
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+import { createPublicClient, http } from 'viem'
+import { CONSTANTS } from '@pushchain/core'
+
+// Create a public client for Push testnet
+const viemClient = createPublicClient({
+  chain: CONSTANTS.VIEM_PUSH_TESTNET,
+  transport: http(),
+})
+```
+</TabItem>
+<TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+import { createPublicClient, http } from 'viem'
+import { CONSTANTS } from '@pushchain/core'
+
+// Create a public client for Push testnet
+const viemClient = createPublicClient({
+  chain: CONSTANTS.VIEM_PUSH_TESTNET,
+  transport: http(),
+})
+```
+</TabItem>
+<TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+import { createPublicClient, http } from 'viem'
+import { CONSTANTS } from '@pushchain/core'
+
+// Create a public client for Push testnet
+const viemClient = createPublicClient({
+  chain: CONSTANTS.VIEM_PUSH_TESTNET,
+  transport: http(),
+})
+```
+</TabItem>
+</Tabs>
+
+## Fetch a Transaction by Hash
+
+Here's how you can fetch a transaction by its hash using `viem`:
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+const transactionHash = '0xtxHash';
+
+const transaction = await viemClient.getTransaction({
+  hash: transactionHash,
+});
+```
+  </TabItem>
+
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+const transactionHash = '0xtxHash';
+
+const transaction = await viemClient.getTransaction({
+  hash: transactionHash,
+});
+```
+  </TabItem>
+
+  <TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+const transactionHash = '0xtxHash';
+
+const transaction = await viemClient.getTransaction({
+  hash: transactionHash,
+});
+```
+  </TabItem>
+</Tabs>
+
+
+## Fetching Blocks
+
+You can fetch blocks using `viem` as follows:
+
+### Fetch Latest Block
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+const latestBlock = await viemClient.getBlock();
+```
+</TabItem>
+<TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+const latestBlock = await viemClient.getBlock();
+```
+</TabItem>
+<TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+const latestBlock = await viemClient.getBlock();
+```
+</TabItem>
+</Tabs>
+
+### Fetch Block by Number
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+const blockNumber = 123456;
+const block = await viemClient.getBlock({ blockNumber: BigInt(blockNumber) });
+```
+</TabItem>
+<TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+const blockNumber = 123456;
+const block = await viemClient.getBlock({ blockNumber: BigInt(blockNumber) });
+```
+</TabItem>
+<TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+const blockNumber = 123456;
+const block = await viemClient.getBlock({ blockNumber: BigInt(blockNumber) });
+```
+</TabItem>
+</Tabs>
+
+### Fetch Block by Hash
+
+<Tabs className="codetabs" groupId="code-examples">
+<TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+const blockHash = '0x36939148bee59c6e1a9d4e6e6fb4e72d407f8667324714c206e64e1485f0f5ee';
+const block = await viemClient.getBlock({ blockHash });
+```
+</TabItem>
+<TabItem value="react" attributes={{className: "codetab react"}} default>
+```typescript
+const blockHash = '0x36939148bee59c6e1a9d4e6e6fb4e72d407f8667324714c206e64e1485f0f5ee';
+const block = await viemClient.getBlock({ blockHash });
+```
+</TabItem>
+<TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
+```typescript
+const blockHash = '0x36939148bee59c6e1a9d4e6e6fb4e72d407f8667324714c206e64e1485f0f5ee';
+const block = await viemClient.getBlock({ blockHash });
+```
+</TabItem>
+</Tabs>
