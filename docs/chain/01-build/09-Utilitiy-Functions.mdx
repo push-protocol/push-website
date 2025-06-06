@@ -41,8 +41,11 @@ A namespace dedicated to converting addresses and handling **UniversalAccount** 
 
 <Tabs className='codetabs' groupId='code-examples'>
   <TabItem value='js' attributes={{ className: 'codetab js' }} default>
+
     ```typescript const universalAccount =
-    PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress) ```
+    PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress)
+    ```
+
   </TabItem>
 </Tabs>
 
@@ -69,11 +72,13 @@ console.log(universalAccount);
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="js" attributes={{className: "codetab js"}} default>
-  ```typescript
-  const universalAccount = PushChain.utils.account.toUniversal(address, {
-    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-  });
-  ```
+
+```typescript
+const universalAccount = PushChain.utils.account.toUniversal(address, {
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+});
+```
+
   </TabItem>
 </Tabs>
 
@@ -130,8 +135,6 @@ const chainAgnosticStr = PushChain.utils.account.toChainAgnostic(
 );
 // => 'eip155:1:0xabc123...'
 ```
-
-{/\*
 
 ## 2. `PushChain.utils.signer`
 
@@ -241,6 +244,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
 <Details summary="Expected response">
 
 ```typescript
+
 {
   chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
   address: '0x...',
@@ -248,6 +252,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(keypair, {
   signTransaction: (data: Uint8Array) => Promise<Uint8Array>,
   signTypedData: (data: any) => Promise<Uint8Array>
 }
+
 ```
 
 Response properties description:
@@ -264,7 +269,7 @@ Response properties description:
 
 ## Example: Complete SDK Initialization
 
-````typescript
+```typescript
 import { PushChain } from '@pushchain/core';
 import { privateKeyToAccount } from 'viem/accounts';
 
@@ -284,7 +289,7 @@ const pushChainClient = await PushChain.initialize(universalSigner, {
 // Convert addresses between formats
 const caipAddress = PushChain.utils.account.toChainAgnostic({
   chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-  address: account.address
+  address: account.address,
 });
 console.log('CAIP-10 address:', caipAddress);
 // => 'eip155:11155111:0x...'
@@ -292,5 +297,4 @@ console.log('CAIP-10 address:', caipAddress);
 const universalAccount = PushChain.utils.account.toUniversal(caipAddress);
 console.log('UniversalAccount:', universalAccount);
 // => { chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA, address: '0x...' }
-``` */}
-````
+```
