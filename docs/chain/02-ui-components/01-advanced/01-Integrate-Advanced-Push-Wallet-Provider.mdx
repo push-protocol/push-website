@@ -1,6 +1,6 @@
 ---
 id: docs-chain-ui-components-advanced-push-wallet-provider
-title: Push Wallet Provider
+title: Push Universal Wallet Provider
 hide_title: true
 slug: ./push-wallet-provider
 displayed_sidebar: pushChainSidebar
@@ -10,11 +10,11 @@ sidebar_position: 1
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# PushWalletProvider
+# PushUniversalWalletProvider
 
 ## Overview
 
-`PushWalletProvider` is the top-level context provider component that initializes the Push Wallet functionality throughout your application. It manages theme settings, RPC connections, login configuration, and application metadata.
+`PushUniversalWalletProvider` is the top-level context provider component that initializes the Push Wallet functionality throughout your application. It manages theme settings, RPC connections, login configuration, and application metadata.
 
 ## Installation
 
@@ -26,26 +26,26 @@ yarn add @pushchain/ui-kit
 
 ## Usage
 
-Wrap your application with `PushWalletProvider` to make wallet functionality available to all child components:
+Wrap your application with `PushUniversalWalletProvider` to make wallet functionality available to all child components:
 
 <Tabs className="codetabs" groupId="code-examples">
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```typescript
-import { CONSTANTS, PushWalletProvider, PushWalletProviderConfig } from '@pushchain/ui-kit';
+import { CONSTANTS, PushUniversalWalletProvider, PushUniversalWalletProviderConfig } from '@pushchain/ui-kit';
 
-const walletConfig: PushWalletProviderConfig = {
+const walletConfig: PushUniversalWalletProviderConfig = {
   env: CONSTANTS.ENV.DEVNET,
 }
 
 
 function App() {
   return (
-    <PushWalletProvider
+    <PushUniversalWalletProvider
       config={walletConfig}
     >
       <Component />
-    </PushWalletProvider>
+    </PushUniversalWalletProvider>
   );
 }
 ```

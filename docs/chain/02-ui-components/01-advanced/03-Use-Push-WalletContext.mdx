@@ -9,7 +9,7 @@ sidebar_position: 3
 
 ## `usePushWalletContext`
 
-The `usePushWalletContext` hook provides access to the current wallet state and methods to interact with the Push Wallet. This hook must be used within a component that's wrapped by a `PushWalletProvider`.
+The `usePushWalletContext` hook provides access to the current wallet state and methods to interact with the Push Wallet. This hook must be used within a component that's wrapped by a `PushUniversalWalletProvider`.
 
 ```jsx
 import { usePushWalletContext } from '@pushchain/ui-kit';
@@ -20,26 +20,25 @@ function Component() {
     universalAddress,
     handleConnectToPushWallet,
     handleUserLogOutEvent,
-    handleSignMessage
+    handleSignMessage,
   } = usePushWalletContext(uid); // Optional: uid parameter for targeting a specific wallet instance
 
   // Use these values to interact with wallet state
 }
 ```
 
-
 ### Parameters
 
-| Parameter | Type | Required | Description |
-| --------- | ---- | -------- | ----------- |
-| `uid` | `string` | No | Optional user identifier for wallet context |
+| Parameter | Type     | Required | Description                                 |
+| --------- | -------- | -------- | ------------------------------------------- |
+| `uid`     | `string` | No       | Optional user identifier for wallet context |
 
 #### Return Values
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `connectionStatus` | string | Current connection state of the wallet. Possible values: `"notConnected"`, `"connecting"`, `"authenticating"`, `"connected"`, `"retry"` |
-| `universalAddress` | object | Information about the connected blockchain address with properties: `chainId` (string), `chain` (string), and `address` (string) |
-| `handleConnectToPushWallet` | function | Call this function to initiate the wallet connection process |
-| `handleUserLogOutEvent` | function | Call this function to disconnect the current wallet and log out the user |
-| `handleSignMessage` | function | Async function that accepts a `Uint8Array` of data to be signed and returns a `Promise` resolving to the signed message as a `Uint8Array` |
+| Property                    | Type     | Description                                                                                                                               |
+| --------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `connectionStatus`          | string   | Current connection state of the wallet. Possible values: `"notConnected"`, `"connecting"`, `"authenticating"`, `"connected"`, `"retry"`   |
+| `universalAddress`          | object   | Information about the connected blockchain address with properties: `chainId` (string), `chain` (string), and `address` (string)          |
+| `handleConnectToPushWallet` | function | Call this function to initiate the wallet connection process                                                                              |
+| `handleUserLogOutEvent`     | function | Call this function to disconnect the current wallet and log out the user                                                                  |
+| `handleSignMessage`         | function | Async function that accepts a `Uint8Array` of data to be signed and returns a `Promise` resolving to the signed message as a `Uint8Array` |
