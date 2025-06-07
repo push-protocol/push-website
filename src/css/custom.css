@@ -598,6 +598,22 @@ article ul > li strong {
     no-repeat 0 / contain;
 }
 
+/* Code Block EVM */
+.codetab.evm:after {
+  content: 'EVM';
+}
+
+.codetab.evm::before {
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iIzUyNTg2MCIgZD0iTTIwIDRsLTggMTJsOCA0bDgtNEwyMCA0ek0xMiAyMmw4IDRsOC00bC04IDEyeiIvPjwvc3ZnPg==')
+    no-repeat 0 / contain;
+}
+
+.codetab.evm:hover::before,
+.codetab.evm.tabs__item--active::before {
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI2RkNDRiOSIgZD0iTTIwIDRsLTggMTJsOCA0bDgtNEwyMCA0ek0xMiAyMmw4IDRsOC00bC04IDEyeiIvPjwvc3ZnPg==')
+    no-repeat 0 / contain;
+}
+
 /* Code Block Ethereum */
 .codetab.eth:after {
   content: 'Ethereum';

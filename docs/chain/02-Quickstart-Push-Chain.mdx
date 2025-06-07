@@ -21,15 +21,17 @@ import TabItem from '@theme/TabItem';
 
 ## Installation
 
-<Tabs className="codetabs" groupId="code-examples">
+<Tabs className="codetabs" groupId="quickstart-examples">
   <TabItem value="npm" attributes={{className: "codetab npm"}} default>
 
     ```bash
-    ## Install Push Chian core library
+    # Core SDK
     npm install @pushchain/core
 
-    ## Install Library for EVM or Solana based on your needs
-    npm install viem @solana/web3.js
+    # plus whichever helpers you need:
+    npm install ethers           # for EVM
+    npm install viem             # alternative EVM library
+    npm install @solana/web3.js  # for Solana
     ```
 
   </TabItem>
@@ -37,11 +39,13 @@ import TabItem from '@theme/TabItem';
   <TabItem value="yarn" attributes={{className: "codetab yarn"}}>
 
     ```bash
-    ## Install Push Chian core library
+    # Core SDK
     yarn add @pushchain/core
 
-    ## Install Library for EVM or Solana based on your needs
-    yarn add viem @solana/web3.js
+    # plus whichever helpers you need:
+    yarn add ethers
+    yarn add viem
+    yarn add @solana/web3.js
     ```
 
   </TabItem>
@@ -49,8 +53,8 @@ import TabItem from '@theme/TabItem';
 
 ## Import libraries
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="pushchain" attributes={{className: "codetab pushchain"}} default>
+<Tabs className="codetabs" groupId="quickstart-examples">
+  <TabItem value="evm" attributes={{className: "codetab evm"}} default>
 
     ```typescript
     // Import Push Chain SDK and Ethers
@@ -58,19 +62,6 @@ import TabItem from '@theme/TabItem';
     // THIS EXAMPLE FOLLOWS ETHERS IMPLEMENTATION
     import { PushChain } from '@pushchain/core';
     import { ethers } from 'ethers';
-    ```
-
-  </TabItem>
-
-  <TabItem value="ethereum" attributes={{className: "codetab eth"}}>
-
-    ```typescript
-    // Import Push Chain SDK and Viem
-    // You can use other library like ethers, etc
-    // THIS EXAMPLE FOLLOWS VIEM IMPLEMENTATION
-    import { PushChain } from '@pushchain/core';
-    import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
-    import { createWalletClient } from 'viem';
     ```
 
   </TabItem>
@@ -88,10 +79,10 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-## Initialize Push Chain SDK
+## Create a Universal Signer
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="pushchain" attributes={{className: "codetab pushchain"}} default>
+<Tabs className="codetabs" groupId="quickstart-examples">
+  <TabItem value="evm" attributes={{className: "codetab evm"}} default>
 
     ```typescript
     // (Inside an async function or top-level-await context)
@@ -106,37 +97,6 @@ import TabItem from '@theme/TabItem';
     // Most popular libraries can pass just the signer to get universal signer
     // Or use PushChain.utils.signer.construct to create a custom one
     const universalSigner = await PushChain.utils.signer.toUniversal(signer);
-
-    // Initialize Push Chain SDK for use from Push Chain account
-    const pushChainClient = await PushChain.initialize(universalSigner, {
-      network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
-    });
-    ```
-
-  </TabItem>
-
-  <TabItem value="ethereum" attributes={{className: "codetab eth"}}>
-
-    ```typescript
-    // (Inside an async function or top-level-await context)
-    // 1. Construct account
-    const account = privateKeyToAccount(generatePrivateKey());
-
-    // 2. Initialize signer
-    const signer = createWalletClient({
-      transport: http('https://rpc.ankr.com/eth'), // or your preferred RPC URL
-      account,                                     // <-- our signer
-    })
-
-    // 3. Convert signer to Universal Signer
-    // Most of the popular libraries can pass just the signer to get universal signer
-    // Or use PushChain.utils.signer.construct to create a custom one
-    const universalSigner = await PushChain.utils.signer.toUniversal(signer);
-
-    // Initialize Push Chain SDK for use from Ethereum account
-    const pushChainClient = await PushChain.initialize(universalSigner, {
-      network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
-    });
     ```
 
   </TabItem>
@@ -158,71 +118,69 @@ import TabItem from '@theme/TabItem';
         library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
       }
     );
-
-    // 3. Initialize Push Chain SDK
-    const pushChainClient = await PushChain.initialize(universalSigner, {
-      network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
-    });
     ```
 
   </TabItem>
 </Tabs>
+
+## Initialize Push Chain SDK
+
+```typescript
+// ONCE UNIVERSAL SIGNER IS CREATED
+// ALL CHAIN IMPLEMENTATION BECOMES UNIVERSAL
+
+// (Inside an async function or top-level-await context)
+// Initialize Push Chain SDK
+const pushChainClient = await PushChain.initialize(universalSigner, {
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
+});
+```
 
 ## Send Transaction
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="pushchain" attributes={{className: "codetab js"}} default>
+```typescript
+// ONCE UNIVERSAL SIGNER IS CREATED
+// ALL CHAIN IMPLEMENTATION BECOMES UNIVERSAL
 
-    ```typescript
-    // ONCE PUSH CHAIN CLIENT IS INITIALIZED
-    // ALL CHAIN IMPLEMENTATION BECOMES UNIVERSAL
+// (Inside an async function or top-level-await context)
+// Send a universal transaction (from any chain to Push Chain)
+const txHash = await pushChainClient.universal.sendTransaction({
+  to: '0xD0DE00000447492307108Bdc7Ff6BaB33Ff37Dacc479', // To address on Push Chain
+  value: BigInt(0), // $PC Value to send
+});
 
-    // (Inside an async function or top-level-await context)
-    // Send a universal transaction (from any chain to Push Chain)
-    const txHash = await pushChainClient.universal.sendTransaction({
-      to: '0xD0DE00000447492307108Bdc7Ff6BaB33Ff37Dacc479', // To address on Push Chain
-      value: BigInt(0), // $PC Value to send
-    });
+console.log('Transaction sent:', txHash);
+```
 
-    console.log('Transaction sent:', txHash);
-    ```
+## Inspect your Accounts
 
-  </TabItem>
-</Tabs>
+```typescript
+// ONCE PUSH CHAIN CLIENT IS INITIALIZED
+// ALL CHAIN IMPLEMENTATION BECOMES UNIVERSAL
 
-## Get Push Chain Associated Account
+// Get the account that is connected to Push Chain Client
+const pushChainAccount = pushChainClient.universal.account;
+console.log(
+  'Account connected to Push Chain Client:',
+  pushChainAccount.address
+);
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="pushchain" attributes={{className: "codetab js"}} default>
+// Get the account that is connected to Push Chain Client
+const originAccount = pushChainClient.universal.origin;
 
-    ```typescript
-    // ONCE PUSH CHAIN CLIENT IS INITIALIZED
-    // ALL CHAIN IMPLEMENTATION BECOMES UNIVERSAL
+console.log(
+  'Origin address that is controlling the account connected to Push Chain Client'
+);
+console.log(
+  'Origin address is only present if other chains address is connected to Push Chain Client'
+);
+console.log('Else it will be the same as pushChainClient.universal.account');
+console.log('Origin address:', originAccount.address);
+```
 
-    // Get the account that is connected to Push Chain Client
-    const pushChainAccount = pushChainClient.universal.account
-    console.log('Account connected to Push Chain Client:', ueaAccount.address);
-    ```
+## Next Steps
 
-  </TabItem>
-</Tabs>
-
-## Get Universal Origin Address (Account controlling Push Chain Associated Account)
-
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="pushchain" attributes={{className: "codetab js"}} default>
-
-    ```typescript
-    // ONCE PUSH CHAIN CLIENT IS INITIALIZED
-    // ALL CHAIN IMPLEMENTATION BECOMES UNIVERSAL
-
-    // Get the account that is connected to Push Chain Client
-    const originAccount = pushChainClient.universal.account
-    console.log('Origin address that is controlling the account connected to Push Chain Client');
-    console.log('Origin address is only present if other chains address is connected to Push Chain Client');
-    console.log('Else it will be the same as pushChainClient.universal.account');
-    console.log('Origin address:', originAccount.address);
-    ```
-
-  </TabItem>
-</Tabs>
+- Explore core abstractions in [Important Concepts](../01-build/02-Important-Concepts)
+- Plug in wallet UI via [UI Components](../02-ui-components/01-Integrate-Push-Universal-Wallet)
+- Try a full-app walkthrough in [Tutorials](../03-tutorials)
+- For deep dives visit our [Knowledge Base](/knowledge)
