@@ -69,7 +69,7 @@ function ResultWithHeader() {
     </>
   );
 }
-function ThemedLiveEditor() {
+function ThemedLiveEditor({ code }) {
   const isBrowser = useIsBrowser();
   return (
     <LiveEditor
@@ -77,10 +77,11 @@ function ThemedLiveEditor() {
       // otherwise dark prism theme is not applied
       key={String(isBrowser)}
       className={styles.playgroundEditor}
+      code={code}
     />
   );
 }
-function EditorWithHeader({ minimized }) {
+function EditorWithHeader({ minimized, code }) {
   const [minimizedState, setMinimizedState] = useState(minimized);
 
   return (
@@ -111,7 +112,7 @@ function EditorWithHeader({ minimized }) {
           </ItemH>
         </Button>
       </Header>
-      {!minimizedState && <ThemedLiveEditor />}
+      {!minimizedState && <ThemedLiveEditor code={code} />}
     </>
   );
 }
@@ -125,41 +126,90 @@ export default function Playground({ children, transformCode, ...props }) {
   const prismTheme = usePrismTheme();
   const noInline = props.metastring?.includes('noInline') ?? false;
 
-  // Look for customPropMinimized, customPropHidden
+  // console.debug('Original children content:', children);
+  // Look for customPropMinimized
+
   let minimized = false;
+  const lines = children.split('\n');
 
-  let pattern = /customPropMinimized="([^"]+)"/;
-  let match = children.match(pattern);
-  console.log(match, pattern);
+  if (lines.length > 0) {
+    const firstLine = lines[0];
+    if (firstLine.includes('// customPropMinimized=')) {
+      // Define regex patterns
+      const minimizedPattern = /\/\/\s*customPropMinimized=['"]([^'"]+)['"]/;
+      const match = firstLine.match(minimizedPattern);
+      console.debug('customPropMinimized match:', match);
 
-  if (match) {
-    const customProp = match[1];
-    if (customProp === 'true') {
-      minimized = true;
+      if (match) {
+        // if ture then mark minimized as true
+        if (match && match[1] === 'true') {
+          minimized = true;
+        }
 
-      // remove the first match
-      children = children.replace(pattern, '');
+        // remove the customPropMinimized from the first line
+        lines[0] = firstLine.replace(
+          /\s*\/\/\s*customPropMinimized=['"][^'"]+['"]/g,
+          ''
+        );
+
+        children = lines.join('\n');
+      }
     }
   }
+
+  // Store the original code for display (with imports and props)
+  const displayCode = children;
 
   // Look for customPropHidden
   let hidden = false;
+  if (lines.length > 0) {
+    const firstLine = lines[0];
+    if (firstLine.includes('// customPropHidden=')) {
+      // Define regex pattern
+      const hiddenPattern = /\/\/\s*customPropHidden=['"]([^'"]+)['"]/;
+      const match = firstLine.match(hiddenPattern);
+      console.debug('customPropHidden match:', match);
 
-  pattern = /customPropHidden="([^"]+)"\n/;
-  match = children.match(pattern);
+      if (match) {
+        // if true then mark hidden as true
+        if (match[1] === 'true') {
+          hidden = true;
+        }
 
-  if (match) {
-    const customProp = match[1];
-    if (customProp === 'true') {
-      hidden = true;
+        // Remove the customPropHidden from the first line
+        lines[0] = firstLine.replace(
+          /\s*\/\/\s*customPropHidden=['"][^'"]+['"]/g,
+          ''
+        );
 
-      // remove the first match
-      children = children.replace(pattern, '');
+        children = lines.join('\n');
+      }
     }
   }
 
+  // Remove imports from execution code
+  let inImport = false;
+  children = children
+    .split('\n')
+    .filter((line) => {
+      const trimmed = line.trim();
+      if (trimmed.startsWith('import ')) {
+        inImport = !trimmed.endsWith(';');
+        return false;
+      }
+      if (inImport) {
+        if (trimmed.endsWith(';')) {
+          inImport = false;
+        }
+        return false;
+      }
+      return true;
+    })
+    .join('\n');
+
   // finally replace if new line is there in the start
   children = children.replace(/\n/, '');
+  // console.debug('Final children content passed to LiveProvider:', children);
 
   return (
     <div className={styles.playgroundContainer}>
@@ -173,11 +223,15 @@ export default function Playground({ children, transformCode, ...props }) {
         {playgroundPosition === 'top' ? (
           <>
             <ResultWithHeader />
-            {!hidden && <EditorWithHeader minimized={minimized} />}
+            {!hidden && (
+              <EditorWithHeader code={displayCode} minimized={minimized} />
+            )}
           </>
         ) : (
           <>
-            {!hidden && <EditorWithHeader minimized={minimized} />}
+            {!hidden && (
+              <EditorWithHeader code={displayCode} minimized={minimized} />
+            )}
             <ResultWithHeader />
           </>
         )}

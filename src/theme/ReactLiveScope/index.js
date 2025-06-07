@@ -25,6 +25,12 @@ function loadClientSideLibraryPushProtocolUIWeb(constantName) {
     : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
 }
 
+function loadClientSideLibraryPushChainUIKit(constantName) {
+  return typeof window !== 'undefined'
+    ? require('@pushchain/ui-kit')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
 // For @pushprotocol/UIWeb components, we will dynamically load them in the BrowserOnly component.
 function createBrowserOnlyLibComponentUIWeb(componentExportName) {
   return function LibComponentBrowserOnly(props) {
@@ -53,7 +59,7 @@ const ReactLiveScope = {
   // Asynchronously import ethers and PushAPI only on the client side
   ethers: loadClientSideLibraryEthers('ethers'),
   PushAPI: loadClientSideLibraryPushProtocolRestAPI('PushAPI'),
-  CONSTANTS: loadClientSideLibraryPushProtocolRestAPI('CONSTANTS'),
+  // CONSTANTS: loadClientSideLibraryPushProtocolRestAPI('CONSTANTS'),
   MODAL_POSITION_TYPE: loadClientSideLibraryPushProtocolUIWeb(
     'MODAL_POSITION_TYPE'
   ),
@@ -73,11 +79,21 @@ const ReactLiveScope = {
   ChatPreviewList: createBrowserOnlyLibComponentUIWeb('ChatPreviewList'),
   darkChatTheme: createBrowserOnlyLibComponentUIWeb('darkChatTheme'),
   lightChatTheme: createBrowserOnlyLibComponentUIWeb('lightChatTheme'),
-  NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
+  // NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
   SubscriptionManager: createBrowserOnlyLibComponentUIWeb(
     'SubscriptionManager'
   ),
   WidgetUIProvider: createBrowserOnlyLibComponentUIWeb('WidgetUIProvider'),
+  PushUniversalWalletProvider: loadClientSideLibraryPushChainUIKit(
+    'PushUniversalWalletProvider'
+  ),
+  PushUniversalAccountButton: loadClientSideLibraryPushChainUIKit(
+    'PushUniversalAccountButton'
+  ),
+  usePushWalletContext: loadClientSideLibraryPushChainUIKit(
+    'usePushWalletContext'
+  ),
+  CONSTANTS: loadClientSideLibraryPushChainUIKit('CONSTANTS'),
 };
 
 export default ReactLiveScope;
