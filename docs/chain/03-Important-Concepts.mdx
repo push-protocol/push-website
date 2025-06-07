@@ -10,29 +10,51 @@ image: '/assets/docs/previews/docs_notifications--important_concepts.png'
 
 # Important Concepts
 
-Before diving into the SDK and integrating Push Chain to build the next wave of consumer-centric applications, let's review some fundamental concepts unique to Push Chain.
+Before integrating the SDK, here are the core ideas you need to know to build truly universal dApps on Push Chain.
 
-> Note: For additional insights into Push Chain fundamentals, deep dives, and comprehensive developer resources, visit our [Knowledge Base](https://push.org/knowledge).
+> **Deep dives and conceptual guides** live in our [Knowledge Base](/knowledge).
 
 <head>
   <title>{'Important Concepts | Push Chain | Push Documentation'}</title>
 </head>
 
-## Wallet Interactions from Any Layer 1
+## 100% EVM Compatibility
 
-Push Chain introduces groundbreaking support for wallets from different Layer 1 blockchains, enabling them to transact directly on Push Chain. Users can leverage their existing wallets, whether Ethereum-based (MetaMask), Solana-based (Phantom), or wallets from other chains, to execute transactions seamlessly on Push Chain. This cross-chain wallet integration is part of Push Chain's broader vision for universal interoperability.
+Push Chain is an EVM-compatible Universal Layer 1 blockchain, meaning it fully supports Ethereum's EVM (Ethereum Virtual Machine). This compatibility ensures that any EVM-compatible dApp can run on Push Chain without modification.
+
+## Wallet Integration Across Chains
+
+Push Chain introduces groundbreaking support for wallets from different Layer 1 blockchains, enabling them to transact directly on Push Chain.
+
+Users can leverage their existing wallets, whether Ethereum-based (MetaMask), Solana-based (Phantom), or wallets from other chains, to execute transactions seamlessly on Push Chain. This cross-chain wallet integration is part of Push Chain's broader vision for universal interoperability.
+
+Under the hood, we:
+
+- Detect the source-chain wallet signature
+- Map it to a Push Chain Universal Executor Account (UEA)
+- Route the transaction through our gateway onto Push Chain
+
+This means your users interact exactly as they do today; Push Chain handles the cross-chain plumbing.
+
+<!-- Optional: link to Architecture overview or “Universal Gateway” deep dive -->
 
 ## Account Types on Push Chain
 
 As an EVM-compatible Universal Layer 1 blockchain, Push Chain naturally supports standard Ethereum accounts:
 
-- **Externally Owned Accounts (EOAs)**: Traditional wallet addresses controlled by private keys.
+- **Externally Owned Accounts (EOAs)**<br />
+  Standard private-key-controlled addresses (e.g. MetaMask wallets).
 
-- **Smart Contract Accounts (Smart Accounts)**: Addresses controlled by deployed smart contracts, enabling programmable logic and complex interactions.
+- **Smart Contract Accounts (Smart Accounts)**<br />
+  On-chain contracts that hold logic (e.g. multisigs, social recovery wallets).
 
-Additionally, Push Chain innovates by introducing:
+> Additionally, Push Chain innovates by introducing:
 
-- **Universal External Accounts (UEAs)**: These accounts uniquely allow wallets from different Layer 1 chains (like Ethereum, Solana, and others) to interact and transact on Push Chain seamlessly. UEAs enable users to execute smart contracts on Push Chain without needing a native Push Chain wallet, significantly enhancing accessibility and user experience.
+- **Universal Executor Accounts (UEAs)**<br />
+  Proxy accounts that represent source‐chain wallets on Push Chain. UEAs let Ethereum, Solana, and other wallets execute Push Chain logic without needing a native Push Chain wallet, significantly enhancing accessibility and user experience.
+
+- **Universal Origin Accounts (UOAs)**<br />
+  The original source-chain wallet in chain agnostic format (based on [CAIP-10](https://github.com/ChainSafe/CAIPs/blob/master/CAIPs/CAIP-10.md)) that is behind each UEA. UOAs let you attribute activity back to the user’s home chain.
 
 ## Fee Abstraction and Cross-Chain Execution
 
