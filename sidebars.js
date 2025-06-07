@@ -74,6 +74,10 @@ const sidebars = {
       type: 'link',
       label: 'Knowledge Base',
       href: '/knowledge',
+      customProps: {
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      },
     },
   ],
   pushNotificationSidebar: [
