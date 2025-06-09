@@ -20,23 +20,29 @@ Before integrating the SDK, here are the core ideas you need to know to build tr
 
 ## 100% EVM Compatibility
 
-Push Chain is an EVM-compatible Universal Layer 1 blockchain, meaning it fully supports Ethereum's EVM (Ethereum Virtual Machine). This compatibility ensures that any EVM-compatible dApp can run on Push Chain without modification.
+Push Chain is an EVM-compatible Universal Layer 1 blockchain that runs any Solidity contract as-is. Your existing Ethereum dApp will work without touching a single byte of on-chain code.
 
 ## Wallet Integration Across Chains
 
 Push Chain introduces groundbreaking support for wallets from different Layer 1 blockchains, enabling them to transact directly on Push Chain.
 
-Users can leverage their existing wallets, whether Ethereum-based (MetaMask), Solana-based (Phantom), or wallets from other chains, to execute transactions seamlessly on Push Chain. This cross-chain wallet integration is part of Push Chain's broader vision for universal interoperability.
+Users can leverage their existing wallets, whether Ethereum-based (MetaMask), Solana-based (Phantom), or wallets from other chains, to execute transactions seamlessly on Push Chain. Under the hood, we:
 
-Under the hood, we:
+- Detect the source-chain wallet signature.
+- Map it to a Push Chain Universal Executor Account (UEA).
+- Route the transaction through our gateway onto Push Chain.
 
-- Detect the source-chain wallet signature
-- Map it to a Push Chain Universal Executor Account (UEA)
-- Route the transaction through our gateway onto Push Chain
-
-This means your users interact exactly as they do today; Push Chain handles the cross-chain plumbing.
+**Your users sign exactly as they do today;** Push Chain handles the cross-chain plumbing.
 
 <!-- Optional: link to Architecture overview or “Universal Gateway” deep dive -->
+
+## Fee Abstraction and Cross-Chain Execution
+
+Push Chain lets users execute contracts without holding $PC (Push Chain native token). Instead, users can initiate transactions from their source chains, such as Ethereum Sepolia or Solana Devnet, and pay gas fees in their native tokens like ETH or SOL.
+
+When a user signs a transaction from a source chain such as Goerli or Solana Devnet, the orchestrator deploys a smart wallet (UEA) on Push Chain for that user, locks the required gas fees in their native tokens, and executes the contract on Push Chain using the signed payload.
+
+**Your users interact exactly as they would on their home chain**, with no extra steps.
 
 ## Account Types on Push Chain
 
@@ -54,89 +60,88 @@ As an EVM-compatible Universal Layer 1 blockchain, Push Chain naturally supports
   Proxy accounts that represent source‐chain wallets on Push Chain. UEAs let Ethereum, Solana, and other wallets execute Push Chain logic without needing a native Push Chain wallet, significantly enhancing accessibility and user experience.
 
 - **Universal Origin Accounts (UOAs)**<br />
-  The original source-chain wallet in chain agnostic format (based on [CAIP-10](https://github.com/ChainSafe/CAIPs/blob/master/CAIPs/CAIP-10.md)) that is behind each UEA. UOAs let you attribute activity back to the user’s home chain.
+  The original source-chain wallet in [chain agnostic address](#chain-agnostic-address-examples 'Examples of chain agnostic address') format that is behind each UEA. UOAs let you attribute activity back to the user’s home chain.
 
-## Fee Abstraction and Cross-Chain Execution
+## Understanding Universal Account
 
-Push Chain lets users execute contracts without holding PUSH tokens. Instead, users can initiate transactions from their source chains, such as Goerli or Solana Devnet, and pay gas fees in their native tokens like ETH or SOL.
-
-When a user signs a transaction from a source chain such as Goerli or Solana Devnet, the orchestrator deploys a smart wallet (NMSC) on Push Chain for that user, locks the required gas fees in their native tokens, and executes the contract on Push Chain using the signed payload. This allows the user to interact with Push Chain entirely from their original chain, using only their existing wallet and tokens.
-
-## What is `UniversalAccount`?
-
-The `UniversalAccount` is a chain-agnostic way of representing an address, designed to work seamlessly across multiple blockchain ecosystems. It abstracts the details of the underlying blockchain, enabling developers to interact with addresses in a unified manner, regardless of the chain they belong to.
-
-### Interface Structure
-
-The UniversalAccount interface consists of two key properties:
-
-- `chain`: A fully qualified chain identifier that combines both the blockchain type and specific network (e.g., `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET`, `PushChain.CONSTANTS.CHAIN.PUSH_TESTNET`)
-- `address`: The address on the respective chain, formatted according to chain standards (EVM addresses are checksummed, Solana addresses are base58-encoded, etc.)
-
-### Example Usage
-
-Here are examples of how to use the `createUniversalAccount` utility function to represent recipients on different blockchain networks:
-
-```typescript
-import { CONSTANTS, createUniversalAccount } from '@pushchain/core';
-
-const ethereumAccount = createUniversalAccount({
-  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-  address: '0x742d35Cc6370C742Fc60f8b67da6c68F091C42b5',
-});
-
-const solanaAccount = createUniversalAccount({
-  chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
-  address: 'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-});
-```
-
-## What is `UniversalSigner`?
-
-The `UniversalSigner` is a chain-agnostic way of representing a signer, designed to facilitate signing operations across multiple blockchain ecosystems. It abstracts the underlying blockchain-specific details, providing a unified approach to handle signing logic, regardless of the chain involved.
-
-### Interface Structure
-
-The UniversalSigner interface extends UniversalAccount and includes the following key properties:
-
-- `chain`: A fully qualified chain identifier (e.g., `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET`, `PushChain.CONSTANTS.CHAIN.PUSH_TESTNET`)
-- `address`: The signer's address, formatted according to chain standards
-- `signMessage`: Function to sign arbitrary binary data (Uint8Array)
-- `signTransaction`: Function to sign transaction bytes
-
-### Example Usage
-
-Here are examples of how to create signers for different blockchain networks using the helper functions:
-
-For Ethereum using `viem` library:
+The `UniversalAccount` is a chain-agnostic way of representing a wallet address, designed to work seamlessly across multiple blockchain ecosystems.
 
 ```typescript
 import { PushChain } from '@pushchain/core';
-import { privateKeyToAccount } from 'viem/accounts';
 
-const account = privateKeyToAccount('0x...');
-const ethereumSigner = await PushChain.utils.signer.toUniversal(account, {
-  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-  library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
-});
+// PushChain.utils.account.toUniversal(address, {chain})
+
+// Ethereum Sepolia
+const ethereumAccount = PushChain.utils.account.toUniversal(
+  '0x742d35Cc6370C742Fc60f8b67da6c68F091C42b5',
+  {
+    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  }
+);
+
+// Solana Testnet
+const solanaAccount = createUniversalAccount(
+  'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
+  {
+    chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+  }
+);
 ```
 
-For Solana using `@solana/web3.js` library:
+- `address` follows each chain’s format (EVM checksummed, Solana base58).
+- `chain` is the identifier of the origin chain of an address (e.g. `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA` resolves to `eip155:11155111` for Sepolia)
+
+> `UniversalAccount` return a [chain agnostic address](#chain-agnostic-address-examples 'Examples of chain agnostic address') format. It can be used to represent any address from any chain.
+
+## Understanding Universal Signer
+
+A `UniversalSigner` extends `UniversalAccount` with signing capabilities.
 
 ```typescript
 import { PushChain } from '@pushchain/core';
+import { ethers } from 'ethers';
 import { Keypair } from '@solana/web3.js';
 
-const privateKeyHex = '...';
-const privateKey = Uint8Array.from(Buffer.from(privateKeyHex, 'hex'));
-const keypair = Keypair.fromSecretKey(privateKey);
+// PushChain.utils.signer.toUniversal(signer)
 
-const solanaSigner = await PushChain.utils.signer.toUniversal(keypair, {
-  chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
-  library: PushChain.PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3,
-});
+// Ethereum Sepolia
+const ethwallet = ethers.Wallet.createRandom();
+const ethprovider = new ethers.JsonRpcProvider(
+  'https://rpc.ankr.com/eth_sepolia/'
+);
+const signer = ethwallet.connect(ethprovider);
+
+const universalSignerFromEth = await PushChain.utils.signer.toUniversal(signer);
+
+// Solana Testnet
+const solKeypair = Keypair.generate();
+
+const universalSignerFromSol =
+  await PushChain.utils.signer.toUniversalFromKeyPair(solKeypair, {
+    chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+    library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+  });
 ```
 
-## Learn More
+- `signer` is the signer object from the library you are using (e.g. ethers, viem, solana-web3.js)
 
-For additional insights into Push Chain fundamentals, deep dives, and comprehensive developer resources, visit our [Knowledge Base](https://push.org/knowledge).
+## Chain Agnostic Address Examples
+
+| Chain    | Network                   | CAIP-10 Identifier                                                  |
+| -------- | ------------------------- | ------------------------------------------------------------------- |
+| Ethereum | Mainnet (1)               | `eip155:1:0x742d35Cc6370C742Fc60f8b67da6c68F091C42b5`               |
+| Ethereum | Sepolia Testnet(11155111) | `eip155:11155111:0x5FbDB2315678afecB367f032d93F642f64180aa3`        |
+| Solana   | Mainnet-Beta              | `solana:mainnet-beta:9xQeWvGFvPEZZY3Yvj5V14xi4tYmEXjfSDrm5sVqTvcAg` |
+| Solana   | Testnet                   | `solana:testnet:7fCAbbLejF64HTZ39rjFBUXJEMYT9z7d6NM6ovaoyNaW`       |
+| Cosmos   | cosmoshub-4               | `cosmos:cosmoshub-4:cosmos1sk8uyz4u6zmxus3aurayrjyvfgtytvpnr685ur`  |
+
+> The addresses are inspired from [caip-10](https://github.com/ChainSafe/CAIPs/blob/master/CAIPs/CAIP-10.md 'Link to caip-10 proposal') format.
+
+## Next Steps
+
+- Setup your [Environment and Tooling](/setup)
+- See SDK reference in [Build](/build)
+- Try your first transaction in [Send Transaction](/build/send-transaction)
+- Integrate and abstract implementation and UI via [UI Components](/ui-components)
+- Follow a full walkthrough in [Tutorials](/tutorials)
+- Dive deeper in the [Knowledge Base](/knowledge)

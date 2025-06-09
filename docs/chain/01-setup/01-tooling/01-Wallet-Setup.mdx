@@ -1,0 +1,85 @@
+---
+id: docs-chain-setup-tooling-wallet-setup
+title: Wallet Setup
+hide_title: true
+slug: ./wallet-setup
+displayed_sidebar: pushChainSidebar
+sidebar_position: 1
+image: '/assets/docs/previews/docs_notifications_develop--get_started.png'
+---
+
+# Add Push Chain Specs to Wallet
+
+It's recommended to add Push Chain as custom network to your wallet before building your app on Push Chain. This will help you to test your app on Push Chain before deploying it on mainnet.
+
+:::note
+
+This is not a requirement for your users as they will connect to Push Chain using their wallet and through [UI Components](/docs/chain/ui-components) that will abstract wallet connection.
+
+:::
+
+<head>
+  <title>{`Wallet Setup | Tooling | Setup | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ReactPlayer from 'react-player';
+import AddChainToWallet from '@site/src/components/AddChainToWallet/AddChainToWallet';
+import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  ModalMidEqual,
+  AFocus,
+  AImp,
+} from '@site/src/css/SharedStyling';
+
+## Adding Chain Specs to Wallet
+
+Add the chain specs to your favorite EVM wallet under custom network. Some of the fields are optional depending on the wallet.
+
+<Tabs>
+  <TabItem value='testnet' label='Testnet - Donut 🍩' default>
+
+| Field                  | Value                                                                                            |
+| ---------------------- | ------------------------------------------------------------------------------------------------ |
+| **Network Name**       | `Push Chain Donut Testnet`                                                                       |
+| **RPC URL**            | `https://evm.rpc-testnet-donut-node1.push.org/`, `https://evm.rpc-testnet-donut-node2.push.org/` |
+| **Chain ID**           | `42101`                                                                                          |
+| **Currency Symbol**    | `PC`                                                                                             |
+| **Block Explorer URL** | `https://explorer.testnet.push.org`                                                              |
+
+<AddChainToWallet
+  title='Add to Wallet | Testnet Donut'
+  config={{
+    chainId: 42101,
+    chainName: 'Push Chain Testnet',
+    nativeCurrency: {
+      name: 'Push Chain',
+      symbol: 'PC',
+      decimals: 18,
+    },
+    rpcUrls: [
+      'https://evm.rpc-testnet-donut-node1.push.org/',
+      'https://evm.rpc-testnet-donut-node1.push.org/',
+    ],
+    blockExplorerUrls: ['https://explorer.testnet.push.org'],
+  }}
+/>
+
+  </TabItem>
+
+  <TabItem value='mainnet' label='Mainnet - Coming Soon 🚀'>
+
+:::info Coming Soon!
+Push Chain Mainnet is currently in development. Stay tuned for updates!
+
+- Follow us on [Twitter](https://twitter.com/pushprotocol) for announcements
+- Join our [Discord](https://discord.gg/pushprotocol) to be part of the community
+  :::
+
+    </TabItem>
+
+</Tabs>

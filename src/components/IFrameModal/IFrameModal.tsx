@@ -2,11 +2,13 @@ import React, { useEffect, useRef, useState } from 'react';
 
 interface IFrameModalProps {
   url: string;
+  buttonTitle?: string;
   maxHeight?: string;
 }
 
 export default function IFrameModal({
   url,
+  buttonTitle = 'Load Interactive Demo',
   maxHeight = '600px',
 }: IFrameModalProps) {
   const [isLoading, setIsLoading] = useState(true);
@@ -160,7 +162,7 @@ export default function IFrameModal({
                 e.currentTarget.style.opacity = '0.9';
               }}
             >
-              Load Interactive Demo
+              {buttonTitle}
             </button>
           </div>
         ) : (
