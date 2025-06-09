@@ -52,7 +52,7 @@ export default function RemixIDE({ examples = {} }) {
 
   const getRemixURL = () => {
     if (!selected || !examples[selected]) return defaultRemixURL;
-    return `https://remix.ethereum.org/#url=${examples[selected]}`;
+    return `https://push-protocol.github.io/push-remix-solidity-ide/?disable-autofocus=true#url=${examples[selected]}`;
   };
 
   return (
