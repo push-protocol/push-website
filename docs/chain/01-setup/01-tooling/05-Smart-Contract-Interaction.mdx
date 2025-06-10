@@ -1,45 +1,27 @@
 ---
-id: docs-chain-setup-local-deployment
-title: Local Deployment
+id: docs-chain-setup-tooling-smart-contract-interaction
+title: Smart Contract Interaction
 hide_title: true
-slug: ./local-deployment
+slug: ./smart-contract-interaction
 displayed_sidebar: pushChainSidebar
-sidebar_position: 3
+sidebar_position: 5
 image: '/assets/docs/previews/docs_notifications_develop--get_started.png'
 ---
 
-# Tooling
+# Overview
 
-This section provides an overview of the tooling available for Push Chain developers.
+Now that you have set up your smart contract environment, and have deployed your smart contracts on Push Chain. Let's look at how you can interact with your smart contracts through popular EVM SDKs like Ethers or Viem.
 
 <head>
-  <title>{`Local Deployment | Setup | Push Chain | Push Documentation`}</title>
+  <title>{`Smart Contract Interaction | Tooling | Setup | Push Chain | Push Documentation`}</title>
 </head>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import ReactPlayer from 'react-player';
-import {
-  ModalContainer,
-  ModalSmall,
-  ModalWrapper,
-  ModalMidEqual,
-  AFocus,
-  AImp,
-} from '@site/src/css/SharedStyling';
+import PushChainSpecs from '@site/src/components/Static/PushChainSpecs';
+import RemixIDE from '@site/src/components/RemixIDE/RemixIDE';
 
-## Connect Metamask to Push Chain
-
-To interact with Push Chain via MetaMask, add a custom network in MetaMask using the settings below:
-
-| Field               | Value                          |
-| ------------------- | ------------------------------ |
-| **Network Name**    | `Push Chain Testnet`           |
-| **RPC URL**         | `https://evm.pn1.dev.push.org` |
-| **Chain ID**        | `9000`                         |
-| **Currency Symbol** | `nPUSH`                        |
-
-![Metamask PushChain Configuration](../../../static/assets/docs/chain/build/Metamask-Push-Chain.png)
+## Deploying and Working with Remix
 
 ## Block Explorer
 

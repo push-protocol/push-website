@@ -1,12 +1,25 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-export default function RemixIDE({ examples = {} }) {
+interface RemixIDEProps {
+  examples?: Record<string, string>;
+}
+
+export default function RemixIDE({ examples = {} }: RemixIDEProps) {
   const exampleKeys = Object.keys(examples);
   const defaultRemixURL = 'https://remix.ethereum.org';
   const [selected, setSelected] = useState(exampleKeys[0] || null);
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const iframeRef = useRef(null);
+
+  const getRemixURL = () => {
+    if (!selected || !examples[selected]) {
+      return defaultRemixURL;
+    }
+    const githubUrl = examples[selected];
+    const remixUrl = new URL(defaultRemixURL);
+    remixUrl.hash = `url=${githubUrl}`;
+    return remixUrl.toString();
+  };
 
   useEffect(() => {
     document.body.style.overflow = isFullScreen ? 'hidden' : 'auto';
@@ -15,145 +28,134 @@ export default function RemixIDE({ examples = {} }) {
     };
   }, [isFullScreen]);
 
-  // Handle iframe load and transition
-  useEffect(() => {
-    const handleIframeLoad = () => {
-      // Wait 3 seconds after load before showing
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 3000);
-    };
-
-    const iframe = iframeRef.current;
-    if (iframe) {
-      iframe.addEventListener('load', handleIframeLoad);
-      return () => iframe.removeEventListener('load', handleIframeLoad);
-    }
-  }, []);
-
-  const containerStyle = isFullScreen
-    ? {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        zIndex: 9999,
-        backgroundColor: 'rgb(40, 42, 54)',
-      }
-    : {
-        position: 'relative',
-        width: '100%',
-        height: '80vh',
-        maxHeight: '600px',
-        backgroundColor: 'rgb(40, 42, 54)',
-        overflow: 'hidden',
-      };
-
-  const getRemixURL = () => {
-    if (!selected || !examples[selected]) return defaultRemixURL;
-    return `https://remix.ethereum.org/#url=${examples[selected]}`;
-  };
-
   return (
-    <div style={containerStyle} onFocus={(e) => e.stopPropagation()}>
+    <div
+      style={{
+        width: '100%',
+        backgroundColor: '#fff',
+        borderRadius: '12px',
+        border: '1px solid rgb(226, 232, 240)',
+        overflow: 'hidden',
+        position: isFullScreen ? 'fixed' : 'relative',
+        top: isFullScreen ? 0 : 'auto',
+        left: isFullScreen ? 0 : 'auto',
+        right: isFullScreen ? 0 : 'auto',
+        bottom: isFullScreen ? 0 : 'auto',
+        zIndex: isFullScreen ? 9999 : 1,
+      }}
+    >
       <style>{`
-        .remix-button {
-          padding: 10px;
-          font-size: 16px;
-          border-radius: 6px;
-          background-color: #D548EC;
-          color: #fff;
-          opacity: 0.5;
-          border: none;
-        }
-        .remix-button:hover {
-          opacity: 1;
-        }
-        .remix-button:active {
-          background-color: rgba(0, 0, 0, 0.4);
-        }
         @keyframes spin {
-          to { transform: rotate(360deg); }
-        }
-        .loading-spinner {
-          width: 50px;
-          height: 50px;
-          border: 5px solid #f3f3f3;
-          border-top: 5px solid #D548EC;
-          border-radius: 50%;
-          animation: spin 1s linear infinite;
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
         }
       `}</style>
 
+      {/* Top bar */}
       <div
         style={{
-          position: 'absolute',
-          top: 10,
-          right: 10,
-          zIndex: 99,
           display: 'flex',
-          gap: '10px',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: '10px 15px',
+          borderBottom: '1px solid rgb(226, 232, 240)',
+          backgroundColor: '#f8fafc',
         }}
       >
-        {exampleKeys.length > 0 && (
-          <select
-            value={selected}
-            onChange={(e) => setSelected(e.target.value)}
-            style={{ padding: '10px', fontSize: '16px', borderRadius: '6px' }}
-          >
-            {exampleKeys.map((key) => (
-              <option key={key} value={key}>
-                {key}
-              </option>
-            ))}
-          </select>
-        )}
+        <div style={{ fontSize: '16px', fontWeight: 500, color: '#475569' }}>
+          Remix IDE
+        </div>
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+          {exampleKeys.length > 0 && (
+            <select
+              value={selected ?? ''}
+              onChange={(e) => setSelected(e.target.value)}
+              style={{
+                padding: '8px 12px',
+                fontSize: '14px',
+                borderRadius: '6px',
+                border: '1px solid rgb(226, 232, 240)',
+                backgroundColor: '#fff',
+                color: '#475569',
+                cursor: 'pointer',
+              }}
+            >
+              {exampleKeys.map((key) => (
+                <option key={key} value={key}>
+                  {key}
+                </option>
+              ))}
+            </select>
+          )}
 
-        <button
-          onClick={() => setIsFullScreen(!isFullScreen)}
-          className='remix-button'
-        >
-          {isFullScreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
-        </button>
+          <button
+            onClick={() => setIsFullScreen(!isFullScreen)}
+            style={{
+              padding: '8px 12px',
+              fontSize: '14px',
+              borderRadius: '6px',
+              border: '1px solid rgb(226, 232, 240)',
+              backgroundColor: '#fff',
+              color: '#475569',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+            }}
+          >
+            {isFullScreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
+          </button>
+        </div>
       </div>
 
-      {/* Loading spinner */}
-      {isLoading && (
-        <div
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            zIndex: 1,
-          }}
-        >
-          <div className='loading-spinner' />
-        </div>
-      )}
-
+      {/* Iframe container */}
       <div
         style={{
-          position: isLoading ? 'fixed' : 'relative',
-          top: isLoading ? '10000px' : 0,
-          left: 0,
           width: '100%',
-          height: '100%',
-          transition: isLoading ? 'none' : 'top 0.3s ease',
+          height: isFullScreen ? 'calc(100vh - 56px)' : '600px',
+          position: 'relative',
         }}
       >
         <iframe
-          ref={iframeRef}
           src={getRemixURL()}
           title='Remix IDE'
           style={{
             width: '100%',
             height: '100%',
             border: 'none',
+            position: 'relative',
+            zIndex: 1,
           }}
           allowFullScreen
+          onLoad={() => setIsLoading(false)}
         />
+        {isLoading && (
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'rgba(255, 255, 255, 0.8)',
+              zIndex: 2,
+            }}
+          >
+            <div
+              style={{
+                width: '40px',
+                height: '40px',
+                border: '3px solid #D548EC',
+                borderTop: '3px solid transparent',
+                borderRadius: '50%',
+                animation: 'spin 1s linear infinite',
+              }}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
