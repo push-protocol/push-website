@@ -101,8 +101,7 @@ const PushChainSpecs: React.FC = () => {
             </p>
             <ul>
               <li>
-                Follow us on{' '}
-                <Link to='https://twitter.com/pushprotocol'>Twitter</Link> for
+                Follow us on <Link to='https://x.com/pushchain'>X</Link> for
                 announcements
               </li>
               <li>

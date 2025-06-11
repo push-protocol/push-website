@@ -76,8 +76,9 @@ const AddChainToWallet: React.FC<AddChainToWalletProps> = ({
     <div
       style={{
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
         alignItems: 'center',
+        margin: '20px 0',
       }}
     >
       <Button
@@ -86,7 +87,6 @@ const AddChainToWallet: React.FC<AddChainToWalletProps> = ({
           backgroundColor: '#D548EC',
           border: 'none',
           padding: '12px 24px',
-          margin: '20px 0 0',
           cursor: 'pointer',
           transition: 'all 0.2s ease',
         }}
