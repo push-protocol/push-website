@@ -1,5 +1,5 @@
 ---
-id: docs-chain-develop-initialize-sdk
+id: docs-chain-build-initialize-sdk
 title: Initialize Push Chain SDK
 hide_title: true
 slug: ./initialize-chain
@@ -32,15 +32,16 @@ const wallet = new ethers.Wallet(privateKey, provider)
 
 // 2. Create universal signer from ethers wallet
 const signer = await PushChain.utils.signer.toUniversalFromKeyPair(wallet, {
-  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-  library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6,
+chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6,
 })
 
 // 3. Initialize Push Chain SDK on your preferred network
 const pushChainClient = await PushChain.initialize(signer, {
-  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 })
-```
+
+````
   </TabItem>
   <TabItem value="viem" attributes={{className: "codetab viem"}} default>
 ```typescript
@@ -58,7 +59,8 @@ const signer = await PushChain.utils.signer.toUniversalFromKeyPair(account, {
 const pushChainClient = await PushChain.initialize(signer, {
   network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
 })
-```
+````
+
  </TabItem>
   <TabItem value="solana" attributes={{className: "codetab sol"}}>
 ```typescript
@@ -69,15 +71,16 @@ const account = Keypair.fromSecretKey(privateKey)
 
 // 2. Create universal signer from Solana keypair
 const signer = await PushChain.utils.signer.toUniversalFromKeyPair(account, {
-  chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
-  library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
 })
 
 // 3. Initialize Push Chain SDK on Testnet for Solana
 const pushChainClient = await PushChain.initialize(signer, {
-  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 })
-```
+
+````
   </TabItem>
 </Tabs>
 
@@ -120,27 +123,27 @@ PushChain {
     sendTransaction: [Function: bound execute]
   }
 }
-```
+````
 
-| Property          | Type           | Remarks                                                                                                                                                                            |
-| ----------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `orchestartor`    | `Orchestrator` | The core orchestrator that manages the universal signer, RPC configuration, and Push client. Contains universalSigner, rpcUrl settings, printTraces flag, and pushClient instance. |
-| `universal`       | `Object`       | High-level interface providing universal blockchain operations including account access, transaction sending, and origin chain information.                                         |
+| Property       | Type           | Remarks                                                                                                                                                                            |
+| -------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `orchestartor` | `Orchestrator` | The core orchestrator that manages the universal signer, RPC configuration, and Push client. Contains universalSigner, rpcUrl settings, printTraces flag, and pushClient instance. |
+| `universal`    | `Object`       | High-level interface providing universal blockchain operations including account access, transaction sending, and origin chain information.                                        |
 
 #### Universal Interface Properties
 
-| Property          | Type              | Remarks                                                                                                                  |
-| ----------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| `origin`          | `Getter`          | Returns the origin chain address for the universal signer.                                                          |
-| `account`         | `Getter`          | Returns the UEA address of the universal signer.                                                                    |
-| `sendTransaction` | `Function`        | Bound execute method for cross-chain transaction execution on Push Chain with parameters like target, value, data, gas settings, and deadline. |
+| Property          | Type       | Remarks                                                                                                                                        |
+| ----------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `origin`          | `Getter`   | Returns the origin chain address for the universal signer.                                                                                     |
+| `account`         | `Getter`   | Returns the UEA address of the universal signer.                                                                                               |
+| `sendTransaction` | `Function` | Bound execute method for cross-chain transaction execution on Push Chain with parameters like target, value, data, gas settings, and deadline. |
 
 #### Orchestrator Properties
 
 | Property          | Type              | Remarks                                                                                                                  |
 | ----------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------ |
 | `universalSigner` | `UniversalSigner` | Chain-agnostic signer containing chain info, address, and signing methods (signMessage, signTransaction, signTypedData). |
-| `rpcUrls`         | `Object`          | RPC URL configuration mapped by chain IDs. Empty object {} when using default URLs. |
+| `rpcUrls`         | `Object`          | RPC URL configuration mapped by chain IDs. Empty object {} when using default URLs.                                      |
 | `printTraces`     | `boolean`         | Debug flag that controls whether internal trace logs are printed to console.                                             |
 | `pushClient`      | `PushClient`      | Internal Push client instance containing publicClient, pushChainInfo, and signer credentials for Push Chain operations.  |
 
@@ -150,26 +153,26 @@ PushChain {
 
 The `NETWORK` enum specifies the Push Chain environment the SDK will connect to. It determines the RPC endpoints, contract addresses, and network context for interacting with Push Chain.
 
-| Value      | Description                   |
-| ---------- | ----------------------------- |
-| `MAINNET`  | Production environment        |
+| Value                        | Description                   |
+| ---------------------------- | ----------------------------- |
+| `MAINNET`                    | Production environment        |
 | `TESTNET_DONUT` or `TESTNET` | Testing environment           |
-| `LOCALNET` | Local development environment |
+| `LOCALNET`                   | Local development environment |
 
 #### `CHAIN` Values
 
 The `CHAIN` enum defines all supported blockchain networks that can be used with Push Chain.
 
-| Value              | Network Type | Description                          |
-| ------------------ | ------------ | ------------------------------------ |
-| `PUSH_MAINNET`     | Push Chain   | Push Chain mainnet                   |
+| Value                                  | Network Type | Description                          |
+| -------------------------------------- | ------------ | ------------------------------------ |
+| `PUSH_MAINNET`                         | Push Chain   | Push Chain mainnet                   |
 | `PUSH_TESTNET_DONUT` or `PUSH_TESTNET` | Push Chain   | Push Chain testnet                   |
-| `PUSH_LOCALNET`    | Push Chain   | Push Chain local development network |
-| `ETHEREUM_MAINNET` | Ethereum     | Ethereum mainnet                     |
-| `ETHEREUM_SEPOLIA` | Ethereum     | Ethereum testnet (Sepolia)           |
-| `SOLANA_MAINNET`   | Solana       | Solana mainnet                       |
-| `SOLANA_TESTNET`   | Solana       | Solana testnet                       |
-| `SOLANA_DEVNET`    | Solana       | Solana development network           |
+| `PUSH_LOCALNET`                        | Push Chain   | Push Chain local development network |
+| `ETHEREUM_MAINNET`                     | Ethereum     | Ethereum mainnet                     |
+| `ETHEREUM_SEPOLIA`                     | Ethereum     | Ethereum testnet (Sepolia)           |
+| `SOLANA_MAINNET`                       | Solana       | Solana mainnet                       |
+| `SOLANA_TESTNET`                       | Solana       | Solana testnet                       |
+| `SOLANA_DEVNET`                        | Solana       | Solana development network           |
 
 ## Example
 
