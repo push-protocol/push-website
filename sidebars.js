@@ -53,7 +53,7 @@ const sidebars = {
         },
         {
           type: 'doc',
-          id: 'chain/setup/docs-chain-setup-local-deployment',
+          id: 'chain/setup/docs-chain-setup-localnet',
         },
       ],
     },

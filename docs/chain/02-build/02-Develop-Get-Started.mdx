@@ -27,8 +27,22 @@ import {
   AFocus,
   AImp,
 } from '@site/src/css/SharedStyling';
+import SandboxIDE from '@site/src/components/SandboxIDE/SandboxIDE';
 
 ## Speed run
+
+<SandboxIDE files={{
+  '/index.js': `\
+// Import required modules
+console.log("Hello World")
+`
+}} /
+
+>
+
+# Push Chain SDK: Node Console Playground
+
+Below you can run pure **Node.js** code, import `@pushchain/core`, and see the output in the terminal pane.
 
 The following speed run is designed to give you a quick overview of usage and demonstrates how Push Chain SDK can be integrated successfully in minimal lines of code.
 
