@@ -136,6 +136,87 @@ const chainAgnosticStr = PushChain.utils.account.toChainAgnostic(
 // => 'eip155:1:0xabc123...'
 ```
 
+### 1.4 `PushChain.utils.account.convertOriginToExecutor`
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+
+```typescript
+const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
+  universalAccount,
+  {
+    status: true
+  }
+);
+```
+
+  </TabItem>
+</Tabs>
+
+### `convertOriginToExecutor` parameters
+
+| **Param**        | **Type**          | **Remarks**                                                                                               |
+| ---------------- | ----------------- | --------------------------------------------------------------------------------------------------------- |
+| `account`        | `UniversalAccount` | A UniversalAccount object containing chain and address information.                                      |
+| `options.status` | `boolean`         | Whether to check if the computed smart account address is deployed. Set to `true` to include deployment status. |
+
+<Details summary="Expected response">
+
+```typescript
+{
+  address: `0x${string}`;
+  deployed?: boolean; // Only included if options.status is true
+}
+```
+
+Response properties description:
+
+| **Property** | **Type**  | **Description**                                                                    |
+| ------------ | --------- | ---------------------------------------------------------------------------------- |
+| `address`    | `string`  | The computed smart account (executor) address on Push Chain                       |
+| `deployed`   | `boolean` | Whether the smart account is deployed (only present if `options.status` is true) |
+
+</Details>
+
+#### Example: Convert Origin Account to Executor Address
+
+```typescript
+// Create a universal account for Ethereum Sepolia
+const originAccount = PushChain.utils.account.toUniversal(
+  '0x35B84d6848D16415177c64D64504663b998A6ab4',
+  {
+    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  }
+);
+
+// Convert to executor address with deployment status
+const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
+  originAccount,
+  {
+    status: true
+  }
+);
+
+console.log(executorInfo);
+// {
+//   address: '0x1234...abcd',
+//   deployed: false
+// }
+
+// Convert without deployment status
+const executorSimple = await PushChain.utils.account.convertOriginToExecutor(
+  originAccount,
+  {
+    status: false
+  }
+);
+
+console.log(executorSimple);
+// {
+//   address: '0x1234...abcd'
+// }
+```
+
 ## 2. `PushChain.utils.signer`
 
 A namespace for creating `UniversalSigner` objects from different wallet types.
@@ -297,4 +378,12 @@ console.log('CAIP-10 address:', caipAddress);
 const universalAccount = PushChain.utils.account.toUniversal(caipAddress);
 console.log('UniversalAccount:', universalAccount);
 // => { chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA, address: '0x...' }
-```
+
+// Convert origin account to executor address
+const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
+  universalAccount,
+  { status: true }
+);
+console.log('Executor address:', executorInfo);
+// => { address: '0x...', deployed: false }
+``` 
