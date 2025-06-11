@@ -86,8 +86,10 @@ export default function SandboxIDE({ files }: SandboxIDEProps) {
           customSetup={{
             dependencies: {
               '@pushchain/core': 'latest',
-              ethers: 'latest',
+              'ethers': '6.7.0'
             },
+            entry: '/index.js',
+            environment: 'node'
           }}
           files={files}
           options={{
@@ -121,16 +123,6 @@ export default function SandboxIDE({ files }: SandboxIDEProps) {
           </SandpackLayout>
         </SandpackProvider>
       </div>
-      <Sandpack
-        template='node'
-        options={{
-          classes: {
-            'sp-wrapper': 'custom-wrapper',
-            'sp-layout': 'custom-layout',
-            'sp-tab-button': 'custom-tab',
-          },
-        }}
-      />
     </div>
   );
 }
