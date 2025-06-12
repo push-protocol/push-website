@@ -59,7 +59,7 @@ import {
 function App() {
   // Define Wallet Config
   const walletConfig = {
-    env: PushChain.CONSTANTS.ENV.DEVNET,
+    env: CONSTANTS.ENV.DEVNET,
     login: {
       email: true,
       google: true,
@@ -69,8 +69,8 @@ function App() {
       appPreview: true,
     },
     modal: {
-      loginLayout: PushChain.CONSTANTS.LOGIN.SPLIT,
-      connectedLayout: PushChain.CONSTANTS.CONNECTED.HOVER,
+      loginLayout: CONSTANTS.LOGIN.SPLIT,
+      connectedLayout: CONSTANTS.CONNECTED.HOVER,
       appPreview: true,
     },
   };
@@ -106,18 +106,18 @@ Customize the parameters as per your need and the wallet functionality being use
 
 ### PushUniversalWalletProvider
 
-| Param            | Type                                | Default                           | Remarks                                                  |
-| ---------------- | ----------------------------------- | --------------------------------- | -------------------------------------------------------- |
-| _`config`_       | `PushUniversalWalletProviderConfig` | -                                 | Core configuration object for wallet connections         |
-| _`config.env`_   | `PushChain.CONSTANTS.ENV`           | -                                 | Chain environment - 'TESTNET', 'MAINNET', or 'LOCAL'     |
-| `config.uid`     | `string`                            | 'default'                         | Unique identifier for this provider instance             |
-| `config.rpcURL`  | `string`                            | -                                 | Custom JSON-RPC endpoint for supported chains            |
-| `config.login`   | `Object`                            | -                                 | Login method configuration (email, google, wallet)       |
-| `modal`          | `ModalProps`                        | -                                 | Global defaults for login and connected modal instances  |
-| `app`            | `AppMetadata`                       | -                                 | Application branding metadata (logo, title, description) |
-| `themeMode`      | `PushChain.CONSTANTS.THEME`         | `PushChain.CONSTANTS.THEME.LIGHT` | Theme mode - 'LIGHT' or 'DARK'                           |
-| `themeOverrides` | `ThemeOverrides`                    | -                                 | Override the theme settings                              |
-| `children`       | `React.ReactNode`                   | -                                 | Your application components                              |
+| Param            | Type                                | Default                 | Remarks                                                  |
+| ---------------- | ----------------------------------- | ----------------------- | -------------------------------------------------------- |
+| _`config`_       | `PushUniversalWalletProviderConfig` | -                       | Core configuration object for wallet connections         |
+| _`config.env`_   | `CONSTANTS.ENV`                     | -                       | Chain environment - 'TESTNET', 'MAINNET', or 'LOCAL'     |
+| `config.uid`     | `string`                            | 'default'               | Unique identifier for this provider instance             |
+| `config.rpcURL`  | `string`                            | -                       | Custom JSON-RPC endpoint for supported chains            |
+| `config.login`   | `Object`                            | -                       | Login method configuration (email, google, wallet)       |
+| `modal`          | `ModalProps`                        | -                       | Global defaults for login and connected modal instances  |
+| `app`            | `AppMetadata`                       | -                       | Application branding metadata (logo, title, description) |
+| `themeMode`      | `CONSTANTS.THEME`                   | `CONSTANTS.THEME.LIGHT` | Theme mode - 'LIGHT' or 'DARK'                           |
+| `themeOverrides` | `ThemeOverrides`                    | -                       | Override the theme settings                              |
+| `children`       | `React.ReactNode`                   | -                       | Your application components                              |
 
 > Note: Parameters _`in this style`_ are mandatory.
 
