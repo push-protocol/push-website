@@ -31,6 +31,12 @@ function loadClientSideLibraryPushChainUIKit(constantName) {
     : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
 }
 
+function loadClientSideLibraryPushChainCore(constantName) {
+  return typeof window !== 'undefined'
+    ? require('@pushchain/core')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
 // For @pushprotocol/UIWeb components, we will dynamically load them in the BrowserOnly component.
 function createBrowserOnlyLibComponentUIWeb(componentExportName) {
   return function LibComponentBrowserOnly(props) {
@@ -94,6 +100,7 @@ const ReactLiveScope = {
     'usePushWalletContext'
   ),
   CONSTANTS: loadClientSideLibraryPushChainUIKit('CONSTANTS'),
+  PushChain: loadClientSideLibraryPushChainCore('PushChain'),
 };
 
 export default ReactLiveScope;
