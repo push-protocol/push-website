@@ -27,66 +27,38 @@ import {
   AFocus,
   AImp,
 } from '@site/src/css/SharedStyling';
-import SandboxIDE from '@site/src/components/SandboxIDE/SandboxIDE';
+import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
 
 ## Speed run
 
-<SandboxIDE files={{
-  '/index.js': `// Import only what we need from ethers to avoid native dependencies
-const { HDNodeWallet, Wallet, verifyMessage, parseEther, formatEther } = require('ethers');
+<NodeJSVirtualIDE>
+{`
+// you can write imports here, they’ll be stripped out
+import { Wallet } from 'ethers';
 
-// Setup basic HTTP server
-const http = require('http');
-const hostname = '127.0.0.1';
-const port = 3000;
+// 1. Create a random wallet
+const wallet = ethers.Wallet.createRandom();
+console.log('🗝️ Created wallet:', wallet.address);
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('Hello Push Chain');
+// 2. Connect to PushChain RPC
+const provider = new ethers.providers.JsonRpcProvider(
+'https://evm.rpc-testnet-donut-node1.push.org/'
+);
+console.log('🔌 Connected to Push Chain RPC');
+
+// 3. Convert to universal signer
+const signer = wallet.connect(provider);
+const universalSigner = await PushChain.utils.signer.toUniversal(signer);
+console.log('🔑 Got universal signer');
+
+// 4. Init SDK
+const sdk = await PushChain.initialize(universalSigner, {
+network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 });
+console.log('🚀 SDK ready!', sdk);
+`}
 
-server.listen(port, hostname, () => {
-  console.log('Server ready');
-});
-
-// Ethers.js example
-async function main() {
-  try {
-    // Create a new random wallet
-    const wallet = Wallet.createRandom();
-    console.log('Generated new wallet:');
-    console.log('- Address:', wallet.address);
-    console.log('- Public key:', wallet.publicKey);
-
-    // Create a message to sign
-    const message = 'Hello Push Chain!';
-    console.log('Signing message:', message);
-
-    // Sign the message
-    const signature = await wallet.signMessage(message);
-    console.log('Signature:', signature);
-
-    // Verify the signature
-    const recoveredAddress = verifyMessage(message, signature);
-    console.log('Verified signer address:', recoveredAddress);
-    console.log('Matches original address:', recoveredAddress === wallet.address);
-
-    // Format some example values
-    const oneEther = parseEther('1.0');
-    console.log('Formatted values:');
-    console.log('- 1 ETH in wei:', oneEther.toString());
-    console.log('- Back to ETH:', formatEther(oneEther));
-  } catch (err) {
-    console.error('Error:', err.message);
-  }
-}
-
-// Run the example
-main().catch(console.error);`,
-}} />
-
->
+</NodeJSVirtualIDE>
 
 # Push Chain SDK: Node Console Playground
 

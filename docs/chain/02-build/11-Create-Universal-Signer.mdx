@@ -5,7 +5,7 @@ hide_title: true
 slug: ./create-universal-signer
 displayed_sidebar: pushChainSidebar
 sidebar_position: 11
-image: "/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png"
+image: '/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png'
 ---
 
 # Create Universal Signer Overview
@@ -26,6 +26,50 @@ import {
   AFocus,
 } from '@site/src/css/SharedStyling';
 
+```jsx live
+// customPropMinimized='false'
+// Import necessary components from @pushchain/ui-kit
+import {
+  PushUniversalWalletProvider,
+  PushUniversalAccountButton,
+  CONSTANTS,
+} from '@pushchain/ui-kit';
+
+function App() {
+  // Define Wallet Config
+  const walletConfig = {
+    env: CONSTANTS.ENV.DEVNET,
+    login: {
+      email: true,
+      google: true,
+      wallet: {
+        enabled: true,
+      },
+      appPreview: true,
+    },
+    modal: {
+      loginLayout: CONSTANTS.LOGIN.SPLIT,
+      connectedLayout: CONSTANTS.CONNECTED.HOVER,
+      appPreview: true,
+    },
+  };
+
+  // Define Your App Preview
+  const appMetadata = {
+    logoUrl:
+      'https://plus.unsplash.com/premium_photo-1746731481770-08b2f71661d0?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'Test App Title',
+    description: 'Test App Description',
+  };
+
+  return (
+    <PushUniversalWalletProvider config={walletConfig} app={appMetadata}>
+      <PushUniversalAccountButton />
+    </PushUniversalWalletProvider>
+  );
+}
+```
+
 ## Create Universal Signer API
 
 The most common way to create a Universal Signer is by converting an existing signer from supported libraries (Viem, Ethers, Solana).
@@ -42,7 +86,8 @@ const ethersSigner = new ethers.Wallet('0x...', provider);
 
 // Convert to Universal Signer
 const universalSigner = await PushChain.utils.signer.toUniversal(ethersSigner);
-```
+
+````
   </TabItem>
   <TabItem value="viem" attributes={{className: "codetab viem"}} default>
 ```typescript
@@ -61,7 +106,8 @@ const viemClient = createWalletClient({
 
 // Convert to Universal Signer
 const universalSigner = await PushChain.utils.signer.toUniversal(viemClient);
-```
+````
+
   </TabItem>
     <TabItem value="solana" attributes={{className: "codetab sol"}}>
 ```typescript
@@ -75,7 +121,8 @@ const solanaKeypair = Keypair.fromSecretKey(privateKey);
 
 // Convert to Universal Signer
 const universalSigner = await PushChain.utils.signer.toUniversal(solanaKeypair);
-```
+
+````
   </TabItem>
 </Tabs>
 
@@ -99,7 +146,8 @@ const universalSigner = await PushChain.utils.signer.toUniversal(solanaKeypair);
   signTransaction: Function,
   signTypedData: Function
 }
-```
+````
+
 </Details>
 
 ---
@@ -115,36 +163,37 @@ import { PushChain } from '@pushprotocol/core';
 
 // Define account information
 const account = {
-  address: '0xeCba9a32A9823f1cb00cdD8344Bf2D1d87a8dd97',
-  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
+address: '0xeCba9a32A9823f1cb00cdD8344Bf2D1d87a8dd97',
+chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
 };
 
 // Define custom signing functions
 const customSignMessage = async (data) => {
-  // Your custom message signing logic
-  return new Uint8Array([1, 2, 3]);
+// Your custom message signing logic
+return new Uint8Array([1, 2, 3]);
 };
 
 const customSignTransaction = async (unsignedTx) => {
-  // Your custom transaction signing logic  
-  return new Uint8Array([4, 5, 6]);
+// Your custom transaction signing logic  
+ return new Uint8Array([4, 5, 6]);
 };
 
 const customSignTypedData = async (typedDataArgs) => {
-  // Your custom typed data signing logic
-  return new Uint8Array([7, 8, 9]);
+// Your custom typed data signing logic
+return new Uint8Array([7, 8, 9]);
 };
 
 // Step 1: Construct the skeleton
 const skeleton = PushChain.utils.signer.construct(account, {
-  signMessage: customSignMessage,
-  signTransaction: customSignTransaction,
-  signTypedData: customSignTypedData
+signMessage: customSignMessage,
+signTransaction: customSignTransaction,
+signTypedData: customSignTypedData
 });
 
 // Step 2: Convert to Universal Signer
 const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
-```
+
+````
   </TabItem>
 </Tabs>
 
@@ -173,5 +222,6 @@ const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
   signTransaction: Function,
   signTypedData: Function
 }
-```
+````
+
 </Details>

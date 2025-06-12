@@ -28,7 +28,6 @@
     }
   },
   "dependencies": {
-    "@codesandbox/sandpack-react": "^2.20.0",
     "@docusaurus/core": "3.0.1",
     "@docusaurus/cssnano-preset": "3.0.1",
     "@docusaurus/plugin-client-redirects": "3.0.1",

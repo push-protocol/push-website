@@ -4,6 +4,7 @@ import Spinner, {
 } from '@site/src/components/reusables/spinners/SpinnerUnit';
 import GLOBALS from '@site/src/config/globals';
 import React from 'react';
+import { LiveEditor, LiveProvider, LiveError, LivePreview } from 'react-live';
 
 // This function returns a promise that resolves to the library,
 // ensuring it's only imported on the client side.
@@ -62,6 +63,14 @@ function createBrowserOnlyLibComponentUIWeb(componentExportName) {
 const ReactLiveScope = {
   React,
   ...React,
+  LiveEditor,
+  LiveProvider,
+  LiveError,
+  LivePreview,
+  BrowserOnly,
+  Spinner,
+  SPINNER_TYPE,
+  GLOBALS,
   // Asynchronously import ethers and PushAPI only on the client side
   ethers: loadClientSideLibraryEthers('ethers'),
   PushAPI: loadClientSideLibraryPushProtocolRestAPI('PushAPI'),
