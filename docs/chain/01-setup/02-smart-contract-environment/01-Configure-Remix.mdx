@@ -1,0 +1,40 @@
+---
+id: docs-chain-setup-smart-contract-environment-configure-remix
+title: Configure Remix
+hide_title: true
+slug: ./configure-remix
+displayed_sidebar: pushChainSidebar
+sidebar_position: 1
+image: '/assets/docs/previews/docs_notifications_develop--get_started.png'
+---
+
+# Overview
+
+This page covers the setup of your smart contract environment to interact with Push Chain. Whether you are using Remix, Hardhat, Foundry, or any other tooling, this page will guide you through the process.
+
+<head>
+  <title>{`Configure Remix | Smart Contract Environment | Tooling | Setup | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import PushChainSpecs from '@site/src/components/Static/PushChainSpecs';
+import RemixIDE from '@site/src/components/RemixIDE/RemixIDE';
+
+## Deploying and Working with Remix
+
+Remix is an IDE tool provided by Ethereum to enable EVM smart contract development. If you have already added [Push Chain config](/docs/chain/setup/tooling/wallet-setup 'Documentation to add Push Chain as custom network in any third party wallet') to your wallet, you can use Remix to debug or deploy your smart contracts on Push Chain Testnet or Mainnet.
+
+<RemixIDE
+  examples={{
+    'Counter.sol': {
+      absoluteFileURL:
+        'https://github.com/push-protocol/push-chain-examples/blob/main/contracts/hello-world/src/Counter.sol',
+      ctaTitle: 'Open in Github',
+      ctaURL:
+        'https://github.com/push-protocol/push-chain-examples/blob/main/contracts/hello-world/',
+    },
+  }}
+/>
+
+## Next Steps

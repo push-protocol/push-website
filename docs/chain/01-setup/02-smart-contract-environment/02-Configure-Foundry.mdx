@@ -1,0 +1,500 @@
+---
+id: docs-chain-setup-smart-contract-environment-configure-foundry
+title: Configure Foundry
+hide_title: true
+slug: ./configure-foundary
+displayed_sidebar: pushChainSidebar
+sidebar_position: 1
+image: '/assets/docs/previews/docs_notifications_develop--get_started.png'
+---
+
+# Overview
+
+This page covers the setup of your smart contract environment to interact with Push Chain. Whether you are using Remix, Hardhat, Foundry, or any other tooling, this page will guide you through the process.
+
+<head>
+  <title>{`Configure Foundry | Smart Contract Environment | Tooling | Setup | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import PushChainSpecs from '@site/src/components/Static/PushChainSpecs';
+import RemixIDE from '@site/src/components/RemixIDE/RemixIDE';
+
+## Deploying and Working with Remix
+
+Remix is an IDE tool provided by Ethereum to enable EVM smart contract development. If you have already added [Push Chain config](/docs/chain/setup/tooling/wallet-setup 'Documentation to add Push Chain as custom network in any third party wallet') to your wallet, you can use Remix to debug or deploy your smart contracts on Push Chain Testnet or Mainnet.
+
+<RemixIDE
+  examples={{
+    'Counter.sol': {
+      absoluteFileURL:
+        'https://github.com/push-protocol/push-chain-examples/blob/main/contracts/hello-world/src/Counter.sol',
+      ctaTitle: 'Open in Github',
+      ctaURL:
+        'https://github.com/push-protocol/push-chain-examples/blob/main/contracts/hello-world/',
+    },
+  }}
+/>
+
+## Setting up Local Dev Environment
+
+You can use any EVM tooling including Foundry or Hardhat to deploy your smart contracts.
+
+:::info Recommended Practice
+
+Work on your smart contract exactly the same way you would on Ethereum, then use Push Chain configuration to deploy your smart contracts on Push Chain.
+
+:::
+
+## Deploying with Foundry
+
+Foundry is a blazing fast, portable, and modular toolkit for Ethereum application development.
+
+### 1. Install Foundry
+
+To install Foundry, run:
+
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+```
+
+Once the foundryup script is downloaded, follow the on-screen instructions to complete installation. After installation, restart your terminal and run:
+
+```bash
+foundryup
+```
+
+This will ensure you have the latest version of Foundry tools (forge, cast, anvil, and chisel) installed.
+
+### 2. Create a New Project
+
+Create a new Foundry project:
+
+```bash
+forge init myToken
+cd myToken
+```
+
+Install the OpenZeppelin contracts:
+
+```bash
+forge install OpenZeppelin/openzeppelin-contracts
+```
+
+This should create a new project with the following structure:
+
+```
+myToken/
+├── foundry.toml
+├── lib/
+├── out/
+├── script/
+├── src/
+├── test/
+```
+
+### 3. Configure for Push Chain
+
+Now simply modify your `foundry.toml` file to include Push Chain testnet configuration:
+
+```toml
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+remappings = ["@openzeppelin/=lib/openzeppelin-contracts/"]
+
+# Push Chain Testnet configuration
+[rpc_endpoints]
+push_testnet = "https://evm.rpc-testnet-donut-node1.push.org/"
+push_testnet_alt = "https://evm.rpc-testnet-donut-node2.push.org/"
+
+# This is a placeholder - BlockScout doesn't require an API key but Foundry expects a key field
+[etherscan]
+push_testnet = { key = "blockscout", url = "https://explorer.testnet.push.org/api", chain = 42101 }
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+```
+
+This configuration includes:
+
+- Default project structure settings
+- RPC endpoints for Push Chain Donut testnet
+- BlockScout explorer configuration for contract verification
+
+### 4. Write a Smart Contract
+
+Create a new file at `src/MyToken.sol` with the following ERC20 token implementation:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.22;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+/**
+ * @title MyToken
+ * @dev A simple ERC20 token for demonstration on PUSH CHAIN
+ */
+contract MyToken is ERC20, Ownable {
+    constructor() ERC20("MyToken", "MT") Ownable(msg.sender) {
+        _mint(msg.sender, 1000 * 10**18);
+    }
+
+    function decimals() public view virtual override returns (uint8) {
+        return 18;
+    }
+
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
+}
+```
+
+### 5. Compile the Contract
+
+Compile your contract with:
+
+```bash
+forge build
+```
+
+If successful, you should see output similar to:
+
+```
+[⠢] Compiling...
+[⠔] Compiling 18 files with 0.8.22
+[⠑] Solc 0.8.22 finished in 1.51s
+Compiler run successful!
+```
+
+### 6. Deploy to Push Chain
+
+#### 6.1. Set up your deployer account
+
+Following best security practices, we'll use Foundry's wallet management system instead of exposing private keys in environment variables:
+
+```bash
+cast wallet import myKeystore --interactive
+```
+
+You'll be prompted to enter your private key and create a password to encrypt it. This securely stores your key in `~/.foundry/keystores`.
+Read more about [Foundry Wallet Management](https://getfoundry.sh/cast/reference/cast-wallet-import/).
+
+:::warning
+Never use accounts with significant funds for test deployments.
+Never store private keys in plain text or in your repository.
+:::
+
+#### 6.2. Get testnet tokens
+
+Ensure you have testnet tokens to pay for deployment gas fees. If you don't have any, use the Push Chain testnet faucet**.**
+Visiting our [Faucet](https://faucet.push.org/).
+
+#### 6.3. Deploy your contract
+
+```bash
+forge create src/MyToken.sol:MyToken --rpc-url push_testnet --chain 42101 --account myKeystore --broadcast
+```
+
+This command:
+
+- Creates your MyToken contract
+- Uses the Push Chain testnet RPC
+- Specifies the correct chain ID (42101)
+- Uses your securely stored account
+- Broadcasts the transaction to the network
+
+**Deployment Results:**
+
+If successful, you'll see output similar to:
+
+```
+Deployer: 0xa89523351BE1e2De64937AA9AF61Ae06eAd199C7
+Deployed to: 0xF0f1199A048A39336dFD915F146470de1b5d6dAd
+Transaction hash: 0x255e64bbe86253979f070b48db0868f6f108a47e7b7f94586bc869fbd2d98800
+```
+
+Save the contract address for verification and interaction later.
+
+### 7. Verify the Contract
+
+Verify your contract on the Push Chain BlockScout explorer:
+
+```bash
+forge verify-contract --chain 42101 --verifier blockscout --verifier-url https://explorer.testnet.push.org/api 0xF0f1199A048A39336dFD915F146470de1b5d6dAd src/MyToken.sol:MyToken
+```
+
+> **Note:** Replace `0xF0f1199A048A39336dFD915F146470de1b5d6dAd` with your actual deployed contract address.
+
+If successful, you'll see output similar to:
+
+```
+Start verifying contract `0xF0f1199A048A39336dFD915F146470de1b5d6dAd` deployed on 42101
+
+Submitting verification for [src/MyToken.sol:MyToken] 0xF0f1199A048A39336dFD915F146470de1b5d6dAd.
+Submitted contract for verification:
+	Response: `OK`
+	GUID: `f0f1199a048a39336dfd915f146470de1b5d6dad68494bd5`
+	URL: https://explorer.testnet.push.org/address/0xf0f1199a048a39336dfd915f146470de1b5d6dad
+```
+
+Visit the provided URL to view your verified contract on the Push Chain explorer.
+
+That's it! You have successfully deployed and verified your smart contract on Push Chain.
+
+## Deploying with Hardhat
+
+Hardhat is another popular development environment for Ethereum software, designed for professionals that need a flexible and extensible tool.
+
+### 1. Install Hardhat
+
+First, create a new directory for your project and initialize it:
+
+```bash
+mkdir myToken
+cd myToken
+npm init -y
+```
+
+Install Hardhat and required dependencies:
+
+```bash
+npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox @nomicfoundation/hardhat-verify dotenv @openzeppelin/contracts
+```
+
+This installs:
+
+- Hardhat core framework
+- Hardhat toolbox with common plugins
+- Hardhat verify for contract verification
+- dotenv for environment variable management
+- OpenZeppelin contracts library
+
+### 2. Create a New Project
+
+Initialize a new Hardhat project:
+
+```bash
+npx hardhat init
+```
+
+Select "Create a JavaScript project" when prompted. This will create a basic project structure:
+
+```
+myToken/
+├── contracts/
+├── scripts/
+├── test/
+├── hardhat.config.js
+├── package.json
+└── node_modules/
+```
+
+### 3. Configure for Push Chain
+
+Update your `hardhat.config.js` file to include Push Chain testnet configuration:
+
+```javascript
+require('@nomicfoundation/hardhat-toolbox');
+require('@nomicfoundation/hardhat-verify');
+require('dotenv').config();
+
+/** @type import('hardhat/config').HardhatUserConfig */
+module.exports = {
+  solidity: {
+    version: '0.8.22',
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      },
+    },
+  },
+  networks: {
+    push_testnet: {
+      url: 'https://evm.rpc-testnet-donut-node1.push.org/',
+      chainId: 42101,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+    push_testnet_alt: {
+      url: 'https://evm.rpc-testnet-donut-node2.push.org/',
+      chainId: 42101,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+  },
+  etherscan: {
+    apiKey: {
+      // Blockscout doesn't require an actual API key, any non-empty string will work
+      push_testnet: 'blockscout',
+    },
+    customChains: [
+      {
+        network: 'push_testnet',
+        chainId: 42101,
+        urls: {
+          apiURL: 'https://explorer.testnet.push.org/api/v2/verifyContract',
+          browserURL: 'https://explorer.testnet.push.org/',
+        },
+      },
+    ],
+  },
+  sourcify: {
+    // Disable sourcify for manual verification
+    enabled: false,
+  },
+  paths: {
+    sources: './contracts',
+    tests: './test',
+    cache: './cache',
+    artifacts: './artifacts',
+  },
+  mocha: {
+    timeout: 40000,
+  },
+};
+```
+
+This configuration includes:
+
+- Solidity compiler version and optimization settings
+- Push Chain testnet RPC endpoints
+- Blockscout integration for contract verification
+- Project structure paths
+- Test configuration
+
+### 4. Write a Smart Contract
+
+Create a file at `contracts/MyToken.sol` with this ERC20 token implementation:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.22;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+/**
+ * @title MyToken
+ * @dev A simple ERC20 token for demonstration on PUSH CHAIN
+ */
+contract MyToken is ERC20, Ownable {
+    constructor() ERC20("MyToken", "MT") Ownable(msg.sender) {
+        _mint(msg.sender, 1000 * 10**18);
+    }
+
+    /**
+     * @dev Returns the number of decimals used to get its user representation.
+     */
+    function decimals() public view virtual override returns (uint8) {
+        return 18;
+    }
+
+    /**
+     * @dev Allows the owner to mint new tokens
+     * @param to The address that will receive the minted tokens.
+     * @param amount The amount of tokens to mint.
+     */
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
+}
+```
+
+### 5. Compile the Contract
+
+Compile your contract with:
+
+```bash
+npx hardhat compile
+```
+
+If successful, you should see output indicating compilation was successful:
+
+```
+Compiling 12 files with 0.8.22
+Solidity compilation finished successfully
+```
+
+### 6. Deploy to Push Chain
+
+#### 6.1. Set up your deployer account
+
+Create a `.env` file in your project root to securely store your private key:
+
+Then create a deployment script at `scripts/deploy.js`:
+
+```javascript
+const hre = require('hardhat');
+
+async function main() {
+  console.log('Deploying MyToken to PUSH Chain...');
+
+  const myToken = await hre.ethers.deployContract('MyToken');
+  await myToken.waitForDeployment();
+
+  const address = await myToken.getAddress();
+  console.log(`MyToken deployed to: ${address}`);
+}
+
+// We recommend this pattern to be able to use async/await everywhere
+// and properly handle errors.
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+```
+
+:::warning
+Never commit your .env file to version control.
+Add .env to your .gitignore file to prevent accidental exposure of private keys.
+Never use accounts with significant funds for test deployments.
+:::
+
+#### 6.2. Get testnet tokens
+
+Ensure you have testnet tokens to pay for deployment gas fees. If you don't have any, visit the [Push Chain Faucet](https://faucet.push.org/) to request test tokens.
+
+#### 6.3. Deploy your contract
+
+Run the deployment script with:
+
+```bash
+npx hardhat run scripts/deploy.js --network push_testnet
+```
+
+This command:
+
+- Runs your deployment script
+- Connects to Push Chain testnet
+- Uses your private key from the .env file
+- Deploys your contract and waits for confirmation
+
+**Deployment Results:**
+
+If successful, you'll see output similar to:
+
+```
+Deploying MyToken to PUSH Chain...
+MyToken deployed to: 0x0B86e252B035027028C0d4D3B136d80Da4C98Ec1
+```
+
+Save the contract address for verification and interaction.
+
+### 7. Verify the Contract
+
+Verify your contract on the Push Chain BlockScout explorer:
+
+```bash
+npx hardhat verify --network push_testnet 0x0B86e252B035027028C0d4D3B136d80Da4C98Ec1
+```
+
+> **Note:** Replace `0x0B86e252B035027028C0d4D3B136d80Da4C98Ec1` with your actual deployed contract address.
+
+> **Note:** If you encounter issues with verification, you can refer to [Blockscout's Hardhat verification plugin documentation](https://docs.blockscout.com/devs/verification/hardhat-verification-plugin) for troubleshooting.
+
+When successful, you'll receive a confirmation message with a link to view your verified contract on the Push Chain explorer.
+
+That's it! You have successfully deployed and verified your smart contract on Push Chain using Hardhat.
