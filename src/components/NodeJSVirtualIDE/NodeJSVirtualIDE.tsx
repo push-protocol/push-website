@@ -252,7 +252,7 @@ ${escaped}
               gap: '4px',
             }}
           >
-            <AsciiLoader />
+            <AsciiLoader /> Running...
           </div>
         )}
       </div>
