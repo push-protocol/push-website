@@ -137,7 +137,7 @@ Push powers the communication middleware for enabling Push notifications for pro
 
 Push powers the necessary middleware and infrastructure for [Wherever](https://www.wherever.im/), a third-party communications service to show notifications in wallet and platform frontend as well as share with the user’s telegram and email.
 
-On a parallel front, As users continue to become mature and conscious about on-chain security, the demand for hardware wallets will be ever-increasing. Push can also be integrated with companion Apps of Hardware Wallets like [KeepKay](https://www.keepkey.com/), ensuring user’s with mission critical application updates independant of any wallet type.
+On a parallel front, As users continue to become mature and conscious about on-chain security, the demand for hardware wallets will be ever-increasing. Push can also be integrated with companion Apps of Hardware Wallets like [KeepKay](https://www.keepkey.com/), ensuring user’s with mission critical application updates independent of any wallet type.
 
 ShapeShift has remained the second most subscribed channel for over a year, with a total subscriber count of more than **28,000** with a growth of more than **306%** as compared to previous year.
 <!-- shapeshift subscriber count -->
