@@ -1,24 +1,60 @@
+import Link from '@docusaurus/Link';
 import React, { useEffect, useState } from 'react';
 
 interface RemixIDEProps {
-  examples?: Record<string, string>;
+  examples: {
+    [filename: string]: {
+      absoluteFileURL: string;
+      ctaTitle: string;
+      ctaURL: string;
+    };
+  };
 }
 
-export default function RemixIDE({ examples = {} }: RemixIDEProps) {
-  const exampleKeys = Object.keys(examples);
-  const defaultRemixURL = 'https://remix.ethereum.org';
-  const [selected, setSelected] = useState(exampleKeys[0] || null);
+export default function RemixIDE({ examples }: RemixIDEProps) {
+  // Force examples to be treated as a plain object to ensure proper key extraction
+  const examplesObj = { ...examples };
+
+  // Extract keys directly from the examples object
+  const exampleKeys = Object.keys(examplesObj);
+
+  const defaultRemixURL = 'https://remix.push.org';
+
+  // Initialize state with the first key from our extracted keys
+  const [selected, setSelected] = useState<string | null>(
+    exampleKeys.length > 0 ? exampleKeys[0] : null
+  );
+
+  // Force update selected if it doesn't match any key in examples
+  useEffect(() => {
+    if (
+      exampleKeys.length > 0 &&
+      (!selected || !exampleKeys.includes(selected))
+    ) {
+      setSelected(exampleKeys[0]);
+    }
+  }, [exampleKeys, selected]);
+
   const [isFullScreen, setIsFullScreen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const getRemixURL = () => {
-    if (!selected || !examples[selected]) {
+    if (
+      !selected ||
+      !examplesObj[selected] ||
+      !examplesObj[selected].absoluteFileURL
+    ) {
       return defaultRemixURL;
     }
-    const githubUrl = examples[selected];
-    const remixUrl = new URL(defaultRemixURL);
-    remixUrl.hash = `url=${githubUrl}`;
-    return remixUrl.toString();
+
+    try {
+      const githubUrl = examplesObj[selected].absoluteFileURL;
+      const remixUrl = new URL(defaultRemixURL);
+      remixUrl.hash = `url=${githubUrl}`;
+      return remixUrl.toString();
+    } catch (error) {
+      return defaultRemixURL;
+    }
   };
 
   useEffect(() => {
@@ -60,25 +96,41 @@ export default function RemixIDE({ examples = {} }: RemixIDEProps) {
           padding: '10px 15px',
           borderBottom: '1px solid rgb(226, 232, 240)',
           backgroundColor: '#f8fafc',
+          gap: '16px',
         }}
       >
         <div style={{ fontSize: '16px', fontWeight: 500, color: '#475569' }}>
           Remix IDE
         </div>
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+        <div
+          style={{
+            display: 'flex',
+            gap: '10px',
+            alignItems: 'center',
+            flex: '1',
+            flexWrap: 'wrap',
+            justifyContent: 'flex-end',
+          }}
+        >
+          {/* Render CTA */}
+          {exampleKeys.length > 0 &&
+            selected &&
+            examplesObj[selected]?.ctaURL && (
+              <Link
+                to={examplesObj[selected].ctaURL}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='topbar-btn'
+              >
+                {examplesObj[selected]?.ctaTitle || 'View Code'}
+              </Link>
+            )}
+
           {exampleKeys.length > 0 && (
             <select
               value={selected ?? ''}
               onChange={(e) => setSelected(e.target.value)}
-              style={{
-                padding: '8px 12px',
-                fontSize: '14px',
-                borderRadius: '6px',
-                border: '1px solid rgb(226, 232, 240)',
-                backgroundColor: '#fff',
-                color: '#475569',
-                cursor: 'pointer',
-              }}
+              className='topbar-btn'
             >
               {exampleKeys.map((key) => (
                 <option key={key} value={key}>
@@ -90,21 +142,33 @@ export default function RemixIDE({ examples = {} }: RemixIDEProps) {
 
           <button
             onClick={() => setIsFullScreen(!isFullScreen)}
-            style={{
-              padding: '8px 12px',
-              fontSize: '14px',
-              borderRadius: '6px',
-              border: '1px solid rgb(226, 232, 240)',
-              backgroundColor: '#fff',
-              color: '#475569',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-            }}
+            className='topbar-btn'
           >
             {isFullScreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
           </button>
+
+          {/* Hover & focus styles */}
+          <style>{`
+            .topbar-btn {
+              padding: 8px 12px;
+              height: 35px;
+              font-size: 14px;
+              border-radius: 6px;
+              border: 1px solid #e2e8f0;
+              background-color: #fff;
+              color: #475569;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              transition: background-color 0.2s, border-color 0.2s;
+            }
+            .topbar-btn:hover {
+              background-color: #dd44b9;
+              border-color: #dd44b9;
+              color: #fff;
+            }
+          `}</style>
         </div>
       </div>
 

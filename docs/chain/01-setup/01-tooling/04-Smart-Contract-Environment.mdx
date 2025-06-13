@@ -27,8 +27,13 @@ Remix is an IDE tool provided by Ethereum to enable EVM smart contract developme
 
 <RemixIDE
   examples={{
-    'Counter.sol':
-      'https://github.com/push-protocol/push-chain-examples/blob/main/contracts/hello-world/src/Counter.sol',
+    'Counter.sol': {
+      absoluteFileURL:
+        'https://github.com/push-protocol/push-chain-examples/blob/main/contracts/hello-world/src/Counter.sol',
+      ctaTitle: 'Open in Github',
+      ctaURL:
+        'https://github.com/push-protocol/push-chain-examples/blob/main/contracts/hello-world/',
+    },
   }}
 />
 
@@ -43,6 +48,7 @@ Work on your smart contract exactly the same way you would on Ethereum, then use
 :::
 
 ## Deploying with Foundry
+
 Foundry is a blazing fast, portable, and modular toolkit for Ethereum application development.
 
 ### 1. Install Foundry
@@ -75,6 +81,7 @@ Install the OpenZeppelin contracts:
 ```bash
 forge install OpenZeppelin/openzeppelin-contracts
 ```
+
 This should create a new project with the following structure:
 
 ```
@@ -111,6 +118,7 @@ push_testnet = { key = "blockscout", url = "https://explorer.testnet.push.org/ap
 ```
 
 This configuration includes:
+
 - Default project structure settings
 - RPC endpoints for Push Chain Donut testnet
 - BlockScout explorer configuration for contract verification
@@ -176,7 +184,7 @@ You'll be prompted to enter your private key and create a password to encrypt it
 Read more about [Foundry Wallet Management](https://getfoundry.sh/cast/reference/cast-wallet-import/).
 
 :::warning
-Never use accounts with significant funds for test deployments. 
+Never use accounts with significant funds for test deployments.
 Never store private keys in plain text or in your repository.
 :::
 
@@ -192,6 +200,7 @@ forge create src/MyToken.sol:MyToken --rpc-url push_testnet --chain 42101 --acco
 ```
 
 This command:
+
 - Creates your MyToken contract
 - Uses the Push Chain testnet RPC
 - Specifies the correct chain ID (42101)
@@ -257,6 +266,7 @@ npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox @nomicfoundation
 ```
 
 This installs:
+
 - Hardhat core framework
 - Hardhat toolbox with common plugins
 - Hardhat verify for contract verification
@@ -288,66 +298,67 @@ myToken/
 Update your `hardhat.config.js` file to include Push Chain testnet configuration:
 
 ```javascript
-require("@nomicfoundation/hardhat-toolbox");
-require("@nomicfoundation/hardhat-verify");
-require("dotenv").config();
+require('@nomicfoundation/hardhat-toolbox');
+require('@nomicfoundation/hardhat-verify');
+require('dotenv').config();
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: {
-    version: "0.8.22",
+    version: '0.8.22',
     settings: {
       optimizer: {
         enabled: true,
-        runs: 200
-      }
-    }
+        runs: 200,
+      },
+    },
   },
   networks: {
     push_testnet: {
-      url: "https://evm.rpc-testnet-donut-node1.push.org/",
+      url: 'https://evm.rpc-testnet-donut-node1.push.org/',
       chainId: 42101,
       accounts: [process.env.PRIVATE_KEY],
     },
     push_testnet_alt: {
-      url: "https://evm.rpc-testnet-donut-node2.push.org/",
+      url: 'https://evm.rpc-testnet-donut-node2.push.org/',
       chainId: 42101,
       accounts: [process.env.PRIVATE_KEY],
-    }
+    },
   },
   etherscan: {
     apiKey: {
       // Blockscout doesn't require an actual API key, any non-empty string will work
-      push_testnet: "blockscout"
+      push_testnet: 'blockscout',
     },
     customChains: [
       {
-        network: "push_testnet",
+        network: 'push_testnet',
         chainId: 42101,
         urls: {
-          apiURL: "https://explorer.testnet.push.org/api/v2/verifyContract",
-          browserURL: "https://explorer.testnet.push.org/"
-        }
-      }
-    ]
+          apiURL: 'https://explorer.testnet.push.org/api/v2/verifyContract',
+          browserURL: 'https://explorer.testnet.push.org/',
+        },
+      },
+    ],
   },
   sourcify: {
     // Disable sourcify for manual verification
-    enabled: false
+    enabled: false,
   },
   paths: {
-    sources: "./contracts",
-    tests: "./test",
-    cache: "./cache",
-    artifacts: "./artifacts"
+    sources: './contracts',
+    tests: './test',
+    cache: './cache',
+    artifacts: './artifacts',
   },
   mocha: {
-    timeout: 40000
-  }
+    timeout: 40000,
+  },
 };
 ```
 
 This configuration includes:
+
 - Solidity compiler version and optimization settings
 - Push Chain testnet RPC endpoints
 - Blockscout integration for contract verification
@@ -416,12 +427,12 @@ Create a `.env` file in your project root to securely store your private key:
 Then create a deployment script at `scripts/deploy.js`:
 
 ```javascript
-const hre = require("hardhat");
+const hre = require('hardhat');
 
 async function main() {
-  console.log("Deploying MyToken to PUSH Chain...");
+  console.log('Deploying MyToken to PUSH Chain...');
 
-  const myToken = await hre.ethers.deployContract("MyToken");
+  const myToken = await hre.ethers.deployContract('MyToken');
   await myToken.waitForDeployment();
 
   const address = await myToken.getAddress();
@@ -433,7 +444,7 @@ async function main() {
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
-}); 
+});
 ```
 
 :::warning
@@ -455,6 +466,7 @@ npx hardhat run scripts/deploy.js --network push_testnet
 ```
 
 This command:
+
 - Runs your deployment script
 - Connects to Push Chain testnet
 - Uses your private key from the .env file

@@ -202,9 +202,6 @@ export default function Playground({
 
   // ——— remove empty lines from top and bottom for execution ———
   const displayCode = strippedChildren.replace(/^\s*\r?\n+|\r?\n+\s*$/g, '');
-  console.debug('--T--');
-  console.debug(displayCode);
-  console.debug('----');
 
   // decide code environment
   const codeEnv = isNodeJSEnv
