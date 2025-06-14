@@ -19,8 +19,14 @@ module.exports = function () {
             zlib: require.resolve('browserify-zlib'),
             crypto: require.resolve('crypto-browserify'),
             vm: require.resolve('vm-browserify'),
+            process: require.resolve('process/browser'),
           },
         },
+        plugins: [
+          new webpack.ProvidePlugin({
+            process: 'process/browser',
+          }),
+        ],
         module: {
           rules: [
             {

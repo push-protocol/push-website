@@ -4,6 +4,7 @@ import Spinner, {
 } from '@site/src/components/reusables/spinners/SpinnerUnit';
 import GLOBALS from '@site/src/config/globals';
 import React from 'react';
+import { LiveEditor, LiveProvider, LiveError, LivePreview } from 'react-live';
 
 // This function returns a promise that resolves to the library,
 // ensuring it's only imported on the client side.
@@ -22,6 +23,18 @@ function loadClientSideLibraryPushProtocolRestAPI(constantName) {
 function loadClientSideLibraryPushProtocolUIWeb(constantName) {
   return typeof window !== 'undefined'
     ? require('@pushprotocol/uiweb')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
+function loadClientSideLibraryPushChainUIKit(constantName) {
+  return typeof window !== 'undefined'
+    ? require('@pushchain/ui-kit')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
+function loadClientSideLibraryPushChainCore(constantName) {
+  return typeof window !== 'undefined'
+    ? require('@pushchain/core')[constantName]
     : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
 }
 
@@ -50,10 +63,18 @@ function createBrowserOnlyLibComponentUIWeb(componentExportName) {
 const ReactLiveScope = {
   React,
   ...React,
+  LiveEditor,
+  LiveProvider,
+  LiveError,
+  LivePreview,
+  BrowserOnly,
+  Spinner,
+  SPINNER_TYPE,
+  GLOBALS,
   // Asynchronously import ethers and PushAPI only on the client side
   ethers: loadClientSideLibraryEthers('ethers'),
   PushAPI: loadClientSideLibraryPushProtocolRestAPI('PushAPI'),
-  CONSTANTS: loadClientSideLibraryPushProtocolRestAPI('CONSTANTS'),
+  // CONSTANTS: loadClientSideLibraryPushProtocolRestAPI('CONSTANTS'),
   MODAL_POSITION_TYPE: loadClientSideLibraryPushProtocolUIWeb(
     'MODAL_POSITION_TYPE'
   ),
@@ -73,11 +94,23 @@ const ReactLiveScope = {
   ChatPreviewList: createBrowserOnlyLibComponentUIWeb('ChatPreviewList'),
   darkChatTheme: createBrowserOnlyLibComponentUIWeb('darkChatTheme'),
   lightChatTheme: createBrowserOnlyLibComponentUIWeb('lightChatTheme'),
-  NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
+  // NotificationItem: createBrowserOnlyLibComponentUIWeb('NotificationItem'),
   SubscriptionManager: createBrowserOnlyLibComponentUIWeb(
     'SubscriptionManager'
   ),
   WidgetUIProvider: createBrowserOnlyLibComponentUIWeb('WidgetUIProvider'),
+  PushUniversalWalletProvider: loadClientSideLibraryPushChainUIKit(
+    'PushUniversalWalletProvider'
+  ),
+  PushUniversalAccountButton: loadClientSideLibraryPushChainUIKit(
+    'PushUniversalAccountButton'
+  ),
+  usePushWalletContext: loadClientSideLibraryPushChainUIKit(
+    'usePushWalletContext'
+  ),
+  usePushChainClient: loadClientSideLibraryPushChainUIKit('usePushChainClient'),
+  PushUI: loadClientSideLibraryPushChainUIKit('PushUI'),
+  PushChain: loadClientSideLibraryPushChainCore('PushChain'),
 };
 
 export default ReactLiveScope;
