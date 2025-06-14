@@ -19,13 +19,13 @@ This example demonstrates a basic wallet integration with the basic theme overri
 import {
   PushUniversalWalletProvider,
   PushUniversalAccountButton,
-  usePushWalletContext,
-  CONSTANTS,
+  usePushChainClient,
+  PushUI,
 } from '@pushchain/ui-kit';
 
 function App() {
   const walletConfig = {
-    env: CONSTANTS.ENV.DEVNET,
+    network: PushUI.CONSTANTS.NETWORK.TESTNET,
     login: {
       email: true,
       google: true,
@@ -35,8 +35,8 @@ function App() {
       appPreview: true,
     },
     modal: {
-      loginLayout: CONSTANTS.LOGIN.SPLIT,
-      connectedLayout: CONSTANTS.CONNECTED.HOVER,
+      loginLayout: PushUI.CONSTANTS.LOGIN.SPLIT,
+      connectedLayout: PushUI.CONSTANTS.CONNECTED.HOVER,
       appPreview: true,
     },
   };
@@ -49,7 +49,7 @@ function App() {
   };
 
   function WalletUI() {
-    const { universalAddress } = usePushWalletContext();
+    const { universalAccount } = usePushChainClient();
 
     return (
       <div>

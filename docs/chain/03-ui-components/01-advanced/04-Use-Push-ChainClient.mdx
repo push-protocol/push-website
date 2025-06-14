@@ -17,7 +17,7 @@ The `usePushChainClient` hook initializes and manages a Push Chain client instan
 import { usePushChainClient } from '@pushchain/ui-kit';
 
 function MyComponent() {
-  const { pushChain, isLoading, error } = usePushChainClient(uid); // optional: uid parameter for targeting a specific wallet instance
+  const { universalAccount, pushChainClient, isLoading, error } = usePushChainClient(uid); // optional: uid parameter for targeting a specific wallet instance
 
   if (isLoading) {
     // handle loading states
@@ -32,7 +32,7 @@ function MyComponent() {
   const handleTransaction = async () => {
     try {
       if (pushChain) {
-        const { txHash } = await pushChain.tx.send(
+        const { txHash } = await pushChainClient.universal.sendTransaction(
           // add recipient accounts &&  transaction data
         );
         console.log('Transaction hash:', txHash);

@@ -15,13 +15,8 @@ The `usePushWalletContext` hook provides access to the current wallet state and 
 import { usePushWalletContext } from '@pushchain/ui-kit';
 
 function Component() {
-  const {
-    connectionStatus,
-    universalAddress,
-    handleConnectToPushWallet,
-    handleUserLogOutEvent,
-    handleSignMessage,
-  } = usePushWalletContext(uid); // Optional: uid parameter for targeting a specific wallet instance
+  const { connectionStatus, handleConnectToPushWallet, handleUserLogOutEvent } =
+    usePushWalletContext(uid); // Optional: uid parameter for targeting a specific wallet instance
 
   // Use these values to interact with wallet state
 }

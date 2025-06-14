@@ -32,10 +32,10 @@ Wrap your application with `PushUniversalWalletProvider` to make wallet function
   <TabItem value="react" attributes={{className: "codetab react"}} default>
 
 ```typescript
-import { CONSTANTS, PushUniversalWalletProvider, PushUniversalWalletProviderConfig } from '@pushchain/ui-kit';
+import { PushUI, PushUniversalWalletProvider, PushUniversalWalletProviderConfig } from '@pushchain/ui-kit';
 
 const walletConfig: PushUniversalWalletProviderConfig = {
-  env: CONSTANTS.ENV.DEVNET,
+  env: PushUI.CONSTANTS.NETWORK.LOCALNET,
 }
 
 

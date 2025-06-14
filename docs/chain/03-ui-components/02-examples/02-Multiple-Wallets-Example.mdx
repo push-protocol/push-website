@@ -18,14 +18,14 @@ This example demonstrates a multiple wallet integration with the Push Universal 
 import {
   PushUniversalWalletProvider,
   PushUniversalAccountButton,
-  usePushWalletContext,
-  CONSTANTS,
+  usePushChainClient,
+  PushUI,
 } from '@pushchain/ui-kit';
 
 function App() {
   const walletConfig = {
     uid: 'wallet1',
-    env: CONSTANTS.ENV.DEVNET,
+    network: PushUI.CONSTANTS.NETWORK.TESTNET,
     login: {
       email: true,
       google: true,
@@ -35,15 +35,15 @@ function App() {
       appPreview: false,
     },
     modal: {
-      loginLayout: CONSTANTS.LOGIN.SPLIT,
-      connectedLayout: CONSTANTS.CONNECTED.HOVER,
+      loginLayout: PushUI.CONSTANTS.LOGIN.SPLIT,
+      connectedLayout: PushUI.CONSTANTS.CONNECTED.HOVER,
       appPreview: true,
     },
   };
 
   const secondWalletConfig = {
     uid: 'wallet2',
-    env: CONSTANTS.ENV.DEVNET,
+    network: PushUI.CONSTANTS.NETWORK.TESTNET,
     login: {
       email: false,
       google: false,
@@ -69,8 +69,8 @@ function App() {
   };
 
   function WalletUI() {
-    const { universalAddress } = usePushWalletContext('wallet1');
-    const { universalAddress: secondAddress } = usePushWalletContext('wallet2');
+    const { universalAccount } = usePushChainClient('wallet1');
+    const { universalAccount: secondAccount } = usePushChainClient('wallet2');
 
     return (
       <div

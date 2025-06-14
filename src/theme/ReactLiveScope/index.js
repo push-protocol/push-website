@@ -108,7 +108,8 @@ const ReactLiveScope = {
   usePushWalletContext: loadClientSideLibraryPushChainUIKit(
     'usePushWalletContext'
   ),
-  CONSTANTS: loadClientSideLibraryPushChainUIKit('CONSTANTS'),
+  usePushChainClient: loadClientSideLibraryPushChainUIKit('usePushChainClient'),
+  PushUI: loadClientSideLibraryPushChainUIKit('PushUI'),
   PushChain: loadClientSideLibraryPushChainCore('PushChain'),
 };
 
