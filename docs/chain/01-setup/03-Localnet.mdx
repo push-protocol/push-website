@@ -88,17 +88,17 @@ pchaind debug addr 778d3206374f8ac265728e18e3fe2ae6b93e4ce4
 
 > 🔁 Replace `778d...ce4` with your **own EVM address** (without the `0x` prefix).
 
-3. You’ll get output like:
+3. You should get an output like this:
 
 ```
 Address (hex): 778D3206374F8AC265728E18E3FE2AE6B93E4CE4
-Bech32 Acc: push1w7xnyp3hf79vyetj3cvw8l32u6unun8yr6zn60
+Bech32 Acc: push1jtdw9kjc2yptl6yjyad69q73v2gcl29xfmmq5a
 ```
 
-4. **Use the Bech32 account address** (e.g. `push1w7xnyp3hf79vyetj3cvw8l32u6unun8yr6zn60`) to receive funds:
+4. **Use the Bech32 account address** (e.g. `push1jtdw9kjc2yptl6yjyad69q73v2gcl29xfmmq5a`) to receive funds:
 
 ```bash
-pchaind tx bank send push1gjaw568e35hjc8udhat0xnsxxmkm2snrexxz20 push1w7xnyp3hf79vyetj3cvw8l32u6unun8yr6zn60 100000000000000000000000upc --gas-prices 1000000000upc -y
+pchaind tx bank send push1gjaw568e35hjc8udhat0xnsxxmkm2snrexxz20 push1jtdw9kjc2yptl6yjyad69q73v2gcl29xfmmq5a 100000000000000000000000upc --gas-prices 1000000000upc -y
 ```
 
 > The `push1gjaw568e35hjc8udhat0xnsxxmkm2snrexxz20` address is pre-funded at genesis with **2 billion UPC**, so it’s safe to use as the sender.
