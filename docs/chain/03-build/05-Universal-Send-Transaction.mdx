@@ -1,10 +1,10 @@
 ---
-id: docs-send-transaction
-title: Send Transaction
+id: docs-chain-build-send-universal-transaction
+title: Send Universal Transaction
 hide_title: true
-slug: ./send-transaction
+slug: ./send-universal-transaction
 displayed_sidebar: pushChainSidebar
-sidebar_position: 7
+sidebar_position: 5
 image: '/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png'
 ---
 
@@ -43,8 +43,8 @@ const txHash = await pushChainClient.universal.sendTransaction({
 
 | **Param**              | **Type** | **Remarks**                                           |
 | ---------------------- | -------- | ----------------------------------------------------- |
-| _`to`_               | `string` | The address of the recipient.                         |
-| _`value`_                | `BigInt` | The value to send in wei.                             |
+| _`to`_                 | `string` | The address of the recipient.                         |
+| _`value`_              | `BigInt` | The value to send in wei.                             |
 | `data`                 | `string` | The data to send.                                     |
 | `gasLimit`             | `BigInt` | The gas limit for the transaction.                    |
 | `maxFeePerGas`         | `BigInt` | The maximum fee per gas for the transaction.          |
@@ -53,11 +53,13 @@ const txHash = await pushChainClient.universal.sendTransaction({
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<Details summary="Expected response">
+<Details summary='Expected response'>
+
 ```typescript
 // Transaction hash
 '0x491695a337b0fca5dd24f626bf2595ca16281ae92b2807b611b115e66d42b3c2';
 ```
+
 </Details>
 
 ---
@@ -73,7 +75,7 @@ import { ethers } from 'ethers';
 
 // Define the ABI for the ERC20 transfer function
 const erc20Abi = [
-  'function transfer(address to, uint256 amount) returns (bool)',
+'function transfer(address to, uint256 amount) returns (bool)',
 ];
 
 // Create an Interface instance
@@ -81,17 +83,18 @@ const interface = new ethers.Interface(erc20Abi);
 
 // Encode the function data
 const data = interface.encodeFunctionData('transfer', [
-  '0xRecipientAddress',
-  ethers.parseEther('10'),
+'0xRecipientAddress',
+ethers.parseEther('10'),
 ]);
 
 // Send the transaction using Push Chain SDK
 const txHash = await pushChainClient.universal.sendTransaction({
-  to: '0xTokenContractAddress', // The smart contract address on Push Chain
-  value: 0n, // No ETH being sent
-  data: data, // Encoded function call
+to: '0xTokenContractAddress', // The smart contract address on Push Chain
+value: 0n, // No ETH being sent
+data: data, // Encoded function call
 });
-```
+
+````
   </TabItem>
   <TabItem value="Viem" attributes={{className: "codetab viem"}} default>
 ```typescript
@@ -115,7 +118,8 @@ const txHash = await pushChainClient.universal.sendTransaction({
   value: BigInt('0'), // No ETH being sent, just contract interaction
   data: data // The encoded function call
 });
-```
+````
+
   </TabItem>
 </Tabs>
 
@@ -134,10 +138,11 @@ const provider = new ethers.JsonRpcProvider('https://evm.pn1.dev.push.org');
 const signer = new ethers.Wallet('YOUR_PRIVATE_KEY', provider);
 
 const txHash = await signer.sendTransaction({
-  to: '0xRecipientAddressHere',
-  value: ethers.utils.parseUnits('0.001', 'ether'),
+to: '0xRecipientAddressHere',
+value: ethers.utils.parseUnits('0.001', 'ether'),
 });
-```
+
+````
 </TabItem>
 <TabItem value="Viem" attributes={{className: "codetab viem"}} default>
 
@@ -161,6 +166,7 @@ const txHash = await walletClient.sendTransaction({
   to: '0xRecipientAddressHere',
   value: parseEther('0.1'),
 });
-```
+````
+
 </TabItem>
 </Tabs>

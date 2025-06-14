@@ -1,10 +1,10 @@
 ---
-id: docs-utility-functions
+id: docs-chain-build-utility-functions
 title: Utility Functions
 hide_title: true
 slug: ./utility-functions
 displayed_sidebar: pushChainSidebar
-sidebar_position: 9
+sidebar_position: 6
 image: '/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png'
 ---
 
@@ -145,7 +145,7 @@ const chainAgnosticStr = PushChain.utils.account.toChainAgnostic(
 const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
   universalAccount,
   {
-    status: true
+    status: true,
   }
 );
 ```
@@ -155,10 +155,10 @@ const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
 
 ### `convertOriginToExecutor` parameters
 
-| **Param**        | **Type**          | **Remarks**                                                                                               |
-| ---------------- | ----------------- | --------------------------------------------------------------------------------------------------------- |
-| `account`        | `UniversalAccount` | A UniversalAccount object containing chain and address information.                                      |
-| `options.status` | `boolean`         | Whether to check if the computed smart account address is deployed. Set to `true` to include deployment status. |
+| **Param**        | **Type**           | **Remarks**                                                                                                     |
+| ---------------- | ------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `account`        | `UniversalAccount` | A UniversalAccount object containing chain and address information.                                             |
+| `options.status` | `boolean`          | Whether to check if the computed smart account address is deployed. Set to `true` to include deployment status. |
 
 <Details summary="Expected response">
 
@@ -171,9 +171,9 @@ const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
 
 Response properties description:
 
-| **Property** | **Type**  | **Description**                                                                    |
-| ------------ | --------- | ---------------------------------------------------------------------------------- |
-| `address`    | `string`  | The computed smart account (executor) address on Push Chain                       |
+| **Property** | **Type**  | **Description**                                                                  |
+| ------------ | --------- | -------------------------------------------------------------------------------- |
+| `address`    | `string`  | The computed smart account (executor) address on Push Chain                      |
 | `deployed`   | `boolean` | Whether the smart account is deployed (only present if `options.status` is true) |
 
 </Details>
@@ -193,7 +193,7 @@ const originAccount = PushChain.utils.account.toUniversal(
 const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
   originAccount,
   {
-    status: true
+    status: true,
   }
 );
 
@@ -207,7 +207,7 @@ console.log(executorInfo);
 const executorSimple = await PushChain.utils.account.convertOriginToExecutor(
   originAccount,
   {
-    status: false
+    status: false,
   }
 );
 
@@ -386,4 +386,4 @@ const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
 );
 console.log('Executor address:', executorInfo);
 // => { address: '0x...', deployed: false }
-``` 
+```

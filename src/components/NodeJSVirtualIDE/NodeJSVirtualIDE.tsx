@@ -96,27 +96,27 @@ function returnPlaygroundCode({
       \`;
 
       // a very minimal browser‐side readline shim
-      const readlineShim = \`
+      const readlineShim = \`;
+        // override Node’s readline
         const readline = {
           createInterface: ({ input, output }) => ({
             question: (questionText, callback) => {
-              if (
+              // if you want special prefix handling:
+              const isPrompt =
                 typeof questionText === 'string' &&
-                questionText.startsWith(':::prompt:::')
-              ) {
-                // strip the prefix and trim
-                const promptMsg = questionText.replace(/^:::prompt:::/, '').trim();
-                const answer = window.alert(promptMsg);
-                callback('');
-              } else {
-                // just display the question and return answer
-                const answer = window.prompt(questionText);
-                callback(answer);
-              }
-            },
-            close: () => {},
-          }),
-        };
+                  questionText.startsWith(':::prompt:::');
+              const text = isPrompt
+                ? questionText.replace(/^:::prompt:::/, '').trim()
+              : questionText;
+            
+            // display prompt
+            const answer = window.prompt(text);
+            // Node's readline.question calls callback(answer);
+            callback(answer);
+          },
+          close: () => {},
+        }),
+      };
       \`;
       
       // shim console
