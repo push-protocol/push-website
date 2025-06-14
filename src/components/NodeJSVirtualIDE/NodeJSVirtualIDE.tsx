@@ -20,22 +20,20 @@ export default function NodeJSVirtualIDE({ repo = null, children }: Props) {
   const userPassedCode = children.trim();
 
   return (
-    <div style={{ maxWidth: 800, margin: '0 auto' }}>
-      <Playground
-        showLineNumbers
-        // pass everything your snippet needs into the scope
-        scope={{
-          ...ReactLiveScope,
-          ethers,
-          PushChain,
-          CONSTANTS: PushChain.CONSTANTS,
-        }}
-        // no-op: we already hand it the fully-wrapped code below
-        transformCode={(code: string) => code}
-      >
-        {returnPlaygroundCode({ userPassedCode, repo })}
-      </Playground>
-    </div>
+    <Playground
+      showLineNumbers
+      // pass everything your snippet needs into the scope
+      scope={{
+        ...ReactLiveScope,
+        ethers,
+        PushChain,
+        CONSTANTS: PushChain.CONSTANTS,
+      }}
+      // no-op: we already hand it the fully-wrapped code below
+      transformCode={(code: string) => code}
+    >
+      {returnPlaygroundCode({ userPassedCode, repo })}
+    </Playground>
   );
 }
 
@@ -148,7 +146,7 @@ function returnPlaygroundCode({
     };
 
     return (
-      <div style={{ maxWidth: 800, margin: '0 auto' }}>
+      <div style={{ margin: '0 auto' }}>
         <LiveEditor
           code={code.replace(/^\\s*[\\r\\n]+|[\\r\\n]+\\s*$/g, '')}
           onChange={setCode}
