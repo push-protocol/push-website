@@ -34,6 +34,20 @@
   direction: ltr;
 }
 
+.playgroundEditor pre {
+  border-radius: 0px;
+}
+
+.playgroundPreview:global(.previewNodeJS) {
+  /* nodejs overrides */
+  padding: 0 0 1rem 0;
+}
+
+.playgroundPreview:global(.previewNodeJS) pre {
+  /* virtual ide no border radius */
+  border-radius: 0px;
+}
+
 .playgroundPreview {
   padding: 1rem;
   background-color: var(--ifm-pre-background);

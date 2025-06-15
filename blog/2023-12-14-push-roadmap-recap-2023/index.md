@@ -87,9 +87,8 @@ For the first time, Web3 messaging is coming at par with and beating most Web2 m
 
 Push launched frontend components for web3 developers to easily integrate Push products into their web3 dapps. Enough talk, let's see it in action
 
-```jsx live customPropMinimized = 'true'
-// DO NOT FORGET TO IMPORT LIBRARIES
-// NOT NEEDED HERE SINCE PLAYGROUND IMPORTS INTERNALLY
+```jsx live
+// customPropMinimized='true'
 import { ChatUIProvider, ChatView } from @pushprotocol/uiweb;
 
 function App(props) {

@@ -1,0 +1,227 @@
+---
+id: docs-chain-build-create-universal-signer
+title: Create Universal Signer
+hide_title: true
+slug: ./create-universal-signer
+displayed_sidebar: pushChainSidebar
+sidebar_position: 2
+image: '/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png'
+---
+
+# Create Universal Signer Overview
+
+The Universal Signer is a standardized way to sign messages and transactions across different blockchain libraries and wallets in the Push Protocol Core SDK. It provides a unified interface that abstracts away the complexity of different signing implementations, allowing you to work seamlessly with various wallet providers and blockchain libraries.
+
+<head>
+  <title>{`Create Universal Signer | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  AFocus,
+} from '@site/src/css/SharedStyling';
+
+```jsx live
+// customPropMinimized='false'
+// Import necessary components from @pushchain/ui-kit
+import {
+  PushUniversalWalletProvider,
+  PushUniversalAccountButton,
+  CONSTANTS,
+} from '@pushchain/ui-kit';
+
+function App() {
+  // Define Wallet Config
+  const walletConfig = {
+    env: CONSTANTS.ENV.DEVNET,
+    login: {
+      email: true,
+      google: true,
+      wallet: {
+        enabled: true,
+      },
+      appPreview: true,
+    },
+    modal: {
+      loginLayout: CONSTANTS.LOGIN.SPLIT,
+      connectedLayout: CONSTANTS.CONNECTED.HOVER,
+      appPreview: true,
+    },
+  };
+
+  // Define Your App Preview
+  const appMetadata = {
+    logoUrl:
+      'https://plus.unsplash.com/premium_photo-1746731481770-08b2f71661d0?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'Test App Title',
+    description: 'Test App Description',
+  };
+
+  return (
+    <PushUniversalWalletProvider config={walletConfig} app={appMetadata}>
+      <PushUniversalAccountButton />
+    </PushUniversalWalletProvider>
+  );
+}
+```
+
+## Create Universal Signer API
+
+The most common way to create a Universal Signer is by converting an existing signer from supported libraries (Viem, Ethers, Solana).
+
+<Tabs className="codetabs" groupId="create-universal-signer">
+  <TabItem value="ethers" attributes={{className: "codetab ethers"}} default>
+```typescript
+import { PushChain } from '@pushprotocol/core';
+import { ethers } from 'ethers';
+
+// Create an Ethers signer
+const provider = new ethers.providers.JsonRpcProvider('...');
+const ethersSigner = new ethers.Wallet('0x...', provider);
+
+// Convert to Universal Signer
+const universalSigner = await PushChain.utils.signer.toUniversal(ethersSigner);
+
+````
+  </TabItem>
+  <TabItem value="viem" attributes={{className: "codetab viem"}} default>
+```typescript
+import { PushChain } from '@pushprotocol/core';
+import { createWalletClient, http } from 'viem';
+import { privateKeyToAccount } from 'viem/accounts';
+import { mainnet } from 'viem/chains';
+
+// Create a Viem wallet client
+const account = privateKeyToAccount('0x...');
+const viemClient = createWalletClient({
+  account,
+  chain: mainnet,
+  transport: http()
+});
+
+// Convert to Universal Signer
+const universalSigner = await PushChain.utils.signer.toUniversal(viemClient);
+````
+
+  </TabItem>
+    <TabItem value="solana" attributes={{className: "codetab sol"}}>
+```typescript
+import { PushChain } from '@pushprotocol/core';
+import { Keypair } from '@solana/web3.js';
+
+// Create a Solana keypair from private key
+const privateKeyHex = '...'
+const privateKey = Uint8Array.from(Buffer.from(privateKeyHex, 'hex'));
+const solanaKeypair = Keypair.fromSecretKey(privateKey);
+
+// Convert to Universal Signer
+const universalSigner = await PushChain.utils.signer.toUniversal(solanaKeypair);
+
+````
+  </TabItem>
+</Tabs>
+
+### Convert Signer Parameters
+
+| **Param** | **Type** | **Remarks** |
+|-----------|----------|-------------|
+| _`signer`_ | `viem.WalletClient \| ethers.Wallet \| @solana/web3.js.Keypair \| UniversalSignerSkeleton` | The signer to convert to Universal Signer format |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+```typescript
+// UniversalSigner object
+{
+  account: {
+    address: '0x...',
+    chain: 'ethereum_sepolia' // or other supported chains
+  },
+  signMessage: Function,
+  signTransaction: Function,
+  signTypedData: Function
+}
+````
+
+</Details>
+
+---
+
+## Construct Custom Universal Signer API
+
+If you don't have a supported library signer or want to create a custom implementation, you can construct a Universal Signer manually.
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="js" attributes={{className: "codetab js"}} default>
+```typescript
+import { PushChain } from '@pushprotocol/core';
+
+// Define account information
+const account = {
+address: '0xeCba9a32A9823f1cb00cdD8344Bf2D1d87a8dd97',
+chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
+};
+
+// Define custom signing functions
+const customSignMessage = async (data) => {
+// Your custom message signing logic
+return new Uint8Array([1, 2, 3]);
+};
+
+const customSignTransaction = async (unsignedTx) => {
+// Your custom transaction signing logic  
+ return new Uint8Array([4, 5, 6]);
+};
+
+const customSignTypedData = async (typedDataArgs) => {
+// Your custom typed data signing logic
+return new Uint8Array([7, 8, 9]);
+};
+
+// Step 1: Construct the skeleton
+const skeleton = PushChain.utils.signer.construct(account, {
+signMessage: customSignMessage,
+signTransaction: customSignTransaction,
+signTypedData: customSignTypedData
+});
+
+// Step 2: Convert to Universal Signer
+const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
+
+````
+  </TabItem>
+</Tabs>
+
+### Construct Signer Parameters
+
+| **Param** | **Type** | **Remarks** |
+|-----------|----------|-------------|
+| _`account`_ | `UniversalAccount` | Account information containing address and chain |
+| _`signingFunctions`_ | `Object` | Object containing the signing function implementations |
+| _`signingFunctions.signMessage`_ | `(data: Uint8Array) => Promise<Uint8Array>` | Function to sign raw message data |
+| _`signingFunctions.signTransaction`_ | `(unsignedTx: Uint8Array) => Promise<Uint8Array>` | Function to sign transaction data |
+| `signingFunctions.signTypedData` | `(params) => Promise<Uint8Array>` | Function to sign typed data (EIP-712) |
+
+> Note: Parameters _`in this style`_ are mandatory.
+
+<Details summary="Expected response">
+```typescript
+// UniversalSignerSkeleton object
+{
+  signerId: 'CustomGeneratedSigner',
+  account: {
+    address: '0xeCba9a32A9823f1cb00cdD8344Bf2D1d87a8dd97',
+    chain: 'ethereum_sepolia'
+  },
+  signMessage: Function,
+  signTransaction: Function,
+  signTypedData: Function
+}
+````
+
+</Details>
