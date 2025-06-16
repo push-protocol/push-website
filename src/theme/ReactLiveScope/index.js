@@ -14,9 +14,33 @@ function loadClientSideLibraryEthers(constantName) {
     : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
 }
 
+function loadClientSideLibrarySolana(constantName) {
+  return typeof window !== 'undefined'
+    ? require('@solana/web3.js')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
 function loadClientSideLibraryViem(constantName) {
   return typeof window !== 'undefined'
     ? require('viem')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
+function loadClientSideLibraryViemAccounts(constantName) {
+  return typeof window !== 'undefined'
+    ? require('viem/accounts')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
+function loadClientSideLibraryViemChains(constantName) {
+  return typeof window !== 'undefined'
+    ? require('viem/chains')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
+function loadClientSideLibraryViemUtils(constantName) {
+  return typeof window !== 'undefined'
+    ? require('viem/utils')[constantName]
     : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
 }
 
@@ -79,7 +103,25 @@ const ReactLiveScope = {
   GLOBALS,
   // Asynchronously import ethers and PushAPI only on the client side
   ethers: loadClientSideLibraryEthers('ethers'),
-  viem: loadClientSideLibraryViem('viem'),
+
+  Keypair: loadClientSideLibrarySolana('Keypair'),
+  PublicKey: loadClientSideLibrarySolana('PublicKey'),
+
+  createWalletClient: loadClientSideLibraryViem('createWalletClient'),
+  http: loadClientSideLibraryViem('http'),
+  parseTransaction: loadClientSideLibraryViem('parseTransaction'),
+  TypedData: loadClientSideLibraryViem('TypedData'),
+  TypedDataDomain: loadClientSideLibraryViem('TypedDataDomain'),
+
+  privateKeyToAccount: loadClientSideLibraryViemAccounts('privateKeyToAccount'),
+  generatePrivateKey: loadClientSideLibraryViemAccounts('generatePrivateKey'),
+
+  sepolia: loadClientSideLibraryViemChains('sepolia'),
+  defineChain: loadClientSideLibraryViemChains('defineChain'),
+
+  hexToBytes: loadClientSideLibraryViemUtils('hexToBytes'),
+  bytesToHex: loadClientSideLibraryViemUtils('bytesToHex'),
+
   PushAPI: loadClientSideLibraryPushProtocolRestAPI('PushAPI'),
   // CONSTANTS: loadClientSideLibraryPushProtocolRestAPI('CONSTANTS'),
   MODAL_POSITION_TYPE: loadClientSideLibraryPushProtocolUIWeb(

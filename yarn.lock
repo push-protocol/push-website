@@ -4954,9 +4954,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pushchain/ui-kit@npm:^1.1.0-alpha.1":
-  version: 1.1.0-alpha.1
-  resolution: "@pushchain/ui-kit@npm:1.1.0-alpha.1"
+"@pushchain/ui-kit@npm:^1.1.0-alpha.2":
+  version: 1.1.0-alpha.2
+  resolution: "@pushchain/ui-kit@npm:1.1.0-alpha.2"
   dependencies:
     "@metamask/sdk": "npm:^0.32.0"
     "@pushchain/core": "npm:^0.1.16"
@@ -4964,7 +4964,7 @@ __metadata:
     ethers: "npm:^6.13.5"
     tslib: "npm:^2.3.0"
     viem: "npm:^2.23.9"
-  checksum: 10c0/a291802b608c216d31878dc681d4ef0f196c33733b78d6b2bcb75d5254de53533fea4c37f4e26f2fee7f9c1f955c7a2d140d7f1e8e308c09a28916ba44d4743f
+  checksum: 10c0/4352c2dea20159c38b711b5ba86adb0d7f61ea2ae0821731e9c581b3e45eaeef2a33525e09a7769adc9ab928d51f3e2084739a84031e0e049765a25b161a5b47
   languageName: node
   linkType: hard
 
@@ -19669,10 +19669,11 @@ __metadata:
     "@docusaurus/types": "npm:3.0.1"
     "@mdx-js/react": "npm:^3.0.0"
     "@pushchain/core": "npm:^0.1.11"
-    "@pushchain/ui-kit": "npm:^1.1.0-alpha.1"
+    "@pushchain/ui-kit": "npm:^1.1.0-alpha.2"
     "@pushprotocol/restapi": "npm:1.7.20"
     "@pushprotocol/uiweb": "npm:1.7.1"
     "@radix-ui/react-dialog": "npm:^1.1.2"
+    "@solana/web3.js": "npm:^1.98.2"
     "@splidejs/react-splide": "npm:^0.7.12"
     "@splidejs/splide-extension-auto-scroll": "npm:^0.5.3"
     "@splinetool/react-spline": "npm:2.2.6"
