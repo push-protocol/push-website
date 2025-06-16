@@ -32,13 +32,13 @@ import {
 import {
   PushUniversalWalletProvider,
   PushUniversalAccountButton,
-  CONSTANTS,
+  PushUI,
 } from '@pushchain/ui-kit';
 
 function App() {
   // Define Wallet Config
   const walletConfig = {
-    env: CONSTANTS.ENV.DEVNET,
+    network: PushUI.CONSTANTS.PUSH_NETWORK.TESTNET,
     login: {
       email: true,
       google: true,
@@ -48,8 +48,8 @@ function App() {
       appPreview: true,
     },
     modal: {
-      loginLayout: CONSTANTS.LOGIN.SPLIT,
-      connectedLayout: CONSTANTS.CONNECTED.HOVER,
+      loginLayout: PushUI.CONSTANTS.LOGIN.SPLIT,
+      connectedLayout: PushUI.CONSTANTS.CONNECTED.HOVER,
       appPreview: true,
     },
   };

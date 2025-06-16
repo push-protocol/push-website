@@ -4932,9 +4932,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pushchain/core@npm:^0.1.15":
-  version: 0.1.15
-  resolution: "@pushchain/core@npm:0.1.15"
+"@pushchain/core@npm:^0.1.16":
+  version: 0.1.16
+  resolution: "@pushchain/core@npm:0.1.16"
   dependencies:
     "@bufbuild/protobuf": "npm:^2.0.0"
     "@coral-xyz/anchor": "npm:^0.31.0"
@@ -4950,21 +4950,21 @@ __metadata:
     tslib: "npm:^2.3.0"
     tweetnacl: "npm:^1.0.3"
     viem: "npm:2.27.2"
-  checksum: 10c0/015ecee4bea0b51848ec556a19bcb1e5f7cbe7afd1042cb560f6a4a53558e1f6e2bfc94c8af2d4610d48ae69bf97bb6d127b8c3e540c9967322b86ecda08408e
+  checksum: 10c0/7644d1d1bb6a2513031bcb429b3371d0a11dd05255dbfc0b3d5595feaa2177d9cf47b509e3a84e8c0f1a9886e94ee31737f8c5e008df25e1886947c0efdc9a0d
   languageName: node
   linkType: hard
 
-"@pushchain/ui-kit@npm:^1.1.0-alpha.0":
-  version: 1.1.0-alpha.0
-  resolution: "@pushchain/ui-kit@npm:1.1.0-alpha.0"
+"@pushchain/ui-kit@npm:^1.1.0-alpha.1":
+  version: 1.1.0-alpha.1
+  resolution: "@pushchain/ui-kit@npm:1.1.0-alpha.1"
   dependencies:
     "@metamask/sdk": "npm:^0.32.0"
-    "@pushchain/core": "npm:^0.1.15"
+    "@pushchain/core": "npm:^0.1.16"
     "@solana/web3.js": "npm:^1.98.2"
     ethers: "npm:^6.13.5"
     tslib: "npm:^2.3.0"
     viem: "npm:^2.23.9"
-  checksum: 10c0/01823371c1ea050a983c712a489500aa87a00a1ad7bd74da074c41b84de5282694029fa9bd839d2bac0679d10210059ad96dea0357f322df85647c7622481a22
+  checksum: 10c0/a291802b608c216d31878dc681d4ef0f196c33733b78d6b2bcb75d5254de53533fea4c37f4e26f2fee7f9c1f955c7a2d140d7f1e8e308c09a28916ba44d4743f
   languageName: node
   linkType: hard
 
@@ -19669,7 +19669,7 @@ __metadata:
     "@docusaurus/types": "npm:3.0.1"
     "@mdx-js/react": "npm:^3.0.0"
     "@pushchain/core": "npm:^0.1.11"
-    "@pushchain/ui-kit": "npm:^1.1.0-alpha.0"
+    "@pushchain/ui-kit": "npm:^1.1.0-alpha.1"
     "@pushprotocol/restapi": "npm:1.7.20"
     "@pushprotocol/uiweb": "npm:1.7.1"
     "@radix-ui/react-dialog": "npm:^1.1.2"

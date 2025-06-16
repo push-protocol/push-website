@@ -59,16 +59,16 @@ const tx = await pushChain.tx.send(
   {
     title: 'UI-Kit Quickstart',
     codeblock: `
-import { PushUniversalWalletProvider, PushUniversalAccountButton, usePushWalletContext, CONSTANTS } from '@pushchain/ui-kit';
+import { PushUniversalWalletProvider, PushUniversalAccountButton, usePushWalletContext, PushUI } from '@pushchain/ui-kit';
 
 function App() {
 
 const walletConfig = {
-  env: CONSTANTS.ENV.DEVNET,
+  network: PushUI.CONSTANTS.PUSH_NETWORK.TESTNET,
 };
 
 function WalletUI() {
-  const { universalAddress } = usePushWalletContext();
+  const { universalAccount } = usePushChainClient();
 
   return (
     <div>

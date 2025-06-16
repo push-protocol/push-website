@@ -59,14 +59,13 @@ function App() {
 
 Core configuration object for connections and login settings.
 
-| Property    | Type                          | Description                                             | Default          |
-| ----------- | ----------------------------- | ------------------------------------------------------- | ---------------- |
-| `uid`       | string                        | Unique identifier for this provider instance            | 'default'        |
-| _`network`_ | PushUI.CONSTANTS.PUSH_NETWORK | Chain environment to connect to                         | Required         |
-| `rpcURL`    | string                        | Custom JSON-RPC endpoint for supported chains           | Public endpoints |
-| `login`     | Object                        | Login method configuration                              | See below        |
-| `modal`     | Object                        | Global defaults for login and connected modal instances | See below        |
-| `chain`     | Object                        | Custom settings to configure the SDK instance           | See below        |
+| Property | Type          | Description                                             | Default          |
+| -------- | ------------- | ------------------------------------------------------- | ---------------- |
+| `uid`    | string        | Unique identifier for this provider instance            | 'default'        |
+| _`env`_  | CONSTANTS.ENV | Chain environment to connect to                         | Required         |
+| `rpcURL` | string        | Custom JSON-RPC endpoint for supported chains           | Public endpoints |
+| `login`  | Object        | Login method configuration                              | See below        |
+| `modal`  | Object        | Global defaults for login and connected modal instances | See below        |
 
 #### `config.login` Options
 

@@ -58,8 +58,9 @@ function MyComponent() {
 
 ### Return Values
 
-| Property    | Type                | Description                           |
-| ----------- | ------------------- | ------------------------------------- |
-| `pushChain` | `PushChain \| null` | Initialized PushChain client instance |
-| `error`     | `Error \| null`     | Error object if initialization failed |
-| `isLoading` | `boolean`           | Loading state during initialization   |
+| Property           | Type                | Description                                                                                                 |
+| ------------------ | ------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `pushChainClient`  | `PushChain \| null` | Initialized PushChain client instance                                                                       |
+| `universalAccount` | object              | Information about the connected blockchain address with properties: `chain` (CHAIN), and `address` (string) |
+| `error`            | `Error \| null`     | Error object if initialization failed                                                                       |
+| `isLoading`        | `boolean`           | Loading state during initialization                                                                         |
