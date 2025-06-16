@@ -14,6 +14,12 @@ function loadClientSideLibraryEthers(constantName) {
     : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
 }
 
+function loadClientSideLibraryViem(constantName) {
+  return typeof window !== 'undefined'
+    ? require('viem')[constantName]
+    : Promise.resolve({}); // Return an empty object or appropriate placeholder for SSR.
+}
+
 function loadClientSideLibraryPushProtocolRestAPI(constantName) {
   return typeof window !== 'undefined'
     ? require('@pushprotocol/restapi')[constantName]
@@ -73,6 +79,7 @@ const ReactLiveScope = {
   GLOBALS,
   // Asynchronously import ethers and PushAPI only on the client side
   ethers: loadClientSideLibraryEthers('ethers'),
+  viem: loadClientSideLibraryViem('viem'),
   PushAPI: loadClientSideLibraryPushProtocolRestAPI('PushAPI'),
   // CONSTANTS: loadClientSideLibraryPushProtocolRestAPI('CONSTANTS'),
   MODAL_POSITION_TYPE: loadClientSideLibraryPushProtocolUIWeb(
