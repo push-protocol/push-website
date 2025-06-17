@@ -112,12 +112,12 @@ const ReactLiveScope = {
   parseTransaction: loadClientSideLibraryViem('parseTransaction'),
   TypedData: loadClientSideLibraryViem('TypedData'),
   TypedDataDomain: loadClientSideLibraryViem('TypedDataDomain'),
+  defineChain: loadClientSideLibraryViem('defineChain'),
 
   privateKeyToAccount: loadClientSideLibraryViemAccounts('privateKeyToAccount'),
   generatePrivateKey: loadClientSideLibraryViemAccounts('generatePrivateKey'),
 
   sepolia: loadClientSideLibraryViemChains('sepolia'),
-  defineChain: loadClientSideLibraryViemChains('defineChain'),
 
   hexToBytes: loadClientSideLibraryViemUtils('hexToBytes'),
   bytesToHex: loadClientSideLibraryViemUtils('bytesToHex'),

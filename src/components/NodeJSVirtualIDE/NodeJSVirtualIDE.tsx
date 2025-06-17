@@ -135,9 +135,29 @@ function returnPlaygroundCode({
         })();
       \`;
 
+      const scope = {
+        ethers,
+        PushChain,
+        CONSTANTS,
+        http,
+        defineChain,
+        Keypair,
+        PublicKey,
+        parseTransaction,
+        TypedData,
+        TypedDataDomain,
+        privateKeyToAccount,
+        generatePrivateKey,
+        sepolia,
+        hexToBytes,
+        bytesToHex,
+        createWalletClient,
+        console: consoleShim,
+      }
+
       try {
-        const fn = new Function('ethers','PushChain','CONSTANTS','console', wrapped);
-        await fn(ethers, PushChain, CONSTANTS, consoleShim);
+        const fn = new Function(...Object.keys(scope), wrapped);
+        await fn(...Object.values(scope));
       } catch (e: any) {
         consoleShim.error(e.message || e.toString());
       } finally {
