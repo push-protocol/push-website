@@ -1,6 +1,5 @@
 // src/components/NodeJSVirtualIDE/NodeJSVirtualIDE.tsx
 import { PushChain } from '@pushchain/core';
-import { P } from '@site/src/css/SharedStyling';
 import Playground from '@theme/Playground';
 import ReactLiveScope from '@theme/ReactLiveScope';
 import { ethers } from 'ethers';
@@ -17,7 +16,10 @@ interface Props {
 }
 
 export default function NodeJSVirtualIDE({ repo = null, children }: Props) {
-  const userPassedCode = children.trim();
+  const userPassedCode = children
+    .split('\n')
+    .map((line) => (line.startsWith(' ') ? line.slice(2) : line))
+    .join('\n');
 
   return (
     <Playground
@@ -148,7 +150,7 @@ function returnPlaygroundCode({
     return (
       <div style={{ margin: '0 auto' }}>
         <LiveEditor
-          code={code.replace(/^\\s*[\\r\\n]+|[\\r\\n]+\\s*$/g, '')}
+          code={code.replace(/^(?:\\r?\\n)+|(?:\\r?\\n)+$/g, '')}
           onChange={setCode}
           style={{
             fontFamily: 'monospace',

@@ -181,27 +181,36 @@ export default function Playground({
   const strippedChildren = lines.join('\n');
 
   // ——— remove imports for execution ———
+  // but only if it's not a nodejs environment
   let inImport = false;
-  const execCode = strippedChildren
-    .split('\n')
-    .filter((l) => {
-      const t = l.trim();
-      if (t.startsWith('import ')) {
-        inImport = !t.endsWith(';');
-        return false;
-      }
-      if (inImport) {
-        if (t.endsWith(';')) inImport = false;
-        return false;
-      }
-      return true;
-    })
-    .join('\n')
-    .replace(/^\n/, '')
-    .trimEnd();
+  const execCode = !isNodeJSEnv
+    ? strippedChildren
+        .split('\n')
+        .filter((l) => {
+          const t = l.trim();
+          if (t.startsWith('import ')) {
+            inImport = !t.endsWith(';');
+            return false;
+          }
+          if (inImport) {
+            if (t.endsWith(';')) inImport = false;
+            return false;
+          }
+          return true;
+        })
+        .join('\n')
+        .replace(/^\n/, '')
+        .trimEnd()
+    : strippedChildren;
 
   // ——— remove empty lines from top and bottom for execution ———
-  const displayCode = strippedChildren.replace(/^\s*\r?\n+|\r?\n+\s*$/g, '');
+  const displayCode = strippedChildren.trim();
+
+  console.log('execCode');
+  console.log(execCode);
+
+  console.log('displayCode');
+  console.log(displayCode);
 
   // decide code environment
   const codeEnv = isNodeJSEnv
