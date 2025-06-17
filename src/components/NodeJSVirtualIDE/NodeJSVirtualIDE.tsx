@@ -153,7 +153,6 @@ function returnPlaygroundCode({
           style={{
             fontFamily: 'monospace',
             fontSize: 16,
-            minHeight: 240,
           }}
         />
         
