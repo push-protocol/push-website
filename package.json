@@ -103,7 +103,7 @@
     "unist-util-visit": "^5.0.0",
     "url": "^0.11.3",
     "vanilla-tilt": "^1.8.0",
-    "viem": "^2.23.9",
+    "viem": "^2.31.3",
     "vm-browserify": "^1.1.2"
   },
   "devDependencies": {
