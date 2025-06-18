@@ -117,13 +117,12 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
   <TabItem value='ethers_v6' label='Ethers (V6)' default>
 
 <NodeJSVirtualIDE 
-  repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/create-universal-signer"}} 
-  highlightRegex='/toUniversal/'
+  repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/create-universal-signer"}}
 >
 
 {`
 
-    // customPropHighlightRegex=/\bsigner\.toUniversal\s*\(\s*([^)]*?)\s*\)/g;
+    // customPropHighlightRegex=PushChain\.utils\.signer\.toUniversal
     // Import Push Chain Core
     import { PushChain } from '@pushchain/core';
     import { ethers } from 'ethers';
@@ -160,6 +159,7 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 
 {`
 
+    // customPropHighlightRegex=PushChain\.utils\.signer\.toUniversal
     // Import Push Chain Core
     import { PushChain } from '@pushchain/core';
 
@@ -198,6 +198,7 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 
 {`
 
+    // customPropHighlightRegex=PushChain\.utils\.signer\.toUniversalFromKeyPair
     // Import Push Chain Core
     import { PushChain } from '@pushchain/core';
 

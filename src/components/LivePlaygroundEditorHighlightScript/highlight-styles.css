@@ -1,0 +1,63 @@
+/* Styles for highlighted code in LiveEditor */
+.highlight-live-editor {
+  background-color: rgba(62, 65, 83, 1);
+  border-radius: 3px;
+  position: relative;
+  display: block;
+}
+
+/* Hide highlights when editor is focused or being edited */
+.push-apply-highlight-in-live-editor:focus-within .highlight-live-editor {
+  background-color: transparent !important;
+}
+
+/* Animation for the highlight */
+@keyframes highlight-pulse {
+  0% {
+    background-color: rgba(62, 65, 83, 1);
+  }
+  50% {
+    background-color: rgba(87, 91, 117, 1);
+  }
+  100% {
+    background-color: rgba(62, 65, 83, 1);
+  }
+}
+
+/* Play animation once when container is focused or hovered */
+.push-apply-highlight-in-live-editor:hover .highlight-live-editor,
+.push-apply-highlight-in-live-editor:focus-within .highlight-live-editor {
+  animation: highlight-pulse 2s ease-in-out 1;
+}
+
+/* Dark mode support */
+html[data-theme='dark'] .highlight-live-editor {
+  background-color: rgba(62, 65, 83, 1);
+}
+
+@keyframes highlight-pulse-dark {
+  0% {
+    background-color: rgba(62, 65, 83, 1);
+  }
+  50% {
+    background-color: rgba(87, 91, 117, 1);
+  }
+  100% {
+    background-color: rgba(62, 65, 83, 1);
+  }
+}
+
+/* Dark mode initial state */
+html[data-theme='dark'] .highlight-live-editor {
+  background-color: rgba(255, 215, 0, 0.15);
+}
+
+/* Play animation once in dark mode when container is focused or hovered */
+html[data-theme='dark']
+  .push-apply-highlight-in-live-editor:hover
+  .highlight-live-editor,
+html[data-theme='dark']
+  .push-apply-highlight-in-live-editor:focus-within
+  .highlight-live-editor {
+  animation: highlight-pulse-dark 2s ease-in-out 1;
+}
