@@ -330,7 +330,7 @@ export default function HomepageFeatures(): JSX.Element {
           <ItemH justifyContent='flex-start'>
             <HomepageSubHeader>Push Chain SDK</HomepageSubHeader>
             <Link
-              to='https://www.npmjs.com/package/@pushprotocol/restapi'
+              to='https://www.npmjs.com/package/@pushchain/core'
               target='_blank'
             >
               <Span fontSize='18px' margin='0 5px 0 10px'>

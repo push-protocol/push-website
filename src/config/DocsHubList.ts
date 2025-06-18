@@ -89,35 +89,29 @@ export const TechDocItems: ITechDocItem[] = [
     target: '_self',
     description:
       'Explore Push Chain and learn how to integrate it for building universal Apps.',
-    codeblock: `// Create Signer. Defaults to the Ethereum Sepolia chain
-const signer = createUniversalSigner({
-  address: account.address,
-  signMessage: async (data) =>
-    hexToBytes(await account.signMessage({ message: { raw: data } })),
+    codeblock: `// Convert to Universal Signer
+const universalSigner = await PushChain.utils.signer.toUniversal(signer);
+
+// Initialize Push Chain Client
+const pushChainClient = await PushChain.initialize(universalSigner, {
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
 });
 
-// Initialize SDK
-const pushChain = await PushChain.initialize(signer);
-
-// Send Transaction
-const tx = await pushChain.tx.send(
-  [
-    // Defaults to the Ethereum Sepolia chain
-    createUniversalAccount({
-      address: '0x22B173e0596c6723dD1A95817052D96b97176Dd8',
-    }),
-  ],
-  { category: 'MY_CUSTOM_CATEGORY', data: 'Hello world!' }
+// Send a universal transaction (from any chain to Push Chain)
+const txHash = await pushChainClient.universal.sendTransaction({
+  to: '0xD0DE00000447492307108Bdc7Ff6BaB33Ff37Dacc479', // To address on Push Chain
+  value: BigInt(0), // $PC Value to send
+});
 );`,
   },
   {
     title: 'Examples',
     srcref: 'star',
-    alt: 'Logo representing examples repo - Push Protocol',
-    link: 'https://github.com/push-protocol/push-chain-sdk/tree/main/examples',
+    alt: 'Logo representing examples repo - Push Chain',
+    link: 'https://github.com/push-protocol/push-chain-examples/tree/main/examples',
     target: '_blank',
     description:
-      'Examples to showcase the power of Push Protocol’s communication stack.',
+      'Examples to show how to use Push Chain and instantly 10x your userbase.',
   },
   {
     title: 'Push Reward Points',
@@ -126,17 +120,17 @@ const tx = await pushChain.tx.send(
     link: '/docs/rewards',
     target: '_self',
     description:
-      'Reward Points Program for contributors. Complete activities and earn points.',
+      'Reward Program for contributors. Complete activities and earn points.',
   },
-  {
-    title: 'Push Notification & Chat Protocol',
-    srcref: 'showrunners',
-    alt: 'Logo representing reward points of Push Protocol',
-    link: 'https://comms.push.org/docs',
-    target: '_blank',
-    description:
-      'Looking for Push Notification or Chat protocol? they have a new home over here.',
-  },
+  // {
+  //   title: 'Push Notification & Chat Protocol',
+  //   srcref: 'showrunners',
+  //   alt: 'Logo representing reward points of Push Protocol',
+  //   link: 'https://comms.push.org/docs',
+  //   target: '_blank',
+  //   description:
+  //     'Looking for Push Notification or Chat protocol? they have a new home over here.',
+  // },
 ];
 
 export const SdkItemsList: ISdkListItem[] = [
@@ -144,7 +138,7 @@ export const SdkItemsList: ISdkListItem[] = [
     title: 'Core SDK',
     Svg: require('@site/static/assets/docs/arrowupright.svg').default,
     PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://www.npmjs.com/package/@pushchain/devnet',
+    link: 'https://github.com/push-protocol/push-chain-sdk/tree/main/packages/core',
   },
   // {
   //   title: 'REST API',
@@ -174,7 +168,7 @@ export const SdkItemsList: ISdkListItem[] = [
     title: 'UI Kit',
     Svg: require('@site/static/assets/docs/arrowupright.svg').default,
     PinkSvg: require('@site/static/assets/docs/ArrowUpRight-pink.svg').default,
-    link: 'https://github.com/push-protocol/push-chain-sdk',
+    link: 'https://github.com/push-protocol/push-chain-sdk/tree/main/packages/ui-kit',
   },
 ];
 

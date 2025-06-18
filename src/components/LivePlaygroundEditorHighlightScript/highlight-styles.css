@@ -1,6 +1,6 @@
 /* Styles for highlighted code in LiveEditor */
 .highlight-live-editor {
-  background-color: rgba(62, 65, 83, 1);
+  background-color: var(--ifm-live-highlighted-code-line-bg-pulse-start);
   border-radius: 3px;
   position: relative;
   display: block;
@@ -14,13 +14,13 @@
 /* Animation for the highlight */
 @keyframes highlight-pulse {
   0% {
-    background-color: rgba(62, 65, 83, 1);
+    background-color: var(--ifm-live-highlighted-code-line-bg-pulse-start);
   }
   50% {
-    background-color: rgba(87, 91, 117, 1);
+    background-color: var(--ifm-live-highlighted-code-line-bg-pulse-mid);
   }
   100% {
-    background-color: rgba(62, 65, 83, 1);
+    background-color: var(--ifm-live-highlighted-code-line-bg-pulse-start);
   }
 }
 
@@ -32,18 +32,18 @@
 
 /* Dark mode support */
 html[data-theme='dark'] .highlight-live-editor {
-  background-color: rgba(62, 65, 83, 1);
+  background-color: var(--ifm-live-highlighted-code-line-bg-pulse-start);
 }
 
 @keyframes highlight-pulse-dark {
   0% {
-    background-color: rgba(62, 65, 83, 1);
+    background-color: var(--ifm-live-highlighted-code-line-bg-pulse-start);
   }
   50% {
-    background-color: rgba(87, 91, 117, 1);
+    background-color: var(--ifm-live-highlighted-code-line-bg-pulse-mid);
   }
   100% {
-    background-color: rgba(62, 65, 83, 1);
+    background-color: var(--ifm-live-highlighted-code-line-bg-pulse-start);
   }
 }
 
