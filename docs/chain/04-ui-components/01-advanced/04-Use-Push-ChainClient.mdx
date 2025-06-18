@@ -17,7 +17,7 @@ The `usePushChainClient` hook initializes and manages a Push Chain client instan
 import { usePushChainClient } from '@pushchain/ui-kit';
 
 function MyComponent() {
-  const { universalAccount, pushChainClient, isLoading, error } = usePushChainClient(uid); // optional: uid parameter for targeting a specific wallet instance
+  const { pushChainClient, isLoading, error } = usePushChainClient(uid); // optional: uid parameter for targeting a specific wallet instance
 
   if (isLoading) {
     // handle loading states
@@ -58,9 +58,8 @@ function MyComponent() {
 
 ### Return Values
 
-| Property           | Type                | Description                                                                                                 |
-| ------------------ | ------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `pushChainClient`  | `PushChain \| null` | Initialized PushChain client instance                                                                       |
-| `universalAccount` | object              | Information about the connected blockchain address with properties: `chain` (CHAIN), and `address` (string) |
-| `error`            | `Error \| null`     | Error object if initialization failed                                                                       |
-| `isLoading`        | `boolean`           | Loading state during initialization                                                                         |
+| Property          | Type                | Description                           |
+| ----------------- | ------------------- | ------------------------------------- |
+| `pushChainClient` | `PushChain \| null` | Initialized PushChain client instance |
+| `error`           | `Error \| null`     | Error object if initialization failed |
+| `isLoading`       | `boolean`           | Loading state during initialization   |

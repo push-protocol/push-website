@@ -108,6 +108,7 @@ const ReactLiveScope = {
   PublicKey: loadClientSideLibrarySolana('PublicKey'),
 
   createWalletClient: loadClientSideLibraryViem('createWalletClient'),
+  createPublicClient: loadClientSideLibraryViem('createPublicClient'),
   http: loadClientSideLibraryViem('http'),
   parseTransaction: loadClientSideLibraryViem('parseTransaction'),
   TypedData: loadClientSideLibraryViem('TypedData'),

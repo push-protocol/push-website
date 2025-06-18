@@ -18,7 +18,7 @@ This example demonstrates a basic wallet integration with the theme overrides fo
 import {
   PushUniversalWalletProvider,
   PushUniversalAccountButton,
-  usePushChainClient,
+  usePushWalletContext,
   PushUI,
 } from '@pushchain/ui-kit';
 
@@ -48,7 +48,7 @@ function App() {
   };
 
   function WalletUI() {
-    const { universalAccount } = usePushChainClient();
+    const { universalAccount } = usePushWalletContext();
 
     return (
       <div>

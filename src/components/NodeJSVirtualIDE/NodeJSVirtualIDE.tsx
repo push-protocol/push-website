@@ -2,7 +2,6 @@
 import { PushChain } from '@pushchain/core';
 import Playground from '@theme/Playground';
 import ReactLiveScope from '@theme/ReactLiveScope';
-import { ethers } from 'ethers';
 import React from 'react';
 
 interface RepoI {
@@ -32,8 +31,6 @@ export default function NodeJSVirtualIDE({
       // pass everything your snippet needs into the scope
       scope={{
         ...ReactLiveScope,
-        ethers,
-        PushChain,
         CONSTANTS: PushChain.CONSTANTS,
       }}
       // no-op: we already hand it the fully-wrapped code below
@@ -159,6 +156,7 @@ function returnPlaygroundCode({
         hexToBytes,
         bytesToHex,
         createWalletClient,
+        createPublicClient,
         console: consoleShim,
       }
 
