@@ -12,16 +12,12 @@ interface RepoI {
 
 interface Props {
   repo: null | RepoI;
-  highlight: null | string;
   children: string;
 }
 
-export default function NodeJSVirtualIDE({
-  repo = null,
-  highlight = null,
-  children,
-}: Props) {
+export default function NodeJSVirtualIDE({ repo = null, children }: Props) {
   const userPassedCode = children
+    .trim()
     .split('\n')
     .map((line) => (line.startsWith(' ') ? line.slice(2) : line))
     .join('\n');
@@ -54,6 +50,23 @@ function returnPlaygroundCode({
   userPassedCode,
   repo = null,
 }: ReturnPlaygroundCodeProps): string {
+  // check if customPropHighlightRegex is present
+  let highlightRegex = null;
+  // Look for a line that starts with any whitespace, then //, then customPropHighlightRegex=
+  const lines = userPassedCode.split('\n');
+  const highlightLine = lines.find((line) => {
+    return line.trim().startsWith('// customPropHighlightRegex=');
+  });
+  const match = highlightLine?.match(/\/\/\s*customPropHighlightRegex=(.+)$/);
+  if (match) {
+    // rawValue is everything after the “=” on that comment line
+    highlightRegex = match[1].trim();
+
+    // remove the line from the code
+    lines.splice(lines.indexOf(highlightLine), 1);
+    userPassedCode = lines.join('\n');
+  }
+
   // escape backticks in the snippet
   const escaped = userPassedCode.replace(/`/g, '\\`');
 
@@ -173,7 +186,15 @@ function returnPlaygroundCode({
     };
 
     return (
-      <div style={{ margin: '0 auto' }}>
+      <div
+        style={{ margin: '0 auto' }}
+        className="${
+          highlightRegex
+            ? 'push-apply-highlight-in-live-editor'
+            : 'push-live-editor'
+        }"
+        ${highlightRegex ? `data-highlight-regex="${highlightRegex}"` : ''}
+      >
         <LiveEditor
           code={code.replace(/^(?:\\r?\\n)+|(?:\\r?\\n)+$/g, '')}
           onChange={setCode}

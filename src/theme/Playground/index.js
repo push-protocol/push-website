@@ -199,6 +199,7 @@ export default function Playground({
   let minimized = false;
   let hidden = false;
   let isNodeJSEnv = false;
+  let highlightRegex = null;
 
   // Process all top comment lines
   while (idx < lines.length && lines[idx].trim().startsWith('//')) {
@@ -207,11 +208,20 @@ export default function Playground({
     if (/\/\/\s*customPropHidden=['"]true['"]/.test(line)) hidden = true;
     if (/\/\/\s*customPropNodeJSEnv=['"]true['"]/.test(line))
       isNodeJSEnv = true;
+
+    const match = line.match(/\/\/\s*customPropHighlightRegex=(.+)$/);
+    if (match) {
+      // rawValue is everything after the “=” on that comment line
+      highlightRegex = match[1].trim();
+    }
+
     // remove any customProp flags from this line
     lines[idx] = lines[idx]
       .replace(/\/\/\s*customPropMinimized=['"][^'"]+['"]/g, '')
       .replace(/\/\/\s*customPropHidden=['"][^'"]+['"]/g, '')
-      .replace(/\/\/\s*customPropNodeJSEnv=['"][^'"]+['"]/g, '');
+      .replace(/\/\/\s*customPropNodeJSEnv=['"][^'"]+['"]/g, '')
+      .replace(/\/\/\s*customPropHighlightRegex=.*$/g, '');
+
     // if line is now just whitespace or comment, drop it
     if (lines[idx].trim() === '//') {
       lines.splice(idx, 1);
@@ -252,27 +262,45 @@ export default function Playground({
               codeEnv={codeEnv}
             />
             {!hidden && (
-              <EditorWithHeader
-                code={displayCode}
-                minimized={minimized}
-                title={
-                  isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE REACT EDITOR'
+              <div
+                className={
+                  highlightRegex
+                    ? 'push-apply-highlight-in-live-editor'
+                    : 'push-live-editor'
                 }
-                codeEnv={codeEnv}
-              />
+                data-highlight-regex={highlightRegex}
+              >
+                <EditorWithHeader
+                  code={displayCode}
+                  minimized={minimized}
+                  title={
+                    isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE REACT EDITOR'
+                  }
+                  codeEnv={codeEnv}
+                />
+              </div>
             )}
           </>
         ) : (
           <>
             {!hidden && (
-              <EditorWithHeader
-                code={displayCode}
-                minimized={minimized}
-                title={
-                  isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE REACT EDITOR'
+              <div
+                className={
+                  highlightRegex
+                    ? 'push-apply-highlight-in-live-editor'
+                    : 'push-live-editor'
                 }
-                codeEnv={codeEnv}
-              />
+                data-highlight-regex={highlightRegex}
+              >
+                <EditorWithHeader
+                  code={displayCode}
+                  minimized={minimized}
+                  title={
+                    isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE REACT EDITOR'
+                  }
+                  codeEnv={codeEnv}
+                />
+              </div>
             )}
             <ResultWithHeader
               title={isNodeJSEnv ? 'VIRTUAL NODE IDE' : 'LIVE APP PREVIEW'}
