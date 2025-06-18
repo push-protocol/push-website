@@ -68,13 +68,13 @@ The following are the read methods that are available in the IUEAFactory interfa
 ### getOriginForUEA
 
 ```solidity
-    /**
-     * @dev Returns the owner key (UOA) for a given UEA address
-     * @param addr Any given address ( msg.sender ) on push chain
-     * @return account The Universal Account information associated with this UEA
-     * @return isUEA True if the address addr is a UEA contract. Else it is a native EOA of PUSH chain (i.e., isUEA = false)
-     */
-    function getOriginForUEA(address addr) external view returns (UniversalAccount memory account, bool isUEA);
+/**
+ * @dev Returns the owner key (UOA) for a given UEA address
+ * @param addr Any given address ( msg.sender ) on push chain
+ * @return account The Universal Account information associated with this UEA
+ * @return isUEA True if the address addr is a UEA contract. Else it is a native EOA of PUSH chain (i.e., isUEA = false)
+*/
+function getOriginForUEA(address addr) external view returns (UniversalAccount memory account, bool isUEA);
 ```
 
 #### Description
@@ -100,28 +100,28 @@ For any given address/caller ( msg.sender ) on Push Chain, this function is used
 #### Example
 
 ```solidity
-    function checkCallerType() public view returns (bool isUEA) {
-        (UniversalAccount memory account, bool isUEA) = IUEAFactory(0x00000000000000000000000000000000000000eA).getOriginForUEA(msg.sender);
-        
-        if (isUEA) {
-            // Do something with the UEA
-        } else {
-            // Do something with the native account
-        }
+function checkCallerType() public view returns (bool isUEA) {
+    (UniversalAccount memory account, bool isUEA) = IUEAFactory(0x00000000000000000000000000000000000000eA).getOriginForUEA(msg.sender);
+    
+    if (isUEA) {
+        // Do something with the UEA
+    } else {
+        // Do something with the native account
     }
+}
 ```
 
 
 ### getUEAForOrigin
 
 ```solidity
-    /**
-     * @dev Returns the computed UEA address for a given Universal Account ID and deployment status
-     * @param _id The Universal Account information
-     * @return uea The address of the UEA (computed deterministically)
-     * @return isDeployed True if the UEA has already been deployed
-     */
-    function getUEAForOrigin(UniversalAccount memory _id) external view returns (address uea, bool isDeployed);
+/**
+ * @dev Returns the computed UEA address for a given Universal Account ID and deployment status
+ * @param _id The Universal Account information
+ * @return uea The address of the UEA (computed deterministically)
+ * @return isDeployed True if the UEA has already been deployed
+*/
+function getUEAForOrigin(UniversalAccount memory _id) external view returns (address uea, bool isDeployed);
 ```
 
 #### Description    
@@ -147,16 +147,15 @@ For any given Universal Account ID (chainName, owner), this function is used to:
 #### Example
 
 ```solidity
-
-    function checkUEAType() public view returns (address uea, bool isDeployed) {
-        (address uea, bool isDeployed) = IUEAFactory(0x00000000000000000000000000000000000000eA).getUEAForOrigin(account);
-        
-        if (isDeployed) {
-            // Do something with the deployed UEA
-        } else {
-            // UEA is not deployed yet but you have deterministic address for the UEA.
-        }
+function checkUEAType() public view returns (address uea, bool isDeployed) {
+    (address uea, bool isDeployed) = IUEAFactory(0x00000000000000000000000000000000000000eA).getUEAForOrigin(account);
+    
+    if (isDeployed) {
+        // Do something with the deployed UEA
+    } else {
+        // UEA is not deployed yet but you have deterministic address for the UEA.
     }
+}
 ```
     
 ## Conclusion
