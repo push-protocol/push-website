@@ -4932,9 +4932,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pushchain/ui-kit@npm:^1.1.0-alpha.2":
-  version: 1.1.0-alpha.2
-  resolution: "@pushchain/ui-kit@npm:1.1.0-alpha.2"
+"@pushchain/ui-kit@npm:^1.1.0-alpha.3":
+  version: 1.1.0-alpha.3
+  resolution: "@pushchain/ui-kit@npm:1.1.0-alpha.3"
   dependencies:
     "@metamask/sdk": "npm:^0.32.0"
     "@pushchain/core": "npm:^0.1.16"
@@ -4942,7 +4942,7 @@ __metadata:
     ethers: "npm:^6.13.5"
     tslib: "npm:^2.3.0"
     viem: "npm:^2.23.9"
-  checksum: 10c0/4352c2dea20159c38b711b5ba86adb0d7f61ea2ae0821731e9c581b3e45eaeef2a33525e09a7769adc9ab928d51f3e2084739a84031e0e049765a25b161a5b47
+  checksum: 10c0/a48a9da59cac241f52c8695312b3bbefb8dd81510b3eea149c53a2ed1c0b643cc5c90597edc4f655d4cea04e80b29d7934ceb198cf39798c7047dc456f2b0f53
   languageName: node
   linkType: hard
 
@@ -19668,7 +19668,7 @@ __metadata:
     "@docusaurus/types": "npm:3.0.1"
     "@mdx-js/react": "npm:^3.0.0"
     "@pushchain/core": "npm:^0.1.11"
-    "@pushchain/ui-kit": "npm:^1.1.0-alpha.2"
+    "@pushchain/ui-kit": "npm:^1.1.0-alpha.3"
     "@pushprotocol/restapi": "npm:1.7.20"
     "@pushprotocol/uiweb": "npm:1.7.1"
     "@radix-ui/react-dialog": "npm:^1.1.2"

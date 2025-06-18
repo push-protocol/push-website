@@ -68,7 +68,7 @@ const walletConfig = {
 };
 
 function WalletUI() {
-  const { universalAccount } = usePushChainClient();
+  const { universalAccount } = usePushWalletContext();
 
   return (
     <div>

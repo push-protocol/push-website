@@ -53,6 +53,8 @@ The Push Universal Wallet provides a unified interface for connecting to multipl
 import {
   PushUniversalWalletProvider,
   PushUniversalAccountButton,
+  usePushChainClient,
+  usePushWalletContext,
   PushUI,
 } from '@pushchain/ui-kit';
 
@@ -83,22 +85,41 @@ function App() {
     description: 'Test App Description',
   };
 
+  function WalletUI() {
+    const { universalAccount, connectionStatus } = usePushWalletContext();
+    const { pushChainClient } = usePushChainClient();
+
+    const handleSendTransaction = async () => {
+      if (pushChainClient) {
+        try {
+          await pushChainClient.universal.sendTransaction({
+            target: '0x68F8b46e4cD01a7648393911E734d99d34E6f107',
+            value: BigInt(1),
+            data: '0x',
+          });
+          alert('Send Transaction Successful');
+        } catch (err) {
+          console.log(err);
+          alert('Send Transaction Failed');
+        }
+      }
+    };
+
+    return (
+      <div>
+        <PushUniversalAccountButton />
+        {connectionStatus == 'connected' && <button>Send Transaction</button>}
+      </div>
+    );
+  }
+
   return (
     <PushUniversalWalletProvider config={walletConfig} app={appMetadata}>
-      <PushUniversalAccountButton />
+      <WalletUI />
     </PushUniversalWalletProvider>
   );
 }
 ```
-
-### Try Solidity Now
-
-<RemixIDE
-  examples={{
-    'Greeter.sol':
-      'https://github.com/push-protocol/push-smart-contracts-genesis/blob/master/contracts/airdrop/MerkleDistributor.sol',
-  }}
-/>
 
 ## Customization Parameters
 

@@ -18,7 +18,6 @@ This example demonstrates a basic wallet integration with the Push Universal Wal
 import {
   PushUniversalWalletProvider,
   PushUniversalAccountButton,
-  usePushChainClient,
   PushUI,
 } from '@pushchain/ui-kit';
 
@@ -47,19 +46,9 @@ function App() {
     description: 'Test App Description',
   };
 
-  function WalletUI() {
-    const { universalAccount } = usePushChainClient();
-
-    return (
-      <div>
-        <PushUniversalAccountButton />
-      </div>
-    );
-  }
-
   return (
     <PushUniversalWalletProvider config={walletConfig} app={appMetadata}>
-      <WalletUI />
+      <PushUniversalAccountButton />
     </PushUniversalWalletProvider>
   );
 }
