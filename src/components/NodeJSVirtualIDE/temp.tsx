@@ -2,7 +2,6 @@
 import { PushChain } from '@pushchain/core';
 import Playground from '@theme/Playground';
 import ReactLiveScope from '@theme/ReactLiveScope';
-import { ethers } from 'ethers';
 import React from 'react';
 
 interface RepoI {
@@ -16,7 +15,11 @@ interface Props {
   children: string;
 }
 
-export default function NodeJSVirtualIDE({ repo = null, children }: Props) {
+export default function NodeJSVirtualIDE({
+  repo = null,
+  highlight = null,
+  children,
+}: Props) {
   const userPassedCode = children
     .split('\n')
     .map((line) => (line.startsWith(' ') ? line.slice(2) : line))
@@ -28,6 +31,7 @@ export default function NodeJSVirtualIDE({ repo = null, children }: Props) {
       // pass everything your snippet needs into the scope
       scope={{
         ...ReactLiveScope,
+        CONSTANTS: PushChain.CONSTANTS,
       }}
       // no-op: we already hand it the fully-wrapped code below
       transformCode={(code: string) => code}
@@ -51,44 +55,44 @@ function returnPlaygroundCode({
   const escaped = userPassedCode.replace(/`/g, '\\`');
 
   return `
-  // customPropHidden='true'
+  // customPropHidden='false'
   // customPropNodeJSEnv='true'
-function App() {
+  function App() {
     const defaultCode = \`${escaped}\`;
 
-  const [code, setCode] = useState(defaultCode);
-  const [logs, setLogs] = useState<string[]>([]);
-  const [isRunning, setIsRunning] = useState(false);
+    const [code, setCode] = useState(defaultCode);
+    const [logs, setLogs] = useState<string[]>([]);
+    const [isRunning, setIsRunning] = useState(false);
 
-  // tiny ASCII spinner
-  function AsciiLoader() {
-    const frames = ['|','/','—', '\\\\'];
-    const [i, setI] = useState(0);
-    useEffect(() => {
-      const t = setInterval(() => setI((n) => (n + 1) % frames.length), 100);
-      return () => clearInterval(t);
-    }, []);
-    return <span style={{ fontFamily:'monospace' }}>{frames[i]}</span>;
-  }
+    // tiny ASCII spinner
+    function AsciiLoader() {
+      const frames = ['|','/','—', '\\\\'];
+      const [i, setI] = useState(0);
+      useEffect(() => {
+        const t = setInterval(() => setI((n) => (n + 1) % frames.length), 100);
+        return () => clearInterval(t);
+      }, []);
+      return <span style={{ fontFamily:'monospace' }}>{frames[i]}</span>;
+    }
 
-  const runCode = async () => {
-    setIsRunning(true);
-    setLogs([]);
+    const runCode = async () => {
+      setIsRunning(true);
+      setLogs([]);
 
-    // let React paint the loader
-    await new Promise((r) => setTimeout(r, 0));
+      // let React paint the loader
+      await new Promise((r) => setTimeout(r, 0));
 
-    // clean imports
-    const cleaned = code.replace(/^\\s*import.*$/gm, '');
-    
-       // our JSON.stringify shim: BigInts → strings
-    const jsonShim = \`
-      const _orig = JSON.stringify;
-      JSON.stringify = (value, replacer, space) =>
-       _orig(value, (key, val) =>
-           typeof val === 'bigint' ? val.toString() : val
-       , space);
-     \`;
+      // clean imports
+      const cleaned = code.replace(/^\\s*import.*$/gm, '');
+      
+      // our JSON.stringify shim: BigInts → strings
+      const jsonShim = \`
+        const _orig = JSON.stringify;
+        JSON.stringify = (value, replacer, space) =>
+        _orig(value, (key, val) =>
+            typeof val === 'bigint' ? val.toString() : val
+        , space);
+      \`;
 
       // stub out process.stdin/stdout so readline won't crash
       const processShim = \`
@@ -119,13 +123,13 @@ function App() {
       };
       \`;
       
-    // shim console
-    const consoleShim = {
-      log: (...args: any[]) => setLogs(prev => [...prev, args.join(' ')]),
-      error: (...args: any[]) => setLogs(prev => [...prev, 'Error: ' + args.join(' ')]),
-    };
-    
-    // pass the wrapped code
+      // shim console
+      const consoleShim = {
+        log: (...args: any[]) => setLogs(prev => [...prev, args.join(' ')]),
+        error: (...args: any[]) => setLogs(prev => [...prev, 'Error: ' + args.join(' ')]),
+      };
+      
+      // pass the wrapped code
       const wrapped = \`
         return (async () => {
           \${jsonShim}
@@ -138,6 +142,7 @@ function App() {
       const scope = {
         ethers,
         PushChain,
+        CONSTANTS,
         http,
         defineChain,
         Keypair,
@@ -158,32 +163,24 @@ function App() {
       try {
         const fn = new Function(...Object.keys(scope), wrapped);
         await fn(...Object.values(scope));
-    } catch (e: any) {
-      consoleShim.error(e.message || e.toString());
-    } finally {
-      setIsRunning(false);
-    }
-  };
+      } catch (e: any) {
+        consoleShim.error(e.message || e.toString());
+      } finally {
+        setIsRunning(false);
+      }
+    };
 
-  return (
-    <div style={{ margin: '0 auto', width: '100%' }}>
-      <div style={{ margin: '0 auto', width: 'inherit', backgroundColor: '#282a36' }}>
-        {/* FIX: add empty line at the end of the code to ensure typing is not unfocused first time */}
+    return (
+      <div style={{ margin: '0 auto' }}>
         <LiveEditor
-          code={code.replace(/^(?:\\r?\\n)+|(?:\\r?\\n)+$/g, '').concat('\\n                                                                                                                               ')}
-          onChange={(newCode) => {
-            // Remove trailing newlines and spaces before setting the code
-            setCode(newCode.replace(/^(?:\\r?\\n)+|(?:\\r?\\n)+$/g, '').replace(/\\n\\s+$/g, ''));
-          }}
+          code={code.replace(/^(?:\\r?\\n)+|(?:\\r?\\n)+$/g, '')}
+          onChange={setCode}
           style={{
             fontFamily: 'monospace',
             fontSize: 16,
-            width: 'inherit',
           }}
         />
-      </div>
-    
-      <div style={{ margin: '0 auto' }}>
+        
         <div
           style={{
             padding: '20px',
@@ -365,7 +362,6 @@ function App() {
             </div>
           )}
         </div>
-      </div>
       </div>
     );
   }
