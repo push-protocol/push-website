@@ -27,45 +27,50 @@ import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtua
 
 ## Initialize Client
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="ethers" attributes={{className: "codetab ethers"}} default>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+<Tabs groupId="reading-blockchain-state">
+  <TabItem value="ethers_v6" label="Ethers (V6)" default>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
 {`
-const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+    const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+    console.log('Provider:', Object.getOwnPropertyNames(Object.getPrototypeOf(provider)))
 `}
-    </NodeJSVirtualIDE>
+
+</NodeJSVirtualIDE>
   </TabItem>
 
-  <TabItem value="viem" attributes={{className: "codetab viem"}}>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
-{`
-const pushTestnet = defineChain({
-    id: 42101,
-    name: 'Push Testnet',
-    nativeCurrency: {
-        decimals: 18,
-        name: 'PC',
-        symbol: '$PC',
-    },
-    rpcUrls: {
-        default: {
-            http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
-        },
-    },
-    blockExplorers: {
-        default: {
-            name: 'Push Testnet Explorer',
-            url: 'https://explorer.testnet.push.org/',
-        },
-    },
-})
+  <TabItem value="viem" label="Viem">
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
 
-const viemClient = createPublicClient({
-    chain: pushTestnet,
-    transport: http(),
-})
+{`
+    const pushTestnet = defineChain({
+        id: 42101,
+        name: 'Push Testnet',
+        nativeCurrency: {
+            decimals: 18,
+            name: 'PC',
+            symbol: '$PC',
+        },
+        rpcUrls: {
+            default: {
+                http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+            },
+        },
+        blockExplorers: {
+            default: {
+                name: 'Push Testnet Explorer',
+                url: 'https://explorer.testnet.push.org/',
+            },
+        },
+    })
+
+    const viemClient = createPublicClient({
+        chain: pushTestnet,
+        transport: http(),
+    })
 `}
-    </NodeJSVirtualIDE>
+
+</NodeJSVirtualIDE>
   </TabItem>
 </Tabs>
 
@@ -73,56 +78,60 @@ const viemClient = createPublicClient({
 
 Here's how you can fetch a transaction by its hash:
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="ethers" attributes={{className: "codetab ethers"}} default>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
-{`
-const transactionHash = '0x95b8600bd48154e22e513219c139a370e3cab4d1191d6d33ca8d74f72788154c';
-const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+<Tabs groupId="reading-blockchain-state">
+  <TabItem value="ethers_v6" label="Ethers (V6)" default>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
 
-const transaction = await provider.getTransaction(transactionHash);
-console.log(JSON.stringify(transaction, null, 2));
+{`
+    const transactionHash = '0x95b8600bd48154e22e513219c139a370e3cab4d1191d6d33ca8d74f72788154c';
+    const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+
+    const transaction = await provider.getTransaction(transactionHash);
+    console.log(JSON.stringify(transaction, null, 2));
 `}
-    </NodeJSVirtualIDE>
+
+</NodeJSVirtualIDE>
   </TabItem>
 
-  <TabItem value="viem" attributes={{className: "codetab viem"}}>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
-{`
-const transactionHash = '0x95b8600bd48154e22e513219c139a370e3cab4d1191d6d33ca8d74f72788154c';
+  <TabItem value="viem" label="Viem">
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
 
-const pushTestnet = defineChain({
-    id: 42101,
-    name: 'Push Testnet',
-    nativeCurrency: {
+{`
+    const transactionHash = '0x95b8600bd48154e22e513219c139a370e3cab4d1191d6d33ca8d74f72788154c';
+
+    const pushTestnet = defineChain({
+      id: 42101,
+      name: 'Push Testnet',
+      nativeCurrency: {
         decimals: 18,
         name: 'PC',
         symbol: '$PC',
-    },
-    rpcUrls: {
+      },
+      rpcUrls: {
         default: {
-            http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+          http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
         },
-    },
-    blockExplorers: {
+      },
+      blockExplorers: {
         default: {
-            name: 'Push Testnet Explorer',
-            url: 'https://explorer.testnet.push.org/',
+          name: 'Push Testnet Explorer',
+          url: 'https://explorer.testnet.push.org/',
         },
-    },
-})
+      },
+    })
 
-const viemClient = createPublicClient({
-    chain: pushTestnet,
-    transport: http(),
-})
+    const viemClient = createPublicClient({
+      chain: pushTestnet,
+      transport: http(),
+    })
 
-const transaction = await viemClient.getTransaction({
-  hash: transactionHash,
-});
-console.log(JSON.stringify(transaction, null, 2));
+    const transaction = await viemClient.getTransaction({
+      hash: transactionHash,
+    });
+    console.log(JSON.stringify(transaction, null, 2));
 `}
-    </NodeJSVirtualIDE>
+
+</NodeJSVirtualIDE>
   </TabItem>
 </Tabs>
 
@@ -132,101 +141,108 @@ You can fetch blocks using either library as follows:
 
 ### Fetch Latest Block
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="ethers" attributes={{className: "codetab ethers"}} default>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+<Tabs groupId="reading-blockchain-state">
+  <TabItem value="ethers_v6" label="Ethers (V6)" default>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
 {`
-const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
-const latestBlock = await provider.getBlock('latest')
-console.log(JSON.stringify(latestBlock, null, 2))
+    const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
+    const latestBlock = await provider.getBlock('latest')
+    console.log(JSON.stringify(latestBlock, null, 2))
 `}
-    </NodeJSVirtualIDE>
+
+</NodeJSVirtualIDE>
   </TabItem>
 
-  <TabItem value="viem" attributes={{className: "codetab viem"}}>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+  <TabItem value="viem" label="Viem">
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
 {`
-const pushTestnet = defineChain({
-    id: 42101,
-    name: 'Push Testnet',
-    nativeCurrency: {
-      decimals: 18,
-      name: 'PC',
-      symbol: '$PC',
-    },
-    rpcUrls: {
-      default: {
-        http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+  const pushTestnet = defineChain({
+      id: 42101,
+      name: 'Push Testnet',
+      nativeCurrency: {
+        decimals: 18,
+        name: 'PC',
+        symbol: '$PC',
       },
-    },
-    blockExplorers: {
-      default: {
-        name: 'Push Testnet Explorer',
-        url: 'https://explorer.testnet.push.org/',
+      rpcUrls: {
+        default: {
+          http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+        },
       },
-    },
-})
+      blockExplorers: {
+        default: {
+          name: 'Push Testnet Explorer',
+          url: 'https://explorer.testnet.push.org/',
+        },
+      },
+  })
 
-const viemClient = createPublicClient({
-    chain: pushTestnet,
-    transport: http(),
-})
+  const viemClient = createPublicClient({
+      chain: pushTestnet,
+      transport: http(),
+  })
 
-const latestBlock = await viemClient.getBlock()
-console.dir(latestBlock)
+  const latestBlock = await viemClient.getBlock()
+  console.dir(latestBlock)
 `}
-    </NodeJSVirtualIDE>
+</NodeJSVirtualIDE>
   </TabItem>
 </Tabs>
 
 ### Fetch Block by Hash
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="ethers" attributes={{className: "codetab ethers"}} default>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+<Tabs groupId="reading-blockchain-state">
+  <TabItem value="ethers_v6" label="Ethers (V6)" default>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
 {`
-const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
-const blockHash = '0xccdb5bc5b71ece5a73aa42d5d3171b156f1c0735ac97a07ccec3156b59ac936c'
-const block = await provider.getBlock(blockHash)
-console.log(JSON.stringify(block, null, 2))
+    const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
+    const blockHash = '0xccdb5bc5b71ece5a73aa42d5d3171b156f1c0735ac97a07ccec3156b59ac936c'
+    const block = await provider.getBlock(blockHash)
+    console.log(JSON.stringify(block, null, 2))
 `}
-    </NodeJSVirtualIDE>
+
+</NodeJSVirtualIDE>
   </TabItem>
 
-  <TabItem value="viem" attributes={{className: "codetab viem"}}>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+  <TabItem value="viem" label="Viem">
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
 {`
-const pushTestnet = defineChain({
-    id: 42101,
-    name: 'Push Testnet',
-    nativeCurrency: {
-      decimals: 18,
-      name: 'PC',
-      symbol: '$PC',
-    },
-    rpcUrls: {
-      default: {
-        http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
-      },
-    },
-    blockExplorers: {
-      default: {
-        name: 'Push Testnet Explorer',
-        url: 'https://explorer.testnet.push.org/',
-      },
-    },
-})
+    const pushTestnet = defineChain({
+        id: 42101,
+        name: 'Push Testnet',
+        nativeCurrency: {
+          decimals: 18,
+          name: 'PC',
+          symbol: '$PC',
+        },
+        rpcUrls: {
+          default: {
+            http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+          },
+        },
+        blockExplorers: {
+          default: {
+            name: 'Push Testnet Explorer',
+            url: 'https://explorer.testnet.push.org/',
+          },
+        },
+    })
 
-const viemClient = createPublicClient({
-    chain: pushTestnet,
-    transport: http(),
-})
+    const viemClient = createPublicClient({
+        chain: pushTestnet,
+        transport: http(),
+    })
 
-const latestBlock = await viemClient.getBlock({
-    blockHash: '0xccdb5bc5b71ece5a73aa42d5d3171b156f1c0735ac97a07ccec3156b59ac936c',
-})
-console.dir(latestBlock)
+    const latestBlock = await viemClient.getBlock({
+        blockHash: '0xccdb5bc5b71ece5a73aa42d5d3171b156f1c0735ac97a07ccec3156b59ac936c',
+    })
+    console.dir(latestBlock)
 `}
-    </NodeJSVirtualIDE>
+
+</NodeJSVirtualIDE>
   </TabItem>
 </Tabs>
