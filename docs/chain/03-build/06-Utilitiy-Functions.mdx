@@ -33,9 +33,11 @@ import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtua
 
 <Tabs className='codetabs' groupId='code-examples'>
   <TabItem value='js' attributes={{ className: 'codetab js' }} default>
-    ```typescript 
+
+    ```typescript
     const account = PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress)
     ```
+
   </TabItem>
 </Tabs>
 
@@ -48,16 +50,17 @@ import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtua
 #### Example: Convert Ethereum Sepolia CAIP-10 to UniversalAccount
 
 <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
-{`
-const account = PushChain.utils.account.fromChainAgnostic(
-    'eip155:11155111:0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
-)
-console.log(JSON.stringify(account, null, 2))
-// {
-//   chain: 'eip155:11155111',
-//   address: '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
-// }
-`}
+
+    {`
+    const account = PushChain.utils.account.fromChainAgnostic(
+        'eip155:11155111:0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
+    )
+    console.log(JSON.stringify(account, null, 2))
+    // {
+    //   chain: 'eip155:11155111',
+    //   address: '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
+    // }
+    `}
 
 </NodeJSVirtualIDE>
 
@@ -82,8 +85,13 @@ const account = PushChain.utils.account.toUniversal(address, {
 
 #### Example: Convert Ethereum Sepolia Address to UniversalAccount
 
-<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
-{`
+<NodeJSVirtualIDE
+  repo={{
+    title: 'Open in Github',
+    url: 'https://github.com/push-protocol/push-chain-sdk',
+  }}
+>
+  {`
 const account = PushChain.utils.account.toUniversal('0xD8d6aF611a17C236b13235B5318508FA61dE3Dba', {
     chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
 })
@@ -144,10 +152,10 @@ const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
 
 ### `convertOriginToExecutor` parameters
 
-| **Param**        | **Type**          | **Remarks**                                                                                               |
-| ---------------- | ----------------- | --------------------------------------------------------------------------------------------------------- |
-| `account`        | `UniversalAccount` | A UniversalAccount object containing chain and address information.                                      |
-| `options.status` | `boolean`         | Whether to check if the computed smart account address is deployed. Set to `true` to include deployment status. |
+| **Param**        | **Type**           | **Remarks**                                                                                                     |
+| ---------------- | ------------------ | --------------------------------------------------------------------------------------------------------------- |
+| `account`        | `UniversalAccount` | A UniversalAccount object containing chain and address information.                                             |
+| `options.status` | `boolean`          | Whether to check if the computed smart account address is deployed. Set to `true` to include deployment status. |
 
 <Details summary="Expected response">
 
@@ -160,9 +168,9 @@ const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
 
 Response properties description:
 
-| **Property** | **Type**  | **Description**                                                                    |
-| ------------ | --------- | ---------------------------------------------------------------------------------- |
-| `address`    | `string`  | The computed smart account (executor) address on Push Chain                       |
+| **Property** | **Type**  | **Description**                                                                  |
+| ------------ | --------- | -------------------------------------------------------------------------------- |
+| `address`    | `string`  | The computed smart account (executor) address on Push Chain                      |
 | `deployed`   | `boolean` | Whether the smart account is deployed (only present if `options.status` is true) |
 
 </Details>
@@ -178,41 +186,41 @@ const account = PushChain.utils.account.toUniversal('0xD8d6aF611a17C236b13235B53
 
 // Convert to executor address with deployment status
 const executorInfo = await PushChain.utils.account.convertOriginToExecutor(account, {
-    status: true,
+status: true,
 })
 
 console.log(JSON.stringify(executorInfo, null, 2));
 // {
-//   address: '0x1234...abcd',
-//   deployed: false
+// address: '0x1234...abcd',
+// deployed: false
 // }
 
 // Convert without deployment status
 const executorSimple = await PushChain.utils.account.convertOriginToExecutor(account, {
-    status: false,
+status: false,
 })
 
 console.log(JSON.stringify(executorSimple, null, 2));
 // {
-//   address: '0x1234...abcd'
+// address: '0x1234...abcd'
 // }
 `}
+
 </NodeJSVirtualIDE>
 
 ## Create Universal Signer from Wallet Provider
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-```typescript
-const signer = await PushChain.utils.signer.toUniversal(signer)
-```
+<Tabs className='codetabs' groupId='code-examples'>
+  <TabItem value='js' attributes={{ className: 'codetab js' }} default>
+    ```typescript const signer = await
+    PushChain.utils.signer.toUniversal(signer) ```
   </TabItem>
 </Tabs>
 
 ### `toUniversal` parameters
 
-| **Param** | **Type** | **Remarks**                                                                                                                                                                                                   |
-| --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Param** | **Type**                                                                                | **Remarks**                                                                                                                                                                                                              |
+| --------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `signer`  | `UniversalSignerSkeleton \| EthersV6SignerType \| EthersV5SignerType \| ViemSignerType` | A signer object from one of the supported libraries (ethers v5/v6, viem, or a custom UniversalSignerSkeleton). Here are some possible values: `ethers.Wallet`, `viem.Account`, `@pushchain/core.UniversalSignerSkeleton` |
 
 #### Example: Create Universal Signer from Wallet Provider
@@ -228,15 +236,16 @@ const signer = await PushChain.utils.signer.toUniversal(wallet)
 
 console.log(JSON.stringify(signer, null, 2))
 // {
-//   account: {
-//     address: '0x322c45d98Da3e7b71D85a518349498f8A1d50CbE',
-//     chain: 'eip155:11155111'
-//   },
-//   signMessage: [Function: signMessage],
-//   signTransaction: [Function: signTransaction],
-//   signTypedData: [Function: signTypedData]
+// account: {
+// address: '0x322c45d98Da3e7b71D85a518349498f8A1d50CbE',
+// chain: 'eip155:11155111'
+// },
+// signMessage: [Function: signMessage],
+// signTransaction: [Function: signTransaction],
+// signTypedData: [Function: signTypedData]
 // }
 `}
+
 </NodeJSVirtualIDE>
   </TabItem>
   <TabItem value="viem" attributes={{className: "codetab viem"}} default>
@@ -253,15 +262,16 @@ const universalSigner = await PushChain.utils.signer.toUniversal(walletClient)
 
 console.log(JSON.stringify(universalSigner, null, 2))
 // {
-//   account: {
-//     address: '0x338B3c965a49323bbFaBe3bC451a75BDADdaed82',
-//     chain: 'eip155:11155111'
-//   },
-//   signMessage: [Function: signMessage],
-//   signTransaction: [Function: signTransaction],
-//   signTypedData: [Function: signTypedData]
+// account: {
+// address: '0x338B3c965a49323bbFaBe3bC451a75BDADdaed82',
+// chain: 'eip155:11155111'
+// },
+// signMessage: [Function: signMessage],
+// signTransaction: [Function: signTransaction],
+// signTypedData: [Function: signTypedData]
 // }
 `}
+
 </NodeJSVirtualIDE>
   </TabItem>
 </Tabs>
@@ -281,10 +291,10 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(keyp
 
 ### `toUniversalFromKeyPair` parameters
 
-| **Param** | **Type** | **Remarks** |
-| --------- | -------- | ----------- |
-| `keypair` | `Keypair` | A keypair object from one of the supported libraries (ethers v5/v6, viem, or a custom UniversalSignerSkeleton) |
-| `options.chain` | `CHAIN` | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET` |
+| **Param**         | **Type**  | **Remarks**                                                                                                                                                                                                 |
+| ----------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `keypair`         | `Keypair` | A keypair object from one of the supported libraries (ethers v5/v6, viem, or a custom UniversalSignerSkeleton)                                                                                              |
+| `options.chain`   | `CHAIN`   | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET`       |
 | `options.library` | `LIBRARY` | The library to use for the signer. Here are some possible values: `PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6`, `PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM`, `PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS` |
 
 #### Example: Create Universal Signer from Key Pair
@@ -297,21 +307,22 @@ const provider = new ethers.providers.JsonRpcProvider('https://sepolia.drpc.org'
 const wallet = new ethers.Wallet(ethers.Wallet.createRandom().privateKey, provider)
 
 const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(wallet, {
-    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-    library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV5,
+chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV5,
 })
 
 console.log(JSON.stringify(universalSigner, null, 2))
 // {
-//   account: {
-//     address: '0xB785060BFf7be3367398a48D5aC65742785C605b',
-//     chain: 'eip155:11155111'
-//   },
-//   signMessage: [Function: signMessage],
-//   signTransaction: [Function: signTransaction],
-//   signTypedData: [Function: signTypedData]
+// account: {
+// address: '0xB785060BFf7be3367398a48D5aC65742785C605b',
+// chain: 'eip155:11155111'
+// },
+// signMessage: [Function: signMessage],
+// signTransaction: [Function: signTransaction],
+// signTypedData: [Function: signTypedData]
 // }
 `}
+
 </NodeJSVirtualIDE>
   </TabItem>
   <TabItem value="viem" attributes={{className: "codetab viem"}} default>
@@ -324,21 +335,22 @@ const walletClient = createWalletClient({
 })
 
 const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(walletClient, {
-    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-    library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
 })
 
 console.log(JSON.stringify(universalSigner, null, 2))
 // {
-//   account: {
-//     address: '0x40aDfe216844ddE24d663c7EC05F4077AB1677a6',
-//     chain: 'eip155:11155111'
-//   },
-//   signMessage: [Function: signMessage],
-//   signTransaction: [Function: signTransaction],
-//   signTypedData: [Function: signTypedData]
+// account: {
+// address: '0x40aDfe216844ddE24d663c7EC05F4077AB1677a6',
+// chain: 'eip155:11155111'
+// },
+// signMessage: [Function: signMessage],
+// signTransaction: [Function: signTransaction],
+// signTypedData: [Function: signTypedData]
 // }
 `}
+
 </NodeJSVirtualIDE>
   </TabItem>
   <TabItem value="solana" attributes={{className: "codetab solana"}} default>
@@ -347,21 +359,22 @@ console.log(JSON.stringify(universalSigner, null, 2))
 const keypair = Keypair.generate()
 
 const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(keypair, {
-    chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
-    library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
+library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
 })
 
 console.log(JSON.stringify(universalSigner, null, 2))
 // {
-//   account: {
-//     address: 'FGdvXBH3sLtLatjHNDsP1eA26MJEMuKaVvph1ww1GMpy',
-//     chain: 'solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1'
-//   },
-//   signMessage: [Function: signMessage],
-//   signTransaction: [Function: signTransaction],
-//   signTypedData: [Function: signTypedData]
+// account: {
+// address: 'FGdvXBH3sLtLatjHNDsP1eA26MJEMuKaVvph1ww1GMpy',
+// chain: 'solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1'
+// },
+// signMessage: [Function: signMessage],
+// signTransaction: [Function: signTransaction],
+// signTypedData: [Function: signTypedData]
 // }
 `}
+
 </NodeJSVirtualIDE>
   </TabItem>
 </Tabs>
@@ -382,12 +395,12 @@ const skeleton = PushChain.utils.signer.construct(universalAccount, {
 
 ### `construct` parameters
 
-| **Param** | **Type** | **Remarks** |
-| --------- | -------- | ----------- |
-| `universalAccount` | `UniversalAccount` | A UniversalAccount object containing chain and address information. |
-| `signMessage` | `(data: Uint8Array) => Promise<Uint8Array>` | A function to sign a message. |
-| `signTransaction` | `(unsignedTx: Uint8Array) => Promise<Uint8Array>` | A function to sign a transaction. |
-| `signTypedData` | `(data: { domain: TypedDataDomain, types: TypedData, primaryType: string, message: Record<string, any> }) => Promise<Uint8Array>` | A function to sign a typed data. |
+| **Param**          | **Type**                                                                                                                          | **Remarks**                                                         |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `universalAccount` | `UniversalAccount`                                                                                                                | A UniversalAccount object containing chain and address information. |
+| `signMessage`      | `(data: Uint8Array) => Promise<Uint8Array>`                                                                                       | A function to sign a message.                                       |
+| `signTransaction`  | `(unsignedTx: Uint8Array) => Promise<Uint8Array>`                                                                                 | A function to sign a transaction.                                   |
+| `signTypedData`    | `(data: { domain: TypedDataDomain, types: TypedData, primaryType: string, message: Record<string, any> }) => Promise<Uint8Array>` | A function to sign a typed data.                                    |
 
 #### Example: Create Universal Signer Manually
 
@@ -399,43 +412,45 @@ const universalAccount = PushChain.utils.account.fromChainAgnostic(`eip155:11155
 
 const address = viemAccount.address
 const signMessage = async (data: Uint8Array) => {
-  const hexSig = await viemAccount.signMessage({
-    message: { raw: data },
-  })
-  return hexToBytes(hexSig)
+const hexSig = await viemAccount.signMessage({
+message: { raw: data },
+})
+return hexToBytes(hexSig)
 }
 const signTransaction = async (unsignedTx: Uint8Array) => {
-  const tx = parseTransaction(bytesToHex(unsignedTx))
-  const txHash = await viemAccount.signTransaction(tx as never)
-  return hexToBytes(txHash)
+const tx = parseTransaction(bytesToHex(unsignedTx))
+const txHash = await viemAccount.signTransaction(tx as never)
+return hexToBytes(txHash)
 }
 const signTypedData = async ({
-  domain,
-  types,
-  primaryType,
-  message,
+domain,
+types,
+primaryType,
+message,
 }: {
-  domain: TypedDataDomain
-  types: TypedData
-  primaryType: string
-  message: Record<string, any>
+domain: TypedDataDomain
+types: TypedData
+primaryType: string
+message: Record<string, any>
 }) => {
-  const hexSig = await viemAccount.signTypedData({
-    domain,
-    types,
-    primaryType,
-    message,
-  })
-  return hexToBytes(hexSig)
+const hexSig = await viemAccount.signTypedData({
+domain,
+types,
+primaryType,
+message,
+})
+return hexToBytes(hexSig)
 }
 
 const skeleton = PushChain.utils.signer.construct(universalAccount, {
-  signMessage,
-  signTransaction,
-  signTypedData,
+signMessage,
+signTransaction,
+signTypedData,
 })
 
 console.log(JSON.stringify(skeleton, null, 2))
+
 ```
 </TabItem>
 </Tabs>
+```

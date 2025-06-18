@@ -137,6 +137,48 @@ function EditorWithHeader({ minimized, code, title, codeEnv }) {
   );
 }
 
+function changeToExecutableCode(code, isNodeJSEnv) {
+  const execCode = !isNodeJSEnv
+    ? code
+        .split('\n')
+        .reduce(
+          (acc, line) => {
+            // If we're not in an import statement and this line doesn't start an import,
+            // keep the line
+            if (!acc.inImport && !line.trim().startsWith('import')) {
+              return {
+                inImport: false,
+                lines: [...acc.lines, line],
+              };
+            }
+
+            // If this line contains a semicolon, we're done with the import
+            if (line.includes(';')) {
+              return {
+                inImport: false,
+                lines: acc.lines,
+              };
+            }
+
+            // Otherwise we're in an import statement
+            return {
+              inImport: true,
+              lines: acc.lines,
+            };
+          },
+          {
+            inImport: false,
+            lines: [],
+          }
+        )
+        .lines.join('\n')
+        .replace(/^\n/, '')
+        .trimEnd()
+    : code;
+
+  return execCode;
+}
+
 export default function Playground({
   children: rawChildren,
   transformCode,
@@ -182,35 +224,10 @@ export default function Playground({
 
   // ——— remove imports for execution ———
   // but only if it's not a nodejs environment
-  let inImport = false;
-  const execCode = !isNodeJSEnv
-    ? strippedChildren
-        .split('\n')
-        .filter((l) => {
-          const t = l.trim();
-          if (t.startsWith('import ')) {
-            inImport = !t.endsWith(';');
-            return false;
-          }
-          if (inImport) {
-            if (t.endsWith(';')) inImport = false;
-            return false;
-          }
-          return true;
-        })
-        .join('\n')
-        .replace(/^\n/, '')
-        .trimEnd()
-    : strippedChildren;
+  const execCode = changeToExecutableCode(strippedChildren, isNodeJSEnv);
 
   // ——— remove empty lines from top and bottom for execution ———
   const displayCode = strippedChildren.trim();
-
-  console.log('execCode');
-  console.log(execCode);
-
-  console.log('displayCode');
-  console.log(displayCode);
 
   // decide code environment
   const codeEnv = isNodeJSEnv
@@ -222,21 +239,25 @@ export default function Playground({
       <LiveProvider
         code={execCode}
         noInline={noInline}
-        transformCode={transformCode ?? ((code) => `${code};`)}
+        transformCode={(code) =>
+          `${changeToExecutableCode(code, isNodeJSEnv)};`
+        }
         theme={prismTheme}
         {...props}
       >
         {playgroundPosition === 'top' ? (
           <>
             <ResultWithHeader
-              title={isNodeJSEnv ? 'VIRTUAL NODE IDE' : undefined}
+              title={isNodeJSEnv ? 'VIRTUAL NODE IDE' : 'LIVE APP PREVIEW'}
               codeEnv={codeEnv}
             />
             {!hidden && (
               <EditorWithHeader
                 code={displayCode}
                 minimized={minimized}
-                title={isNodeJSEnv ? 'VIRTUAL NODE IDE' : undefined}
+                title={
+                  isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE REACT EDITOR'
+                }
                 codeEnv={codeEnv}
               />
             )}
@@ -247,12 +268,14 @@ export default function Playground({
               <EditorWithHeader
                 code={displayCode}
                 minimized={minimized}
-                title={isNodeJSEnv ? 'VIRTUAL NODE IDE' : undefined}
+                title={
+                  isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE REACT EDITOR'
+                }
                 codeEnv={codeEnv}
               />
             )}
             <ResultWithHeader
-              title={isNodeJSEnv ? 'VIRTUAL NODE IDE' : undefined}
+              title={isNodeJSEnv ? 'VIRTUAL NODE IDE' : 'LIVE APP PREVIEW'}
               codeEnv={codeEnv}
             />
           </>

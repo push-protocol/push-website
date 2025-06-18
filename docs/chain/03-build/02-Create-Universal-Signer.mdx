@@ -46,7 +46,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(ethersSigner);
   </TabItem>
 
   <TabItem value='viem' label='Viem'>
-
+  
 ```typescript
 // NOTE: transport determines the chain of the account
 // passing Ethereum Sepolia RPC URL will create a Universal Signer for Ethereum Sepolia
@@ -56,26 +56,32 @@ const universalSigner = await PushChain.utils.signer.toUniversal(ethersSigner);
 const account = privateKeyToAccount('0x...');
 
 const signer = createWalletClient({
-  transport: http('...'), // or your preferred RPC URL
-  account,
+transport: http('...'), // or your preferred RPC URL
+account,
 });
 
 // Convert to Universal Signer
 const universalSigner = await PushChain.utils.signer.toUniversal(viemClient);
-```
+
+````
 
   </TabItem>
+
   <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
 
 ```typescript
-// Create a Solana keypair from private key
-const privateKeyHex = '...';
-const privateKey = Uint8Array.from(Buffer.from(privateKeyHex, 'hex'));
-const solanaKeypair = Keypair.fromSecretKey(privateKey);
+// Create a Solana keypair
+const solKeypair = Keypair.generate()
 
 // Convert to Universal Signer
-const universalSigner = await PushChain.utils.signer.toUniversal(solanaKeypair);
-```
+const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
+  solKeypair,
+  {
+    chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
+    library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+  }
+)
+````
 
   </TabItem>
 </Tabs>
@@ -111,6 +117,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(solanaKeypair);
   <TabItem value='ethers_v6' label='Ethers (V6)' default>
 
 <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/create-universal-signer"}}>
+
 {`
 
     // Import Push Chain Core
@@ -124,14 +131,14 @@ const universalSigner = await PushChain.utils.signer.toUniversal(solanaKeypair);
       const wallet = ethers.Wallet.createRandom()
 
       // Set up provider
-      // Replace it with different JsonRpcProvider to targetting Ethereum Account, BNB Account, etc
+      // Replace it with different JsonRpcProvider to target Ethereum Account, BNB Account, etc
       // const provider = new ethers.JsonRpcProvider('https://gateway.tenderly.co/public/sepolia')
       const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
       const signer = wallet.connect(provider)
 
       // Convert ethers signer to Universal Signer
       const universalSigner = await PushChain.utils.signer.toUniversal(signer);
-      console.log('🔑 Got universal signer')
+      console.log('🔑 Got universal signer - Ethers')
       console.log(JSON.stringify(universalSigner));
     }
 
@@ -145,13 +152,120 @@ const universalSigner = await PushChain.utils.signer.toUniversal(solanaKeypair);
 
   <TabItem value='viem' label='Viem'>
 
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/create-universal-signer"}}>
+
+{`
+
+    // Import Push Chain Core
+    import { PushChain } from '@pushchain/core';
+
+    // Import Viem
+    import { createWalletClient, http } from 'viem'
+    import { generatePrivateKey, privateKeyToAccount } from 'viem/accounts'
+    import { sepolia } from 'viem/chains'
+
+    async function main() {
+      // Create random wallet
+      const account = privateKeyToAccount(generatePrivateKey())
+
+      // set chain to sepolia
+      const walletClient = createWalletClient({
+        account,
+        transport: http('https://evm.rpc-testnet-donut-node1.push.org/'),
+      })
+
+      // Convert viem signer to Universal Signer
+      const universalSigner = await PushChain.utils.signer.toUniversal(walletClient);
+      console.log('🔑 Got universal signer - Viem')
+      console.log(JSON.stringify(universalSigner));
+    }
+
+    main().catch(console.error)
+
+`}
+
+</NodeJSVirtualIDE>
+
   </TabItem>
 
   <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
 
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/create-universal-signer"}}>
+
+{`
+
+    // Import Push Chain Core
+    import { PushChain } from '@pushchain/core';
+
+    // Import Solana Web3 JS
+    import { Keypair } from '@solana/web3.js'
+
+    async function main() {
+      // Create random wallet
+      const solKeypair = Keypair.generate()
+
+      // Convert solana signer to Universal Signer
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
+        solKeypair,
+        {
+          chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
+          library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+        }
+      )
+      console.log('🔑 Got universal signer')
+      console.log(JSON.stringify(universalSigner));
+    }
+
+    main().catch(console.error)
+
+`}
+
+</NodeJSVirtualIDE>
+
   </TabItem>
 
-  <TabItem value='ui_kit' label='UI Kit (Frontend)'>
+  <TabItem value='ui_kit' label='UI Kit (Frontend / Abstracted)'>
+  [UI Kit / UI Components](/docs/chain/ui-components/) abstracts away creation of the Universal Signer for you.
+  
+    ```jsx live
+    // customPropMinimized='false'
+    // Import necessary components from @pushchain/ui-kit
+    import {
+      PushUniversalWalletProvider,
+      PushUniversalAccountButton,
+      usePushWalletContext,
+      usePushChainClient,
+      PushUI,
+    } from '@pushchain/ui-kit';
+
+    function App() {
+      // Define Wallet Config
+      const walletConfig = {
+        network: PushUI.CONSTANTS.PUSH_NETWORK.TESTNET,
+      };
+
+      function Component() {
+        const { connectionStatus } = usePushWalletContext();
+        const { pushChainClient } = usePushChainClient();
+
+        return (
+          <div>
+            <PushUniversalAccountButton />
+
+            {connectionStatus == 'connected' &&
+              <p> Hi </p
+            }
+          </div>
+        );
+      }
+
+      return (
+        <PushUniversalWalletProvider config={walletConfig}>
+          <Component />
+        </PushUniversalWalletProvider>
+      );
+    }
+    ```
 
   </TabItem>
 </Tabs>
