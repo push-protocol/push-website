@@ -19,11 +19,13 @@ Push Chain is a True Universal Layer 1 Proof of Stake (PoS) blockchain enabling 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Details from '@theme/Details';
+import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
 
 ## Initialize Push Chain API
 
 <Tabs className="codetabs" groupId="initialize-push-chain">
   <TabItem value="ethers" attributes={{className: "codetab ethers"}} default>
+
 ```typescript
 // 1. Create ethers Wallet from private key
 const privateKey = '0x...' // Replace with your actual private key
@@ -32,18 +34,19 @@ const wallet = new ethers.Wallet(privateKey, provider)
 
 // 2. Create universal signer from ethers wallet
 const signer = await PushChain.utils.signer.toUniversalFromKeyPair(wallet, {
-chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6,
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+  library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6,
 })
 
 // 3. Initialize Push Chain SDK on your preferred network
 const pushChainClient = await PushChain.initialize(signer, {
-network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 })
+```
 
-````
   </TabItem>
   <TabItem value="viem" attributes={{className: "codetab viem"}} default>
+
 ```typescript
 // 1. Create viem account from private key
 const privateKey = '0x...' // Replace it with your private key
@@ -59,10 +62,11 @@ const signer = await PushChain.utils.signer.toUniversalFromKeyPair(account, {
 const pushChainClient = await PushChain.initialize(signer, {
   network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
 })
-````
+```
 
  </TabItem>
   <TabItem value="solana" attributes={{className: "codetab sol"}}>
+
 ```typescript
 // 1. Create Solana keypair from private key
 const privateKeyHex = '...'
@@ -71,16 +75,16 @@ const account = Keypair.fromSecretKey(privateKey)
 
 // 2. Create universal signer from Solana keypair
 const signer = await PushChain.utils.signer.toUniversalFromKeyPair(account, {
-chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
-library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+  chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+  library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
 })
 
 // 3. Initialize Push Chain SDK on Testnet for Solana
 const pushChainClient = await PushChain.initialize(signer, {
-network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
 })
+```
 
-````
   </TabItem>
 </Tabs>
 
@@ -123,7 +127,7 @@ PushChain {
     sendTransaction: [Function: bound execute]
   }
 }
-````
+```
 
 | Property       | Type           | Remarks                                                                                                                                                                            |
 | -------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -171,7 +175,6 @@ The `CHAIN` enum defines all supported blockchain networks that can be used with
 | `ETHEREUM_MAINNET`                     | Ethereum     | Ethereum mainnet                     |
 | `ETHEREUM_SEPOLIA`                     | Ethereum     | Ethereum testnet (Sepolia)           |
 | `SOLANA_MAINNET`                       | Solana       | Solana mainnet                       |
-| `SOLANA_TESTNET`                       | Solana       | Solana testnet                       |
 | `SOLANA_DEVNET`                        | Solana       | Solana development network           |
 
 ## Example
@@ -179,19 +182,100 @@ The `CHAIN` enum defines all supported blockchain networks that can be used with
 Here is an example of how to initialize the Push Chain SDK with a universal signer and a custom RPC URL.
 
 <Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
-```typescript
-const pushChainClient = await PushChain.initialize(
-  universalSigner, // Your universal signer instance
-  {
-    network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
-    rpcUrls: {
-      [PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA]: ['https://sepolia.infura.io/v3/YOUR-PROJECT-ID'],
-      [PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET]: ['https://api.testnet.solana.com'],
-    },
-    printTraces: false,
+  <TabItem value="ethers" attributes={{className: "codetab ethers"}} default>
+    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+  {`
+  import { PushChain } from '@pushchain/core'
+  import { ethers } from 'ethers'
+
+  async function main() {
+      console.log('Creating Universal Signer - Ethers V6')
+
+      // Create random wallet
+      const wallet = ethers.Wallet.createRandom()
+
+      // Set up provider connected to Ethereum Sepolia Testnet
+      const provider = new ethers.JsonRpcProvider('https://gateway.tenderly.co/public/sepolia')
+      const signer = wallet.connect(provider)
+
+      // Convert ethers signer to Universal Signer
+      const universalSigner = await PushChain.utils.signer.toUniversal(signer)
+      console.log('🔑 Got universal signer')
+
+      // Initialize Push Chain SDK
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+          network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+      })
+      console.log('🔑 Got push chain client')
+      console.log(JSON.stringify(pushChainClient))
   }
-);
-```
+
+  main()
+  `}
+    </NodeJSVirtualIDE>
+  </TabItem>
+  <TabItem value="viem" attributes={{className: "codetab viem"}}>
+    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+  {`
+  import { PushChain } from '@pushchain/core'
+  import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts'
+  import { createWalletClient, http } from 'viem'
+  import { sepolia } from 'viem/chains'
+
+  async function main() {
+      console.log('Creating Universal Signer - Viem')
+
+      // Create random wallet
+      const account = privateKeyToAccount(generatePrivateKey())
+      const walletClient = createWalletClient({
+          account,
+          chain: sepolia,
+          transport: http(),
+      })
+
+      // Convert viem wallet client to Universal Signer
+      const universalSigner = await PushChain.utils.signer.toUniversal(walletClient)
+      console.log('🔑 Got universal signer')
+
+      // Initialize Push Chain SDK
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+          network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+      })
+      console.log('🔑 Got push chain client')
+      console.log(JSON.stringify(pushChainClient))
+  }
+
+  main()
+  `}
+    </NodeJSVirtualIDE>
+  </TabItem>
+  <TabItem value="solana" attributes={{className: "codetab sol"}}>
+    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+  {`
+  import { PushChain } from '@pushchain/core'
+  import { Keypair } from '@solana/web3.js'
+
+  async function main() {
+      console.log('Creating Universal Signer - Solana Web3.js')
+
+      const keyPair = Keypair.generate()
+
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(keyPair, {
+          chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
+          library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+      })
+      console.log('🔑 Got universal signer')
+
+      // Initialize Push Chain SDK
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+          network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+      })
+      console.log('🔑 Got push chain client')
+      console.log(JSON.stringify(pushChainClient))
+  }
+
+  main()
+  `}
+  </NodeJSVirtualIDE>
   </TabItem>
 </Tabs>
