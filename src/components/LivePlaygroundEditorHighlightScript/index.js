@@ -1,7 +1,17 @@
 // src/components/LivePlaygroundEditorHighlightScript.js
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import './highlight-styles.css';
+
+// Set to true to enable debug logging
+const DEBUG = false;
+
+// Debug logger that only logs when DEBUG is true
+function debug(...args) {
+  if (DEBUG) {
+    console.log(...args);
+  }
+}
 
 export default function LivePlaygroundEditorHighlightScript() {
   useEffect(() => {
@@ -18,55 +28,121 @@ export default function LivePlaygroundEditorHighlightScript() {
         .forEach((span) => span.classList.remove('highlight-live-editor'));
     }
 
-    // Apply highlights by regex only
+    // Apply highlights based on start and end regex patterns
     function applyHighlights(container) {
-      // Get regex from attribute
-      const regexStr = container.getAttribute('data-highlight-regex');
-      console.log('Container regex attribute:', regexStr);
+      // Get start regex from attribute
+      const startRegexStr = container.getAttribute(
+        'data-highlight-regex-start'
+      );
+      debug('Start regex attribute:', startRegexStr);
 
-      // If no regex, nothing to highlight
-      if (!regexStr) {
-        console.log('No regex found, skipping highlights');
+      // Get end regex from attribute (optional)
+      const endRegexStr = container.getAttribute('data-highlight-regex-end');
+      debug('End regex attribute:', endRegexStr);
+
+      // If no start regex, nothing to highlight
+      if (!startRegexStr) {
+        debug('No start regex found, skipping highlights');
         return;
       }
 
-      let regex;
+      let startRegex, endRegex;
       try {
-        // Create regex object - try both with and without global flag
-        // Some regex patterns might need the global flag to work properly
-        regex = new RegExp(regexStr, 'g');
-        console.log('Created regex object with global flag:', regex);
+        // Create regex objects
+        startRegex = new RegExp(startRegexStr);
+        debug('Created start regex object:', startRegex);
+
+        // Create end regex if provided
+        if (endRegexStr) {
+          endRegex = new RegExp(endRegexStr);
+          debug('Created end regex object:', endRegex);
+        }
       } catch (e) {
-        console.error('Invalid regex pattern', regexStr, e);
+        console.error('Invalid regex pattern', e);
         return;
       }
 
       const pre = container.querySelector('pre');
       if (!pre) {
-        console.log('No pre element found in container');
+        debug('No pre element found in container');
         return;
       }
 
-      console.log('Checking spans in pre element');
+      debug('Checking spans in pre element');
 
-      // Check each span against the regex
-      Array.from(pre.children)
-        .filter((el) => el.tagName.toLowerCase() === 'span')
-        .forEach((span) => {
-          const text = span.textContent || '';
+      // Get all direct child spans of the pre element
+      const spans = Array.from(pre.querySelectorAll(':scope > span'));
 
-          // Reset lastIndex before each test to ensure consistent behavior
-          regex.lastIndex = 0;
+      let highlightStarted = false;
+      let highlightEnded = false;
 
-          // Test if the text matches the regex
-          const matches = regex.test(text);
-          console.log(`Text: "${text}", Matches: ${matches}`);
+      debug('Total spans to process:', spans.length);
 
-          if (matches) {
-            span.classList.add('highlight-live-editor');
-            console.log('Added highlight to span');
+      // Process all spans
+      for (let index = 0; index < spans.length; index++) {
+        const span = spans[index];
+        const text = span.textContent || '';
+
+        // No need to reset lastIndex since we're not using global flag
+
+        // Reset regex state for each test
+        if (startRegex) startRegex.lastIndex = 0;
+        if (endRegex) endRegex.lastIndex = 0;
+
+        // Check if this span matches the start pattern
+        const startMatch = !highlightStarted && startRegex.test(text);
+
+        // Check for end match only if we've already started highlighting or if we're starting on this line
+        let endMatch = false;
+        if (endRegex && (highlightStarted || startMatch)) {
+          // Reset lastIndex before testing for end match
+          endRegex.lastIndex = 0;
+          endMatch = endRegex.test(text);
+        }
+
+        // Handle the case where both start and end match in the same line
+        if (startMatch && endMatch) {
+          span.classList.add('highlight-live-editor');
+          debug(`[${index}] Both start and end match in same line:`, text);
+          highlightStarted = true;
+          highlightEnded = true;
+          continue;
+        }
+
+        // Handle start match
+        if (startMatch) {
+          highlightStarted = true;
+          span.classList.add('highlight-live-editor');
+          debug(`[${index}] Started highlighting at:`, text);
+
+          // If no end regex is provided, only highlight this span (single line)
+          if (!endRegex) {
+            debug(`[${index}] No end regex, single line highlight`);
+            highlightEnded = true;
           }
-        });
+          continue;
+        }
+
+        // Check if highlighting has already ended
+        if (highlightEnded) {
+          debug(`[${index}] Skipping span (highlight ended):`, text);
+          continue;
+        }
+
+        // Check if this span matches the end pattern
+        if (highlightStarted && endMatch) {
+          span.classList.add('highlight-live-editor');
+          debug(`[${index}] Ended highlighting at:`, text);
+          highlightEnded = true;
+          continue;
+        }
+
+        // Highlight spans between start and end
+        if (highlightStarted) {
+          span.classList.add('highlight-live-editor');
+          debug(`[${index}] Highlighting span:`, text);
+        }
+      }
     }
 
     // On editor focus: clear highlights
@@ -86,11 +162,11 @@ export default function LivePlaygroundEditorHighlightScript() {
       );
 
       if (!container) {
-        console.log('No container found in focusout');
+        debug('No container found in focusout');
         return;
       }
 
-      console.log(
+      debug(
         'Focus out on container, modified:',
         modifiedContainers.has(container)
       );
@@ -109,14 +185,14 @@ export default function LivePlaygroundEditorHighlightScript() {
         '.push-apply-highlight-in-live-editor'
       );
       if (container) {
-        console.log('Mouse down in container');
+        debug('Mouse down in container');
         clearHighlights(container);
 
         // Only mark as modified if clicking inside the editor
         // This helps ensure we can reapply highlights later
         const isEditorClick = event.target.closest('pre') !== null;
         if (isEditorClick) {
-          console.log('Marking container as modified (editor click)');
+          debug('Marking container as modified (editor click)');
           modifiedContainers.add(container);
         }
       }

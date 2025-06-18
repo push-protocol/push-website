@@ -199,7 +199,8 @@ export default function Playground({
   let minimized = false;
   let hidden = false;
   let isNodeJSEnv = false;
-  let highlightRegex = null;
+  let highlightRegexStart = null;
+  let highlightRegexEnd = null;
 
   // Process all top comment lines
   while (idx < lines.length && lines[idx].trim().startsWith('//')) {
@@ -209,18 +210,26 @@ export default function Playground({
     if (/\/\/\s*customPropNodeJSEnv=['"]true['"]/.test(line))
       isNodeJSEnv = true;
 
-    const match = line.match(/\/\/\s*customPropHighlightRegex=(.+)$/);
-    if (match) {
-      // rawValue is everything after the “=” on that comment line
-      highlightRegex = match[1].trim();
+    // Check for start regex
+    const matchStart = line.match(/\/\/\s*customPropHighlightRegexStart=(.+)$/);
+    if (matchStart) {
+      // rawValue is everything after the "=" on that comment line
+      highlightRegexStart = matchStart[1].trim();
+    }
+
+    // Check for end regex
+    const matchEnd = line.match(/\/\/\s*customPropHighlightRegexEnd=(.+)$/);
+    if (matchEnd) {
+      highlightRegexEnd = matchEnd[1].trim();
     }
 
     // remove any customProp flags from this line
     lines[idx] = lines[idx]
-      .replace(/\/\/\s*customPropMinimized=['"][^'"]+['"]/g, '')
-      .replace(/\/\/\s*customPropHidden=['"][^'"]+['"]/g, '')
-      .replace(/\/\/\s*customPropNodeJSEnv=['"][^'"]+['"]/g, '')
-      .replace(/\/\/\s*customPropHighlightRegex=.*$/g, '');
+      .replace(/\/\/\s*customPropMinimized=['"](\w+)['"]/, '')
+      .replace(/\/\/\s*customPropHidden=['"](\w+)['"]/, '')
+      .replace(/\/\/\s*customPropNodeJSEnv=['"](\w+)['"]/, '')
+      .replace(/\/\/\s*customPropHighlightRegexStart=.*$/, '')
+      .replace(/\/\/\s*customPropHighlightRegexEnd=.*$/, '');
 
     // if line is now just whitespace or comment, drop it
     if (lines[idx].trim() === '//') {
@@ -264,11 +273,12 @@ export default function Playground({
             {!hidden && (
               <div
                 className={
-                  highlightRegex
+                  highlightRegexStart
                     ? 'push-apply-highlight-in-live-editor'
                     : 'push-live-editor'
                 }
-                data-highlight-regex={highlightRegex}
+                data-highlight-regex-start={highlightRegexStart}
+                data-highlight-regex-end={highlightRegexEnd}
               >
                 <EditorWithHeader
                   code={displayCode}
@@ -286,11 +296,12 @@ export default function Playground({
             {!hidden && (
               <div
                 className={
-                  highlightRegex
+                  highlightRegexStart
                     ? 'push-apply-highlight-in-live-editor'
                     : 'push-live-editor'
                 }
-                data-highlight-regex={highlightRegex}
+                data-highlight-regex-start={highlightRegexStart}
+                data-highlight-regex-end={highlightRegexEnd}
               >
                 <EditorWithHeader
                   code={displayCode}

@@ -47,20 +47,41 @@ function returnPlaygroundCode({
   userPassedCode,
   repo = null,
 }: ReturnPlaygroundCodeProps): string {
-  // check if customPropHighlightRegex is present
-  let highlightRegex = null;
-  // Look for a line that starts with any whitespace, then //, then customPropHighlightRegex=
-  const lines = userPassedCode.split('\n');
+  // check if customPropHighlightRegexStart is present
+  let highlightRegexStart = null;
+  // Look for a line that starts with any whitespace, then //, then customPropHighlightRegexStart=
+  let lines = userPassedCode.split('\n');
   const highlightLine = lines.find((line) => {
-    return line.trim().startsWith('// customPropHighlightRegex=');
+    return line.trim().startsWith('// customPropHighlightRegexStart=');
   });
-  const match = highlightLine?.match(/\/\/\s*customPropHighlightRegex=(.+)$/);
+  const match = highlightLine?.match(
+    /\/\/\s*customPropHighlightRegexStart=(.+)$/
+  );
   if (match) {
     // rawValue is everything after the “=” on that comment line
-    highlightRegex = match[1].trim();
+    highlightRegexStart = match[1].trim();
 
     // remove the line from the code
     lines.splice(lines.indexOf(highlightLine), 1);
+    userPassedCode = lines.join('\n');
+  }
+
+  // check if customPropHighlightRegexEnd is present
+  let highlightRegexEnd = null;
+  // Look for a line that starts with any whitespace, then //, then customPropHighlightRegexEnd=
+  lines = userPassedCode.split('\n');
+  const highlightLineEnd = lines.find((line) => {
+    return line.trim().startsWith('// customPropHighlightRegexEnd=');
+  });
+  const matchEnd = highlightLineEnd?.match(
+    /\/\/\s*customPropHighlightRegexEnd=(.+)$/
+  );
+  if (matchEnd) {
+    // rawValue is everything after the “=” on that comment line
+    highlightRegexEnd = matchEnd[1].trim();
+
+    // remove the line from the code
+    lines.splice(lines.indexOf(highlightLineEnd), 1);
     userPassedCode = lines.join('\n');
   }
 
@@ -187,11 +208,12 @@ function App() {
       <div
         style={{ margin: '0 auto', width: 'inherit', backgroundColor: '#282a36' }}
         className="${
-          highlightRegex
+          highlightRegexStart
             ? 'push-apply-highlight-in-live-editor'
             : 'push-live-editor'
         }"
-        ${highlightRegex ? `data-highlight-regex="${highlightRegex}"` : ''}
+        ${highlightRegexStart ? `data-highlight-regex-start="${highlightRegexStart}"` : ''}
+        ${highlightRegexEnd ? `data-highlight-regex-end="${highlightRegexEnd}"` : ''}
       >
 
         {/* FIX: add empty line at the end of the code to ensure typing is not unfocused first time */}
