@@ -23,8 +23,8 @@ import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtua
 
 ## Initialize Push Chain API
 
-<Tabs className="codetabs" groupId="initialize-push-chain">
-  <TabItem value="ethers" attributes={{className: "codetab ethers"}} default>
+<Tabs groupId="initialize-push-chain">
+  <TabItem value="ethers_v6" label="Ethers (V6)" default>
 
 ```typescript
 // 1. Create ethers Wallet from private key
@@ -45,7 +45,7 @@ const pushChainClient = await PushChain.initialize(signer, {
 ```
 
   </TabItem>
-  <TabItem value="viem" attributes={{className: "codetab viem"}} default>
+  <TabItem value="viem" label="Viem">
 
 ```typescript
 // 1. Create viem account from private key
@@ -65,7 +65,7 @@ const pushChainClient = await PushChain.initialize(signer, {
 ```
 
  </TabItem>
-  <TabItem value="solana" attributes={{className: "codetab sol"}}>
+  <TabItem value="solana" label="Solana">
 
 ```typescript
 // 1. Create Solana keypair from private key
@@ -181,9 +181,10 @@ The `CHAIN` enum defines all supported blockchain networks that can be used with
 
 Here is an example of how to initialize the Push Chain SDK with a universal signer and a custom RPC URL.
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="ethers" attributes={{className: "codetab ethers"}} default>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+<Tabs groupId="initialize-push-chain-client">
+  <TabItem value="ethers_v6" label="Ethers (V6)" default>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
   {`
   import { PushChain } from '@pushchain/core'
   import { ethers } from 'ethers'
@@ -212,10 +213,12 @@ Here is an example of how to initialize the Push Chain SDK with a universal sign
 
   main()
   `}
-    </NodeJSVirtualIDE>
+
+</NodeJSVirtualIDE>
   </TabItem>
-  <TabItem value="viem" attributes={{className: "codetab viem"}}>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+  <TabItem value="viem" label="Viem">
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
   {`
   import { PushChain } from '@pushchain/core'
   import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts'
@@ -247,10 +250,12 @@ Here is an example of how to initialize the Push Chain SDK with a universal sign
 
   main()
   `}
-    </NodeJSVirtualIDE>
+
+</NodeJSVirtualIDE>
   </TabItem>
-  <TabItem value="solana" attributes={{className: "codetab sol"}}>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+  <TabItem value="solana" label="Solana">
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
   {`
   import { PushChain } from '@pushchain/core'
   import { Keypair } from '@solana/web3.js'
@@ -276,6 +281,7 @@ Here is an example of how to initialize the Push Chain SDK with a universal sign
 
   main()
   `}
-  </NodeJSVirtualIDE>
+
+</NodeJSVirtualIDE>
   </TabItem>
 </Tabs>

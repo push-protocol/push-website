@@ -48,32 +48,32 @@ As mentioned in the previous section, Push Chain is EVM-compatible, allowing you
 
 {`
     const pushTestnet = defineChain({
-        id: 42101,
-        name: 'Push Testnet',
-        nativeCurrency: {
-            decimals: 18,
-            name: 'PC',
-            symbol: '$PC',
+      id: 42101,
+      name: 'Push Testnet',
+      nativeCurrency: {
+        decimals: 18,
+        name: 'PC',
+        symbol: '$PC',
+      },
+      rpcUrls: {
+        default: {
+          http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
         },
-        rpcUrls: {
-            default: {
-                http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
-            },
+      },
+      blockExplorers: {
+        default: {
+          name: 'Push Testnet Explorer',
+          url: 'https://explorer.testnet.push.org/',
         },
-        blockExplorers: {
-            default: {
-                name: 'Push Testnet Explorer',
-                url: 'https://explorer.testnet.push.org/',
-            },
-        },
+      },
     })
 
     const publicClient = createPublicClient({
-        chain: pushTestnet,
-        transport: http(),
+      chain: pushTestnet,
+      transport: http(),
     })
 
-    console.log(publicClient)
+    console.log(JSON.stringify(publicClient, null, 2))
 `}
 
 </NodeJSVirtualIDE>
@@ -96,10 +96,10 @@ Here's an example of how to initialize the Push Chain SDK with a viem client and
     import { ethers } from 'ethers'
 
     async function main() {
-        const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
-        const transactionHash = '0x95b8600bd48154e22e513219c139a370e3cab4d1191d6d33ca8d74f72788154c'
-        const transaction = await provider.getTransaction(transactionHash)
-        console.log(JSON.stringify(transaction, null, 2))
+      const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
+      const transactionHash = '0x95b8600bd48154e22e513219c139a370e3cab4d1191d6d33ca8d74f72788154c'
+      const transaction = await provider.getTransaction(transactionHash)
+      console.log(JSON.stringify(transaction, null, 2))
     }
 
     main().catch(console.error)
@@ -120,34 +120,36 @@ Here's an example of how to initialize the Push Chain SDK with a viem client and
 
     async function main() {
       const pushTestnet = defineChain({
-          id: 42101,
-          name: 'Push Testnet',
-          nativeCurrency: {
-              decimals: 18,
-              name: 'PC',
-              symbol: '$PC',
+        id: 42101,
+        name: 'Push Testnet',
+        nativeCurrency: {
+          decimals: 18,
+          name: 'PC',
+          symbol: '$PC',
+        },
+        rpcUrls: {
+          default: {
+            http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
           },
-          rpcUrls: {
-              default: {
-                  http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
-              },
+        },
+        blockExplorers: {
+          default: {
+            name: 'Push Testnet Explorer',
+            url: 'https://explorer.testnet.push.org/',
           },
-          blockExplorers: {
-              default: {
-                  name: 'Push Testnet Explorer',
-                  url: 'https://explorer.testnet.push.org/',
-              },
-          },
+        },
       })
 
       const publicClient = createPublicClient({
-          chain: pushTestnet,
-          transport: http(),
+        chain: pushTestnet,
+        transport: http(),
       })
 
+      const transactionHash = '0x95b8600bd48154e22e513219c139a370e3cab4d1191d6d33ca8d74f72788154c'
       const transaction = await publicClient.getTransaction({
-          hash: transactionHash,
+        hash: transactionHash,
       })
+
       console.log(JSON.stringify(transaction, null, 2))
     }
 
