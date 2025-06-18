@@ -8,224 +8,154 @@ sidebar_position: 4
 image: '/assets/docs/previews/docs_notifications_develop--initialize_user.png'
 ---
 
-# Initialize Viem SDK Overview
+# Initialize EVM Client Overview
 
-The Push Chain SDK exports a bundled version of `viem`, which you can optionally import directly from `@pushchain/core`.
+Push Chain is EVM-compatible, allowing you to use Ethereum tools like Viem and Ethers.js.
 
-> Note: While this allows you to skip manually installing `viem` and `defineChain` yourself, you can also use your own viem installation if you prefer. The bundled version is provided as a convenience, but it's not mandatory to use it.
-
-If you need more information about how to use `viem`, please refer to the [official viem documentation](https://viem.sh/).
+If you need more information about how to use these libraries, please refer to their official documentation:
+- [ethers.js documentation](https://docs.ethers.org/)
+- [viem documentation](https://viem.sh/)
 
 <head>
-  <title>{`Initialize Viem SDK | Push Chain | Push Documentation`}</title>
+  <title>{`Initialize EVM Client | Push Chain | Push Documentation`}</title>
 </head>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Details from '@theme/Details';
+import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
 
-## Initializing Viem Client
+## Initialize EVM Client
 
-The Push Chain SDK exports a bundled version of `viem`, so you can import it directly from `@pushchain/core`. This allows you to skip manually installing `viem` and `defineChain` yourself—everything you need comes from the SDK.
+As mentioned in the previous section, Push Chain is EVM-compatible, allowing you to use Ethereum tools like Viem and Ethers.js.
 
-<Tabs className="codetabs" groupId="code-examples">
-<TabItem value="js" attributes={{className: "codetab js"}} default>
-```typescript
-import { PushChain } from '@pushchain/core'
+<Tabs groupId="initialize-evm-client">
+  <TabItem value='ethers_v6' label='Ethers (V6)' default>
 
-// Define the Push testnet chain configuration
-const pushTestnet = PushChain.viem.defineChain({
-id: 9000,
-name: 'Push Testnet',
-nativeCurrency: {
-decimals: 18,
-name: 'nPUSH',
-symbol: 'nPUSH',
-},
-rpcUrls: {
-default: {
-http: ['https://evm.pn1.dev.push.org'],
-},
-},
-blockExplorers: {
-default: {
-name: 'Push Explorer',
-url: 'https://explorer.dev.push.org/',
-},
-},
-})
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
 
-// Create a public client for Push testnet
-const client = PushChain.viem.createPublicClient({
-chain: pushTestnet,
-transport: PushChain.viem.http(),
-})
+{`
+    const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
+    console.log('Provider methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(provider)))
+`}
 
-````
-</TabItem>
-<TabItem value="react" attributes={{className: "codetab react"}} default>
-```typescript
-import { PushChain } from '@pushchain/core'
+</NodeJSVirtualIDE>
 
-// Define the Push testnet chain configuration
-const pushTestnet = PushChain.viem.defineChain({
-  id: 9000,
-  name: 'Push Testnet',
-  nativeCurrency: {
-    decimals: 18,
-    name: 'nPUSH',
-    symbol: 'nPUSH',
-  },
-  rpcUrls: {
-    default: {
-      http: ['https://evm.pn1.dev.push.org'],
-    },
-  },
-  blockExplorers: {
-    default: {
-      name: 'Push Explorer',
-      url: 'https://explorer.dev.push.org/',
-    },
-  },
-})
+  </TabItem>
+<TabItem value='viem' label='Viem'>
 
-// Create a public client for Push testnet
-const client = PushChain.viem.createPublicClient({
-  chain: pushTestnet,
-  transport: PushChain.viem.http(),
-})
-````
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
 
-</TabItem>
-<TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
-```typescript
-import { PushChain } from '@pushchain/core'
+{`
+    const pushTestnet = defineChain({
+        id: 42101,
+        name: 'Push Testnet',
+        nativeCurrency: {
+            decimals: 18,
+            name: 'PC',
+            symbol: '$PC',
+        },
+        rpcUrls: {
+            default: {
+                http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+            },
+        },
+        blockExplorers: {
+            default: {
+                name: 'Push Testnet Explorer',
+                url: 'https://explorer.testnet.push.org/',
+            },
+        },
+    })
 
-// Define the Push testnet chain configuration
-const pushTestnet = PushChain.viem.defineChain({
-id: 9000,
-name: 'Push Testnet',
-nativeCurrency: {
-decimals: 18,
-name: 'nPUSH',
-symbol: 'nPUSH',
-},
-rpcUrls: {
-default: {
-http: ['https://evm.pn1.dev.push.org'],
-},
-},
-blockExplorers: {
-default: {
-name: 'Push Explorer',
-url: 'https://explorer.dev.push.org/',
-},
-},
-})
+    const publicClient = createPublicClient({
+        chain: pushTestnet,
+        transport: http(),
+    })
 
-// Create a public client for Push testnet
-const client = PushChain.viem.createPublicClient({
-chain: pushTestnet,
-transport: PushChain.viem.http(),
-})
+    console.log(publicClient)
+`}
 
-````
-</TabItem>
-</Tabs>
-
-If you want to simplify the `defineChain` logic, the Push Chain SDK provides a constant named `PushChain.CONSTANTS.VIEM_PUSH_TESTNET`. You can use it to create your public client without redefining the chain configuration:
-
-<Tabs className="codetabs" groupId="code-examples">
-<TabItem value="js" attributes={{className: "codetab js"}} default>
-```typescript
-import { PushChain, CONSTANTS } from '@pushchain/core'
-
-const viemClient = PushChain.viem.createPublicClient({
-  chain: PushChain.CONSTANTS.VIEM_PUSH_TESTNET,
-  transport: PushChain.viem.http(),
-})
-````
-
-</TabItem>
-<TabItem value="react" attributes={{className: "codetab react"}} default>
-```typescript
-import { PushChain, CONSTANTS } from '@pushchain/core'
-
-const viemClient = PushChain.viem.createPublicClient({
-chain: PushChain.CONSTANTS.VIEM_PUSH_TESTNET,
-transport: PushChain.viem.http(),
-})
-
-````
-</TabItem>
-<TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
-```typescript
-import { PushChain, CONSTANTS } from '@pushchain/core'
-
-const viemClient = PushChain.viem.createPublicClient({
-  chain: PushChain.CONSTANTS.VIEM_PUSH_TESTNET,
-  transport: PushChain.viem.http(),
-})
-````
+</NodeJSVirtualIDE>
 
 </TabItem>
 </Tabs>
 
 ## Example
 
-Here's an example of how to initialize the Push Chain SDK with a viem client and fetch the latest block.
+### Fetch Transaction By Hash
 
-<Tabs className="codetabs" groupId="code-examples">
-<TabItem value="js" attributes={{className: "codetab js"}} default>
-```typescript
-import { CONSTANTS } from '@pushchain/core'
-import { createPublicClient, http } from 'viem'
+Here's an example of how to initialize the Push Chain SDK with a viem client and fetch the transaction by hash.
 
-// Create a public client using the predefined testnet configuration
-const client = createPublicClient({
-chain: PushChain.CONSTANTS.VIEM_PUSH_TESTNET,
-transport: http(),
-})
+<Tabs groupId="initialize-evm-client">
+  <TabItem value='ethers_v6' label='Ethers (V6)' default>
+  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
 
-// Fetch latest block
-const latestBlock = await client.getBlock()
-console.log('Latest block:', latestBlock)
+{`
 
-````
-</TabItem>
-<TabItem value="react" attributes={{className: "codetab react"}} default>
-```typescript
-import { CONSTANTS } from '@pushchain/core'
-import { createPublicClient, http } from 'viem'
+    import { ethers } from 'ethers'
 
-// Create a public client using the predefined testnet configuration
-const client = createPublicClient({
-  chain: PushChain.CONSTANTS.VIEM_PUSH_TESTNET,
-  transport: http(),
-})
+    async function main() {
+        const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
+        const transactionHash = '0x95b8600bd48154e22e513219c139a370e3cab4d1191d6d33ca8d74f72788154c'
+        const transaction = await provider.getTransaction(transactionHash)
+        console.log(JSON.stringify(transaction, null, 2))
+    }
 
-// Fetch latest block
-const latestBlock = await client.getBlock()
-console.log('Latest block:', latestBlock)
-````
+    main().catch(console.error)
+
+`}
+
+</NodeJSVirtualIDE>
 
 </TabItem>
-<TabItem value="reactnative" attributes={{className: "codetab reactnative"}} default>
-```typescript
-import { CONSTANTS } from '@pushchain/core'
-import { createPublicClient, http } from 'viem'
 
-// Create a public client using the predefined testnet configuration
-const client = createPublicClient({
-chain: PushChain.CONSTANTS.VIEM_PUSH_TESTNET,
-transport: http(),
-})
+  <TabItem value='viem' label='Viem'>
 
-// Fetch latest block
-const latestBlock = await client.getBlock()
-console.log('Latest block:', latestBlock)
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
 
-```
+{`
+
+    import { createPublicClient, http, defineChain } from 'viem'
+
+    async function main() {
+      const pushTestnet = defineChain({
+          id: 42101,
+          name: 'Push Testnet',
+          nativeCurrency: {
+              decimals: 18,
+              name: 'PC',
+              symbol: '$PC',
+          },
+          rpcUrls: {
+              default: {
+                  http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+              },
+          },
+          blockExplorers: {
+              default: {
+                  name: 'Push Testnet Explorer',
+                  url: 'https://explorer.testnet.push.org/',
+              },
+          },
+      })
+
+      const publicClient = createPublicClient({
+          chain: pushTestnet,
+          transport: http(),
+      })
+
+      const transaction = await publicClient.getTransaction({
+          hash: transactionHash,
+      })
+      console.log(JSON.stringify(transaction, null, 2))
+    }
+
+    main().catch(console.error)
+
+`}
+
+</NodeJSVirtualIDE>
+
 </TabItem>
 </Tabs>
-```
