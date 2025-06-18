@@ -24,64 +24,55 @@ export const QuickstartItems: IQuickstartItem[] = [
   {
     title: 'Core SDK Quickstart',
     codeblock: `// Import Push Chain SDK
+import { PushChain } from '@pushchain/core';
+import { ethers } from 'ethers';
 
-import { PushChain, createUniversalAccount, createUniversalSigner, CONSTANTS } from '@pushchain/devnet';
+// Generate wallet
+const wallet = ethers.Wallet.createRandom();
 
-// Import utility functions from viem
-import { hexToBytes } from 'viem';
-import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
+// Create Signer, change JsonRpcProvider to attach different chain's account
+const provider = new ethers.JsonRpcProvider('https://evm.pn1.dev.push.org');
+const signer = wallet.connect(provider);
 
-// Generate viem Account
-const account = privateKeyToAccount(generatePrivateKey());
+// Convert to Universal Signer
+const universalSigner = await PushChain.utils.signer.toUniversal(signer);
 
-// Create Signer. Defaults to the Ethereum Sepolia chain
-const signer = createUniversalSigner({
-  address: account.address,
-  signMessage: async (data) =>
-    hexToBytes(await account.signMessage({ message: { raw: data } })),
+// Initialize Push Chain Client
+const pushChainClient = await PushChain.initialize(universalSigner, {
+  network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
 });
 
-// Initialize SDK
-const pushChain = await PushChain.initialize(signer);
-
-// Send Transaction
-const tx = await pushChain.tx.send(
-  [
-    // Defaults to the Ethereum Sepolia chain
-    createUniversalAccount({
-      address: '0x22B173e0596c6723dD1A95817052D96b97176Dd8',
-    }),
-  ],
-  { category: 'MY_CUSTOM_CATEGORY', data: 'Hello world!' }
-);
+// Send a universal transaction (from any chain to Push Chain)
+const txHash = await pushChainClient.universal.sendTransaction({
+  to: '0xD0DE00000447492307108Bdc7Ff6BaB33Ff37Dacc479', // To address on Push Chain
+  value: BigInt(0), // $PC Value to send
+});
 `,
   },
   {
     title: 'UI-Kit Quickstart',
-    codeblock: `
-import { PushUniversalWalletProvider, PushUniversalAccountButton, usePushWalletContext, PushUI } from '@pushchain/ui-kit';
+    codeblock: `// Import Push UI Kit
+import { 
+  PushUniversalWalletProvider, 
+  PushUniversalAccountButton, 
+  usePushWalletContext, 
+  usePushChainClient, 
+  PushUI 
+} from '@pushchain/ui-kit';
 
 function App() {
-
-const walletConfig = {
-  network: PushUI.CONSTANTS.PUSH_NETWORK.TESTNET,
-};
-
-function WalletUI() {
-  const { universalAccount } = usePushChainClient();
-
-  return (
-    <div>
-      <PushUniversalAccountButton />
-    </div>
-  );
-}
+  // create wallet config to pass to Provider
+  const walletConfig = {
+    network: PushUI.CONSTANTS.PUSH_NETWORK.TESTNET,
+  };
 
 return (
   <PushUniversalWalletProvider
     config={walletConfig}
   >
-    <WalletUI />
+    // Abstracts Core SDK
+    // Access from usePushChainClient()
+    <PushUniversalAccountButton />
   </PushUniversalWalletProvider>
  );
 }

@@ -532,6 +532,7 @@ const PopularQuickiesCard = styled(ItemV)`
   flex: 1;
   overflow: auto;
   width: 100%;
+  min-width: 400px;
 
   /* WebKit browsers (Chrome, Safari) */
   *::-webkit-scrollbar {

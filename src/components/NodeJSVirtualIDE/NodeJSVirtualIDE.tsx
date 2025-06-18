@@ -12,10 +12,15 @@ interface RepoI {
 
 interface Props {
   repo: null | RepoI;
+  highlight: null | string;
   children: string;
 }
 
-export default function NodeJSVirtualIDE({ repo = null, children }: Props) {
+export default function NodeJSVirtualIDE({
+  repo = null,
+  highlight = null,
+  children,
+}: Props) {
   const userPassedCode = children
     .split('\n')
     .map((line) => (line.startsWith(' ') ? line.slice(2) : line))
