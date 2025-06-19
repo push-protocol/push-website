@@ -28,16 +28,12 @@ import {
 
 ## Send Transaction API
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
 const txHash = await pushChainClient.universal.sendTransaction({
   to: '0xa54E96d3fB93BD9f6cCEf87c2170aEdB1D47E1cF',
   value: BigInt('100000000000000000'), // 0.1 ETH in wei
 });
 ```
-  </TabItem>
-</Tabs>
 
 ### Send Transaction Parameters
 
@@ -53,120 +49,129 @@ const txHash = await pushChainClient.universal.sendTransaction({
 
 > Note: Parameters _`in this style`_ are mandatory.
 
-<Details summary='Expected response'>
-
-```typescript
-// Transaction hash
-'0x491695a337b0fca5dd24f626bf2595ca16281ae92b2807b611b115e66d42b3c2';
-```
-
-</Details>
-
----
-
 ### Send Transaction with Contract Interaction
 
 When you need to interact with smart contracts, you'll need to pass encoded function data. Here's how to generate the `data` parameter using viem and use it with the Push Chain SDK:
 
-<Tabs className="codetabs" groupId="send-transaction">
-  <TabItem value="Ethers" attributes={{className: "codetab ethers"}} default>
+<Tabs groupId="send-transaction">
+  <TabItem value='ethers_v6' label='Ethers (V6)' default>
+
 ```typescript
 import { ethers } from 'ethers';
 
-// Define the ABI for the ERC20 transfer function
-const erc20Abi = [
-'function transfer(address to, uint256 amount) returns (bool)',
-];
+async function main() {
+  // Define the ABI for the ERC20 transfer function
+  const erc20Abi = [
+  'function transfer(address to, uint256 amount) returns (bool)',
+  ];
 
-// Create an Interface instance
-const interface = new ethers.Interface(erc20Abi);
+  // Create an Interface instance
+  const interface = new ethers.Interface(erc20Abi);
 
-// Encode the function data
-const data = interface.encodeFunctionData('transfer', [
-'0xRecipientAddress',
-ethers.parseEther('10'),
-]);
+  // Encode the function data
+  const data = interface.encodeFunctionData('transfer', [
+  '0xRecipientAddress',
+  ethers.parseEther('10'),
+  ]);
 
-// Send the transaction using Push Chain SDK
-const txHash = await pushChainClient.universal.sendTransaction({
-to: '0xTokenContractAddress', // The smart contract address on Push Chain
-value: 0n, // No ETH being sent
-data: data, // Encoded function call
-});
+  // Send the transaction using Push Chain SDK
+  const txHash = await pushChainClient.universal.sendTransaction({
+    to: '0xTokenContractAddress', // The smart contract address on Push Chain
+    value: 0n, // No ETH being sent
+    data: data, // Encoded function call
+  });
+}
 
-````
+main().catch(console.error);
+```
+
   </TabItem>
-  <TabItem value="Viem" attributes={{className: "codetab viem"}} default>
+
+  <TabItem value='viem' label='Viem'>
+
 ```typescript
 import { encodeFunctionData, parseEther } from 'viem';
 
-// Define the ABI for the ERC20 transfer function
-const erc20Abi = [
-  'function transfer(address to, uint256 amount) returns (bool)',
-];
+async function main() {
+  // Define the ABI for the ERC20 transfer function
+  const erc20Abi = [
+    'function transfer(address to, uint256 amount) returns (bool)',
+  ];
 
-// Generate the encoded function data using viem
-const data = encodeFunctionData({
-  abi: erc20Abi,
-  functionName: 'transfer',
-  args: ['0xRecipientAddress', parseEther('10')] // Transfer 10 tokens
-});
+  // Generate the encoded function data using viem
+  const data = encodeFunctionData({
+    abi: erc20Abi,
+    functionName: 'transfer',
+    args: ['0xRecipientAddress', parseEther('10')] // Transfer 10 tokens
+  });
 
-// Send the transaction using Push Chain SDK
-const txHash = await pushChainClient.universal.sendTransaction({
-  to: '0xTokenContractAddress', // The smart contract address on Push Chain
-  value: BigInt('0'), // No ETH being sent, just contract interaction
-  data: data // The encoded function call
-});
-````
+  // Send the transaction using Push Chain SDK
+  const txHash = await pushChainClient.universal.sendTransaction({
+    to: '0xTokenContractAddress', // The smart contract address on Push Chain
+    value: BigInt('0'), // No ETH being sent, just contract interaction
+    data: data // The encoded function call
+  });
+}
+
+main().catch(console.error);
+```
 
   </TabItem>
 </Tabs>
-
----
 
 ## Advanced
 
 For advanced use cases, you may still opt to use standard EVM libraries directly. However, we recommend the Push Chain SDK’s `universal.sendTransaction` for its cross-chain features and gas abstraction.
 
-<Tabs className="codetabs" groupId="send-transaction">
-<TabItem value="Ethers" attributes={{className: "codetab ethers"}} default>
+<Tabs groupId="send-transaction">
+  <TabItem value='ethers_v6' label='Ethers (V6)' default>
+
 ```typescript
 import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://evm.pn1.dev.push.org');
-const signer = new ethers.Wallet('YOUR_PRIVATE_KEY', provider);
+async function main() {
+  const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+  const signer = new ethers.Wallet('YOUR_PRIVATE_KEY', provider);
 
-const txHash = await signer.sendTransaction({
-to: '0xRecipientAddressHere',
-value: ethers.utils.parseUnits('0.001', 'ether'),
-});
+  const txHash = await signer.sendTransaction({
+    to: '0xRecipientAddressHere',
+    value: ethers.utils.parseUnits('0.001', 'ether'),
+  });
 
-````
+}
+
+main().catch(console.error);
+```
+
 </TabItem>
-<TabItem value="Viem" attributes={{className: "codetab viem"}} default>
 
-See the [Initialize Viem SDK](../initialize-viem-sdk) page for setup details.
+  <TabItem value='viem' label='Viem'>
 
 ```typescript
 import { createWalletClient, http, parseEther } from 'viem';
 import { privateKeyToAccount } from 'viem/accounts';
-import { PushChain } from '@pushchain/core'
+import { PushChain } from '@pushchain/core';
 
-const privateKey = 'YOUR_PRIVATE_KEY';
-const account = privateKeyToAccount(privateKey);
+async function main() {
+  const privateKey = 'YOUR_PRIVATE_KEY';
+  const account = privateKeyToAccount(privateKey);
 
-const walletClient = createWalletClient({
-  account,
-  chain: PushChain.CONSTANTS.VIEM_PUSH_TESTNET,
-  transport: http(),
-});
+  const walletClient = createWalletClient({
+    account,
+    chain: PushChain.CONSTANTS.VIEM_PUSH_TESTNET,
+    transport: http(),
+  });
 
-const txHash = await walletClient.sendTransaction({
-  to: '0xRecipientAddressHere',
-  value: parseEther('0.1'),
-});
-````
+  const txHash = await walletClient.sendTransaction({
+    to: '0xRecipientAddressHere',
+    value: parseEther('0.1'),
+  });
+}
+
+main().catch(console.error);
+```
 
 </TabItem>
 </Tabs>
+
+## Sign Universal Message
