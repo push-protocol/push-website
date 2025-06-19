@@ -52,7 +52,7 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
     import { PushChain } from '@pushchain/core';
     import { ethers } from 'ethers';
 
-    async function example() {
+    async function main() {
       // 1. Create a random wallet (or use your own private key)
       const wallet = ethers.Wallet.createRandom();
 
@@ -79,7 +79,7 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
       console.log('Transaction sent:', txHash);
     }
 
-    example().catch(console.error);
+    main().catch(console.error);
     ```
 
   </TabItem>
@@ -93,7 +93,7 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
     import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
     import { createWalletClient } from 'viem';
 
-    async function example() {
+    async function main() {
       // 1. Construct account
       const account = privateKeyToAccount(generatePrivateKey());
 
@@ -122,7 +122,7 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
       console.log('Transaction sent:', txHash);
     }
 
-    example().catch(console.error);
+    main().catch(console.error);
     ```
 
   </TabItem>
@@ -135,7 +135,7 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
     import { PushChain } from '@pushchain/core';
     import { Keypair } from '@solana/web3.js';
 
-    async function example() {
+    async function main() {
       // 1. Generate or import your Solana keypair
       const solKeypair = Keypair.generate();
 
@@ -164,7 +164,7 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
       console.log('Transaction sent:', txHash);
     }
 
-    example().catch(console.error);
+    main().catch(console.error);
     ```
 
   </TabItem>
