@@ -32,132 +32,162 @@ import {
   ModalWrapper,
 } from '@site/src/css/SharedStyling';
 import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
+import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
 
 ## Hello Push Chain 👋
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="pushchain" attributes={{className: "codetab pushchain"}} default>
+<Tabs groupId="code-examples">
+  <TabItem value="pushchain" label="Ethers (V6) Push Chain" default>
 
-    ```typescript
+  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
+
+{`
+
     // Import Push Chain SDK and Ethers
     // You can use other library like veim, etc
-    import { PushChain } from '@pushchain/core';
-    import { ethers } from 'ethers';
+    import { PushChain } from '@pushchain/core'
+    import { ethers } from 'ethers'
 
-    async function example() {
-      // 1. Create a random wallet (or use your own private key)
-      const wallet = ethers.Wallet.createRandom();
+    async function main() {
+      // 1. Connect to a provider (e.g., Push Chain RPC URL)
+      const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
 
-      // 2. Connect to a provider (e.g., Push Chain RPC URL)
-      const provider = new ethers.JsonRpcProvider('https://evm.pn1.dev.push.org');
-      const signer = wallet.connect(provider);
+      // 2. Create a random wallet (or use your own private key)
+      const wallet = ethers.Wallet.createRandom(provider)
 
       // 3. Convert ethers signer to Universal Signer
       // Most popular libraries can pass just the signer to get universal signer
       // Or use PushChain.utils.signer.construct to create a custom one
-      const universalSigner = await PushChain.utils.signer.toUniversal(signer);
+      const universalSigner = await PushChain.utils.signer.toUniversal(wallet)
 
       // Initialize Push Chain SDK for use from Push Chain account
       const pushChainClient = await PushChain.initialize(universalSigner, {
         network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
-      });
+      })
 
-      // Send a universal transaction (from any chain to Push Chain)
-      const txHash = await pushChainClient.universal.sendTransaction({
-        to: '0xD0DE00000447492307108Bdc7Ff6BaB33Ff37Dacc479', // To address on Push Chain
-        value: BigInt(0), // $PC Value to send
-      });
-
-      console.log('Transaction sent:', txHash);
+      console.log(JSON.stringify(pushChainClient, null, 2))
     }
 
-    example().catch(console.error);
-    ```
+    main().catch(console.error)
+
+`}
+    </NodeJSVirtualIDE>
 
   </TabItem>
 
-  <TabItem value="ethereum" attributes={{className: "codetab eth"}}>
+      <TabItem value='ethers_v6' label='Ethers (V6) Sepolia' default>
 
-    ```typescript
+      <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
+
+{`
+    // Import Push Chain SDK and Ethers
+    // You can use other library like veim, etc
+    import { PushChain } from '@pushchain/core'
+    import { ethers } from 'ethers'
+
+    async function main() {
+      // 1. Connect to a provider (e.g., Push Chain RPC URL)
+      const provider = new ethers.JsonRpcProvider('https://sepolia.gateway.tenderly.co')
+
+      // 2. Create a random wallet (or use your own private key)
+      const wallet = ethers.Wallet.createRandom(provider)
+
+      // 3. Convert ethers signer to Universal Signer
+      // Most popular libraries can pass just the signer to get universal signer
+      // Or use PushChain.utils.signer.construct to create a custom one
+      const universalSigner = await PushChain.utils.signer.toUniversal(wallet)
+
+      // Initialize Push Chain SDK for use from Push Chain account
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
+      })
+
+      console.log(JSON.stringify(pushChainClient, null, 2))
+    }
+
+    main().catch(console.error)
+`}
+
+      </NodeJSVirtualIDE>
+
+    </TabItem>
+
+    <TabItem value='viem' label='Viem'>
+
+    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
+
+{`
     // Import Push Chain SDK and Viem
     // You can use other library like ethers, etc
     import { PushChain } from '@pushchain/core';
-    import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
-    import { createWalletClient } from 'viem';
+    import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts'
+    import { createWalletClient, http } from 'viem'
+    import { sepolia } from 'viem/chains'
 
-    async function example() {
+    async function main() {
       // 1. Construct account
-      const account = privateKeyToAccount(generatePrivateKey());
+      const account = privateKeyToAccount(generatePrivateKey())
 
       // 2. Initialize signer
       const signer = createWalletClient({
-        transport: http('https://rpc.ankr.com/eth'), // or your preferred RPC URL
-        account,                                     // <-- our signer
+        transport: http('https://sepolia.gateway.tenderly.co'), // or your preferred RPC URL
+        chain: sepolia,
+        account, // <-- our signer
       })
 
       // 3. Convert signer to Universal Signer
       // Most of the popular libraries can pass just the signer to get universal signer
       // Or use PushChain.utils.signer.construct to create a custom one
-      const universalSigner = await PushChain.utils.signer.toUniversal(signer);
+      const universalSigner = await PushChain.utils.signer.toUniversal(signer)
 
       // Initialize Push Chain SDK for use from Ethereum account
       const pushChainClient = await PushChain.initialize(universalSigner, {
         network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
-      });
+      })
 
-      // Send a universal transaction (from any chain to Push Chain)
-      const txHash = await pushChainClient.universal.sendTransaction({
-        to: '0xBABE00000447492307108Bdc7Ff6BaB33Ff37Dacc479', // To address on Push Chain
-        value: BigInt(0), // $PC Value to send
-      });
-
-      console.log('Transaction sent:', txHash);
+      console.log(JSON.stringify(pushChainClient, null, 2))
     }
 
-    example().catch(console.error);
-    ```
+    main().catch(console.error);
+`}
+
+    </NodeJSVirtualIDE>
 
   </TabItem>
 
-  <TabItem value="solana" attributes={{className: "codetab sol"}}>
+    <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
 
-    ```typescript
+    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
+
+{`
     // Import Push Chain SDK and Solana Web3.js
     // You can use other library like @solana/kit, etc
     import { PushChain } from '@pushchain/core';
     import { Keypair } from '@solana/web3.js';
 
-    async function example() {
+    async function main() {
       // 1. Generate or import your Solana keypair
-      const solKeypair = Keypair.generate();
+      const solKeypair = Keypair.generate()
 
       // 2. Convert the Solana Keypair into a Push Chain universal signer.
-      //    We use the helper `toUniversalFromKeyPair`, which internally builds
+      //    We use the helper toUniversalFromKeyPair, which internally builds
       //    the necessary adapter (signTransaction, signMessage).
-      const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
-        solKeypair,
-        {
-          chain: PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET,
-          library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
-        }
-      );
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(solKeypair, {
+        chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
+        library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+      })
 
       // 3. Initialize Push Chain SDK
       const pushChainClient = await PushChain.initialize(universalSigner, {
         network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
-      });
+      })
 
-      // Send a universal transaction (from any chain to Push Chain)
-      const txHash = await pushChainClient.universal.sendTransaction({
-        to: '0xC7AD0000492307108Bdc7Ff6BaB33Ff37Dacc479',
-        value: BigInt(0),
-      });
-
-      console.log('Transaction sent:', txHash);
+      console.log(JSON.stringify(pushChainClient, null, 2))
     }
 
-    example().catch(console.error);
-    ```
+    main().catch(console.error);
+`}
+    </NodeJSVirtualIDE>
 
   </TabItem>
 </Tabs>
@@ -328,7 +358,7 @@ The best way to see Push Chain in action is by interacting with it. You can:
      maxHeight='840px'
    />
 2. Alternatively, use our live playgrounds to experiment with code and see live updates within our documentation.
-3. Learn more about Push Chain fundamentals, how it works, deep dives, and developer resources in our comprehensive [Knowledge Base](https://push.org/knowledge).
+3. Learn more about Push Chain fundamentals, how it works, deep dives, and developer resources in our comprehensive [](https://push.org/knowledge).
 
 ```</pre>
 
