@@ -96,6 +96,23 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 
 > Note: Parameters _`in this style`_ are mandatory.
 
+<Details summary="Expected response">
+
+```typescript
+// UniversalSigner object
+{
+  account: {
+    address: '0x...',
+    chain: 'ethereum_sepolia' // or other supported chains
+  },
+  signMessage: Function,
+  signTransaction: Function,
+  signTypedData: Function
+}
+```
+
+</Details>
+
 ### Create Universal Signer Playground
 
 <Tabs groupId="create-universal-signer">
@@ -270,57 +287,97 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 
 If you don't have a supported library signer or want to create a custom implementation, you can construct a Universal Signer manually.
 
-<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/create-universal-signer"}}>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/custom-universal-signer"}}>
 
 {`
 
-    import { PushChain } from '@pushprotocol/core';
+    // Import Push Chain Core
+    import { PushChain } from '@pushchain/core';
 
-    // Define account information
-    const account = {
-    address: '0xeCba9a32A9823f1cb00cdD8344Bf2D1d87a8dd97',
-    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA
-    };
+    // Import if you are using ethers
+    import { ethers } from 'ethers';
+    import readline from 'readline';
 
-    // Define custom signing functions
-    const customSignMessage = async (data) => {
-    // Your custom message signing logic
-    return new Uint8Array([1, 2, 3]);
-    };
+    async function main() {
+      // We need to pass the following to PushChain.utils.signer.construct(account, {options})
+      // 1. account which is a universal account
+      // 2. options which is an object with the following properties
+      // 2.1 signAndSendTransaction
+      // 2.2 signMessage
+      // 2.3 signTypedData
 
-    const customSignTransaction = async (unsignedTx) => {
-    // Your custom transaction signing logic
-    return new Uint8Array([4, 5, 6]);
-    };
+      console.log('1. account to universal account');
 
-    const customSignTypedData = async (typedDataArgs) => {
-    // Your custom typed data signing logic
-    return new Uint8Array([7, 8, 9]);
-    };
 
-    // Step 1: Construct the skeleton
-    const skeleton = PushChain.utils.signer.construct(account, {
-    signMessage: customSignMessage,
-    signTransaction: customSignTransaction,
-    signTypedData: customSignTypedData
-    });
+      // 1. account to universal account
+      // Create random wallet
+      const wallet = ethers.Wallet.createRandom();
+      
+      // Convert wallet.address to Universal Account
+      const universalAccount = PushChain.utils.account.toUniversal(wallet.address, {
+        chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+      });
 
-    // Step 2: Convert to Universal Signer
-    const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
+      // 2. options to construct
+      // 2.1 signAndSendTransaction
+      
+      // create custom Sign and Send Transaction
+      const customSignAndSendTransaction = async (unsignedTx) => {
+        // Sign the transaction using ethers wallet
+        const signedTx = await wallet.signTransaction(unsignedTx);
+        const sendTx = await wallet.sendTransaction(signedTx);
 
+        // Always a Uint8Array
+        return Uint8Array.from(sendTx);
+      };
+
+      // 2.2 signMessage
+      const customSignMessage = async (message) => {
+        // Sign message using ethers wallet
+        const signature = await wallet.signMessage(message);
+
+        // Always a Uint8Array
+        return Uint8Array.from(signature);
+      };
+      
+      // 2.3 signMessage
+      const customSignTypedData = async (domain, types, value) => {
+        // Sign typed data using ethers wallet
+        const signature = await wallet._signTypedData(domain, types, value);
+
+        // Always a Uint8Array
+        return Uint8Array.from(signature);
+      };
+      
+      // * Construct the universal signer skeleton with custom signing functions
+      const universalSignerSkeleton = await PushChain.utils.signer.construct(universalAccount, {
+        signAndSendTransaction: customSignAndSendTransaction,
+        signMessage: customSignMessage,
+        signTypedData: customSignTypedData
+      });
+      console.log('Created Universal Signer with custom signing functions', JSON.stringify(universalSignerSkeleton, null, 2), '\n--\n\n');
+      
+
+      // ** Pass constructed universal signer skeleton to create universal signer **
+      const universalSigner = await PushChain.utils.signer.toUniversal(universalSignerSkeleton);
+    }
+    await main().catch(console.error);
+                                                                                                                               
 `}
 
 </NodeJSVirtualIDE>
 
-### Construct Signer Parameters
+### Custom Universal Signer Parameters
+
+**_`await PushChain.utils.signer.construct(account, {options})`_**
 
 | **Param**                            | **Type**                                          | **Remarks**                                            |
 | ------------------------------------ | ------------------------------------------------- | ------------------------------------------------------ |
 | _`account`_                          | `UniversalAccount`                                | Account information containing address and chain       |
-| _`signingFunctions`_                 | `Object`                                          | Object containing the signing function implementations |
-| _`signingFunctions.signMessage`_     | `(data: Uint8Array) => Promise<Uint8Array>`       | Function to sign raw message data                      |
-| _`signingFunctions.signTransaction`_ | `(unsignedTx: Uint8Array) => Promise<Uint8Array>` | Function to sign transaction data                      |
-| `signingFunctions.signTypedData`     | `(params) => Promise<Uint8Array>`                 | Function to sign typed data (EIP-712)                  |
+| _`options`_                          | `Object`                                          | Object containing the signing function implementations |
+| _`options.signAndSendTransaction`_   | `(unsignedTx: Uint8Array) => Promise<Uint8Array>` | Function to sign transaction data                      |
+| _`options.signMessage`_              | `(data: Uint8Array) => Promise<Uint8Array>`       | Function to sign raw message data                      |
+| `options.signTypedData`              | `(params) => Promise<Uint8Array>`                 | Function to sign typed data (EIP-712)                  |
 
 > Note: Parameters _`in this style`_ are mandatory.
 

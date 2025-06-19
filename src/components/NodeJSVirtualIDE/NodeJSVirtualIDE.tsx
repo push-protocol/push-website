@@ -1,9 +1,5 @@
-// src/components/NodeJSVirtualIDE/NodeJSVirtualIDE.tsx
-import { PushChain } from '@pushchain/core';
 import Playground from '@theme/Playground';
 import ReactLiveScope from '@theme/ReactLiveScope';
-import { ethers } from 'ethers';
-import React from 'react';
 
 interface RepoI {
   title: string;
@@ -92,7 +88,7 @@ function returnPlaygroundCode({
   // customPropHidden='true'
   // customPropNodeJSEnv='true'
 function App() {
-    const defaultCode = \`${escaped}\`;
+  const defaultCode = \`${escaped}\`;
 
   const [code, setCode] = useState(defaultCode);
   const [logs, setLogs] = useState<string[]>([]);
@@ -109,6 +105,17 @@ function App() {
     return <span style={{ fontFamily:'monospace' }}>{frames[i]}</span>;
   }
 
+  const consoleContainerRef = useRef<HTMLDivElement>(null);
+
+  // whenever logs change, scroll to bottom
+  useEffect(() => {
+    const c = consoleContainerRef.current;
+    if (c) {
+      c.scrollTop = c.scrollHeight;
+    }
+  }, [logs]);
+
+  // run virtual node code
   const runCode = async () => {
     setIsRunning(true);
     setLogs([]);
@@ -144,13 +151,18 @@ function App() {
                 typeof questionText === 'string' &&
                   questionText.startsWith(':::prompt:::');
               const text = isPrompt
-                ? questionText.replace(/^:::prompt:::/, '').trim()
+                ? questionText.replace(/:::prompt:::/, '')
               : questionText;
             
-            // display prompt
-            const answer = window.prompt(text);
-            // Node's readline.question calls callback(answer);
-            callback(answer);
+            if (isPrompt) {
+              window.alert(text);
+              callback('');
+            } else {
+              // display prompt
+              const answer = window.prompt(text);
+              // Node's readline.question calls callback(answer);
+              callback(answer);
+            }
           },
           close: () => {},
         }),
@@ -372,6 +384,7 @@ function App() {
 
           {/* log output */}
           <div
+            ref={consoleContainerRef}
             style={{
               background: "#1e1e1e",
               color: "#eee",
