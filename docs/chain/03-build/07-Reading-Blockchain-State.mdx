@@ -408,12 +408,12 @@ const provider = new ethers.WebSocketProvider('https://evm.rpc-testnet-donut-nod
 const watchedAddress = '0x8a36C6358861F0CE1672B04345C9e2E6717Be946'.toLowerCase();
 
 provider.on('block', async (blockNumber) => {
-    const block = await provider.getBlock(blockNumber, true);
-    if (block && block.transactions) {
-        block.transactions
-            .filter((tx) => tx.from?.toLowerCase() === watchedAddress)
-            .forEach((tx) => console.log('Tx from watched address →', tx.hash));
-    }
+  const block = await provider.getBlock(blockNumber, true);
+  if (block && block.transactions) {
+    block.transactions
+        .filter((tx) => tx.from?.toLowerCase() === watchedAddress)
+        .forEach((tx) => console.log('Tx from watched address →', tx.hash));
+  }
 });
 ```
 
@@ -423,39 +423,39 @@ provider.on('block', async (blockNumber) => {
 
 ```typescript
 const pushTestnet = defineChain({
-    id: 42101,
-    name: 'Push Testnet',
-    nativeCurrency: {
-        decimals: 18,
-        name: 'PC',
-        symbol: '$PC',
+  id: 42101,
+  name: 'Push Testnet',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'PC',
+    symbol: '$PC',
+  },
+  rpcUrls: {
+    default: {
+      http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
     },
-    rpcUrls: {
-        default: {
-            http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
-        },
+  },
+  blockExplorers: {
+    default: {
+      name: 'Push Testnet Explorer',
+      url: 'https://explorer.testnet.push.org/',
     },
-    blockExplorers: {
-        default: {
-            name: 'Push Testnet Explorer',
-            url: 'https://explorer.testnet.push.org/',
-        },
-    },
+  },
 })
 
 const viemClient = createPublicClient({
-    chain: pushTestnet,
-    transport: http(),
+  chain: pushTestnet,
+  transport: http(),
 })
 
 const watchedAddress = '0x8a36C6358861F0CE1672B04345C9e2E6717Be946'.toLowerCase();
 
 viemClient.watchBlocks({
-    onBlock: (block) => {
-        block.transactions
-            .filter((tx) => tx.from?.toLowerCase() === watchedAddress)
-            .forEach((tx) => console.log('Tx from watched address →', tx.hash));
-    },
+  onBlock: (block) => {
+      block.transactions
+          .filter((tx) => tx.from?.toLowerCase() === watchedAddress)
+          .forEach((tx) => console.log('Tx from watched address →', tx.hash));
+  },
 });
 ```
 
