@@ -25,7 +25,7 @@ import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtua
 
 ## Create Universal Signer API
 
-The most common way to create a Universal Signer is by converting an existing signer from supported libraries (Viem, Ethers, Solana).
+The most common way to create a Universal Signer is by converting an existing signer from supported libraries (Ethers, Viem, Solana).
 
 <Tabs groupId="create-universal-signer">
   <TabItem value='ethers_v6' label='Ethers (V6)' default>
@@ -232,9 +232,11 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
   </TabItem>
 
   <TabItem value='ui_kit' label='UI Kit (Frontend / Abstracted)'>
-  [UI Kit / UI Components](/docs/chain/ui-components/) abstracts away creation of the Universal Signer for you.
+  Using [UI Kit / UI Components](/docs/chain/ui-components/) will abstract away creation of the Universal Signer.
   
     ```jsx live
+    // customPropHighlightRegexStart=<PushUniversalWalletProvider
+    // customPropHighlightRegexEnd=</PushUniversalWalletProvider>
     // customPropMinimized='false'
     // Import necessary components from @pushchain/ui-kit
     import {

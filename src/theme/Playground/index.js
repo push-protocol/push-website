@@ -283,9 +283,7 @@ export default function Playground({
                 <EditorWithHeader
                   code={displayCode}
                   minimized={minimized}
-                  title={
-                    isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE REACT EDITOR'
-                  }
+                  title={isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE EDITOR'}
                   codeEnv={codeEnv}
                 />
               </div>
@@ -306,9 +304,7 @@ export default function Playground({
                 <EditorWithHeader
                   code={displayCode}
                   minimized={minimized}
-                  title={
-                    isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE REACT EDITOR'
-                  }
+                  title={isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE EDITOR'}
                   codeEnv={codeEnv}
                 />
               </div>
