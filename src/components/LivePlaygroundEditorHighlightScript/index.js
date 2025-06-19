@@ -275,6 +275,12 @@ export default function LivePlaygroundEditorHighlightScript() {
       observer.disconnect();
 
       if (typeof window !== 'undefined') {
+        // For Docusaurus navigation
+        const pushState = window.history.pushState;
+        window.history.pushState = function () {
+          pushState.apply(window.history, arguments);
+        };
+
         window.removeEventListener('popstate', handleRouteChange);
         // Restore original pushState
         if (pushState) {

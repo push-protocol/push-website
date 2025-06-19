@@ -39,7 +39,7 @@
     "@docusaurus/theme-mermaid": "3.0.1",
     "@mdx-js/react": "^3.0.0",
     "@pushchain/core": "^0.1.11",
-    "@pushchain/ui-kit": "^1.1.0-alpha.3",
+    "@pushchain/ui-kit": "^1.1.0-alpha.6",
     "@pushprotocol/restapi": "1.7.20",
     "@pushprotocol/uiweb": "1.7.1",
     "@radix-ui/react-dialog": "^1.1.2",

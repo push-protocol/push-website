@@ -4932,17 +4932,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pushchain/ui-kit@npm:^1.1.0-alpha.3":
-  version: 1.1.0-alpha.3
-  resolution: "@pushchain/ui-kit@npm:1.1.0-alpha.3"
+"@pushchain/ui-kit@npm:^1.1.0-alpha.6":
+  version: 1.1.0-alpha.6
+  resolution: "@pushchain/ui-kit@npm:1.1.0-alpha.6"
   dependencies:
     "@metamask/sdk": "npm:^0.32.0"
     "@pushchain/core": "npm:^0.1.16"
     "@solana/web3.js": "npm:^1.98.2"
+    "@walletconnect/ethereum-provider": "npm:^2.21.3"
+    buffer: "npm:^6.0.3"
     ethers: "npm:^6.13.5"
     tslib: "npm:^2.3.0"
     viem: "npm:^2.23.9"
-  checksum: 10c0/a48a9da59cac241f52c8695312b3bbefb8dd81510b3eea149c53a2ed1c0b643cc5c90597edc4f655d4cea04e80b29d7934ceb198cf39798c7047dc456f2b0f53
+  checksum: 10c0/e03d2111bebc9c461a39388aeebb47443129851fd5cf0af01e8e641aa35fef46973b3945601db6fbce249fa84e3353709540fdd84bf7b9d8e480aef1ad3afd55
   languageName: node
   linkType: hard
 
@@ -7468,7 +7470,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@walletconnect/ethereum-provider@npm:^2.17.3":
+"@walletconnect/ethereum-provider@npm:^2.17.3, @walletconnect/ethereum-provider@npm:^2.21.3":
   version: 2.21.3
   resolution: "@walletconnect/ethereum-provider@npm:2.21.3"
   dependencies:
@@ -19668,7 +19670,7 @@ __metadata:
     "@docusaurus/types": "npm:3.0.1"
     "@mdx-js/react": "npm:^3.0.0"
     "@pushchain/core": "npm:^0.1.11"
-    "@pushchain/ui-kit": "npm:^1.1.0-alpha.3"
+    "@pushchain/ui-kit": "npm:^1.1.0-alpha.6"
     "@pushprotocol/restapi": "npm:1.7.20"
     "@pushprotocol/uiweb": "npm:1.7.1"
     "@radix-ui/react-dialog": "npm:^1.1.2"

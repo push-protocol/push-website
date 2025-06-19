@@ -93,7 +93,7 @@ function App() {
       if (pushChainClient) {
         try {
           await pushChainClient.universal.sendTransaction({
-            target: '0x68F8b46e4cD01a7648393911E734d99d34E6f107',
+            target: '0xFaE3594C68EDFc2A61b7527164BDAe80bC302108',
             value: BigInt(1),
             data: '0x',
           });
@@ -108,7 +108,9 @@ function App() {
     return (
       <div>
         <PushUniversalAccountButton />
-        {connectionStatus == 'connected' && <button>Send Transaction</button>}
+        {connectionStatus == 'connected' && (
+          <button onClick={handleSendTransaction}>Send Transaction</button>
+        )}
       </div>
     );
   }
