@@ -1,5 +1,11 @@
 {
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "vue.updateImportsOnFileMove.enabled": true
+  "vue.updateImportsOnFileMove.enabled": true,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+  "[mdx]": {
+    "editor.formatOnSave": false
+  }
 }

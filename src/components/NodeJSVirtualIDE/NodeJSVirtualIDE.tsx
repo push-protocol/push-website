@@ -164,14 +164,14 @@ function App() {
     };
     
     // pass the wrapped code
-      const wrapped = \`
-        return (async () => {
-          \${jsonShim}
-          \${processShim}
-          \${readlineShim}
-          \${cleaned}
-        })();
-      \`;
+      const fnBody = \`
+      return (async () => {
+        \${jsonShim}
+        \${processShim}
+        \${readlineShim}
+        \${cleaned}
+      })();
+     \`;
 
       const scope = {
         ethers,
@@ -193,9 +193,9 @@ function App() {
         console: consoleShim,
       }
 
-      try {
-        const fn = new Function(...Object.keys(scope), wrapped);
-        await fn(...Object.values(scope));
+    try {
+      const executor = new Function(...Object.keys(scope), fnBody);
+      await executor(...Object.values(scope));
     } catch (e: any) {
       consoleShim.error(e.message || e.toString());
     } finally {
