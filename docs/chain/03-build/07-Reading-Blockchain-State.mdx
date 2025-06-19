@@ -10,7 +10,7 @@ image: '/assets/docs/previews/docs_notifications_develop--manage_user.png'
 
 # Fetch Transactions and Blocks Overview
 
-Push Chain is an EVM-compatible blockchain, allowing developers to easily interact using standard Ethereum tools. For fetching transactions and blocks, you can utilize either the popular `ethers` or `viem` libraries, both powerful and efficient Ethereum clients for JavaScript/TypeScript.
+Push Chain is an EVM-compatible blockchain, allowing developers to easily interact using standard Ethereum tools. For fetching transactions and blocks, you can utilize either the popular `ethers` or `viem` libraries, both powerful and efficient Ethereum clients for JavaScript/TypeScript. This guide covers both HTTP clients for one-time requests and WebSocket clients for real-time data streaming.
 
 If you need more information about how to use these libraries, please refer to their official documentation:
 - [ethers.js documentation](https://docs.ethers.org/)
@@ -25,7 +25,7 @@ import TabItem from '@theme/TabItem';
 import Details from '@theme/Details';
 import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
 
-## Initialize Client
+## Initialize HTTP Client
 
 <Tabs groupId="reading-blockchain-state">
   <TabItem value="ethers_v6" label="Ethers (V6)" default>
@@ -68,6 +68,8 @@ import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtua
         chain: pushTestnet,
         transport: http(),
     })
+
+    console.log(JSON.stringify(viemClient, null, 2))
 `}
 
 </NodeJSVirtualIDE>
@@ -185,7 +187,7 @@ You can fetch blocks using either library as follows:
   })
 
   const latestBlock = await viemClient.getBlock()
-  console.dir(latestBlock)
+  console.log(JSON.stringify(latestBlock), null, 2)
 `}
 </NodeJSVirtualIDE>
   </TabItem>
@@ -240,9 +242,222 @@ You can fetch blocks using either library as follows:
     const latestBlock = await viemClient.getBlock({
         blockHash: '0xccdb5bc5b71ece5a73aa42d5d3171b156f1c0735ac97a07ccec3156b59ac936c',
     })
-    console.dir(latestBlock)
+    console.log(JSON.stringify(latestBlock), null, 2)
 `}
 
 </NodeJSVirtualIDE>
+  </TabItem>
+</Tabs>
+
+## Initialize WebSocket Client
+
+Push Chain is EVM-compatible, allowing you to use Ethereum tools like Viem and Ethers.js for WebSocket connections.
+
+<Tabs groupId="websocket-client">
+  <TabItem value="ethers_v6" label="Ethers (V6)" default>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
+{`
+    const provider = new ethers.WebSocketProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+    console.log('WebSocket Provider:', Object.getOwnPropertyNames(Object.getPrototypeOf(provider)))
+`}
+
+</NodeJSVirtualIDE>
+  </TabItem>
+
+  <TabItem value="viem" label="Viem">
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
+{`
+    const pushTestnet = defineChain({
+      id: 42101,
+      name: 'Push Testnet',
+      nativeCurrency: {
+          decimals: 18,
+          name: 'PC',
+          symbol: '$PC',
+      },
+      rpcUrls: {
+          default: {
+              http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+          },
+      },
+      blockExplorers: {
+          default: {
+              name: 'Push Testnet Explorer',
+              url: 'https://explorer.testnet.push.org/',
+          },
+      },
+    })
+
+    const viemClient = createPublicClient({
+      chain: pushTestnet,
+      transport: http(),
+    })
+
+    console.log(JSON.stringify(viemClient, null, 2))
+`}
+
+</NodeJSVirtualIDE>
+  </TabItem>
+</Tabs>
+
+## Subscribing to Block Updates
+
+Use the appropriate method to stream new blocks in real time. The function returns an unsubscribe handle.
+
+<Tabs groupId="websocket-client">
+  <TabItem value="ethers_v6" label="Ethers (V6)" default>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
+{`
+    import { ethers } from 'ethers'
+
+    function main() {
+      console.log('🔑 Starting ethers WebSocket connection...')
+      const WEBSOCKET_URL = 'https://evm.rpc-testnet-donut-node1.push.org/'
+
+      // Create a WebSocket provider
+      const provider = new ethers.WebSocketProvider(WEBSOCKET_URL)
+
+      // Subscribe to new block events
+      provider.on('block', (blockNumber) => {
+        console.log('New block:', blockNumber)
+      })
+
+      // Stop listening after 10 seconds
+      setTimeout(() => {
+        console.log('Stopping block listener after 10 seconds...')
+        provider.removeAllListeners()
+        provider.destroy()
+      }, 10000)
+    }    
+
+    main()
+
+`}
+
+</NodeJSVirtualIDE>
+  </TabItem>
+
+  <TabItem value="viem" label="Viem">
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
+{`
+    import { createPublicClient, defineChain, http } from 'viem'
+
+    function main() {
+      console.log('🔑 Starting viem WebSocket connection...')
+      const pushTestnet = defineChain({
+        id: 42101,
+        name: 'Push Testnet',
+        nativeCurrency: {
+          decimals: 18,
+          name: 'PC',
+          symbol: '$PC',
+        },
+        rpcUrls: {
+          default: {
+            http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+          },
+        },
+        blockExplorers: {
+          default: {
+            name: 'Push Testnet Explorer',
+            url: 'https://explorer.testnet.push.org/',
+          },
+        },
+      })
+
+      const viemClient = createPublicClient({
+        chain: pushTestnet,
+        transport: http(),
+      })
+
+      const stop = viemClient.watchBlocks({
+        onBlock: (block) => {
+          console.log('🆕 Block', block.number, block.hash)
+        },
+        onError: (err) => console.error('WebSocket error', err),
+      })
+
+      // Stop listening after 10 seconds
+      setTimeout(() => {
+        console.log('Stopping viem block listener after 10 seconds...')
+        stop()
+      }, 10000)
+    }
+
+    main()
+
+`}
+
+</NodeJSVirtualIDE>
+  </TabItem>
+</Tabs>
+
+### Example: Filtering New Blocks for Specific Transactions
+
+The snippet below watches every new block and prints the hash of transactions sent **from** a given address:
+
+<Tabs groupId="websocket-client">
+  <TabItem value="ethers_v6" label="Ethers (V6)" default>
+
+```typescript
+const provider = new ethers.WebSocketProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+const watchedAddress = '0x8a36C6358861F0CE1672B04345C9e2E6717Be946'.toLowerCase();
+
+provider.on('block', async (blockNumber) => {
+    const block = await provider.getBlock(blockNumber, true);
+    if (block && block.transactions) {
+        block.transactions
+            .filter((tx) => tx.from?.toLowerCase() === watchedAddress)
+            .forEach((tx) => console.log('Tx from watched address →', tx.hash));
+    }
+});
+```
+
+  </TabItem>
+
+  <TabItem value="viem" label="Viem">
+
+```typescript
+const pushTestnet = defineChain({
+    id: 42101,
+    name: 'Push Testnet',
+    nativeCurrency: {
+        decimals: 18,
+        name: 'PC',
+        symbol: '$PC',
+    },
+    rpcUrls: {
+        default: {
+            http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+        },
+    },
+    blockExplorers: {
+        default: {
+            name: 'Push Testnet Explorer',
+            url: 'https://explorer.testnet.push.org/',
+        },
+    },
+})
+
+const viemClient = createPublicClient({
+    chain: pushTestnet,
+    transport: http(),
+})
+
+const watchedAddress = '0x8a36C6358861F0CE1672B04345C9e2E6717Be946'.toLowerCase();
+
+viemClient.watchBlocks({
+    onBlock: (block) => {
+        block.transactions
+            .filter((tx) => tx.from?.toLowerCase() === watchedAddress)
+            .forEach((tx) => console.log('Tx from watched address →', tx.hash));
+    },
+});
+```
+
   </TabItem>
 </Tabs>
