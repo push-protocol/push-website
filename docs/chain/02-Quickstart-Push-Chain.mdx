@@ -21,8 +21,8 @@ import TabItem from '@theme/TabItem';
 
 ## Installation
 
-<Tabs className="codetabs" groupId="quickstart-examples">
-  <TabItem value="npm" attributes={{className: "codetab npm"}} default>
+<Tabs groupId="quickstart-examples">
+  <TabItem value="npm" label="npm" default>
 
     ```bash
     # Core SDK
@@ -36,7 +36,7 @@ import TabItem from '@theme/TabItem';
 
   </TabItem>
 
-  <TabItem value="yarn" attributes={{className: "codetab yarn"}}>
+  <TabItem value="yarn" label="yarn">
 
     ```bash
     # Core SDK
@@ -53,8 +53,8 @@ import TabItem from '@theme/TabItem';
 
 ## Import libraries
 
-<Tabs className="codetabs" groupId="quickstart-examples">
-  <TabItem value="evm" attributes={{className: "codetab evm"}} default>
+<Tabs groupId="quickstart-examples">
+  <TabItem value='ethers_v6' label='Ethers (V6)' default>
 
     ```typescript
     // Import Push Chain SDK and Ethers
@@ -66,7 +66,20 @@ import TabItem from '@theme/TabItem';
 
   </TabItem>
 
-  <TabItem value="solana" attributes={{className: "codetab sol"}}>
+  <TabItem value='viem' label='Viem'>
+  
+    ```typescript
+    // Import Push Chain SDK and Viem
+    // You can use other library like ethers, etc
+    // THIS EXAMPLE FOLLOWS VIEM IMPLEMENTATION
+    import { PushChain } from '@pushchain/core';
+    import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts'
+    import { createWalletClient, http } from 'viem'
+    import { sepolia } from 'viem/chains'
+    ```
+  </TabItem>
+
+  <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
 
     ```typescript
     // Import Push Chain SDK and Solana Web3.js
@@ -81,27 +94,46 @@ import TabItem from '@theme/TabItem';
 
 ## Create a Universal Signer
 
-<Tabs className="codetabs" groupId="quickstart-examples">
-  <TabItem value="evm" attributes={{className: "codetab evm"}} default>
+<Tabs groupId="quickstart-examples">
+  <TabItem value='ethers_v6' label='Ethers (V6)' default>
 
     ```typescript
     // (Inside an async function or top-level-await context)
-    // 1. Create a random wallet (or use your own private key)
-    const wallet = ethers.Wallet.createRandom();
+    // 1. Connect to a provider (e.g., Push Chain RPC URL)
+    const provider = new ethers.JsonRpcProvider('https://sepolia.gateway.tenderly.co')
 
-    // 2. Connect to a provider (e.g., Push Chain RPC URL)
-    const provider = new ethers.JsonRpcProvider('https://evm.pn1.dev.push.org');
-    const signer = wallet.connect(provider);
+    // 2. Create a random wallet (or use your own private key)
+      const wallet = ethers.Wallet.createRandom(provider)
 
     // 3. Convert ethers signer to Universal Signer
     // Most popular libraries can pass just the signer to get universal signer
     // Or use PushChain.utils.signer.construct to create a custom one
-    const universalSigner = await PushChain.utils.signer.toUniversal(signer);
+    const universalSigner = await PushChain.utils.signer.toUniversal(wallet)
     ```
 
   </TabItem>
 
-  <TabItem value="solana" attributes={{className: "codetab sol"}}>
+  <TabItem value='viem' label='Viem'>
+
+    ```typescript
+    // (Inside an async function or top-level-await context)
+    // 1. Create a random wallet (or use your own private key)
+    const account = privateKeyToAccount(generatePrivateKey())
+
+    // 2. Initialize signer
+    const signer = createWalletClient({
+      transport: http('https://sepolia.gateway.tenderly.co'), // or your preferred RPC URL
+      chain: sepolia,
+      account,
+    })
+
+    // 3. Convert signer to Universal Signer
+    const universalSigner = await PushChain.utils.signer.toUniversal(signer)
+    ```
+
+  </TabItem> 
+
+  <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
 
     ```typescript
     // (Inside an async function or top-level-await context)
@@ -111,13 +143,10 @@ import TabItem from '@theme/TabItem';
     // 2. Convert the Solana Keypair into a Push Chain universal signer.
     //    We use the helper `toUniversalFromKeyPair`, which internally builds
     //    the necessary adapter (signTransaction, signMessage).
-    const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
-      solKeypair,
-      {
-        chain: PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET,
-        library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
-      }
-    );
+    const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(solKeypair, {
+      chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
+      library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+    })
     ```
 
   </TabItem>
@@ -146,7 +175,7 @@ const pushChainClient = await PushChain.initialize(universalSigner, {
 // Send a universal transaction (from any chain to Push Chain)
 const txHash = await pushChainClient.universal.sendTransaction({
   to: '0xD0DE00000447492307108Bdc7Ff6BaB33Ff37Dacc479', // To address on Push Chain
-  value: BigInt(0), // $PC Value to send
+  value: BigInt(1), // $PC Value to send
 });
 
 console.log('Transaction sent:', txHash);
