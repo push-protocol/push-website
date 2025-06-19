@@ -18,6 +18,8 @@ Before integrating the SDK, here are the core ideas you need to know to build tr
   <title>{'Important Concepts | Push Chain | Push Documentation'}</title>
 </head>
 
+import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
+
 ## 100% EVM Compatibility
 
 Push Chain is an EVM-compatible Universal Layer 1 blockchain that runs any Solidity contract as-is. Your existing Ethereum dApp will work without touching a single byte of on-chain code.
@@ -70,27 +72,33 @@ As an EVM-compatible Universal Layer 1 blockchain, Push Chain naturally supports
 
 The `UniversalAccount` is a chain-agnostic way of representing a wallet address, designed to work seamlessly across multiple blockchain ecosystems.
 
-```typescript
-import { PushChain } from '@pushchain/core';
+  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
 
-// PushChain.utils.account.toUniversal(address, {chain})
+{`
 
-// Ethereum Sepolia
-const ethereumAccount = PushChain.utils.account.toUniversal(
-  '0x742d35Cc6370C742Fc60f8b67da6c68F091C42b5',
-  {
-    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-  }
-);
+    import { PushChain } from '@pushchain/core';
 
-// Solana Testnet
-const solanaAccount = createUniversalAccount(
-  'ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR',
-  {
-    chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
-  }
-);
-```
+    async function main() {
+      // Ethereum Sepolia
+      const ethereumAccount = PushChain.utils.account.toUniversal('0x742d35Cc6370C742Fc60f8b67da6c68F091C42b5', {
+        chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+      })
+
+      console.log(JSON.stringify(ethereumAccount, null, 2))
+
+      // Solana Testnet
+      const solanaAccount = PushChain.utils.account.toUniversal('ySYrGNLLJSK9hvGGpoxg8TzWfRe8ftBtDSMECtx2eJR', {
+        chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
+      })
+
+      console.log(JSON.stringify(solanaAccount, null, 2))
+    }
+
+    main().catch(console.error)
+
+`}
+
+</NodeJSVirtualIDE>
 
 - `address` follows each chain’s format (EVM checksummed, Solana base58).
 - `chain` is the identifier of the origin chain of an address (e.g. `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA` resolves to `eip155:11155111` for Sepolia)
@@ -101,31 +109,39 @@ const solanaAccount = createUniversalAccount(
 
 A `UniversalSigner` extends `UniversalAccount` with signing capabilities.
 
-```typescript
-import { PushChain } from '@pushchain/core';
-import { ethers } from 'ethers';
-import { Keypair } from '@solana/web3.js';
+  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
 
-// PushChain.utils.signer.toUniversal(signer)
+{`
 
-// Ethereum Sepolia
-const ethwallet = ethers.Wallet.createRandom();
-const ethprovider = new ethers.JsonRpcProvider(
-  'https://rpc.ankr.com/eth_sepolia/'
-);
-const signer = ethwallet.connect(ethprovider);
+    import { PushChain } from '@pushchain/core';
+    import { ethers } from 'ethers';
+    import { Keypair } from '@solana/web3.js';
 
-const universalSignerFromEth = await PushChain.utils.signer.toUniversal(signer);
+    async function main() {
+      // Ethereum Sepolia
+      const ethwallet = ethers.Wallet.createRandom()
+      const ethprovider = new ethers.JsonRpcProvider('https://sepolia.gateway.tenderly.co')
+      const signer = ethwallet.connect(ethprovider)
 
-// Solana Testnet
-const solKeypair = Keypair.generate();
+      const universalSignerFromEth = await PushChain.utils.signer.toUniversal(signer)
 
-const universalSignerFromSol =
-  await PushChain.utils.signer.toUniversalFromKeyPair(solKeypair, {
-    chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
-    library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
-  });
-```
+      // Solana Testnet
+      const solKeypair = Keypair.generate()
+
+      const universalSignerFromSol = await PushChain.utils.signer.toUniversalFromKeyPair(solKeypair, {
+        chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
+        library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+      })
+
+      console.log(JSON.stringify(universalSignerFromEth, null, 2))
+      console.log(JSON.stringify(universalSignerFromSol, null, 2))
+    }
+
+    main().catch(console.error)
+
+`}
+
+</NodeJSVirtualIDE>
 
 - `signer` is the signer object from the library you are using (e.g. ethers, viem, solana-web3.js)
 
@@ -135,8 +151,8 @@ const universalSignerFromSol =
 | -------- | ------------------------- | ------------------------------------------------------------------- |
 | Ethereum | Mainnet (1)               | `eip155:1:0x742d35Cc6370C742Fc60f8b67da6c68F091C42b5`               |
 | Ethereum | Sepolia Testnet(11155111) | `eip155:11155111:0x5FbDB2315678afecB367f032d93F642f64180aa3`        |
-| Solana   | Mainnet-Beta              | `solana:mainnet-beta:9xQeWvGFvPEZZY3Yvj5V14xi4tYmEXjfSDrm5sVqTvcAg` |
-| Solana   | Testnet                   | `solana:testnet:7fCAbbLejF64HTZ39rjFBUXJEMYT9z7d6NM6ovaoyNaW`       |
+| Solana   | Mainnet-Beta              | `solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp:9xQeWvGFvPEZZY3Yvj5V14xi4tYmEXjfSDrm5sVqTvcAg` |
+| Solana   | Testnet                   | `solana:4uhcVJyU9pJkvQyS88uRDiswHXSCkY3z:7fCAbbLejF64HTZ39rjFBUXJEMYT9z7d6NM6ovaoyNaW`       |
 | Cosmos   | cosmoshub-4               | `cosmos:cosmoshub-4:cosmos1sk8uyz4u6zmxus3aurayrjyvfgtytvpnr685ur`  |
 
 > The addresses are inspired from [caip-10](https://github.com/ChainSafe/CAIPs/blob/master/CAIPs/CAIP-10.md 'Link to caip-10 proposal') format.
