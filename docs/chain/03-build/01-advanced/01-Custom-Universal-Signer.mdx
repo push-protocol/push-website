@@ -61,6 +61,8 @@ const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
 
 > Note: Parameters _`in this style`_ are mandatory.
 
+---
+
 <Details summary="Expected response">
 
 ```typescript
@@ -77,13 +79,11 @@ const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
 }
 ````
 
----
-
 </Details>
 
 ---
 
-### Custom Universal Signer Playground
+### Custom Universal Signer Live Playground
 
 <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/custom-universal-signer"}}>
 
@@ -164,3 +164,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
 `}
 
 </NodeJSVirtualIDE>
+
+## Next Steps
+- [Initialize Push Chain Client](/docs/chain/build/initialize-push-chain-client) with the Universal Signer
+- Abstract away creation of the Universal Signer using [UI Kit](/docs/chain/build/ui-kit)

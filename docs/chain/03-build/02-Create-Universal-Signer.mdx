@@ -33,6 +33,7 @@ The most common way to create a Universal Signer is by converting an existing si
   <TabItem value='ethers_v6' label='Ethers (V6)' default>
 
 ```typescript
+// import @pushchain/core and ethers
 const provider = new ethers.providers.JsonRpcProvider('<RPC_URL>');
 const ethersSigner = new ethers.Wallet('<PRIVATE_KEY>', provider);
 
@@ -50,6 +51,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(ethersSigner);
   <TabItem value='viem' label='Viem'>
   
 ```typescript
+// import @pushchain/core and viem
 const account = privateKeyToAccount('<PRIVATE_KEY>');
 const viemClient = createWalletClient({
   transport: http('<RPC_URL>'), // or your preferred RPC URL
@@ -70,6 +72,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(viemClient);
   <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
 
 ```typescript
+// import @pushchain/core and @solana/web3.js
 const solKeypair = Keypair.generate()
 
 const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
@@ -280,3 +283,9 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 
   </TabItem>
 </Tabs>
+
+## Next Steps
+- [Initialize Push Chain Client](/docs/chain/build/initialize-push-chain-client) with the Universal Signer
+- Abstract away creation of the Universal Signer using [UI Kit](/docs/chain/build/ui-kit)
+- Learn how to create [Universal Signer from public / private keypair](/docs/chain/build/utility-functions#create-universal-signer-from-key-pair)
+- Create [custom implementation](/docs/chain/build/advanced/custom-universal-signer) of universal signer (Advanced)
