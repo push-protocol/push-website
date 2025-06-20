@@ -358,6 +358,8 @@ This is a 2 step process:
 1. Call `construct` function that will return a Universal Signer Skeleton
 2. Pass the Universal Signer Skeleton to the `toUniversal` function to create a Universal Signer
 
+For more information, please refer to the [Custom Universal Signer](./01-advanced/01-Custom-Universal-Signer.mdx) section.
+
 ```typescript
 const universalSignerSkeleton = PushChain.utils.signer.construct(universalAccount, {
   signAndSendTransaction: customSignAndSendTransaction,
