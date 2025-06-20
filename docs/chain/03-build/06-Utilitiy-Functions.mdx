@@ -28,6 +28,7 @@ import {
   AImp,
 } from '@site/src/css/SharedStyling';
 import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
+import Details from '@theme/Details';
 
 ## From Chain Agnostic Address to Universal Account
 
@@ -35,12 +36,25 @@ import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtua
 const account = PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress)
 ```
 
-
 ### fromChainAgnostic parameters
 
 | **Param**              | **Type** | **Default** | **Remarks**                                                                                                |
 | ---------------------- | -------- | ----------- | ---------------------------------------------------------------------------------------------------------- |
 | `chainAgnosticAddress` | `string` | -           | A full chain agnostic address string (e.g., `eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4`). |
+
+<Details summary="Expected response">
+
+```typescript
+// UniversalAccount object
+{
+  chain: 'eip155:11155111',
+  address: '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
+}
+```
+
+---
+
+</Details>
 
 #### Example: Convert Ethereum Sepolia CAIP-10 to UniversalAccount
 
@@ -76,6 +90,20 @@ const account = PushChain.utils.account.toUniversal(address, {
 | `address`       | `string` | -           | An address string (e.g., `0xabc...`).                                                                                                                                                                  |
 | `options.chain` | `CHAIN`  | -           | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET` |
 
+<Details summary="Expected response">
+
+```typescript
+// UniversalAccount object
+{ 
+  chain: 'eip155:11155111', 
+  address: '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba' 
+}
+```
+
+---
+
+</Details>
+
 #### Example: Convert Ethereum Sepolia Address to UniversalAccount
 
 <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
@@ -110,6 +138,17 @@ const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(address, {
 | --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `address`       | `string` | An address string (e.g., `0xabc...`).                                                                                                                                                                  |
 | `options.chain` | `CHAIN`  | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET` |
+
+<Details summary="Expected response">
+
+```typescript
+// Chain Agnostic Address
+'eip155:11155111:0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
+```
+
+---
+
+</Details>
 
 #### Example: Convert Ethereum Mainnet Address to CAIP-10
 
@@ -148,6 +187,20 @@ const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
 | ---------------- | ------------------ | --------------------------------------------------------------------------------------------------------------- |
 | `account`        | `UniversalAccount` | A UniversalAccount object containing chain and address information.                                             |
 | `options.status` | `boolean`          | Whether to check if the computed smart account address is deployed. Set to `true` to include deployment status. |
+
+<Details summary="Expected response">
+
+```typescript
+// ExecutorInfo object
+{
+  address: '0x98cA97d2FB78B3C0597E2F78cd11868cACF423C5',
+  deployed: true
+}
+```
+
+---
+
+</Details>
 
 #### Example: Convert Origin Account to Universal Executor Address
 
@@ -194,6 +247,25 @@ const signer = await PushChain.utils.signer.toUniversal(signer)
 | **Param** | **Type**                                                                                | **Remarks**                                                                                                                                                                                                              |
 | --------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `signer`  | `UniversalSignerSkeleton \| EthersV6SignerType \| EthersV5SignerType \| ViemSignerType` | A signer object from one of the supported libraries (ethers v5/v6, viem, or a custom UniversalSignerSkeleton). Here are some possible values: `ethers.Wallet`, `viem.Account`, `@pushchain/core.UniversalSignerSkeleton` |
+
+<Details summary="Expected response">
+
+```typescript
+// UniversalSigner object
+{
+  account: {
+    address: '0xD173b7f04D539A5794e14030c4E172B2E3df92f3',
+    chain: 'eip155:11155111'
+  },
+  signMessage: [Function: signMessage],
+  signAndSendTransaction: [Function: signAndSendTransaction],
+  signTypedData: [Function: signTypedData]
+}
+```
+
+---
+
+</Details>
 
 #### Example: Create Universal Signer from Wallet Provider
 
@@ -268,6 +340,25 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(keyp
 | `keypair`         | `Keypair` | A keypair object from one of the supported libraries (ethers v5/v6, viem, or a custom UniversalSignerSkeleton)                                                                                              |
 | `options.chain`   | `CHAIN`   | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET`       |
 | `options.library` | `LIBRARY` | The library to use for the signer. Here are some possible values: `PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6`, `PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM`, `PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS` |
+
+<Details summary="Expected response">
+
+```typescript
+// UniversalSigner object
+{
+  account: {
+    address: '0xD173b7f04D539A5794e14030c4E172B2E3df92f3',
+    chain: 'eip155:11155111'
+  },
+  signMessage: [Function: signMessage],
+  signAndSendTransaction: [Function: signAndSendTransaction],
+  signTypedData: [Function: signTypedData]
+}
+```
+
+---
+
+</Details>
 
 #### Example: Create Universal Signer from Key Pair
 
@@ -376,6 +467,26 @@ const universalSignerSkeleton = PushChain.utils.signer.construct(universalAccoun
 | `options.signMessage`        | `(data: Uint8Array) => Promise<Uint8Array>`                                            | A function that signs a message and returns the signature as Uint8Array.                                                                                                                                                 |
 | `options.signAndSendTransaction` | `(unsignedTx: Uint8Array) => Promise<Uint8Array>`                                  | A function that signs and sends a transaction, returning the transaction hash as Uint8Array.                                                                                                                              |
 | `options.signTypedData?`     | `({domain, types, primaryType, message}: {domain: TypedDataDomain; types: TypedData; primaryType: string; message: Record<string, any>}) => Promise<Uint8Array>` | An optional function that signs typed data according to EIP-712 standard.                                                                                                                                                |
+
+<Details summary="Expected response">
+
+```typescript
+// UniversalSignerSkeleton object
+{
+  signerId: 'CustomGeneratedSigner',
+  account: {
+    chain: 'eip155:42101',
+    address: '0xf12325208B41780bAeE6662782893C6CE9bDfEAa'
+  },
+  signMessage: [AsyncFunction: customSignMessage],
+  signAndSendTransaction: [AsyncFunction: customSignAndSendTransaction],
+  signTypedData: [AsyncFunction: customSignTypedData]
+}
+```
+
+---
+
+</Details>
 
 #### Example: Create Universal Signer Manually
 
