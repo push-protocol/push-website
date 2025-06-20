@@ -59,6 +59,8 @@
   --ifm-docs-hero-bg: #efefef;
   --ifm-paragraph-margin-bottom: 0;
   --docusaurus-highlighted-code-line-bg: rgba(62, 65, 83, 1);
+  --ifm-playground-header-bg: #61657b;
+  --ifm-playground-header-text: #ffffff;
   --ifm-live-highlighted-code-line-bg-pulse-start: rgba(62, 65, 83, 1);
   --ifm-live-highlighted-code-line-bg-pulse-mid: rgba(87, 91, 117, 1);
 }
@@ -107,6 +109,8 @@
   --ifm-navbar-dropdown-image: 'none';
   --ifm-docs-hero-bg: #0d0c0f;
   --ifm-paragraph-margin-bottom: 0;
+  --ifm-playground-header-bg: #61657b;
+  --ifm-playground-header-text: #ffffff;
   --docusaurus-highlighted-code-line-bg: rgba(62, 65, 83, 1);
   --ifm-live-highlighted-code-line-bg-pulse-start: rgba(62, 65, 83, 1);
   --ifm-live-highlighted-code-line-bg-pulse-mid: rgba(87, 91, 117, 1);

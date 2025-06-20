@@ -24,8 +24,35 @@
 }
 
 .playgroundHeader:first-of-type {
-  background: var(--ifm-color-emphasis-600);
-  color: var(--ifm-color-content-inverse);
+  background: var(--ifm-playground-header-bg);
+  color: var(--ifm-playground-header-text);
+  position: relative;
+  padding-left: 35px;
+}
+
+.playgroundHeader:first-of-type::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: pulsate 1.5s ease-in-out infinite;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: translateY(-50%) scale(0.8);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.2);
+  }
+  100% {
+    transform: translateY(-50%) scale(0.8);
+  }
 }
 
 .playgroundEditor {

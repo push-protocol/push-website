@@ -1,8 +1,8 @@
 ---
-id: docs-chain-build-create-universal-signer
-title: Create Universal Signer
+id: docs-chain-build-create-universal-signer-alt
+title: Create Universal Signer Alt
 hide_title: true
-slug: ./create-universal-signer
+slug: ./create-universal-signer-alt
 displayed_sidebar: pushChainSidebar
 sidebar_position: 2
 image: '/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png'
@@ -25,65 +25,10 @@ import Details from '@theme/Details';
 import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
 
 ## Create Universal Signer API
-**_`PushChain.utils.signer.toUniversal(signer): Promise<UniversalSigner>`_**
 
 The most common way to create a Universal Signer is by converting an existing signer from supported libraries (Ethers, Viem, Solana).
 
-<Tabs groupId="create-universal-signer">
-  <TabItem value='ethers_v6' label='Ethers (V6)' default>
-
-```typescript
-const provider = new ethers.providers.JsonRpcProvider('<RPC_URL>');
-const ethersSigner = new ethers.Wallet('<PRIVATE_KEY>', provider);
-
-const universalSigner = await PushChain.utils.signer.toUniversal(ethersSigner);
-```
-
-:::note Provider determines the chain of the account
-
-- RPC URL picks the chain – Sepolia RPC → Ethereum Sepolia, Donut RPC → Push Chain Testnet
-
-:::
-
-  </TabItem>
-
-  <TabItem value='viem' label='Viem'>
-  
-```typescript
-const account = privateKeyToAccount('<PRIVATE_KEY>');
-const signer = createWalletClient({
-  transport: http('<RPC_URL>'), // or your preferred RPC URL
-  account,
-});
-
-const universalSigner = await PushChain.utils.signer.toUniversal(viemClient);
-```
-
-:::note Provider determines the chain of the account
-
-- RPC URL picks the chain – Sepolia RPC → Ethereum Sepolia, Donut RPC → Push Chain Testnet
-
-:::
-
-  </TabItem>
-
-  <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
-
-```typescript
-const solKeypair = Keypair.generate()
-
-const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
-  solKeypair,
-  {
-    chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
-    library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
-  }
-)
-```
-
-  </TabItem>
-</Tabs>
-
+**_`PushChain.utils.signer.toUniversal(signer): Promise<UniversalSigner>`_**
 
 | **Function Arguments**  | **Type**                                                            | **Description**                                      |
 | ----------------------- | ------------------------------------------------------------------- | ---------------------------------------------------- |
@@ -107,8 +52,6 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 ```
 
 </Details>
-
-### Create Universal Signer Playground
 
 <Tabs groupId="create-universal-signer">
   <TabItem value='ethers_v6' label='Ethers (V6)' default>
@@ -188,6 +131,12 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 
 </NodeJSVirtualIDE>
 
+:::note Provider determines the chain of the account
+
+- RPC URL picks the chain – Sepolia RPC → Ethereum Sepolia, Donut RPC → Push Chain Testnet
+
+:::
+
   </TabItem>
 
   <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
@@ -225,6 +174,12 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 `}
 
 </NodeJSVirtualIDE>
+
+:::note Provider determines the chain of the account
+
+- RPC URL picks the chain – Sepolia RPC → Ethereum Sepolia, Donut RPC → Push Chain Testnet
+
+:::
 
   </TabItem>
 
@@ -279,36 +234,10 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 ---
 
 ## Custom Universal Signer API
-**_`PushChain.utils.signer.construct(account, {options}): Promise<UniversalSigner>`_**
 
 If you don't have a supported library signer or want to create a custom implementation, you can construct a Universal Signer manually.
 
-```typescript
-const account = {
-  address: '<WALLET_ADDRESS>',
-  chain: '<PushChain.CONSTANTS.CHAIN.CHAIN_TYPE'>
-};
-
-const customSignAndSendTransaction = async (unsignedTx) => {
-  return new Uint8Array('<RESPONSE_TO_SIGN_AND_SEND_TRANSACTION>');
-};
-
-const customSignMessage = async (data) => {
-  return new Uint8Array('<RESPONSE_TO_SIGN_MESSAGE>');
-};
-
-const customSignTypedData = async (typedDataArgs) => {
-  return new Uint8Array('<RESPONSE_TO_SIGN_TYPED_DATA>');
-};
-
-const skeleton = PushChain.utils.signer.construct(account, {
-  signMessage: customSignMessage,
-  signTransaction: customSignTransaction,
-  signTypedData: customSignTypedData
-});
-
-const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
-```
+**_`PushChain.utils.signer.construct(account, {options}): Promise<UniversalSigner>`_**
 
 | **Function Arguments**               | **Type**                                          | **Description**                                        |
 | ------------------------------------ | ------------------------------------------------- | ------------------------------------------------------ |
@@ -337,8 +266,6 @@ const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
 ````
 
 </Details>
-
-### Custom Universal Signer Playground
 
 <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/custom-universal-signer"}}>
 
