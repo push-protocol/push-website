@@ -231,3 +231,70 @@ Here is an example of how to initialize the Push Chain SDK with a universal sign
 </NodeJSVirtualIDE>
   </TabItem>
 </Tabs>
+
+## Get Push Chain Client UEA and Universal Origin Account
+
+The Push Chain Client provides access to two important accounts: the UEA (Universal Executor Account) and the Universal Origin Account. The UEA is the smart contract account on Push Chain that executes transactions when user is using fee abstraction, while the Universal Origin Account represents the Universal Account of the user's wallet on the blockchain network where the user's wallet originates from (e.g., Ethereum Sepolia, Solana Devnet, etc.).
+
+```typescript
+// UEA Address
+const ueaAddress = pushChainClient.universal.account
+
+// Origin Universal Account
+const originAccount = pushChainClient.universal.origin
+```
+
+### Example
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
+{`
+    import { PushChain } from '@pushchain/core'
+    import { ethers } from 'ethers'
+
+    async function main() {
+      console.log('Creating Universal Signer - Ethers V6')
+
+      // Create random wallet
+      const wallet = ethers.Wallet.createRandom()
+
+      // Set up provider connected to Ethereum Sepolia Testnet
+      const provider = new ethers.JsonRpcProvider('https://gateway.tenderly.co/public/sepolia')
+      const signer = wallet.connect(provider)
+
+      // Convert ethers signer to Universal Signer
+      const universalSigner = await PushChain.utils.signer.toUniversal(signer)
+      console.log('🔑 Got universal signer')
+
+      // Initialize Push Chain SDK
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+          network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+      })
+      console.log('🔑 Got push chain client')
+
+      // UEA Address
+      const ueaAddress = pushChainClient.universal.account
+
+      // Origin Universal Account
+      const originAccount = pushChainClient.universal.origin
+
+      console.log('📋 Push Chain Client UEA:')
+      console.log(ueaAddress)
+
+      console.log('📍 Push Chain Client Universal Origin Account:')
+      console.log(JSON.stringify(originAccount, null, 2))
+    }
+
+    main().catch(console.error)
+`}
+
+</NodeJSVirtualIDE>
+
+
+
+
+
+
+
+
+
