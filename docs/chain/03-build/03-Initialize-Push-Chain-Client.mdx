@@ -123,6 +123,38 @@ The `CHAIN` enum defines all supported blockchain networks that can be used with
 | `SOLANA_MAINNET`                       | Solana       | Solana mainnet                       |
 | `SOLANA_DEVNET`                        | Solana       | Solana development network           |
 
+<Details summary="Expected response">
+
+```typescript
+// PushChain object
+{
+  orchestartor: Orchestrator {
+    universalSigner: {
+      account: [Object],
+      signMessage: [AsyncFunction: customSignMessage],
+      signAndSendTransaction: [AsyncFunction: customSignAndSendTransaction],
+      signTypedData: [AsyncFunction: customSignTypedData]
+    },
+    rpcUrls: {},
+    printTraces: false,
+    pushClient: PushClient {
+      publicClient: [Object],
+      pushChainInfo: [Object],
+      signerPrivateKey: '...'
+    }
+  },
+  universal: {
+    origin: [Getter],
+    account: [Getter],
+    sendTransaction: [Function: bound execute]
+  }
+}
+```
+
+---
+
+</Details>
+
 ## Example
 
 Here is an example of how to initialize the Push Chain SDK with a universal signer and a custom RPC URL.
@@ -243,6 +275,23 @@ const ueaAddress = pushChainClient.universal.account
 // Origin Universal Account
 const originAccount = pushChainClient.universal.origin
 ```
+
+<Details summary="Expected response">
+
+```typescript
+// pushChainClient.universal.account
+'0x1fcA89Ef1Fba3019C4b6ce13BF607AEB056B51c2'
+
+// pushChainClient.universal.origin
+{
+  chain: 'eip155:11155111',
+  address: '0x2462BD3fFAd2C8c7901df4bfac9f1f11a90A241C'
+}
+```
+
+---
+
+</Details>
 
 ### Example
 

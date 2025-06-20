@@ -49,6 +49,17 @@ const txHash = await pushChainClient.universal.sendTransaction({
 
 > Note: Parameters _`in this style`_ are mandatory.
 
+<Details summary="Expected response">
+
+```typescript
+// Transaction hash
+'0xd4491116f55568faabe3ae813dacb77eeea49080f34221ae433b27d3732a460a'
+```
+
+---
+
+</Details>
+
 ### Send Transaction with Contract Interaction
 
 When you need to interact with smart contracts, you'll need to pass encoded function data. Here's how to generate the `data` parameter using viem and use it with the Push Chain SDK:

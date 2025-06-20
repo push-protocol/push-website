@@ -70,14 +70,14 @@ const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
 {
   signerId: 'CustomGeneratedSigner',
   account: {
-    address: '0xeCba9a32A9823f1cb00cdD8344Bf2D1d87a8dd97',
-    chain: 'ethereum_sepolia'
+    chain: 'eip155:42101',
+    address: '0x98cA97d2FB78B3C0597E2F78cd11868cACF423C5'
   },
-  signMessage: Function,
-  signTransaction: Function,
-  signTypedData: Function
-}
-````
+  signMessage: [AsyncFunction: customSignMessage],
+  signAndSendTransaction: [AsyncFunction: customSignAndSendTransaction],
+  signTypedData: [AsyncFunction: customSignTypedData]
+} 
+```
 
 </Details>
 

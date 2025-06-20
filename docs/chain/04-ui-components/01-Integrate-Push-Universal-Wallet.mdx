@@ -93,7 +93,7 @@ function App() {
       if (pushChainClient) {
         try {
           await pushChainClient.universal.sendTransaction({
-            target: '0xFaE3594C68EDFc2A61b7527164BDAe80bC302108',
+            to: '0xFaE3594C68EDFc2A61b7527164BDAe80bC302108',
             value: BigInt(1),
             data: '0x',
           });
