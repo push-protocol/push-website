@@ -31,15 +31,10 @@ import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtua
 
 ## From Chain Agnostic Address to Universal Account
 
-<Tabs className='codetabs' groupId='code-examples'>
-  <TabItem value='js' attributes={{ className: 'codetab js' }} default>
+```typescript
+const account = PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress)
+```
 
-    ```typescript
-    const account = PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress)
-    ```
-
-  </TabItem>
-</Tabs>
 
 ### fromChainAgnostic parameters
 
@@ -51,30 +46,28 @@ import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtua
 
 <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
 
-    {`
-    const account = PushChain.utils.account.fromChainAgnostic(
+{`
+    import { PushChain } from '@pushchain/core'
+
+    function main() {
+      const account = PushChain.utils.account.fromChainAgnostic(
         'eip155:11155111:0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
-    )
-    console.log(JSON.stringify(account, null, 2))
-    // {
-    //   chain: 'eip155:11155111',
-    //   address: '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
-    // }
-    `}
+        )
+        console.log(JSON.stringify(account, null, 2))
+    }
+
+    main()
+`}
 
 </NodeJSVirtualIDE>
 
 ## Create Universal Account from Address and Chain
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
 const account = PushChain.utils.account.toUniversal(address, {
   chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
 });
 ```
-  </TabItem>
-</Tabs>
 
 ### `toUniversal` parameters
 
@@ -85,35 +78,31 @@ const account = PushChain.utils.account.toUniversal(address, {
 
 #### Example: Convert Ethereum Sepolia Address to UniversalAccount
 
-<NodeJSVirtualIDE
-  repo={{
-    title: 'Open in Github',
-    url: 'https://github.com/push-protocol/push-chain-sdk',
-  }}
->
-  {`
-const account = PushChain.utils.account.toUniversal('0xD8d6aF611a17C236b13235B5318508FA61dE3Dba', {
-    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-})
-console.log(JSON.stringify(account, null, 2))
-// {
-//   chain: 'eip155:11155111',
-//   address: '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
-// }
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
+{`
+    import { PushChain } from '@pushchain/core'
+
+    function main() {
+      const account = PushChain.utils.account.toUniversal(
+        '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba', {
+          chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+        }
+      )
+      console.log(JSON.stringify(account, null, 2))
+    }
+
+    main()
 `}
 </NodeJSVirtualIDE>
 
 ## Convert Address and Chain to Chain Agnostic Address
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
 const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(address, {
   chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
 });
 ```
-  </TabItem>
-</Tabs>
 
 ### `toChainAgnostic` parameters
 
@@ -126,19 +115,24 @@ const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(address, {
 
 <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
 {`
-const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic('0xD8d6aF611a17C236b13235B5318508FA61dE3Dba', {
-    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-})
-console.log(JSON.stringify(chainAgnosticAddress, null, 2))
-// => 'eip155:11155111:0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
+    import { PushChain } from '@pushchain/core'
+
+    function main() {
+      const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(
+        '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba', {
+          chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+        }
+      )
+      console.log(JSON.stringify(chainAgnosticAddress, null, 2))
+    }
+
+    main()
 `}
 
 </NodeJSVirtualIDE>
 
 ## Convert Origin Account to Universal Executor Address
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="js" attributes={{className: "codetab js"}} default>
 ```typescript
 const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
   universalAccount,
@@ -147,8 +141,6 @@ const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
   }
 );
 ```
-  </TabItem>
-</Tabs>
 
 ### `convertOriginToExecutor` parameters
 
@@ -161,43 +153,41 @@ const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
 
 <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
 {`
-// Create a universal account for Ethereum Sepolia
-const account = PushChain.utils.account.toUniversal('0xD8d6aF611a17C236b13235B5318508FA61dE3Dba', {
-    chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-})
+    import { PushChain } from '@pushchain/core'
 
-// Convert to executor address with deployment status
-const executorInfo = await PushChain.utils.account.convertOriginToExecutor(account, {
-status: true,
-})
+    async function main() {
+      // Create a universal account for Ethereum Sepolia
+      const account = PushChain.utils.account.toUniversal(
+        '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba', {
+          chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+        }
+      )
 
-console.log(JSON.stringify(executorInfo, null, 2));
-// {
-// address: '0x1234...abcd',
-// deployed: false
-// }
+      // Convert to executor address with deployment status
+      const executorInfo = await PushChain.utils.account.convertOriginToExecutor(account, {
+        status: true,
+      })
 
-// Convert without deployment status
-const executorSimple = await PushChain.utils.account.convertOriginToExecutor(account, {
-status: false,
-})
+      console.log(JSON.stringify(executorInfo, null, 2));
 
-console.log(JSON.stringify(executorSimple, null, 2));
-// {
-// address: '0x1234...abcd'
-// }
+      // Convert without deployment status
+      const executorSimple = await PushChain.utils.account.convertOriginToExecutor(account, {
+        status: false,
+      })
+
+      console.log(JSON.stringify(executorSimple, null, 2));
+    }
+
+    main().catch(console.error)
 `}
 
 </NodeJSVirtualIDE>
 
 ## Create Universal Signer from Wallet Provider
 
-<Tabs className='codetabs' groupId='code-examples'>
-  <TabItem value='js' attributes={{ className: 'codetab js' }} default>
-    ```typescript const signer = await
-    PushChain.utils.signer.toUniversal(signer) ```
-  </TabItem>
-</Tabs>
+```typescript 
+const signer = await PushChain.utils.signer.toUniversal(signer) 
+```
 
 ### `toUniversal` parameters
 
@@ -207,51 +197,49 @@ console.log(JSON.stringify(executorSimple, null, 2));
 
 #### Example: Create Universal Signer from Wallet Provider
 
-<Tabs className="codetabs" groupId="code-examples">
-  <TabItem value="ethers" attributes={{className: "codetab ethers"}} default>
+<Tabs groupId="code-examples">
+  <TabItem value='ethers_v6' label='Ethers (V6)' default>
   <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
 {`
-const provider = new ethers.providers.JsonRpcProvider('https://sepolia.drpc.org')
-const wallet = new ethers.Wallet(ethers.Wallet.createRandom().privateKey, provider)
+    import { PushChain } from '@pushchain/core'
+    import { ethers } from 'ethers'
 
-const signer = await PushChain.utils.signer.toUniversal(wallet)
+    async function main() {
+      const provider = new ethers.JsonRpcProvider('https://sepolia.gateway.tenderly.co')
+      const wallet = ethers.Wallet.createRandom(provider)
 
-console.log(JSON.stringify(signer, null, 2))
-// {
-// account: {
-// address: '0x322c45d98Da3e7b71D85a518349498f8A1d50CbE',
-// chain: 'eip155:11155111'
-// },
-// signMessage: [Function: signMessage],
-// signTransaction: [Function: signTransaction],
-// signTypedData: [Function: signTypedData]
-// }
+      const signer = await PushChain.utils.signer.toUniversal(wallet)
+
+      console.log(JSON.stringify(signer, null, 2))
+    }
+
+    main().catch(console.error)
 `}
 
 </NodeJSVirtualIDE>
   </TabItem>
-  <TabItem value="viem" attributes={{className: "codetab viem"}} default>
+  <TabItem value='viem' label='Viem'>
     <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
 {`
-const account = privateKeyToAccount(generatePrivateKey())
-const walletClient = createWalletClient({
-    account,
-    chain: sepolia,
-    transport: http(),
-})
+    import { PushChain } from '@pushchain/core'
+    import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts'
+    import { createWalletClient, http } from 'viem'
+    import { sepolia } from 'viem/chains'
 
-const universalSigner = await PushChain.utils.signer.toUniversal(walletClient)
+    async function main() {
+      const account = privateKeyToAccount(generatePrivateKey())
+      const walletClient = createWalletClient({
+        account,
+        chain: sepolia,
+        transport: http(),
+      })
 
-console.log(JSON.stringify(universalSigner, null, 2))
-// {
-// account: {
-// address: '0x338B3c965a49323bbFaBe3bC451a75BDADdaed82',
-// chain: 'eip155:11155111'
-// },
-// signMessage: [Function: signMessage],
-// signTransaction: [Function: signTransaction],
-// signTypedData: [Function: signTypedData]
-// }
+      const universalSigner = await PushChain.utils.signer.toUniversal(walletClient)
+
+      console.log(JSON.stringify(universalSigner, null, 2))
+    }
+
+    main().catch(console.error)
 `}
 
 </NodeJSVirtualIDE>
