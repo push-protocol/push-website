@@ -51,7 +51,7 @@ const skeleton = PushChain.utils.signer.construct(account, {
 const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
 ```
 
-| **Function Arguments**               | **Type**                                          | **Default** | **Description**                                        |
+| **Arguments**               | **Type**                                          | **Default** | **Description**                                        |
 | ------------------------------------ | ------------------------------------------------- | ----------- | ------------------------------------------------------ |
 | _`account`_                          | `UniversalAccount`                                | -           | Account information containing address and chain       |
 | _`options`_                          | `Object`                                          | -           | Object containing the signing function implementations |
@@ -59,7 +59,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
 | _`options.signMessage`_              | `(data: Uint8Array) => Promise<Uint8Array>`       | -           | Function to sign raw message data                      |
 | `options.signTypedData`              | `(params) => Promise<Uint8Array>`                 | -           | Function to sign typed data (EIP-712)                  |
 
-> Note: These _`Function Arguments`_ are mandatory.
+> Note: These _`Arguments`_ are mandatory.
 
 <Details summary="Returns `UniversalSignerSkeleton` <object>" className="alert alert--fn-args">
 
