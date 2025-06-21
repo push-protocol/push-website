@@ -1,0 +1,163 @@
+---
+id: docs-chain-build-initialize-evm-client
+title: Initialize EVM Client
+hide_title: true
+slug: ./initialize-evm-client
+displayed_sidebar: pushChainSidebar
+sidebar_position: 4
+image: '/assets/docs/previews/docs_notifications_develop--initialize_user.png'
+---
+
+# Initialize EVM Client Overview
+
+Push Chain is EVM-compatible, allowing you to use Ethereum tools like Viem and Ethers.js.
+
+If you need more information about how to use these libraries, please refer to their official documentation:
+- [ethers.js documentation](https://docs.ethers.org/)
+- [viem documentation](https://viem.sh/)
+
+<head>
+  <title>{`Initialize EVM Client | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
+import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
+
+## Initialize EVM Client
+
+As mentioned in the previous section, Push Chain is EVM-compatible, allowing you to use Ethereum tools like Viem and Ethers.js.
+
+<Tabs groupId="initialize-evm-client">
+  <TabItem value='ethers_v6' label='Ethers (v6)' default>
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
+
+{`
+    const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
+    console.log('Provider:', Object.getOwnPropertyNames(Object.getPrototypeOf(provider)))
+`}
+
+</NodeJSVirtualIDE>
+
+  </TabItem>
+<TabItem value='viem' label='Viem'>
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
+
+{`
+    const pushTestnet = defineChain({
+      id: 42101,
+      name: 'Push Testnet',
+      nativeCurrency: {
+        decimals: 18,
+        name: 'PC',
+        symbol: '$PC',
+      },
+      rpcUrls: {
+        default: {
+          http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+        },
+      },
+      blockExplorers: {
+        default: {
+          name: 'Push Testnet Explorer',
+          url: 'https://donut.push.network/',
+        },
+      },
+    })
+
+    const publicClient = createPublicClient({
+      chain: pushTestnet,
+      transport: http(),
+    })
+
+    console.log(JSON.stringify(publicClient, null, 2))
+`}
+
+</NodeJSVirtualIDE>
+
+</TabItem>
+</Tabs>
+
+## Example
+
+### Fetch Transaction By Hash
+
+Here's an example of how to initialize the Push Chain SDK with a viem client and fetch the transaction by hash.
+
+<Tabs groupId="initialize-evm-client">
+  <TabItem value='ethers_v6' label='Ethers (v6)' default>
+  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
+
+{`
+
+    import { ethers } from 'ethers'
+
+    async function main() {
+      const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
+      const transactionHash = '0xa7839fb1e3483eab628cbf18f42603ba192cef99b724d4b651eb7c4e9683b79e'
+      const transaction = await provider.getTransaction(transactionHash)
+      console.log(JSON.stringify(transaction, null, 2))
+    }
+
+    main().catch(console.error)
+
+`}
+
+</NodeJSVirtualIDE>
+
+</TabItem>
+
+  <TabItem value='viem' label='Viem'>
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
+
+{`
+
+    import { createPublicClient, http, defineChain } from 'viem'
+
+    async function main() {
+      const pushTestnet = defineChain({
+        id: 42101,
+        name: 'Push Testnet',
+        nativeCurrency: {
+          decimals: 18,
+          name: 'PC',
+          symbol: '$PC',
+        },
+        rpcUrls: {
+          default: {
+            http: ['https://evm.rpc-testnet-donut-node1.push.org/', 'https://evm.rpc-testnet-donut-node2.push.org/'],
+          },
+        },
+        blockExplorers: {
+          default: {
+            name: 'Push Testnet Explorer',
+            url: 'https://donut.push.network/',
+          },
+        },
+      })
+
+      const publicClient = createPublicClient({
+        chain: pushTestnet,
+        transport: http(),
+      })
+
+      const transactionHash = '0xa7839fb1e3483eab628cbf18f42603ba192cef99b724d4b651eb7c4e9683b79e'
+      const transaction = await publicClient.getTransaction({
+        hash: transactionHash,
+      })
+
+      console.log(JSON.stringify(transaction, null, 2))
+    }
+
+    main().catch(console.error)
+
+`}
+
+</NodeJSVirtualIDE>
+
+</TabItem>
+</Tabs>

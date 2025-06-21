@@ -6,9 +6,11 @@
  */
 
 .playgroundContainer {
+  margin: 20px 0px;
   margin-bottom: var(--ifm-leading);
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-lw);
+  border: 1px solid var(--ifm-border-color);
   overflow: hidden;
 }
 
@@ -23,8 +25,48 @@
 }
 
 .playgroundHeader:first-of-type {
-  background: var(--ifm-color-emphasis-600);
-  color: var(--ifm-color-content-inverse);
+  background: var(--ifm-playground-header-bg);
+  color: var(--ifm-playground-header-text);
+  position: relative;
+  padding-left: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.playgroundHeader:first-of-type::before {
+  content: 'LIVE EDITOR';
+  position: relative;
+  font-size: 0.5rem;
+  margin: 0 8px 0 0;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--ifm-playground-header-tag);
+}
+
+.playgroundHeader:first-of-type::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-primary);
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: pulsate 1.5s ease-in-out infinite;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: translateY(-50%) scale(0.8);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.2);
+  }
+  100% {
+    transform: translateY(-50%) scale(0.8);
+  }
 }
 
 .playgroundEditor {
@@ -32,6 +74,20 @@
     var(--ifm-font-family-monospace) !important;
   /* rtl:ignore */
   direction: ltr;
+}
+
+.playgroundEditor pre {
+  border-radius: 0px;
+}
+
+.playgroundPreview:global(.previewNodeJS) {
+  /* nodejs overrides */
+  padding: 0 0 1rem 0;
+}
+
+.playgroundPreview:global(.previewNodeJS) pre {
+  /* virtual ide no border radius */
+  border-radius: 0px;
 }
 
 .playgroundPreview {

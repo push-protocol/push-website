@@ -1,0 +1,94 @@
+---
+id: docs-chain-ui-components-advanced-push-universal-account-button
+title: Push Universal Account Button
+hide_title: true
+slug: ./push-universal-account-button
+displayed_sidebar: pushChainSidebar
+sidebar_position: 2
+---
+
+# PushUniversalAccountButton
+
+## Overview
+
+`PushUniversalAccountButton` is a versatile, state-aware button component for wallet connections in the Push Chain ecosystem. It handles the complete user journey from connection initiation through authentication to displaying the connected account state, with extensive customization options for each state.
+
+## Installation
+
+```bash
+npm install @pushchain/ui-kit
+# or
+yarn add @pushchain/ui-kit
+```
+
+## Usage
+
+Place the button in your UI where users should be able to connect. The button must be used within a `PushUniversalWalletProvider`:
+
+```jsx
+import { PushUniversalAccountButton } from '@pushchain/ui-kit';
+
+function Header() {
+  return (
+    <Box
+      display='flex'
+      alignItems='center'
+      justifyContent='center'
+      width='-webkit-fill-available'
+    >
+      <PushUniversalAccountButton />
+    </Box>
+  );
+}
+```
+
+## Button States
+
+The button transitions between three main states:
+
+1. **Disconnected**: Login button prompting users to connect
+2. **Loading**: Connection/authentication in progress
+3. **Connected**: Displays the connected account with dropdown menu
+
+Each state can be fully customized through props.
+
+## Props
+
+### Instance Targeting
+
+| Property | Type   | Description                                    | Default               |
+| -------- | ------ | ---------------------------------------------- | --------------------- |
+| `uid`    | string | Target provider instance, matches `config.uid` | Uses default provider |
+
+### Disconnected State Customization
+
+| Property            | Type   | Description                 | Default           |
+| ------------------- | ------ | --------------------------- | ----------------- |
+| `connectButtonText` | string | Text for the connect button | `Connect Account` |
+
+### Loading State Customization
+
+| Property           | Type            | Description              | Default             |
+| ------------------ | --------------- | ------------------------ | ------------------- |
+| `loadingComponent` | React.ReactNode | Custom loading indicator | Uses default loader |
+
+### App Preview Overrides
+
+| Property                       | Type   | Description                                | Default                |
+| ------------------------------ | ------ | ------------------------------------------ | ---------------------- |
+| `modalAppOverride`             | Object | Override app preview in the wrapper iframe | From `app`             |
+| `modalAppOverride.logoURL`     | string | Override app logo                          | From `app.logoURL`     |
+| `modalAppOverride.title`       | string | Override app title                         | From `app.title`       |
+| `modalAppOverride.description` | string | Override app description                   | From `app.description` |
+| `loginAppOverride`             | Object | Override app preview inside hosted iframe  | From `app`             |
+| `loginAppOverride.logoURL`     | string | Override app logo in iframe                | From `app.logoURL`     |
+| `loginAppOverride.title`       | string | Override app title in iframe               | From `app.title`       |
+| `loginAppOverride.description` | string | Override app description in iframe         | From `app.description` |
+
+### Button Theme Settings Override
+
+| Property         | Type           | Description            | Default |
+| ---------------- | -------------- | ---------------------- | ------- |
+| `themeOverrides` | ThemeOverrides | Button theme overrides | `{}`    |
+
+> Note: These _`Arguments`_ are mandatory.

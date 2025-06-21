@@ -1,0 +1,65 @@
+---
+id: docs-chain-ui-components-advanced-use-push-chain-client
+title: usePushChainClient
+hide_title: true
+slug: ./use-push-chain-client
+displayed_sidebar: pushChainSidebar
+sidebar_position: 4
+---
+
+## `usePushChainClient`
+
+The `usePushChainClient` hook initializes and manages a Push Chain client instance for blockchain interactions. It integrates with your wallet connection and handles network configuration automatically. Like `usePushWalletContext`. This hook must also be used within a component that's wrapped by a `PushUniversalWalletProvider`.
+
+### Usage
+
+```typescript
+import { usePushChainClient } from '@pushchain/ui-kit';
+
+function MyComponent() {
+  const { pushChainClient, isLoading, error } = usePushChainClient(uid); // optional: uid parameter for targeting a specific wallet instance
+
+  if (isLoading) {
+    // handle loading states
+  }
+
+  if (error) {
+    console.log('Error initializing push chain >>', error);
+    // handle error
+  }
+
+  // use push chain for transactions
+  const handleTransaction = async () => {
+    try {
+      if (pushChain) {
+        const { txHash } = await pushChainClient.universal.sendTransaction(
+          // add recipient accounts &&  transaction data
+        );
+        console.log('Transaction hash:', txHash);
+      }
+    } catch (error) {
+      console.log('Transaction error:', error);
+    }
+  };
+
+  return (
+    <div>
+      <button onClick={handleTransaction}>Send Transaction</button>
+    </div>
+  );
+}
+```
+
+### Parameters
+
+| Parameter | Type     | Required | Description                                 |
+| --------- | -------- | -------- | ------------------------------------------- |
+| `uid`     | `string` | No       | Optional user identifier for wallet context |
+
+### Return Values
+
+| Property          | Type                | Description                           |
+| ----------------- | ------------------- | ------------------------------------- |
+| `pushChainClient` | `PushChain \| null` | Initialized PushChain client instance |
+| `error`           | `Error \| null`     | Error object if initialization failed |
+| `isLoading`       | `boolean`           | Loading state during initialization   |

@@ -1,0 +1,120 @@
+---
+id: docs-chain-ui-components-advanced-push-wallet-provider
+title: Push Universal Wallet Provider
+hide_title: true
+slug: ./push-wallet-provider
+displayed_sidebar: pushChainSidebar
+sidebar_position: 1
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# PushUniversalWalletProvider
+
+## Overview
+
+`PushUniversalWalletProvider` is the top-level context provider component that initializes the Push Wallet functionality throughout your application. It manages theme settings, RPC connections, login configuration, and application metadata.
+
+## Installation
+
+```bash
+npm install @pushchain/ui-kit
+# or
+yarn add @pushchain/ui-kit
+```
+
+## Usage
+
+Wrap your application with `PushUniversalWalletProvider` to make wallet functionality available to all child components:
+
+<Tabs className="codetabs" groupId="code-examples">
+  <TabItem value="react" attributes={{className: "codetab react"}} default>
+
+```typescript
+import { PushUI, PushUniversalWalletProvider, PushUniversalWalletProviderConfig } from '@pushchain/ui-kit';
+
+const walletConfig: PushUniversalWalletProviderConfig = {
+  network: PushUI.CONSTANTS.PUSH_NETWORK.TESTNET,
+}
+
+
+function App() {
+  return (
+    <PushUniversalWalletProvider
+      config={walletConfig}
+    >
+      <Component />
+    </PushUniversalWalletProvider>
+  );
+}
+```
+
+ </TabItem>
+</Tabs>
+
+## Props
+
+### `config` (Required)
+
+Core configuration object for connections and login settings.
+
+| Property    | Type                          | Description                                             | Default          |
+| ----------- | ----------------------------- | ------------------------------------------------------- | ---------------- |
+| `uid`       | string                        | Unique identifier for this provider instance            | 'default'        |
+| _`network`_ | PushUI.CONSTANTS.PUSH_NETWORK | Chain environment to connect to                         | Required         |
+| `rpcURL`    | string                        | Custom JSON-RPC endpoint for supported chains           | Public endpoints |
+| `login`     | Object                        | Login method configuration                              | See below        |
+| `modal`     | Object                        | Global defaults for login and connected modal instances | See below        |
+| `chain`     | Object                        | Custom settings to configure the SDK instance           | See below        |
+
+#### `config.login` Options
+
+| Property     | Type    | Description                    | Default   |
+| ------------ | ------- | ------------------------------ | --------- |
+| `email`      | boolean | Enable email/password login    | `true`    |
+| `google`     | boolean | Enable Google OAuth login      | `true`    |
+| `wallet`     | Object  | External wallet configuration  | See below |
+| `appPreview` | boolean | Show app preview inside iframe | `false`   |
+
+#### `config.login.wallet` Options
+
+| Property  | Type              | Description                       | Default              |
+| --------- | ----------------- | --------------------------------- | -------------------- |
+| `enabled` | boolean           | Allow external wallet connections | `true`               |
+| `chains`  | CONSTANTS.CHAIN[] | Specific chains to enable         | All supported chains |
+
+#### `config.modal` Options
+
+Global defaults for all login modal instances.
+
+| Property          | Type                                                  | Description                          | Default                |
+| ----------------- | ----------------------------------------------------- | ------------------------------------ | ---------------------- |
+| `loginLayout`     | CONSTANTS.LOGIN.SPLIT \| CONSTANTS.LOGIN.SIMPLE       | Login modal layout type              | CONSTANTS.LOGIN.SIMPLE |
+| `appPreview`      | boolean                                               | Show app preview in modal            | `false`                |
+| `bgImage`         | string                                                | Background image for the login modal | None                   |
+| `connectedLayout` | CONSTANTS.CONNECTED.FULL \| CONSTANTS.CONNECTED.HOVER | Connected modal layout type          | None                   |
+
+### `app`
+
+Application metadata used for branding in login screens and preview panes.
+
+| Property      | Type   | Description                          |
+| ------------- | ------ | ------------------------------------ |
+| `logoURL`     | string | URL to application logo or icon      |
+| `title`       | string | Application name or title            |
+| `description` | string | Brief description of the application |
+
+### `themeMode`
+
+| Type            | Description                | Default                |
+| --------------- | -------------------------- | ---------------------- |
+| CONSTANTS.THEME | Theme mode (LIGHT or DARK) | `CONSTANTS.THEME.DARK` |
+
+### `themeOverride`
+
+| Type           | Description                 | Default |
+| -------------- | --------------------------- | ------- |
+| ThemeOverrides | Override the theme settings | `{}`    |
+
+> Note: These _`Arguments`_ are mandatory.

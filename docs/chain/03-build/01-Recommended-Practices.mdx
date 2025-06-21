@@ -1,0 +1,103 @@
+---
+id: docs-chain-build-recommended-practices
+title: Recommended Practices
+hide_title: true
+slug: ./recommended-practices
+displayed_sidebar: pushChainSidebar
+sidebar_position: 1
+image: '/assets/docs/previews/docs_notifications_develop--get_started.png'
+---
+
+# Overview
+
+Push Chain enables developers to instantly **10x their userbase** with the same codebase. This is possible because Push Chain is purpose built for true interoperability between chains. Since Push Chain is the first true universal blockchain, it's recommended to read through the best practices for building on Push Chain.
+
+<head>
+  <title>{`Recommended Practices | Build | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import ReactPlayer from 'react-player';
+import {
+  ModalContainer,
+  ModalSmall,
+  ModalWrapper,
+  ModalMidEqual,
+  AFocus,
+  AImp,
+} from '@site/src/css/SharedStyling';
+import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
+
+## Recommended Practices for Developers on Push Chain
+
+Push Chain is a fully EVM-compatible blockchain, meaning that developers can deploy their existing Ethereum smart contracts to Push Chain without any code changes. If your contract is already built for Ethereum (e.g., tested on Sepolia or Mainnet), you can deploy it directly to Push Chain using the same deployment scripts and tooling, including Hardhat, Foundry, or Remix.
+
+This compatibility makes onboarding to Push Chain seamless and efficient for teams familiar with the Ethereum development ecosystem.
+
+## Seamless User Experience with Push Wallet
+
+Push Chain also provides a native wallet experience with Push Wallet, which simplifies frontend development and improves the user experience by:
+
+- Fee abstraction: Users can interact with Push Chain contracts without holding native tokens
+- Multi-chain connections: Users can sign in and connect using wallets from other blockchains
+- Email login: For non-crypto native users, Push Wallet supports email login and onboarding, enabling apps to attract wider audiences
+
+This frontend abstraction lets developers focus on building apps without worrying about how users pay gas or manage wallets.
+
+## Backend SDK: `@pushchain/core`
+
+If you're building backend services, automation scripts, bots, or analytics pipelines, Push Chain offers an official SDK: `@pushchain/core`.
+
+`@pushchain/core` is ideal for server-side integrations, backend logic for dApps, and indexing or monitoring tools that need to interact with the Push Chain network reliably and efficiently.
+
+## Smart Contract Helper Functions
+
+To understand where your users are coming from—whether directly on Push Chain or via another chain like Sepolia or Solana Devnet—Push Chain provides helper smart contracts. These helpers make it easy to track and categorize users/protocol usage depending on their origin chain. This is especially useful if you want to:
+
+- Tailor app behavior depending on user origin
+- Monitor multichain adoption
+- Incentivize or reward activity coming from specific chains
+
+These helpers are already deployed and maintained, so you can easily integrate them into your logic with minimal effort.
+
+## Speed run
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+
+{`
+    import { PushChain } from '@pushchain/core';
+    import { ethers } from 'ethers';
+
+    async function main() {
+      console.log('Creating Universal Signer - Ethers V6');
+
+      // Create random wallet
+      const wallet = ethers.Wallet.createRandom();
+
+      // Set up provider connected to Ethereum Sepolia Testnet
+      const provider = new ethers.JsonRpcProvider('https://gateway.tenderly.co/public/sepolia');
+      const signer = wallet.connect(provider);
+
+      // Convert ethers signer to Universal Signer
+      const universalSigner = await PushChain.utils.signer.toUniversal(signer);
+      console.log('🔑 Got universal signer');
+
+      // Initialize Push Chain SDK
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+          network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+      })
+      console.log('🚀 Got push chain client');
+      console.log(JSON.stringify(pushChainClient));
+    }
+
+    await main().catch(console.error)
+`}
+
+</NodeJSVirtualIDE>
+
+
+## Next Steps
+- Create [Universal Signer](/docs/chain/build/create-universal-signer) from existing signer
+- Abstract away creation of the Universal Signer using [UI Kit](/docs/chain/build/ui-kit)
+- Revist [Important Concepts](/docs/chain/important-concepts)

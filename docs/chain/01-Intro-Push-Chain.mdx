@@ -5,40 +5,240 @@ hide_title: true
 slug: ./
 displayed_sidebar: pushChainSidebar
 sidebar_position: 1
-image: "/assets/docs/previews/notifications--intro_to_push_notification.png"
+image: '/assets/docs/previews/notifications--intro_to_push_notification.png'
 ---
 
 # Intro to Push Chain
 
-Push Chain is a Proof of Stake (PoS) layer 1 blockchain network designed to revolutionize web3 by addressing scalability, interoperability, and user experience challenges. With a roadmap spanning three phases, Push Chain aims to empower developers to create universal applications that blend financial and non-financial use cases, making blockchain accessible to everyone.
+Push Chain is the first **True Universal Layer 1** blockchain, built as a **100% EVM-compatible** Proof of Stake (PoS) chain on Cosmos SDK. It runs seamlessly across every chain and wallet.
+
+Write your smart contract once, deploy it on Push Chain, and instantly reach users on Ethereum, Solana, and all other supported chains without changing on-chain code.
+
+> **Ready to build?** <br/ >
+> • Follow our [Quickstart](/docs/chain/quickstart) to deploy your app in minutes. <br/ >
+> • Explore core abstractions in [Important Concepts](/docs/chain/important-concepts). <br/ >
+
+![Venn diagram: Push Chain sits at the intersection of Wallet Abstraction, Fee Abstraction, and Shared State](/assets/docs/chain/build/venn-diagram-push.png)
 
 <head>
   <title>Introduction | Push Chain | Push Documentation</title>
 </head>
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import {
   ModalContainer,
   ModalSmall,
-  AImp,
   ModalWrapper,
-  ModalMidEqual,
 } from '@site/src/css/SharedStyling';
+import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
+import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
 
-## Why Push Chain?
+## Hello Push Chain 👋
 
-Push Chain focuses on consumer-centric applications with seamless UX, scalability, and simplified interactions. Unlike finance-focused blockchains, it enables unique innovations like parallel block execution and dynamic sharding, enhancing usability. Push Chain enables:
+<Tabs groupId="code-examples">
+  <TabItem value="pushchain" label="Ethers (v6) Push Chain" default>
 
-- **Empowering Consumer Applications**: Supports financial and non-financial use cases with seamless cross-chain functionality.
-- **Wallet Interactions Made Easy**: Users can interact using existing wallets without creating a new Push Wallet.
-- **Fee Abstraction for User Convenience**: Transaction fees can be paid in native tokens or covered by applications for a seamless experience.
--	**Unified User Identity (Push ID)**: Links multiple wallets under one identifier for a unified view of assets and activities.
--	**Comprehensive Wallet Abstraction**: Provides easy onboarding for Web3 users, newcomers, and Web2 users alike.
+  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
 
-## How Push Chain works?
+{`
 
-All communication with Push Chain is signed and validated by a set of nodes, including validator nodes for transaction verification, storage nodes for efficient data handling, and archival nodes for maintaining complete transaction history. Read the <AImp href="https://whitepaper.push.org/" title="Push Chain Whitepaper">Push Chain Whitepaper</AImp> for an overview of its architecture, node roles, and decentralization efforts.
+    // Import Push Chain SDK and Ethers
+    // You can use other library like veim, etc
+    import { PushChain } from '@pushchain/core'
+    import { ethers } from 'ethers'
 
-## SDKs
+    async function main() {
+      // 1. Connect to a provider (e.g., Push Chain RPC URL)
+      const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
+
+      // 2. Create a random wallet (or use your own private key)
+      const wallet = ethers.Wallet.createRandom(provider)
+
+      // 3. Convert ethers signer to Universal Signer
+      // Most popular libraries can pass just the signer to get universal signer
+      // Or use PushChain.utils.signer.construct to create a custom one
+      const universalSigner = await PushChain.utils.signer.toUniversal(wallet)
+
+      // Initialize Push Chain SDK for use from Push Chain account
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
+      })
+
+      console.log(JSON.stringify(pushChainClient, null, 2))
+    }
+
+    main().catch(console.error)
+
+`}
+    </NodeJSVirtualIDE>
+
+  </TabItem>
+
+      <TabItem value='ethers_v6' label='Ethers (v6) Sepolia' default>
+
+      <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
+
+{`
+    // Import Push Chain SDK and Ethers
+    // You can use other library like veim, etc
+    import { PushChain } from '@pushchain/core'
+    import { ethers } from 'ethers'
+
+    async function main() {
+      // 1. Connect to a provider (e.g., Push Chain RPC URL)
+      const provider = new ethers.JsonRpcProvider('https://sepolia.gateway.tenderly.co')
+
+      // 2. Create a random wallet (or use your own private key)
+      const wallet = ethers.Wallet.createRandom(provider)
+
+      // 3. Convert ethers signer to Universal Signer
+      // Most popular libraries can pass just the signer to get universal signer
+      // Or use PushChain.utils.signer.construct to create a custom one
+      const universalSigner = await PushChain.utils.signer.toUniversal(wallet)
+
+      // Initialize Push Chain SDK for use from Push Chain account
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
+      })
+
+      console.log(JSON.stringify(pushChainClient, null, 2))
+    }
+
+    main().catch(console.error)
+`}
+
+      </NodeJSVirtualIDE>
+
+    </TabItem>
+
+    <TabItem value='viem' label='Viem'>
+
+    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
+
+{`
+    // Import Push Chain SDK and Viem
+    // You can use other library like ethers, etc
+    import { PushChain } from '@pushchain/core';
+    import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts'
+    import { createWalletClient, http } from 'viem'
+    import { sepolia } from 'viem/chains'
+
+    async function main() {
+      // 1. Construct account
+      const account = privateKeyToAccount(generatePrivateKey())
+
+      // 2. Initialize signer
+      const signer = createWalletClient({
+        transport: http('https://sepolia.gateway.tenderly.co'), // or your preferred RPC URL
+        chain: sepolia,
+        account, // <-- our signer
+      })
+
+      // 3. Convert signer to Universal Signer
+      // Most of the popular libraries can pass just the signer to get universal signer
+      // Or use PushChain.utils.signer.construct to create a custom one
+      const universalSigner = await PushChain.utils.signer.toUniversal(signer)
+
+      // Initialize Push Chain SDK for use from Ethereum account
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
+      })
+
+      console.log(JSON.stringify(pushChainClient, null, 2))
+    }
+
+    main().catch(console.error);
+`}
+
+    </NodeJSVirtualIDE>
+
+  </TabItem>
+
+    <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
+
+    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
+
+{`
+    // Import Push Chain SDK and Solana Web3.js
+    // You can use other library like @solana/kit, etc
+    import { PushChain } from '@pushchain/core';
+    import { Keypair } from '@solana/web3.js';
+
+    async function main() {
+      // 1. Generate or import your Solana keypair
+      const solKeypair = Keypair.generate()
+
+      // 2. Convert the Solana Keypair into a Push Chain universal signer.
+      //    We use the helper toUniversalFromKeypair, which internally builds
+      //    the necessary adapter (signTransaction, signMessage).
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(solKeypair, {
+        chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
+        library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+      })
+
+      // 3. Initialize Push Chain SDK
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET,
+      })
+
+      console.log(JSON.stringify(pushChainClient, null, 2))
+    }
+
+    main().catch(console.error);
+`}
+    </NodeJSVirtualIDE>
+
+  </TabItem>
+</Tabs>
+
+## Key Innovations (Why Push Chain)
+
+Push Chain provides a unified toolkit to build truly universal dApps. Without custom bridges or multi-chain deployments, you gain:
+
+- **Zero EVM Code Changes**<br />
+  Deploy your existing Solidity contract on Push Chain without modifying ABI, bytecode, or on-chain logic.
+  <!-- Optional: [Learn more](../01-build/05-Universal-Smart-Contract) -->
+
+- **Wallet Abstraction**<br />
+  Support MetaMask, Phantom, and other wallets as well as social or email login through one unified provider. Users never need to create a new wallet simply to access your dApp.
+  <!-- Optional: [Learn more](../01-build/02-Important-Concepts#wallet-abstraction) -->
+
+- **Universal Fee Abstraction**<br />
+  Allow users to pay gas fees in their native tokens (for example ETH or SOL). Push Chain automatically routes fees so users do not have to bridge or hold $PC tokens (native token of Push Chain).
+  <!-- Optional: [Learn more](../01-build/02-Important-Concepts#fee-abstraction) -->
+
+- **Universal Smart Contracts and Cross-Chain Mapping**<br />
+  Contracts on Push Chain automatically recognize addresses from Ethereum, Solana, and other chains. All cross-chain transactions are recorded in one unified state so you can write multi-chain logic in a single contract.
+  <!-- Optional: [Learn more](../01-build/02-Important-Concepts#shared-state) -->
+
+- **Shared State and Programmable Solvers (Roadmap)**<br />
+  Read from and write to external chains and coordinate multi-chain workflows using a distributed solver network (coming soon).
+  <!-- Optional: link to “Roadmap” or “Shared State” page -->
+
+## Why Build on Push Chain?
+
+Building on Push Chain delivers immediate benefits for developers and users:
+
+- **Expand Your Userbase Instantly**<br />
+  Deploy your existing EVM or non-EVM application on Push Chain without any on-chain code changes. Users on Ethereum, Solana, and other supported chains can access your dApp right away.
+
+- **Avoid Audit Friction**<br />
+  Since you do not modify your Solidity code, there is no need for a full re-audit. Simply deploy on Push Chain and use our SDKs to enable universal access.
+
+- **Deliver a Unified, Seamless UX**<br />
+  One application, any wallet. Users can connect with MetaMask, Phantom, or a social/email login and pay gas fees in their native token (for example ETH or SOL). No bridges or extra steps required.
+
+- **Simplify Fee Management**<br />
+  Push Chain automatically routes gas fees under the hood. Users do not need to hold $PC tokens or switch chains to complete transactions.
+
+- **Future-Proof Your Application**<br />
+  Shared state and programmable solvers (coming soon) enable multi-chain read and write operations. Your dApp can orchestrate cross-chain workflows without building separate adapters.
+
+- **Consistent Developer Tooling**<br />
+  Use one SDK, one set of JSON-RPC endpoints, and a unified API to build and deploy. Whether you prefer Viem, ethers, or our Push Chain client, the experience is the same across languages and frameworks.
+
+## Developer SDKs
 
 <ModalContainer>
   <ModalSmall
@@ -77,7 +277,7 @@ All communication with Push Chain is signed and validated by a set of nodes, inc
     </ModalWrapper>
   </ModalSmall>
 
-  <ModalSmall
+<ModalSmall
   onClick={() =>
     window.open('https://github.com/push-protocol/push-chain-sdk', '_blank')
   }
@@ -147,70 +347,22 @@ All communication with Push Chain is signed and validated by a set of nodes, inc
 
 </ModalContainer>
 
-## Use Cases
+## Experience Push Chain
 
-<ModalContainer>
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#1-decentralized-social-platforms', '_self')}>
-    <img
-      src={require('/static/assets/docs/chain/usecases/social.png').default}
-      srcSet={`${
-        require('/static/assets/docs/chain/usecases/social@2x.png').default
-      } 2x, ${require('/static/assets/docs/chain/usecases/social@3x.png').default} 3x`}
-    />
-    <span>Social</span>
-  </ModalSmall>
+The best way to see Push Chain in action is by interacting with it. You can:
 
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#3-gaming-applications', '_self')}>
-    <img
-      src={require('/static/assets/docs/chain/usecases/gaming.png').default}
-      srcSet={`${
-        require('/static/assets/docs/chain/usecases/gaming@2x.png').default
-      } 2x, ${require('/static/assets/docs/chain/usecases/gaming@3x.png').default} 3x`}
-    />
-    <span>Gaming</span>
-  </ModalSmall>
+1. Visit [simulate.push.org](https://simulate.push.org) to interact directly. You can log in with your existing wallet, email, or even your social accounts, and send a transaction on Push Chain with just a few clicks.
+   <IFrameModal
+     url='https://simulate.push.org'
+     buttonTitle='Load Simulate Page'
+     maxHeight='840px'
+   />
+2. Alternatively, use our live playgrounds to experiment with code and see live updates within our documentation.
+3. Learn more about Push Chain fundamentals, how it works, deep dives, and developer resources in our comprehensive [](https://push.org/knowledge).
 
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#4-ai-powered-applications', '_self')}>
-    <img
-      src={require('/static/assets/docs/chain/usecases/AI.png').default}
-      srcSet={`${
-        require('/static/assets/docs/chain/usecases/AI@2x.png').default
-      } 2x, ${require('/static/assets/docs/chain/usecases/AI@3x.png').default} 3x`}
-    />
-    <span>AI</span>
-  </ModalSmall>
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#5-utility-and-productivity-apps', '_self')}>
-    <img
-      src={require('/static/assets/docs/chain/usecases/productivity.png').default}
-      srcSet={`${
-        require('/static/assets/docs/chain/usecases/productivity@2x.png').default
-      } 2x, ${
-        require('/static/assets/docs/chain/usecases/productivity@3x.png').default
-      } 3x`}
-    />
-    <span>Productivity Apps</span>
-  </ModalSmall>
-  <ModalSmall onClick={() => window.open('/docs/chain/use-cases/#6-universal-marketplaces', '_self')}>
-    <img
-      src={require('/static/assets/docs/chain/usecases/marketplaces.png').default}
-      srcSet={`${
-        require('/static/assets/docs/chain/usecases/marketplaces@2x.png').default
-      } 2x, ${
-        require('/static/assets/docs/chain/usecases/marketplaces@3x.png').default
-      } 3x`}
-    />
-    <span>Marketplaces</span>
-  </ModalSmall>
-</ModalContainer>
+## Next Steps
 
-## Try Push Chain
-
-Best way to understand Push Chain is to interact with it directly. To get started —
-
-1. Head to [https://simulate.push.org/](https://simulate.push.org/)  
-2. Login with your **email** or **existing wallet**. Push Chain supports **multiple login options** including —  
-
-  - **Email Login** — Use your email for quick and easy onboarding.  
-  - **Wallet Addresses** — Connect with wallets like MetaMask or any compatible Web3 wallet.  
-3. Submit a transaction to the Push Chain.  
-4. View your transaction live on **Push Scan**, the blockchain explorer for Push Chain: [https://scan.push.org/transactions](https://scan.push.org/transactions).  
+- Explore core abstractions in [Important Concepts](/docs/chain/important-concepts)
+- Jump to Frontend Integration via [UI Kit](/docs/chain/ui-kit/integrate-push-universal-wallet/)
+- Try a full-app walkthrough in [Tutorials](/docs/chain/tutorials/)
+- For deep dives visit our [Knowledge Base](https://push.org/knowledge/)

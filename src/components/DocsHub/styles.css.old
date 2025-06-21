@@ -1,0 +1,255 @@
+/** Used AI to shrink css on 4th Jun, keeping original in case styling issues come **/
+.DocsHub .theme-back-to-top-button {
+  margin-right: 10px;
+}
+
+.PushDocs
+  .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module,
+.PushDocs .docPage__5DB {
+  width: 85%;
+  align-self: center;
+  margin: 0 auto;
+}
+
+.DocsHub
+  .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module,
+.DocsHub .docPage__5DB {
+  width: 100%;
+}
+
+.DocsHub
+  .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module,
+.DocsHub .docPage__5DB main {
+  max-width: 100%;
+}
+
+.DocsHub
+  .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
+  .container,
+.DocsHub .docPage__5DB main .container {
+  max-width: initial;
+  padding: 0px !important;
+}
+
+.DocsHub
+  .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
+  .container
+  .row,
+.DocsHub .docPage__5DB main .container .row {
+  display: flex;
+  margin: 0px;
+  flex-direction: column;
+}
+
+.DocsHub
+  .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
+  .container
+  .row
+  .col,
+.DocsHub .docPage__5DB main .container .row .col {
+  padding: 0;
+  max-width: initial !important;
+  width: 100%;
+}
+
+.DocsHub
+  .skipToContent_node_modules-\@docusaurus-theme-classic-lib-theme-SkipToContent-styles-module,
+.DocsHub .skipToContent_fXgn {
+  display: none;
+}
+
+.DocsHub .theme-doc-footer,
+.DocsHub .pagination-nav {
+  display: none;
+}
+
+.PushDocs .theme-doc-sidebar-container li li {
+  margin-right: 10px;
+}
+
+.PushDocs .theme-doc-sidebar-container li a svg {
+  margin-right: 0;
+  margin-left: 10px !important;
+  margin-bottom: 3px;
+  display: flex;
+}
+
+/* v3 style target */
+.DocsHub .theme-back-to-top-button {
+  margin-right: 10px;
+}
+
+.PushDocs
+  .tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module
+  .table-of-contents
+  ul,
+.tocCollapsibleContent_vkbj .table-of-contents ul {
+  margin: 0px !important;
+}
+
+.PushDocs
+  .tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module
+  ul
+  li,
+.tocCollapsibleContent_vkbj ul li {
+  margin: 0.4rem 0.8rem 0.4rem 1.8rem !important;
+}
+
+.PushDocs
+  .tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module
+  ul
+  li
+  li,
+.tocCollapsibleContent_vkbj ul li li {
+  margin: 0px 10px 0px 10px !important;
+}
+
+.mainWrapper_eExm {
+  max-width: 100vw;
+  min-width: 100vw;
+}
+
+.PushDocs
+  .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module,
+.PushDocs .docRoot_UBD9 {
+  width: 85%;
+  align-self: center;
+  margin: 0 auto;
+  /* background-color: ; */
+}
+
+.DocsHub
+  .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module,
+.DocsHub .docRoot_UBD9 {
+  width: 100%;
+}
+
+.DocsHub
+  .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module,
+.DocsHub .docRoot_UBD9 main {
+  max-width: 100%;
+}
+
+.DocsHub
+  .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
+  .container,
+.DocsHub .docRoot_UBD9 main .container {
+  max-width: initial;
+  padding: 0px !important;
+}
+
+.DocsHub
+  .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
+  .container
+  .row,
+.DocsHub .docRoot_UBD9 main .container .row {
+  display: flex;
+  margin: 0px;
+  flex-direction: column;
+}
+
+.DocsHub
+  .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
+  .container
+  .row
+  .col,
+.DocsHub .docRoot_UBD9 main .container .row .col {
+  padding: 0;
+  max-width: initial !important;
+  width: 100%;
+}
+
+.DocsHub
+  .skipToContent_node_modules-\@docusaurus-theme-classic-lib-theme-SkipToContent-styles-module,
+.DocsHub .skipToContent_fXgn {
+  display: none;
+}
+
+.DocsHub .theme-doc-footer,
+.DocsHub .pagination-nav {
+  display: none;
+}
+
+.PushDocs .theme-doc-sidebar-container li li {
+  margin-right: 10px;
+}
+
+.PushDocs .theme-doc-sidebar-container li a svg {
+  margin-right: 0;
+  margin-left: 10px !important;
+  margin-bottom: 3px;
+  display: flex;
+}
+
+/* v4 style target */
+.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module
+  .theme-back-to-top-button {
+  margin-right: 10px;
+}
+
+.tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module
+  .table-of-contents
+  ul,
+.tocCollapsibleContent_vkbj .table-of-contents ul {
+  margin: 0px !important;
+}
+
+.tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module
+  ul
+  li,
+.tocCollapsibleContent_vkbj ul li {
+  margin: 0.4rem 0.8rem 0.4rem 1.8rem !important;
+}
+
+.tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module
+  ul
+  li
+  li,
+.tocCollapsibleContent_vkbj ul li li {
+  margin: 0px 10px 0px 10px !important;
+}
+
+.mainWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-Layout-styles-module {
+  max-width: 100vw;
+  min-width: 100vw;
+}
+
+.docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module {
+  width: 85%;
+  align-self: center;
+  margin: 0 auto;
+}
+
+.docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
+  .container
+  .row,
+.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module
+  main
+  .container
+  .row {
+  display: flex;
+  margin-left: 5px;
+}
+
+.skipToContent_node_modules-\@docusaurus-theme-classic-lib-theme-SkipToContent-styles-module,
+.skipToContent_fXgn {
+  display: none;
+}
+
+.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module
+  .theme-doc-sidebar-container
+  li
+  li {
+  margin-right: 10px;
+}
+
+.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module
+  .theme-doc-sidebar-container
+  li
+  a
+  svg {
+  margin-right: 0;
+  margin-left: 10px !important;
+  margin-bottom: 3px;
+  display: flex;
+}

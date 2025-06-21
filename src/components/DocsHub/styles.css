@@ -1,31 +1,39 @@
-.DocsHub .theme-back-to-top-button {
+.DocsHub .theme-back-to-top-button,
+/* v3 style target also had this, v4 below is more specific */
+.docsWrapper_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module
+  .theme-back-to-top-button {
   margin-right: 10px;
 }
 
 .PushDocs
   .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module,
-.PushDocs .docPage__5DB {
+.PushDocs .docPage__5DB,
+.PushDocs .docRoot_UBD9 {
   width: 85%;
   align-self: center;
   margin: 0 auto;
+  /* background-color: ; */ /* This was commented out in one of the duplicates */
 }
 
 .DocsHub
   .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module,
-.DocsHub .docPage__5DB {
+.DocsHub .docPage__5DB,
+.DocsHub .docRoot_UBD9 {
   width: 100%;
 }
 
 .DocsHub
   .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module,
-.DocsHub .docPage__5DB main {
+.DocsHub .docPage__5DB main,
+.DocsHub .docRoot_UBD9 main {
   max-width: 100%;
 }
 
 .DocsHub
   .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
   .container,
-.DocsHub .docPage__5DB main .container {
+.DocsHub .docPage__5DB main .container,
+.DocsHub .docRoot_UBD9 main .container {
   max-width: initial;
   padding: 0px !important;
 }
@@ -34,7 +42,8 @@
   .docMainContainerEnhanced_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-Main-styles-module
   .container
   .row,
-.DocsHub .docPage__5DB main .container .row {
+.DocsHub .docPage__5DB main .container .row,
+.DocsHub .docRoot_UBD9 main .container .row {
   display: flex;
   margin: 0px;
   flex-direction: column;
@@ -45,7 +54,8 @@
   .container
   .row
   .col,
-.DocsHub .docPage__5DB main .container .row .col {
+.DocsHub .docPage__5DB main .container .row .col,
+.DocsHub .docRoot_UBD9 main .container .row .col {
   padding: 0;
   max-width: initial !important;
   width: 100%;
@@ -63,7 +73,7 @@
 }
 
 .PushDocs .theme-doc-sidebar-container li li {
-  margin-right: 10px;
+  margin-right: 0px !important;
 }
 
 .PushDocs .theme-doc-sidebar-container li a svg {
@@ -73,13 +83,12 @@
   display: flex;
 }
 
-/* v3 style target */
-.DocsHub .theme-back-to-top-button {
-  margin-right: 10px;
-}
-
 .PushDocs
   .tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module
+  .table-of-contents
+  ul,
+.PushDocs .tocCollapsibleContent_vkbj .table-of-contents ul,
+.tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module
   .table-of-contents
   ul,
 .tocCollapsibleContent_vkbj .table-of-contents ul {
@@ -88,6 +97,10 @@
 
 .PushDocs
   .tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module
+  ul
+  li,
+.PushDocs .tocCollapsibleContent_vkbj ul li,
+.tocCollapsibleContent_node_modules-\@docusaurus-theme-classic-lib-theme-TOCCollapsible-styles-module
   ul
   li,
 .tocCollapsibleContent_vkbj ul li {
@@ -99,7 +112,7 @@
   ul
   li
   li,
-.tocCollapsibleContent_vkbj ul li li {
+.PushDocs .tocCollapsibleContent_vkbj ul li li {
   margin: 0px 10px 0px 10px !important;
 }
 
@@ -108,6 +121,10 @@
   min-width: 100vw;
 }
 
+/* Note: The following rules were already consolidated in the first chunk.
+   The .PushDocs .theme-doc-sidebar-container rules were also handled.
+   The .docsWrapper_... .theme-back-to-top-button was merged with the other .theme-back-to-top-button rule.
+*/
 .PushDocs
   .docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module,
 .PushDocs .docRoot_UBD9 {

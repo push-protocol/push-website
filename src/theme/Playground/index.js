@@ -17,25 +17,38 @@ import React, { useState } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { LiveEditor, LiveError, LivePreview, LiveProvider } from 'react-live';
 import styles from './styles.module.css';
+
+const CodingEnvironment = {
+  REACT: 'React',
+  NODEJS: 'NodeJS',
+};
+
 function Header({ children }) {
   return <div className={clsx(styles.playgroundHeader)}>{children}</div>;
 }
-function LivePreviewLoader() {
-  // Is it worth improving/translating?
-  // eslint-disable-next-line @docusaurus/no-untranslated-text
+
+function LivePreviewLoader({ codeEnv }) {
   return (
-    <Spinner
-      size={42}
-      color={GLOBALS.COLORS.PRIMARY_COLOR}
-      type={SPINNER_TYPE.PROCESSING}
-    />
+    <div
+      style={{
+        padding: codeEnv == CodingEnvironment.NODEJS ? '1rem 1rem 0 1rem' : '0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Spinner
+        size={42}
+        color={GLOBALS.COLORS.PRIMARY_COLOR}
+        type={SPINNER_TYPE.PROCESSING}
+      />
+    </div>
   );
 }
-function Preview() {
-  // No SSR for the live preview
-  // See https://github.com/facebook/docusaurus/issues/5747
+
+function Preview({ codeEnv }) {
   return (
-    <BrowserOnly fallback={<LivePreviewLoader />}>
+    <BrowserOnly fallback={<LivePreviewLoader codeEnv={codeEnv} />}>
       {() => (
         <>
           <ErrorBoundary
@@ -51,71 +64,129 @@ function Preview() {
     </BrowserOnly>
   );
 }
-function ResultWithHeader() {
+
+function ResultWithHeader({ title, codeEnv }) {
+  const displayTitle = title || (
+    <Translate
+      id='theme.Playground.result'
+      description='The result label of the live codeblocks'
+    >
+      LIVE PREVIEW
+    </Translate>
+  );
+  const previewClass = `${styles.playgroundPreview} preview${codeEnv}`;
   return (
     <>
-      <Header>
-        <Translate
-          id='theme.Playground.result'
-          description='The result label of the live codeblocks'
-        >
-          LIVE PREVIEW
-        </Translate>
-      </Header>
-      {/* https://github.com/facebook/docusaurus/issues/5747 */}
-      <div className={styles.playgroundPreview}>
-        <Preview />
+      <Header>{displayTitle}</Header>
+      <div className={previewClass}>
+        <Preview codeEnv={codeEnv} />
       </div>
     </>
   );
 }
-function ThemedLiveEditor() {
+
+function ThemedLiveEditor({ code, className }) {
   const isBrowser = useIsBrowser();
   return (
     <LiveEditor
-      // We force remount the editor on hydration,
-      // otherwise dark prism theme is not applied
       key={String(isBrowser)}
-      className={styles.playgroundEditor}
+      className={clsx(styles.playgroundEditor, className)}
+      code={code}
     />
   );
 }
-function EditorWithHeader({ minimized }) {
+
+function EditorWithHeader({ minimized, code, title, codeEnv }) {
   const [minimizedState, setMinimizedState] = useState(minimized);
+  const liveEditorClasses = `liveEditor${codeEnv}`;
+
+  const displayTitle = title || (
+    <Translate
+      id='theme.Playground.liveEditor'
+      description='The live editor label of the live codeblocks'
+    >
+      REACT PLAYGROUND
+    </Translate>
+  );
 
   return (
     <>
       <Header>
+        <ItemH>
+          <ItemV flex='1' alignItems='flex-start'>
+            {displayTitle}
+          </ItemV>
+          {minimizedState ? <FiChevronDown /> : <FiChevronUp />}
+        </ItemH>
         <Button
-          onClick={() => {
-            setMinimizedState(!minimizedState);
-          }}
+          onClick={() => setMinimizedState(!minimizedState)}
           textTransform='uppercase'
           background='transparent'
           padding='0px'
-          width='100%'
           display='flex'
           hoverBackground='transparent'
           borderRadius='0px'
-        >
-          <ItemH>
-            <ItemV flex='1' alignItems='flex-start'>
-              <Translate
-                id='theme.Playground.liveEditor'
-                description='The live editor label of the live codeblocks'
-              >
-                LIVE EDITOR
-              </Translate>
-            </ItemV>
-            {minimizedState ? <FiChevronDown /> : <FiChevronUp />}
-          </ItemH>
-        </Button>
+          position='absolute'
+          top='0'
+          right='0'
+          bottom='0'
+          left='0'
+        />
       </Header>
-      {!minimizedState && <ThemedLiveEditor />}
+      {!minimizedState && (
+        <ThemedLiveEditor code={code} className={liveEditorClasses} />
+      )}
     </>
   );
 }
-export default function Playground({ children, transformCode, ...props }) {
+
+function changeToExecutableCode(code, isNodeJSEnv) {
+  const execCode = !isNodeJSEnv
+    ? code
+        .split('\n')
+        .reduce(
+          (acc, line) => {
+            // If we're not in an import statement and this line doesn't start an import,
+            // keep the line
+            if (!acc.inImport && !line.trim().startsWith('import')) {
+              return {
+                inImport: false,
+                lines: [...acc.lines, line],
+              };
+            }
+
+            // If this line contains a semicolon, we're done with the import
+            if (line.includes(';')) {
+              return {
+                inImport: false,
+                lines: acc.lines,
+              };
+            }
+
+            // Otherwise we're in an import statement
+            return {
+              inImport: true,
+              lines: acc.lines,
+            };
+          },
+          {
+            inImport: false,
+            lines: [],
+          }
+        )
+        .lines.join('\n')
+        .replace(/^\n/, '')
+        .trimEnd()
+    : code;
+
+  return execCode;
+}
+
+export default function Playground({
+  children: rawChildren,
+  transformCode,
+  ...props
+}) {
   const {
     siteConfig: { themeConfig },
   } = useDocusaurusContext();
@@ -125,60 +196,130 @@ export default function Playground({ children, transformCode, ...props }) {
   const prismTheme = usePrismTheme();
   const noInline = props.metastring?.includes('noInline') ?? false;
 
-  // Look for customPropMinimized, customPropHidden
+  // ——— Custom props from any leading comment lines ———
+  const lines = rawChildren.split('\n');
+  let idx = 0;
   let minimized = false;
-
-  let pattern = /customPropMinimized="([^"]+)"/;
-  let match = children.match(pattern);
-  console.log(match, pattern);
-
-  if (match) {
-    const customProp = match[1];
-    if (customProp === 'true') {
-      minimized = true;
-
-      // remove the first match
-      children = children.replace(pattern, '');
-    }
-  }
-
-  // Look for customPropHidden
   let hidden = false;
+  let isNodeJSEnv = false;
+  let highlightRegexStart = null;
+  let highlightRegexEnd = null;
 
-  pattern = /customPropHidden="([^"]+)"\n/;
-  match = children.match(pattern);
+  // Process all top comment lines
+  while (idx < lines.length && lines[idx].trim().startsWith('//')) {
+    const line = lines[idx];
+    if (/\/\/\s*customPropMinimized=['"]true['"]/.test(line)) minimized = true;
+    if (/\/\/\s*customPropHidden=['"]true['"]/.test(line)) hidden = true;
+    if (/\/\/\s*customPropNodeJSEnv=['"]true['"]/.test(line))
+      isNodeJSEnv = true;
 
-  if (match) {
-    const customProp = match[1];
-    if (customProp === 'true') {
-      hidden = true;
+    // Check for start regex
+    const matchStart = line.match(/\/\/\s*customPropHighlightRegexStart=(.+)$/);
+    if (matchStart) {
+      // rawValue is everything after the "=" on that comment line
+      highlightRegexStart = matchStart[1].trim();
+    }
 
-      // remove the first match
-      children = children.replace(pattern, '');
+    // Check for end regex
+    const matchEnd = line.match(/\/\/\s*customPropHighlightRegexEnd=(.+)$/);
+    if (matchEnd) {
+      highlightRegexEnd = matchEnd[1].trim();
+    }
+
+    // remove any customProp flags from this line
+    lines[idx] = lines[idx]
+      .replace(/\/\/\s*customPropMinimized=['"](\w+)['"]/, '')
+      .replace(/\/\/\s*customPropHidden=['"](\w+)['"]/, '')
+      .replace(/\/\/\s*customPropNodeJSEnv=['"](\w+)['"]/, '')
+      .replace(/\/\/\s*customPropHighlightRegexStart=.*$/, '')
+      .replace(/\/\/\s*customPropHighlightRegexEnd=.*$/, '');
+
+    // if line is now just whitespace or comment, drop it
+    if (lines[idx].trim() === '//') {
+      lines.splice(idx, 1);
+    } else {
+      idx++;
     }
   }
 
-  // finally replace if new line is there in the start
-  children = children.replace(/\n/, '');
+  const strippedChildren = lines.join('\n');
+
+  // ——— remove imports for execution ———
+  // but only if it's not a nodejs environment
+  const execCode = changeToExecutableCode(strippedChildren, isNodeJSEnv);
+
+  // ——— remove empty lines from top and bottom for execution ———
+  const displayCode = strippedChildren.trim();
+
+  // decide code environment
+  const codeEnv = isNodeJSEnv
+    ? CodingEnvironment.NODEJS
+    : CodingEnvironment.REACT;
 
   return (
     <div className={styles.playgroundContainer}>
       <LiveProvider
-        code={children.replace(/\n$/, '')}
+        code={execCode}
         noInline={noInline}
-        transformCode={transformCode ?? ((code) => `${code};`)}
+        transformCode={(code) =>
+          `${changeToExecutableCode(code, isNodeJSEnv)};`
+        }
         theme={prismTheme}
         {...props}
       >
         {playgroundPosition === 'top' ? (
           <>
-            <ResultWithHeader />
-            {!hidden && <EditorWithHeader minimized={minimized} />}
+            <ResultWithHeader
+              title={isNodeJSEnv ? 'VIRTUAL NODE IDE' : 'LIVE APP PREVIEW'}
+              codeEnv={codeEnv}
+            />
+            {!hidden && (
+              <div
+                className={
+                  highlightRegexStart
+                    ? 'push-apply-highlight-in-live-editor'
+                    : 'push-live-editor'
+                }
+                data-highlight-regex-start={highlightRegexStart}
+                data-highlight-regex-end={highlightRegexEnd}
+              >
+                <EditorWithHeader
+                  code={displayCode}
+                  minimized={minimized}
+                  title={
+                    isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'REACT PLAYGROUND'
+                  }
+                  codeEnv={codeEnv}
+                />
+              </div>
+            )}
           </>
         ) : (
           <>
-            {!hidden && <EditorWithHeader minimized={minimized} />}
-            <ResultWithHeader />
+            {!hidden && (
+              <div
+                className={
+                  highlightRegexStart
+                    ? 'push-apply-highlight-in-live-editor'
+                    : 'push-live-editor'
+                }
+                data-highlight-regex-start={highlightRegexStart}
+                data-highlight-regex-end={highlightRegexEnd}
+              >
+                <EditorWithHeader
+                  code={displayCode}
+                  minimized={minimized}
+                  title={
+                    isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'REACT PLAYGROUND'
+                  }
+                  codeEnv={codeEnv}
+                />
+              </div>
+            )}
+            <ResultWithHeader
+              title={isNodeJSEnv ? 'VIRTUAL NODE IDE' : 'LIVE APP PREVIEW'}
+              codeEnv={codeEnv}
+            />
           </>
         )}
       </LiveProvider>

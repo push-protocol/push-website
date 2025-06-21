@@ -58,6 +58,15 @@
   --ifm-navbar-dropdown-image: grayscale(100%) brightness(70%) contrast(130%);
   --ifm-docs-hero-bg: #efefef;
   --ifm-paragraph-margin-bottom: 0;
+  --docusaurus-highlighted-code-line-bg: rgba(62, 65, 83, 1);
+  --ifm-detail-live-play: rgb(76, 179, 212);
+  --ifm-playground-header-bg: #61657b;
+  --ifm-playground-header-tag: #0000001a;
+  --ifm-playground-header-text: #ffffff;
+  --ifm-live-highlighted-code-line-bg-pulse-start: rgba(62, 65, 83, 1);
+  --ifm-live-highlighted-code-line-bg-pulse-mid: rgba(87, 91, 117, 1);
+  --ifm-border-color: #dadde1;
+  --ifm-global-radius: 12px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -104,6 +113,83 @@
   --ifm-navbar-dropdown-image: 'none';
   --ifm-docs-hero-bg: #0d0c0f;
   --ifm-paragraph-margin-bottom: 0;
+  --ifm-detail-live-play: rgb(76, 179, 212);
+  --ifm-playground-header-bg: #61657b;
+  --ifm-playground-header-tag: #0000004d;
+  --ifm-playground-header-text: #ffffff;
+  --docusaurus-highlighted-code-line-bg: rgba(62, 65, 83, 1);
+  --ifm-live-highlighted-code-line-bg-pulse-start: rgba(62, 65, 83, 1);
+  --ifm-live-highlighted-code-line-bg-pulse-mid: rgba(87, 91, 117, 1);
+  --ifm-border-color: #1f1f20;
+  --ifm-global-radius: 12px;
+}
+
+/* Custom styles for admonitions/alerts */
+.alert {
+  background-color: transparent;
+}
+
+.alert.alert--fn-args,
+.alert.alert--live-play {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.alert.alert--fn-args:before,
+.alert.alert--live-play:before {
+  content: '';
+  position: absolute;
+  width: 98%;
+  height: 1px;
+  right: 1%;
+  bottom: -10px;
+  background: #bec3c9;
+}
+
+.alert.alert--fn-args:after,
+.alert.alert--live-play:after {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 1px;
+  right: 5%;
+  bottom: -20px;
+  background: #bec3c9;
+}
+
+.alert.alert--fn-args {
+  border-color: var(--ifm-color-primary);
+}
+
+.alert.alert--fn-args summary::before {
+  border-color: transparent transparent transparent var(--ifm-color-primary);
+}
+
+.alert.alert--fn-args
+  .collapsibleContent_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module {
+  border-top: 1px solid
+    color-mix(in srgb, var(--ifm-color-primary) 50%, transparent);
+}
+
+.alert.alert--live-play {
+  border-color: var(--ifm-detail-live-play);
+}
+
+.alert.alert--live-play summary::before {
+  border-color: transparent transparent transparent var(--ifm-detail-live-play);
+}
+
+.alert.alert--live-play
+  .collapsibleContent_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module {
+  border-top: 1px solid
+    color-mix(in srgb, var(--ifm-detail-live-play) 50%, transparent);
+  padding: 0;
+}
+
+.alert.alert--live-play.alert-top-pad-20
+  .collapsibleContent_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module {
+  padding-top: 20px;
 }
 
 /* ----- */
@@ -398,37 +484,47 @@ a:hover {
 /* Article CSS Overrids */
 /* ----- */
 article .markdown > p > code,
+article .markdown > ul > li > code,
+article .markdown > ol > li > code,
 article tr > td > code,
 article ul > li > code,
 article em > code {
   font-size: 0.8em !important;
-  padding: 4px;
+  padding: 4px 8px;
 }
 
 article em > code {
-  background: #dd44b9;
-  color: #fff;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-primary-unified-text);
   font-style: normal;
   font-weight: 500;
 }
 
+/* Override for having mandatory arguments in developer documentation */
+.PushDocs article em > code {
+  background: transparent;
+  color: var(--ifm-color-secondary-text);
+  border: 1px solid var(--ifm-color-primary);
+  font-weight: 600;
+}
+
 article em > strong > code,
 article strong > em > code {
-  color: #dd44b9;
+  color: var(--ifm-color-primary) !important;
   font-size: 80%;
   font-style: normal;
   font-weight: 600;
   padding: 4px 8px;
-  background-color: var(--ifm-code-background);
-  border: 0.1rem solid #0000001a;
+  background-color: var(--ifm-code-background) !important;
+  border: 0.1rem solid var(--ifm-playground-header-tag) !important;
   border-radius: var(--ifm-code-border-radius);
   font-family: var(--ifm-font-family-monospace);
 }
 
 article em > strong > code:hover,
 article strong > em > code:hover {
-  background: #dd44b9;
-  color: #fff;
+  background: var(--ifm-color-primary) !important;
+  color: var(--ifm-color-primary-unified-text) !important;
 }
 
 article ul > li {
@@ -450,10 +546,6 @@ article ol > li::marker {
 article ul > li strong {
   font-weight: 600;
 }
-
-/* ----- */
-/* Tabs CodeBlock CSS Overrids */
-/* ----- */
 
 /* ----- */
 /* Tabs CodeBlock CSS Overrids */
@@ -516,11 +608,143 @@ article ul > li strong {
     no-repeat 0 / contain;
 }
 
+/* Code Block NPM */
+.codetab.npm:after {
+  content: 'NPM';
+}
+
+.codetab.npm::before {
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iIzUyNTg2MCIgZD0iTTAgMGg0MHY0MEgwVjB6Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTcgN2gyNnYyNmgtN1YxNGgtNnYxOUg3eiIvPjwvc3ZnPg==')
+    no-repeat 0 / contain;
+}
+
+.codetab.npm:hover::before,
+.codetab.npm.tabs__item--active::before {
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI2RkNDRiOSIgZD0iTTAgMGg0MHY0MEgwVjB6Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTcgN2gyNnYyNmgtN1YxNGgtNnYxOUg3eiIvPjwvc3ZnPg==')
+    no-repeat 0 / contain;
+}
+
+/* Code Block YARN */
+.codetab.yarn:after {
+  content: 'Yarn';
+}
+
+.codetab.yarn::before {
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iIzUyNTg2MCIgLz48L3N2Zz4=')
+    no-repeat 0 / contain;
+}
+
+.codetab.yarn:hover::before,
+.codetab.yarn.tabs__item--active::before {
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI1MCIgZmlsbD0iI2RkNDRiOSI+PC9jaXJjbGU+PC9zdmc+')
+    no-repeat 0 / contain;
+}
+
 /* Tabs CodeBlock CSS Overrids Ends */
 /* ----- */
 
+/* ----- */
+/* Tabs LivePlayground CSS Overrids */
+/* ----- */
+ul.tabs.liveplaytab {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+ul.tabs.liveplaytab li {
+  border-radius: 20px;
+  border: 1px solid var(--ifm-border-color);
+  padding: 8px 20px;
+}
+
+ul.tabs.liveplaytab li.tabs__item--active {
+  /* border: 1px solid #dd44b9; */
+  color: var(--ifm-color-primary);
+}
+
+/* Tabs LivePlayground CSS Overrids Ends */
+/* ----- */
+
+/* ----- */
+/* Table CSS Overrides */
+/* ----- */
+
+/* Reset all table styling first */
+table {
+  border-collapse: collapse;
+  border: none;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Main table styling */
+.markdown table {
+  border: 1px solid var(--ifm-border-color);
+  border-radius: var(--ifm-global-radius);
+  width: 100%;
+  table-layout: auto; /* Allow columns to size based on content */
+}
+
+/* Header row styling */
+.markdown table thead tr {
+  border: none;
+  background: var(--ifm-color-emphasis-100);
+}
+
+/* Alternating row colors */
+.markdown table tbody tr:nth-child(odd) {
+  background: transparent;
+}
+
+.markdown table tbody tr:nth-child(even) {
+  background: var(--ifm-color-emphasis-50);
+}
+
+/* Cell styling with borders */
+.markdown th,
+.markdown td {
+  padding: 0.75rem;
+  border: none;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  border-right: 1px solid var(--ifm-color-emphasis-200);
+  word-break: break-word; /* Ensures text wraps properly */
+}
+
+/* Align header text to the left */
+.markdown th {
+  text-align: left;
+}
+
+/* Remove right border from last cell in each row */
+.markdown th:last-child,
+.markdown td:last-child {
+  border-right: none;
+  width: 100%;
+}
+
+/* Ensure all tables have at least minimum column widths */
+.markdown table th,
+.markdown table td {
+  min-width: 200px;
+}
+
+/* First column often contains parameter names - give it a bit more space */
+.markdown table th:first-child,
+.markdown table td:first-child {
+  min-width: 220px;
+}
+
+/* Remove bottom border on last row */
+.markdown tr:last-child td {
+  border-bottom: none;
+}
+
+/* Table CSS Overrides Ends */
+/* ----- */
+
 .menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
-  padding: 0px !important;
+  padding: 0px 10px 0px 0px !important;
 }
 
 /* Footer Styling */
@@ -768,8 +992,8 @@ li {
     font-size: 16px !important;
     line-height: 142% !important;
     letter-spacing: -0.03em !important;
-    padding: 10px 15px !important;
-    margin: 0px 10px 0px 0px;
+    padding: 10px 10px 10px 15px !important;
+    margin: 0px 2px 0px 0px;
   }
 
   .menu__list_item {
@@ -1026,7 +1250,9 @@ article .markdown > ol > li {
   font-size: 1.15rem;
 }
 
-article .markdown > p > code {
+article .markdown > p > code,
+article .markdown > ul > li > code,
+article .markdown > ol > li > code {
   font-size: 1em;
   color: var(--ifm-color-primary);
 }

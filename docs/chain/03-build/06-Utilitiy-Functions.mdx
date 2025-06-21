@@ -1,0 +1,581 @@
+---
+id: docs-chain-build-utility-functions
+title: Utility Functions
+hide_title: true
+slug: ./utility-functions
+displayed_sidebar: pushChainSidebar
+sidebar_position: 6
+image: '/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png'
+---
+
+# Overview
+
+This section covers the most commonly used helpers in the Push Chain Core SDK to simplify common workflows.
+
+<head>
+  <title>{`Utility Functions | Build | Push Chain | Push Documentation`}</title>
+</head>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Details from '@theme/Details';
+import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
+
+
+## Account Utilities
+<!-- API Section Begins-->
+### Convert to Universal Account
+**_`PushChain.utils.account.toUniversal(address, {options}): UniversalAccount`_**
+
+```typescript
+const account = PushChain.utils.account.toUniversal(address, {
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+});
+```
+
+| **Arguments** | **Type** | **Description**                                                                                                                                                                                        |
+| ---------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| _`address`_              | `string` | An address string (e.g., `0xabc...`).                                                                                                                                                                  |
+| _`options.chain`_        | `CHAIN`  | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.PUSH_TESTNET_DONUT`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET` |
+
+> Note: These _`Arguments`_ are mandatory.
+
+<Details summary="Returns `UniversalAccount` <object>" className="alert alert--fn-args">
+
+```typescript
+// UniversalAccount object
+{
+  chain: 'eip155:11155111',
+  address: '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
+}
+```
+
+</Details>
+
+<Details summary="Live Playground: Convert Ethereum Sepolia Address to UniversalAccount" className="alert alert--live-play">
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+
+{`
+    // customPropHighlightRegexStart=PushChain\.utils\.account\.toUniversal
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core'
+
+    function main() {
+      const account = PushChain.utils.account.toUniversal(
+        '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba', {
+          chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+        }
+      )
+      console.log(JSON.stringify(account, null, 2))
+    }
+
+    main()
+`}
+
+</NodeJSVirtualIDE>
+
+</Details>
+<!-- API Section Ends-->
+
+
+<!-- API Section Begins-->
+### Convert to Chain-Agnostic Address
+**_`PushChain.utils.account.toChainAgnostic(address, {options}): string`_**
+
+```typescript
+const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(address, {
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+});
+```
+
+| **Arguments** | **Type** |**Description**                                                                                                                                                                                        |
+| ---------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| _`address`_             | `string` | An address string (e.g., `0xabc...`).                                                                                                                                                                  |
+| _`options.chain`_        | `CHAIN`  | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.PUSH_CHAIN_TESTNET_DONUT`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET` |
+
+> Note: These _`Arguments`_ are mandatory.
+
+<Details summary="Returns `ChainAgnosticAddress` <string>" className="alert alert--fn-args">
+
+```typescript
+// Chain Agnostic Address
+'eip155:11155111:0xD8d6aF611a17C236b13235B5318508FA61dE3Dba';
+```
+
+</Details>
+
+<Details summary="Live Playground: Convert Ethereum Mainnet address to chain agnostic address" className="alert alert--live-play">
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+{`
+    // customPropHighlightRegexStart=PushChain\.utils\.account\.toChainAgnostic
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core';
+
+    function main() {
+      const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(
+        '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba', {
+          chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+        }
+      );
+      console.log(JSON.stringify(chainAgnosticAddress, null, 2));
+    }
+
+    main()
+`}
+
+</NodeJSVirtualIDE>
+
+</Details>
+<!-- API Section Ends-->
+
+
+<!-- API Section Begins-->
+
+### Convert from Chain-Agnostic to Universal Account
+**_`PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress): <UniversalAccount>`_**
+
+```typescript
+const account = PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress);
+```
+
+| **Arguments**             | **Type** | **Description**                                                                                            |
+| ------------------------- | -------- | ---------------------------------------------------------------------------------------------------------- |
+| _`chainAgnosticAddress`_  | `string` | A full chain agnostic address string (e.g., `eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4`). |
+
+> Note: These _`Arguments`_ are mandatory.
+
+---
+
+<Details summary="Returns `UniversalAccount` <object>" className="alert alert--fn-args">
+
+```typescript
+// UniversalAccount object: { chain: string, address: string }
+{
+  chain: 'eip155:11155111',
+  address: '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
+}
+```
+
+</Details>
+
+<Details summary="Live Playground: Convert Ethereum Sepolia chain agnostic address to UniversalAccount" className="alert alert--live-play">
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+
+{`
+    // customPropHighlightRegexStart=PushChain\.utils\.account\.fromChainAgnostic
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core';
+
+    function main() {
+      const account = PushChain.utils.account.fromChainAgnostic(
+        'eip155:11155111:0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
+        );
+        console.log(JSON.stringify(account, null, 2));
+    }
+
+    main();
+
+`}
+
+</NodeJSVirtualIDE>
+
+</Details>
+<!-- API Section Ends-->
+
+
+<!-- API Section Begins-->
+### Convert Origin to Executor Account
+**_`PushChain.utils.account.convertOriginToExecutor(account, {options}): Promise<ExecutorAccountInfo>`_**
+
+Gives the deterministic executor account address for a given origin account (UOA). Also helps in checking if a given origin account (UOA) has an executor account (UEA) deployed on Push Chain.
+
+```typescript
+const info = await PushChain.utils.account.convertOriginToExecutor(universalAccount);
+```
+
+| **Arguments**            | **Type**           | **Default** | **Description**                                                                                                 |
+| ------------------------ | ------------------ | ----------- | --------------------------------------------------------------------------------------------------------------- |
+| _`account`_              | `UniversalAccount` | -           | A UniversalAccount object containing chain and address information.                                             |
+| `options.status`         | `boolean`          | `false`     | Whether to check if the computed executor account is deployed. Set to `true` to include deployment status.      |
+
+> Note: These _`Arguments`_ are mandatory.
+
+<Details 
+  summary="Returns `ExecutorAccountInfo` <object>" 
+  className="alert alert--fn-args"
+>
+
+```typescript
+// ExecutorAccountInfo object
+{
+  address: '0x98cA97d2FB78B3C0597E2F78cd11868cACF423C5',
+  deployed: true
+}
+```
+
+</Details>
+
+<Details summary="Live Playground: Convert Origin Account to Universal Executor Account" className="alert alert--live-play">
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+
+{`
+    // customPropHighlightRegexStart=PushChain\.utils\.account\.convertOriginToExecutor
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core'
+
+    async function main() {
+      // Create a universal account for Ethereum Sepolia
+      const account = PushChain.utils.account.toUniversal(
+        '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba', {
+          chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+        }
+      )
+
+      // Convert to executor address with deployment status
+      const executorInfo = await PushChain.utils.account.convertOriginToExecutor(account, {
+        status: true,
+      })
+
+      console.log(JSON.stringify(executorInfo, null, 2));
+
+      // Convert without deployment status
+      const executorSimple = await PushChain.utils.account.convertOriginToExecutor(account, {
+        status: false,
+      })
+
+      console.log(JSON.stringify(executorSimple, null, 2));
+    }
+
+    await main().catch(console.error)
+`}
+
+</NodeJSVirtualIDE>
+
+</Details>
+<!-- API Section Ends-->
+
+
+## Signer Utilities
+<!-- API Section Begins-->
+### Create Universal Signer from Keypair
+**_`PushChain.utils.signer.toUniversalFromKeypair(keypair, {options}): Promise<UniversalSigner>`_**
+
+```typescript
+const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(
+  keypair,
+  {
+    chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
+    library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+  }
+);
+```
+
+| **Arguments** | **Type**  | **Description**                                                                                                                                                                                             |
+| ---------------------- | --------- |  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| _`keypair`_              | `Keypair` | A keypair object from one of the supported libraries (ethers v5/v6, viem, or a custom UniversalSignerSkeleton)                                                                                              |
+| _`options.chain`_        | `CHAIN`   | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET`       |
+| _`options.library`_      | `LIBRARY` | The library to use for the signer. Here are some possible values: `PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6`, `PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM`, `PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS` |
+
+> Note: These _`Arguments`_ are mandatory.
+
+<Details summary="Returns `UniversalSigner` <object>" className="alert alert--fn-args">
+
+```typescript
+// UniversalSigner object
+{
+  account: {
+    address: '0xD173b7f04D539A5794e14030c4E172B2E3df92f3',
+    chain: 'eip155:11155111'
+  },
+  signMessage: [Function: signMessage],
+  signAndSendTransaction: [Function: signAndSendTransaction],
+  signTypedData: [Function: signTypedData]
+}
+```
+
+</Details>
+
+
+<Details summary="Live Playground: Create Universal Signer from Keypair" className="alert alert--live-play alert-top-pad-20">
+
+<Tabs className="liveplaytab" groupId="code-examples">
+  <TabItem value='ethers_v6' label='Ethers (v6)' default>
+      <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+{`
+    // customPropHighlightRegexStart=PushChain\.utils\.signer\.toUniversalFromKeypair
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core';
+    import { ethers } from 'ethers';
+
+    async function main() {
+      const provider = new ethers.JsonRpcProvider('https://sepolia.gateway.tenderly.co');
+      const wallet = ethers.Wallet.createRandom(provider);
+
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(wallet, {
+        chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+        library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6,
+      });
+
+      console.log(JSON.stringify(universalSigner, null, 2));
+    }
+
+    await main().catch(console.error);
+`}
+
+</NodeJSVirtualIDE>
+  </TabItem>
+
+  <TabItem value='viem' label='Viem'>
+  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+{`
+    // customPropHighlightRegexStart=PushChain\.utils\.signer\.toUniversalFromKeypair
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core'
+    import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
+    import { createWalletClient, http } from 'viem';
+    import { sepolia } from 'viem/chains';
+
+    async function main() {
+      const account = privateKeyToAccount(generatePrivateKey());
+      const walletClient = createWalletClient({
+        account,
+        chain: sepolia,
+        transport: http(),
+      });
+
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(walletClient, {
+        chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+        library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
+      })
+
+      console.log(JSON.stringify(universalSigner, null, 2));
+    }
+
+    awaitmain().catch(console.error);
+`}
+
+</NodeJSVirtualIDE>
+  </TabItem>
+
+  <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
+  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+
+{`
+    // customPropHighlightRegexStart=PushChain\.utils\.signer\.toUniversalFromKeypair
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core';
+    import { Keypair } from '@solana/web3.js';
+
+    async function main() {
+      const keypair = Keypair.generate()
+
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(keypair, {
+        chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
+        library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+      });
+
+      console.log(JSON.stringify(universalSigner, null, 2));
+    }
+
+    await main().catch(console.error);
+`}
+
+</NodeJSVirtualIDE>
+  </TabItem>
+</Tabs>
+
+</Details>
+<!-- API Section Ends-->
+
+
+## Explorer Utilities
+<!-- API Section Start-->
+### Get Transaction URL
+**_`pushChainClient.explorer.getTransactionUrl(txHash): string`_**
+
+> **Note**: This function is available only after initializing the Push Chain client.
+
+```typescript
+// ... Intialize Push Chain Client
+const url = pushChainClient.explorer.getTransactionUrl(txHash);
+```
+
+| **Arguments** | **Type** | **Description**                                      |
+| ------------- | -------- | ---------------------------------------------------- |
+| _`txHash`_    | `string` | The transaction hash to convert to explorer URL.     |
+
+> Note: These _`Arguments`_ are mandatory.
+
+<Details summary="Returns `url` <string>" className="alert alert--fn-args">
+
+```typescript
+// url string
+'https://donut.push.network/tx/0x...'
+```
+
+</Details>
+
+<Details summary="Live Playground: Get Explorer URL for a transaction hash" className="alert alert--live-play">
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+{`
+    // customPropHighlightRegexStart=pushChainClient\.explorer\.getTransactionUrl
+    // customPropHighlightRegexEnd=\\);
+    // Using ethers for example - You can use any library
+    // ethers, viem, solana web3js, etc
+    import { PushChain } from '@pushchain/core';
+    import { ethers } from 'ethers';
+
+    async function main() {
+      // Create random wallet
+      const wallet = ethers.Wallet.createRandom()
+
+      // Set up provider
+      const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org')
+      const signer = wallet.connect(provider)
+      
+      // Convert to Universal Signer
+      const universalSigner = await PushChain.utils.signer.toUniversal(signer);
+
+      // Initialize Push Chain Client
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+      });
+
+      const exploredTxHashUrl = pushChainClient.explorer.getTransactionUrl('0x4627fd2eca321d5fd007995c94af636e5e332760f50fbd8e3426ad0c67543dad');
+
+      console.log(JSON.stringify(exploredTxHashUrl));
+    }
+
+    await main().catch(console.error);
+`}
+</NodeJSVirtualIDE>
+
+</Details>
+<!-- API Section Ends-->
+
+
+<!-- API Section Start-->
+### List all Explorer URLs
+**_`PushChainClient.explorer.listUrls(): string[]`_**
+
+> **Note**: This function is available only after initializing the Push Chain client.
+
+```typescript
+// ... Intialize Push Chain Client
+const explorerUrls = pushChainClient.explorer.listUrls();
+```
+
+<Details summary="Returns `explorerUrls` <string[]>" className="alert alert--fn-args">
+
+```typescript
+// explorerUrls string[]
+{
+  [
+    'https://donut.push.network/tx/0x...', 
+    'https://scan.push.org/tx/0x...'
+  ]
+}
+```
+
+</Details>
+
+<Details summary="Live Playground: List all Explorer URLs" className="alert alert--live-play">
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+{`
+    // customPropHighlightRegexStart=pushChainClient\.explorer\.listUrls
+    // customPropHighlightRegexEnd=\\);
+    // Using ethers for example - You can use any library
+    // ethers, viem, solana web3js, etc
+    import { PushChain } from '@pushchain/core';
+    import { ethers } from 'ethers';
+
+    async function main() {
+      // Create random wallet
+      const wallet = ethers.Wallet.createRandom()
+
+      // Set up provider
+      const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org')
+      const signer = wallet.connect(provider)
+      
+      // Convert to Universal Signer
+      const universalSigner = await PushChain.utils.signer.toUniversal(signer);
+
+      // Initialize Push Chain Client
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+      });
+
+      const explorerUrls = pushChainClient.explorer.listUrls();
+      console.log(JSON.stringify(explorerUrls));
+    }
+
+    await main().catch(console.error);
+`}
+</NodeJSVirtualIDE>
+
+</Details>
+<!-- API Section Ends-->
+
+
+## Helper Utilities
+<!-- API Section Start-->
+### Get Chain Name from Chain Namespace
+**_`PushChain.utils.helpers.getChainName(chainNamespace): string`_**
+
+Every external chain is represented as a particular string on Push Chain. You can see the list of supported chains in the [Chain Configuration](/docs/chain/setup/chain-config#universal-chain-namespace) section.
+
+```typescript
+const chainName = PushChain.utils.helpers.chainNameFromNamespace(namespace);
+```
+
+| **Arguments**        | **Type** | **Description**                                      |
+| -------------------- | -------- | ---------------------------------------------------- |
+| _`chainNamespace`_   | `number` | The chain namespace to convert to chain name. Eg: `eip155:42101` converts to `PUSH_CHAIN_TESTNET_DONUT`, `eip155:11155111` converts to `ETHEREUM_SEPOLIA` |
+
+> Note: These _`Arguments`_ are mandatory.
+
+<Details summary="Returns `chainName` <string>" className="alert alert--fn-args">
+
+```typescript
+// chainName string
+'PUSH_CHAIN_TESTNET_DONUT'
+
+
+// NOTE: returns undefined if chainId is unsupported
+```
+
+</Details>
+
+<Details summary="Live Playground: Get Chain Name from Chain ID" className="alert alert--live-play">
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+
+{`
+    // customPropHighlightRegexStart=PushChain\.utils\.helpers\.getChainName
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core';
+
+    function main() {
+      const chainName = PushChain.utils.helpers.getChainName('eip155:42101');
+      console.log(chainName);
+    }
+
+    main();
+`}
+
+</NodeJSVirtualIDE>
+
+</Details>
+<!-- API Section Ends-->
+
+
+## Next Steps
+- Dive into [reading blockchain state](/docs/chain/build/reading-blockchain-state)
+- Harness our [on-chain contract helpers](/docs/chain/build/interacting-with-contracts) to supercharge your app
+- Explore and abstract away wallet and any chain-related logic using [UI Kit](/docs/chain/ui-kit)

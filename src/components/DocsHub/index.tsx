@@ -2,21 +2,18 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 /* eslint-disable */
+import React, { useState } from 'react';
 
 // React + Web3 Essentials
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
-import { useLocation } from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import CodeBlock from '@theme/CodeBlock';
 import Layout from '@theme/Layout';
-import React, { useState } from 'react';
 import './styles.css';
 
 // External Components
-import clsx from 'clsx';
 import styled, { keyframes } from 'styled-components';
 
 // Internal Components
@@ -35,15 +32,10 @@ import {
 import Footer from '../../segments/Footer';
 
 // Import Assets
-import ArrowUp from '@site/static/assets/docs/ArrowUpRight-pink.svg';
 import { FiArrowUpRight } from 'react-icons/fi';
 
 // Internal Configs
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import Spinner, {
-  SPINNER_TYPE,
-} from '@site/src/components/reusables/spinners/SpinnerUnit';
 import {
   ITechDocItem,
   QuickstartItems,
@@ -53,6 +45,7 @@ import {
 import GLOBALS, { device } from '@site/src/config/globals';
 import { PageMeta } from '@site/src/config/pageMeta';
 import { useSiteBaseUrl } from '@site/src/hooks/useSiteBaseUrl';
+import { BsArrowUpRight } from 'react-icons/bs';
 
 function QuickstartList({ title, codeblock, Svg }: IQuickstartItem) {
   return (
@@ -83,30 +76,19 @@ function TechDocItem({
   const [content, setContent] = useState<number>(0);
   const baseUrl = useSiteBaseUrl();
 
-  const handleOpenLink = (e, link: { e: any; link: string }) => {
-    if (!link) return;
-
-    // Check if link is an absolute URL (starts with http or https)
+  const getFullLink = (link: string) => {
+    if (!link) return '#';
     const isAbsoluteUrl = /^https?:\/\//i.test(link);
-
-    // If the link is not an absolute URL and baseUrl is defined, prepend the baseUrl
-    const fullLink = isAbsoluteUrl ? link : baseUrl ? baseUrl + link : link;
-    console.log(
-      fullLink,
-      isAbsoluteUrl ? 'absolute link' : 'full link with baseUrl'
-    );
-
-    // Navigate to the constructed fullLink or the absolute link
-    target === '_self'
-      ? (window.location.href = fullLink)
-      : window.open(fullLink, target);
+    return isAbsoluteUrl ? link : baseUrl ? baseUrl + link : link;
   };
 
   return (
     <TechDocCard>
       {/* <Link to={link} target='_blank'> */}
       <TechDocContent
-        onClick={(e) => handleOpenLink(e, link)}
+        href={getFullLink(link)}
+        target='_self'
+        rel='noopener noreferrer'
         hoverBackground='transparent'
       >
         <ItemV alignSelf='stretch' margin='0px 8%'>
@@ -259,7 +241,7 @@ export default function HomepageFeatures(): JSX.Element {
           <HeroHeader>
             <ItemV zIndex='1'>
               <H1 color='var(--ifm-color-primary-text)' margin='0 !important'>
-                Push Chain Documentation Hub
+                Documentation Hub
               </H1>
               <Span
                 color='var(--ifm-color-primary-text)'
@@ -271,8 +253,8 @@ export default function HomepageFeatures(): JSX.Element {
               <HeroButton onClick={() => (window.location.href = '#techdocs')}>
                 <Span padding='0 10px 0 0' fontSize='18px'>
                   Explore Docs
-                </Span>{' '}
-                ↗
+                </Span>
+                <BsArrowUpRight />
               </HeroButton>
             </ItemV>
 
@@ -348,7 +330,7 @@ export default function HomepageFeatures(): JSX.Element {
           <ItemH justifyContent='flex-start'>
             <HomepageSubHeader>Push Chain SDK</HomepageSubHeader>
             <Link
-              to='https://www.npmjs.com/package/@pushprotocol/restapi'
+              to='https://www.npmjs.com/package/@pushchain/core'
               target='_blank'
             >
               <Span fontSize='18px' margin='0 5px 0 10px'>
@@ -550,6 +532,7 @@ const PopularQuickiesCard = styled(ItemV)`
   flex: 1;
   overflow: auto;
   width: 100%;
+  min-width: 400px;
 
   /* WebKit browsers (Chrome, Safari) */
   *::-webkit-scrollbar {
@@ -661,7 +644,7 @@ const TechDocCard = styled(ItemV)`
   }
 `;
 
-const TechDocContent = styled.div`
+const TechDocContent = styled.a`
   margin-top: 24px;
   position: relative;
   border-radius: 24px;
