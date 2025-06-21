@@ -51,13 +51,13 @@ const skeleton = PushChain.utils.signer.construct(account, {
 const universalSigner = await PushChain.utils.signer.toUniversal(skeleton);
 ```
 
-| **Arguments**               | **Type**                                          | **Default** | **Description**                                        |
-| ------------------------------------ | ------------------------------------------------- | ----------- | ------------------------------------------------------ |
-| _`account`_                          | `UniversalAccount`                                | -           | Account information containing address and chain       |
-| _`options`_                          | `Object`                                          | -           | Object containing the signing function implementations |
-| _`options.signAndSendTransaction`_   | `(unsignedTx: Uint8Array) => Promise<Uint8Array>` | -           | Function to sign transaction data                      |
-| _`options.signMessage`_              | `(data: Uint8Array) => Promise<Uint8Array>`       | -           | Function to sign raw message data                      |
-| `options.signTypedData`              | `(params) => Promise<Uint8Array>`                 | -           | Function to sign typed data (EIP-712)                  |
+| **Arguments**                        | **Type**                                          | **Description**                                        |
+| ------------------------------------ | ------------------------------------------------- | ------------------------------------------------------ |
+| _`account`_                          | `UniversalAccount`                                | Account information containing address and chain       |
+| _`options`_                          | `Object`                                          | Object containing the signing function implementations |
+| _`options.signAndSendTransaction`_   | `(unsignedTx: Uint8Array) => Promise<Uint8Array>` | Function to sign transaction data                      |
+| _`options.signMessage`_              | `(data: Uint8Array) => Promise<Uint8Array>`       | Function to sign raw message data                      |
+| `options.signTypedData`              | `(params) => Promise<Uint8Array>`                 | Function to sign typed data (EIP-712)                  |
 
 > Note: These _`Arguments`_ are mandatory.
 

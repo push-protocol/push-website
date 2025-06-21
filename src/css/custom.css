@@ -704,7 +704,7 @@ table {
 /* Cell styling with borders */
 .markdown th,
 .markdown td {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem;
   border: none;
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
   border-right: 1px solid var(--ifm-color-emphasis-200);
@@ -726,7 +726,7 @@ table {
 /* Ensure all tables have at least minimum column widths */
 .markdown table th,
 .markdown table td {
-  min-width: 150px;
+  min-width: 200px;
 }
 
 /* First column often contains parameter names - give it a bit more space */
