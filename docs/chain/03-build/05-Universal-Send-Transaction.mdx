@@ -65,7 +65,7 @@ const txHash = await pushChainClient.universal.sendTransaction({
 When you need to interact with smart contracts, you'll need to pass encoded function data. Here's how to generate the `data` parameter using viem and use it with the Push Chain SDK:
 
 <Tabs groupId="send-transaction">
-  <TabItem value='ethers_v6' label='Ethers (V6)' default>
+  <TabItem value='ethers_v6' label='Ethers (v6)' default>
 
 ```typescript
 import { ethers } from 'ethers';
@@ -135,7 +135,7 @@ main().catch(console.error);
 For advanced use cases, you may still opt to use standard EVM libraries directly. However, we recommend the Push Chain SDK’s `universal.sendTransaction` for its cross-chain features and gas abstraction.
 
 <Tabs groupId="send-transaction">
-  <TabItem value='ethers_v6' label='Ethers (V6)' default>
+  <TabItem value='ethers_v6' label='Ethers (v6)' default>
 
 ```typescript
 import { ethers } from 'ethers';

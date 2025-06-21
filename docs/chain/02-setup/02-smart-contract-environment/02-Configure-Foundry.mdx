@@ -96,7 +96,7 @@ push_testnet_alt = "https://evm.rpc-testnet-donut-node2.push.org/"
 
 # This is a placeholder - BlockScout doesn't require an API key but Foundry expects a key field
 [etherscan]
-push_testnet = { key = "blockscout", url = "https://explorer.testnet.push.org/api", chain = 42101 }
+push_testnet = { key = "blockscout", url = "https://donut.push.network/api", chain = 42101 }
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
 ```
@@ -208,7 +208,7 @@ Save the contract address for verification and interaction later.
 Verify your contract on the Push Chain BlockScout explorer:
 
 ```bash
-forge verify-contract --chain 42101 --verifier blockscout --verifier-url https://explorer.testnet.push.org/api 0xF0f1199A048A39336dFD915F146470de1b5d6dAd src/MyToken.sol:MyToken
+forge verify-contract --chain 42101 --verifier blockscout --verifier-url https://donut.push.network/api 0xF0f1199A048A39336dFD915F146470de1b5d6dAd src/MyToken.sol:MyToken
 ```
 
 > **Note:** Replace `0xF0f1199A048A39336dFD915F146470de1b5d6dAd` with your actual deployed contract address.
@@ -222,7 +222,7 @@ Submitting verification for [src/MyToken.sol:MyToken] 0xF0f1199A048A39336dFD915F
 Submitted contract for verification:
 	Response: `OK`
 	GUID: `f0f1199a048a39336dfd915f146470de1b5d6dad68494bd5`
-	URL: https://explorer.testnet.push.org/address/0xf0f1199a048a39336dfd915f146470de1b5d6dad
+	URL: https://donut.push.network/address/0xf0f1199a048a39336dfd915f146470de1b5d6dad
 ```
 
 Visit the provided URL to view your verified contract on the Push Chain explorer.

@@ -1,14 +1,17 @@
 ---
 id: docs-chain-build-contract-helpers
 title: Contract Helpers
-hide_title: true
+hide_title: false
 slug: ./contract-helpers
 displayed_sidebar: pushChainSidebar
 sidebar_position: 8
 image: '/assets/docs/previews/docs_notifications_develop--get_started.png'
 ---
 
-# Contract Helpers
+## Overview
+When building smart contract applications on Push Chain, you will need some important helper contracts to get required information about callers or other accounts.
+
+One such helper contract is the Universal Executor Account Factory (IUEAFactory).
 
 <head>
   <title>{`Contract Helpers | Build | Push Chain | Push Documentation`}</title>
@@ -16,11 +19,6 @@ image: '/assets/docs/previews/docs_notifications_develop--get_started.png'
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-## Overview
-When building smart contract applications on Push Chain, you will need some important helper contracts to get required information about callers or other accounts.
-
-One such helper contract is the Universal Executor Account Factory (IUEAFactory).
 
 ## Universal Executor Account Factory
 The [Universal Executor Account Factory](https://github.com/push-protocol/push-chain-contracts/blob/main/src/Interfaces/IUEAFactory.sol) is the central contract responsible for deploying and managing Universal Executor Accounts (UEAs) for users from different blockchains. 

@@ -18,7 +18,7 @@ const TESTNET_CONFIG = {
     'https://evm.rpc-testnet-donut-node1.push.org/',
   ],
   iconUrls: [],
-  blockExplorerUrls: ['https://explorer.testnet.push.org'],
+  blockExplorerUrls: ['https://donut.push.network'],
 };
 
 const PushChainSpecs: React.FC = () => {
@@ -77,7 +77,7 @@ const PushChainSpecs: React.FC = () => {
                 <strong>Block Explorer URL</strong>
               </td>
               <td>
-                <code>https://explorer.testnet.push.org</code>
+                <code>https://donut.push.network</code>
               </td>
             </tr>
           </tbody>

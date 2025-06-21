@@ -303,7 +303,7 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(
 <Details summary="Live Playground: Create Universal Signer from Keypair" className="alert alert--live-play alert-top-pad-20">
 
 <Tabs className="liveplaytab" groupId="code-examples">
-  <TabItem value='ethers_v6' label='Ethers (V6)' default>
+  <TabItem value='ethers_v6' label='Ethers (v6)' default>
       <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
 {`
     // customPropHighlightRegexStart=PushChain\.utils\.signer\.toUniversalFromKeypair
@@ -525,16 +525,18 @@ const explorerUrls = pushChainClient.explorer.listUrls();
 
 ## Helper Utilities
 <!-- API Section Start-->
-### Get Chain Name from ID
-**_`PushChain.utils.helpers.chainNameFromId(chainId): string`_**
+### Get Chain Name from Chain Namespace
+**_`PushChain.utils.helpers.getChainName(chainNamespace): string`_**
+
+Every external chain is represented as a particular string on Push Chain. You can see the list of supported chains in the [Chain Configuration](/docs/chain/setup/chain-config#universal-chain-namespace) section.
 
 ```typescript
-const chainName = PushChain.utils.helpers.chainNameFromId(chainId);
+const chainName = PushChain.utils.helpers.chainNameFromNamespace(namespace);
 ```
 
-| **Arguments** | **Type** | **Description**                                      |
-| ------------- | -------- | ---------------------------------------------------- |
-| _`chainId`_   | `number` | The chain ID to convert to chain name. Eg: `eip155:42101` converts to `PUSH_CHAIN_TESTNET_DONUT`, `eip155:11155111` converts to `ETHEREUM_SEPOLIA`             |
+| **Arguments**        | **Type** | **Description**                                      |
+| -------------------- | -------- | ---------------------------------------------------- |
+| _`chainNamespace`_   | `number` | The chain namespace to convert to chain name. Eg: `eip155:42101` converts to `PUSH_CHAIN_TESTNET_DONUT`, `eip155:11155111` converts to `ETHEREUM_SEPOLIA` |
 
 > Note: These _`Arguments`_ are mandatory.
 
@@ -555,12 +557,12 @@ const chainName = PushChain.utils.helpers.chainNameFromId(chainId);
 <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
 
 {`
-    // customPropHighlightRegexStart=PushChain\.utils\.helpers\.chainNameFromId
+    // customPropHighlightRegexStart=PushChain\.utils\.helpers\.getChainName
     // customPropHighlightRegexEnd=\\);
     import { PushChain } from '@pushchain/core';
 
     function main() {
-      const chainName = PushChain.utils.helpers.chainNameFromId('eip155:42101');
+      const chainName = PushChain.utils.helpers.getChainName('eip155:42101');
       console.log(chainName);
     }
 

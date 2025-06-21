@@ -30,7 +30,7 @@ import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtua
 As mentioned in the previous section, Push Chain is EVM-compatible, allowing you to use Ethereum tools like Viem and Ethers.js.
 
 <Tabs groupId="initialize-evm-client">
-  <TabItem value='ethers_v6' label='Ethers (V6)' default>
+  <TabItem value='ethers_v6' label='Ethers (v6)' default>
 
 <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
 
@@ -63,7 +63,7 @@ As mentioned in the previous section, Push Chain is EVM-compatible, allowing you
       blockExplorers: {
         default: {
           name: 'Push Testnet Explorer',
-          url: 'https://explorer.testnet.push.org/',
+          url: 'https://donut.push.network/',
         },
       },
     })
@@ -88,7 +88,7 @@ As mentioned in the previous section, Push Chain is EVM-compatible, allowing you
 Here's an example of how to initialize the Push Chain SDK with a viem client and fetch the transaction by hash.
 
 <Tabs groupId="initialize-evm-client">
-  <TabItem value='ethers_v6' label='Ethers (V6)' default>
+  <TabItem value='ethers_v6' label='Ethers (v6)' default>
   <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples"}}>
 
 {`
@@ -97,7 +97,7 @@ Here's an example of how to initialize the Push Chain SDK with a viem client and
 
     async function main() {
       const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/')
-      const transactionHash = '0x95b8600bd48154e22e513219c139a370e3cab4d1191d6d33ca8d74f72788154c'
+      const transactionHash = '0xa7839fb1e3483eab628cbf18f42603ba192cef99b724d4b651eb7c4e9683b79e'
       const transaction = await provider.getTransaction(transactionHash)
       console.log(JSON.stringify(transaction, null, 2))
     }
@@ -135,7 +135,7 @@ Here's an example of how to initialize the Push Chain SDK with a viem client and
         blockExplorers: {
           default: {
             name: 'Push Testnet Explorer',
-            url: 'https://explorer.testnet.push.org/',
+            url: 'https://donut.push.network/',
           },
         },
       })
@@ -145,7 +145,7 @@ Here's an example of how to initialize the Push Chain SDK with a viem client and
         transport: http(),
       })
 
-      const transactionHash = '0x95b8600bd48154e22e513219c139a370e3cab4d1191d6d33ca8d74f72788154c'
+      const transactionHash = '0xa7839fb1e3483eab628cbf18f42603ba192cef99b724d4b651eb7c4e9683b79e'
       const transaction = await publicClient.getTransaction({
         hash: transactionHash,
       })
