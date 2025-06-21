@@ -31,16 +31,18 @@ import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtua
 
 ## Initialize HTTP Clients
 
-<Tabs className="liveplaytab" groundId="reading-blockchain-state">
+<Tabs className="liveplaytab" groupId="reading-blockchain-state">
   <TabItem value="ethers_v6" label="Ethers (v6)" default>
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
-import { ethers } from 'ethers';
+    // customPropHighlightRegexStart=ethers\.JsonRpcProvider
+    // customPropHighlightRegexEnd=\\);
+    import { ethers } from 'ethers';
 
-// HTTP JSON-RPC provider
-const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
-console.log('Ethers provider methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(provider)));
+    // HTTP JSON-RPC provider
+    const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+    console.log('Ethers provider methods:', Object.getOwnPropertyNames(Object.getPrototypeOf(provider)));
 `}
 
 </NodeJSVirtualIDE>
@@ -50,21 +52,23 @@ console.log('Ethers provider methods:', Object.getOwnPropertyNames(Object.getPro
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
-import { defineChain, createPublicClient, http } from 'viem';
+    // customPropHighlightRegexStart=createPublicClient\\(
+    // customPropHighlightRegexEnd=\\);
+    import { defineChain, createPublicClient, http } from 'viem';
 
-// Define Push Testnet chain
-const pushTestnet = defineChain({
-  id: 42101,
-  name: 'Push Testnet',
-  nativeCurrency: { name: 'PC', symbol: '$PC', decimals: 18 },
-  rpcUrls: {
-    default: { http: ['https://evm.rpc-testnet-donut-node1.push.org/'] }
-  }
-});
+    // Define Push Testnet chain
+    const pushTestnet = defineChain({
+      id: 42101,
+      name: 'Push Testnet',
+      nativeCurrency: { name: 'PC', symbol: '$PC', decimals: 18 },
+      rpcUrls: {
+        default: { http: ['https://evm.rpc-testnet-donut-node1.push.org/'] }
+      }
+    });
 
-// HTTP client
-const viemClient = createPublicClient({ chain: pushTestnet, transport: http() });
-console.log('Viem client:', JSON.stringify(viemClient, null, 2));
+    // HTTP client
+    const viemClient = createPublicClient({ chain: pushTestnet, transport: http() });
+    console.log('Viem client:', JSON.stringify(viemClient, null, 2));
 `}
 
 </NodeJSVirtualIDE>
@@ -74,18 +78,20 @@ console.log('Viem client:', JSON.stringify(viemClient, null, 2));
 
 ## Fetch a Transaction by Hash
 
-<Tabs className="liveplaytab" groundId="reading-blockchain-state">
+<Tabs className="liveplaytab" groupId="reading-blockchain-state">
   <TabItem value="ethers_v6" label="Ethers (v6)" default>
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
-import { ethers } from 'ethers';
+    // customPropHighlightRegexStart=provider\.getTransaction
+    // customPropHighlightRegexEnd=\\);
+    import { ethers } from 'ethers';
 
-const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
-const txHash  = '0xa7839fb1e3483eab628cbf18f42603ba192cef99b724d4b651eb7c4e9683b79e';
+    const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+    const txHash  = '0xa7839fb1e3483eab628cbf18f42603ba192cef99b724d4b651eb7c4e9683b79e';
 
-const tx = await provider.getTransaction(txHash);
-console.log(JSON.stringify(tx, null, 2));
+    const tx = await provider.getTransaction(txHash);
+    console.log(JSON.stringify(tx, null, 2));
 `}
 
 </NodeJSVirtualIDE>
@@ -95,14 +101,16 @@ console.log(JSON.stringify(tx, null, 2));
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
-import { defineChain, createPublicClient, http } from 'viem';
+    // customPropHighlightRegexStart=viemClient\.getTransaction
+    // customPropHighlightRegexEnd=\\);
+    import { defineChain, createPublicClient, http } from 'viem';
 
-const pushTestnet = defineChain({ /* ... */ });
-const viemClient    = createPublicClient({ chain: pushTestnet, transport: http() });
-const txHash        = '0xa7839fb1e3483eab628cbf18f42603ba192cef99b724d4b651eb7c4e9683b79e';
+    const pushTestnet = defineChain({ /* ... */ });
+    const viemClient    = createPublicClient({ chain: pushTestnet, transport: http() });
+    const txHash        = '0xa7839fb1e3483eab628cbf18f42603ba192cef99b724d4b651eb7c4e9683b79e';
 
-const tx = await viemClient.getTransaction({ hash: txHash });
-console.log(JSON.stringify(tx, null, 2));
+    const tx = await viemClient.getTransaction({ hash: txHash });
+    console.log(JSON.stringify(tx, null, 2));
 `}
 
 </NodeJSVirtualIDE>
@@ -114,16 +122,19 @@ console.log(JSON.stringify(tx, null, 2));
 
 ### Latest Block
 
-<Tabs className="liveplaytab" groundId="reading-blockchain-state">
+<Tabs className="liveplaytab" groupId="reading-blockchain-state">
   <TabItem value="ethers_v6" label="Ethers (v6)" default>
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
-import { ethers } from 'ethers';
 
-const provider   = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
-const latestBlock = await provider.getBlock('latest');
-console.log(JSON.stringify(latestBlock, null, 2));
+    // customPropHighlightRegexStart=provider\.getBlock
+    // customPropHighlightRegexEnd=\\);
+    import { ethers } from 'ethers';
+
+    const provider   = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+    const latestBlock = await provider.getBlock('latest');
+    console.log(JSON.stringify(latestBlock, null, 2));
 `}
 
 </NodeJSVirtualIDE>
@@ -133,12 +144,14 @@ console.log(JSON.stringify(latestBlock, null, 2));
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
-import { defineChain, createPublicClient, http } from 'viem';
+    // customPropHighlightRegexStart=viemClient\.getBlock
+    // customPropHighlightRegexEnd=\\);
+    import { defineChain, createPublicClient, http } from 'viem';
 
-const pushTestnet  = defineChain({ /* ... */ });
-const viemClient   = createPublicClient({ chain: pushTestnet, transport: http() });
-const latestBlock  = await viemClient.getBlock();
-console.log(JSON.stringify(latestBlock, null, 2));
+    const pushTestnet  = defineChain({ /* ... */ });
+    const viemClient   = createPublicClient({ chain: pushTestnet, transport: http() });
+    const latestBlock  = await viemClient.getBlock();
+    console.log(JSON.stringify(latestBlock, null, 2));
 `}
 
 </NodeJSVirtualIDE>
@@ -147,18 +160,20 @@ console.log(JSON.stringify(latestBlock, null, 2));
 
 ### Block by Hash
 
-<Tabs className="liveplaytab" groundId="reading-blockchain-state">
+<Tabs className="liveplaytab" groupId="reading-blockchain-state">
   <TabItem value="ethers_v6" label="Ethers (v6)" default>
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
-import { ethers } from 'ethers';
+    // customPropHighlightRegexStart=provider\.getBlock
+    // customPropHighlightRegexEnd=\\);
+    import { ethers } from 'ethers';
 
-const provider  = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
-const blockHash = '0xccdb5bc5b71ece5a73aa42d5d3171b156f1c0735ac97a07ccec3156b59ac936c';
+    const provider  = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+    const blockHash = '0xccdb5bc5b71ece5a73aa42d5d3171b156f1c0735ac97a07ccec3156b59ac936c';
 
-const block = await provider.getBlock(blockHash);
-console.log(JSON.stringify(block, null, 2));
+    const block = await provider.getBlock(blockHash);
+    console.log(JSON.stringify(block, null, 2));
 `}
 
 </NodeJSVirtualIDE>
@@ -168,13 +183,15 @@ console.log(JSON.stringify(block, null, 2));
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
-import { defineChain, createPublicClient, http } from 'viem';
+    // customPropHighlightRegexStart=viemClient\.getBlock
+    // customPropHighlightRegexEnd=\\);
+    import { defineChain, createPublicClient, http } from 'viem';
 
-const pushTestnet = defineChain({ /* ... */ });
-const viemClient  = createPublicClient({ chain: pushTestnet, transport: http() });
+    const pushTestnet = defineChain({ /* ... */ });
+    const viemClient  = createPublicClient({ chain: pushTestnet, transport: http() });
 
-const block = await viemClient.getBlock({ blockHash });
-console.log(JSON.stringify(block, null, 2));
+    const block = await viemClient.getBlock({ blockHash });
+    console.log(JSON.stringify(block, null, 2));
 `}
 
 </NodeJSVirtualIDE>
@@ -184,11 +201,13 @@ console.log(JSON.stringify(block, null, 2));
 
 ## Initialize WebSocket Clients
 
-<Tabs className="liveplaytab" groundId="reading-blockchain-state">
+<Tabs className="liveplaytab" groupId="reading-blockchain-state">
   <TabItem value="ethers_v6" label="Ethers (v6)" default>
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
+    // customPropHighlightRegexStart=ethers\.WebSocketProvider
+    // customPropHighlightRegexEnd=}\\);
     import { ethers } from 'ethers';
     const ws = new ethers.WebSocketProvider('https://evm.rpc-testnet-donut-node1.push.org/');
     const watchedAddress = '0x8a36C6358861F0CE1672B04345C9e2E6717Be946'.toLowerCase();
@@ -201,7 +220,7 @@ console.log(JSON.stringify(block, null, 2));
         console.log('New block:', block.number);
       
         block.transactions
-          .filter((tx) => tx.from?.toLowerCase() === watchedAddress)
+          .filter((tx) => tx.from?.toLowerCase() === watchedAddress);
           .forEach((tx) => console.log('Tx from watched address →', tx.hash));
       }
     });
@@ -217,18 +236,20 @@ console.log(JSON.stringify(block, null, 2));
 
 ## Subscribing to New Blocks
 
-<Tabs className="liveplaytab" groundId="reading-blockchain-state">
+<Tabs className="liveplaytab" groupId="reading-blockchain-state">
   <TabItem value="ethers_v6" label="Ethers (v6)" default>
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
-import { ethers } from 'ethers';
+    // customPropHighlightRegexStart=ws\.on
+    // customPropHighlightRegexEnd=\\)\\);
+    import { ethers } from 'ethers';
 
-const ws = new ethers.WebSocketProvider('wss://evm.rpc-testnet-donut-node1.push.org/');
-ws.on('block', (num) => console.log('New block:', num));
+    const ws = new ethers.WebSocketProvider('wss://evm.rpc-testnet-donut-node1.push.org/');
+    ws.on('block', (num) => console.log('New block:', num));
 
-// Stop after 10s
-setTimeout(() => { ws.removeAllListeners(); ws.destroy(); }, 10000);
+    // Stop after 10s
+    setTimeout(() => { ws.removeAllListeners(); ws.destroy(); }, 10000);
 `}
 
 </NodeJSVirtualIDE>
@@ -238,18 +259,20 @@ setTimeout(() => { ws.removeAllListeners(); ws.destroy(); }, 10000);
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
-import { createPublicClient, defineChain, webSocket } from 'viem';
+    // customPropHighlightRegexStart=client\.watchBlocks
+    // customPropHighlightRegexEnd=}\\);
+    import { createPublicClient, defineChain, webSocket } from 'viem';
 
-const pushTestnet = defineChain({ /* ... */ });
-const client      = createPublicClient({ chain: pushTestnet, transport: webSocket('wss://evm.rpc-testnet-donut-node1.push.org/') });
+    const pushTestnet = defineChain({ /* ... */ });
+    const client      = createPublicClient({ chain: pushTestnet, transport: webSocket('wss://evm.rpc-testnet-donut-node1.push.org/') });
 
-const stop = client.watchBlocks({
-  onBlock: (b) => console.log('🆕 Block', b.number),
-  onError: console.error,
-});
+    const stop = client.watchBlocks({
+      onBlock: (b) => console.log('🆕 Block', b.number),
+      onError: console.error,
+    });
 
-// Stop after 10s
-setTimeout(stop, 10000);
+    // Stop after 10s
+    setTimeout(stop, 10000);
 `}
 
 </NodeJSVirtualIDE>
@@ -259,17 +282,19 @@ setTimeout(stop, 10000);
 
 ### Example: Filtering New Blocks for Specific Transactions
 
-<Tabs className="liveplaytab" groundId="reading-blockchain-state">
+<Tabs className="liveplaytab" groupId="reading-blockchain-state">
   <TabItem value="ethers_v6" label="Ethers (v6)" default>
 
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
+    // customPropHighlightRegexStart=ws\.on
+    // customPropHighlightRegexEnd=}\\);
     import { ethers } from 'ethers';
-    const provider = new ethers.WebSocketProvider('https://evm.rpc-testnet-donut-node1.push.org/');
+    const ws = new ethers.WebSocketProvider('https://evm.rpc-testnet-donut-node1.push.org/');
     const watchedAddress = '0x8a36C6358861F0CE1672B04345C9e2E6717Be946'.toLowerCase();
 
-    provider.on('block', async (blockNumber) => {
+    ws.on('block', async (blockNumber) => {
       const block = await provider.getBlock(blockNumber, true);
       if (block && block.transactions) {
         block.transactions
@@ -288,6 +313,8 @@ setTimeout(stop, 10000);
 <NodeJSVirtualIDE repo={{ title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk" }}>
 
 {`
+    // customPropHighlightRegexStart=viemClient\.watchBlocks
+    // customPropHighlightRegexEnd=}\\);
     import { defineChain } from 'viem';
 
     const pushTestnet = defineChain({
@@ -331,3 +358,8 @@ setTimeout(stop, 10000);
 
   </TabItem>
 </Tabs>
+
+
+## Next Steps
+- Dive into our [Contract Helpers](./contract-helpers) to detect and work with both cross-chain accounts and native Push Chain smart accounts.
+- Use our [UI Kit](/docs/chain/ui-kit) to abstract away wallet and chain logic and accelerate your front-end development.
