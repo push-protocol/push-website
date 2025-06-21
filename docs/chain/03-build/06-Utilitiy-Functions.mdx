@@ -8,41 +8,39 @@ sidebar_position: 6
 image: '/assets/docs/previews/docs_notifications_develop_fetch_chats--create_channel.png'
 ---
 
-# Utility Functions Overview
+# Overview
 
-This section covers utility functions provided by the SDK to ease the interaction with core Push Chain functionality.
+This section covers helper methods in the Push Chain SDK to simplify common workflows.
 
 <head>
-  <title>{`Utility Functions | Push Chain | Push Documentation`}</title>
+  <title>{`Utility Functions | Build | Push Chain | Push Documentation`}</title>
 </head>
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import ReactPlayer from 'react-player';
-import {
-  ModalContainer,
-  ModalSmall,
-  ModalWrapper,
-  ModalMidEqual,
-  AFocus,
-  AImp,
-} from '@site/src/css/SharedStyling';
-import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
 import Details from '@theme/Details';
+import NodeJSVirtualIDE from '@site/src/components/NodeJSVirtualIDE/NodeJSVirtualIDE';
 
-## From Chain Agnostic Address to Universal Account
+
+## Account Utilities
+
+<!-- API Section Begins-->
+
+### Create a Universal Account
+**_`PushChain.utils.account.toUniversal(address, {options}): UniversalAccount`_**
 
 ```typescript
-const account = PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress)
+const account = PushChain.utils.account.toUniversal(address, {
+  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
+});
 ```
 
-### fromChainAgnostic parameters
+| **Function Arguments** | **Type** | **Default** | **Description**                                                                                                                                                                                        |
+| ---------------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `address`              | `string` | -           | An address string (e.g., `0xabc...`).                                                                                                                                                                  |
+| `options.chain`        | `CHAIN`  | -           | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.PUSH_TESTNET_DONUT`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET` |
 
-| **Param**              | **Type** | **Default** | **Remarks**                                                                                                |
-| ---------------------- | -------- | ----------- | ---------------------------------------------------------------------------------------------------------- |
-| `chainAgnosticAddress` | `string` | -           | A full chain agnostic address string (e.g., `eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4`). |
-
-<Details summary="Expected response">
+<Details summary="Returns `UniversalAccount` <object>" className="alert alert--fn-args">
 
 ```typescript
 // UniversalAccount object
@@ -52,63 +50,15 @@ const account = PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress)
 }
 ```
 
----
-
 </Details>
 
-#### Example: Convert Ethereum Sepolia CAIP-10 to UniversalAccount
+<Details summary="Live Playground Example: Convert Ethereum Sepolia Address to UniversalAccount" className="alert alert--live-play">
 
-<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
-
-{`
-    import { PushChain } from '@pushchain/core'
-
-    function main() {
-      const account = PushChain.utils.account.fromChainAgnostic(
-        'eip155:11155111:0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
-        )
-        console.log(JSON.stringify(account, null, 2))
-    }
-
-    main()
-`}
-
-</NodeJSVirtualIDE>
-
-## Create Universal Account from Address and Chain
-
-```typescript
-const account = PushChain.utils.account.toUniversal(address, {
-  chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-});
-```
-
-### `toUniversal` parameters
-
-| **Param**       | **Type** | **Default** | **Remarks**                                                                                                                                                                                            |
-| --------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `address`       | `string` | -           | An address string (e.g., `0xabc...`).                                                                                                                                                                  |
-| `options.chain` | `CHAIN`  | -           | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET` |
-
-<Details summary="Expected response">
-
-```typescript
-// UniversalAccount object
-{ 
-  chain: 'eip155:11155111', 
-  address: '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba' 
-}
-```
-
----
-
-</Details>
-
-#### Example: Convert Ethereum Sepolia Address to UniversalAccount
-
-<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
 
 {`
+    // customPropHighlightRegexStart=PushChain\.utils\.account\.toUniversal
+    // customPropHighlightRegexEnd=\\);
     import { PushChain } from '@pushchain/core'
 
     function main() {
@@ -122,9 +72,15 @@ const account = PushChain.utils.account.toUniversal(address, {
 
     main()
 `}
+
 </NodeJSVirtualIDE>
 
-## Convert Address and Chain to Chain Agnostic Address
+</Details>
+<!-- API Section Ends-->
+
+
+<!-- API Section Begins-->
+### Convert to Chain-Agnostic Address
 
 ```typescript
 const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(address, {
@@ -132,37 +88,35 @@ const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(address, {
 });
 ```
 
-### `toChainAgnostic` parameters
+| **Function Arguments** | **Type** | **Default** |**Description**                                                                                                                                                                                        |
+| ---------------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `address`              | `string` | -           | An address string (e.g., `0xabc...`).                                                                                                                                                                  |
+| `options.chain`        | `CHAIN`  | -           | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.PUSH_CHAIN_TESTNET_DONUT`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET` |
 
-| **Param**       | **Type** | **Remarks**                                                                                                                                                                                            |
-| --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `address`       | `string` | An address string (e.g., `0xabc...`).                                                                                                                                                                  |
-| `options.chain` | `CHAIN`  | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET` |
-
-<Details summary="Expected response">
+<Details summary="Returns `ChainAgnosticAddress` <string>" className="alert alert--fn-args">
 
 ```typescript
 // Chain Agnostic Address
-'eip155:11155111:0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
+'eip155:11155111:0xD8d6aF611a17C236b13235B5318508FA61dE3Dba';
 ```
-
----
 
 </Details>
 
-#### Example: Convert Ethereum Mainnet Address to CAIP-10
+<Details summary="Live Playground Example: Convert Ethereum Mainnet address to chain agnostic address" className="alert alert--live-play">
 
-<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
 {`
-    import { PushChain } from '@pushchain/core'
+    // customPropHighlightRegexStart=PushChain\.utils\.account\.toChainAgnostic
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core';
 
     function main() {
       const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(
         '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba', {
           chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
         }
-      )
-      console.log(JSON.stringify(chainAgnosticAddress, null, 2))
+      );
+      console.log(JSON.stringify(chainAgnosticAddress, null, 2));
     }
 
     main()
@@ -170,42 +124,100 @@ const chainAgnosticAddress = PushChain.utils.account.toChainAgnostic(address, {
 
 </NodeJSVirtualIDE>
 
-## Convert Origin Account to Universal Executor Address
+</Details>
+<!-- API Section Ends-->
+
+
+<!-- API Section Begins-->
+
+### From Chain-Agnostic to Universal Account
+
+**_`PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress): <UniversalAccount>`_**
 
 ```typescript
-const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
-  universalAccount,
-  {
-    status: true
-  }
-);
+const account = PushChain.utils.account.fromChainAgnostic(chainAgnosticAddress);
 ```
 
-### `convertOriginToExecutor` parameters
+| **Function Arguments** | **Type** | **Default** | **Description**                                                                                            |
+| ---------------------- | -------- | ----------- | ---------------------------------------------------------------------------------------------------------- |
+| `chainAgnosticAddress` | `string` | -           | A full chain agnostic address string (e.g., `eip155:11155111:0x35B84d6848D16415177c64D64504663b998A6ab4`). |
 
-| **Param**        | **Type**           | **Remarks**                                                                                                     |
-| ---------------- | ------------------ | --------------------------------------------------------------------------------------------------------------- |
-| `account`        | `UniversalAccount` | A UniversalAccount object containing chain and address information.                                             |
-| `options.status` | `boolean`          | Whether to check if the computed smart account address is deployed. Set to `true` to include deployment status. |
+---
 
-<Details summary="Expected response">
+<Details summary="Returns `UniversalAccount` <object>" className="alert alert--fn-args">
 
 ```typescript
-// ExecutorInfo object
+// UniversalAccount object: { chain: string, address: string }
+{
+  chain: 'eip155:11155111',
+  address: '0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
+}
+```
+
+</Details>
+
+<Details summary="Live Playground Example: Convert Ethereum Sepolia chain agnostic address to UniversalAccount" className="alert alert--live-play">
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+
+{`
+    // customPropHighlightRegexStart=PushChain\.utils\.account\.fromChainAgnostic
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core';
+
+    function main() {
+      const account = PushChain.utils.account.fromChainAgnostic(
+        'eip155:11155111:0xD8d6aF611a17C236b13235B5318508FA61dE3Dba'
+        );
+        console.log(JSON.stringify(account, null, 2));
+    }
+
+    main();
+
+`}
+
+</NodeJSVirtualIDE>
+
+</Details>
+<!-- API Section Ends-->
+
+
+<!-- API Section Begins-->
+### Convert Origin to Executor Account
+**_`PushChain.utils.account.convertOriginToExecutor(account, {options}): Promise<ExecutorAccountInfo>`_**
+
+
+```typescript
+const info = await PushChain.utils.account.convertOriginToExecutor(universalAccount);
+```
+
+| **Function Arguments** | **Type**           | **Default** | **Description**                                                                                                 |
+| ---------------------- | ------------------ | ----------- | --------------------------------------------------------------------------------------------------------------- |
+| `account`              | `UniversalAccount` | -           | A UniversalAccount object containing chain and address information.                                             |
+| `options.status`       | `boolean`          | false       | Whether to check if the computed smart account address is deployed. Set to `true` to include deployment status. |
+
+<Details 
+  summary="Returns `ExecutorAccountInfo` <object>" 
+  className="alert alert--fn-args"
+>
+
+```typescript
+// ExecutorAccountInfo object
 {
   address: '0x98cA97d2FB78B3C0597E2F78cd11868cACF423C5',
   deployed: true
 }
 ```
 
----
-
 </Details>
 
-#### Example: Convert Origin Account to Universal Executor Address
+<Details summary="Live Playground Example: Convert Origin Account to Universal Executor Account" className="alert alert--live-play">
 
-<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+
 {`
+    // customPropHighlightRegexStart=PushChain\.utils\.account\.convertOriginToExecutor
+    // customPropHighlightRegexEnd=\\);
     import { PushChain } from '@pushchain/core'
 
     async function main() {
@@ -231,24 +243,39 @@ const executorInfo = await PushChain.utils.account.convertOriginToExecutor(
       console.log(JSON.stringify(executorSimple, null, 2));
     }
 
-    main().catch(console.error)
+    await main().catch(console.error)
 `}
 
 </NodeJSVirtualIDE>
 
-## Create Universal Signer from Wallet Provider
+</Details>
+<!-- API Section Ends-->
 
-```typescript 
-const signer = await PushChain.utils.signer.toUniversal(signer) 
+
+<!-- API Section Begins-->
+## Signer Utilities
+
+### Create Universal Signer from Keypair API
+
+**_`PushChain.utils.signer.toUniversalFromKeypair(keypair, {options}): Promise<UniversalSigner>`_**
+
+```typescript
+const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(
+  keypair,
+  {
+    chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
+    library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
+  }
+);
 ```
 
-### `toUniversal` parameters
+| **Function Arguments** | **Type**  | **Default** | **Description**                                                                                                                                                                                             |
+| ---------------------- | --------- | ----------- |  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `keypair`              | `Keypair` | -           | A keypair object from one of the supported libraries (ethers v5/v6, viem, or a custom UniversalSignerSkeleton)                                                                                              |
+| `options.chain`        | `CHAIN`   | -           | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET`       |
+| `options.library`      | `LIBRARY` | -           | The library to use for the signer. Here are some possible values: `PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6`, `PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM`, `PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS` |
 
-| **Param** | **Type**                                                                                | **Remarks**                                                                                                                                                                                                              |
-| --------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `signer`  | `UniversalSignerSkeleton \| EthersV6SignerType \| EthersV5SignerType \| ViemSignerType` | A signer object from one of the supported libraries (ethers v5/v6, viem, or a custom UniversalSignerSkeleton). Here are some possible values: `ethers.Wallet`, `viem.Account`, `@pushchain/core.UniversalSignerSkeleton` |
-
-<Details summary="Expected response">
+<Details summary="Returns `UniversalSigner` <object>" className="alert alert--fn-args">
 
 ```typescript
 // UniversalSigner object
@@ -263,290 +290,284 @@ const signer = await PushChain.utils.signer.toUniversal(signer)
 }
 ```
 
----
-
 </Details>
 
-#### Example: Create Universal Signer from Wallet Provider
 
-<Tabs groupId="code-examples">
+<Details summary="Live Playground Example: Create Universal Signer from Keypair" className="alert alert--live-play alert-top-pad-20">
+
+<Tabs className="liveplaytab" groupId="code-examples">
   <TabItem value='ethers_v6' label='Ethers (V6)' default>
-  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+      <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
 {`
-    import { PushChain } from '@pushchain/core'
-    import { ethers } from 'ethers'
+    // customPropHighlightRegexStart=PushChain\.utils\.signer\.toUniversalFromKeypair
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core';
+    import { ethers } from 'ethers';
 
     async function main() {
-      const provider = new ethers.JsonRpcProvider('https://sepolia.gateway.tenderly.co')
-      const wallet = ethers.Wallet.createRandom(provider)
+      const provider = new ethers.JsonRpcProvider('https://sepolia.gateway.tenderly.co');
+      const wallet = ethers.Wallet.createRandom(provider);
 
-      const signer = await PushChain.utils.signer.toUniversal(wallet)
-
-      console.log(JSON.stringify(signer, null, 2))
-    }
-
-    main().catch(console.error)
-`}
-
-</NodeJSVirtualIDE>
-  </TabItem>
-  <TabItem value='viem' label='Viem'>
-    <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
-{`
-    import { PushChain } from '@pushchain/core'
-    import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts'
-    import { createWalletClient, http } from 'viem'
-    import { sepolia } from 'viem/chains'
-
-    async function main() {
-      const account = privateKeyToAccount(generatePrivateKey())
-      const walletClient = createWalletClient({
-        account,
-        chain: sepolia,
-        transport: http(),
-      })
-
-      const universalSigner = await PushChain.utils.signer.toUniversal(walletClient)
-
-      console.log(JSON.stringify(universalSigner, null, 2))
-    }
-
-    main().catch(console.error)
-`}
-
-</NodeJSVirtualIDE>
-  </TabItem>
-
-  <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
-
-  For Solana, you need to use the `toUniversalFromKeyPair` function to create a Universal Signer. See the [Create Universal Signer from Key Pair](#create-universal-signer-from-key-pair) section for more details.
-
-  </TabItem>
-</Tabs>
-
-## Create Universal Signer from Key Pair
-
-```typescript
-const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(keypair, {
-  chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
-  library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
-})
-```
-
-### `toUniversalFromKeyPair` parameters
-
-| **Param**         | **Type**  | **Remarks**                                                                                                                                                                                                 |
-| ----------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `keypair`         | `Keypair` | A keypair object from one of the supported libraries (ethers v5/v6, viem, or a custom UniversalSignerSkeleton)                                                                                              |
-| `options.chain`   | `CHAIN`   | The target chain for the signer. Here are some possible values: `PushChain.CONSTANTS.CHAIN.ETHEREUM_MAINNET`, `PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA`, `PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET`       |
-| `options.library` | `LIBRARY` | The library to use for the signer. Here are some possible values: `PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6`, `PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM`, `PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS` |
-
-<Details summary="Expected response">
-
-```typescript
-// UniversalSigner object
-{
-  account: {
-    address: '0xD173b7f04D539A5794e14030c4E172B2E3df92f3',
-    chain: 'eip155:11155111'
-  },
-  signMessage: [Function: signMessage],
-  signAndSendTransaction: [Function: signAndSendTransaction],
-  signTypedData: [Function: signTypedData]
-}
-```
-
----
-
-</Details>
-
-#### Example: Create Universal Signer from Key Pair
-
-<Tabs groupId="code-examples">
-  <TabItem value='ethers_v6' label='Ethers (V6)' default>
-      <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
-{`
-    import { PushChain } from '@pushchain/core'
-    import { ethers } from 'ethers'
-
-    async function main() {
-      const provider = new ethers.JsonRpcProvider('https://sepolia.gateway.tenderly.co')
-      const wallet = ethers.Wallet.createRandom(provider)
-
-      const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(wallet, {
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(wallet, {
         chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
         library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6,
-      })
+      });
 
-      console.log(JSON.stringify(universalSigner, null, 2))
+      console.log(JSON.stringify(universalSigner, null, 2));
     }
 
-main().catch(console.error)
-
+    await main().catch(console.error);
 `}
 
 </NodeJSVirtualIDE>
   </TabItem>
+
   <TabItem value='viem' label='Viem'>
-  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
 {`
+    // customPropHighlightRegexStart=PushChain\.utils\.signer\.toUniversalFromKeypair
+    // customPropHighlightRegexEnd=\\);
     import { PushChain } from '@pushchain/core'
-    import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts'
-    import { createWalletClient, http } from 'viem'
-    import { sepolia } from 'viem/chains'
+    import { privateKeyToAccount, generatePrivateKey } from 'viem/accounts';
+    import { createWalletClient, http } from 'viem';
+    import { sepolia } from 'viem/chains';
 
     async function main() {
-      const account = privateKeyToAccount(generatePrivateKey())
+      const account = privateKeyToAccount(generatePrivateKey());
       const walletClient = createWalletClient({
         account,
         chain: sepolia,
         transport: http(),
-      })
+      });
 
-      const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(walletClient, {
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(walletClient, {
         chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
         library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
       })
 
-      console.log(JSON.stringify(universalSigner, null, 2))
+      console.log(JSON.stringify(universalSigner, null, 2));
     }
 
-    main().catch(console.error)
+    awaitmain().catch(console.error);
 `}
 
 </NodeJSVirtualIDE>
   </TabItem>
+
   <TabItem value='solana_web3js' label='Web3 JS (Solana)'>
-  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+  <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
 
 {`
-    import { PushChain } from '@pushchain/core'
-    import { Keypair } from '@solana/web3.js'
+    // customPropHighlightRegexStart=PushChain\.utils\.signer\.toUniversalFromKeypair
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core';
+    import { Keypair } from '@solana/web3.js';
 
     async function main() {
       const keypair = Keypair.generate()
 
-      const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(keypair, {
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(keypair, {
         chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
         library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
-      })
+      });
 
-      console.log(JSON.stringify(universalSigner, null, 2))
+      console.log(JSON.stringify(universalSigner, null, 2));
     }
 
-    main().catch(console.error)
+    await main().catch(console.error);
 `}
 
 </NodeJSVirtualIDE>
   </TabItem>
 </Tabs>
 
-## Create Universal Signer Manually
+</Details>
+<!-- API Section Ends-->
 
-Creating a Universal Signer manually is useful when you want to use a custom signer that is not supported by the SDK.
 
-This is a 2 step process:
-1. Call `construct` function that will return a Universal Signer Skeleton
-2. Pass the Universal Signer Skeleton to the `toUniversal` function to create a Universal Signer
+## Explorer Utilities
 
-For more information, please refer to the [Custom Universal Signer](./01-advanced/01-Custom-Universal-Signer.mdx) section.
+<!-- API Section Start-->
+### Get Explorer URL for trasaction API
 
-```typescript
-const universalSignerSkeleton = PushChain.utils.signer.construct(universalAccount, {
-  signAndSendTransaction: customSignAndSendTransaction,
-  signMessage: customSignMessage,
-  signTypedData: customSignTypedData,
-})
-```
+**_`pushChainClient.explorer.getTransactionUrl(txHash): string`_**
 
-### `construct` parameters
-
-| **Param**                    | **Type**                                                                                | **Remarks**                                                                                                                                                                                                              |
-| ---------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `account`                    | `UniversalAccount`                                                                      | A UniversalAccount object containing chain and address information.                                                                                                                                                      |
-| `options.signMessage`        | `(data: Uint8Array) => Promise<Uint8Array>`                                            | A function that signs a message and returns the signature as Uint8Array.                                                                                                                                                 |
-| `options.signAndSendTransaction` | `(unsignedTx: Uint8Array) => Promise<Uint8Array>`                                  | A function that signs and sends a transaction, returning the transaction hash as Uint8Array.                                                                                                                              |
-| `options.signTypedData?`     | `({domain, types, primaryType, message}: {domain: TypedDataDomain; types: TypedData; primaryType: string; message: Record<string, any>}) => Promise<Uint8Array>` | An optional function that signs typed data according to EIP-712 standard.                                                                                                                                                |
-
-<Details summary="Expected response">
+> **Note**: This function is available only after initializing the Push Chain client.
 
 ```typescript
-// UniversalSignerSkeleton object
-{
-  signerId: 'CustomGeneratedSigner',
-  account: {
-    chain: 'eip155:42101',
-    address: '0xf12325208B41780bAeE6662782893C6CE9bDfEAa'
-  },
-  signMessage: [AsyncFunction: customSignMessage],
-  signAndSendTransaction: [AsyncFunction: customSignAndSendTransaction],
-  signTypedData: [AsyncFunction: customSignTypedData]
-}
+// ... Intialize Push Chain Client
+const url = pushChainClient.explorer.getTransactionUrl(txHash);
 ```
 
----
+| **Function Arguments** | **Type** | **Default** | **Description**                                      |
+| ---------------------- | -------- | ----------- | ---------------------------------------------------- |
+| `txHash`      | `string` | -           | The transaction hash to convert to explorer URL.     |
+
+<Details summary="Returns `url` <string>" className="alert alert--fn-args">
+
+```typescript
+// url string
+'https://donut.push.network/tx/0x...'
+```
 
 </Details>
 
-#### Example: Create Universal Signer Manually
+<Details summary="Live Playground Example: Get Explorer URL for a transaction hash" className="alert alert--live-play">
 
-<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
 {`
-    import { PushChain } from '@pushchain/core'
-    import { ethers } from 'ethers'
+    // customPropHighlightRegexStart=pushChainClient\.explorer\.getTransactionUrl
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core';
 
     async function main() {
-      const provider = new ethers.JsonRpcProvider('https://sepolia.gateway.tenderly.co')
-      const wallet = ethers.Wallet.createRandom(provider)
+    // Using ethers for example - You can use any library
+    // ethers, viem, solana web3js, etc
+    import { PushChain } from '@pushchain/core';
+    import { ethers } from 'ethers';
 
-      // Convert wallet.address to Universal Account
-      const universalAccount = PushChain.utils.account.toUniversal(wallet.address, {
-        chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
-      })
+    async function main() {
+      // Create random wallet
+      const wallet = ethers.Wallet.createRandom()
 
-      console.log('Creating signing functions for custom signer')
-      const customSignAndSendTransaction = async (unsignedTx) => {
-        const unsignedHex = hexlify(unsignedTx)
-        const tx = ethers.Transaction.from(unsignedHex)
-        const txResponse = await wallet.sendTransaction(tx)
-        return hexToBytes(txResponse.hash)
-      }
+      // Set up provider
+      const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org')
+      const signer = wallet.connect(provider)
+      
+      // Convert to Universal Signer
+      const universalSigner = await PushChain.utils.signer.toUniversal(signer);
 
-      const customSignMessage = async (message) => {
-        // Sign message using ethers wallet
-        const signature = await wallet.signMessage(message)
+      // Initialize Push Chain Client
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+      });
 
-        // Always a Uint8Array
-        return Uint8Array.from(signature)
-      }
+      const exploredTxHashUrl = pushChainClient.explorer.getTransactionUrl('0x4627fd2eca321d5fd007995c94af636e5e332760f50fbd8e3426ad0c67543dad');
 
-      // This is optional as solana doesn't support sign typed data
-      const customSignTypedData = async (domain, types, value) => {
-        // Sign typed data using ethers wallet
-        const signature = await wallet._signTypedData(domain, types, value)
-
-        // Always a Uint8Array
-        return Uint8Array.from(signature)
-      }
-
-      // Construct the universal signer skeleton with custom signing functions
-      const universalSignerSkeleton = PushChain.utils.signer.construct(universalAccount, {
-        signAndSendTransaction: customSignAndSendTransaction,
-        signMessage: customSignMessage,
-        signTypedData: customSignTypedData,
-      })
-
-      console.log('Created Universal Signer with custom signing functions')
-
-      console.log('Creating Universal Signer from Skeleton...')
-
-      // Pass constructed universal signer skeleton to create universal signer
-      const universalSigner = await PushChain.utils.signer.toUniversal(universalSignerSkeleton)
-      console.log('Created Universal Signer', JSON.stringify(universalSigner, null, 2))
+      console.log(JSON.stringify(exploredTxHashUrl));
     }
 
-main().catch(console.error)
+    await main().catch(console.error);
+`}
+</NodeJSVirtualIDE>
 
+</Details>
+<!-- API Section Ends-->
+
+
+<!-- API Section Start-->
+### List all Explorer URLs API
+
+**_`PushChainClient.explorer.listUrls(): string[]`_**
+
+> **Note**: This function is available only after initializing the Push Chain client.
+
+```typescript
+// ... Intialize Push Chain Client
+const explorerUrls = pushChainClient.explorer.listUrls();
+```
+
+<Details summary="Returns `explorerUrls` <string[]>" className="alert alert--fn-args">
+
+```typescript
+// explorerUrls string[]
+{
+  [
+    'https://donut.push.network/tx/0x...', 
+    'https://scan.push.org/tx/0x...'
+  ]
+}
+```
+
+</Details>
+
+<Details summary="Live Playground Example: List all Explorer URLs" className="alert alert--live-play">
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+{`
+    // customPropHighlightRegexStart=pushChainClient\.explorer\.listUrls
+    // customPropHighlightRegexEnd=\\);
+    // Using ethers for example - You can use any library
+    // ethers, viem, solana web3js, etc
+    import { PushChain } from '@pushchain/core';
+    import { ethers } from 'ethers';
+
+    async function main() {
+      // Create random wallet
+      const wallet = ethers.Wallet.createRandom()
+
+      // Set up provider
+      const provider = new ethers.JsonRpcProvider('https://evm.rpc-testnet-donut-node1.push.org')
+      const signer = wallet.connect(provider)
+      
+      // Convert to Universal Signer
+      const universalSigner = await PushChain.utils.signer.toUniversal(signer);
+
+      // Initialize Push Chain Client
+      const pushChainClient = await PushChain.initialize(universalSigner, {
+        network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
+      });
+
+      const explorerUrls = pushChainClient.explorer.listUrls();
+      console.log(JSON.stringify(explorerUrls));
+    }
+
+    await main().catch(console.error);
+`}
+</NodeJSVirtualIDE>
+
+</Details>
+<!-- API Section Ends-->
+
+
+## Helper Utilities
+
+<!-- API Section Start-->
+### Get Chain Name from Chain ID API
+
+**_`PushChain.utils.helpers.chainNameFromId(chainId): string`_**
+
+```typescript
+const chainName = PushChain.utils.helpers.chainNameFromId(chainId);
+```
+
+| **Function Arguments** | **Type** | **Default** | **Description**                                      |
+| ---------------------- | -------- | ----------- | ---------------------------------------------------- |
+| `chainId`              | `number` | -           | The chain ID to convert to chain name. Eg: `eip155:42101` converts to `PUSH_CHAIN_TESTNET_DONUT`, `eip155:11155111` converts to `ETHEREUM_SEPOLIA`             |
+
+<Details summary="Returns `chainName` <string>" className="alert alert--fn-args">
+
+```typescript
+// chainName string
+'PUSH_CHAIN_TESTNET_DONUT'
+```
+
+</Details>
+
+<Details summary="Live Playground Example: Get Chain Name from Chain ID" className="alert alert--live-play">
+
+<NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-examples/tree/main/sdk-functions/utility-functions"}}>
+
+{`
+    // customPropHighlightRegexStart=PushChain\.utils\.helpers\.getChainName
+    // customPropHighlightRegexEnd=\\);
+    import { PushChain } from '@pushchain/core';
+
+    function main() {
+      const chainName = PushChain.utils.helpers.chainNameFromId('eip155:42101');
+      console.log(chainName);
+    }
+
+    main();
 `}
 
 </NodeJSVirtualIDE>
+
+</Details>
+<!-- API Section Ends-->
+
+
+## Next Steps
+- [Read on-chain data](/docs/chain/build/reading-blockchain-state) to wrap your app logic
+- Learn how to interact with [pre-deployed contracts](/docs/chain/build/interacting-with-contracts)
+- Explore and Abstract away wallet and any chain related logic using [UI Kit](/docs/chain/ui-kit)

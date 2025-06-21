@@ -66,33 +66,32 @@ These helpers are already deployed and maintained, so you can easily integrate t
 <NodeJSVirtualIDE repo={{title: "Open in Github", url: "https://github.com/push-protocol/push-chain-sdk"}}>
 
 {`
-
-    import { ethers } from 'ethers'
+    import { PushChain } from '@pushchain/core';
+    import { ethers } from 'ethers';
 
     async function main() {
-      console.log('Creating Universal Signer - Ethers V6')
+      console.log('Creating Universal Signer - Ethers V6');
 
       // Create random wallet
-      const wallet = ethers.Wallet.createRandom()
+      const wallet = ethers.Wallet.createRandom();
 
       // Set up provider connected to Ethereum Sepolia Testnet
-      const provider = new ethers.JsonRpcProvider('https://gateway.tenderly.co/public/sepolia')
-      const signer = wallet.connect(provider)
+      const provider = new ethers.JsonRpcProvider('https://gateway.tenderly.co/public/sepolia');
+      const signer = wallet.connect(provider);
 
       // Convert ethers signer to Universal Signer
-      const universalSigner = await PushChain.utils.signer.toUniversal(signer)
-      console.log('🔑 Got universal signer')
+      const universalSigner = await PushChain.utils.signer.toUniversal(signer);
+      console.log('🔑 Got universal signer');
 
       // Initialize Push Chain SDK
       const pushChainClient = await PushChain.initialize(universalSigner, {
           network: PushChain.CONSTANTS.PUSH_NETWORK.TESTNET_DONUT,
       })
-      console.log('🔑 Got push chain client')
-      console.log(JSON.stringify(pushChainClient))
+      console.log('🚀 Got push chain client');
+      console.log(JSON.stringify(pushChainClient));
     }
 
-    main().catch(console.error)
-
+    await main().catch(console.error)
 `}
 
 </NodeJSVirtualIDE>

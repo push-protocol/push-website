@@ -75,7 +75,7 @@ const universalSigner = await PushChain.utils.signer.toUniversal(viemClient);
 // import @pushchain/core and @solana/web3.js
 const solKeypair = Keypair.generate()
 
-const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
+const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(
   solKeypair,
   {
     chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
@@ -88,15 +88,13 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 </Tabs>
 
 
-| **Function Arguments**  | **Type**                                                            | **Description**                                      |
-| ----------------------- | ------------------------------------------------------------------- | ---------------------------------------------------- |
-| _`signer`_              | `viem.WalletClient` \| `ethers.Wallet` \| `UniversalSignerSkeleton` | The signer to convert to Universal Signer format.    |
+| **Function Arguments**  | **Type**                                                            | **Default** | **Description**                                      |
+| ----------------------- | ------------------------------------------------------------------- | ----------- |---------------------------------------------------- |
+| _`signer`_              | `viem.WalletClient` \| `ethers.Wallet` \| `UniversalSignerSkeleton` | -           | The signer to convert to Universal Signer format.    |
 
-> Note: Parameters _`in this style`_ are mandatory.
+> Note: These _`Function Arguments`_ are mandatory.
 
----
-
-<Details summary="Expected response">
+<Details summary="Returns `UniversalSigner` <object>" className="alert alert--fn-args">
 
 ```typescript
 // UniversalSigner object
@@ -111,14 +109,11 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 }
 ```
 
-
 </Details>
 
----
+**Ready to dive in?** Try the code in live playground 👇.
 
-### Create Universal Signer Live Playground
-
-<Tabs groupId="create-universal-signer">
+<Tabs className="liveplaytab" groupId="create-universal-signer">
   <TabItem value='ethers_v6' label='Ethers (V6)' default>
 
 <NodeJSVirtualIDE 
@@ -204,7 +199,7 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
 
 {`
 
-    // customPropHighlightRegexStart=PushChain\.utils\.signer\.toUniversalFromKeyPair
+    // customPropHighlightRegexStart=PushChain\.utils\.signer\.toUniversalFromKeypair
     // customPropHighlightRegexEnd=\\)
     // Import Push Chain Core
     import { PushChain } from '@pushchain/core';
@@ -217,7 +212,7 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
       const solKeypair = Keypair.generate();
 
       // Convert solana signer to Universal Signer
-      const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(
         solKeypair,
         {
           chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
@@ -237,7 +232,6 @@ const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
   </TabItem>
 
   <TabItem value='ui_kit' label='UI Kit (Frontend / Abstracted)'>
-  Using [UI Kit / UI Components](/docs/chain/ui-components/) will abstract away creation of the Universal Signer.
   
     ```jsx live
     // customPropHighlightRegexStart=<PushUniversalWalletProvider

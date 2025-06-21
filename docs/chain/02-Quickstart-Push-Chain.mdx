@@ -21,8 +21,8 @@ import TabItem from '@theme/TabItem';
 
 ## Installation
 
-<Tabs groupId="quickstart-examples">
-  <TabItem value="npm" label="npm" default>
+<Tabs className="codetabs" groupId="quickstart-examples">
+  <TabItem value="npm" attributes={{className: "codetab npm"}} default>
 
     ```bash
     # Core SDK
@@ -36,7 +36,7 @@ import TabItem from '@theme/TabItem';
 
   </TabItem>
 
-  <TabItem value="yarn" label="yarn">
+  <TabItem value="yarn" attributes={{className: "codetab yarn"}}>
 
     ```bash
     # Core SDK
@@ -141,9 +141,9 @@ import TabItem from '@theme/TabItem';
     const solKeypair = Keypair.generate();
 
     // 2. Convert the Solana Keypair into a Push Chain universal signer.
-    //    We use the helper `toUniversalFromKeyPair`, which internally builds
+    //    We use the helper `toUniversalFromKeypair`, which internally builds
     //    the necessary adapter (signTransaction, signMessage).
-    const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(solKeypair, {
+    const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(solKeypair, {
       chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
       library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
     })
@@ -209,7 +209,8 @@ console.log('Origin address:', originAccount.address);
 
 ## Next Steps
 
+- Start Building with [Core SDK](/docs/chain/build/)
+
 - Explore core abstractions in [Important Concepts](/docs/chain/important-concepts)
-- Plug in wallet UI via [UI Components](/docs/chain/ui-components/integrate-push-universal-wallet/)
 - Try a full-app walkthrough in [Tutorials](/docs/chain/tutorials/)
 - For deep dives visit our [Knowledge Base](https://push.org/knowledge/)

@@ -129,7 +129,7 @@ export default function IFrameModal({
           position: 'relative',
           flex: 1,
           backgroundColor: '#fff',
-          border: '1px solid rgba(0, 0, 0, 0.1)',
+          border: '1px solid var(--ifm-border-color)',
           borderRadius: '0 0 12px 12px',
         }}
       >

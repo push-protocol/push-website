@@ -70,7 +70,7 @@ export default function RemixIDE({ examples }: RemixIDEProps) {
         width: '100%',
         backgroundColor: '#fff',
         borderRadius: '12px',
-        border: '1px solid rgb(226, 232, 240)',
+        border: '1px solid var(--ifm-border-color)',
         overflow: 'hidden',
         position: isFullScreen ? 'fixed' : 'relative',
         top: isFullScreen ? 0 : 'auto',

@@ -250,7 +250,7 @@ function App() {
             display: 'flex',
             flexWrap: 'wrap',
             flexDirection: 'row',
-            borderBottom: '1px solid #00000022',
+            borderBottom: '1px solid var(--ifm-border-color)',
             justifyContent: 'flex-end',
             gap: '12px',
           }}

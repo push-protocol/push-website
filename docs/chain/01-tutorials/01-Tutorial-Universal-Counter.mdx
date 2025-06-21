@@ -140,9 +140,9 @@ import IFrameModal from '@site/src/components/IFrameModal/IFrameModal';
       const solKeypair = Keypair.generate();
 
       // 2. Convert the Solana Keypair into a Push Chain universal signer.
-      //    We use the helper `toUniversalFromKeyPair`, which internally builds
+      //    We use the helper `toUniversalFromKeypair`, which internally builds
       //    the necessary adapter (signTransaction, signMessage).
-      const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(
         solKeypair,
         {
           chain: PushChain.CONSTANTS.CHAIN.SOLANA_MAINNET,

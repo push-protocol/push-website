@@ -105,30 +105,33 @@ function EditorWithHeader({ minimized, code, title, codeEnv }) {
       id='theme.Playground.liveEditor'
       description='The live editor label of the live codeblocks'
     >
-      LIVE EDITOR
+      REACT PLAYGROUND
     </Translate>
   );
 
   return (
     <>
       <Header>
+        <ItemH>
+          <ItemV flex='1' alignItems='flex-start'>
+            {displayTitle}
+          </ItemV>
+          {minimizedState ? <FiChevronDown /> : <FiChevronUp />}
+        </ItemH>
         <Button
           onClick={() => setMinimizedState(!minimizedState)}
           textTransform='uppercase'
           background='transparent'
           padding='0px'
-          width='100%'
           display='flex'
           hoverBackground='transparent'
           borderRadius='0px'
-        >
-          <ItemH>
-            <ItemV flex='1' alignItems='flex-start'>
-              {displayTitle}
-            </ItemV>
-            {minimizedState ? <FiChevronDown /> : <FiChevronUp />}
-          </ItemH>
-        </Button>
+          position='absolute'
+          top='0'
+          right='0'
+          bottom='0'
+          left='0'
+        />
       </Header>
       {!minimizedState && (
         <ThemedLiveEditor code={code} className={liveEditorClasses} />
@@ -283,7 +286,9 @@ export default function Playground({
                 <EditorWithHeader
                   code={displayCode}
                   minimized={minimized}
-                  title={isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE EDITOR'}
+                  title={
+                    isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'REACT PLAYGROUND'
+                  }
                   codeEnv={codeEnv}
                 />
               </div>
@@ -304,7 +309,9 @@ export default function Playground({
                 <EditorWithHeader
                   code={displayCode}
                   minimized={minimized}
-                  title={isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'LIVE EDITOR'}
+                  title={
+                    isNodeJSEnv ? 'VIRTUAL NODE IDE INNER' : 'REACT PLAYGROUND'
+                  }
                   codeEnv={codeEnv}
                 />
               </div>

@@ -33,7 +33,7 @@ const provider = new ethers.JsonRpcProvider('https://sepolia.gateway.tenderly.co
 const wallet = new ethers.Wallet(privateKey, provider)
 
 // 2. Create universal signer from ethers wallet
-const signer = await PushChain.utils.signer.toUniversalFromKeyPair(wallet, {
+const signer = await PushChain.utils.signer.toUniversalFromKeypair(wallet, {
   chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
   library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_ETHERSV6,
 })
@@ -53,7 +53,7 @@ const privateKey = '0x...' // Replace it with your private key
 const account = privateKeyToAccount(privateKey)
 
 // 2. Create universal signer from viem account
-const signer = await PushChain.utils.signer.toUniversalFromKeyPair(account, {
+const signer = await PushChain.utils.signer.toUniversalFromKeypair(account, {
   chain: PushChain.CONSTANTS.CHAIN.ETHEREUM_SEPOLIA,
   library: PushChain.CONSTANTS.LIBRARY.ETHEREUM_VIEM,
 })
@@ -74,7 +74,7 @@ const privateKey = Uint8Array.from(Buffer.from(privateKeyHex, 'hex'))
 const account = Keypair.fromSecretKey(privateKey)
 
 // 2. Create universal signer from Solana keypair
-const signer = await PushChain.utils.signer.toUniversalFromKeyPair(account, {
+const signer = await PushChain.utils.signer.toUniversalFromKeypair(account, {
   chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
   library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
 })
@@ -243,7 +243,7 @@ Here is an example of how to initialize the Push Chain SDK with a universal sign
 
       const keyPair = Keypair.generate()
 
-      const universalSigner = await PushChain.utils.signer.toUniversalFromKeyPair(keyPair, {
+      const universalSigner = await PushChain.utils.signer.toUniversalFromKeypair(keyPair, {
           chain: PushChain.CONSTANTS.CHAIN.SOLANA_DEVNET,
           library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
       })

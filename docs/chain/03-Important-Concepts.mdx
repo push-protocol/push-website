@@ -128,7 +128,7 @@ A `UniversalSigner` extends `UniversalAccount` with signing capabilities.
       // Solana Testnet
       const solKeypair = Keypair.generate()
 
-      const universalSignerFromSol = await PushChain.utils.signer.toUniversalFromKeyPair(solKeypair, {
+      const universalSignerFromSol = await PushChain.utils.signer.toUniversalFromKeypair(solKeypair, {
         chain: PushChain.CONSTANTS.CHAIN.SOLANA_TESTNET,
         library: PushChain.CONSTANTS.LIBRARY.SOLANA_WEB3JS,
       })
@@ -162,6 +162,6 @@ A `UniversalSigner` extends `UniversalAccount` with signing capabilities.
 - Setup your [Environment and Tooling](/docs/chain/setup/)
 - See SDK reference in [Build](/docs/chain/build/)
 - Try your first transaction in [Send Transaction](/docs/chain/build/send-transaction/)
-- Integrate and abstract implementation and UI via [UI Components](/docs/chain/ui-components/)
+- Integrate and abstract implementation and UI via [UI Kit](/docs/chain/ui-kit/)
 - Follow a full walkthrough in [Tutorials](/docs/chain/tutorials/)
 - Dive deeper in the [Knowledge Base](https://push.org/knowledge/)

@@ -37,19 +37,19 @@ const txHash = await pushChainClient.universal.sendTransaction({
 
 ### Send Transaction Parameters
 
-| **Param**              | **Type** | **Remarks**                                           |
-| ---------------------- | -------- | ----------------------------------------------------- |
-| _`to`_                 | `string` | The address of the recipient.                         |
-| _`value`_              | `BigInt` | The value to send in wei.                             |
-| `data`                 | `string` | The data to send.                                     |
-| `gasLimit`             | `BigInt` | The gas limit for the transaction.                    |
-| `maxFeePerGas`         | `BigInt` | The maximum fee per gas for the transaction.          |
-| `maxPriorityFeePerGas` | `BigInt` | The maximum priority fee per gas for the transaction. |
-| `deadline`             | `BigInt` | The deadline for the transaction.                     |
+| **Function Arguments** | **Type** | **Default** | **Description**                                       |
+| ---------------------- | -------- | ----------- | ----------------------------------------------------- |
+| _`to`_                 | `string` | -           | The address of the recipient.                         |
+| _`value`_              | `BigInt` | -           | The value to send in wei.                             |
+| `data`                 | `string` | -           | The data to send.                                     |
+| `gasLimit`             | `BigInt` | -           | The gas limit for the transaction.                    |
+| `maxFeePerGas`         | `BigInt` | -           | The maximum fee per gas for the transaction.          |
+| `maxPriorityFeePerGas` | `BigInt` | -           | The maximum priority fee per gas for the transaction. |
+| `deadline`             | `BigInt` | -           | The deadline for the transaction.                     |
 
-> Note: Parameters _`in this style`_ are mandatory.
+> Note: These _`Function Arguments`_ are mandatory.
 
-<Details summary="Expected response">
+<Details summary="Returns `TransactionReceipt` <object>" className="alert alert--fn-args">
 
 ```typescript
 // Transaction hash

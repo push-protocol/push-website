@@ -59,10 +59,14 @@
   --ifm-docs-hero-bg: #efefef;
   --ifm-paragraph-margin-bottom: 0;
   --docusaurus-highlighted-code-line-bg: rgba(62, 65, 83, 1);
+  --ifm-detail-live-play: rgb(76, 179, 212);
   --ifm-playground-header-bg: #61657b;
+  --ifm-playground-header-tag: #0000001a;
   --ifm-playground-header-text: #ffffff;
   --ifm-live-highlighted-code-line-bg-pulse-start: rgba(62, 65, 83, 1);
   --ifm-live-highlighted-code-line-bg-pulse-mid: rgba(87, 91, 117, 1);
+  --ifm-border-color: #dadde1;
+  --ifm-global-radius: 12px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -109,11 +113,83 @@
   --ifm-navbar-dropdown-image: 'none';
   --ifm-docs-hero-bg: #0d0c0f;
   --ifm-paragraph-margin-bottom: 0;
+  --ifm-detail-live-play: rgb(76, 179, 212);
   --ifm-playground-header-bg: #61657b;
+  --ifm-playground-header-tag: #0000004d;
   --ifm-playground-header-text: #ffffff;
   --docusaurus-highlighted-code-line-bg: rgba(62, 65, 83, 1);
   --ifm-live-highlighted-code-line-bg-pulse-start: rgba(62, 65, 83, 1);
   --ifm-live-highlighted-code-line-bg-pulse-mid: rgba(87, 91, 117, 1);
+  --ifm-border-color: #1f1f20;
+  --ifm-global-radius: 12px;
+}
+
+/* Custom styles for admonitions/alerts */
+.alert {
+  background-color: transparent;
+}
+
+.alert.alert--fn-args,
+.alert.alert--live-play {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.alert.alert--fn-args:before,
+.alert.alert--live-play:before {
+  content: '';
+  position: absolute;
+  width: 98%;
+  height: 1px;
+  right: 1%;
+  bottom: -10px;
+  background: #bec3c9;
+}
+
+.alert.alert--fn-args:after,
+.alert.alert--live-play:after {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 1px;
+  right: 5%;
+  bottom: -20px;
+  background: #bec3c9;
+}
+
+.alert.alert--fn-args {
+  border-color: var(--ifm-color-primary);
+}
+
+.alert.alert--fn-args summary::before {
+  border-color: transparent transparent transparent var(--ifm-color-primary);
+}
+
+.alert.alert--fn-args
+  .collapsibleContent_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module {
+  border-top: 1px solid
+    color-mix(in srgb, var(--ifm-color-primary) 50%, transparent);
+}
+
+.alert.alert--live-play {
+  border-color: var(--ifm-detail-live-play);
+}
+
+.alert.alert--live-play summary::before {
+  border-color: transparent transparent transparent var(--ifm-detail-live-play);
+}
+
+.alert.alert--live-play
+  .collapsibleContent_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module {
+  border-top: 1px solid
+    color-mix(in srgb, var(--ifm-detail-live-play) 50%, transparent);
+  padding: 0;
+}
+
+.alert.alert--live-play.alert-top-pad-20
+  .collapsibleContent_node_modules-\@docusaurus-theme-common-lib-components-Details-styles-module {
+  padding-top: 20px;
 }
 
 /* ----- */
@@ -466,10 +542,6 @@ article ul > li strong {
 /* ----- */
 /* Tabs CodeBlock CSS Overrids */
 /* ----- */
-
-/* ----- */
-/* Tabs CodeBlock CSS Overrids */
-/* ----- */
 .codetabs li {
   padding: 10px 10px;
   display: flex;
@@ -560,71 +632,53 @@ article ul > li strong {
     no-repeat 0 / contain;
 }
 
-/* Code Block EVM */
-.codetab.evm:after {
-  content: 'EVM';
-}
-
-.codetab.evm::before {
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iIzUyNTg2MCIgZD0iTTIwIDRsLTggMTJsOCA0bDgtNEwyMCA0ek0xMiAyMmw4IDRsOC00bC04IDEyeiIvPjwvc3ZnPg==')
-    no-repeat 0 / contain;
-}
-
-.codetab.evm:hover::before,
-.codetab.evm.tabs__item--active::before {
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI2RkNDRiOSIgZD0iTTIwIDRsLTggMTJsOCA0bDgtNEwyMCA0ek0xMiAyMmw4IDRsOC00bC04IDEyeiIvPjwvc3ZnPg==')
-    no-repeat 0 / contain;
-}
-
-/* Code Block Ethereum */
-.codetab.eth:after {
-  content: 'Ethereum';
-}
-
-.codetab.eth::before {
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iIzUyNTg2MCIgZD0iTTIwIDRsLTggMTJsOCA0bDgtNEwyMCA0ek0xMiAyMmw4IDRsOC00bC04IDEyeiIvPjwvc3ZnPg==')
-    no-repeat 0 / contain;
-}
-
-.codetab.eth:hover::before,
-.codetab.eth.tabs__item--active::before {
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI2RkNDRiOSIgZD0iTTIwIDRsLTggMTJsOCA0bDgtNEwyMCA0ek0xMiAyMmw4IDRsOC00bC04IDEyeiIvPjwvc3ZnPg==')
-    no-repeat 0 / contain;
-}
-
-/* Code Block Solana */
-.codetab.sol:after {
-  content: 'Solana';
-}
-
-.codetab.sol::before {
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iIzUyNTg2MCIgZD0iTTggMTJoMjRsLTQgNEg0ek04IDIwaDI0bC00IDRINHpNOCAyOGgyNGwtNCA0SDR6Ii8+PC9zdmc+')
-    no-repeat 0 / contain;
-}
-
-.codetab.sol:hover::before,
-.codetab.sol.tabs__item--active::before {
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI2RkNDRiOSIgZD0iTTggMTJoMjRsLTQgNEg0ek04IDIwaDI0bC00IDRINHpNOCAyOGgyNGwtNCA0SDR6Ii8+PC9zdmc+')
-    no-repeat 0 / contain;
-}
-
-/* Code Block PushChain */
-.codetab.pushchain:after {
-  content: 'Push Chain';
-}
-
-.codetab.pushchain::before {
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iIzUyNTg2MCIgZD0iTTIwIDRDMTEuMTYgNCA0IDExLjE2IDQgMjBzNy4xNiAxNiAxNiAxNiAxNi03LjE2IDE2LTE2UzI4Ljg0IDQgMjAgNHptMCAyNGMtNC40MiAwLTgtMy41OC04LThzMy41OC04IDgtOCA4IDMuNTggOCA4LTMuNTggOC04IDh6Ii8+PC9zdmc+')
-    no-repeat 0 / contain;
-}
-
-.codetab.pushchain:hover::before,
-.codetab.pushchain.tabs__item--active::before {
-  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI2RkNDRiOSIgZD0iTTIwIDRDMTEuMTYgNCA0IDExLjE2IDQgMjBzNy4xNiAxNiAxNiAxNiAxNi03LjE2IDE2LTE2UzI4Ljg0IDQgMjAgNHptMCAyNGMtNC40MiAwLTgtMy41OC04LThzMy41OC04IDgtOCA4IDMuNTggOCA4LTMuNTggOC04IDh6Ii8+PC9zdmc+')
-    no-repeat 0 / contain;
-}
-
 /* Tabs CodeBlock CSS Overrids Ends */
+/* ----- */
+
+/* ----- */
+/* Tabs LivePlayground CSS Overrids */
+/* ----- */
+ul.tabs.liveplaytab {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+ul.tabs.liveplaytab li {
+  border-radius: 20px;
+  border: 1px solid var(--ifm-border-color);
+  padding: 8px 20px;
+}
+
+ul.tabs.liveplaytab li.tabs__item--active {
+  /* border: 1px solid #dd44b9; */
+  color: var(--ifm-color-primary);
+}
+
+/* Tabs LivePlayground CSS Overrids Ends */
+/* ----- */
+
+/* ----- */
+/* Table CSS Overrids */
+/* ----- */
+table {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--ifm-global-radius);
+}
+
+table:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 1px solid var(--ifm-border-color);
+  border-radius: var(--ifm-global-radius);
+  pointer-events: none;
+}
+/* Table CSS Overrids Ends */
 /* ----- */
 
 .menu_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-Content-styles-module {
